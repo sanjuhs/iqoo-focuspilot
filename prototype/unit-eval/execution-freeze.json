@@ -1,0 +1,39 @@
+{
+  "schema": "focuspilot.unit_execution_freeze.v1",
+  "before_unit_generation": true,
+  "comparison_lock_sha256": "88d3992c0e1923f78959d626083cbc85abe3853b48b5043d7d2f6bb800b0adae",
+  "native_lock_sha256": "ffff50852cfc0722b62b7821bf5fae2d5ddbf4259df23558083dc4991d06c1d8",
+  "gold_sha256": "b8ca8a201971dd7c25267866cf1e80f3c116d9ab48060337d09f5f5acb95ddb5",
+  "reference_raw_sha256": "0b41b8a56f0786a3889b840b27630138a0fb1a69390461ac3c402d742a908972",
+  "raw_unit_labels_sha256": "955470d7e48607db0552ac720848be188c975f0c43a916955a4ae79b73e3369e",
+  "manual_author_unit_labels_sha256": "2f40680d86d1b9c5c7e9a04d15fb10fd4517bf9c2e3d01c54295d004e6e4fea7",
+  "token_count_range": [
+    362,
+    369
+  ],
+  "token_records_sha256": "234adcfbcb11d3abb72fca58909d1f758083f34f619bfc53fa36f59aa6bd8b25",
+  "source_files_sha256": {
+    "prototype/unit-command/UnitCommandRender.java": "4c346603244f26c849c885d2e90146c2db6e9d1e21e1602d12464f2573b72a26",
+    "prototype/unit-command/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+    "prototype/unit-command/UnitCommandTest.java": "2d9404dabb2cca6406aae001e79d54c5f24277f1763cca35042729a045952de5",
+    "prototype/unit-command/README.md": "3e205eaf70816f9aa10cf2f918b7f2941348ee607d6b85b2aa631e03e2bd9d09",
+    "prototype/unit-native/README.md": "450fa4e9091e58b9126ec90257d08aa1d3fb646ee54253d80a4cfb67e0affc3d",
+    "prototype/unit-native/run_capture.py": "50ac4f93d92e42c5075d30f47bed7477d5e34a85c889a1be464a98951141e3f7",
+    "prototype/unit-native/readiness.json": "23a518622e0e0cfcdebdab38a3416831ce2d115e0c813d16811b16b804397e82",
+    "prototype/unit-native/.gitignore": "c7cd0fc55d4b88bc4ed87b1cdc33670d9046174ab762188a0f2ce10290bb56e0",
+    "prototype/unit-native/test_capture.py": "1ccd8197374a2098a0c36420c890b97a1ada608fc84f5f0dd7f2c9608c65a1b0",
+    "prototype/unit-eval/UnitCompare.java": "464c23790710337bb56688a256ad99dbcc09d69566622001e0e6b78394bece09",
+    "prototype/unit-eval/README.md": "479b732c296036117b2ccd0c7e50907f32d0b15f9e44e964849026b52dbdb203",
+    "prototype/unit-eval/test_evaluate.py": "562836fa18894dc10b1abd9ced2e9a51f83913f249d21dd45ea53bb698b8c0c1",
+    "prototype/unit-eval/.gitignore": "c7cd0fc55d4b88bc4ed87b1cdc33670d9046174ab762188a0f2ce10290bb56e0",
+    "prototype/unit-eval/protocol.json": "23d6c43842b9a2fabc1fc6c24471f104ca9366d032c3207345431e9c19c3dcc5",
+    "prototype/unit-eval/evaluate.py": "0677ba1fa8b576eb37b62c30da375016d36dcd62764fb3ad0ca724fee2ba2383",
+    "prototype/unit-eval/labels-manifest.json": "fc2c8e224436402958b97e433d8e85123594eb00636059eb10156278fc2817a5"
+  },
+  "boundary_tests": {
+    "unit_jvm_methods": 10,
+    "native_python": 14,
+    "scoring_python": 5
+  },
+  "scope": "One unit-aware generation against exact historical structured-seconds reference. Seen development, not qualification or phone promotion; separate retained-gate regression still required."
+}

@@ -1,0 +1,20 @@
+{
+  "schema":"focuspilot.unit_development_protocol.v1",
+  "phase":"seen_development_conversion_diagnostic",
+  "rows":24,"supported":18,"unknown":6,
+  "reference":"Exact previously captured structured-seconds 24 rows at 5fc35d4735c01389e0fc9d911487acfd3914ef5c; no new reference model run",
+  "candidate":"Same Qwen3.5-0.8B Q4_0 with quantity/unit JSON; deterministic conversion and unchanged underlying source validator",
+  "attempts":1,
+  "before_outputs":"Freeze source/protocol and manual raw-unit labels, exact reference and tokenizer-only preflight; commit before generation",
+  "failure_policy":"Preserve any failed/partial attempt; no hidden restart, row omission, source/label repair or partial score",
+  "development_advance_criteria":{
+    "complete_supported_net_gain_minimum":2,
+    "complete_supported_losses_maximum":0,
+    "complete_start_minimum":1,
+    "wrong_accepts_maximum":0,
+    "unknown_validator_refusals_required":6
+  },
+  "decision_scope":"Advance means a separate fresh qualification may be attempted. No development outcome authorizes phone promotion. Known gate-regression preservation is an additional required integration condition.",
+  "measurements":["Raw copied quantity/unit accuracy","Raw canonical action/arguments after deterministic conversion","Complete checked proposals, per class and paired losses","Unknown model abstention versus guard refusal","Oracle source-evidence ceiling","All-class raw confusion and complete JSON/EOS/token/process inventory"],
+  "limitations":["Same previously seen24development cases; not fresh/blind population or voice accuracy","Reference captured earlier; timings are descriptive and cannot prove a speed change","Lexical guards and grammar do not establish arbitrary semantic safety","Host CPU is not Android/NPU/Office Kit evidence","Explain recognition is not task/causal-answer fulfillment"]
+}

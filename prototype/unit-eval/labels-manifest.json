@@ -1,0 +1,10 @@
+{
+  "schema": "focuspilot.unit_development_labels.v1",
+  "rows": 24,
+  "duration_rows": 7,
+  "manual_review_before_outputs": true,
+  "same_seen_development_corpus": true,
+  "canonical_gold_sha256": "b8ca8a201971dd7c25267866cf1e80f3c116d9ab48060337d09f5f5acb95ddb5",
+  "raw_labels_sha256": "2f40680d86d1b9c5c7e9a04d15fb10fd4517bf9c2e3d01c54295d004e6e4fea7",
+  "scope": "All source quantities/units manually reviewed, no model/gate outputs; labels remain ignored."
+}

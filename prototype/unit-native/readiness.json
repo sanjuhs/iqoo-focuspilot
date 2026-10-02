@@ -1,0 +1,28 @@
+{
+  "schema": "focuspilot.unit_native_readiness.v1",
+  "status": "source_ready_no_inference",
+  "upstream_driver_sha256": "d4eb744192574ae7b0f08d00093758324d280c4376d98289d1299dc5deff601f",
+  "upstream_test_sha256": "50d968a57d0fbd13157725e691c525b2a07d91c36f93a680515b0aba2291dbb1",
+  "driver_changes": "Literal task-directory, event/schema namespace and descriptive text only; exact normalized-source comparison passed. No import/global mutation.",
+  "native_binary_reused": true,
+  "native_binary_sha256": "32a6869b29816216654640127c9ab6d2e4d5c1763aa729645c36f27563186ce1",
+  "native_compilation_record_sha256": "e7ff11371aa63584c8f90e3c7c59a73033ddcfb09292a02a1b4c35a680a49631",
+  "runtime_guard": "Passed: three pinned libraries, seven pinned headers, original compilation/source/binary and required API exports.",
+  "boundary_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 prototype/unit-native/test_capture.py",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "scope": "Generic JSON/frame/token/timing/EOS limits, canonical base64/native input-parser parity, grammar bounds, exclusive writes/private paths, same-lock alias retry refusal, and unit-vs-structured namespace isolation. No model loads."
+  },
+  "model_loaded": false,
+  "phone_operations": false,
+  "new_cpp_compilation_or_downloads": false,
+  "source_sha256": {
+    "prototype/unit-native/.gitignore": "c7cd0fc55d4b88bc4ed87b1cdc33670d9046174ab762188a0f2ce10290bb56e0",
+    "prototype/unit-native/README.md": "450fa4e9091e58b9126ec90257d08aa1d3fb646ee54253d80a4cfb67e0affc3d",
+    "prototype/unit-native/run_capture.py": "50ac4f93d92e42c5075d30f47bed7477d5e34a85c889a1be464a98951141e3f7",
+    "prototype/unit-native/test_capture.py": "1ccd8197374a2098a0c36420c890b97a1ada608fc84f5f0dd7f2c9608c65a1b0"
+  },
+  "qualification_or_promotion_claim": false
+}
