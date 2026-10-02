@@ -1,0 +1,113 @@
+{
+  "kind": "Preserved failed Java socket-wrapper numeric-cause probe; zero model loads/inferences",
+  "source_commit": "d5fef64946fe9fd05474d8b14238ac0532292ddc",
+  "harness_sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+  "candidate_test_apk": {
+    "sha256": "3187aa52b2be6cae863e137e90e24185eb9817b2d46b5d930d4636802a9203e5",
+    "bytes": 49742
+  },
+  "before": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true,
+    "installed_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+  },
+  "after": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true,
+    "installed_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+  },
+  "restored": true,
+  "restored_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "identity": {
+    "process_uid": 10425,
+    "process_pid": 16077,
+    "target_package": "dev.focuspilot.prototype",
+    "target_application_uid": 10425,
+    "process_name": "dev.focuspilot.prototype",
+    "target_process_name": "dev.focuspilot.prototype",
+    "test_package": "dev.focuspilot.prototype.test",
+    "test_application_uid": 10427,
+    "target_manifest_requests_internet": false,
+    "test_manifest_requests_internet": false,
+    "target_context_process_internet_permission": -1
+  },
+  "socket_probe": {
+    "numeric_destination": "192.0.2.1",
+    "port": 9,
+    "connect_timeout_ms": 1000,
+    "permission_denial_proven": false,
+    "elapsed_ms": 0.311511,
+    "exception_causes": [
+      {
+        "type": "java.net.SocketException"
+      }
+    ],
+    "permission_errno": 0
+  },
+  "checks": 5,
+  "failure_type": "java.lang.AssertionError",
+  "failure": "Socket must fail with nested EACCES or EPERM; route, timeout and other errors do not prove isolation",
+  "model_loaded": false,
+  "requests_completed": 0,
+  "private_raw_stdout_sha256": "cd753f6185d0de918d9df9dfba957b4123dac63f81b57dc0f6b55a14dc3dda40",
+  "private_raw_report_sha256": "62d178c908eb99a5fa4d1cceb31b43e3c6eb9b26b86132133cbbe3df2543130c",
+  "interpretation": "Process identity and denied manifest/permission checks passed; Java wrapper lost numeric errno cause. Socket-denial gate did not pass; no inference claim from this attempt."
+}

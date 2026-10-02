@@ -6,12 +6,17 @@ Updated 3 October 2026 (IST). This file separates measured results from goals.
 
 A separate test-only Android instrumentation runner is compiled for the unchanged
 v0.13 app. It requires the real target UID/process, denied INTERNET permission and
-a numeric EACCES/EPERM socket error before loading the pinned local model. Ten
+a direct numeric EACCES/EPERM socket-creation error before loading the pinned local model. Ten
 fixed openly seen synthetic requests exercise native completion, pure command
 proposals and observational tensor summaries. No action executor, UI, observation
 or model/prompt change is added. Lint has zero errors/65 warnings; three harness
-boundary tests pass. Physical network-denied inference remains pending at this
-source checkpoint. This probe cannot establish the full disconnected/ASR workflow.
+boundary tests pass. The first actual phone attempt confirmed the target UID/main
+process and denied permission, but Java's socket wrapper omitted its numeric cause.
+It stopped before model access with zero requests and restored the original test
+APK and exact production snapshot. [Preserved failure](network-isolation-phone-v013-first-attempt.json).
+The runner now uses Android's public direct socket API; the repeated physical
+network-denied inference remains pending at this source checkpoint. This probe
+cannot establish the full disconnected/ASR workflow.
 
 ## Reviewed reset — v0.13
 

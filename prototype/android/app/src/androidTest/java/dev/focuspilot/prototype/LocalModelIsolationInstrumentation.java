@@ -15,10 +15,8 @@ import android.system.Os;
 import android.system.OsConstants;
 import android.system.StructStat;
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileInputStream;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.security.MessageDigest;
 import java.util.HashSet;
 import java.util.Set;
@@ -82,31 +80,38 @@ public final class LocalModelIsolationInstrumentation extends Instrumentation {
         require(Application.getProcessName().equals(target.getApplicationInfo().processName),"Instrumentation must run in target main process");
         require(!identity.getBoolean("target_manifest_requests_internet") && !identity.getBoolean("test_manifest_requests_internet"),"Both manifests must omit INTERNET");
         require(permission==PackageManager.PERMISSION_DENIED,"Target process INTERNET permission must be denied");
-        JSONObject probe=new JSONObject().put("numeric_destination","192.0.2.1").put("port",9)
-            .put("connect_timeout_ms",1000).put("permission_denial_proven",false);
+        JSONObject probe=new JSONObject().put("api","android.system.Os.socket")
+            .put("family",OsConstants.AF_INET).put("family_name","AF_INET")
+            .put("type",OsConstants.SOCK_STREAM).put("type_name","SOCK_STREAM")
+            .put("protocol",OsConstants.IPPROTO_TCP).put("protocol_name","IPPROTO_TCP")
+            .put("connect_attempted",false).put("dns_used",false).put("payload_sent",false)
+            .put("socket_creation_succeeded",false).put("returned_fd_closed",false)
+            .put("socket_creation_denied",false).put("permission_denial_proven",false);
         report.put("socket_probe",probe);
         long started=SystemClock.elapsedRealtimeNanos();
-        Throwable denied=null;
-        try(Socket socket=new Socket()) {
-            // Literal bytes avoid DNS. TEST-NET is diagnostic only; no payload is sent.
-            socket.connect(new InetSocketAddress(InetAddress.getByAddress(new byte[]{(byte)192,0,2,1}),9),1000);
-        } catch(Exception failure) { denied=failure; }
-        probe.put("elapsed_ms",milliseconds(started));
-        JSONArray causes=new JSONArray();
-        int errno=0;
-        Throwable cursor=denied;
-        Set<Throwable> visited=java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<Throwable,Boolean>());
-        for(int depth=0;cursor!=null && depth<16 && visited.add(cursor);depth++,cursor=cursor.getCause()) {
-            JSONObject cause=new JSONObject().put("type",cursor.getClass().getName());
-            if(cursor instanceof ErrnoException) {
-                int value=((ErrnoException)cursor).errno;cause.put("errno",value);
-                if(value==OsConstants.EACCES || value==OsConstants.EPERM) errno=value;
+        FileDescriptor socket=null;
+        ErrnoException denied=null;
+        try {
+            // Socket creation only: no connection, address, DNS lookup or payload.
+            socket=Os.socket(OsConstants.AF_INET,OsConstants.SOCK_STREAM,OsConstants.IPPROTO_TCP);
+        } catch(ErrnoException failure) { denied=failure; }
+        finally {
+            probe.put("elapsed_ms",milliseconds(started));
+            if(socket!=null) {
+                // An unexpectedly returned descriptor is owned only by this probe.
+                probe.put("socket_creation_succeeded",true);
+                Os.close(socket);
+                probe.put("returned_fd_closed",true);
             }
-            causes.put(cause);
         }
-        probe.put("exception_causes",causes).put("permission_errno",errno)
-            .put("permission_denial_proven",errno==OsConstants.EACCES || errno==OsConstants.EPERM);
-        require(probe.getBoolean("permission_denial_proven"),"Socket must fail with nested EACCES or EPERM; route, timeout and other errors do not prove isolation");
+        int errno=denied==null?0:denied.errno;
+        boolean creationDenied=denied!=null && (errno==OsConstants.EACCES || errno==OsConstants.EPERM);
+        probe.put("exception_type",denied==null?JSONObject.NULL:denied.getClass().getName())
+            .put("attempted_function","socket")
+            .put("exception_message",denied==null?JSONObject.NULL:denied.getMessage())
+            .put("permission_errno",errno).put("socket_creation_denied",creationDenied)
+            .put("permission_denial_proven",creationDenied);
+        require(socket==null && creationDenied,"Direct Os.socket creation must fail with EACCES or EPERM before model access");
     }
     private File verifyModel(JSONObject report) throws Exception {
         File file=new File(getTargetContext().getFilesDir(),"qwen35.gguf");
@@ -181,7 +186,7 @@ public final class LocalModelIsolationInstrumentation extends Instrumentation {
         ScheduledExecutorService deadline=Executors.newSingleThreadScheduledExecutor(runnable->{Thread thread=new Thread(runnable,"focuspilot-native-deadline");thread.setDaemon(true);return thread;});
         boolean passed=false;long started=SystemClock.elapsedRealtimeNanos();
         try {
-            report.put("schema","focuspilot.native_isolation.v1").put("fixture_scope","Fixed openly seen synthetic requests; diagnostic only, no held-out accuracy claim")
+            report.put("schema","focuspilot.native_isolation.v2").put("fixture_scope","Fixed openly seen synthetic requests; diagnostic only, no held-out accuracy claim")
                 .put("actions_executed",false).put("preferences_accessed",false).put("production_singleton_used",false)
                 .put("ui_used",false).put("network_settings_changed",false).put("permission_grants_changed",false)
                 .put("airplane_mode_claim",false).put("npu_claim",false).put("causal_interpretation_claim",false)
