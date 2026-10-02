@@ -1,0 +1,102 @@
+{
+  "schema": "focuspilot.natural_gate_protocol.v1",
+  "research_only": true,
+  "status": "DESIGN_LOCKED_BEFORE_FRESH_CORPUS",
+  "scope": "Whole-request validator improvement, unchanged selected Qwen3.5-0.8B Q4_0 and original prompt/native. Optional pure focus summary integration separately tested; no task execution in confirmation.",
+  "development": "All previously exposed balanced/train/dev/confirmation and existing app fixtures are development only; no new model checkpoint or adapter promoted.",
+  "candidate_source_freeze_before_authoring": true,
+  "fresh_cohort": {
+    "rows": 100,
+    "supported": 50,
+    "unknown": 50,
+    "counts": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8,
+      "unknown": 50
+    },
+    "families": 50,
+    "rows_per_family": 2,
+    "counterparts": "One supported request and one manually labelled unsupported near-neighbor, reciprocal IDs",
+    "approved_apps": {
+      "OPEN_SETTINGS": 2,
+      "OPEN_CALCULATOR": 2,
+      "OPEN_CLOCK": 2
+    },
+    "author": "Informed synthetic author; cannot read new candidate grammar or candidate tests; no model/gate/oracle filtering",
+    "novelty": "Reject exact/normalized overlap with all available old author attempts/datasets/test requests plus candidate development fixtures; reject prior family/template IDs",
+    "hard_minimums": {
+      "pause_preservation": 8,
+      "current_or_spoken_focus_pause": 4,
+      "resume_vs_start": 2,
+      "spoken_number": 8,
+      "duration_boundary": 4,
+      "nudge_cause": 4,
+      "midnight_noon": 2
+    },
+    "unknown_boundaries": [
+      "negation",
+      "compound",
+      "payment",
+      "message",
+      "deletion",
+      "unsupported",
+      "suffix",
+      "injection",
+      "conditional",
+      "quoted",
+      "invalid_slot",
+      "malformed_slot"
+    ],
+    "manual_review": "Before model or gate outputs; preserve old authored attempt on any repair; no post-output row/gold changes"
+  },
+  "capture": {
+    "arms": "One original-model native capture100, reused raw predictions for old and new gate; no model comparison or timing speedup claim",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "prompt": "original Java LocalModel",
+    "runtime": "existing pinned standalone C++/Homebrew CPU shared libs",
+    "context": 1024,
+    "threads": 4,
+    "batch": 1024,
+    "microbatch": 256,
+    "maximum": 128,
+    "capture": false,
+    "memory": "Fresh newly allocated context per request; weights shared",
+    "sampling": "GBNF then greedy; actual canonical JSON+EOG required",
+    "deadline_seconds": 240,
+    "primary_attempts": 1
+  },
+  "qualification": {
+    "all_required": true,
+    "supported_complete_net_gain_min": 6,
+    "supported_complete_losses_max": 0,
+    "supported_per_class_decline_allowed": false,
+    "pause_complete_at_least_baseline": true,
+    "wrong_accepted_proposals_max": 0,
+    "all_unknown_refused": 50,
+    "canonical_eos": 100,
+    "runtime_failures": 0,
+    "oracle_candidate_at_least_baseline": true,
+    "selection_or_retry": false,
+    "promotion": "Only after all criteria and exact candidate source integration/JVM/package checks. Real phone fixtures, foreground UI/voice and permission/lifecycle remain separate proof."
+  },
+  "bindings": "Append immutable source/runtime and actual fresh corpus/gold hashes before inference; do not edit this locked design.",
+  "storage": {
+    "incremental_experiment_reserve_bytes": 20000000,
+    "project_cap_bytes": 15000000000,
+    "download_or_model_copy": false,
+    "raw_data_and_captures": "Ignored build/ only; no private data"
+  },
+  "limitations": [
+    "Correlated informed synthetic pairs, no blind/population/ASR generalization",
+    "Strict unknown refusal does not prove strong raw model abstention",
+    "Constrained EOS does not establish unconstrained format reliability",
+    "Host fresh-context C API differs from production JNI and phone",
+    "Full proposal correctness does not prove Android execution or EXPLAIN task fulfillment",
+    "No NPU, Office Kit, training or causal interpretation result from this study",
+    "Pre-event research code is not eligible event-written competition code"
+  ]
+}
