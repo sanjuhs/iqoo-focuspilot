@@ -126,7 +126,7 @@ def main():
         created=True;lab.tap('Save task & targets');wait_preferences(lab,lambda v:v.get('focusGoal')==GOAL)
         disclosure(lab,'Write or edit my steps');set_test_field(lab,'resource-id',PACKAGE+':id/task_guide_editor','\n'.join(STEPS))
         lab.tap('Save these steps');original=assert_test_plan(preferences(lab));phase('authored_synthetic_guide_saved')
-        lab.tap("I've done this step");wait_preferences(lab,lambda v:v.get(PREFIX+'completed')==1)
+        lab.top();lab.tap("I've done this step");wait_preferences(lab,lambda v:v.get(PREFIX+'completed')==1)
         lab.tap('Undo last completed step');wait_preferences(lab,lambda v:v.get(PREFIX+'completed')==0)
         restored=assert_test_plan(preferences(lab))
         if {k:v for k,v in restored.items() if k!=PREFIX+'revision'}!={k:v for k,v in original.items() if k!=PREFIX+'revision'}:
@@ -135,7 +135,7 @@ def main():
         original=restored
         phase('mark_undo_verified_before_recording',progress_restored=True,revision_renewed=True)
         # Start only after entry; no keyboard or typing suggestions in selected footage.
-        lab.find('Speak this step offline');recorder=Recorder(lab,'guide',output);recorder.start()
+        lab.top();lab.find('Speak this step offline');recorder=Recorder(lab,'guide',output);recorder.start()
         time.sleep(1);lab.tap('Speak this step offline');outcome=None
         for _ in range(10):
             values={OUTCOMES[n.get('text','')] for n in lab.nodes() if n.get('text','') in OUTCOMES}

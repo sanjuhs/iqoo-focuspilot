@@ -1,0 +1,50 @@
+{
+  "kind": "Current own-app synthetic research recording; silent cropped phone footage",
+  "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "harness_sha256": "fdf18d708591656c7211032a1da155690ee40c31e9d9c9c9d639728999927391",
+  "manifest_sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a",
+  "pre_run_commit": "94225cd7595d83cb146365fd7c47c7f544ef75bf",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "clips": [],
+  "phases": [
+    {
+      "name": "authored_synthetic_guide_saved"
+    }
+  ],
+  "completed": false,
+  "cleanup_verified": true,
+  "visual_privacy_review": false,
+  "microphone_started": false,
+  "npu_verified": false,
+  "human_audibility_verified": false,
+  "offline_disconnect_verified": false,
+  "action_confirmed": false,
+  "os_settings_changed": false,
+  "failure_type": "RuntimeError",
+  "failure": "Own-app control not visible: I've done this step",
+  "cleanup_scope": "Remove only this synthetic three-step guide, restore empty task and mute false; task-save log entries/zero target keys may remain.",
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "empty_goal_restored": true,
+  "guide_record_removed": true,
+  "permissions_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  }
+}
