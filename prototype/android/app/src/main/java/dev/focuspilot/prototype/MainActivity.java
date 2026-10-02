@@ -150,6 +150,7 @@ public final class MainActivity extends Activity {
         heroAction("Ask Mira",heroActions,v -> startActivity(new Intent(this,LocalModelActivity.class)),true);
         heroFocusButton=heroAction("Start focus",heroActions,v -> toggleFocus(),false);
         companionMessage=text("Ready when you are. One gentle step at a time.",16,WHITE,true); friend.addView(companionMessage);
+        button("Set up Mira",friend,v -> startActivity(new Intent(this,SetupActivity.class)),false);
         LinearLayout preferences=disclosure(friend,"Companion preferences");
         preferences.addView(text("Make Mira feel right for you. Hiding her artwork keeps your focus controls available.",13,MUTED,false));
         preferenceToggle(preferences,"Reduce motion",reduceMotion,value -> { reduceMotion=value; prefs.edit().putBoolean("reduceMotion",value).apply(); companion.setReduceMotion(value); });
@@ -244,7 +245,7 @@ public final class MainActivity extends Activity {
         logView=text("No events yet",13,MUTED,false); history.addView(logView);
         button("Export my focus summary",history,v -> new AlertDialog.Builder(this).setTitle("Export your private summary?").setMessage("Includes your selected app, limits, task hash, virtual points and labels for that app. Excludes task text, screen content and event history. Choose phone storage for an offline file; a cloud provider may sync it. Exported files remain after deleting app data.").setNegativeButton("Cancel",null).setPositiveButton("Choose destination",(d,w) -> exportFocusData()).show(),false);
         button("Delete focus data & saved examples",history,v -> new AlertDialog.Builder(this).setTitle("Delete FocusPilot data?").setMessage("Clears saved settings, event history and few-shot labels, stops the session and disables observation. The downloaded model stays installed. Android permissions can be revoked separately in system settings.").setNegativeButton("Cancel",null).setPositiveButton("Delete",(d,w) -> deleteData()).show(),false);
-        root.addView(text("RESEARCH BUILD · 0.5\nNo real money moves. You choose when to pause.",12,MUTED,false));
+        root.addView(text("RESEARCH BUILD · 0.6\nNo real money moves. You choose when to pause.",12,MUTED,false));
         screen.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout safetyBar=new LinearLayout(this); safetyBar.setOrientation(LinearLayout.VERTICAL); safetyBar.setPadding(dp(20),0,dp(20),dp(8)); safetyBar.setBackgroundColor(BG);
         button("Stop focus",safetyBar,v -> pauseFocus(),false);

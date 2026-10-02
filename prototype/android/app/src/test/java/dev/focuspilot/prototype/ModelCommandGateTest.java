@@ -38,4 +38,41 @@ public final class ModelCommandGateTest {
         assertFalse(ModelCommandGate.validate("open_app","Tell me about calculator").executable());
         assertFalse(ModelCommandGate.validate("open_app","Don’t open settings").executable());
     }
+    @Test public void explicitNaturalRequestsKeepTheirActionAndSlots() {
+        String[] starts={"Please start a focus session", "Can you help me start studying?", "I'd like to begin my study session", "I want to focus for 20 minutes", "Help me focus", "Focus for twenty minutes", "Mira, please resume deep work", "Please help me concentrate"};
+        for(String request:starts)assertEquals(request,ModelCommandGate.Kind.START_FOCUS,ModelCommandGate.validate("start_focus",request).kind);
+        assertEquals(ModelCommandGate.Kind.PAUSE_FOCUS,ModelCommandGate.validate("pause_focus","Could you please stop my study session?").kind);
+        assertEquals(ModelCommandGate.Kind.PAUSE_FOCUS,ModelCommandGate.validate("pause_focus","Cancel my focus session").kind);
+        assertEquals(19,ModelCommandGate.validate("alarm","Can you please set an alarm at 7:30 PM?").hour);
+        assertEquals(300,ModelCommandGate.validate("timer","Please help me set a 5-minute timer").seconds);
+        assertEquals(ModelCommandGate.Kind.OPEN_SETTINGS,ModelCommandGate.validate("open_app","Could you please open settings?").kind);
+    }
+    @Test public void cancellationCannotBecomeCreationUnderWrongModelIntents() {
+        String[] alarmCancels={"Cancel the alarm at 7:30", "Stop my alarm at 7:30", "Dismiss the 7:30 alarm", "Snooze my alarm at 7:30", "Turn off the alarm at 7:30", "Remove my alarm at 7:30", "Please reset the alarm at 7:30"};
+        for(String request:alarmCancels)assertFalse(request,ModelCommandGate.validate("alarm",request).executable());
+        String[] timerStops={"Cancel the 5 minute timer", "Stop the timer for 5 minutes", "Pause my 5 minute countdown", "Disable the timer for 5 minutes", "Clear the 5 minute timer", "Reset the 5 minute timer"};
+        for(String request:timerStops)assertFalse(request,ModelCommandGate.validate("timer",request).executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Cancel focus").executable());
+        assertFalse(ModelCommandGate.validate("open_app","Stop opening calculator").executable());
+        assertFalse(ModelCommandGate.validate("pause_focus","Stop the timer while I study").executable());
+    }
+    @Test public void mentionsStatementsQuotesAndHowToQuestionsDoNotAct() {
+        String[] mentions={"I need concentration", "Focus problems", "My focus has improved", "I will start studying tomorrow", "Yesterday I started a focus session", "Can you explain how to start focus?", "Please say start focus", "Start focus is the name of my project", "I like study sessions"};
+        for(String request:mentions)assertFalse(request,ModelCommandGate.validate("start_focus",request).executable());
+        assertFalse(ModelCommandGate.validate("alarm","My alarm is set for 7:30").executable());
+        assertFalse(ModelCommandGate.validate("alarm","An alarm rings at 7:30").executable());
+        assertFalse(ModelCommandGate.validate("timer","My timer has 5 minutes remaining").executable());
+        assertFalse(ModelCommandGate.validate("timer","Timer for 5 minutes is running").executable());
+        assertFalse(ModelCommandGate.validate("open_app","I open calculator every morning").executable());
+    }
+    @Test public void conditionalAndMultipleStepRequestsNeedClarification() {
+        assertFalse(ModelCommandGate.validate("start_focus","Start focus if I open Instagram").executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Start focus after lunch").executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Start focus or open banking").executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Start focus; open settings").executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Start focus. Open settings.").executable());
+        assertFalse(ModelCommandGate.validate("timer","Set a 5 minute timer\nopen calculator").executable());
+        assertFalse(ModelCommandGate.validate("alarm","Avoid setting the alarm at 7:30").executable());
+        assertFalse(ModelCommandGate.validate("start_focus","Please start focus without activating it").executable());
+    }
 }
