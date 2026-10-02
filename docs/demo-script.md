@@ -2,7 +2,14 @@
 
 Prepared 2 October 2026. **Reviewable recording script; not a claim that every shot is already captured.** Target a 3–5 minute concept/research pitch, subject to the actual dashboard requirements. The public guide's presentation rubric describes a 3–5 minute pitch; no authenticated application upload format, word limit or deadline is assumed. [Official guide](https://iqoo.reskilll.com/guide).
 
-Keep a visible **“Pre-event research prototype”** label. Current v0.8 build has 119 passing JVM tests, zero lint errors and 59 warnings. Both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes. Physical v0.8 command/countdown outcomes remain pending. The completed frozen 100-request/50-family host test improved gated strict correctness 64→72/100 with zero wrong accepts, but only 12/40 supported successes and 28/40 false abstentions, including nine gains and six losses. Its model-facing gate adds whole-request forms and deterministic English-number/clock slots while leaving Qwen weights/prompt/native unchanged. [Command contract](natural-commands.md). Historical v0.7 has 105 tests/59 lint warnings with timer phone proof pending unlock; source-bound v0.6 Start/Pause remains historical. Read [status](status.md), [timed focus](timed-focus.md) and [application draft](application-draft.md) before filming.
+Keep a visible **“Pre-event research prototype”** label. Current v0.9 source
+`6e483aaf9e42889794ed77c272b8a912539cfc7c` has 127 JVM tests, zero lint errors/62 warnings and
+inspected/installed APK identity. Floating Mira is implemented but untested on the
+phone: label its visual as **“source concept; actual overlay proof pending”** until
+user-granted Show/drag/Hide/Pause and lock/notification/revocation tests pass.
+The Qwen/prompt/native/v0.8 gate is unchanged. [Floating contract](floating-companion.md).
+
+Historical v0.8 build has 119 passing JVM tests, zero lint errors and 59 warnings. Both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes. Physical v0.8 command/countdown outcomes remain pending. The completed frozen 100-request/50-family host test improved gated strict correctness 64→72/100 with zero wrong accepts, but only 12/40 supported successes and 28/40 false abstentions, including nine gains and six losses. Its model-facing gate adds whole-request forms and deterministic English-number/clock slots while leaving Qwen weights/prompt/native unchanged. [Command contract](natural-commands.md). Historical v0.7 has 105 tests/59 lint warnings with timer phone proof pending unlock; source-bound v0.6 Start/Pause remains historical. Read [status](status.md), [timed focus](timed-focus.md) and [application draft](application-draft.md) before filming.
 
 ## Copyable opening
 

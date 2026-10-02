@@ -65,6 +65,18 @@ A smile or speaking animation is not evidence of task success. Success state mus
 
 Priority is hidden → paused → listening → one-shot celebration → one surfaced nudge → idle. Reduce motion and mute are orthogonal settings, rather than emotional states. State labels are readable independently of color/expression. Accessible controls need unambiguous names and adequate touch targets; do not continuously announce every blink or animation change to a screen reader.
 
+## Floating update 0.9
+
+The original Canvas Mira now also has an optional 176×250 dp floating card, with
+portrait-only dragging and separate Open/Hide/Pause controls. Show requires explicit
+review from a resumed dashboard after permission and visible notification checks.
+Hide stops only this visual service; Pause stops focus and its monitor. Screen-off,
+lock and revocation stop floating mode and require Show again. System disabled
+animations and app reduced motion both suppress automatic character motion.
+Actual phone visual/touch/lifecycle/battery proof remains pending. The service starts
+no voice, model or observation; explicit Pause/deadline finalization may flush
+previously consented accounting. [Contract and proof gates](floating-companion.md).
+
 ## Android handoff and verification
 
 The native dashboard now uses a compact **170dp companion hero** with two immediate actions: **Ask Mira** opens the actual local-model lab, and **Start focus / Pause focus** controls the shared session. Companion preferences and build facts are collapsed initially so the artwork does not bury useful controls. A persistent **Stop focus** bar remains accessible while scrolling; it pauses monitoring and cancels active microphone/TTS output. System-window insets apply to the entire dashboard, keeping both scrolling content and the Stop bar clear of status/navigation bars.

@@ -19,6 +19,7 @@ LICENSES={'FocusPilot-MIT.txt':'LICENSE','Qwen3.5-Apache-2.0.txt':'prototype/qwe
 MANUAL_REQUIREMENTS={
  'offline_disconnected':'Actual airplane-mode/USB-disconnected Qwen execution, with settings state and successful result tied to APK/model hashes',
  'voice_and_clock':'User-permitted actual microphone transcript, local installed ASR/TTS, denied/revoked paths, reviewed alarm and Clock postcondition',
+ 'floating_companion':'User-granted actual overlay Show/deny/cancel, bounded drag, external touch, screen/lock/permission teardown, notification Hide/Pause, rotation/keyboard and app-stop evidence tied to APK/device',
  'live_focus_monitor':'User-enabled Usage Access/notifications, measured real selected-app boundaries, background notification Stop/revocation/recovery, cooldown/override',
  'live_personalization':'Consented real held-out workflows, baseline comparison, coverage/false nudges and live-policy mapping; toy retrieval is insufficient',
  'iqoo_hardware':'Actual organizer-eligible iQOO device identity, installed APK/model hashes and repeatable local assistant workflow',
@@ -225,6 +226,12 @@ def main():
   if (root/'docs/natural-commands-phone.json').is_file():
    audit.check('v08_phone_report_binding',lambda:phone_record(read_json(root/'docs/natural-commands-phone.json'),v08_light,v08['source_commit']))
   else:audit.result['checks']['v08_phone_report_binding']={'status':'incomplete','reason':'Natural-command/countdown physical proof awaits unlocked own-app foreground; host results and installation are insufficient.'}
+ audit.check('floating_companion_manifest',lambda:read_json(root/'docs/floating-companion-artifacts.json'))
+ v09=audit.result['checks']['floating_companion_manifest']
+ if 'artifacts' in v09:
+  for item in v09['artifacts']:
+   audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
+  audit.result['checks']['v09_floating_phone_proof']={'status':'incomplete','reason':'Installation, source review and geometry tests do not establish user-granted floating UI, drag/touch, screen/lock/revocation, notification controls or OEM behavior.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
@@ -248,7 +255,7 @@ def main():
    if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
    v08_names=['focuspilot-research-v08-light.apk','focuspilot-research-v08-bundled.apk','natural-commands-artifacts.json']
    if (root/'docs/natural-commands-phone.json').is_file():v08_names.append('natural-commands-phone.json')
-   for tag,names in {'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   for tag,names in {'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']

@@ -15,7 +15,22 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
-## Current 0.8 addition
+## Current 0.9 addition
+
+App source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds the independent optional floating visual
+companion. The auditor checks both signed APK/native/model/license/permission
+identities and required 0.9 release assets; installation identity is recorded.
+Actual overlay grant/Show/drag/outside touch/Hide/Pause, screen/lock/revocation,
+rotation/keyboard and Android app-stop proof remains **incomplete**. No settings
+were granted or app UI launched by this update. Qwen/prompt/gate remain unchanged.
+
+Current XML reports **127 JVM tests**, zero failures/errors/skips; lint zero errors
+and **62 warnings**. Eight new pure geometry cases verify clamp/overflow/stable
+original-position drag math, not Android windows or OEM process survival. Workspace
+logical files total **12.05 GiB** including ignored builds, models and releases.
+[Contract](floating-companion.md), [identities](floating-companion-artifacts.json).
+
+## Previous 0.8 addition
 
 Both signed APKs are bound to app source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`.
 The auditor checks their byte/native/model/license/permission identities and required
@@ -24,7 +39,7 @@ were verified on Nothing; no v0.8 physical command/countdown report exists, so t
 requirement remains **incomplete**. Phone asleep/own-app not foreground is the
 current device precondition; OS permissions were not changed.
 
-Current XML reports **119 JVM cases**, zero failures/errors/skips, lint zero errors
+At the 0.8 checkpoint XML reported **119 JVM cases**, zero failures/errors/skips, lint zero errors
 and **59 warnings**. Four separate new command-evaluation tests pass; these are not
 Android execution or lifecycle evidence. The frozen-before-edit 100-request host
 comparison improves generated-plus-gate strict correctness 64→72/100 and supported

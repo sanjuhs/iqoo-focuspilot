@@ -1,0 +1,68 @@
+{
+  "version": "0.9-floating-mira-research",
+  "research_only": true,
+  "source_commit": "6e483aaf9e42889794ed77c272b8a912539cfc7c",
+  "backend": "CPU/KleidiAI I8MM; optimized ARM64 hardware required",
+  "tests": {
+    "android_jvm": 127,
+    "floating_position": 8,
+    "lint_errors": 0,
+    "lint_warnings": 62,
+    "audit": 10
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "model_changed": false,
+  "prompt_changed": false,
+  "gate_changed": false,
+  "gate_sha256": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+  "fresh_bundle_import_tested": false,
+  "overlay_tested": false,
+  "permissions_granted_by_tools": false,
+  "phone_test_status": "Installation identity only; actual floating permission/UI/drag/lifecycle/voice/timer/offline evidence pending",
+  "workspace_logical_gib": 12.05,
+  "workspace_scope": "Logical regular file sizes under project including ignored model/checkouts/build/artifacts; pre-existing shared system SDK caches excluded",
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v09-light.apk",
+      "bytes": 5773312,
+      "sha256": "e57a9c57cec2bbac6e9912b2772c5fe155f14c4e09b55a69fc272e5fc91f9b61",
+      "bundled_model": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    },
+    {
+      "name": "focuspilot-research-v09-bundled.apk",
+      "bytes": 568809488,
+      "sha256": "fa5fad50862b4d9eef9bcbbc07d6ab0425699b6bf7e37ceef3150b63fc61c693",
+      "bundled_model": true,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    }
+  ],
+  "installation": {
+    "research_only": true,
+    "source_commit": "6e483aaf9e42889794ed77c272b8a912539cfc7c",
+    "installed_light_apk": true,
+    "installed_apk_sha256": "e57a9c57cec2bbac6e9912b2772c5fe155f14c4e09b55a69fc272e5fc91f9b61",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "before": {
+      "activeCheckpoint": "false",
+      "observe": "false",
+      "points": "100"
+    },
+    "permissions_changed": false,
+    "floating_permission_granted": false,
+    "ui_tested": false,
+    "overlay_tested": false,
+    "phone_commands_executed": 0,
+    "fresh_bundle_import_tested": false,
+    "npu_verified": false,
+    "device": {
+      "manufacturer": "Nothing",
+      "model": "A059",
+      "api": 36,
+      "soc": "SM7635"
+    },
+    "scope": "Update installation and identity only; phone asleep and own app not focused; no UI launched or permissions granted."
+  }
+}

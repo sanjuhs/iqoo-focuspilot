@@ -4,7 +4,25 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
-## Current research baseline — v0.8
+## Current research baseline — v0.9
+
+Source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds optional floating Mira with explicit reviewed
+Show, movable portrait, Open, Pause focus and Hide controls. The separate service
+requires user-granted overlay permission, visible floating notifications, unhidden
+artwork and an interactive unlocked phone. Permission return starts nothing.
+Hide/screen-off/lock/revocation stop the visual companion without pausing focus;
+Pause explicitly stops focus and its monitor. No new observation, microphone or
+model run is started. Existing consented accounting may flush at deadline/Pause.
+
+**127 JVM tests pass**, lint zero errors/62 warnings. Both signed APKs passed
+packaging inspection; light installed with matching installed APK/private-model
+hashes. No floating permission was granted or actual overlay UI tested: the phone
+was asleep/our app not focused. Qwen3.5, prompt, native runtime and command gate
+are unchanged. Logical project size **12.05 GiB**, within 15 GB.
+[Controls and proof gates](docs/floating-companion.md),
+[platform sources](docs/floating-companion-platform.md).
+
+## Previous research baseline — v0.8
 
 Use [natural commands](docs/natural-commands.md): one whole supported request,
 bounded English/digit slots and matching model intent, followed by explicit review.

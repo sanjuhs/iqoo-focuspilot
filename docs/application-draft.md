@@ -18,6 +18,14 @@ The Android research app packages Qwen3.5-0.8B Q4_0 and runs it through a pinned
 
 ## Current evidence and known limits
 
+- **v0.9 friendly companion:** original movable Mira plus explicitly reviewed Show,
+  Open/Pause focus/Hide controls. Overlay permission and usable notifications are
+  separately user-controlled; grant return starts nothing. Source `6e483aaf9e42889794ed77c272b8a912539cfc7c`
+  passes 127 JVM tests and lint zero errors/62 warnings; signed APKs inspected and
+  light installed with identity parity. Actual overlay grant/UI/touch/lifecycle is
+  pending, with no claim of uninterrupted always-on behavior. Model/gate unchanged.
+  [Floating contract](floating-companion.md).
+
 - **v0.8 command source:** friendly forms such as “Get back to work,” “Take a study break” and “Focus for twenty-five minutes” are supported by the model-facing gate when Qwen proposes the matching intent. English-number slots and explicit spoken AM/PM preserve bounded durations/clock times; extra prose requires clarification. **119 JVM tests pass**, lint has zero errors/59 warnings; both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes; physical v0.8 outcomes remain pending. The frozen 100-request/50-family host test improved generated-plus-gate strict correctness 64→72/100 with no wrong accepted proposals, but only 12/40 supported requests succeeded and 28/40 abstained; nine gains accompany six regressions. Qwen raw intent correctness remained 29/100, including zero unsupported model abstentions. These are host results, not autonomous reliability. [Contract](natural-commands.md).
 - **Historical v0.7 research build:** timed focus implementation accepts one duration written in digits from 1 second to 120 minutes, retains remaining time across pause/resume and recovers paused after process loss. Integrated build: **105 JVM tests**, zero lint errors and **59 warnings**. Actual v0.7 countdown verification is pending phone unlock/own-app foreground readiness. [Timer contract and artifact identity](timed-focus.md).
 - **Historical v0.6 phone proof:** exact source/APK/model/native identities bind typed Start and Pause to 17,323 ms and 1,814 ms. Both were reviewed and confirmed; session state changed active then paused. Alarm cancellation took 1,655 ms, was misclassified by Qwen and independently rejected. Usage stayed off, permissions were unchanged and the final virtual balance was 100. These are three observations, not p50/p95 or v0.7 timing evidence. [Phone report](command-readiness-phone.json).

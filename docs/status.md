@@ -2,6 +2,24 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Floating companion update — v0.9
+
+Source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds optional floating Mira with explicit reviewed
+Show, movable portrait, Open, Pause focus and Hide controls. The separate service
+requires user-granted overlay permission, visible floating notifications, unhidden
+artwork and an interactive unlocked phone. Permission return starts nothing.
+Hide/screen-off/lock/revocation stop the visual companion without pausing focus;
+Pause explicitly stops focus and its monitor. No new observation, microphone or
+model run is started. Existing consented accounting may flush at deadline/Pause.
+
+**127 JVM tests pass**, lint zero errors/62 warnings. Both signed APKs passed
+packaging inspection; light installed with matching installed APK/private-model
+hashes. No floating permission was granted or actual overlay UI tested: the phone
+was asleep/our app not focused. Qwen3.5, prompt, native runtime and command gate
+are unchanged. Logical project size **12.05 GiB**, within 15 GB.
+[Controls and proof gates](floating-companion.md),
+[platform sources](floating-companion-platform.md).
+
 ## Natural-command update 0.8
 
 - App source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3` adds full-request

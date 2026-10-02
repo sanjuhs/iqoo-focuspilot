@@ -4,6 +4,23 @@
 
 This standalone native Java application demonstrates a friendly original animated companion, bounded phone commands, a local focus timer, opt-in visible foreground monitoring and an explainable hand-set focus policy. **The model lab runs Qwen3.5-0.8B Q4_0 in the actual phone app process on CPU**, with checksummed local weights and optional selected-tensor observations. A separate trained 65-parameter policy lab exposes contributions and ablations on synthetic inputs. Accessibility, Snapdragon NPU and Office Kit remain pending. No internet permission or remote API keys are present.
 
+## Floating companion update 0.9
+
+Source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds a separate visual `specialUse` service.
+On the dashboard expand **Mira while you use your phone**, review Android overlay
+permission and visible notifications, return, then explicitly review **Show floating
+Mira**. Drag the portrait; Open returns to FocusPilot; Pause focus stops the session
+and its monitor; Hide leaves focus unchanged. Screen-off/lock/revocation ends the
+service and requires Show again. No automatic restart, wake lock, voice or model
+run. Prior-consented repository accounting may flush on a deadline or explicit Pause.
+
+127 JVM tests pass; lint zero errors/62 warnings. Signed light/bundled APKs passed
+identity/native/model/license/permission checks; light installed with APK/model
+hash parity. Actual floating UI/touch/lifecycle is untested, as the phone was asleep.
+Qwen3.5, native CPU runtime and v0.8 command gate remain unchanged.
+[Contract](../../docs/floating-companion.md),
+[artifact identities](../../docs/floating-companion-artifacts.json).
+
 ## Build and tests
 
 Java 17, Android SDK platform36, NDK28.2 and Gradle8.14 are required. The APK supports Android9/API28+ and ARM64; the optimized variant additionally needs DOTPROD/I8MM/FP16. Set `ANDROID_HOME` to your SDK, then:

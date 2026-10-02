@@ -3,12 +3,14 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current research build: v0.8**, source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`.
-Adds whole-request validation and bounded English-number duration/alarm slots,
-with explicit review. **119 JVM tests pass**; lint zero errors/59 warnings. Both
-APKs passed signature/model/native/license/permission inspection; light installed
-on Nothing with matching APK/private-model hashes. Physical command/countdown
-verification awaits an unlocked foreground app. [Contract and measured limits](docs/natural-commands.md).
+**Current research build: v0.9**, source `6e483aaf9e42889794ed77c272b8a912539cfc7c`.
+Adds optional movable Mira with reviewed Show and Open/Pause focus/Hide controls.
+Permission return starts nothing; screen-off/lock/revocation stop floating mode.
+**127 JVM tests pass**; lint zero errors/62 warnings. Both signed APKs passed
+packaging inspection; light installed with matching APK/private-model identities.
+Actual floating permission/UI/lifecycle proof is pending an unlocked phone and
+user-granted permission. Qwen3.5-0.8B Q4_0 and the v0.8 command gate are unchanged.
+[Companion contract and limits](docs/floating-companion.md).
 
 On a newly frozen 100-request test, unchanged Qwen + the gate correctly proposed
 **12/40 supported commands** versus 9/40, with **0/60 unsupported false accepts**
@@ -35,7 +37,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.8)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.9)
 are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
@@ -65,6 +67,7 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
 | [docs/research-pitch-script.md](docs/research-pitch-script.md) | Editable narration for the rendered research pitch |
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
+| [docs/floating-companion.md](docs/floating-companion.md) | Optional floating controls and actual device proof gates |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
 | [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
 | [docs/intent-head.md](docs/intent-head.md) | Trained representation classifier, same-set comparison and deployment limits |
