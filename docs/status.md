@@ -21,6 +21,12 @@ v0.14 and prior demo retain their historical behavior attribution.
 [Changes, physical scope and build procedure](companion-entry-v15.md),
 [package and sanitized installation identities](companion-entry-v15-artifacts.json).
 
+The [v0.15 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.15)
+publishes the light APK and evidence manifest. Both GitHub asset sizes/digests
+match local files, and the tag resolves to exact app source. Storage at this
+verification is about 14.42 GB, below the strict 15 GB limit.
+[Publication verification](companion-entry-v15-publication.json).
+
 ## Original-request validator — installed v0.14 research
 
 The unchanged Qwen3.5-0.8B Q4_0 capture feeds both gates on 100 fresh informed

@@ -1,0 +1,25 @@
+{
+  "kind": "GitHub metadata/asset digest publication verification, no runtime proof",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.15",
+  "release_id": 402195991,
+  "tag": "research-v0.15",
+  "source_commit": "c2062de0a46e3e16c2bf474a18f5b480d764daf5",
+  "prerelease": true,
+  "assets": [
+    {
+      "name": "companion-entry-v15-artifacts.json",
+      "bytes": 12886,
+      "sha256": "672162eace208cfd149dcc9df87cf4be565598ffb729adc067543d850943a3f3",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.15/companion-entry-v15-artifacts.json"
+    },
+    {
+      "name": "focuspilot-research-v015-entry-light.apk",
+      "bytes": 5513492,
+      "sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.15/focuspilot-research-v015-entry-light.apk"
+    }
+  ],
+  "project_bytes_at_verification": 14419682137,
+  "storage_limit_bytes": 15000000000,
+  "new_runtime_or_submission_proof": false
+}
