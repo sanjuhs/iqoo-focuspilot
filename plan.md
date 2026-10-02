@@ -1,28 +1,47 @@
 # FocusPilot delivery plan
 
-## Natural wording experiment — rejected; summary build in progress
+## Current focus snapshots — v0.16 light research
 
-The selected Qwen3.5-0.8B Q4_0 stays unchanged. A frozen grammar candidate
-improves fresh synthetic complete proposals only 3→5/50, below the fixed six-gain
-requirement; it remains off phone. All50 unknowns are refused with no wrong accepted
-slots in the sample, but conversational coverage remains poor. Independent actual-record
-and Java replay audits pass. No post-output repair or retry.
-[Evidence](docs/natural-command-research.md).
+Qwen3.5-0.8B Q4_0, its original prompt, validator and native library stay selected.
+New timed sessions record their original duration; reviewed status shows accumulated
+active time, remainder and genuine countdown progress. Legacy duration remains unknown;
+readback identifies the last reviewed snapshot. All 182 JVM tests and 12 installed
+Nothing in-memory summary fixtures pass, lint zero errors/64 warnings, signed package
+inspection passes. The light APK is installed with exact protected preference/model/
+grant snapshots preserved and the original test APK restored. Visible EXPLAIN,
+new-key persistence/migration, voice and floating still need real workflow checks.
+[Artifact, physical proof and limitations](docs/focus-summary-v16.md).
 
-Version16 separately packages honest focus summaries and original countdown-target
-metadata. Host182 JVM checks passed before packaging; final APK/install/12pure Android
-fixtures are still pending. Original model/prompt/gate/native and opt-in permissions
-remain selected. Live ASR/floating, actual iQOO/NPU, Office Kit and accepted eligible
-submission remain active requirements.
+A separately frozen natural grammar candidate improves fresh synthetic complete
+proposals only 3→5/50, below the fixed six-gain requirement; it stays out of the
+app. Independent actual-record/Java replay audits pass; no post-output repair/retry.
+[Measured result](docs/natural-command-research.md). Actual iQOO/NPU, Office Kit, live permissioned
+workflows and accepted eligible submission remain active requirements.
 
-## Balanced adapter result and next product work
+## Next execution order
+
+1. Exercise the installed app's visible reviewed summary, editable command handoff,
+   rotation/cancellation and local voice on an unlocked phone with user-granted
+   permissions. Then verify opt-in floating/monitor Stop and revocation behavior.
+   Keep the existing reliable typed/manual controls available for the demo.
+2. Improve conversational coverage as a separate research architecture task.
+   The fresh 3/50 baseline and 5/50 candidate result show that more enumerated
+   wording patterns are insufficient. Evaluate structured intent/slot extraction
+   and bounded validation behind the existing action-review path, with fresh
+   predeclared evaluation; do not reuse this now-seen cohort as a new holdout.
+3. Run the accepted command workflow on the actual iQOO device, measure backend
+   placement and fallback, and pair the official Office Kit bridge. Capture a
+   current 3–5 minute demo after real workflows pass. Complete authenticated
+   application/admission and an eligible event-window source/submission receipt.
+
+## Historical balanced adapter result
 
 The fixed Qwen3.5-0.8B experiment learns an audited 55,296-parameter adapter and
 improves native supported intent matches 41→48/50 with no semantic losses. Complete
 proposals 11→12/50 fail the locked four-gain requirement; gate oracle ceiling 12/50
-identifies the next validator bottleneck. Retain original installed v0.15. Next:
-independently evaluated whole-request validation and permissioned live companion/
-voice workflows, followed by actual iQOO/NPU/Office Kit and eligible submission.
+identifies the validator bottleneck at that experiment. The original model remains
+selected in installed v0.16; the later natural wording experiment above did not
+qualify a replacement validator.
 [Full measured result](docs/balanced-qwen-research.md).
 
 

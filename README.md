@@ -1,9 +1,5 @@
 # FocusPilot · meet Mira
 
-Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
-but complete proposals 11→12/50 fail the locked promotion criterion. The original
-v0.15 remains installed. [Measured result and limits](docs/balanced-qwen-research.md).
-
 A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.
@@ -13,10 +9,14 @@ tests establish CPU inference, typed commands, countdowns, paused recovery and t
 readback. v0.13 adds reviewed session reset, verified through 22 isolated Android
 checks with production state preserved. v0.14 improves whole-request validation
 and passes 334 actual Nothing pure gate checks with protected state preserved.
-v0.15 connects floating/notification Ask Mira and dashboard editable drafts to
-the foreground model screen; 165 JVM tests pass and the light APK installs with
-protected state preserved. Live entry/rotation, visible reset cancellation, voice,
+v0.15 connects floating/notification Ask Mira and editable drafts to the foreground
+model screen. **Installed v0.16** adds truthful reviewed focus snapshots and recorded
+countdown progress: **182 JVM tests and 12 installed-app pure summary checks pass**,
+with protected state preserved. [Evidence](docs/focus-summary-v16.md). Live entry/rotation, visible reset cancellation, voice,
 permissioned monitoring, iQOO NPU and Office Kit still need physical verification.
+
+Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
+but complete proposals 11→12/50 fail the locked promotion criterion. The selected original model remains installed; no adapter is promoted. [Measured result and limits](docs/balanced-qwen-research.md).
 
 The unchanged v0.13 app also completed ten synthetic Qwen CPU requests after
 Android denied socket creation: **16.83 s first request, then 1.48–2.43 s**.
@@ -24,10 +24,10 @@ Production state and the original test APK were restored. This is a bounded nati
 path diagnostic; the complete disconnected voice workflow remains pending.
 [Proof and limits](docs/network-isolation-phone.md).
 
-[Download research v0.15 light](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.15)
+[Download research v0.16 light](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.16)
 · [Standalone v0.14 bundle](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.14)
 · [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.15)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.16)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -37,7 +37,7 @@ path diagnostic; the complete disconnected voice workflow remains pending.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. Published v0.14/v0.15 packages use an
+The app supports Android 9/API 28+ on ARM64. Published v0.14/v0.16 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.
@@ -45,14 +45,14 @@ below. These are signed debug research packages, not a Play Store release.
 | Download | Size | Model setup |
 | --- | ---: | --- |
 | [Bundled v0.14 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-bundled.apk) | 568.54 MB | Historical entry flow. Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
-| [Light v0.15 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.15/focuspilot-research-v015-entry-light.apk) | 5.51 MB | New Ask Mira entry. Needs the developer model-preparation step below or the already prepared private model. |
+| [Light v0.16 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.16/focuspilot-research-v016-summary-light.apk) | 5.51 MB | Reviewed focus snapshots. Needs the developer model-preparation step below or the already prepared private model. |
 
-Verify downloaded bytes against the [v0.15 light manifest](docs/companion-entry-v15-artifacts.json)
+Verify downloaded bytes against the [v0.16 light manifest](docs/focus-summary-artifacts-v16.json)
 or [v0.14 bundle manifest](docs/command-gate-v14-artifacts.json).
-The v0.15 tag identifies app source `c2062de0a46e3e16c2bf474a18f5b480d764daf5`;
+The v0.16 tag identifies app source `78f8b2b05d89965daf57c2cfc95abc6b70daf4a1`;
 the v0.14 tag identifies `1eb2fb55bf0322237bce0bc04942cb0d6652ddcc`.
-Only light v0.15 is produced to keep project storage below 15 GB.
-[Entry behavior and verification limits](docs/companion-entry-v15.md).
+Only light v0.16 is produced to keep project storage below 15 GB.
+[Focus snapshots and verification limits](docs/focus-summary-v16.md).
 The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK

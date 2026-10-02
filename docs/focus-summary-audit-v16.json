@@ -1,0 +1,156 @@
+{
+  "schema": "focuspilot.focus_summary_delivery_audit.v1",
+  "status": "verified_with_stated_scope",
+  "source_commit": "78f8b2b05d89965daf57c2cfc95abc6b70daf4a1",
+  "audit_method": "Read existing records, APK bytes/DEX class definitions/signature/manifest, XML/lint and committed source; no tests, model calls, phone operations or source edits.",
+  "artifact_bindings": {
+    "docs/focus-summary-artifacts-v16.json": {
+      "sha256": "528cc9f38360612488a58d835cb6f30b636e22f359d2b67b8e8cf74e9f187730",
+      "bytes": 16954
+    },
+    "docs/focus-summary-phone-v16.json": {
+      "sha256": "cff432ba4ec3dd200adc9c18bfa021d0a931ddedc536339be8194b0e5e2c4760",
+      "bytes": 4014
+    },
+    "docs/focus-summary-v16.md": {
+      "sha256": "f6ecf2523044bbf1955085e59f0ff1cfa46bae4902b5ae5b8b95784a9e3b3ddd",
+      "bytes": 4887
+    },
+    "artifacts/focus-summary-v016-artifacts.json": {
+      "sha256": "528cc9f38360612488a58d835cb6f30b636e22f359d2b67b8e8cf74e9f187730",
+      "bytes": 16954
+    },
+    "artifacts/focus-summary-phone-v016.json": {
+      "sha256": "04dccfe4af805feee1ebca112bd1da6aeda1b7026545ac3b5c50f6eeb7a0231f",
+      "bytes": 4813
+    },
+    "artifacts/focus-summary-v016-build.log": {
+      "sha256": "c2332927854d21a57ac78c64aad7d7eb1b3ffd1e35b0f4ff48da1884bf0a4240",
+      "bytes": 5043
+    },
+    "artifacts/focuspilot-research-v016-summary-light.apk": {
+      "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+      "bytes": 5513492
+    },
+    "artifacts/focuspilot-research-v016-summary-test.apk": {
+      "sha256": "44863d655e84f7de54c4aa2d341b513f4becc1761f61050c02d1f9cdccc4bfe8",
+      "bytes": 67684
+    },
+    "artifacts/focuspilot-research-v013-reset-test.apk": {
+      "sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+      "bytes": 29334
+    },
+    "prototype/android/app/build/outputs/apk/debug/app-debug.apk": {
+      "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+      "bytes": 5513492
+    },
+    "prototype/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "sha256": "44863d655e84f7de54c4aa2d341b513f4becc1761f61050c02d1f9cdccc4bfe8",
+      "bytes": 67684
+    },
+    "prototype/android/app/build/reports/lint-results-debug.xml": {
+      "sha256": "d25d7b4ac9e6cae30ddf052907495ff802abdb8ea041941e2a295f6fea145e3f",
+      "bytes": 102998
+    }
+  },
+  "source_bindings_sha256": {
+    "prototype/android/app/build.gradle": "b38111f481043c7d8a3d44dcd1ba746127d4249f75afe20a2a6b7b0266e9383c",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusSession.java": "badbe9ba1cd268a9eae6ece47615e1e3626dc732b2ec98c18b8ea703c28ea82c",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java": "ed65af940cc2f6801e9bf9b046b445d6d60e56b38f8d56ebbfed06f481fce91e",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusStatusSummary.java": "31955a72772bb2c1abe25c16e7d5d0d9a0d2f3dd75d028660183cb06027f5580",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "6926342f9976a0a9afdbab79378046fcca26007f2c3babecf51a1d53858f02cb",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/FocusSummaryIsolationInstrumentation.java": "bb43158867ca5d7be613d2f3dca5ebec43aa2e7614bae91a0c9fbb0501d4f577",
+    "scripts/phone_focus_summary.py": "8cda8babd5d2bb002f824cd2d5a698993844e18ccb6720e0ebe87990fd437dfa",
+    "scripts/test_phone_focus_summary.py": "35c94f391468f34b811b00ccb936adfd7b6706938d41e42e2d8e4eb9a91bc57e"
+  },
+  "unchanged_originals_from_commit": "c17c8a86b17ce590000c6a45c9796116641e9962",
+  "unchanged_originals_sha256": {
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "prototype/native/core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "prototype/native/jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "prototype/native/intent.gbnf": "b9426549188c9e393dd285a44ec13ec32d4e9ecb3bfc65e1194d869d002798f4",
+    "prototype/native/java/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/native/build-android.sh": "cef79f8c2662d18cdfbc7747b9ce761e0ad85049c8d2fb4cf447654f1d84abef",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15"
+  },
+  "xml_report_bindings_sha256": {
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.BudgetPersonalizationIntegrationTest.xml": "5f3b1b39ae5f8885cd4dd3473a395aeeed3c2009b398c39a346b8ab27a585ff6",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CandidateGateTest.xml": "00b51e239f7c5b59f318c4b14919c0e6b5369eb6eae763af3f22dfeb4f5c7168",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CommandDraftHandoffTest.xml": "9cdea001a811c6f1744283c8abae1726de551944c5e68b38fae266bd7d9b074d",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CommandNumberWordsTest.xml": "2ef9c821f20e8f6ca0cf5bd50226307c5b4fa6a072f37d882a53d7723a41cd67",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ConversationalCommandGateTest.xml": "e1fd068b298af91d17380b69d1516beeb79ded43f1754103671fb0fff4a893da",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CoreTest.xml": "c0acaab06040e73b6a1d6308a6c83b8b73a5b29df7d5d9b08b47f843368b9020",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CountdownProgressMetadataTest.xml": "6e0bc3707bf173695b752658fbd85a2166c147bc19acffc5960054012b135d0f",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FewShotPolicyTest.xml": "ef03de0e1ef5a69cf2feb8e35fef55978ef3712e466b26da83aeddd5ab7bce8e",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FloatingWindowPositionTest.xml": "745384af0aa2a45119cc373a743870f65d69d485b07d64ed4fc329b57b9a8014",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FocusDataExportTest.xml": "6b8ca611b86a97e51bca27a922f13843ce113101966c72cea704422972e2ae06",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FocusGoalConfigTest.xml": "724e5f779449ee72c92da484e8260c50791acdab69b5f2176356c2bb7c040f20",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FocusStatusSummaryTest.xml": "a98d9168a4e6392271558e94219d809ac16db97ea81dc41350661863306a1bc6",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.LivePreferencePolicyTest.xml": "cad96887d753eaff9e3bcb5f8b07be3bda3e22d086756a224ef4b5ea6489c65b",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ModelCommandGateTest.xml": "2766a3357548ebe4f941b908ef22d743df3696512f65d1d8d2fd2e686c439aa3",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.MonitorLifecycleTest.xml": "2adb4abccb88d353ab7fb6081770abef4eb8001481b79c5119763512b3463d7e",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.NaturalCommandGateTest.xml": "9e47ba003f36ee5009c3013e3102443971dc4d63a91d3636a774a167dbb6567d",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ObservationSnapshotTest.xml": "1b0a8c46dd93bc82726647b4b222d2f70ee84c20590dc8ec176bc01695902867",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ObservedNudgeGateTest.xml": "a4f332c398315952751b51ae45700584d3ebf845c10d670830f5a03e72272073",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ReadbackStateTest.xml": "6aeb2e1b597cfde19030389843efa5cd471cae8b4263cede0bc1f0dadf52b936",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.RetainedForegroundLabelPolicyTest.xml": "1d692ee5b2dfd386443e453462916a8618bf1e652f8ae5a27a14e067818a88cf",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.SandboxActionGateTest.xml": "c146c5e894f30df5ef52a67379fe03f7735b22bea792f466ec248e43b04c29a7",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TaskPlanTest.xml": "2da9314233ec947ed0f25c2a4cc9e38d1222feb834ad75727f28ab19778ed6b8",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TimedFocusSessionTest.xml": "d1182bf6c057516b9889ffc95a6afd988a254b69fc0b7aa54c21733c409f4bb3",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TrainedPolicyTest.xml": "a1500b27e5f57b5547c77746b28f418c6ccb050859b5a3f026b03901033d1013",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.VoiceDraftStateTest.xml": "62137bde08a5735de8e2bbd81b5f5a25bece0b810cb04dd9093b81d3f4efcf44"
+  },
+  "verification": {
+    "host_xml_reports": 25,
+    "host_test_counts": {
+      "tests": 182,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint_errors": 0,
+    "lint_warnings": 64,
+    "packaged_version_code": 16,
+    "packaged_version_name": "0.16-focus-summary-research",
+    "apk_v2_signature_verified": true,
+    "seven_declared_permissions_match": true,
+    "internet_permission_absent": true,
+    "six_notices_present": true,
+    "native_library_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+    "bundled_model": false,
+    "build_apks_match_archived_apks": true,
+    "test_dex_defines_instrumentation_only_not_target_session_or_summary": true,
+    "light_dex_defines_target_session_and_summary": true,
+    "actual_instrumentation_report_checks": 12,
+    "actual_instrumentation_report_matches_public_record": true,
+    "actual_instrumentation_sha256": "30d2e616eae516ce7acb7a5c59a3960cba742c2507e80c6c4151564b7e9f0967",
+    "protected_recorded_before_after_equal": true,
+    "preferences_comparison": "Three named preference existence and semantic SHA identities; no byte-for-byte preference claim.",
+    "recorded_model_identity_unchanged": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "recorded_grants_unchanged": true,
+    "recorded_services_absent": true,
+    "recorded_original_test_restored": true,
+    "recorded_light_v16_left_installed": true,
+    "recorded_permission_grants": 0,
+    "recorded_activity_launch_wake_model_or_tool_execution": false,
+    "instrumentation_restarts_target_process": true,
+    "prior_activity_lifecycle_preserved": false,
+    "public_phone_record_matches_private_record": true,
+    "documentation_scope_review": "No unsupported extension to persistence, visible EXPLAIN/readback, ASR/services/Clock, NPU, Office Kit or eligibility found."
+  },
+  "limitations": [
+    "Captured past-run installed identity and protected snapshots are audited; current phone state was not queried.",
+    "Twelve checks cover installed pure classes with synthetic clocks and in-memory objects only; no production persistence or UI evidence.",
+    "Host XML and lint are actual reports bound by hashes; no rebuild or test rerun was performed. Three previously reported harness boundary tests are not re-executed by this audit.",
+    "Model identity is the captured private-model identity, not a new model load or hash read on the phone."
+  ]
+}

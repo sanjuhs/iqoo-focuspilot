@@ -1,0 +1,108 @@
+{
+  "schema": "focuspilot.focus_summary_phone.v1",
+  "source_commit": "78f8b2b05d89965daf57c2cfc95abc6b70daf4a1",
+  "harness_sha256": "8cda8babd5d2bb002f824cd2d5a698993844e18ccb6720e0ebe87990fd437dfa",
+  "before": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true
+  },
+  "previous_app_sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76",
+  "light_apk_sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+  "test_apk_sha256": "44863d655e84f7de54c4aa2d341b513f4becc1761f61050c02d1f9cdccc4bfe8",
+  "restore_test_apk_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "permission_grants": 0,
+  "ui_started": false,
+  "phone_woken": false,
+  "model_inference": false,
+  "passed": true,
+  "original_test_restored": true,
+  "report": {
+    "schema": "focuspilot.focus_summary_isolation.v1",
+    "passed": true,
+    "checks": 12,
+    "expected_checks": 12,
+    "failed_fixture_ids": [],
+    "failure_type": null,
+    "session_class": "dev.focuspilot.prototype.FocusSession",
+    "summary_class": "dev.focuspilot.prototype.FocusStatusSummary",
+    "scope": "Installed target pure classes; fixed synthetic clocks and in-memory objects only; no persistence, process recovery, UI, permission or model proof",
+    "actions_executed": 0,
+    "model_accessed": false,
+    "production_preferences_accessed": false,
+    "production_singleton_used": false,
+    "services_started": false
+  },
+  "after": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true
+  },
+  "protected_state_unchanged": true,
+  "installed_app_sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+  "project_logical_bytes_after": 14436384650,
+  "private_record_sha256": "04dccfe4af805feee1ebca112bd1da6aeda1b7026545ac3b5c50f6eeb7a0231f",
+  "private_instrumentation_sha256": "30d2e616eae516ce7acb7a5c59a3960cba742c2507e80c6c4151564b7e9f0967",
+  "scope": "Installed pure target classes with fixed clocks/in-memory state; no product UI, model, voice, persistence/process-recovery or service workflow.",
+  "instrumentation_restarts_target_process": true,
+  "prior_activity_lifecycle_preserved": false,
+  "light_v16_left_installed": true,
+  "legacy_production_preferences_migrated": false,
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+}

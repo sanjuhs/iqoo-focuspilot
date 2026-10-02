@@ -1,5 +1,12 @@
 # Remaining deliverables — full-scope audit
 
+**Latest v0.16 update:** reviewed focus snapshots/recorded countdown targets are
+built and installed; 182 JVM and 12 installed-app pure checks pass with protected
+state preserved. Actual foreground summary, new-key persistence/migration, voice
+and floating lifecycle remain pending. The fresh natural grammar candidate is
+rejected (3→5/50 complete), so unrestricted conversational coverage remains poor.
+[Evidence and limits](focus-summary-v16.md), [next execution order](../plan.md).
+
 **Later v0.14 gate-only confirmation:** one unchanged Qwen capture improves complete
 supported proposals 13→32/50 on 100 fresh informed synthetic requests, with 19 gains,
 no losses and no observed incorrect accepts. Oracle coverage reaches 50/50, but

@@ -1,19 +1,22 @@
 # Verified status
 
-## Natural wording experiment — rejected; summary build in progress
+## Current focus snapshots — v0.16 light research
 
-The selected Qwen3.5-0.8B Q4_0 stays unchanged. A frozen grammar candidate
-improves fresh synthetic complete proposals only 3→5/50, below the fixed six-gain
-requirement; it remains off phone. All50 unknowns are refused with no wrong accepted
-slots in the sample, but conversational coverage remains poor. Independent actual-record
-and Java replay audits pass. No post-output repair or retry.
-[Evidence](natural-command-research.md).
+Qwen3.5-0.8B Q4_0, its original prompt, validator and native library stay selected.
+New timed sessions record their original duration; reviewed status shows accumulated
+active time, remainder and genuine countdown progress. Legacy duration remains unknown;
+readback identifies the last reviewed snapshot. All 182 JVM tests and 12 installed
+Nothing in-memory summary fixtures pass, lint zero errors/64 warnings, signed package
+inspection passes. The light APK is installed with exact protected preference/model/
+grant snapshots preserved and the original test APK restored. Visible EXPLAIN,
+new-key persistence/migration, voice and floating still need real workflow checks.
+[Artifact, physical proof and limitations](focus-summary-v16.md).
 
-Version16 separately packages honest focus summaries and original countdown-target
-metadata. Host182 JVM checks passed before packaging; final APK/install/12pure Android
-fixtures are still pending. Original model/prompt/gate/native and opt-in permissions
-remain selected. Live ASR/floating, actual iQOO/NPU, Office Kit and accepted eligible
-submission remain active requirements.
+A separately frozen natural grammar candidate improves fresh synthetic complete
+proposals only 3→5/50, below the fixed six-gain requirement; it stays out of the
+app. Independent actual-record/Java replay audits pass; no post-output repair/retry.
+[Measured result](natural-command-research.md). Actual iQOO/NPU, Office Kit, live permissioned
+workflows and accepted eligible submission remain active requirements.
 
 ## Balanced Qwen3.5 LoRA — measured, not promoted
 

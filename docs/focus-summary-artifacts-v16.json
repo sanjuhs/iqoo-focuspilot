@@ -1,0 +1,444 @@
+{
+  "schema": "focuspilot.focus_summary_artifacts.v1",
+  "source_commit": "78f8b2b05d89965daf57c2cfc95abc6b70daf4a1",
+  "light": {
+    "bytes": 5513492,
+    "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+    "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+    "bundled_model": false,
+    "version_code": 16,
+    "version_name": "0.16-focus-summary-research"
+  },
+  "test_apk": {
+    "bytes": 67684,
+    "sha256": "44863d655e84f7de54c4aa2d341b513f4becc1761f61050c02d1f9cdccc4bfe8"
+  },
+  "inspection": {
+    "identity": {
+      "status": "verified",
+      "scope": "local byte identity against declared manifest",
+      "observed": {
+        "bytes": 5513492,
+        "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b"
+      },
+      "declared": {
+        "bytes": 5513492,
+        "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b"
+      }
+    },
+    "runtime_verified": false,
+    "android_payload_present": true,
+    "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+    "native_hash_parity": true,
+    "licenses": {
+      "FocusPilot-MIT.txt": true,
+      "Qwen3.5-Apache-2.0.txt": true,
+      "llama.cpp-MIT.txt": true,
+      "KleidiAI-Apache-2.0.txt": true,
+      "KleidiAI-BSD-3-Clause.txt": true,
+      "KleidiAI-notices.txt": true
+    },
+    "model_files": [],
+    "bundle_presence_parity": true,
+    "permissions": [
+      "android.permission.PACKAGE_USAGE_STATS",
+      "android.permission.RECORD_AUDIO",
+      "com.android.alarm.permission.SET_ALARM",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.FOREGROUND_SERVICE",
+      "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+      "android.permission.SYSTEM_ALERT_WINDOW"
+    ],
+    "package_identity": true,
+    "internet_absent": true,
+    "permission_scope": "parsed from packaged APK, not user permission grants",
+    "version_parity": true,
+    "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+    "status": "verified"
+  },
+  "host_verification": {
+    "scope": "host XML reports only; no APK/source digest binding",
+    "reports": [
+      {
+        "file": "TEST-dev.focuspilot.prototype.BudgetPersonalizationIntegrationTest.xml",
+        "sha256": "5f3b1b39ae5f8885cd4dd3473a395aeeed3c2009b398c39a346b8ab27a585ff6",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837995+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.726Z",
+        "counts": {
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.CandidateGateTest.xml",
+        "sha256": "00b51e239f7c5b59f318c4b14919c0e6b5369eb6eae763af3f22dfeb4f5c7168",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837491+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.733Z",
+        "counts": {
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.CommandDraftHandoffTest.xml",
+        "sha256": "9cdea001a811c6f1744283c8abae1726de551944c5e68b38fae266bd7d9b074d",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837395+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.758Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.CommandNumberWordsTest.xml",
+        "sha256": "2ef9c821f20e8f6ca0cf5bd50226307c5b4fa6a072f37d882a53d7723a41cd67",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838144+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.761Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.ConversationalCommandGateTest.xml",
+        "sha256": "e1fd068b298af91d17380b69d1516beeb79ded43f1754103671fb0fff4a893da",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837532+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.762Z",
+        "counts": {
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.CoreTest.xml",
+        "sha256": "c0acaab06040e73b6a1d6308a6c83b8b73a5b29df7d5d9b08b47f843368b9020",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837664+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.767Z",
+        "counts": {
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.CountdownProgressMetadataTest.xml",
+        "sha256": "6e0bc3707bf173695b752658fbd85a2166c147bc19acffc5960054012b135d0f",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837393+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.769Z",
+        "counts": {
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.FewShotPolicyTest.xml",
+        "sha256": "ef03de0e1ef5a69cf2feb8e35fef55978ef3712e466b26da83aeddd5ab7bce8e",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838107+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.770Z",
+        "counts": {
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.FloatingWindowPositionTest.xml",
+        "sha256": "745384af0aa2a45119cc373a743870f65d69d485b07d64ed4fc329b57b9a8014",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838116+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.773Z",
+        "counts": {
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.FocusDataExportTest.xml",
+        "sha256": "6b8ca611b86a97e51bca27a922f13843ce113101966c72cea704422972e2ae06",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837522+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.774Z",
+        "counts": {
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.FocusGoalConfigTest.xml",
+        "sha256": "724e5f779449ee72c92da484e8260c50791acdab69b5f2176356c2bb7c040f20",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837505+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.780Z",
+        "counts": {
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.FocusStatusSummaryTest.xml",
+        "sha256": "a98d9168a4e6392271558e94219d809ac16db97ea81dc41350661863306a1bc6",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837550+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.782Z",
+        "counts": {
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.LivePreferencePolicyTest.xml",
+        "sha256": "cad96887d753eaff9e3bcb5f8b07be3bda3e22d086756a224ef4b5ea6489c65b",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837760+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.783Z",
+        "counts": {
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.ModelCommandGateTest.xml",
+        "sha256": "2766a3357548ebe4f941b908ef22d743df3696512f65d1d8d2fd2e686c439aa3",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838144+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.789Z",
+        "counts": {
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.MonitorLifecycleTest.xml",
+        "sha256": "2adb4abccb88d353ab7fb6081770abef4eb8001481b79c5119763512b3463d7e",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837776+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.793Z",
+        "counts": {
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.NaturalCommandGateTest.xml",
+        "sha256": "9e47ba003f36ee5009c3013e3102443971dc4d63a91d3636a774a167dbb6567d",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837494+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.794Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.ObservationSnapshotTest.xml",
+        "sha256": "1b0a8c46dd93bc82726647b4b222d2f70ee84c20590dc8ec176bc01695902867",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837764+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.796Z",
+        "counts": {
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.ObservedNudgeGateTest.xml",
+        "sha256": "a4f332c398315952751b51ae45700584d3ebf845c10d670830f5a03e72272073",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837921+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.798Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.ReadbackStateTest.xml",
+        "sha256": "6aeb2e1b597cfde19030389843efa5cd471cae8b4263cede0bc1f0dadf52b936",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837846+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.798Z",
+        "counts": {
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.RetainedForegroundLabelPolicyTest.xml",
+        "sha256": "1d692ee5b2dfd386443e453462916a8618bf1e652f8ae5a27a14e067818a88cf",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838126+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.799Z",
+        "counts": {
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.SandboxActionGateTest.xml",
+        "sha256": "c146c5e894f30df5ef52a67379fe03f7735b22bea792f466ec248e43b04c29a7",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837368+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.800Z",
+        "counts": {
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.TaskPlanTest.xml",
+        "sha256": "2da9314233ec947ed0f25c2a4cc9e38d1222feb834ad75727f28ab19778ed6b8",
+        "observed_mtime_utc": "2026-10-02T23:19:33.837464+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.801Z",
+        "counts": {
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.TimedFocusSessionTest.xml",
+        "sha256": "d1182bf6c057516b9889ffc95a6afd988a254b69fc0b7aa54c21733c409f4bb3",
+        "observed_mtime_utc": "2026-10-02T23:19:33.836900+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.805Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.TrainedPolicyTest.xml",
+        "sha256": "a1500b27e5f57b5547c77746b28f418c6ccb050859b5a3f026b03901033d1013",
+        "observed_mtime_utc": "2026-10-02T23:19:33.838075+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.806Z",
+        "counts": {
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      },
+      {
+        "file": "TEST-dev.focuspilot.prototype.VoiceDraftStateTest.xml",
+        "sha256": "62137bde08a5735de8e2bbd81b5f5a25bece0b810cb04dd9093b81d3f4efcf44",
+        "observed_mtime_utc": "2026-10-02T23:19:33.836901+00:00",
+        "declared_suite_timestamp": "2026-10-02T23:19:33.812Z",
+        "counts": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "case_count_parity": true,
+        "failure_child_parity": true
+      }
+    ],
+    "totals": {
+      "tests": 182,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "status": "verified",
+    "lint": {
+      "sha256": "d25d7b4ac9e6cae30ddf052907495ff802abdb8ea041941e2a295f6fea145e3f",
+      "errors": 0,
+      "warnings": 64,
+      "scope": "host lint report only"
+    }
+  },
+  "build_log_sha256": "c2332927854d21a57ac78c64aad7d7eb1b3ffd1e35b0f4ff48da1884bf0a4240",
+  "project_logical_bytes": 14436366057,
+  "bundled_v16_created": false,
+  "bundled_note": "Two-copy bundle reserve exceeds remaining storage; historical v14 bundle retained.",
+  "physical_summary_verified": false,
+  "sources_sha256": {
+    "prototype/android/app/build.gradle": "b38111f481043c7d8a3d44dcd1ba746127d4249f75afe20a2a6b7b0266e9383c",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusSession.java": "badbe9ba1cd268a9eae6ece47615e1e3626dc732b2ec98c18b8ea703c28ea82c",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java": "ed65af940cc2f6801e9bf9b046b445d6d60e56b38f8d56ebbfed06f481fce91e",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusStatusSummary.java": "31955a72772bb2c1abe25c16e7d5d0d9a0d2f3dd75d028660183cb06027f5580",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "6926342f9976a0a9afdbab79378046fcca26007f2c3babecf51a1d53858f02cb",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/FocusSummaryIsolationInstrumentation.java": "bb43158867ca5d7be613d2f3dca5ebec43aa2e7614bae91a0c9fbb0501d4f577",
+    "scripts/phone_focus_summary.py": "8cda8babd5d2bb002f824cd2d5a698993844e18ccb6720e0ebe87990fd437dfa",
+    "scripts/test_phone_focus_summary.py": "35c94f391468f34b811b00ccb936adfd7b6706938d41e42e2d8e4eb9a91bc57e"
+  }
+}
