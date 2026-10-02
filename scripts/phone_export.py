@@ -91,10 +91,16 @@ class Picker:
         record_metadata('drawer_control_metadata',self.metadata())
         roots=next((n for n in self.tree_root.iter('node') if n.get('resource-id')==PROVIDER+':id/roots_list'),None)
         if roots is None: raise RuntimeError('System roots drawer not identified; no destination chosen')
-        candidates=[n for n in roots.iter('node') if n.get('resource-id')==PROVIDER+':id/item_root'
-                    and any(child.get('text')=='Downloads' for child in n.iter('node'))]
+        candidates=[n for n in roots.iter('node') if n.get('resource-id')=='android:id/title'
+                    and n.get('class')=='android.widget.TextView' and n.get('text')=='Downloads']
         if len(candidates)!=1: raise RuntimeError('Unique local Downloads root not identified; no destination chosen')
-        self.tap_node(candidates[0])
+        # Actual drawer titles use android:id/title; their clickable row has no ID.
+        # Stay inside the observed roots_list rather than selecting any directory title.
+        parents={child:parent for parent in roots.iter() for child in parent}
+        row=candidates[0]
+        while row is not roots and row.get('clickable')!='true': row=parents[row]
+        if row is roots: raise RuntimeError('Downloads root has no bounded clickable row')
+        self.tap_node(row)
         nodes=self.nodes()
         filename=next((n for n in nodes if n.get('class')=='android.widget.EditText' and n.get('text')=='focuspilot-private-summary.json'),None)
         if filename is None: raise RuntimeError('Expected synthetic filename editor not identified')
@@ -112,6 +118,7 @@ class Picker:
         if subprocess.run(self.lab.base+['shell','test','-e',REMOTE],capture_output=True).returncode!=1:
             raise RuntimeError('Test destination collision or uncertain absence; no Save')
         self.tap_node(save)
+        record_metadata('local_save_tapped',True)
 
 
 def main():
