@@ -291,7 +291,10 @@ def main():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']
-   return {'public':not info['private'],'license':info['license']['spdx_id'],'url':info['html_url'],'remote_main':main,'local_head':head,'head_parity':main==head,'v04_tag':tag,'assets':findings,'required_asset_presence':required,'scope':'server metadata and committed source refs; uncommitted work is not backed up by head parity'}
+   v10_tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.10']))['object']
+   v10_source=v10_tag['sha']
+   if v10_tag['type']=='tag':v10_source=json.loads(command(['gh','api',f'repos/{repo}/git/tags/{v10_source}']))['object']['sha']
+   return {'public':not info['private'],'license':info['license']['spdx_id'],'url':info['html_url'],'remote_main':main,'local_head':head,'head_parity':main==head,'v04_tag':tag,'v10_app_source':v10_source,'v10_source_tag_parity':v10_source==v10.get('source_commit'),'assets':findings,'required_asset_presence':required,'scope':'server metadata and committed source refs; uncommitted work is not backed up by head parity'}
   audit.check('github',github)
  else:audit.result['checks']['github']={'status':'incomplete','reason':'not queried; use --live-github for read-only public metadata'}
  print(json.dumps(audit.result,indent=2))

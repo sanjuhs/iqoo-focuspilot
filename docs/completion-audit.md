@@ -41,6 +41,10 @@ including ignored models/builds/releases; pre-existing shared SDK/cache excluded
 [identities](conversational-commands-artifacts.json),
 [full outstanding scope](remaining-deliverables.md).
 
+The [0.10 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
+contains both APKs and the immutable manifest with matching server size/digest
+and exact app-source tag. This establishes public package backup only.
+
 ## Previous 0.9 addition
 
 App source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds the independent optional floating visual

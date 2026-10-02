@@ -39,11 +39,14 @@ pending. Prior build outcomes retain their historical binary/source attribution.
 
 Measured project files total **13,511,076,286 bytes = 13.511 GB = 12.583 GiB**,
 below the strict decimal 15 GB limit. This includes ignored project files and
-excludes pre-existing shared SDK/`.gradle` caches; it is not peak RAM. Publication
-of the v0.10 research release is **pending root**, not yet a published-delivery claim.
+excludes pre-existing shared SDK/`.gradle` caches; it is not peak RAM. The
+[v0.10 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
+is published: all three server sizes/SHA-256 digests match local artifacts and
+the tag resolves to the exact app-source revision above. Publication does not
+establish physical execution or submission acceptance.
 
 [Command selection and confirmation](docs/conversational-commands.md),
-[planned artifact manifest](docs/conversational-commands-artifacts.json) (root preparing),
+[immutable artifact manifest](docs/conversational-commands-artifacts.json),
 [full remaining deliverables](docs/remaining-deliverables.md).
 
 ## Previous checkpoint — v0.9

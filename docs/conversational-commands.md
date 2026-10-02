@@ -90,3 +90,9 @@ describes its evaluation run; this later source/package selection ships only the
 gate, not either rejected prompt or new model parameters. Logical project files
 total 13.511 decimal GB (12.583 GiB), including ignored builds/models/releases;
 pre-existing shared developer SDK/Gradle caches are outside that measured scope.
+
+The [0.10 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
+publishes both APKs and the immutable manifest. All three server sizes/SHA-256
+digests match local files; the release tag resolves to the app-source SHA above.
+This checks public metadata/byte parity, without a remote binary download or
+physical test. Older releases remain preserved.
