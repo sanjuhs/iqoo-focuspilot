@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "purpose": "Source-bound values for a v0.10 animated research video; animation is explanation, not live phone proof.",
+  "evidence_as_of": "2026-10-02",
+  "repository_snapshot_commit": "0e171ec0ae1fb3877fa59b362fe5b5d2c9749d9d",
+  "sources": {
+    "prototype/command-v10-confirm/results.json": {
+      "sha256": "f559ae877ac392b3a2535a3a392b35ef99bd699974d5d5c9340386556c78af8e",
+      "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36"
+    },
+    "prototype/command-v10-confirm/protocol.json": {
+      "sha256": "b90ae62b6e637dbe85477107a65b0079f3c99c3fd23a83ab6c4ae652a8dcbf4f",
+      "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36"
+    },
+    "prototype/command-v10-confirm/freeze-manifest.json": {
+      "sha256": "c51b7fe96efeb7f6552d4b20d40caf3d5897184c53ef1419a993aec72dba1e81",
+      "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36"
+    },
+    "docs/conversational-commands-artifacts.json": {
+      "sha256": "7cf7cca133d31bf68048643594aaf824b28956679729832c8f550d9b2e156e92",
+      "source_commit": "ae3d5053c4bd453697acaa300bbc29e437b32ee6"
+    },
+    "docs/command-readiness-phone.json": {
+      "sha256": "53a160bc7c840968c11d322780b51dbb114849cc8ce0a99d0ead3e8c4825ba43",
+      "source_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4"
+    },
+    "prototype/policy/synthetic-model-results.json": {
+      "sha256": "c53df744e75e5ab0ebe0f2f37da0b743c57bb42e1e44e56e210fe71f61123123",
+      "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238"
+    },
+    "prototype/policy/synthetic-model.json": {
+      "sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+      "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238"
+    },
+    "prototype/policy/java-export-results.json": {
+      "sha256": "fc82cde6c3c67ff58266f208c72b6260c05fe07c9827fd02da36de2e3a7c4628",
+      "source_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6"
+    },
+    "docs/live-policy-evidence.md": {
+      "sha256": "e6e20e6482a53927717527131fc5118422c06180e25005e6ff57476a95609246",
+      "source_commit": "3bcf8a8af6d9e0ad380470afd96f2c6619e93311"
+    },
+    "prototype/interpretability/summary.json": {
+      "sha256": "ff14e0f9bc4f476d8636bc8887ae67be37e452aa242eb52bfde6af77e7777422",
+      "source_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6"
+    },
+    "prototype/interpretability/protocol.json": {
+      "sha256": "52ce962a0d7bd54b72dc19184ae4b5f435b25cd60e1380f4e4c190c89da95958",
+      "source_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6"
+    },
+    "docs/bridge-java-interop.json": {
+      "sha256": "f651247273a7b8c87ce4f6a4deb6a3134ae716cdc9ad02f6d8723cdc771aa34d",
+      "source_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4"
+    },
+    "docs/officekit-export-workflow.md": {
+      "sha256": "49f9c7c497b1a7a10e43a4ab862404cf1fc5d7aaca8f857b35655946b084f6a5",
+      "source_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4"
+    },
+    "docs/remaining-deliverables.md": {
+      "sha256": "a1ac79c479cdaa271f916137e3a929423a60fbd6f300102e11d13dbae1089ed9",
+      "source_commit": "0e171ec0ae1fb3877fa59b362fe5b5d2c9749d9d"
+    },
+    "prototype/qwen/model-manifest.json": {
+      "sha256": "d2b7f8e104ab2efe2bdfce375d2a32e5fd59d4929af145fddcff2375e83a71f9",
+      "source_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6"
+    },
+    "prototype/command-v10-confirm/README.md": {
+      "sha256": "fccea68dea19983f85f4b43fb7729ca59ce18ea9b162456e8ba09422c2ac2b92",
+      "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36"
+    }
+  },
+  "current_app": {
+    "version": "0.10",
+    "version_name": "0.10-conversational-gate-research",
+    "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+    "research_only": true,
+    "android_jvm_tests": 133,
+    "lint_errors": 0,
+    "lint_warnings": 62,
+    "artifact_audit_tests": 11,
+    "backend": "CPU/KleidiAI I8MM; optimized ARM64 hardware required",
+    "npu_verified": false,
+    "model_name": "Qwen3.5-0.8B Q4_0",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "model_bytes": 563036064,
+    "model_changed": false,
+    "prompt_changed": false,
+    "native_changed": false,
+    "gate_changed": true,
+    "gate_sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "prompt_adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "artifacts": [
+      {
+        "name": "focuspilot-research-v010-light.apk",
+        "bytes": 5480648,
+        "sha256": "a1a85e70f5d459df6e73b4294dcbeed81518489fe419b30729333ec11e083103",
+        "bundled_model": false,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "internet_permission": false
+      },
+      {
+        "name": "focuspilot-research-v010-bundled.apk",
+        "bytes": 568516824,
+        "sha256": "1cb5678781ca3a4aa63f462d445b05516d93f1d363e78f6e2a05f7f46a777bf0",
+        "bundled_model": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "internet_permission": false
+      }
+    ],
+    "installed_light_identity_verified": true,
+    "current_phone_commands_executed": 0,
+    "phone_scope": "Update installation and byte identity only; no display wake, UI launch, command, permission grant or observation change.",
+    "current_phone_ui_tested": false,
+    "virtual_points": 100,
+    "points_are_money": false,
+    "focus_paused": true,
+    "observation_enabled": false,
+    "permissions_changed": false,
+    "fresh_bundle_import_tested": false,
+    "overlay_tested": false,
+    "source_paths": [
+      "docs/conversational-commands-artifacts.json",
+      "prototype/qwen/model-manifest.json"
+    ]
+  },
+  "commands": {
+    "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+    "scope": "Fresh frozen synthetic host CPU confirmation, same informed author; one OLD-prompt capture shared by two gates, no phone actions or human/voice sampling.",
+    "baseline": 15,
+    "selected": 31,
+    "supported_total": 50,
+    "false_abstentions": 19,
+    "unsupported_total": 50,
+    "rejected_unsupported": 50,
+    "wrong_accepted": 0,
+    "wrong_accepted_slots": 0,
+    "strict_correct": 81,
+    "total": 100,
+    "paired_gains": 16,
+    "paired_losses": 0,
+    "raw_correct": 36,
+    "raw_total": 100,
+    "raw_supported_correct": 35,
+    "raw_supported_total": 50,
+    "raw_unknown_correct": 1,
+    "raw_unknown_total": 50,
+    "raw_unknown_tool_proposals": 49,
+    "schema_eos_valid": 100,
+    "oracle_supported_correct": 45,
+    "oracle_supported_total": 50,
+    "oracle_false_abstentions": 5,
+    "families": 50,
+    "data_sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+    "request_tsv_sha256": "deb041616ebe7424752481d3f7091e872a1d57b5e4cd17934a18a32e486f5e36",
+    "results_sha256": "f559ae877ac392b3a2535a3a392b35ef99bd699974d5d5c9340386556c78af8e",
+    "model_output_sha256": "be6e34b67f6490a17dbbd14e6e2404988faf68cc70f43e2e91d8364ce5ce8284",
+    "exact_prior_overlap": 0,
+    "normalized_prior_overlap": 0,
+    "prior_inventory_texts": 675,
+    "host_cpu_load_ms": 431.894667,
+    "host_cpu_first_native_ms": 465.99242,
+    "host_cpu_subsequent_native_median_ms": 454.5255,
+    "prompt_tokens_median": 163.0,
+    "native_host_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "native_capture_count": 1,
+    "universal_safety_established": false,
+    "phone_actions_executed": 0,
+    "limits": [
+      "19/50 supported requests still rejected.",
+      "Raw Qwen proposes a tool on 49/50 unsupported requests; original-text gate supplies rejection.",
+      "Synthetic same-author wording; no human, real-ASR, phone timing or population reliability claim.",
+      "One shared old-prompt capture; inherited two-load timing string in immutable result is corrected by confirmation README."
+    ],
+    "source_paths": [
+      "prototype/command-v10-confirm/results.json",
+      "prototype/command-v10-confirm/protocol.json",
+      "prototype/command-v10-confirm/freeze-manifest.json",
+      "prototype/command-v10-confirm/README.md"
+    ]
+  },
+  "historical_phone": {
+    "version": "0.6-command-readiness-research",
+    "source_commit": "29c4c3372fcc913d3672e59803a3aa870fa2426b",
+    "device": {
+      "manufacturer": "Nothing",
+      "model": "A059",
+      "soc": "SM7635",
+      "api": "36"
+    },
+    "samples": 3,
+    "input": "typed synthetic own-app commands; explicit UI confirmations, not ASR",
+    "start_ms": 17323.0,
+    "pause_ms": 1814.0,
+    "cancel_alarm_ms": 1655.0,
+    "start_confirmed_executed": true,
+    "pause_confirmed_executed": true,
+    "cancel_model_intent": "alarm",
+    "cancel_gate": "ABSTAIN",
+    "cancel_executed": false,
+    "apk_sha256": "01b72e8321a06cbcf0f0050be4b6332e377eabf5fac160ba31b8f1c4a34ab3fe",
+    "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "offline_disconnect_verified": false,
+    "clock_outcome_verified": false,
+    "asr_measured": false,
+    "final_focus_paused": true,
+    "limits": [
+      "Historical v0.6 typed own-app actions with review, not current v0.10 phone verification.",
+      "Three observations are not p50/p95 or a paired benchmark; first/warm conditions differ."
+    ],
+    "source_paths": [
+      "docs/command-readiness-phone.json"
+    ]
+  },
+  "policy": {
+    "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238",
+    "parameters": 65,
+    "architecture": "6 -> 8 ReLU -> 1 sigmoid; nonnegative connection weights, signed biases",
+    "train_rows": 640,
+    "development_rows": 320,
+    "heldout_correct": 472,
+    "heldout_total": 480,
+    "false_nudges": 3,
+    "missed_nudges": 5,
+    "teacher_oracle_accuracy": 1.0,
+    "holdout_data_sha256": "a098cacdaaa4444d8e95011fac0c251a7ef5c9122305e7139823cda82a544bd7",
+    "checkpoint_sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+    "parameter_sha256": "d1edaa8015959a4bd199850ef3492547363ecdd8131a824fd2bf4604062fc1a6",
+    "java_parity_rows": 480,
+    "java_parity_maximum_score_error": 1.2212453270876722e-15,
+    "monotonic_pairs": 1800,
+    "monotonic_failures": 0,
+    "recurring_nudges_controlled_by_trained_network": false,
+    "runtime_role": "Separate shadow/sandbox score; recurring nudge rule remains hand-set.",
+    "real_productivity_training": false,
+    "language_model_finetuning": false,
+    "limits": [
+      "472/480 matches invented synthetic teacher labels, not human productivity.",
+      "Connection weights nonnegative; biases signed. It is not a completely positive LLM.",
+      "Java export parity is standalone host JVM evidence, not NPU or recurring learned-policy promotion."
+    ],
+    "source_paths": [
+      "prototype/policy/synthetic-model-results.json",
+      "prototype/policy/synthetic-model.json",
+      "prototype/policy/java-export-results.json",
+      "docs/live-policy-evidence.md"
+    ]
+  },
+  "research": {
+    "source_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+    "kind": "Actual laptop CPU activation-write interventions, narrow exploratory Qwen experiment.",
+    "native_trials": 108,
+    "heldout_commands": 8,
+    "heldout_baseline_correct": 6,
+    "heldout_opposite_patch_correct": 6,
+    "heldout_opposite_patch_intent_changes": 0,
+    "heldout_matched_random_correct": 6,
+    "heldout_matched_random_intent_changes": 0,
+    "heldout_zero_layer_correct": 5,
+    "heldout_zero_layer_intent_changes": 1,
+    "noop_restore_full_logits_parity": true,
+    "protocol_sha256": "52ce962a0d7bd54b72dc19184ae4b5f435b25cd60e1380f4e4c190c89da95958",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "reliable_semantic_steering_established": false,
+    "full_model_mechanistic_understanding": false,
+    "phone_or_npu_replication": false,
+    "limits": [
+      "10 hand-authored command pairs, only4 heldout pairs",
+      "One seed and one random4-channel control bundle",
+      "Forced common JSON prefix and first-token scoring, not the app's full grammar decoding",
+      "All comparisons use same Q4_0 CPU artifact; no phone or NPU replication",
+      "Selection considers only three layers and four channels per bundle",
+      "No generic focus neuron or transformer-wide mechanistic understanding established"
+    ],
+    "source_paths": [
+      "prototype/interpretability/summary.json",
+      "prototype/interpretability/protocol.json"
+    ]
+  },
+  "bridge": {
+    "source_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4",
+    "synthetic_tests": 15,
+    "synthetic_java_records": 3,
+    "exact_context_groups": 1,
+    "input_bytes": 1615,
+    "input_sha256": "2ba15d496af902304b3456482ab9634513cb37987e275d29a16e639fd20ee6dc",
+    "java_export_source_sha256": "4827a7dc5e3949cdaf83bfd2fbd6e35a8e01f59a11e40706fdd5814fe289aaf4",
+    "policy_checkpoint_sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+    "cli_exit_code": 0,
+    "transport": "temporary local file; not Office Kit",
+    "input_provenance": "synthetic Java-renderer fixture, not actual app usage/export",
+    "phone_actions_executed": false,
+    "officekit_transport_verified": false,
+    "npu_verified": false,
+    "actual_phone_export_verified": false,
+    "limits": [
+      "Format compatibility and local CPU replay of a temporary synthetic fixture, not actual phone export or Office Kit transfer.",
+      "Bridge performs no training, phone actions, return import or network transport."
+    ],
+    "source_paths": [
+      "docs/bridge-java-interop.json",
+      "docs/officekit-export-workflow.md"
+    ]
+  },
+  "pending": [
+    "Current v0.10 phone command/timer/voice/floating regressions and fresh bundled import.",
+    "User-enabled Usage Access/notifications/microphone/overlay and real observation/ASR branches.",
+    "Physical disconnected execution, actual Clock outcomes, representative battery/thermal/RAM measurements.",
+    "Actual iQOO Snapdragon NPU execution and fallback/operator evidence.",
+    "Actual Office Kit pairing/transfer and real explicit phone export.",
+    "Real-user learned-policy calibration, broader phone automation and real IoT hardware workflow.",
+    "Dashboard cutoff/admission, event-code eligibility, eligible live demo and accepted submission receipt."
+  ],
+  "pending_source_paths": [
+    "docs/remaining-deliverables.md",
+    "docs/conversational-commands-artifacts.json",
+    "docs/officekit-export-workflow.md"
+  ]
+}
