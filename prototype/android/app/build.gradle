@@ -1,8 +1,8 @@
 plugins { id 'com.android.application' }
 
 def diagnosticRunner = providers.gradleProperty('diagnosticRunner').getOrElse('reset')
-if (!(diagnosticRunner in ['reset', 'nativeIsolation']))
-    throw new GradleException('diagnosticRunner must be reset or nativeIsolation')
+if (!(diagnosticRunner in ['reset', 'nativeIsolation', 'commandGate']))
+    throw new GradleException('diagnosticRunner must be reset, nativeIsolation or commandGate')
 
 def bundleLocalModel = providers.gradleProperty('bundleLocalModel').map { value ->
     if (!(value in ['true', 'false'])) throw new GradleException('bundleLocalModel must be true or false')
@@ -61,11 +61,13 @@ android {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 13
-        versionName '0.13-reviewed-reset-research'
+        versionCode 14
+        versionName '0.14-command-gate-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
-            : 'dev.focuspilot.prototype.ResetIsolationInstrumentation'
+            : diagnosticRunner == 'commandGate'
+                ? 'dev.focuspilot.prototype.GateIsolationInstrumentation'
+                : 'dev.focuspilot.prototype.ResetIsolationInstrumentation'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }

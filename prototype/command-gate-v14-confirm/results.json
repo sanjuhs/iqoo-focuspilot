@@ -1,0 +1,4212 @@
+{
+  "scope": "Fresh frozen informed synthetic gate-only host confirmation; one unchanged original-prompt capture shared by both gates.",
+  "research_only": true,
+  "model": {
+    "rows": 100,
+    "semantic_correct": 32,
+    "supported_rows": 50,
+    "supported_correct": 32,
+    "unknown_rows": 50,
+    "unknown_correct": 0,
+    "schema_and_eos_valid": 100,
+    "per_class": {
+      "alarm": {
+        "rows": 8,
+        "correct": 8
+      },
+      "explain": {
+        "rows": 8,
+        "correct": 2
+      },
+      "open_app": {
+        "rows": 6,
+        "correct": 6
+      },
+      "pause_focus": {
+        "rows": 8,
+        "correct": 3
+      },
+      "start_focus": {
+        "rows": 10,
+        "correct": 10
+      },
+      "timer": {
+        "rows": 10,
+        "correct": 3
+      },
+      "unknown": {
+        "rows": 50,
+        "correct": 0
+      }
+    },
+    "invalid_outputs": 0,
+    "eos_truncations": 0,
+    "confusion": {
+      "alarm": {
+        "INVALID": 0,
+        "alarm": 8,
+        "explain": 0,
+        "open_app": 0,
+        "pause_focus": 0,
+        "start_focus": 0,
+        "timer": 0,
+        "unknown": 0
+      },
+      "explain": {
+        "INVALID": 0,
+        "alarm": 0,
+        "explain": 2,
+        "open_app": 0,
+        "pause_focus": 0,
+        "start_focus": 6,
+        "timer": 0,
+        "unknown": 0
+      },
+      "open_app": {
+        "INVALID": 0,
+        "alarm": 0,
+        "explain": 0,
+        "open_app": 6,
+        "pause_focus": 0,
+        "start_focus": 0,
+        "timer": 0,
+        "unknown": 0
+      },
+      "pause_focus": {
+        "INVALID": 0,
+        "alarm": 0,
+        "explain": 0,
+        "open_app": 0,
+        "pause_focus": 3,
+        "start_focus": 5,
+        "timer": 0,
+        "unknown": 0
+      },
+      "start_focus": {
+        "INVALID": 0,
+        "alarm": 0,
+        "explain": 0,
+        "open_app": 0,
+        "pause_focus": 0,
+        "start_focus": 10,
+        "timer": 0,
+        "unknown": 0
+      },
+      "timer": {
+        "INVALID": 0,
+        "alarm": 0,
+        "explain": 0,
+        "open_app": 0,
+        "pause_focus": 0,
+        "start_focus": 7,
+        "timer": 3,
+        "unknown": 0
+      },
+      "unknown": {
+        "INVALID": 0,
+        "alarm": 9,
+        "explain": 4,
+        "open_app": 6,
+        "pause_focus": 1,
+        "start_focus": 28,
+        "timer": 2,
+        "unknown": 0
+      }
+    },
+    "load_ms": 425.126084,
+    "first_native_ms": 458.36142,
+    "subsequent_native_ms_median": 453.73913,
+    "prompt_tokens_median": 165.0,
+    "prompt_tokens_min": 161,
+    "prompt_tokens_max": 173,
+    "metadata": {
+      "source_commit": "2648d826d1ad0cbdb4ad5d0232f5fe8752d26920",
+      "pid": 10663,
+      "started_utc": "2026-10-02T22:04:10.849897+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "error_type": null,
+      "wall_seconds": 45.88776425004471,
+      "output_sha256": "2326db1e4f512a97a78843114dc5f1fa6ea6ea770bbd8f56f557458743969eb3",
+      "log_sha256": "4b4d61966740369b2a791a5cc9e33a068d6ce72ec971e75234c56125e220e85a",
+      "started_record_sha256": "7e63c9e433c2309420551fb36cf07611c591411402f6588f85a99b84747e5b8f",
+      "requests_sha256": "867477b765cd7bf2c5e52c194af16787a44aede7eee5a942c6616d58fb8fdd56",
+      "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+      "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+      "candidate_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+      "candidate_binding_limit": "Gate provenance only; candidate gate is not used in native generation.",
+      "capture_source_sha256": "03cb0557bb7810578a8453a9f49b7b96df97692e6ada383429bf16b8b2001ad0",
+      "context": 1024,
+      "threads": 4,
+      "capture_enabled": false,
+      "cpu_only": true,
+      "actions_executed": 0,
+      "model_adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+    },
+    "timing_limit": "Single host CPU original-prompt capture shared by both gates; warmed cache and uncontrolled thermals/power. State cleared each request. No phone/NPU or native-arm timing comparison.",
+    "descriptive_metrics": {
+      "total_ms": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 453.81967,
+        "nearest_rank_p95": 467.09908,
+        "min": 422.49396,
+        "max": 471.11308
+      },
+      "prefill_ms": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 291.87791500000003,
+        "nearest_rank_p95": 301.69358,
+        "min": 281.01983,
+        "max": 305.31854
+      },
+      "decode_ms": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 164.872085,
+        "nearest_rank_p95": 168.85583,
+        "min": 131.46742,
+        "max": 174.68525
+      },
+      "context_setup_ms": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 0.000125,
+        "nearest_rank_p95": 0.000209,
+        "min": 0,
+        "max": 0.000291
+      },
+      "prompt_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 165.0,
+        "nearest_rank_p95": 169,
+        "min": 161,
+        "max": 173
+      },
+      "generated_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 8.0,
+        "nearest_rank_p95": 8,
+        "min": 6,
+        "max": 9
+      },
+      "java_wall_ms": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 454.536063,
+        "nearest_rank_p95": 467.841,
+        "min": 423.22825,
+        "max": 471.939167
+      }
+    },
+    "subsequent_total_ms": {
+      "sample_count": 99,
+      "missing_or_nonfinite": 0,
+      "median": 453.73913,
+      "nearest_rank_p95": 467.76617,
+      "min": 422.49396,
+      "max": 471.11308
+    },
+    "native_total_ms_by_intent": {
+      "alarm": {
+        "sample_count": 8,
+        "missing_or_nonfinite": 0,
+        "median": 443.521665,
+        "nearest_rank_p95": 452.71404,
+        "min": 433.77946,
+        "max": 452.71404
+      },
+      "explain": {
+        "sample_count": 8,
+        "missing_or_nonfinite": 0,
+        "median": 456.03580999999997,
+        "nearest_rank_p95": 463.04454,
+        "min": 439.31021,
+        "max": 463.04454
+      },
+      "open_app": {
+        "sample_count": 6,
+        "missing_or_nonfinite": 0,
+        "median": 457.127855,
+        "nearest_rank_p95": 459.04654,
+        "min": 450.98096,
+        "max": 459.04654
+      },
+      "pause_focus": {
+        "sample_count": 8,
+        "missing_or_nonfinite": 0,
+        "median": 449.6385,
+        "nearest_rank_p95": 457.46346,
+        "min": 431.572,
+        "max": 457.46346
+      },
+      "start_focus": {
+        "sample_count": 10,
+        "missing_or_nonfinite": 0,
+        "median": 453.2004,
+        "nearest_rank_p95": 461.66046,
+        "min": 445.78858,
+        "max": 461.66046
+      },
+      "timer": {
+        "sample_count": 10,
+        "missing_or_nonfinite": 0,
+        "median": 447.433,
+        "nearest_rank_p95": 460.06563,
+        "min": 422.49396,
+        "max": 460.06563
+      },
+      "unknown": {
+        "sample_count": 50,
+        "missing_or_nonfinite": 0,
+        "median": 456.846185,
+        "nearest_rank_p95": 468.54958,
+        "min": 431.24079,
+        "max": 471.11308
+      }
+    },
+    "native_total_ms_by_family": {
+      "alarm_colon_evening": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 445.83302000000003,
+        "nearest_rank_p95": 448.16258,
+        "min": 443.50346,
+        "max": 448.16258
+      },
+      "alarm_colon_morning": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 449.13796,
+        "nearest_rank_p95": 452.01,
+        "min": 446.26592,
+        "max": 452.01
+      },
+      "alarm_latest_digits": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 451.00104,
+        "nearest_rank_p95": 452.71404,
+        "min": 449.28804,
+        "max": 452.71404
+      },
+      "alarm_midnight": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 454.42502,
+        "nearest_rank_p95": 465.86475,
+        "min": 442.98529,
+        "max": 465.86475
+      },
+      "alarm_noon": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 436.80277,
+        "nearest_rank_p95": 438.27608,
+        "min": 435.32946,
+        "max": 438.27608
+      },
+      "alarm_spoken_evening": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 435.35248,
+        "nearest_rank_p95": 436.9255,
+        "min": 433.77946,
+        "max": 436.9255
+      },
+      "alarm_spoken_morning": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 442.37237500000003,
+        "nearest_rank_p95": 444.05804,
+        "min": 440.68671,
+        "max": 444.05804
+      },
+      "alarm_spoken_zero": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 443.51348,
+        "nearest_rank_p95": 447.35275,
+        "min": 439.67421,
+        "max": 447.35275
+      },
+      "calculator_display": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 460.92562499999997,
+        "nearest_rank_p95": 465.52704,
+        "min": 456.32421,
+        "max": 465.52704
+      },
+      "calculator_this": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 456.533665,
+        "nearest_rank_p95": 459.04654,
+        "min": 454.02079,
+        "max": 459.04654
+      },
+      "clock_bring_up": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 459.074935,
+        "nearest_rank_p95": 460.21837,
+        "min": 457.9315,
+        "max": 460.21837
+      },
+      "clock_this_application": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 464.849895,
+        "nearest_rank_p95": 471.11308,
+        "min": 458.58671,
+        "max": 471.11308
+      },
+      "explain_completed_concentrating": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 455.31321,
+        "nearest_rank_p95": 456.72621,
+        "min": 453.90021,
+        "max": 456.72621
+      },
+      "explain_issued_reminder": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 453.529585,
+        "nearest_rank_p95": 458.22875,
+        "min": 448.83042,
+        "max": 458.22875
+      },
+      "explain_our_overview": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 458.917645,
+        "nearest_rank_p95": 461.70375,
+        "min": 456.13154,
+        "max": 461.70375
+      },
+      "explain_remaining_current": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 458.34000000000003,
+        "nearest_rank_p95": 460.73992,
+        "min": 455.94008,
+        "max": 460.73992
+      },
+      "explain_reminded_active": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 444.32268999999997,
+        "nearest_rank_p95": 449.33517,
+        "min": 439.31021,
+        "max": 449.33517
+      },
+      "explain_status_ongoing": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 462.03526999999997,
+        "nearest_rank_p95": 467.09908,
+        "min": 456.97146,
+        "max": 467.09908
+      },
+      "explain_this_nudge": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 435.631915,
+        "nearest_rank_p95": 440.02304,
+        "min": 431.24079,
+        "max": 440.02304
+      },
+      "explain_warned_ongoing": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 457.54606,
+        "nearest_rank_p95": 463.04454,
+        "min": 452.04758,
+        "max": 463.04454
+      },
+      "focus_focused_work": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 454.663085,
+        "nearest_rank_p95": 459.72496,
+        "min": 449.60121,
+        "max": 459.72496
+      },
+      "focus_maximum_active": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 460.430335,
+        "nearest_rank_p95": 461.66046,
+        "min": 459.20021,
+        "max": 461.66046
+      },
+      "focus_minimum": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 459.39979,
+        "nearest_rank_p95": 461.13704,
+        "min": 457.66254,
+        "max": 461.13704
+      },
+      "focus_prefix_duration": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 460.21392000000003,
+        "nearest_rank_p95": 467.76617,
+        "min": 452.66167,
+        "max": 467.76617
+      },
+      "focus_requested_minutes": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 460.53585499999997,
+        "nearest_rank_p95": 468.54958,
+        "min": 452.52213,
+        "max": 468.54958
+      },
+      "focus_resume_ongoing": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 449.250915,
+        "nearest_rank_p95": 452.71325,
+        "min": 445.78858,
+        "max": 452.71325
+      },
+      "focus_resume_this": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 456.46454,
+        "nearest_rank_p95": 458.643,
+        "min": 454.28608,
+        "max": 458.643
+      },
+      "focus_spoken_minutes": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 455.03173000000004,
+        "nearest_rank_p95": 459.43092,
+        "min": 450.63254,
+        "max": 459.43092
+      },
+      "focus_spoken_seconds": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 459.179775,
+        "nearest_rank_p95": 464.62042,
+        "min": 453.73913,
+        "max": 464.62042
+      },
+      "focus_this_session": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 457.25819,
+        "nearest_rank_p95": 458.36142,
+        "min": 456.15496,
+        "max": 458.36142
+      },
+      "pause_active_study": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 450.85248,
+        "nearest_rank_p95": 457.46346,
+        "min": 444.2415,
+        "max": 457.46346
+      },
+      "pause_break_this": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 454.62119,
+        "nearest_rank_p95": 458.64067,
+        "min": 450.60171,
+        "max": 458.64067
+      },
+      "pause_concentration_countdown": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 446.171205,
+        "nearest_rank_p95": 446.40779,
+        "min": 445.93462,
+        "max": 446.40779
+      },
+      "pause_current_concentration": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 461.872725,
+        "nearest_rank_p95": 467.81662,
+        "min": 455.92883,
+        "max": 467.81662
+      },
+      "pause_desired_break": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 446.04075,
+        "nearest_rank_p95": 446.54158,
+        "min": 445.53992,
+        "max": 446.54158
+      },
+      "pause_finish_this": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 439.78081,
+        "nearest_rank_p95": 447.98962,
+        "min": 431.572,
+        "max": 447.98962
+      },
+      "pause_ongoing_focused_work": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 459.552165,
+        "nearest_rank_p95": 470.42904,
+        "min": 448.67529,
+        "max": 470.42904
+      },
+      "pause_requested_study_break": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 459.29085,
+        "nearest_rank_p95": 466.70337,
+        "min": 451.87833,
+        "max": 466.70337
+      },
+      "settings_our_app": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 452.81737499999997,
+        "nearest_rank_p95": 454.65379,
+        "min": 450.98096,
+        "max": 454.65379
+      },
+      "settings_this_application": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 454.06148,
+        "nearest_rank_p95": 454.11196,
+        "min": 454.011,
+        "max": 454.11196
+      },
+      "timer_maximum": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 458.84148,
+        "nearest_rank_p95": 460.06563,
+        "min": 457.61733,
+        "max": 460.06563
+      },
+      "timer_minimum": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 431.970415,
+        "nearest_rank_p95": 441.44687,
+        "min": 422.49396,
+        "max": 441.44687
+      },
+      "timer_numeric_minutes": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 452.684955,
+        "nearest_rank_p95": 456.78883,
+        "min": 448.58108,
+        "max": 456.78883
+      },
+      "timer_numeric_seconds": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 454.11252,
+        "nearest_rank_p95": 462.88658,
+        "min": 445.33846,
+        "max": 462.88658
+      },
+      "timer_our_countdown": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 458.78496,
+        "nearest_rank_p95": 460.16842,
+        "min": 457.4015,
+        "max": 460.16842
+      },
+      "timer_spoken_minutes": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 445.06946000000005,
+        "nearest_rank_p95": 446.88346,
+        "min": 443.25546,
+        "max": 446.88346
+      },
+      "timer_spoken_seconds": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 452.44304,
+        "nearest_rank_p95": 456.90354,
+        "min": 447.98254,
+        "max": 456.90354
+      },
+      "timer_this_countdown": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 450.890085,
+        "nearest_rank_p95": 459.61617,
+        "min": 442.164,
+        "max": 459.61617
+      },
+      "timer_words_minutes": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 443.938855,
+        "nearest_rank_p95": 449.65367,
+        "min": 438.22404,
+        "max": 449.65367
+      },
+      "timer_words_seconds": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 456.58554000000004,
+        "nearest_rank_p95": 460.37454,
+        "min": 452.79654,
+        "max": 460.37454
+      }
+    },
+    "native_total_ms_by_hard_tag": {
+      "current_or_spoken_focus_pause": {
+        "sample_count": 5,
+        "missing_or_nonfinite": 0,
+        "median": 450.60171,
+        "nearest_rank_p95": 457.46346,
+        "min": 446.54158,
+        "max": 457.46346
+      },
+      "duration_boundary": {
+        "sample_count": 4,
+        "missing_or_nonfinite": 0,
+        "median": 458.864085,
+        "nearest_rank_p95": 461.66046,
+        "min": 422.49396,
+        "max": 461.66046
+      },
+      "midnight_noon": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 439.157375,
+        "nearest_rank_p95": 442.98529,
+        "min": 435.32946,
+        "max": 442.98529
+      },
+      "nudge_cause": {
+        "sample_count": 4,
+        "missing_or_nonfinite": 0,
+        "median": 449.125895,
+        "nearest_rank_p95": 463.04454,
+        "min": 439.31021,
+        "max": 463.04454
+      },
+      "pause_preservation": {
+        "sample_count": 8,
+        "missing_or_nonfinite": 0,
+        "median": 449.6385,
+        "nearest_rank_p95": 457.46346,
+        "min": 431.572,
+        "max": 457.46346
+      },
+      "resume_vs_start": {
+        "sample_count": 2,
+        "missing_or_nonfinite": 0,
+        "median": 450.03733,
+        "nearest_rank_p95": 454.28608,
+        "min": 445.78858,
+        "max": 454.28608
+      },
+      "seconds_minutes_unit": {
+        "sample_count": 4,
+        "missing_or_nonfinite": 0,
+        "median": 449.30754,
+        "nearest_rank_p95": 453.73913,
+        "min": 446.88346,
+        "max": 453.73913
+      },
+      "spoken_number_slot": {
+        "sample_count": 11,
+        "missing_or_nonfinite": 0,
+        "median": 444.05804,
+        "nearest_rank_p95": 453.73913,
+        "min": 433.77946,
+        "max": 453.73913
+      }
+    },
+    "grouped_timing_limit": "Intent/family/tag distributions include the first request when in that group; first request and overall subsequent distribution are separately reported. Small groups are descriptive only."
+  },
+  "gates": {
+    "generated": {
+      "baseline": {
+        "rows": 100,
+        "strict_correct": 63,
+        "supported_rows": 50,
+        "supported_correct": 13,
+        "supported_false_abstentions": 37,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 13,
+        "wrong_accepted": 0,
+        "coverage": 0.13,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_colon_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_latest_digits": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_midnight": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_zero": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_display": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "calculator_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_bring_up": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_this_application": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_completed_concentrating": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_issued_reminder": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_our_overview": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_remaining_current": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_reminded_active": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_status_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_this_nudge": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_warned_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_focused_work": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_maximum_active": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_prefix_duration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_requested_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_resume_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_this_session": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_active_study": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_break_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_concentration_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_current_concentration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_desired_break": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_finish_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_ongoing_focused_work": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_requested_study_break": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "settings_our_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_this_application": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_maximum": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_our_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_this_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_words_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_words_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 79.38783301506191,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "35f2854c3013518dc33e9dbe0c6b2fff8b50e49b95ceff71852ec2a2d401c4c5",
+        "invalid_output_fallback_abstentions": 0,
+        "wrong_accepted_kinds": 0,
+        "per_intent": {
+          "alarm": {
+            "rows": 8,
+            "correct": 7,
+            "false_abstentions": 1,
+            "wrong_accepted": 0
+          },
+          "explain": {
+            "rows": 8,
+            "correct": 0,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "open_app": {
+            "rows": 6,
+            "correct": 2,
+            "false_abstentions": 4,
+            "wrong_accepted": 0
+          },
+          "pause_focus": {
+            "rows": 8,
+            "correct": 0,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "start_focus": {
+            "rows": 10,
+            "correct": 2,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "timer": {
+            "rows": 10,
+            "correct": 2,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "unknown": {
+            "rows": 50,
+            "correct": 50,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          }
+        }
+      },
+      "candidate": {
+        "rows": 100,
+        "strict_correct": 82,
+        "supported_rows": 50,
+        "supported_correct": 32,
+        "supported_false_abstentions": 18,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 32,
+        "wrong_accepted": 0,
+        "coverage": 0.32,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_colon_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_latest_digits": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_midnight": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_zero": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_display": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_bring_up": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_this_application": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_completed_concentrating": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_issued_reminder": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_our_overview": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_remaining_current": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_reminded_active": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_status_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_this_nudge": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_warned_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_focused_work": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_maximum_active": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_prefix_duration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_requested_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_ongoing": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_this_session": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_active_study": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_break_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_concentration_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_current_concentration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_desired_break": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_finish_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_ongoing_focused_work": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_requested_study_break": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "settings_our_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_this_application": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_maximum": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_our_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_this_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_words_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_words_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 78.34145904053003,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "0bb931fd8f79aa29c3994e8950b7acc7b721e695d89a1813a4a42c44b3d84a65",
+        "invalid_output_fallback_abstentions": 0,
+        "wrong_accepted_kinds": 0,
+        "per_intent": {
+          "alarm": {
+            "rows": 8,
+            "correct": 8,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "explain": {
+            "rows": 8,
+            "correct": 2,
+            "false_abstentions": 6,
+            "wrong_accepted": 0
+          },
+          "open_app": {
+            "rows": 6,
+            "correct": 6,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "pause_focus": {
+            "rows": 8,
+            "correct": 3,
+            "false_abstentions": 5,
+            "wrong_accepted": 0
+          },
+          "start_focus": {
+            "rows": 10,
+            "correct": 10,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "timer": {
+            "rows": 10,
+            "correct": 3,
+            "false_abstentions": 7,
+            "wrong_accepted": 0
+          },
+          "unknown": {
+            "rows": 50,
+            "correct": 50,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          }
+        }
+      }
+    },
+    "oracle": {
+      "baseline": {
+        "rows": 100,
+        "strict_correct": 69,
+        "supported_rows": 50,
+        "supported_correct": 19,
+        "supported_false_abstentions": 31,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 19,
+        "wrong_accepted": 0,
+        "coverage": 0.19,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_colon_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_latest_digits": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_midnight": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_zero": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_display": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "calculator_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_bring_up": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_this_application": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_completed_concentrating": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_issued_reminder": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_our_overview": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_remaining_current": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_reminded_active": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_status_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_this_nudge": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "explain_warned_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_focused_work": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_maximum_active": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_prefix_duration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_requested_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_ongoing": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_resume_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_minutes": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_this_session": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_active_study": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_break_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_concentration_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_current_concentration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_desired_break": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_finish_this": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_ongoing_focused_work": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_requested_study_break": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_our_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_this_application": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_maximum": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_our_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_this_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_words_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_words_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 78.37900007143617,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "6aa9e32b26afe64b8c8f29d40e8d9f63e7321d3536a5df6988f8a768f14addba",
+        "invalid_output_fallback_abstentions": 0,
+        "wrong_accepted_kinds": 0,
+        "per_intent": {
+          "alarm": {
+            "rows": 8,
+            "correct": 7,
+            "false_abstentions": 1,
+            "wrong_accepted": 0
+          },
+          "explain": {
+            "rows": 8,
+            "correct": 0,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "open_app": {
+            "rows": 6,
+            "correct": 2,
+            "false_abstentions": 4,
+            "wrong_accepted": 0
+          },
+          "pause_focus": {
+            "rows": 8,
+            "correct": 1,
+            "false_abstentions": 7,
+            "wrong_accepted": 0
+          },
+          "start_focus": {
+            "rows": 10,
+            "correct": 2,
+            "false_abstentions": 8,
+            "wrong_accepted": 0
+          },
+          "timer": {
+            "rows": 10,
+            "correct": 7,
+            "false_abstentions": 3,
+            "wrong_accepted": 0
+          },
+          "unknown": {
+            "rows": 50,
+            "correct": 50,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          }
+        }
+      },
+      "candidate": {
+        "rows": 100,
+        "strict_correct": 100,
+        "supported_rows": 50,
+        "supported_correct": 50,
+        "supported_false_abstentions": 0,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 50,
+        "wrong_accepted": 0,
+        "coverage": 0.5,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_colon_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_latest_digits": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_midnight": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_evening": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_morning": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_zero": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_display": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_bring_up": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_this_application": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_completed_concentrating": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_issued_reminder": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_our_overview": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_remaining_current": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_reminded_active": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_status_ongoing": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_this_nudge": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "explain_warned_ongoing": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_focused_work": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_maximum_active": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_prefix_duration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_requested_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_ongoing": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_this_session": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_active_study": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_break_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_concentration_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_current_concentration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_desired_break": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_finish_this": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_ongoing_focused_work": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_requested_study_break": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_our_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_this_application": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_maximum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_minimum": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_numeric_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_our_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_this_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_words_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_words_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 78.75937491189688,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "6a35e146e9f91cc4fcc1fd30e7debad3b05d1611e91285b1ed47075e4d8c4fc6",
+        "invalid_output_fallback_abstentions": 0,
+        "wrong_accepted_kinds": 0,
+        "per_intent": {
+          "alarm": {
+            "rows": 8,
+            "correct": 8,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "explain": {
+            "rows": 8,
+            "correct": 8,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "open_app": {
+            "rows": 6,
+            "correct": 6,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "pause_focus": {
+            "rows": 8,
+            "correct": 8,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "start_focus": {
+            "rows": 10,
+            "correct": 10,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "timer": {
+            "rows": 10,
+            "correct": 10,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          },
+          "unknown": {
+            "rows": 50,
+            "correct": 50,
+            "false_abstentions": 0,
+            "wrong_accepted": 0
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "generated": {
+      "supported_gains": 19,
+      "supported_losses": 0,
+      "gains_per_family": {
+        "alarm_latest_digits": 1,
+        "calculator_display": 1,
+        "calculator_this": 1,
+        "clock_this_application": 1,
+        "explain_reminded_active": 1,
+        "explain_this_nudge": 1,
+        "focus_focused_work": 1,
+        "focus_maximum_active": 1,
+        "focus_prefix_duration": 1,
+        "focus_resume_ongoing": 1,
+        "focus_resume_this": 1,
+        "focus_spoken_minutes": 1,
+        "focus_spoken_seconds": 1,
+        "focus_this_session": 1,
+        "pause_break_this": 1,
+        "pause_current_concentration": 1,
+        "pause_ongoing_focused_work": 1,
+        "settings_this_application": 1,
+        "timer_numeric_seconds": 1
+      },
+      "losses_per_family": {}
+    },
+    "oracle": {
+      "supported_gains": 31,
+      "supported_losses": 0,
+      "gains_per_family": {
+        "alarm_latest_digits": 1,
+        "calculator_display": 1,
+        "calculator_this": 1,
+        "clock_this_application": 1,
+        "explain_completed_concentrating": 1,
+        "explain_issued_reminder": 1,
+        "explain_our_overview": 1,
+        "explain_remaining_current": 1,
+        "explain_reminded_active": 1,
+        "explain_status_ongoing": 1,
+        "explain_this_nudge": 1,
+        "explain_warned_ongoing": 1,
+        "focus_focused_work": 1,
+        "focus_maximum_active": 1,
+        "focus_prefix_duration": 1,
+        "focus_resume_ongoing": 1,
+        "focus_resume_this": 1,
+        "focus_spoken_minutes": 1,
+        "focus_spoken_seconds": 1,
+        "focus_this_session": 1,
+        "pause_active_study": 1,
+        "pause_break_this": 1,
+        "pause_concentration_countdown": 1,
+        "pause_current_concentration": 1,
+        "pause_desired_break": 1,
+        "pause_finish_this": 1,
+        "pause_ongoing_focused_work": 1,
+        "settings_this_application": 1,
+        "timer_maximum": 1,
+        "timer_numeric_seconds": 1,
+        "timer_this_countdown": 1
+      },
+      "losses_per_family": {}
+    }
+  },
+  "paired_full": {
+    "generated": {
+      "all_rows": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 19,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "supported_rows": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 19,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "per_intent": {
+        "alarm": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "open_app": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 4,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_focus": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 3,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "start_focus": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 8,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "unknown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      },
+      "per_family": {
+        "alarm_colon_evening": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_colon_morning": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_latest_digits": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_midnight": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_noon": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_evening": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_morning": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_zero": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "calculator_display": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "calculator_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "clock_bring_up": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "clock_this_application": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_completed_concentrating": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_issued_reminder": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_our_overview": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_remaining_current": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_reminded_active": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_status_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_this_nudge": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_warned_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_focused_work": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_maximum_active": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_minimum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_prefix_duration": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_requested_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_resume_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_resume_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_spoken_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_spoken_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_this_session": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_active_study": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_break_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_concentration_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_current_concentration": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_desired_break": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_finish_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_ongoing_focused_work": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_requested_study_break": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "settings_our_app": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "settings_this_application": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_maximum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_minimum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_numeric_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_numeric_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_our_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_spoken_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_spoken_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_this_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_words_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_words_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      },
+      "hard_supported": {
+        "current_or_spoken_focus_pause": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 3,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "duration_boundary": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "midnight_noon": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "nudge_cause": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_preservation": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 3,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "resume_vs_start": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "seconds_minutes_unit": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "spoken_number_slot": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      }
+    },
+    "oracle": {
+      "all_rows": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 31,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "supported_rows": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 31,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "per_intent": {
+        "alarm": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 8,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "open_app": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 4,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_focus": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 7,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "start_focus": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 8,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 3,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "unknown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      },
+      "per_family": {
+        "alarm_colon_evening": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_colon_morning": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_latest_digits": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_midnight": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_noon": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_evening": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_morning": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "alarm_spoken_zero": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "calculator_display": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "calculator_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "clock_bring_up": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "clock_this_application": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_completed_concentrating": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_issued_reminder": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_our_overview": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_remaining_current": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_reminded_active": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_status_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_this_nudge": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "explain_warned_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_focused_work": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_maximum_active": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_minimum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_prefix_duration": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_requested_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_resume_ongoing": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_resume_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_spoken_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_spoken_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "focus_this_session": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_active_study": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_break_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_concentration_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_current_concentration": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_desired_break": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_finish_this": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_ongoing_focused_work": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_requested_study_break": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "settings_our_app": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "settings_this_application": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_maximum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_minimum": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_numeric_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_numeric_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_our_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_spoken_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_spoken_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_this_countdown": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 1,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_words_minutes": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "timer_words_seconds": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      },
+      "hard_supported": {
+        "current_or_spoken_focus_pause": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 5,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "duration_boundary": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "midnight_noon": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 0,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "nudge_cause": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 4,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "pause_preservation": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 7,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "resume_vs_start": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "seconds_minutes_unit": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        },
+        "spoken_number_slot": {
+          "semantic_gain": 0,
+          "semantic_loss": 0,
+          "gate_gain": 2,
+          "gate_loss": 0,
+          "baseline_wrong_accept": 0,
+          "candidate_wrong_accept": 0
+        }
+      }
+    }
+  },
+  "promotion_review": {
+    "conditions": {
+      "at_least_four_supported_generated_full_proposal_gains": true,
+      "zero_supported_generated_losses": true,
+      "zero_supported_oracle_losses": true,
+      "zero_wrong_accepts_both_gates_both_routes": true,
+      "zero_pause_losses_both_routes": true,
+      "no_per_intent_complete_proposal_decline_both_routes": true,
+      "all_100_original_prompt_schema_and_real_eos_valid": true
+    },
+    "prospective_criteria_met": true,
+    "candidate_promoted": false,
+    "decision_limit": "Separate root review required; never automatic app promotion."
+  },
+  "private_paired_transitions_sha256": "3d342f9b909dc852fdd016548edba0bf35818754473f9e359192f6c3e8b02385",
+  "frozen_manifest": {
+    "schema": 1,
+    "scope": "Frozen before sole native original-prompt capture; identical outputs to baseline/candidate gates; fresh informed synthetic host research",
+    "created_utc": "2026-10-02T22:04:06.312298+00:00",
+    "selection_source_commit": "7fb7a5b30f66fae7ceabfd526726f1151107607e",
+    "selected_source_sha256": {
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+    },
+    "candidate_number_words_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "linked_libraries_sha256": {
+      "/opt/homebrew/opt/llama.cpp/lib/libllama.0.dylib": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668",
+      "/opt/homebrew/opt/ggml/lib/libggml.0.dylib": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3",
+      "/opt/homebrew/opt/ggml/lib/libggml-base.0.dylib": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+    },
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "overlap_inventory": [
+      {
+        "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java",
+        "sha256": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+        "text_count": 200,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/ResetIsolationInstrumentation.java",
+        "sha256": "ae47fcabbe88a06f595c23e041e53ad4829b0bedc307da7746d7161471df7d5b",
+        "text_count": 71,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java",
+        "sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+        "text_count": 32,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandParser.java",
+        "sha256": "268d1ad85fac17985117b705b657151d74f1939c441ddaa7e2f42a6e899e3f9f",
+        "text_count": 5,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionView.java",
+        "sha256": "6657249dd728e43842d90bb46f9b9079b24ef59a480cba185d9177f41458795b",
+        "text_count": 4,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/DecisionPolicy.java",
+        "sha256": "2665d7a9fbd46e3f9eead68a5d66114cbf5b530c40213b2c07f665b77ce796e0",
+        "text_count": 2,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FewShotPolicy.java",
+        "sha256": "f0dfa83ee74c28aee7d0c74d4a25125ffd78b8764a8724cfec462c8d19b18a56",
+        "text_count": 20,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingCompanionService.java",
+        "sha256": "22410c9450fcff212ee692616753f4036980abd94e83b50853f199f1617f7865",
+        "text_count": 43,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingWindowPosition.java",
+        "sha256": "3cefe905a72a1b69375595496f2db04f9bd400c1f7b93578b127d56a3d5c84fe",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusDataExport.java",
+        "sha256": "4827a7dc5e3949cdaf83bfd2fbd6e35a8e01f59a11e40706fdd5814fe289aaf4",
+        "text_count": 61,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusGoalConfig.java",
+        "sha256": "b359e0b19c1457ac3a4368910a0e6658e4e90aeffdd089e0f48833a28a347841",
+        "text_count": 5,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusMonitorService.java",
+        "sha256": "92893791039a6dbf187a146a9da10b57bd154ae220a14d7da53768a635a9acba",
+        "text_count": 19,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java",
+        "sha256": "e620d1f159ecadde98e18c851538244542b784faead876bc1d60dfed35dbd83b",
+        "text_count": 55,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusSession.java",
+        "sha256": "05f43a840025a8721a9ee6ad6963be67d1d4cd5b8fd1c33a7d7f3889ad50de1a",
+        "text_count": 1,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferencePolicy.java",
+        "sha256": "ac93baa9e2ae6c70006432f2ad98312b518e5e00bc8798e335f0b5b142de1448",
+        "text_count": 20,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferenceScope.java",
+        "sha256": "5f4c1f88e8fbced3369eb7f45ed32ff5bc2002285721d2b8af86cdf98d042183",
+        "text_count": 14,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferenceStore.java",
+        "sha256": "7df9729d936a9b706a51326c797e95322783b6b9b37ff467f6aecbbdbb1c3379",
+        "text_count": 61,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java",
+        "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "text_count": 28,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java",
+        "sha256": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+        "text_count": 134,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalVoiceInput.java",
+        "sha256": "65fef725fd4725b63a80e612472397a1d7d7d1791e326e844cc82f7903ad69d8",
+        "text_count": 36,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java",
+        "sha256": "0bcdf9dc83d301fe9370f8d6dd1e78a6550f616445c569fe5f4f833e0c70a77a",
+        "text_count": 309,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java",
+        "sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+        "text_count": 96,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MonitorConfig.java",
+        "sha256": "c3d8d401673dccfd450e07b5ba8d5cbfc06417bcc72cef8438ccec916ada3f4c",
+        "text_count": 1,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MonitorGate.java",
+        "sha256": "591306e1dc36b30143594408b9cda04e41143773ea18c6be6a9c2add7b55a86c",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ObservationSnapshot.java",
+        "sha256": "bf62f655de7c828bd8b2fb3da3d62532b345955cdc6ceeb8f2c036638b2f487b",
+        "text_count": 17,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ObservedNudgeGate.java",
+        "sha256": "2e9c758fb5f7f113676b3993e745564a307d63b1950c39e782b2272c276aa5d4",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/PersonalizationActivity.java",
+        "sha256": "efdb3c601fca00a2b1ce516b1191a639d2ba92e3a721833ed901e29233007405",
+        "text_count": 73,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/PolicyLabActivity.java",
+        "sha256": "75628bf3595ba84288cc9fa6d5a52efe86861641dd71b67746614af2eeefdbd3",
+        "text_count": 58,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java",
+        "sha256": "76d835f22dc4da683b5c6733228abd6b33b2c5488d191c91847ea8bd843bcb47",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxAccessibilityService.java",
+        "sha256": "e6522f7537e0445a99b95b4a7fed102636044b9ad687ec0394d00ca18371563a",
+        "text_count": 33,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxActionGate.java",
+        "sha256": "c40dbc8a6f3e6369061f8597d2a17c542350d1b6814cd3cbe286f79cef93625f",
+        "text_count": 5,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxAutomationActivity.java",
+        "sha256": "fb94d83e5396cb7371afd1043e7042d5a3e43f3184565b47611e0d2886faeb9f",
+        "text_count": 28,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ScopedNudgeFeedback.java",
+        "sha256": "9594a7ed556455777d904674398ca56f38d866b988d379997b743852d1cabdcf",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SelectedAppObservation.java",
+        "sha256": "21d46841d6c4d6f6a17648c52c3626bb5325fc769203d9eafd88081ecbe765ab",
+        "text_count": 6,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java",
+        "sha256": "ffa28559ed90614e38197e541d0b19ba1fca774109e659d15af5621cb67ec3a6",
+        "text_count": 74,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java",
+        "sha256": "198ecf33399ddca773384aaadf837a5a28140746fe764eb65f593c5e422d14b5",
+        "text_count": 71,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java",
+        "sha256": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba",
+        "text_count": 12,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TrainedPolicy.java",
+        "sha256": "8bdb4a25108be2a83a1d86ff79ff20a98818ceec915f3b96cedbd0e6c19436d9",
+        "text_count": 13,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/UsageReader.java",
+        "sha256": "196c29a96c8913f1fdcf4f0760fcf7ce6a52934cdfff248ab1f350e04f2f2830",
+        "text_count": 6,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/VirtualLedger.java",
+        "sha256": "34ec1b8f3ba6e6f03ee4e3347735504c4581b3d12405b4e42b7c35c17d9c771d",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/VoiceDraftState.java",
+        "sha256": "e4c5d872dce5cc6044ebc0f2d830c63de275362d280df0d07410a33d8de255a2",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/BudgetPersonalizationIntegrationTest.java",
+        "sha256": "9d8881c9259998bdddecd7c406c5affd53139ae41f359523412bcac5394220a8",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CommandNumberWordsTest.java",
+        "sha256": "90bc05edc1473632e92f11d52216bc4a67b329e11caf8ce9b523d8ee67e4e358",
+        "text_count": 75,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ConversationalCommandGateTest.java",
+        "sha256": "f279baca16066c49fdb0a607677b70de35eeb867032de60c2da406bfecfdc386",
+        "text_count": 60,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CoreTest.java",
+        "sha256": "b22599172235a20722f9fb50f8112b2144c217bbc6d07c2ede8c511f41925864",
+        "text_count": 8,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FewShotPolicyTest.java",
+        "sha256": "5cf2b36c89acb1aca21a399883559d85a9915c7574e2e9bf45daf256e257efee",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FloatingWindowPositionTest.java",
+        "sha256": "a7767401c3b3faef32158033ac8039cb2cef12f9e460071dbf66195a90079970",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusDataExportTest.java",
+        "sha256": "7a86401c0a5bc61b76736c089a94682dadf9001c2735afc865e099bef6db002a",
+        "text_count": 58,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusGoalConfigTest.java",
+        "sha256": "8efba61015433f9a74a8a6feb6f3583223a770e96136bd07f7d49f2cb6a0f87c",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/LivePreferencePolicyTest.java",
+        "sha256": "f7224003a13c61439933f444eeca3aab24b3363311937e178d29fcd1eac57c8d",
+        "text_count": 23,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ModelCommandGateTest.java",
+        "sha256": "eeb39c59d773ba228d982f22cd453f8ecd5a29b03ea9ad673bbaa110d9f19e9b",
+        "text_count": 223,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/MonitorLifecycleTest.java",
+        "sha256": "0dfa156bf60449fea712bcd2c2d64c4af13371699dcef3fa5ed0d556bbbcb071",
+        "text_count": 4,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/NaturalCommandGateTest.java",
+        "sha256": "776b201acd4b803ed2a5563024a6c1d2051531fbd1fa4070f84633dab3fead27",
+        "text_count": 111,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservationSnapshotTest.java",
+        "sha256": "c132c54e0784c4e376d8845db78d2d23987d60ef0293f240e52a66a96e38a622",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservedNudgeGateTest.java",
+        "sha256": "354f178aaed5242892346983dd385d3d91675976c580a40f126ea9a810b37f0a",
+        "text_count": 2,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java",
+        "sha256": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/RetainedForegroundLabelPolicyTest.java",
+        "sha256": "216f9fe680e1354d483e36c99cc02f478d355fa79247053c7f1ce3769a3a7516",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/SandboxActionGateTest.java",
+        "sha256": "7ed40c269166dd988a940e280bccd1b641999079065d2ed87592dcb0c4d8c9f3",
+        "text_count": 5,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java",
+        "sha256": "e48b24a9871bf3bacf0cac17871fc6aa1aee7d09431dfbe4a7899548cebc31fa",
+        "text_count": 50,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TimedFocusSessionTest.java",
+        "sha256": "c7545f90f581a4291be3ce71da27b53425dc770ebd4fe2a702cd7a0eb0997a37",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TrainedPolicyTest.java",
+        "sha256": "8f0c66b91af55ba0646e061898609d6b70d568e252bb283342b72f5a7b0567ed",
+        "text_count": 4,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/VoiceDraftStateTest.java",
+        "sha256": "7eb41b675bf903a4c29e597e4e21fe16c9546f6c490942195c1048e6c059fa72",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-confirm/build/cases.jsonl",
+        "sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-confirm/test_data.py",
+        "sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+        "text_count": 45,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/CompactIntentCandidate.java",
+        "sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+        "text_count": 11,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/candidate.json",
+        "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+        "text_count": 15,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-runner/test_scoring.py",
+        "sha256": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386",
+        "text_count": 254,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-eval/build/cases.jsonl",
+        "sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+        "text_count": 58,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-eval/test_evaluation.py",
+        "sha256": "5182b36c8a8cf89eb72a16d002992996f7d9f7d078865b9c87caefaf5d511c27",
+        "text_count": 40,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-gate-v14-confirm/test_data.py",
+        "sha256": "54fd18302eb98751d9f39dee1eb332a26a543a48488876c2f5601228d4283dab",
+        "text_count": 134,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-gate-v14-dev/CandidateGateTest.java",
+        "sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+        "text_count": 108,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-gate-v14-dev/ModelCommandGate.java",
+        "sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+        "text_count": 111,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-gate-v14-dev/build/requests.tsv",
+        "sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+        "text_count": 100,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-gate-v14-runner/test_evaluation.py",
+        "sha256": "3029b2389d61d7bb481b0d0175111770f932dd8c6191f0a51340579fa89672e3",
+        "text_count": 132,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-json-confirm/build/author-cases-first.jsonl",
+        "sha256": "e8d53ccbbd7cefd38347a7af8616afd5238a54237661e4cd56a087fd0717bdd7",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-confirm/build/author-cases.jsonl",
+        "sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-confirm/build/cases.jsonl",
+        "sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-confirm/build/requests.tsv",
+        "sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+        "text_count": 100,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-confirm/test_data.py",
+        "sha256": "56b36edc39a559ad9cf377fa8281f21ec6b3b7fb83e1e54cf829709a3965c9f9",
+        "text_count": 122,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-dev/JsonIntentCandidate.java",
+        "sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+        "text_count": 25,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-dev/build/json1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-dev/candidate.json",
+        "sha256": "539d533c62cc8f1ff4201a8b99e71acb3e7a954135cc725da73e437c0d8f4c70",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-runner/test_scoring.py",
+        "sha256": "ed6f9c08e383c7db598927e6367ec96c2fbbac0b51cba82a4f97f99b197603c5",
+        "text_count": 137,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v08-eval/build/cases.jsonl",
+        "sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v08-eval/test_evaluation.py",
+        "sha256": "23d29cf5112750a2c2622327d4d8416d17832c08ce29dfdc43ea8a8966a099ba",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/cases.jsonl",
+        "sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/test_evaluation.py",
+        "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+        "text_count": 82,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/candidates/round1/LocalModel.java",
+        "sha256": "8916ef91bb41a38a250333344803f23e22cc586272807b9f7d9d360a26848f45",
+        "text_count": 65,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/candidates/round2/LocalModel.java",
+        "sha256": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+        "text_count": 54,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/cases.jsonl",
+        "sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+        "sha256": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+        "text_count": 13,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/test_evaluation.py",
+        "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+        "text_count": 82,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/heldout.jsonl",
+        "sha256": "cf066dc847e27fb6be6afd3f086278e6b816f75a9960d2c4833650edba86d40a",
+        "text_count": 410,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/train.jsonl",
+        "sha256": "3aac21b829058147ecf91455abf7f55be52275404a90ab6b792bec387c12a3ff",
+        "text_count": 1160,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/valid.jsonl",
+        "sha256": "3175db7d8961248d14a732cef2b3a2462856d44b5a33a947774372e045a26e63",
+        "text_count": 140,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/intent-head/build/all-cases.jsonl",
+        "sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+        "text_count": 373,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/laya/cases.json",
+        "sha256": "322e53d53aaa71c24e24cf92a4e7667dd75e81bc7c29f2bb7d959e6cfff1d57d",
+        "text_count": 15,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/build/prompt-cases.tsv",
+        "sha256": "fbdbe2acb956620bb514a68b1031e9b77f7de9fdcc62ada7ed3ac39e8f65037d",
+        "text_count": 16,
+        "method": "TSV complete original request column 3",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/LocalModel.java",
+        "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "text_count": 28,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/NativeSmoke.java",
+        "sha256": "3d6ce882b4bbbc5cac962a7a032ecfdc42c42dd149f690559ca35e06ec789f14",
+        "text_count": 22,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/PromptBenchmark.java",
+        "sha256": "2d072d7984dd5ac3b04c94049d2cb0a77df49b0fdf9acb9deff924ee7e07e55c",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/build/cases.json",
+        "sha256": "248fc51f2bdbb771dc7045d01c87396e273522d5aaea3ac9004cce38fbe55244",
+        "text_count": 14,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/reference/LocalModel.java",
+        "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+        "text_count": 29,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/test_research.py",
+        "sha256": "917a0aca328c0ca445ec724d9f4c29608009f9aab1c9948c2e22319a01e85f09",
+        "text_count": 35,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/build/cases.json",
+        "sha256": "ab9a4f646e12174dcdc6232e3ce50d98d0aa7b6207803aaa5083401116aff203",
+        "text_count": 12,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/reference/LocalModel.java",
+        "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+        "text_count": 29,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/test_research.py",
+        "sha256": "ea20627513fddc5a2e3c1010a3d80e343cf7edea98434636325868eaf3eb81dd",
+        "text_count": 35,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_app_launch.py",
+        "sha256": "2e75747d171f4d2b19fc393e71e012c25f6732b849a2750c543a17134e2cc3b2",
+        "text_count": 134,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_bundled_import.py",
+        "sha256": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+        "text_count": 280,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_capture_benchmark.py",
+        "sha256": "8de034e22e38693c097243715c208c4903fafb577511c32d37ecbb38ce6242fd",
+        "text_count": 125,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_demo_capture.py",
+        "sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+        "text_count": 283,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_export.py",
+        "sha256": "2f2b67bdea0d7d5a2865998e0d0199b0a522335214feae9ac5a879eeb98f0c29",
+        "text_count": 301,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_focus_actions.py",
+        "sha256": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+        "text_count": 117,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_focus_recovery.py",
+        "sha256": "92adaeccb91b9baaa4f3455038d5f39e1a323d196e4c00d4086a0b3b1494ea06",
+        "text_count": 195,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_guide_readback.py",
+        "sha256": "6cb39df766a439cb7b6a7f64608db4c684b736604f82dbfddccc324acd8ff71c",
+        "text_count": 240,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_model_smoke.py",
+        "sha256": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+        "text_count": 168,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_network_isolation.py",
+        "sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+        "text_count": 187,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_readback.py",
+        "sha256": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+        "text_count": 162,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_reviewed_reset.py",
+        "sha256": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+        "text_count": 169,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_task_guide.py",
+        "sha256": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+        "text_count": 284,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_timed_focus.py",
+        "sha256": "5b157c19cb09bab3ce9659c938833231f54e6cdfb6464b04f20b6950bb14aa2a",
+        "text_count": 142,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_bundled_import.py",
+        "sha256": "956e95da0aebd10845253f49945389d08dd1f9650a9a0688069b260a625c0995",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_checkpoint.py",
+        "sha256": "17c4849cba5b7114d4ed07e30ad0ffa55053fdd5a2aa3e6a33700e4f0c871941",
+        "text_count": 18,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_foreground.py",
+        "sha256": "0eb689f417f5233ee717a1f7a8f4e64c1c7b1256c09b7aa78264db3995efed65",
+        "text_count": 27,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_network_isolation.py",
+        "sha256": "f9598c6d9b17bb3c1b3c9e417a54dfe94eac5204e42d201cdd5f7205df7c7d4f",
+        "text_count": 25,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_readback.py",
+        "sha256": "5c3cc7fd63652858e4a621b2f41b50f93d40b0944263d94de011d7a7176d4980",
+        "text_count": 20,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_reviewed_reset.py",
+        "sha256": "f86cd0e2dc995c39a8b9af6ebbcc10395fef5a3f4f8ee9b3c3cd88d1b1d9d8e7",
+        "text_count": 23,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_task_guide.py",
+        "sha256": "2e9f057e9ec4239b826ffe2fe964d9b4bec637b1051dbb561d25238784b3ccb1",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-gate-v14-device/GateIsolationInstrumentation.java",
+        "sha256": "d1013b83f64453b521b222482d05dc51f659d2cbb4122cc3f2735ccaf4877e54",
+        "text_count": 165,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      }
+    ],
+    "model_context": 1024,
+    "model_threads": 4,
+    "max_tokens": 128,
+    "activation_capture": false,
+    "row_count": 100,
+    "actions_executed": 0,
+    "private_labels_independently_reviewed_before_capture": true,
+    "raw_data_private": true,
+    "protocol_sha256": "0aa35324791c260717a1bf1ea09b48a782f7f993c1af0b48f0f85961bec3734f",
+    "protocol_markdown_sha256": "c911123a45a2668ba7b3e3f8e924e42babc82f23e39f684f26c5646f73d247ab",
+    "selection_lock_sha256": "796c20e3e39d1ff322f4da1da397884977701d5e6de53a3c6a5a7e7809712d4e",
+    "generator_sha256": "fa95ba2b4a9f7b9197d62fc04fc2c199932e0fb0e966377cea783fa30efd4701",
+    "candidate_metadata_sha256": "f727167add342812c1ffa629693c68bf9358441b1dd1d96bd9b99d214da2ec5e",
+    "candidate_gate_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "candidate_tests_sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+    "cases_sha256": "a3debb1e2c05bad14e20d6efe57e9b816358e228e676ca7b724bf70386e6b211",
+    "requests_sha256": "867477b765cd7bf2c5e52c194af16787a44aede7eee5a942c6616d58fb8fdd56",
+    "runner_sha256": "df6bdc6fa735d7a26fa59205b2d16d34eda5166a251d16a71b9f1e41626714d9",
+    "capture_source_sha256": "03cb0557bb7810578a8453a9f49b7b96df97692e6ada383429bf16b8b2001ad0",
+    "json_helper_sha256": "f5d3bf17f2f379b970ebaeec73db5dcb9db1cff0d0e8dddda587e741a9c6f785",
+    "gate_helper_sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+    "semantic_helper_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+    "gate_harness_sha256": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "corpus_manifest_sha256": "99f8af46d552095240a45854cd33262a165b1eb12117e54d160ce315c5faa82a",
+    "runner_tests_sha256": "3029b2389d61d7bb481b0d0175111770f932dd8c6191f0a51340579fa89672e3",
+    "generator_tests_sha256": "54fd18302eb98751d9f39dee1eb332a26a543a48488876c2f5601228d4283dab",
+    "device_fixture_source_sha256": "d1013b83f64453b521b222482d05dc51f659d2cbb4122cc3f2735ccaf4877e54"
+  },
+  "runner_source_commit": "2648d826d1ad0cbdb4ad5d0232f5fe8752d26920",
+  "app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "new_native_captures": 1,
+  "raw_semantic_or_native_timing_arm_comparison": false,
+  "binding_limit": "Three referenced Homebrew library bytes; not entire OS or dynamically loaded backend closure.",
+  "actions_executed": 0,
+  "training_performed": false,
+  "candidate_promoted": false
+}
