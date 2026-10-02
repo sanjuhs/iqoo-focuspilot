@@ -1,0 +1,33 @@
+{
+  "version": "0.7-timed-focus-research",
+  "research_only": true,
+  "source_commit": "6bd4841b170be0445470eff9977133bc2accc8f6",
+  "backend": "CPU/KleidiAI I8MM; optimized ARM64 hardware required",
+  "tests": {
+    "android_jvm": 105,
+    "lint_errors": 0,
+    "lint_warnings": 59
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "fresh_bundle_import_tested": false,
+  "phone_action_test_payload": "planned: light APK with existing private weights; v0.7 action not yet tested",
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v07-light.apk",
+      "bytes": 5447644,
+      "sha256": "1190085d5bad582f8e0fea3728d2f6362f079fa5126a862c2e5ff6aa871662c7",
+      "bundled_model": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    },
+    {
+      "name": "focuspilot-research-v07-bundled.apk",
+      "bytes": 568483820,
+      "sha256": "f87b3d3055ed7fba0947dd092c33981bbebaf02f9243b96a62dfeb90a3908910",
+      "bundled_model": true,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    }
+  ],
+  "phone_test_status": "UI precondition refused before inference/action"
+}

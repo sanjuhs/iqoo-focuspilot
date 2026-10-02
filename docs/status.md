@@ -2,6 +2,27 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Timed focus update 0.7
+
+- App source `6bd4841b170be0445470eff9977133bc2accc8f6` adds reviewed countdowns,
+  a 25-minute shortcut, one-second visible clock updates, retained remainder on
+  pause/resume and bounded focus/status explanations. Timed replacement preserves
+  accumulated focus time; completed Start begins open-ended. Recovery stays paused.
+- **105 JVM tests pass**, zero failures/errors/skips; lint zero errors/59 warnings.
+  Seven new pure timer tests and five gate regressions are post-test repairs;
+  they are not an independent accuracy gain or proof of Android sleep handling.
+- Light and bundled APKs passed signature/model/native/license/permission inspection.
+  Model and optimized CPU runtime are unchanged. Light installed on Nothing;
+  the timed phone test refused the unlocked-own-app foreground precondition before
+  inference or action. Subsequent read-only status found the phone asleep and our
+  app not focused. Physical countdown verification awaits the user's unlock.
+- [Timer contract](timed-focus.md), [artifact identities](timed-focus-artifacts.json).
+  Handler delivery can be delayed by deep sleep; elapsed/usage accounting caps at
+  the deadline when the app can run. No exact-alarm/wakelock or 24/7 promise.
+- Workspace logical file size **10.96 GiB**, within the authorized 15 GB ceiling.
+  Publication is pending. Voice/monitor/actual iQOO/NPU/Office Kit and final
+  event eligibility/submission remain pending as recorded below.
+
 ## Command readiness and laptop bridge update 0.6
 
 - Research build source is `29c4c3372fcc913d3672e59803a3aa870fa2426b`. Both APKs and

@@ -4,7 +4,16 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
-## Current research baseline — v0.6
+## Current research baseline — v0.7
+
+Timed focus accepts one validated digits duration of 1 second–120 minutes after
+review, or use the reviewed 25-minute shortcut. Pause retains the remainder;
+process recovery is paused, and Android sleep may delay completion visibility.
+No monitor/microphone is enabled by a timer. The actual short phone-countdown test
+is pending an unlocked foreground app; current code has 105 passing JVM tests.
+See [timed focus](docs/timed-focus.md). Keep the earlier physical evidence separate.
+
+## Previous research baseline — v0.6
 
 Use source `29c4c3372fcc913d3672e59803a3aa870fa2426b` as the v0.6 build identity;
 both APKs and hash evidence are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6). **Set up Mira** reads optional feature

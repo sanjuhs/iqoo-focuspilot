@@ -5,7 +5,19 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
-## Current checkpoint — v0.6
+## Current checkpoint — v0.7
+
+Source `6bd4841b170be0445470eff9977133bc2accc8f6` implements reviewed bounded timed
+focus and focus-domain explanations. 105 JVM tests pass; lint zero errors and
+59 warnings. Both signed APKs passed model/native/license/permission inspection.
+The light build installed; its action test stopped before inference because the
+own-app unlocked/foreground guard failed. Actual countdown proof awaits the
+user's unlock. These known-case regression repairs do not replace the frozen
+0.6 reliability score. [Timer contract and test](docs/timed-focus.md).
+
+Current logical file size is **10.96 GiB** (2 October), within the 15 GB ceiling.
+
+## Previous checkpoint — v0.6
 
 Research build source: `29c4c3372fcc913d3672e59803a3aa870fa2426b`; both APKs and
 hash evidence are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6). Setup readiness was inspected with permissions off;

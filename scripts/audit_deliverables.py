@@ -207,6 +207,15 @@ def main():
    audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
   v06_light=next(item for item in v06['artifacts'] if not item['bundled_model'])
   audit.check('v06_phone_report_binding',lambda:phone_record(read_json(root/'docs/command-readiness-phone.json'),v06_light,v06['source_commit']))
+ audit.check('timed_focus_manifest',lambda:read_json(root/'docs/timed-focus-artifacts.json'))
+ v07=audit.result['checks']['timed_focus_manifest']
+ if 'artifacts' in v07:
+  for item in v07['artifacts']:
+   audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
+  v07_light=next(item for item in v07['artifacts'] if not item['bundled_model'])
+  if (root/'docs/timed-focus-phone.json').is_file():
+   audit.check('v07_phone_report_binding',lambda:phone_record(read_json(root/'docs/timed-focus-phone.json'),v07_light,v07['source_commit']))
+  else:audit.result['checks']['v07_phone_report_binding']={'status':'incomplete','reason':'Physical countdown test awaits unlocked own-app foreground; installation and JVM tests do not establish this.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
@@ -226,7 +235,9 @@ def main():
      if local.is_file():findings.append({'tag':release['tag_name'],**release_parity({'bytes':local.stat().st_size,'sha256':sha(local)},release['assets'],name)})
    required={}
    bound=['companion-phone-bound-v04.json'] if (root/'docs/companion-phone-bound-v04.json').is_file() else []
-   for tag,names in {'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   v07_names=['focuspilot-research-v07-light.apk','focuspilot-research-v07-bundled.apk','timed-focus-artifacts.json']
+   if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
+   for tag,names in {'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']

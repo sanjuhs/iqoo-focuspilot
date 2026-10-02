@@ -15,7 +15,18 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
-## Current 0.6 addition
+## Current 0.7 addition
+
+The auditor also inspects both 0.7 APKs and their public assets, bound to app source
+`6bd4841b170be0445470eff9977133bc2accc8f6`. It reports the phone-countdown requirement
+as **incomplete** while no separate physical report exists. The APK installed, but
+its own-app unlocked/foreground precondition failed before inference or action.
+Current XML contains 105 JVM tests and lint zero errors/59 warnings; these do not
+prove a phone deadline, deep sleep or process recovery. The regression fixes are
+post-test changes against known 0.6 failures, not a newly measured held-out gain.
+See [timed focus](timed-focus.md) for behavior, reproduction and unverified cases.
+
+## Previous 0.6 addition
 
 The auditor now includes both 0.6 APKs, their required release assets and the
 separate [phone report](command-readiness-phone.json), bound to the **light** APK

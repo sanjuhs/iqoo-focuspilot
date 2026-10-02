@@ -3,7 +3,13 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current research build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
+**Current source/build: v0.7**, `6bd4841b170be0445470eff9977133bc2accc8f6`.
+Adds reviewed timed focus, a 25-minute shortcut, pause/resume and bounded focus
+explanations. **105 JVM tests pass**; lint zero errors/59 warnings. Both APKs
+passed artifact inspection. Actual v0.7 countdown testing awaits an unlocked,
+foreground phone; release publication is pending. [Timed focus contract](docs/timed-focus.md).
+
+**Previous verified phone-action build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
 Set up Mira shows optional feature readiness; typed local-model Start/Pause were
 reviewed, confirmed and checked on Nothing. The app was left paused with usage off
 and 100 virtual points. A wrongly proposed alarm cancellation was rejected.
@@ -51,6 +57,7 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
 | [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
+| [docs/timed-focus.md](docs/timed-focus.md) | Countdown semantics, regression fixes and pending phone checks |
 | [docs/command-readiness.md](docs/command-readiness.md) | Setup screen and confirmed typed phone actions |
 | [docs/command-reliability.md](docs/command-reliability.md) | Frozen host command results and accepted failures |
 | [docs/officekit-export-workflow.md](docs/officekit-export-workflow.md) | Implemented laptop review; actual Office Kit pending |
