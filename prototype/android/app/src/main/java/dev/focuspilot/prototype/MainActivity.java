@@ -20,6 +20,7 @@ import android.os.SystemClock;
 import android.provider.AlarmClock;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
 import android.view.Gravity;
 import android.view.View;
@@ -68,6 +69,9 @@ public final class MainActivity extends Activity {
     private LocalVoiceInput voiceInput;
     private final VoiceDraftState voiceDraft=new VoiceDraftState();
     private TextToSpeech tts;
+    private final ReadbackState readback=new ReadbackState();
+    private Runnable readbackTimeout;
+    private TextView readbackStatus;
     private final ArrayList<String> events = new ArrayList<>();
     private final Runnable refreshTask = new Runnable() {
         @Override public void run() { if (visible) { refresh(); handler.postDelayed(this, 5000); } }
@@ -89,15 +93,19 @@ public final class MainActivity extends Activity {
             public void onDraft(String value) { commandInput.setText(value); }
             public void onChanged() { listening=voiceDraft.active(); if(visible) refresh(); }
         });
-        tts = new TextToSpeech(this, result -> {
+        tts = new TextToSpeech(this, result -> handler.post(()->{
+            if(isDestroyed())return;
+            try {
             if (result == TextToSpeech.SUCCESS && tts != null && tts.getVoices() != null) {
                 for (Voice voice : tts.getVoices()) {
                     if (!voice.isNetworkConnectionRequired() && voice.getLocale().getLanguage().equals("en")) {
-                        offlineVoiceReady = tts.setVoice(voice) == TextToSpeech.SUCCESS; break;
+                        offlineVoiceReady = tts.setVoice(voice) == TextToSpeech.SUCCESS;
+                        if(offlineVoiceReady)break;
                     }
                 }
             }
-        });
+            } catch(RuntimeException error) { offlineVoiceReady=false; }
+        }));
     }
     private int dp(float value) { return Math.round(value * getResources().getDisplayMetrics().density); }
     private GradientDrawable rounded(int color, int radius) { GradientDrawable shape = new GradientDrawable(); shape.setColor(color); shape.setCornerRadius(dp(radius)); return shape; }
@@ -161,7 +169,7 @@ public final class MainActivity extends Activity {
         LinearLayout preferences=disclosure(friend,"Companion preferences");
         preferences.addView(text("Make Mira feel right for you. Hiding her artwork keeps your focus controls available.",13,MUTED,false));
         preferenceToggle(preferences,"Reduce motion",reduceMotion,value -> { reduceMotion=value; prefs.edit().putBoolean("reduceMotion",value).apply(); companion.setReduceMotion(value); });
-        preferenceToggle(preferences,"Mute companion voice",muted,value -> { muted=value; prefs.edit().putBoolean("mute",value).apply(); if(value && tts!=null) tts.stop(); });
+        preferenceToggle(preferences,"Mute companion voice",muted,value -> { muted=value; prefs.edit().putBoolean("mute",value).apply(); if(value) stopReadback(); });
         preferenceToggle(preferences,"Hide companion artwork",hideCompanion,value -> { hideCompanion=value; prefs.edit().putBoolean("hideCompanion",value).apply(); companion.setVisibility(value ? View.GONE : View.VISIBLE); if(value)stopService(new Intent(this,FloatingCompanionService.class)); refreshFloating(); });
         LinearLayout floating=disclosure(friend,"Mira while you use your phone");
         floating.addView(text("A small movable friend with Open, Pause focus and Hide. Show is separate from permission. She stops on screen-off or lock; Android may hide or stop her. No microphone or screen reading.",13,MUTED,false));
@@ -191,8 +199,12 @@ public final class MainActivity extends Activity {
         sessionButton = button("Start focus",focus,v -> toggleFocus(),true);
         button("Reset this session",focus,v -> resetSession(),false);
         LinearLayout steps=card("ONE SMALL STEP");
-        taskGuide=new TaskGuidePanel(this,prefs,()->prefs.getString("focusGoal",""),this::showStatus,this::speak,()->{if(tts!=null)tts.stop();});
+        taskGuide=new TaskGuidePanel(this,prefs,()->prefs.getString("focusGoal",""),this::showStatus,this::speak,this::stopReadback);
         steps.addView(taskGuide);
+        readbackStatus=text("Read a step when you're ready. Voice stays off until you tap.",13,MUTED,false);
+        readbackStatus.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE);
+        steps.addView(readbackStatus);
+        button("Stop readback",steps,v -> stopReadback(),false);
         LinearLayout monitor=card("STAY WITH ME · OPT-IN BACKGROUND FOCUS");
         monitorStatus=text("Monitor stopped",18,WHITE,true); monitor.addView(monitorStatus);
         monitor.addView(text("Continue one app-budget session when this app is closed, using a visible notification with Stop. Turn on usage reading, grant Usage Access, and allow notifications first. No always-listening microphone or screen capture. Android/OEM power rules can stop it.",13,MUTED,false));
@@ -263,17 +275,17 @@ public final class MainActivity extends Activity {
         logView=text("No events yet",13,MUTED,false); history.addView(logView);
         button("Export my focus summary",history,v -> new AlertDialog.Builder(this).setTitle("Export your private summary?").setMessage("Includes your selected app, limits, task hash, virtual points and labels for that app. Excludes task text, screen content and event history. Choose phone storage for an offline file; a cloud provider may sync it. Exported files remain after deleting app data.").setNegativeButton("Cancel",null).setPositiveButton("Choose destination",(d,w) -> exportFocusData()).show(),false);
         button("Delete focus data & saved examples",history,v -> new AlertDialog.Builder(this).setTitle("Delete FocusPilot data?").setMessage("Clears saved settings, event history and few-shot labels, stops the session and disables observation. The downloaded model stays installed. Android permissions can be revoked separately in system settings.").setNegativeButton("Cancel",null).setPositiveButton("Delete",(d,w) -> deleteData()).show(),false);
-        root.addView(text("RESEARCH BUILD · 0.7\nNo real money moves. You choose when to pause.",12,MUTED,false));
+        root.addView(text("RESEARCH BUILD · 0.12\nNo real money moves. You choose when to pause.",12,MUTED,false));
         screen.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout safetyBar=new LinearLayout(this); safetyBar.setOrientation(LinearLayout.VERTICAL); safetyBar.setPadding(dp(20),0,dp(20),dp(8)); safetyBar.setBackgroundColor(BG);
         button("Stop focus",safetyBar,v -> pauseFocus(),false);
         screen.addView(safetyBar,new LinearLayout.LayoutParams(-1,-2));
         setContentView(screen); screen.requestApplyInsets(); renderLogs();
     }
-    @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
+    @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; voiceDraft.resume(); readback.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
     @Override protected void onPause(){floatingResumed=false;super.onPause();}
-    @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
-    @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
+    @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; stopReadback(); readback.stop(); super.onStop(); }
+    @Override protected void onDestroy() { readback.close(); handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
     private long realUsage() { return repository.usage(); }
     private void refresh() {
@@ -341,7 +353,7 @@ public final class MainActivity extends Activity {
         timerDetail.setText(session.isTimed()?String.format(Locale.US,"%s · %.1f minutes focused in total",session.isCompleted()?"Countdown complete":session.isActive()?"Time remaining":"Countdown paused",duration/60_000.0):"Elapsed focus time");
     }
     private void startFocus() { repository.start(); simulated=false; celebrateUntil=SystemClock.elapsedRealtime()+1600; refresh(); handler.postDelayed(() -> { if(visible) refresh(); },1600); }
-    private void pauseFocus() { if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }
+    private void pauseFocus() { if(voiceInput!=null) voiceInput.cancel(); listening=false; stopReadback(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }
     private void toggleFocus() { if(session.isActive()) pauseFocus(); else startFocus(); }
     private void resetSession() { stopMonitor("Session reset; monitor stopped"); repository.reset(); simulated=false; refresh(); }
     private void setMonitorChecked(boolean checked) { updatingMonitor=true; monitorSwitch.setChecked(checked); updatingMonitor=false; }
@@ -446,7 +458,7 @@ public final class MainActivity extends Activity {
         }
         if(!LocalVoiceInput.available(this)) { showStatus("On-device speech is unavailable. Type your command; no cloud fallback is used."); return; }
         if(checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED) { requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},11); return; }
-        if(tts!=null) tts.stop();
+        stopReadback();
         voiceInput.start();
     }
     @Override public void onRequestPermissionsResult(int requestCode,String[] permissions,int[] results) {
@@ -456,7 +468,49 @@ public final class MainActivity extends Activity {
         if(requestCode==12 && results.length>0 && results[0]==PackageManager.PERMISSION_GRANTED && visible) enableMonitor();
         else if(requestCode==12) showStatus("Notifications not allowed. Background monitor stays off; the dashboard still works.");
     }
-    private void speak(String value) { if(voiceDraft.active()) { showStatus("Finish or cancel voice input before speaking a status."); return; } if(muted) { showStatus("Companion voice is muted. "+value); return; } if(offlineVoiceReady && tts!=null) tts.speak(value,TextToSpeech.QUEUE_FLUSH,null,"focuspilot-status"); else showStatus("Offline text-to-speech voice is not ready or installed. "+value); }
+    private void speak(String value) {
+        if(!visible)return;
+        if(voiceDraft.active()) { showReadbackStatus("Finish or cancel voice input before reading aloud."); return; }
+        if(muted) { showReadbackStatus("Mira's voice is muted. Your text is still here."); return; }
+        if(!offlineVoiceReady || tts==null) { showReadbackStatus("Offline voice is not ready or installed. Your text is still here."); return; }
+        stopReadback();
+        final long token=readback.begin();
+        if(token==0)return;
+        final String utterance="focuspilot-readback-"+token;
+        readbackTimeout=()->finishReadback(token,"Readback timed out. You can try again when you're ready.",true);
+        handler.postDelayed(readbackTimeout,20_000);
+        try {
+            if(tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+                @Override public void onStart(String id) { if(utterance.equals(id))handler.post(()->{if(readback.owns(token))showReadbackStatus("Mira is reading aloud.");}); }
+                @Override public void onDone(String id) { if(utterance.equals(id))handler.post(()->finishReadback(token,"Mira finished reading aloud.",false)); }
+                @Override public void onError(String id) { if(utterance.equals(id))handler.post(()->finishReadback(token,"Readback failed. Your text is still here.",true)); }
+                @Override public void onStop(String id,boolean interrupted) { if(utterance.equals(id))handler.post(()->finishReadback(token,"Readback stopped. Your text is still here.",false)); }
+            })==TextToSpeech.ERROR) { finishReadback(token,"Offline readback could not start. Your text is still here.",true);return; }
+            showReadbackStatus("Mira is getting ready to read aloud.");
+            if(tts.speak(value,TextToSpeech.QUEUE_FLUSH,null,utterance)==TextToSpeech.ERROR)
+                finishReadback(token,"Offline readback could not start. Your text is still here.",true);
+        } catch(RuntimeException error) { finishReadback(token,"Offline readback is unavailable. Your text is still here.",true); }
+    }
+    private void finishReadback(long token,String message,boolean stopEngine) {
+        if(!readback.finish(token))return;
+        if(readbackTimeout!=null){handler.removeCallbacks(readbackTimeout);readbackTimeout=null;}
+        if(stopEngine && tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}
+        showReadbackStatus(message);
+    }
+    private void stopReadback() {
+        boolean wasActive=readback.active();readback.cancel();
+        if(readbackTimeout!=null){handler.removeCallbacks(readbackTimeout);readbackTimeout=null;}
+        if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}
+        if(wasActive) {
+            if(readbackStatus!=null)readbackStatus.setText("Readback stopped. Your text is still here.");
+            if(visible)showStatus("Readback stopped. Your text is still here.");
+        }
+    }
+    private void showReadbackStatus(String message) {
+        if(!visible)return;
+        if(readbackStatus!=null)readbackStatus.setText(message);
+        showStatus(message);
+    }
     private void showStatus(String value) { if(status!=null) status.setText(value); }
     private void log(String value) {
         repository.log(value); renderLogs();
