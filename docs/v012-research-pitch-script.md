@@ -65,7 +65,7 @@ Visual: Explicitly labelled animated diagram: request → independent gate → r
 
 > Previous version eleven phone trials displayed four finite summaries consistently. Their labels, dimensions, and numerical ranges are observations of computation. They do not tell us that a neuron means focus or distraction.
 
-> Understanding a mechanism requires interventions and repeatable behavioral effects. Our viewer supports those experiments. We keep that research separate from testing whether the requested command works.
+> Understanding a mechanism requires interventions and repeatable behavioral effects. Our laptop experiments explore those questions; the phone viewer currently observes. We keep that research separate from testing whether the requested command works.
 
 Visual: Clearly labelled historical v0.11 evidence diagram: four finite tensor summaries were observed outside the selected model clip. Present recorded facts and observational limits; do not imply all four summaries appear in new footage or invent tensor output.
 

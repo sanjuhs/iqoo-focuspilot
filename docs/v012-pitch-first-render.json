@@ -1,0 +1,13 @@
+{
+  "kind": "First completed encoded research render retained before wording clarification",
+  "completed": true,
+  "video_sha256": "540cae9fdf7088eb090ab2203adcce1b9f7bbf546cabe585d8a77c19f6d7f374",
+  "seconds": 277.852,
+  "renderer_source_sha256": "3317c1ac6f7e0e3f528009db64a176c58593f8f394d07ffa9f3ebc10c7f6bc55",
+  "narration_source_sha256": "395e5bc3e9f59c29df5ee9987920da75cd16c3a11f410c84a0c9516739283e18",
+  "full_decode_passed": true,
+  "selected": false,
+  "reason": "Clarify that phone viewer observes tensors while intervention experiments run on laptop. Original statement was vague; app, footage and recorded results unchanged.",
+  "ignored_assets": "artifacts/v012-pitch-first-render/",
+  "human_complete_audio_review": false
+}
