@@ -1,0 +1,1254 @@
+{
+  "schema": 1,
+  "scope": "Fresh frozen confirmation after selection, same synthetic author aware of previous results; not independent human sampling. One OLD prompt capture shared by actual locked baseline/selected gates.",
+  "frozen_manifest": {
+    "schema": 1,
+    "frozen_utc": "2026-10-02T15:10:31.142310+00:00",
+    "selection_locked_before_authoring": true,
+    "frozen_before_capture": true,
+    "root_has_not_seen_confirmation_text": true,
+    "rows": 100,
+    "families": 50,
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "generator_sha256": "f387524000669256181f9fc9c399a70bfa74b66fc72258f5afab7aece6cbc4c7",
+    "protocol_sha256": "b90ae62b6e637dbe85477107a65b0079f3c99c3fd23a83ab6c4ae652a8dcbf4f",
+    "cases_sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+    "requests_sha256": "deb041616ebe7424752481d3f7091e872a1d57b5e4cd17934a18a32e486f5e36",
+    "selected_source_sha256": {
+      "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+    },
+    "baseline_source_sha256": {
+      "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+    },
+    "exact_prior_overlap": 0,
+    "normalized_prior_overlap": 0,
+    "prior_inventory_texts": 675
+  },
+  "prompt_inventory": {
+    "fixed_example_count": 8,
+    "exact_request_overlap_rows": 0,
+    "case_whitespace_normalized_overlap_rows": 0,
+    "heldout_rows_unchanged": 100,
+    "prompt_sha256": "f7a6765341fbef7e851fdab8aeaed18f7c6ab32729601e49c9427093f597a4a1",
+    "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "inventory_source_sha256": "0ac4bae0cb9c563b45568e4556d998530a63c65fbd1f74fe7aea4e26cc8fb07f",
+    "method": "Actual rendered system prose, fixed utterance=intent examples; terminal separator period is not utterance data",
+    "generated_tokens": 0
+  },
+  "model": {
+    "rows": 100,
+    "semantic_correct": 36,
+    "supported_rows": 50,
+    "supported_correct": 35,
+    "unknown_rows": 50,
+    "unknown_correct": 1,
+    "unknown_nonunknown_proposals": 49,
+    "schema_and_eos_valid": 100,
+    "semantic_accuracy": 0.36,
+    "per_class": {
+      "alarm": {
+        "rows": 8,
+        "correct": 8
+      },
+      "explain": {
+        "rows": 8,
+        "correct": 4
+      },
+      "open_app": {
+        "rows": 6,
+        "correct": 6
+      },
+      "pause_focus": {
+        "rows": 8,
+        "correct": 4
+      },
+      "start_focus": {
+        "rows": 10,
+        "correct": 10
+      },
+      "timer": {
+        "rows": 10,
+        "correct": 3
+      },
+      "unknown": {
+        "rows": 50,
+        "correct": 1
+      }
+    },
+    "prompt_tokens_median": 163.0,
+    "prompt_tokens_min": 158,
+    "prompt_tokens_max": 170,
+    "load_ms": 431.894667,
+    "first_native_ms": 465.99242,
+    "subsequent_native_ms_median": 454.5255,
+    "wall_ms_median": 456.019958,
+    "metadata": {
+      "exit_code": 0,
+      "started_utc": "2026-10-02T15:12:01.268348+00:00",
+      "wall_seconds": 46.063610167009756,
+      "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+      "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+      "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "requests_sha256": "deb041616ebe7424752481d3f7091e872a1d57b5e4cd17934a18a32e486f5e36",
+      "output_sha256": "be6e34b67f6490a17dbbd14e6e2404988faf68cc70f43e2e91d8364ce5ce8284",
+      "baseline_source_sha256": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+      "cpu_only": true,
+      "context": 1024,
+      "threads": 4,
+      "capture_enabled": false,
+      "actions_executed": 0
+    },
+    "timing_limit": "Host CPU only. Each version has its own model load, fixed baseline-then-candidate order. First request is not OS-cache-cold; thermals/power uncontrolled. Context reused with state cleared per case. No phone/NPU claim."
+  },
+  "gates": {
+    "generated": {
+      "baseline": {
+        "rows": 100,
+        "strict_correct": 65,
+        "supported_rows": 50,
+        "supported_correct": 15,
+        "supported_false_abstentions": 35,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 15,
+        "wrong_accepted": 0,
+        "coverage": 0.15,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_calendar_repeat_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_midnight_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_multiple_clock_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_numeric_meridian": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_clock_values": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_invalid_range": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_prefix": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "app_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "back_to_focus": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "calculator_address_punctuation": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_willingness": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "compound_focus_clock": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_pause_open": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_alarm_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_delay": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "count_down_request": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "destructive_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_action_and_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "finish_focus_request": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_digit_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_malformed_duration_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_summary_details": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_word_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "fraction_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "immediate_self_focus": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "multiple_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "nudge_explanation_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_current_domain": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_punctuation_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quote_translation_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "remaining_focus_status": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "reported_command_not_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_willingness": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "signed_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "spoken_alarm_ambiguous_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "study_break_request": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_boundaries_confirmation": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_digits_long_seconds": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_hours_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_prefix_words": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_word_suffix_duration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "unknown_apps_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_status_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_configuration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "warned_focus_reason": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "willingness_focus": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 76.0417920537293,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "a806ee66a84114ffd57a9db26ad3b123a74f9a04e3c21e7786839e0891992e5a"
+      },
+      "selected": {
+        "rows": 100,
+        "strict_correct": 81,
+        "supported_rows": 50,
+        "supported_correct": 31,
+        "supported_false_abstentions": 19,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 31,
+        "wrong_accepted": 0,
+        "coverage": 0.31,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_calendar_repeat_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_midnight_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_multiple_clock_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_numeric_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_clock_values": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_invalid_range": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_prefix": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "app_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "back_to_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_address_punctuation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_willingness": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_focus_clock": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_pause_open": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_alarm_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_delay": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "count_down_request": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "destructive_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_action_and_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "finish_focus_request": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_digit_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_malformed_duration_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_summary_details": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_word_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "fraction_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "immediate_self_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "nudge_explanation_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_current_domain": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_punctuation_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quote_translation_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "remaining_focus_status": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "reported_command_not_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_willingness": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "signed_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "spoken_alarm_ambiguous_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "study_break_request": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_boundaries_confirmation": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_digits_long_seconds": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_hours_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_prefix_words": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_word_suffix_duration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "unknown_apps_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_status_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_configuration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "warned_focus_reason": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "willingness_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 75.6148750660941,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "abd917ddfe77de3aa5a6f6e91beeb4c6045e273c5133f92a0eba1dded3615f9a"
+      }
+    },
+    "oracle": {
+      "baseline": {
+        "rows": 100,
+        "strict_correct": 70,
+        "supported_rows": 50,
+        "supported_correct": 20,
+        "supported_false_abstentions": 30,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 20,
+        "wrong_accepted": 0,
+        "coverage": 0.2,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_calendar_repeat_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_midnight_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_multiple_clock_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_numeric_meridian": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_clock_values": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_invalid_range": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_prefix": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "app_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "back_to_focus": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "calculator_address_punctuation": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_willingness": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "compound_focus_clock": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_pause_open": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_alarm_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_delay": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "count_down_request": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "destructive_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_action_and_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "finish_focus_request": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_digit_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_malformed_duration_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_summary_details": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_word_countdown": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "fraction_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "immediate_self_focus": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "multiple_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "nudge_explanation_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_current_domain": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_punctuation_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quote_translation_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "remaining_focus_status": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_command_not_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_willingness": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "signed_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "spoken_alarm_ambiguous_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "study_break_request": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_boundaries_confirmation": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_digits_long_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_hours_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_prefix_words": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_word_suffix_duration": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "unknown_apps_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_status_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_configuration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "warned_focus_reason": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "willingness_focus": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 74.62816697079688,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "805c446de48c3bf66e2506860642920ef5bdc71c97aa60b19ef37bcfc500198f"
+      },
+      "selected": {
+        "rows": 100,
+        "strict_correct": 95,
+        "supported_rows": 50,
+        "supported_correct": 45,
+        "supported_false_abstentions": 5,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 45,
+        "wrong_accepted": 0,
+        "coverage": 0.45,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_calendar_repeat_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_midnight_noon": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_multiple_clock_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_numeric_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_clock_values": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_invalid_range": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_prefix": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "app_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "back_to_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_address_punctuation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_willingness": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_focus_clock": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "compound_pause_open": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_alarm_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "conditional_delay": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "count_down_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "destructive_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_action_and_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "finish_focus_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_digit_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_malformed_duration_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_summary_details": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_word_countdown": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "fraction_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "immediate_self_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "nudge_explanation_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_current_domain": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_punctuation_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quote_translation_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "remaining_focus_status": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_command_not_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_willingness": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "signed_timer_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "spoken_alarm_ambiguous_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "study_break_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_boundaries_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_digits_long_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_hours_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_prefix_words": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_refusal": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_word_suffix_duration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unknown_apps_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_status_confirmation": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_configuration": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "warned_focus_reason": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "willingness_focus": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "host_java_process_ms": 77.05845893360674,
+        "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+        "raw_result_sha256": "cce5227bceddc1486a2717da16ac95a1111ff591846fba72454723e215ec8362"
+      }
+    }
+  },
+  "paired": {
+    "generated": {
+      "supported_gains": 16,
+      "supported_losses": 0,
+      "gains_per_family": {
+        "alarm_numeric_meridian": 1,
+        "alarm_spoken_prefix": 2,
+        "back_to_focus": 1,
+        "calculator_address_punctuation": 1,
+        "clock_willingness": 2,
+        "focus_digit_countdown": 1,
+        "focus_word_countdown": 1,
+        "immediate_self_focus": 1,
+        "nudge_explanation_wrapper": 1,
+        "pause_punctuation_wrapper": 1,
+        "settings_willingness": 2,
+        "willingness_focus": 2
+      },
+      "losses_per_family": {}
+    },
+    "oracle": {
+      "supported_gains": 25,
+      "supported_losses": 0,
+      "gains_per_family": {
+        "alarm_numeric_meridian": 1,
+        "alarm_spoken_prefix": 2,
+        "back_to_focus": 1,
+        "calculator_address_punctuation": 1,
+        "clock_willingness": 2,
+        "count_down_request": 1,
+        "finish_focus_request": 1,
+        "focus_digit_countdown": 1,
+        "focus_summary_details": 1,
+        "focus_word_countdown": 1,
+        "immediate_self_focus": 1,
+        "nudge_explanation_wrapper": 1,
+        "pause_punctuation_wrapper": 2,
+        "settings_willingness": 2,
+        "study_break_request": 1,
+        "timer_boundaries_confirmation": 1,
+        "timer_digits_long_seconds": 1,
+        "timer_prefix_words": 1,
+        "timer_word_suffix_duration": 1,
+        "willingness_focus": 2
+      },
+      "losses_per_family": {}
+    }
+  },
+  "source_sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+  "new_inference_captures": 1,
+  "actions_executed": 0,
+  "candidate_promoted": false
+}

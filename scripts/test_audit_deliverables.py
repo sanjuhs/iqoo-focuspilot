@@ -2,6 +2,7 @@ import tempfile,unittest,hashlib,json,subprocess,sys
 from pathlib import Path
 from zipfile import ZipFile
 from audit_deliverables import artifact_identity,release_parity,inspect_apk,LICENSES,sha,reports,captions,manual_proofs,phone_record,MODEL_SHA,synthetic_arithmetic
+from audit_deliverables import command_confirmation_binding
 
 class EvidenceAuditTests(unittest.TestCase):
  def setUp(self):self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
@@ -50,4 +51,17 @@ class EvidenceAuditTests(unittest.TestCase):
   few={'summary':{'fixture':{'total':10,'answered':5,'abstained':5,'fewshot_correct':4,'baseline_correct':7,'coverage':.5,'selective_accuracy':.8}}}
   causal={'holdout':{'opposite_patch':{'intent_changes':0},'random_patch':{'intent_changes':0}},'native_calls':108,'noop_restore_full_logits_parity':True}
   r=synthetic_arithmetic(policy,few,causal);self.assertEqual(-3,r['fewshot']['fixture']['overall_correct_delta']);self.assertFalse(r['causal']['semantic_steering_advantage_established']);few['summary']['fixture']['coverage']=1;self.assertEqual('incomplete',synthetic_arithmetic(policy,few,causal)['status'])
+ def test_confirmation_cannot_bind_changed_app_or_changed_result(self):
+  repo=Path(__file__).resolve().parents[1];lab=Path('prototype/command-v10-confirm')
+  for name in ('freeze-manifest.json','results.json','experiment-metadata.json','generate_data.py','protocol.json'):
+   self.write(str(lab/name),(repo/lab/name).read_bytes())
+  java=Path('prototype/android/app/src/main/java/dev/focuspilot/prototype')
+  for name in json.loads((repo/lab/'freeze-manifest.json').read_text())['selected_source_sha256']:
+   self.write(str(java/name),(repo/java/name).read_bytes())
+  self.assertEqual('verified',command_confirmation_binding(self.root)['status'])
+  self.assertFalse(command_confirmation_binding(self.root)['physical_verified'])
+  gate=self.root/java/'ModelCommandGate.java';original=gate.read_bytes();gate.write_bytes(b'changed source')
+  self.assertEqual('incomplete',command_confirmation_binding(self.root)['status']);gate.write_bytes(original)
+  result=self.root/lab/'results.json';record=json.loads(result.read_text());record['gates']['generated']['selected']['supported_correct']=50;result.write_text(json.dumps(record))
+  self.assertEqual('incomplete',command_confirmation_binding(self.root)['status'])
 if __name__=='__main__':unittest.main()

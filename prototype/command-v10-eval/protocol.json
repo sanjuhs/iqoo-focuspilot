@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "scope": "Blind pre-event synthetic end-to-end command lab on verified host CPU. No training, downloads or phone actions.",
+  "freeze_condition": "Independent generator/requests/labels fixed before candidate prompt/gate edits; implementer sees only counts and hashes until candidate source lock.",
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 50,
+  "must_abstain_rows": 50,
+  "product_contract": "One immediate reviewed focus start/resume (optional bounded countdown), pause, focus status/nudge explanation, Clock alarm/time or timer, or approved Settings/Calculator/Clock launch. Friendly whole wrappers and polite punctuation/suffixes. Focus/timer single integer duration 1..7200 seconds (1..120 minutes), with bounded English number words/digits. Spoken alarm hour/minutes require explicit AM/PM. No ambiguity, signed/fractional/multiple durations, dates/recurrence, negation, conditions, reported/quoted commands, capability/information questions, destructive/unapproved tasks, extra unsupported modifiers or multiple actions. All supported actions still require review/confirmation and outcome verification.",
+  "semantic_labels": "Supported requests have the intended seven-class label; all unsupported original requests have semantic unknown. Oracle domain labels deliberately propose a plausible action for unsupported in-domain requests to test validator rejection independently.",
+  "score": "Semantic intent accuracy overall and supported/unsupported separated, JSON schema/EOS, exact (kind,hour,minute,seconds) action/slot coverage, false abstentions, supported wrong slots/action and unsupported false accepts. Pair gained/lost exact supported outcomes within same requests. Preserve every failure; no prompt/parser/data tuning from heldout.",
+  "comparison": "Separately capture frozen v0.9 prompt and candidate prompt with same pinned GGUF/JNI/CPU4threads/context1024; each output captured once. Separately compile v0.9 gate+numbers and locked candidate gate+numbers; primary end-to-end pairs their own prompt/gate and oracle comparison isolates gate ceiling. No history/state reuse across utterances except model context explicitly cleared by unchanged JNI.",
+  "artifacts": "Raw requests, model text, compiled Java, source snapshots/logs/results per case under ignored build; tracked source/manifests/aggregate only.",
+  "v09_source_sha256": {
+    "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "context": 1024,
+  "threads": 4,
+  "paid_api_cost": 0,
+  "downloads": 0,
+  "actions_executed": 0,
+  "promotion": "None from this synthetic lab alone; no universal safety claim."
+}

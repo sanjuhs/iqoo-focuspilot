@@ -36,16 +36,44 @@ parser from evaluation results and then report the same data as unseen. The
 generator refuses to overwrite changed request files. Raw data, outputs, source
 snapshots and compiled Java classes are ignored under `build/`.
 
+The current app retains a newer expanded gate, so copying its sources does
+not reproduce the historical v0.8 candidate. With original snapshots/capture
+retained, use the score-only path and the historical hashes:
+
 ```sh
+python3 prototype/command-v08-eval/run_evaluation.py --score-only \
+  --candidate-sha 54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71 \
+  --number-words-sha e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d
+```
+
+For fresh replay, use a new isolated scratch checkout at the exact historical
+commit `6e483aaf9e42889794ed77c272b8a912539cfc7c`; do not overwrite current app
+sources or retained original captures. Link only the existing verified model and
+host runtime from the original checkout, then assemble the historical sources:
+
+```sh
+ORIGINAL_ROOT="$(pwd)"
+REPLAY_ROOT="/tmp/focuspilot-v08-replay"
+git worktree add --detach "$REPLAY_ROOT" 6e483aaf9e42889794ed77c272b8a912539cfc7c
+mkdir -p "$REPLAY_ROOT/models" "$REPLAY_ROOT/prototype/native/build"
+ln -s "$ORIGINAL_ROOT/models/qwen" "$REPLAY_ROOT/models/qwen"
+ln -s "$ORIGINAL_ROOT/prototype/native/build/host" "$REPLAY_ROOT/prototype/native/build/host"
+cd "$REPLAY_ROOT"
 python3 prototype/command-v08-eval/generate_data.py
 mkdir -p prototype/command-v08-eval/build/v07-source
 git show 6bd4841b170be0445470eff9977133bc2accc8f6:prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java > prototype/command-v08-eval/build/v07-source/ModelCommandGate.java
-cp prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java prototype/command-v08-eval/build/LocalModel.java
+git show 6e483aaf9e42889794ed77c272b8a912539cfc7c:prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java > prototype/command-v08-eval/build/LocalModel.java
 python3 -m unittest discover -s prototype/command-v08-eval -p 'test_*.py' -v
 python3 prototype/command-v08-eval/run_evaluation.py \
   --candidate-sha 54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71 \
   --number-words-sha e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d
 ```
+
+The historical adapter SHA is
+`2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d`.
+Keep scratch replay provenance separate and return to the original checkout
+when finished; this recipe never changes the current app's sources. It does not
+create a new blind experiment.
 
 The runner requires the existing verified host JNI library, pinned local GGUF
 and OpenJDK 17. It does not download or rebuild the native runtime. It refuses to

@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "frozen_utc": "2026-10-02T15:10:31.142310+00:00",
+  "selection_locked_before_authoring": true,
+  "frozen_before_capture": true,
+  "root_has_not_seen_confirmation_text": true,
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 50,
+  "must_abstain_rows": 50,
+  "generator_sha256": "f387524000669256181f9fc9c399a70bfa74b66fc72258f5afab7aece6cbc4c7",
+  "protocol_sha256": "b90ae62b6e637dbe85477107a65b0079f3c99c3fd23a83ab6c4ae652a8dcbf4f",
+  "cases_sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+  "requests_sha256": "deb041616ebe7424752481d3f7091e872a1d57b5e4cd17934a18a32e486f5e36",
+  "selected_source_sha256": {
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "baseline_source_sha256": {
+    "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "exact_prior_overlap": 0,
+  "normalized_prior_overlap": 0,
+  "prior_inventory_texts": 675
+}

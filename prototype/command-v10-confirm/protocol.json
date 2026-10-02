@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "scope": "Fresh synthetic gate-only confirmation after post-hoc selection. Same author knows previous results; not independently sampled human/user-distribution data. Selection locked before authoring; no root text disclosure before terminal.",
+  "selected_sources": {
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "baseline_sources": {
+    "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 50,
+  "must_abstain_rows": 50,
+  "contract": "One immediate reviewed focus start/resume/pause/status or nudge explanation; Clock alarm with digits or explicit-AM/PM English time, single integer focus/timer1..7200seconds or1..120minutes; approvedSettings/Calculator/Clock with friendly wrappers/punctuation. Ambiguous/spoken no meridian, negation/conditional/quoted/reported/compound/destructive/unapproved/signed/fractional/multiple/calendar/recurring/extra modifiers reject. Preserve known difficult focus-current and warned-focus forms in fresh wording.",
+  "labels": "Seven semantic classes; unsupported semantic unknown. Oracle domain labels deliberately propose in-domain actions to independently test rejection. Exact expected kind/hour/minute/seconds authored before any capture.",
+  "overlap": "Exact and lowercase alphanumeric punctuation/whitespace-normalized zero overlap against58+373+v08+v10+development36 and8 actual pinned prompt examples. No semantic/number-word normalization. No dropping rows.",
+  "compute": "One unchanged old-prompt pinnedQwen JNI CPU capture4threads/context1024 timeout300seconds. Same outputs reused with actual separately compiled baseline/selected gates; oracle both. No downloads/provider calls/training/actions/repairs.",
+  "metrics": "Overall/supported/unknown semantic, JSON+EOS, exact slots/actions, false abstention, wrong accepted slots/actions, unknown falseaccepts, pairedgains/losses. Load/first/subsequent hostCPU timings, OS cache/thermals uncontrolled.",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "promotion": "Root decision/phone regressions separately; no guarantee of universal safety from synthetic results."
+}

@@ -1,0 +1,1339 @@
+{
+  "schema": 1,
+  "scope": "Blind frozen pre-event synthetic host CPU evidence; no actions or training. Generated end-to-end comparison changes prompt+gate together; oracle comparison isolates validators.",
+  "frozen_manifest": {
+    "schema": 1,
+    "frozen_utc": "2026-10-02T14:47:23.734651+00:00",
+    "frozen_before_candidate_changes": true,
+    "implementer_has_not_seen_text": true,
+    "rows": 100,
+    "families": 50,
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "exact_prior_overlap": 0,
+    "generator_sha256": "20ebede9b6b809f70903f66ffaaa9b7bcc2521612d1f47534610a2ac8d06d5c6",
+    "protocol_sha256": "55815f30d5145037672b38941ccc08d49f68e4cba1751d503eb3396864bb2348",
+    "cases_sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+    "requests_sha256": "55b5c14fd6e602613c5720de2dd05b4da68ec3cfb5514f6ccbdb924c24c70592",
+    "v09_source_sha256": {
+      "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+    }
+  },
+  "candidate_lock": {
+    "locked_utc": "2026-10-02T14:57:57.831125+00:00",
+    "source_sha256": {
+      "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "LocalModel.java": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329"
+    },
+    "dataset_sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+    "runner_sha256": "77ff8dec52e16528d10b3c100c9a818c1b9c70213790b41475714077b4e2ac5c",
+    "locked_before_any_capture": true
+  },
+  "prompt_inventory": {
+    "v09": {
+      "fixed_example_count": 8,
+      "exact_request_overlap_rows": 0,
+      "case_whitespace_normalized_overlap_rows": 0,
+      "heldout_rows_unchanged": 100,
+      "prompt_sha256": "f7a6765341fbef7e851fdab8aeaed18f7c6ab32729601e49c9427093f597a4a1",
+      "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "inventory_source_sha256": "0ac4bae0cb9c563b45568e4556d998530a63c65fbd1f74fe7aea4e26cc8fb07f",
+      "method": "Actual rendered system prose, fixed utterance=intent examples; terminal separator period is not utterance data",
+      "generated_tokens": 0
+    },
+    "v10": {
+      "fixed_example_count": 13,
+      "exact_request_overlap_rows": 0,
+      "case_whitespace_normalized_overlap_rows": 0,
+      "heldout_rows_unchanged": 100,
+      "prompt_sha256": "b3bdd51bfd8ed1ae8a4071579351e8f5717131c707c048ad92d02f2e9006bbe8",
+      "adapter_sha256": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+      "inventory_source_sha256": "0ac4bae0cb9c563b45568e4556d998530a63c65fbd1f74fe7aea4e26cc8fb07f",
+      "method": "Actual fixed user chat turns from rendered immutable adapter",
+      "generated_tokens": 0
+    }
+  },
+  "models": {
+    "v09": {
+      "rows": 100,
+      "semantic_correct": 37,
+      "supported_rows": 50,
+      "supported_correct": 37,
+      "unknown_rows": 50,
+      "unknown_correct": 0,
+      "unknown_nonunknown_proposals": 50,
+      "schema_and_eos_valid": 100,
+      "semantic_accuracy": 0.37,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7
+        },
+        "explain": {
+          "rows": 6,
+          "correct": 1
+        },
+        "open_app": {
+          "rows": 12,
+          "correct": 11
+        },
+        "pause_focus": {
+          "rows": 4,
+          "correct": 4
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 10
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 4
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 0
+        }
+      },
+      "prompt_tokens_median": 162.0,
+      "prompt_tokens_min": 159,
+      "prompt_tokens_max": 172,
+      "load_ms": 380.062125,
+      "first_native_ms": 461.93292,
+      "subsequent_native_ms_median": 449.03287,
+      "wall_ms_median": 449.84918749999997,
+      "metadata": {
+        "exit_code": 0,
+        "started_utc": "2026-10-02T14:57:58.782284+00:00",
+        "wall_seconds": 45.287349749938585,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "requests_sha256": "55b5c14fd6e602613c5720de2dd05b4da68ec3cfb5514f6ccbdb924c24c70592",
+        "output_sha256": "9882ba730f729b9b61b4d263bb5dbbad528eacc0450d56b69a0b08be238ac1dc",
+        "baseline_source_sha256": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+        "cpu_only": true,
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0
+      },
+      "timing_limit": "Host CPU only. Each version has its own model load, fixed baseline-then-candidate order. First request is not OS-cache-cold; thermals/power uncontrolled. Context reused with state cleared per case. No phone/NPU claim."
+    },
+    "v10": {
+      "rows": 100,
+      "semantic_correct": 58,
+      "supported_rows": 50,
+      "supported_correct": 30,
+      "unknown_rows": 50,
+      "unknown_correct": 28,
+      "unknown_nonunknown_proposals": 22,
+      "schema_and_eos_valid": 100,
+      "semantic_accuracy": 0.58,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7
+        },
+        "explain": {
+          "rows": 6,
+          "correct": 4
+        },
+        "open_app": {
+          "rows": 12,
+          "correct": 5
+        },
+        "pause_focus": {
+          "rows": 4,
+          "correct": 1
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 9
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 4
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 28
+        }
+      },
+      "prompt_tokens_median": 471.0,
+      "prompt_tokens_min": 468,
+      "prompt_tokens_max": 481,
+      "load_ms": 377.860209,
+      "first_native_ms": 1030.2693,
+      "subsequent_native_ms_median": 984.73454,
+      "wall_ms_median": 986.2547705,
+      "metadata": {
+        "exit_code": 0,
+        "started_utc": "2026-10-02T14:58:44.739141+00:00",
+        "wall_seconds": 99.07872245809995,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "adapter_sha256": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+        "requests_sha256": "55b5c14fd6e602613c5720de2dd05b4da68ec3cfb5514f6ccbdb924c24c70592",
+        "output_sha256": "a9745239862c6de5edf0a88d46344a0530857a0009e54253c81360e9c9348248",
+        "baseline_source_sha256": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+        "cpu_only": true,
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0
+      },
+      "timing_limit": "Host CPU only. Each version has its own model load, fixed baseline-then-candidate order. First request is not OS-cache-cold; thermals/power uncontrolled. Context reused with state cleared per case. No phone/NPU claim."
+    }
+  },
+  "gates": {
+    "generated": {
+      "v09": {
+        "rows": 100,
+        "strict_correct": 61,
+        "supported_rows": 50,
+        "supported_correct": 11,
+        "supported_false_abstentions": 39,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 11,
+        "wrong_accepted": 0,
+        "coverage": 0.11,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_polite": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "alarm_invalid_slots": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_boundary": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_missing_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_repeating_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_compound": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_simple": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_two_times": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_direct_noun": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "calculator_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "capability_without_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_direct_noun": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "condition_deferred_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "destructive_phone_task": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_clock_modification": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_address": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_digit_slot": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_invalid_units": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_resume_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_slot": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_tool_heads": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_approved_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_clock_timer": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_focus_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_direct_focus": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "prompt_control_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quoted_command_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_focus_statement": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_direct_noun": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "settings_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_nudge_cause": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "status_question": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "status_report_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_digit_minutes": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_digit_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_fraction_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_limit_edges": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_signed_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_compound": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_simple": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unapproved_launch": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_information": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_modifier": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "raw_result_sha256": "02104b86370da9eef23500699c2c0734073cb9b239d5739cf30705707058b0b9"
+      },
+      "v10": {
+        "rows": 100,
+        "strict_correct": 78,
+        "supported_rows": 50,
+        "supported_correct": 28,
+        "supported_false_abstentions": 22,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 28,
+        "wrong_accepted": 0,
+        "coverage": 0.28,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_polite": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_invalid_slots": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_boundary": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_missing_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_repeating_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_compound": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_simple": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_two_times": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_direct_noun": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "capability_without_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_direct_noun": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "condition_deferred_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "destructive_phone_task": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_clock_modification": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_address": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_digit_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_invalid_units": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_resume_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_tool_heads": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_approved_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_clock_timer": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_focus_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_direct_focus": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "prompt_control_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quoted_command_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_focus_statement": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_direct_noun": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "settings_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "status_nudge_cause": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_question": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_report_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_digit_minutes": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_digit_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_fraction_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_limit_edges": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_signed_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_compound": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_simple": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unapproved_launch": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_information": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_modifier": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "raw_result_sha256": "f3440fa7c63629ce12a16ac3ece3d20163a130adbbd0d6d58c67f9b07723b821"
+      }
+    },
+    "oracle": {
+      "v09": {
+        "rows": 100,
+        "strict_correct": 70,
+        "supported_rows": 50,
+        "supported_correct": 20,
+        "supported_false_abstentions": 30,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 20,
+        "wrong_accepted": 0,
+        "coverage": 0.2,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_polite": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "alarm_invalid_slots": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_boundary": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_missing_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_repeating_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_compound": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_simple": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_two_times": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_direct_noun": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "calculator_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "capability_without_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_direct_noun": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "clock_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "condition_deferred_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "destructive_phone_task": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_clock_modification": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_address": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_digit_slot": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_invalid_units": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_personal_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_resume_wrapper": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_slot": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "focus_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_tool_heads": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_approved_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_clock_timer": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_focus_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_direct_focus": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "pause_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "prompt_control_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quoted_command_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_focus_statement": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_direct_noun": {
+            "rows": 2,
+            "correct": 0,
+            "wrong_accepted": 0
+          },
+          "settings_personal_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_nudge_cause": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_question": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_report_wrapper": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_digit_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_digit_seconds": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_fraction_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_limit_edges": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_signed_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_compound": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_simple": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "timer_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unapproved_launch": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_information": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_modifier": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "raw_result_sha256": "83cd119ebc9c56b2ce185a03b4187fa2b81687668c2f12c0a2a3dd0412ebc927"
+      },
+      "v10": {
+        "rows": 100,
+        "strict_correct": 98,
+        "supported_rows": 50,
+        "supported_correct": 48,
+        "supported_false_abstentions": 2,
+        "supported_wrong_accepted": 0,
+        "supported_wrong_slots": 0,
+        "must_abstain_rows": 50,
+        "correct_abstentions": 50,
+        "unsupported_false_accepts": 0,
+        "accepted": 48,
+        "wrong_accepted": 0,
+        "coverage": 0.48,
+        "accepted_precision": 1.0,
+        "actions_executed": 0,
+        "per_family": {
+          "alarm_colon_polite": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_invalid_slots": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_meridian_boundary": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_missing_meridian": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_repeating_calendar": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_compound": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_spoken_simple": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "alarm_two_times": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_direct_noun": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "calculator_personal_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "capability_without_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_direct_noun": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "clock_personal_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "condition_deferred_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "destructive_phone_task": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "existing_clock_modification": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_address": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_digit_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_invalid_units": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_personal_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_resume_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_spoken_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "focus_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "hypothetical_action": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "multiple_tool_heads": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_approved_app": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_clock_timer": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "negated_focus_request": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "pause_direct_focus": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "pause_personal_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "prompt_control_injection": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "quoted_command_data": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "reported_focus_statement": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_direct_noun": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "settings_personal_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "status_nudge_cause": {
+            "rows": 2,
+            "correct": 1,
+            "wrong_accepted": 0
+          },
+          "status_question": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "status_report_wrapper": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_digit_minutes": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_digit_seconds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_fraction_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_invalid_bounds": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_limit_edges": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_signed_slot": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_compound": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_spoken_simple": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "timer_two_durations": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unapproved_launch": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unrelated_information": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          },
+          "unsupported_suffix_modifier": {
+            "rows": 2,
+            "correct": 2,
+            "wrong_accepted": 0
+          }
+        },
+        "raw_result_sha256": "c11de4793fcb9617a30b40ddd1287bc454c7c68abb35424d201ff3cd24690b23"
+      }
+    }
+  },
+  "paired": {
+    "generated": {
+      "supported_gains": 20,
+      "supported_losses": 3,
+      "gains_per_family": {
+        "alarm_colon_polite": 2,
+        "alarm_spoken_simple": 1,
+        "calculator_direct_noun": 2,
+        "calculator_personal_wrapper": 1,
+        "focus_address": 2,
+        "focus_digit_slot": 1,
+        "focus_personal_wrapper": 1,
+        "focus_resume_wrapper": 2,
+        "focus_spoken_slot": 1,
+        "settings_direct_noun": 1,
+        "status_nudge_cause": 1,
+        "status_question": 1,
+        "status_report_wrapper": 1,
+        "timer_limit_edges": 1,
+        "timer_spoken_simple": 2
+      },
+      "losses_per_family": {
+        "alarm_spoken_compound": 1,
+        "pause_personal_wrapper": 1,
+        "settings_personal_wrapper": 1
+      }
+    },
+    "oracle": {
+      "supported_gains": 28,
+      "supported_losses": 0,
+      "gains_per_family": {
+        "alarm_colon_polite": 2,
+        "calculator_direct_noun": 2,
+        "calculator_personal_wrapper": 2,
+        "clock_direct_noun": 1,
+        "clock_personal_wrapper": 2,
+        "focus_address": 2,
+        "focus_digit_slot": 1,
+        "focus_personal_wrapper": 2,
+        "focus_resume_wrapper": 2,
+        "focus_spoken_slot": 1,
+        "pause_direct_focus": 1,
+        "pause_personal_wrapper": 1,
+        "settings_direct_noun": 2,
+        "settings_personal_wrapper": 1,
+        "status_question": 1,
+        "status_report_wrapper": 1,
+        "timer_digit_seconds": 1,
+        "timer_limit_edges": 1,
+        "timer_spoken_compound": 1,
+        "timer_spoken_simple": 1
+      },
+      "losses_per_family": {}
+    },
+    "semantic": {
+      "gained": 34,
+      "lost": 13
+    }
+  },
+  "source_sha256": "77ff8dec52e16528d10b3c100c9a818c1b9c70213790b41475714077b4e2ac5c",
+  "actions_executed": 0,
+  "candidate_promoted": false
+}

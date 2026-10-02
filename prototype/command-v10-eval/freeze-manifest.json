@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "frozen_utc": "2026-10-02T14:47:23.734651+00:00",
+  "frozen_before_candidate_changes": true,
+  "implementer_has_not_seen_text": true,
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 50,
+  "must_abstain_rows": 50,
+  "exact_prior_overlap": 0,
+  "generator_sha256": "20ebede9b6b809f70903f66ffaaa9b7bcc2521612d1f47534610a2ac8d06d5c6",
+  "protocol_sha256": "55815f30d5145037672b38941ccc08d49f68e4cba1751d503eb3396864bb2348",
+  "cases_sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+  "requests_sha256": "55b5c14fd6e602613c5720de2dd05b4da68ec3cfb5514f6ccbdb924c24c70592",
+  "v09_source_sha256": {
+    "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "sources_sha256": {
+    "generate_data.py": "20ebede9b6b809f70903f66ffaaa9b7bcc2521612d1f47534610a2ac8d06d5c6",
+    "run_evaluation.py": "77ff8dec52e16528d10b3c100c9a818c1b9c70213790b41475714077b4e2ac5c",
+    "CommandBaseline.java": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+    "CommandGateEval.java": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "test_evaluation.py": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+    "PromptInventory.java": "0ac4bae0cb9c563b45568e4556d998530a63c65fbd1f74fe7aea4e26cc8fb07f",
+    "posthoc_compare.py": "0baa87c0d8f34a5bc7a87756540293a57ffd36fde3bf24580e9b2834738261a6"
+  },
+  "tests_passed": 6,
+  "frozen_requests_unchanged": true,
+  "inference_started": true,
+  "download_bytes": 0,
+  "paid_api_cost": 0,
+  "actions_executed": 0,
+  "inference_complete": true,
+  "candidate_source_sha256": {
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329"
+  },
+  "model_output_sha256": {
+    "v09": "9882ba730f729b9b61b4d263bb5dbbad528eacc0450d56b69a0b08be238ac1dc",
+    "v10": "a9745239862c6de5edf0a88d46344a0530857a0009e54253c81360e9c9348248"
+  },
+  "model_exit_codes": {
+    "v09": 0,
+    "v10": 0
+  },
+  "prompt_exact_overlaps": {
+    "v09": 0,
+    "v10": 0
+  },
+  "raw_gate_result_sha256": {
+    "generated": {
+      "v09": "02104b86370da9eef23500699c2c0734073cb9b239d5739cf30705707058b0b9",
+      "v10": "f3440fa7c63629ce12a16ac3ece3d20163a130adbbd0d6d58c67f9b07723b821"
+    },
+    "oracle": {
+      "v09": "83cd119ebc9c56b2ce185a03b4187fa2b81687668c2f12c0a2a3dd0412ebc927",
+      "v10": "c11de4793fcb9617a30b40ddd1287bc454c7c68abb35424d201ff3cd24690b23"
+    }
+  },
+  "results_sha256": "5e48c71328f548be2ced80cd44ab006663cfc46651857bf75f621e37c8db2901",
+  "candidate_promoted": false,
+  "posthoc": {
+    "explicitly_posthoc": true,
+    "added_after_primary_results": true,
+    "source_sha256": "0baa87c0d8f34a5bc7a87756540293a57ffd36fde3bf24580e9b2834738261a6",
+    "results_sha256": "b2e5d9710011d9a893948907e815db37322c078c60967d1bf807a77aad324fb2",
+    "primary_results_unchanged": true,
+    "generated_tokens": 0,
+    "actions_executed": 0
+  },
+  "prompt_candidate_rejected": true
+}

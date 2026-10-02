@@ -36,7 +36,7 @@ public final class ModelCommandGate {
     private static final Pattern ALARM_PREFIX_TIME=Pattern.compile("^(?:set|create|add|schedule)\\s+"+ARTICLE+"(.+)\\s+alarm$");
     private static final Pattern TIMER_REQUEST=Pattern.compile("^(?:(?:set|start|create|begin)\\s+"+ARTICLE+"(?:timer|countdown)|(?:timer|countdown)|count down)\\s+(?:for\\s+)?("+DURATION+")$");
     private static final Pattern TIMER_PREFIX_DURATION=Pattern.compile("^(?:set|start|create|begin|give me)\\s+"+ARTICLE+"("+DURATION+")\\s+(?:timer|countdown)$");
-    private static final Pattern APP_REQUEST=Pattern.compile("^(?:open|launch|show|go to|bring up|take me to)\\s+"+ARTICLE+"(settings|calculator|clock)(?:\\s+app)?$");
+    private static final Pattern APP_REQUEST=Pattern.compile("^(?:open|launch|show|go to|bring up|take me to)\\s+"+ARTICLE+"(settings|calculator|clock)(?:\\s+(?:app|application))?$");
     private static final Pattern DIGIT_TIME=Pattern.compile("^([0-9]{1,2}):([0-9]{2})$");
     private static final Pattern MERIDIAN=Pattern.compile("\\s*([ap])\\.?\\s*m\\.?$");
     private static final String FOCUS_INFO="(?:focus(?:\\s+(?:mode|session|status|summary|stats|nudge|warning|reminder))?|concentration(?:\\s+(?:session|status|summary|nudge|warning|reminder))?|deep work(?:\\s+(?:session|status))?|study\\s+(?:session|status))";
@@ -166,14 +166,20 @@ public final class ModelCommandGate {
         return new int[]{hour,minute};
     }
 
-    /** Only explicit conversational wrappers and terminal punctuation are removed. */
+    /** Only complete, explicitly enumerated conversational wrappers are removed. */
     private static String requestBody(String input) {
-        String body=input.replaceFirst("^(?:hey )?mira[,!]? +","");
-        body=body.replaceFirst("^please +","");
-        body=body.replaceFirst("^(?:(?:can|could|would|will) you +|i (?:want|need) to +|i(?:'d| would) like to +|let(?:'s| us) +)","");
-        body=body.replaceFirst("^please +","").replaceFirst("^help me +","").replaceFirst("^please +","");
-        body=body.replaceFirst("[.!?]+$","").trim();
-        body=body.replaceFirst(" +please$","").replaceFirst(" +now$","").trim();
+        String body=input.replaceFirst("[.!?]+$","").trim();
+        body=body.replaceFirst("^(?:(?:hey|hi|hello)[,]? +)?mira[,!]? +","");
+        body=body.replaceFirst("^(?:hey|hi|hello)[,]? +","");
+        body=politePrefix(body);
+        body=body.replaceFirst("^(?:(?:can|could|would|will) you +|i (?:want|need)(?: you)? to +|i(?:'d| would) like(?: you)? to +|let(?:'s| us) +)","");
+        body=politePrefix(body).replaceFirst("^help me +","");
+        body=politePrefix(body);
+        // These suffixes carry no action/argument. Everything else must match the complete tool form.
+        body=body.replaceFirst("(?:,? +(?:please|now|for me)){1,2}$","").trim();
         return body;
+    }
+    private static String politePrefix(String body) {
+        return body.replaceFirst("^(?:(?:please|kindly)[,]? +|just +)","");
     }
 }

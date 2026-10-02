@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "sources_sha256": {
+    "generate_data.py": "f387524000669256181f9fc9c399a70bfa74b66fc72258f5afab7aece6cbc4c7",
+    "run_evaluation.py": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+    "CommandBaseline.java": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+    "CommandGateEval.java": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "PromptInventory.java": "0ac4bae0cb9c563b45568e4556d998530a63c65fbd1f74fe7aea4e26cc8fb07f",
+    "test_evaluation.py": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166"
+  },
+  "tests_passed": 6,
+  "inference_started": true,
+  "download_bytes": 0,
+  "paid_api_cost": 0,
+  "actions_executed": 0,
+  "inference_complete": true,
+  "model_captures": 1,
+  "model_exit_code": 0,
+  "model_output_sha256": "be6e34b67f6490a17dbbd14e6e2404988faf68cc70f43e2e91d8364ce5ce8284",
+  "results_sha256": "f559ae877ac392b3a2535a3a392b35ef99bd699974d5d5c9340386556c78af8e",
+  "raw_gate_result_sha256": {
+    "generated": {
+      "baseline": "a806ee66a84114ffd57a9db26ad3b123a74f9a04e3c21e7786839e0891992e5a",
+      "selected": "abd917ddfe77de3aa5a6f6e91beeb4c6045e273c5133f92a0eba1dded3615f9a"
+    },
+    "oracle": {
+      "baseline": "805c446de48c3bf66e2506860642920ef5bdc71c97aa60b19ef37bcfc500198f",
+      "selected": "cce5227bceddc1486a2717da16ac95a1111ff591846fba72454723e215ec8362"
+    }
+  },
+  "candidate_promoted": false
+}

@@ -1,0 +1,356 @@
+{
+  "scope": "OPENLY_SEEN_DEVELOPMENT; no independent holdout or promotion claim",
+  "rounds": [
+    {
+      "round": "baseline-v08",
+      "scope": "OPENLY_SEEN_DEVELOPMENT: no holdout/generalization/promotion claim",
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_intent_correct": 14,
+      "supported_intent_correct": 12,
+      "unsupported_model_nonunknown": 16,
+      "schema_eos_valid": 36,
+      "strict_correct": 30,
+      "supported_action_slot_correct": 12,
+      "unsupported_action_false_accepts": 0,
+      "supported_wrong_accepted": 0,
+      "supported_false_abstentions": 6,
+      "accepted": 12,
+      "model_load_ms": 442.336959,
+      "first_native_ms": 494.63596,
+      "subsequent_native_ms_median": 460.28421,
+      "wall_ms_median": 461.20629099999996,
+      "timing_scope": "Sequential host CPU, cached context with fresh KV/recurrent state each request; uncontrolled OS cache/thermals. No phone/NPU claim.",
+      "metadata": {
+        "exit_code": 0,
+        "timed_out": false,
+        "budget_seconds": 180,
+        "wall_seconds": 17.089306249981746,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_lock": {
+          "reference_commit": "6e483aaf9e42889794ed77c272b8a912539cfc7c",
+          "files": {
+            "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+            "ModelCommandGate.java": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+            "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+          },
+          "data_kind": "OPENLY_SEEN_DEVELOPMENT",
+          "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+          "runner_sha256": "eb0330a53d5d6633f27587ae72a4c68443a1d028e6f59dd534beb8998541e07b"
+        },
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "output_sha256": "6a33df819445393b4059a3233e21e766baa2040b9396454ebbf190bdffa17138",
+        "cpu_only": true,
+        "capture_enabled": false,
+        "context": 1024,
+        "threads": 4,
+        "actions_executed": 0
+      },
+      "actions_executed": 0,
+      "promoted": false,
+      "prompt_tokens_median": 158.0,
+      "strict_failures": [
+        {
+          "id": "dev005",
+          "utterance": "Give me a study break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev010",
+          "utterance": "Start a forty-five second timer",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev011",
+          "utterance": "Count down for two minutes",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev015",
+          "utterance": "Take me to clock",
+          "expected_intent": "open_app",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev017",
+          "utterance": "How much focus time is left?",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev018",
+          "utterance": "Tell me my focus status",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "round": "round1",
+      "scope": "OPENLY_SEEN_DEVELOPMENT: no holdout/generalization/promotion claim",
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_intent_correct": 28,
+      "supported_intent_correct": 11,
+      "unsupported_model_nonunknown": 1,
+      "schema_eos_valid": 36,
+      "strict_correct": 29,
+      "supported_action_slot_correct": 11,
+      "unsupported_action_false_accepts": 0,
+      "supported_wrong_accepted": 0,
+      "supported_false_abstentions": 7,
+      "accepted": 11,
+      "model_load_ms": 374.1005,
+      "first_native_ms": 1278.8207,
+      "subsequent_native_ms_median": 1243.1886,
+      "wall_ms_median": 1245.2799795,
+      "timing_scope": "Sequential host CPU, cached context with fresh KV/recurrent state each request; uncontrolled OS cache/thermals. No phone/NPU claim.",
+      "metadata": {
+        "exit_code": 0,
+        "timed_out": false,
+        "budget_seconds": 180,
+        "wall_seconds": 45.263745167059824,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_lock": {
+          "reference_commit": null,
+          "files": {
+            "LocalModel.java": "8916ef91bb41a38a250333344803f23e22cc586272807b9f7d9d360a26848f45",
+            "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+            "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+          },
+          "data_kind": "OPENLY_SEEN_DEVELOPMENT",
+          "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+          "runner_sha256": "eb0330a53d5d6633f27587ae72a4c68443a1d028e6f59dd534beb8998541e07b"
+        },
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "output_sha256": "1369f6504d799986f340c1afc5ccef6777c9305a59f90165795a388a9c20b731",
+        "cpu_only": true,
+        "capture_enabled": false,
+        "context": 1024,
+        "threads": 4,
+        "actions_executed": 0
+      },
+      "actions_executed": 0,
+      "promoted": false,
+      "prompt_tokens_median": 589.0,
+      "strict_failures": [
+        {
+          "id": "dev004",
+          "utterance": "Please stop my focus session",
+          "expected_intent": "pause_focus",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev005",
+          "utterance": "Give me a study break",
+          "expected_intent": "pause_focus",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev013",
+          "utterance": "Could you open the settings app?",
+          "expected_intent": "open_app",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev015",
+          "utterance": "Take me to clock",
+          "expected_intent": "open_app",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev016",
+          "utterance": "Why did you nudge me?",
+          "expected_intent": "explain",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev017",
+          "utterance": "How much focus time is left?",
+          "expected_intent": "explain",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev018",
+          "utterance": "Tell me my focus status",
+          "expected_intent": "explain",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "round": "round2",
+      "scope": "OPENLY_SEEN_DEVELOPMENT: no holdout/generalization/promotion claim",
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_intent_correct": 30,
+      "supported_intent_correct": 15,
+      "unsupported_model_nonunknown": 3,
+      "schema_eos_valid": 36,
+      "strict_correct": 33,
+      "supported_action_slot_correct": 15,
+      "unsupported_action_false_accepts": 0,
+      "supported_wrong_accepted": 0,
+      "supported_false_abstentions": 3,
+      "accepted": 15,
+      "model_load_ms": 370.521333,
+      "first_native_ms": 1008.7557,
+      "subsequent_native_ms_median": 972.01963,
+      "wall_ms_median": 973.4362914999999,
+      "timing_scope": "Sequential host CPU, cached context with fresh KV/recurrent state each request; uncontrolled OS cache/thermals. No phone/NPU claim.",
+      "metadata": {
+        "exit_code": 0,
+        "timed_out": false,
+        "budget_seconds": 180,
+        "wall_seconds": 35.57561029191129,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_lock": {
+          "reference_commit": null,
+          "files": {
+            "LocalModel.java": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+            "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+            "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+          },
+          "data_kind": "OPENLY_SEEN_DEVELOPMENT",
+          "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+          "runner_sha256": "eb0330a53d5d6633f27587ae72a4c68443a1d028e6f59dd534beb8998541e07b"
+        },
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "output_sha256": "7c712fa9fd3abad7eae7bcfafd13412c103bcac7b9a14a6143649f324fbda95f",
+        "cpu_only": true,
+        "capture_enabled": false,
+        "context": 1024,
+        "threads": 4,
+        "actions_executed": 0
+      },
+      "actions_executed": 0,
+      "promoted": false,
+      "prompt_tokens_median": 467.0,
+      "strict_failures": [
+        {
+          "id": "dev005",
+          "utterance": "Give me a study break",
+          "expected_intent": "pause_focus",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev013",
+          "utterance": "Could you open the settings app?",
+          "expected_intent": "open_app",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dev015",
+          "utterance": "Take me to clock",
+          "expected_intent": "open_app",
+          "model_intent": "unknown",
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

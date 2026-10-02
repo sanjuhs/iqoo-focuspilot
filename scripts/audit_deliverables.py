@@ -179,6 +179,31 @@ def manual_proofs(root, proofs):
   out[key]={'status':'weak_evidence' if refs and all(checks) else 'incomplete','required_proof':need,'proof_bundle_hashes_match':bool(refs and all(checks)),'human_review_required':True,'claim_verified':False}
  return out
 
+def command_confirmation_binding(root):
+ """Bind the selected app sources to recorded confirmation, without replaying it."""
+ lab=root/'prototype/command-v10-confirm'; frozen=read_json(lab/'freeze-manifest.json')
+ result=read_json(lab/'results.json'); metadata=read_json(lab/'experiment-metadata.json')
+ java=root/'prototype/android/app/src/main/java/dev/focuspilot/prototype'
+ source_matches={name:(java/name).is_file() and sha(java/name)==expected for name,expected in frozen['selected_source_sha256'].items()}
+ evidence_matches={
+  'results_digest':sha(lab/'results.json')==metadata['results_sha256'],
+  'generator_digest':sha(lab/'generate_data.py')==frozen['generator_sha256'],
+  'protocol_digest':sha(lab/'protocol.json')==frozen['protocol_sha256'],
+  'manifest_matches_result':frozen==result['frozen_manifest'],
+  'selected_before_authoring':frozen['selection_locked_before_authoring'] is True,
+  'model_identity':result['model']['metadata']['model_sha256']==MODEL_SHA,
+  'no_phone_actions':result['actions_executed']==0,
+ }
+ scores=result['gates']['generated']; selected=scores['selected']; baseline=scores['baseline']
+ return {'status':'verified' if all(source_matches.values()) and all(evidence_matches.values()) else 'incomplete',
+  'scope':'app-source and recorded synthetic evidence binding; no inference replay, independent sampling or phone outcome proof',
+  'source_matches':source_matches,'evidence_matches':evidence_matches,
+  'supported_baseline':baseline['supported_correct'],'supported_selected':selected['supported_correct'],
+  'supported_total':selected['supported_rows'],'false_abstentions':selected['supported_false_abstentions'],
+  'wrong_accepted_observed':selected['wrong_accepted'],'raw_model_correct':result['model']['semantic_correct'],
+  'raw_model_total':result['model']['rows'],'unknown_nonunknown_proposals':result['model']['unknown_nonunknown_proposals'],
+  'paired':result['paired']['generated'],'physical_verified':False}
+
 class Audit:
  def __init__(self,root):self.root=root;self.result={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'goal_complete':False,'label':'PRE-EVENT RESEARCH; byte/metadata audit cannot certify whole assistant or submission','checks':{},'errors':{}}
  def check(self,key,fn):
@@ -232,6 +257,13 @@ def main():
   for item in v09['artifacts']:
    audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
   audit.result['checks']['v09_floating_phone_proof']={'status':'incomplete','reason':'Installation, source review and geometry tests do not establish user-granted floating UI, drag/touch, screen/lock/revocation, notification controls or OEM behavior.'}
+ audit.check('conversational_commands_manifest',lambda:read_json(root/'docs/conversational-commands-artifacts.json'))
+ v10=audit.result['checks']['conversational_commands_manifest']
+ if 'artifacts' in v10:
+  for item in v10['artifacts']:
+   audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
+  audit.check('v10_confirmation_binding',lambda:command_confirmation_binding(root))
+  audit.result['checks']['v10_phone_proof']={'status':'incomplete','reason':'Source-bound synthetic gate confirmation and APK installation do not establish current phone command outcomes, ASR, floating behavior or disconnected execution.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
@@ -255,7 +287,7 @@ def main():
    if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
    v08_names=['focuspilot-research-v08-light.apk','focuspilot-research-v08-bundled.apk','natural-commands-artifacts.json']
    if (root/'docs/natural-commands-phone.json').is_file():v08_names.append('natural-commands-phone.json')
-   for tag,names in {'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   for tag,names in {'research-v0.10':['focuspilot-research-v010-light.apk','focuspilot-research-v010-bundled.apk','conversational-commands-artifacts.json'],'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']
