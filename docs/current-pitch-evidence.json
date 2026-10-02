@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-02",
+  "kind": "Current pre-event application concept/research pitch; original procedural illustrations, not live recording or eligible event entry",
+  "render_source_commit": "6ca1d02284ecffd643b9d50ea6b1b18d610f88d1",
+  "app_source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+  "video": {
+    "file": "artifacts/pitch-current.mp4",
+    "bytes": 10062839,
+    "sha256": "1bb3fd1d96330b5320b8d8281e8f824212ada852a84835c3b1cbcb0895e82a25"
+  },
+  "captions": {
+    "file": "artifacts/pitch-current.srt",
+    "bytes": 5779,
+    "sha256": "82410cf6cb0fb0b49322a30f5b46a2407db7719a9f481c5b82da5641db205233"
+  },
+  "render_manifest": {
+    "file": "docs/current-pitch-render-manifest.json",
+    "bytes": 26628,
+    "sha256": "e32801c80be8626455046e124687a2f053c451545d65d0b92fac6b5a65fe0e42"
+  },
+  "source": "docs/current-research-pitch-script.md",
+  "renderer": "scripts/render_current_pitch.py",
+  "metrics": "prototype/current-pitch/metrics.json",
+  "checks": {
+    "seconds": 274.836,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_video_drift_seconds": 0.002667,
+    "caption_segments": 30,
+    "caption_timing": "positive,monotonic,non-overlapping,within measured video",
+    "full_decode": "passed ffmpeg -xerror, zero errors",
+    "audio_mean_db": -18.9,
+    "audio_peak_db": -4.6,
+    "deterministic_seek_checks": 10,
+    "early_late_changed_checks": 10,
+    "encoded_motion": "Actual chart-region frames at 0.5s and 1.9s differ during first reveal",
+    "frame_review": "All 10 encoded scene end states via contact sheet; full-size encoded command coverage and toy contribution/caption frames; three-frame encoded 0.4s blend inspected, no blank transition",
+    "cache_guard": "Voice/rate/full-source/timeline/WAV/ASS/SRT byte bindings; changed rate rejected before export; bytes unchanged",
+    "policy_trace": "Actual pinned PositiveNetwork.inspect on invented [0.8,0.3,0.2,0.7,0.1,0.2]; logit contribution sum verified, largest-unit suppression recomputes score/logit",
+    "human_complete_audio_review": false,
+    "live_phone_recording": false,
+    "phone_capture_used": false,
+    "phone_actions_executed": 0,
+    "npu_verified": false,
+    "office_kit_verified": false
+  },
+  "limits": [
+    "Local Samantha speech generated and level checked; complete human listening/playback review still required.",
+    "Current app installation and synthetic host metrics are distinguished from historical v0.6 typed phone outcomes.",
+    "Illustrated overlay/voice/monitor/timer paths have no new physical outcome proof.",
+    "Public research assets do not establish event-code eligibility, admission or accepted submission."
+  ]
+}

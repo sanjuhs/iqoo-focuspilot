@@ -47,7 +47,10 @@ synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
 [Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
-are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
+are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
+reflects v0.10 with original animations, measured captions and source-bound figures.
+It is locally ready; complete human listening and live-phone proof remain pending.
+The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
 Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
@@ -74,7 +77,8 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/model-research.md](docs/model-research.md) | Kev, Laya, CUA, licenses and small-model options |
 | [docs/hackathon-research.md](docs/hackathon-research.md) | Sourced event research |
 | [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
-| [docs/research-pitch-script.md](docs/research-pitch-script.md) | Editable narration for the rendered research pitch |
+| [docs/current-pitch.md](docs/current-pitch.md) | Current 4:35 pitch, reproducible narration/animation and evidence |
+| [docs/research-pitch-script.md](docs/research-pitch-script.md) | Historical v0.3 pitch narration |
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 | [docs/floating-companion.md](docs/floating-companion.md) | Optional floating controls and actual device proof gates |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |

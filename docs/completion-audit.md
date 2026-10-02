@@ -45,6 +45,17 @@ The [0.10 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/re
 contains both APKs and the immutable manifest with matching server size/digest
 and exact app-source tag. This establishes public package backup only.
 
+## Current research pitch addition
+
+A separate [4:35 Mira pitch](current-pitch.md) adds original procedural animation,
+30 measured captions and v0.10 source-bound metrics. Renderer commit
+`6ca1d02284ecffd643b9d50ea6b1b18d610f88d1` is distinct from the unchanged app-source tag.
+Media/manifest hashes, source bindings, measured streams and caption bounds are
+auditable. Full decode, encoded frames/transitions and audio levels passed during
+render QA; these are attributed checks, not complete human listening. No phone
+capture/actions, NPU or Office Kit demonstration occurred. The old video is preserved.
+Logical project files now total approximately 13.604 decimal GB, below 15 GB.
+
 ## Previous 0.9 addition
 
 App source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds the independent optional floating visual

@@ -4,6 +4,32 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current research pitch — local video ready
+
+A new **4:35 (274.836-second)** application concept/research video is locally
+ready: `artifacts/pitch-current.mp4`, 1920×1080 H.264/24fps with AAC and **30 measured
+caption segments**. It uses original procedural illustrations, with no phone
+capture or new phone actions. The historical v0.3 `pitch-research.mp4` is preserved.
+
+Renderer source is `6ca1d02284ecffd643b9d50ea6b1b18d610f88d1`; the app remains
+`bcc24733655e4eced67d68ff5c47f7ab97d60b36`. Video SHA-256 is
+`1bb3fd1d96330b5320b8d8281e8f824212ada852a84835c3b1cbcb0895e82a25`.
+Full decode, caption timing, encoded-frame/transition review and audio-level checks
+passed. **Complete human listening/playback review remains pending.** The video's
+historical typed actions, current install identity and synthetic metrics retain
+their different evidence scopes; no live iQOO/NPU/Office Kit result or eligible-entry
+claim is established. Dashboard format/cutoff, event-code eligibility and accepted
+submission remain unresolved.
+
+This video/caption/evidence addition is **planned for the v0.10 research release;
+publication of these new assets remains pending root verification**. The existing
+APK publication below does not certify that the new video is already uploaded.
+
+[Current pitch and reproduction](docs/current-pitch.md),
+[immutable video evidence](docs/current-pitch-evidence.json),
+[render manifest](docs/current-pitch-render-manifest.json),
+[editable narration/shot plan](docs/current-research-pitch-script.md).
+
 ## Current research baseline — v0.10
 
 Source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`, version code **10** /

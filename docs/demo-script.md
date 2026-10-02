@@ -17,6 +17,16 @@ during the v0.10 installation on the asleep phone. [Floating contract](floating-
 
 Historical v0.8 build has 119 passing JVM tests, zero lint errors and 59 warnings. Both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes. Physical v0.8 command/countdown outcomes remain pending. The completed frozen 100-request/50-family host test improved gated strict correctness 64→72/100 with zero wrong accepts, but only 12/40 supported successes and 28/40 false abstentions, including nine gains and six losses. Its model-facing gate adds whole-request forms and deterministic English-number/clock slots while leaving Qwen weights/prompt/native unchanged. [Command contract](natural-commands.md). Historical v0.7 has 105 tests/59 lint warnings with timer phone proof pending unlock; source-bound v0.6 Start/Pause remains historical. Read [status](status.md), [timed focus](timed-focus.md) and [application draft](application-draft.md) before filming.
 
+## Current rendered research pitch
+
+The separate **4:35** [current Mira pitch](current-pitch.md) is rendered with original
+procedural animation and 30 measured captions. It shows source-bound v0.10 figures,
+a real calculation from the synthetic head and clearly separated historical phone
+observations. Full stream decode, caption timing, encoded-frame/transition review
+and audio-level checks pass. Complete human listening remains pending. No phone
+capture or action was used; this does not replace the live physical sequence below.
+The historical v0.3 video remains intact.
+
 ## Copyable opening
 
 “I pick up my phone for one task and lose the reason I opened it. Mira is a quiet productivity companion that helps me return to my own plan. I choose the task and limits, review her proposed actions, and can pause at any time. This is our dated pre-event research prototype. The local model runs on phone CPU; voice, permissioned monitoring and iQOO deployment still need physical verification.”
@@ -53,5 +63,5 @@ For an eventual eligible event demo, create the competition code in the 9–11 O
 - Use the exact installed APK/source/model hashes in the evidence manifest. A source update does not change which binary an old recording demonstrates. Keep historical latency observations and host results separately labelled.
 - Show denied/unavailable features truthfully; type a command when ASR is unavailable. No cuts may imply a failed action succeeded. A requested timer/Clock launch requires a verified result before claiming completion.
 - Keep virtual-points/no-money labels visible. Focus timer deep sleep and process loss can delay visible completion; no exact-alarm or 24/7 guarantee.
-- Review the final 3–5 minute export for readable text, complete narration/captions, privacy, audio and playback. Current natural-command/timer/bridge additions require a new recording, not a renamed v0.3 video.
+- Review the final 3–5 minute export for readable text, complete narration/captions, privacy, audio and playback. The new 4:35 animation covers current research; live natural-command/timer/bridge outcomes still require a permission-tested recording.
 - Submit only permitted assets after human review and organizer eligibility clarification; preserve the actual acceptance receipt. No submission has been performed by preparing this script.

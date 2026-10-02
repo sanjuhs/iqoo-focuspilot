@@ -1,0 +1,457 @@
+{
+  "kind": "current pre-event concept/research pitch; procedural illustration, not live recording or eligible event entry",
+  "app_source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+  "source_sha256": "b72d71b4889bd3dade159ccd9799b7b1804243428027f4ad2455f35d38652ab2",
+  "renderer_sha256": "155fb318b971f26ec347b8b20f76676a93d12731fd7ed2a251c320b6d788c123",
+  "metrics_sha256": "e8b172ba97a3027ab14e75f2d22b295200862c4df082c6d0d85c305a0d2e5324",
+  "evidence_bindings": {
+    "prototype/command-v10-confirm/results.json": {
+      "sha256": "f559ae877ac392b3a2535a3a392b35ef99bd699974d5d5c9340386556c78af8e",
+      "current_file_matches": true,
+      "recorded_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+      "recorded_commit_used": false
+    },
+    "prototype/command-v10-confirm/protocol.json": {
+      "sha256": "b90ae62b6e637dbe85477107a65b0079f3c99c3fd23a83ab6c4ae652a8dcbf4f",
+      "current_file_matches": true,
+      "recorded_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+      "recorded_commit_used": false
+    },
+    "prototype/command-v10-confirm/freeze-manifest.json": {
+      "sha256": "c51b7fe96efeb7f6552d4b20d40caf3d5897184c53ef1419a993aec72dba1e81",
+      "current_file_matches": true,
+      "recorded_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+      "recorded_commit_used": false
+    },
+    "docs/conversational-commands-artifacts.json": {
+      "sha256": "7cf7cca133d31bf68048643594aaf824b28956679729832c8f550d9b2e156e92",
+      "current_file_matches": true,
+      "recorded_commit": "ae3d5053c4bd453697acaa300bbc29e437b32ee6",
+      "recorded_commit_used": false
+    },
+    "docs/command-readiness-phone.json": {
+      "sha256": "53a160bc7c840968c11d322780b51dbb114849cc8ce0a99d0ead3e8c4825ba43",
+      "current_file_matches": true,
+      "recorded_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4",
+      "recorded_commit_used": false
+    },
+    "prototype/policy/synthetic-model-results.json": {
+      "sha256": "c53df744e75e5ab0ebe0f2f37da0b743c57bb42e1e44e56e210fe71f61123123",
+      "current_file_matches": true,
+      "recorded_commit": "da2c0df3082d37804a14998ceb842fe973bae238",
+      "recorded_commit_used": false
+    },
+    "prototype/policy/synthetic-model.json": {
+      "sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+      "current_file_matches": true,
+      "recorded_commit": "da2c0df3082d37804a14998ceb842fe973bae238",
+      "recorded_commit_used": false
+    },
+    "prototype/policy/java-export-results.json": {
+      "sha256": "fc82cde6c3c67ff58266f208c72b6260c05fe07c9827fd02da36de2e3a7c4628",
+      "current_file_matches": true,
+      "recorded_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+      "recorded_commit_used": false
+    },
+    "docs/live-policy-evidence.md": {
+      "sha256": "e6e20e6482a53927717527131fc5118422c06180e25005e6ff57476a95609246",
+      "current_file_matches": true,
+      "recorded_commit": "3bcf8a8af6d9e0ad380470afd96f2c6619e93311",
+      "recorded_commit_used": false
+    },
+    "prototype/interpretability/summary.json": {
+      "sha256": "ff14e0f9bc4f476d8636bc8887ae67be37e452aa242eb52bfde6af77e7777422",
+      "current_file_matches": true,
+      "recorded_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+      "recorded_commit_used": false
+    },
+    "prototype/interpretability/protocol.json": {
+      "sha256": "52ce962a0d7bd54b72dc19184ae4b5f435b25cd60e1380f4e4c190c89da95958",
+      "current_file_matches": true,
+      "recorded_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+      "recorded_commit_used": false
+    },
+    "docs/bridge-java-interop.json": {
+      "sha256": "f651247273a7b8c87ce4f6a4deb6a3134ae716cdc9ad02f6d8723cdc771aa34d",
+      "current_file_matches": true,
+      "recorded_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4",
+      "recorded_commit_used": false
+    },
+    "docs/officekit-export-workflow.md": {
+      "sha256": "49f9c7c497b1a7a10e43a4ab862404cf1fc5d7aaca8f857b35655946b084f6a5",
+      "current_file_matches": true,
+      "recorded_commit": "c0e6adeef8163b40070bfb2a9d2a875f9cf620b4",
+      "recorded_commit_used": false
+    },
+    "docs/remaining-deliverables.md": {
+      "sha256": "a1ac79c479cdaa271f916137e3a929423a60fbd6f300102e11d13dbae1089ed9",
+      "current_file_matches": true,
+      "recorded_commit": "0e171ec0ae1fb3877fa59b362fe5b5d2c9749d9d",
+      "recorded_commit_used": false
+    },
+    "prototype/qwen/model-manifest.json": {
+      "sha256": "d2b7f8e104ab2efe2bdfce375d2a32e5fd59d4929af145fddcff2375e83a71f9",
+      "current_file_matches": true,
+      "recorded_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+      "recorded_commit_used": false
+    },
+    "prototype/command-v10-confirm/README.md": {
+      "sha256": "fccea68dea19983f85f4b43fb7729ca59ce18ea9b162456e8ba09422c2ac2b92",
+      "current_file_matches": true,
+      "recorded_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+      "recorded_commit_used": false
+    }
+  },
+  "prepared_audio_sha256": "559bc1312d98e64e79f5dce95cb0adba2493e86888d860b133f57a55b05f785b",
+  "timeline_sha256": "5a3c5cbb71fa7c24fbe683cd4a78547e8318589e33effda3d097f87bbc197a20",
+  "policy_source_sha256": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+  "policy_checkpoint_sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+  "video_sha256": "1bb3fd1d96330b5320b8d8281e8f824212ada852a84835c3b1cbcb0895e82a25",
+  "captions_sha256": "82410cf6cb0fb0b49322a30f5b46a2407db7719a9f481c5b82da5641db205233",
+  "narration_sha256": "86e8a83345da6667371fcc5d156aaaada5fb245a316664888bc676fcc447cb80",
+  "seconds": 274.836,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "scenes": [
+    {
+      "index": 0,
+      "title": "A little help returning",
+      "utterances": [
+        "Meet Mira, the face of FocusPilot: a quiet local productivity companion that helps you return to the task you meant to do.",
+        "You choose your goal and limits. Mira offers a gentle next step, while breaks, overrides and the final decision stay with you.",
+        "This is our pre-event application concept and working research, with useful pieces already tested and important physical demonstrations still ahead."
+      ],
+      "visual_intent": "Learn the intended benefit \u2192 original Mira, task note and phone-shaped feed ribbon \u2192 one detour gently rejoins the task \u2192 start close on the note, pull back to the companion \u2192 note at 10%, detour at 35%, return at 65% \u2192 final task remains visible; no measured productivity claim.",
+      "start": 0.0,
+      "beats": [
+        {
+          "start": 0.0,
+          "end": 6.854739,
+          "text": "Meet Mira, the face of FocusPilot: a quiet local productivity companion that helps you return to the task you meant to do.",
+          "scene": 1
+        },
+        {
+          "start": 7.154739,
+          "end": 14.241678,
+          "text": "You choose your goal and limits. Mira offers a gentle next step, while breaks, overrides and the final decision stay with you.",
+          "scene": 1
+        },
+        {
+          "start": 14.541678000000001,
+          "end": 22.59805,
+          "text": "This is our pre-event application concept and working research, with useful pieces already tested and important physical demonstrations still ahead.",
+          "scene": 1
+        }
+      ],
+      "end": 22.89805,
+      "duration": 22.89805
+    },
+    {
+      "index": 1,
+      "title": "The useful everyday loop",
+      "utterances": [
+        "Imagine choosing a study task, starting focus, and setting a budget for one app that often becomes a detour during work.",
+        "An optional monitor would notice that chosen limit, explain a nudge, and offer a return. Accountability uses virtual points; no real money moves.",
+        "The product starts from your intention, not a claim that every social app or every moment of rest is unproductive."
+      ],
+      "visual_intent": "Learn the proposed workflow \u2192 task note, focus clock, selected-app budget arc, virtual points \u2192 user starts a clock, an illustrative overrun offers one nudge, override returns control \u2192 wide workbench composition \u2192 goal at 10%, overrun at 40%, override at 70% \u2192 label **Intended workflow \u00b7 permission testing pending**, virtual balance unchanged by override.",
+      "start": 22.89805,
+      "beats": [
+        {
+          "start": 22.89805,
+          "end": 29.640454000000002,
+          "text": "Imagine choosing a study task, starting focus, and setting a budget for one app that often becomes a detour during work.",
+          "scene": 2
+        },
+        {
+          "start": 29.940454000000003,
+          "end": 38.656917,
+          "text": "An optional monitor would notice that chosen limit, explain a nudge, and offer a return. Accountability uses virtual points; no real money moves.",
+          "scene": 2
+        },
+        {
+          "start": 38.956917000000004,
+          "end": 44.717144000000005,
+          "text": "The product starts from your intention, not a claim that every social app or every moment of rest is unproductive.",
+          "scene": 2
+        }
+      ],
+      "end": 45.017144,
+      "duration": 22.119094
+    },
+    {
+      "index": 2,
+      "title": "Understanding with a boundary",
+      "utterances": [
+        "A small open-source Qwen model understands a request locally, then proposes a bounded action such as starting focus or opening an approved tool.",
+        "A separate validator checks the whole original request and its arguments before you review and confirm. The model cannot authorize itself to act.",
+        "In a historical phone test, alarm cancellation was wrongly proposed as creation. The independent gate rejected it, and no Clock action ran."
+      ],
+      "visual_intent": "Learn why proposal differs from action \u2192 request capsule, Qwen block, validator gate and confirmation lever \u2192 supported request advances only after lever; \u201ccancel my alarm\u201d becomes wrong alarm proposal and visibly stops \u2192 horizontal causal path, then close on closed gate \u2192 trace before payload at 20%, failure at 55%, rejection hold at 75% \u2192 no Clock/action icon fires.",
+      "start": 45.017144,
+      "beats": [
+        {
+          "start": 45.017144,
+          "end": 52.804854,
+          "text": "A small open-source Qwen model understands a request locally, then proposes a bounded action such as starting focus or opening an approved tool.",
+          "scene": 3
+        },
+        {
+          "start": 53.104854,
+          "end": 60.683584,
+          "text": "A separate validator checks the whole original request and its arguments before you review and confirm. The model cannot authorize itself to act.",
+          "scene": 3
+        },
+        {
+          "start": 60.983584,
+          "end": 69.131475,
+          "text": "In a historical phone test, alarm cancellation was wrongly proposed as creation. The independent gate rejected it, and no Clock action ran.",
+          "scene": 3
+        }
+      ],
+      "end": 69.431475,
+      "duration": 24.414331000000004
+    },
+    {
+      "index": 3,
+      "title": "What the phone evidence proves",
+      "utterances": [
+        "Historical version zero point six ran typed Qwen requests on the Nothing development phone. Reviewed Start and Pause actually changed focus state.",
+        "Those observations took seventeen point three two three seconds and one point eight one four seconds. They were not speech or current-version benchmarks.",
+        "Current version zero point ten has a source-bound installed package and one hundred thirty-three passing Android tests. The phone remained asleep; current actions are untested."
+      ],
+      "visual_intent": "Learn evidence scope \u2192 dated v0.6 CPU timeline and separate v0.10 package envelope \u2192 confirmed historical Start changes own checkpoint active, Pause changes it paused; current package enters installed box without action arrow \u2192 split composition, never fake app UI \u2192 historical figures at 25%, date boundary at 50%, current idle state at 70% \u2192 labels **Historical typed phone test** and **Current install identity only**.",
+      "start": 69.431475,
+      "beats": [
+        {
+          "start": 69.431475,
+          "end": 77.498278,
+          "text": "Historical version zero point six ran typed Qwen requests on the Nothing development phone. Reviewed Start and Pause actually changed focus state.",
+          "scene": 4
+        },
+        {
+          "start": 77.79827800000001,
+          "end": 85.57614600000001,
+          "text": "Those observations took seventeen point three two three seconds and one point eight one four seconds. They were not speech or current-version benchmarks.",
+          "scene": 4
+        },
+        {
+          "start": 85.876146,
+          "end": 95.221271,
+          "text": "Current version zero point ten has a source-bound installed package and one hundred thirty-three passing Android tests. The phone remained asleep; current actions are untested.",
+          "scene": 4
+        }
+      ],
+      "end": 95.52127100000001,
+      "duration": 26.089796000000007
+    },
+    {
+      "index": 4,
+      "title": "More useful commands, measured honestly",
+      "utterances": [
+        "Fresh frozen synthetic confirmation improved correct supported proposals from fifteen to thirty-one out of fifty, with sixteen gains and no losses on that set.",
+        "Nineteen supported requests still abstained. Both gates rejected all fifty unsupported requests, with no wrong accepts observed; that is not universal safety.",
+        "Raw Qwen intent correctness was thirty-six out of one hundred, including forty-nine unsupported tool proposals. The informed author's synthetic test is not human voice evidence."
+      ],
+      "visual_intent": "Learn gain and remaining coverage \u2192 fifty supported dots shared between old/new gate lanes \u2192 fifteen light, then thirty-one; nineteen stay outlined \u2192 close paired lanes with distinct abstention area, not total-accuracy headline \u2192 baseline at 15%, gains at 40%, omissions at 65% \u2192 labels **Fresh synthetic confirmation**, **16 gains \u00b7 0 losses**, **19 abstentions**; hold for reading.",
+      "start": 95.52127100000001,
+      "beats": [
+        {
+          "start": 95.52127100000001,
+          "end": 103.98721200000001,
+          "text": "Fresh frozen synthetic confirmation improved correct supported proposals from fifteen to thirty-one out of fifty, with sixteen gains and no losses on that set.",
+          "scene": 5
+        },
+        {
+          "start": 104.28721200000001,
+          "end": 113.44127100000001,
+          "text": "Nineteen supported requests still abstained. Both gates rejected all fifty unsupported requests, with no wrong accepts observed; that is not universal safety.",
+          "scene": 5
+        },
+        {
+          "start": 113.74127100000001,
+          "end": 123.33886700000001,
+          "text": "Raw Qwen intent correctness was thirty-six out of one hundred, including forty-nine unsupported tool proposals. The informed author's synthetic test is not human voice evidence.",
+          "scene": 5
+        }
+      ],
+      "end": 123.638867,
+      "duration": 28.117595999999992
+    },
+    {
+      "index": 5,
+      "title": "Keep the simpler successful choice",
+      "utterances": [
+        "We selected the expanded request gate for research packaging, while keeping Qwen three point five, zero point eight billion, its quantized weights and native runtime unchanged.",
+        "A longer prompt experiment was rejected because useful command understanding fell and host latency rose. More instructions were not automatically better.",
+        "Today's local backend is CPU. These host comparisons neither promise phone response times nor demonstrate Snapdragon NPU execution or autonomous reliability."
+      ],
+      "visual_intent": "Learn component selection \u2192 unchanged model/prompt objects, longer prompt branch and expanded request gate \u2192 longer branch grows latency ribbon then dims; original path keeps its identity while gate gains supported wrapper tokens \u2192 cutaway of language path \u2192 candidate at 20%, rejection at 45%, retained route at 70% \u2192 **Original prompt retained \u00b7 gate expanded \u00b7 explicit review**.",
+      "start": 123.638867,
+      "beats": [
+        {
+          "start": 123.638867,
+          "end": 133.278187,
+          "text": "We selected the expanded request gate for research packaging, while keeping Qwen three point five, zero point eight billion, its quantized weights and native runtime unchanged.",
+          "scene": 6
+        },
+        {
+          "start": 133.578187,
+          "end": 141.71415100000002,
+          "text": "A longer prompt experiment was rejected because useful command understanding fell and host latency rose. More instructions were not automatically better.",
+          "scene": 6
+        },
+        {
+          "start": 142.01415100000003,
+          "end": 151.52408300000002,
+          "text": "Today's local backend is CPU. These host comparisons neither promise phone response times nor demonstrate Snapdragon NPU execution or autonomous reliability.",
+          "scene": 6
+        }
+      ],
+      "end": 151.82408300000003,
+      "duration": 28.185216000000025
+    },
+    {
+      "index": 6,
+      "title": "Explain the small decisions",
+      "utterances": [
+        "A separate sixty-five parameter network was actually trained on invented sandbox labels, reaching ninety-eight point three three percent accuracy on its synthetic holdout.",
+        "Its connections are nonnegative, its biases signed. We can inspect exact contributions and interventions, but this is not real human productivity accuracy.",
+        "The network remains a shadow explanation. Recurring nudges use hand-set rules; scoped few-shot Allow examples may veto them. Retrieval is different from fine-tuning."
+      ],
+      "visual_intent": "Learn which model is explained \u2192 six nonnegative input rods, eight hidden units and signed bias dial \u2192 contributions assemble the output logit; suppress one unit and recompute \u2192 network cutaway with exact contributions, not semantic neuron names \u2192 trained network at 15%, contribution sum at 35%, intervention at 65% \u2192 **65 parameters \u00b7 98.33% synthetic holdout \u00b7 shadow only**; separate hand-set recurring lane stays visible.",
+      "start": 151.82408300000003,
+      "beats": [
+        {
+          "start": 151.82408300000003,
+          "end": 161.14431000000002,
+          "text": "A separate sixty-five parameter network was actually trained on invented sandbox labels, reaching ninety-eight point three three percent accuracy on its synthetic holdout.",
+          "scene": 7
+        },
+        {
+          "start": 161.44431000000003,
+          "end": 170.54417400000003,
+          "text": "Its connections are nonnegative, its biases signed. We can inspect exact contributions and interventions, but this is not real human productivity accuracy.",
+          "scene": 7
+        },
+        {
+          "start": 170.84417400000004,
+          "end": 180.18027400000003,
+          "text": "The network remains a shadow explanation. Recurring nudges use hand-set rules; scoped few-shot Allow examples may veto them. Retrieval is different from fine-tuning.",
+          "scene": 7
+        }
+      ],
+      "end": 180.48027400000004,
+      "duration": 28.656191000000007
+    },
+    {
+      "index": 7,
+      "title": "Friendly presence, clear limits",
+      "utterances": [
+        "Mira's optional floating companion is implemented with reviewed Show, drag, Open, Hide and Pause controls. Returning from permission settings does not start it.",
+        "It requires user-granted access and visible notifications, and stops when the screen turns off. It is not an uninterrupted, always-listening assistant.",
+        "Actual overlay, timer, voice and permissioned monitoring still need device tests. Voice is designed as push-to-talk, then transcript review, local understanding and confirmation."
+      ],
+      "visual_intent": "Learn consent and presence \u2192 original Mira window, Show lever, permission gates, Hide/Pause controls and muted microphone \u2192 permission return stops before Show; explicit illustrative Show reveals window; screen-off closes it \u2192 portrait/environment composition \u2192 gates at 20%, distinct controls at 45%, cleanup at 70% \u2192 **Implementation \u00b7 physical proof pending**, no status implying listening.",
+      "start": 180.48027400000004,
+      "beats": [
+        {
+          "start": 180.48027400000004,
+          "end": 189.52943500000003,
+          "text": "Mira's optional floating companion is implemented with reviewed Show, drag, Open, Hide and Pause controls. Returning from permission settings does not start it.",
+          "scene": 8
+        },
+        {
+          "start": 189.82943500000005,
+          "end": 198.32539900000006,
+          "text": "It requires user-granted access and visible notifications, and stops when the screen turns off. It is not an uninterrupted, always-listening assistant.",
+          "scene": 8
+        },
+        {
+          "start": 198.62539900000004,
+          "end": 209.28072800000004,
+          "text": "Actual overlay, timer, voice and permissioned monitoring still need device tests. Voice is designed as push-to-talk, then transcript review, local understanding and confirmation.",
+          "scene": 8
+        }
+      ],
+      "end": 209.58072800000005,
+      "duration": 29.100454000000013
+    },
+    {
+      "index": 8,
+      "title": "Research that can say no",
+      "utterances": [
+        "We completed actual local LoRA training, but its semantic performance regressed, so the adapter was rejected. A separate frozen-representation classifier also remains unpromoted.",
+        "One hundred eight laptop intervention trials included sixteen restoration controls with identical full logits. Selected channels did not steer reliably better than random controls.",
+        "We retain those negative findings. Capturing activations and explaining a tiny classifier do not establish causal understanding of the entire language model."
+      ],
+      "visual_intent": "Learn rejected evidence is valuable \u2192 LoRA adapter branch, separate classifier head, observed tensor and control/patch lanes \u2192 rejected candidates detach; sixteen restored-control pairs match, selected and random steering remain comparable \u2192 research-bench composition \u2192 candidates at 15%, restoration at 40%, negative result at 70% \u2192 **Not deployed \u00b7 no full-model causal understanding**; no invented activation heatmap.",
+      "start": 209.58072800000005,
+      "beats": [
+        {
+          "start": 209.58072800000005,
+          "end": 220.13723600000006,
+          "text": "We completed actual local LoRA training, but its semantic performance regressed, so the adapter was rejected. A separate frozen-representation classifier also remains unpromoted.",
+          "scene": 9
+        },
+        {
+          "start": 220.43723600000004,
+          "end": 230.59886900000004,
+          "text": "One hundred eight laptop intervention trials included sixteen restoration controls with identical full logits. Selected channels did not steer reliably better than random controls.",
+          "scene": 9
+        },
+        {
+          "start": 230.89886900000005,
+          "end": 239.60943600000004,
+          "text": "We retain those negative findings. Capturing activations and explaining a tiny classifier do not establish causal understanding of the entire language model.",
+          "scene": 9
+        }
+      ],
+      "end": 239.90943600000006,
+      "duration": 30.328708000000006
+    },
+    {
+      "index": 9,
+      "title": "The next honest demonstration",
+      "utterances": [
+        "The laptop consumer already validates bounded exports and computes shadow scores: fifteen tests and actual Java-to-Python synthetic interoperability pass. Office Kit transfer remains pending.",
+        "Our Productivity demonstration still needs real iQOO hardware, verified acceleration, permission-tested workflows and a fresh live recording. The public Finale runs October ninth through eleventh.",
+        "This is preparation research. Eligible event code and dashboard requirements must be resolved before submission. Mira's promise is practical: local help, understandable decisions, and your control."
+      ],
+      "visual_intent": "Learn delivery path and external gates \u2192 bounded export document, laptop policy replay, dashed Office Kit/iQOO/HTP route and dated event boundary \u2192 Java-rendered synthetic document reaches actual laptop consumer; pending transport stays dashed; research stops before event-code boundary \u2192 pull out from useful handoff to three next-step objects \u2192 compute at 15%, pending device at 45%, event dates at 70% \u2192 **Productivity \u00b7 device proof \u2192 eligible build \u2192 accepted submission**, no receipt/checkmark.",
+      "start": 239.90943600000006,
+      "beats": [
+        {
+          "start": 239.90943600000006,
+          "end": 251.16118200000005,
+          "text": "The laptop consumer already validates bounded exports and computes shadow scores: fifteen tests and actual Java-to-Python synthetic interoperability pass. Office Kit transfer remains pending.",
+          "scene": 10
+        },
+        {
+          "start": 251.46118200000006,
+          "end": 262.60390300000006,
+          "text": "Our Productivity demonstration still needs real iQOO hardware, verified acceleration, permission-tested workflows and a fresh live recording. The public Finale runs October ninth through eleventh.",
+          "scene": 10
+        },
+        {
+          "start": 262.90390300000007,
+          "end": 274.5362390000001,
+          "text": "This is preparation research. Eligible event code and dashboard requirements must be resolved before submission. Mira's promise is practical: local help, understandable decisions, and your control.",
+          "scene": 10
+        }
+      ],
+      "end": 274.8362390000001,
+      "duration": 34.926803000000035
+    }
+  ],
+  "caption_segments": 30,
+  "voice": "Samantha",
+  "words_per_minute": 185,
+  "artwork": "original procedural Mira in renderer; project vector vocabulary, not captured app window",
+  "phone_capture_used": false,
+  "phone_actions_executed": 0,
+  "human_complete_audio_review": false
+}
