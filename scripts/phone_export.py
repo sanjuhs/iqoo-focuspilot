@@ -130,6 +130,9 @@ def main():
             'document_picker_component':COMPONENT,'before':before,'runtime_grants_before':grants,
             'zero_saved_live_labels_precondition':True,'default_settings_empty_goal':True,
             'office_kit_verified':False,'npu_verified':False,'permissions_changed':False,
+            'device':{name:lab.adb('shell','getprop',prop).strip() for name,prop in
+                      [('manufacturer','ro.product.manufacturer'),('model','ro.product.model'),
+                       ('soc','ro.soc.model'),('api','ro.build.version.sdk')]},
             'phases':[],'completed':False}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     def record(): args.output.write_text(json.dumps(report,indent=2)+'\n')
@@ -143,7 +146,10 @@ def main():
         if not any(n.get('text')=='Export your private summary?' for n in lab.nodes()): raise RuntimeError('Expected export review absent')
     record();picker=Picker(lab)
     try:
-        review();lab.tap('Cancel',scroll=False);phase('export_review_cancel')
+        review();lab.tap('Cancel',scroll=False)
+        if any(n.get('text')=='Export your private summary?' for n in lab.nodes()):
+            raise RuntimeError('Cancelled export review still open')
+        phase('export_review_cancel',review_closed=True)
         review();lab.tap('Choose destination',scroll=False);picker.guard()
         report['picker_control_metadata']=picker.metadata();record()
         # Back cancels the exact picker we launched; no directory content inspected/exported.

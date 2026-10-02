@@ -25,6 +25,14 @@ class PhoneForegroundTests(unittest.TestCase):
         self.assertFalse(own_interactive_foreground(self.window.replace("dev.focuspilot.prototype/", "dev.focuspilot.prototype.evil/"), "mKeyguardShowing=false"))
         self.assertFalse(own_interactive_foreground("mCurrentFocus=Window{abc u0 other.app/.MainActivity dev.focuspilot.prototype}\nmAwake=true", "mKeyguardShowing=false"))
 
+    def test_explicit_document_picker_owner_does_not_relax_default_guard(self):
+        window=self.window.replace('dev.focuspilot.prototype/.MainActivity',
+                                   'com.google.android.documentsui/com.android.documentsui.picker.PickActivity')
+        self.assertFalse(own_interactive_foreground(window,'mKeyguardShowing=false'))
+        self.assertTrue(own_interactive_foreground(window,'mKeyguardShowing=false','com.google.android.documentsui'))
+        self.assertFalse(own_interactive_foreground(window.replace('documentsui/','documentsui.other/'),
+                                                  'mKeyguardShowing=false','com.google.android.documentsui'))
+
 
 if __name__ == "__main__":
     unittest.main()
