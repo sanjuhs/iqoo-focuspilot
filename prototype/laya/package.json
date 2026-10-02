@@ -1,0 +1,17 @@
+{
+  "name": "steadfast-laya-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pre-event laptop lab for real bounded Laya inference; not phone/NPU inference",
+  "license": "Apache-2.0",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "prepare:model": "node prepare-model.mjs",
+    "classify": "node cli.mjs classify",
+    "benchmark": "node cli.mjs benchmark",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {"@receptron/laya": "0.1.2"},
+  "overrides": {"onnxruntime-node": "1.22.0", "@huggingface/tokenizers": "0.2.0"}
+}

@@ -39,8 +39,10 @@ flowchart LR
     G --> B
 ```
 
-Laya's 322M/421M decision models fit the requested size range and are candidates,
-not established Android deployments. The research prototype starts with deterministic
+Quantized Qwen3.5-0.8B Q4_0 is the selected command-understanding candidate;
+Laya's 322M/421M models are a decision-model comparison. Neither is an established
+Android deployment here yet. The [activation experiment](docs/interpretability-experiment.md)
+defines the causal tests for the command-model inspector. The research prototype starts with deterministic
 commands and a transparent hand-set scorer; it visibly reports that no LLM is
 installed. CPU/GPU local inference and Snapdragon NPU execution are separately tested.
 An ADB connection is a development tool, not Office Kit integration.

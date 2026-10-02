@@ -27,8 +27,10 @@ Do not submit a pre-event prototype as event-created work.
 - Voice demo: a push-to-talk request creates a proposed alarm through Android's clock intent.
 - Learning demo: user labels a few sandbox states; retrieval uses those examples to guide
   subsequent decisions. Show a held-out evaluation, not only training examples.
-- Model demo: load a licensed 0.1–0.5B language model on the phone and record its actual
+- Model demo: load the selected licensed quantized Qwen3.5-0.8B language model on the phone and record its actual
   inference backend. A deterministic parser is an explicit fallback, not an LLM claim.
+  Selected candidate: Qwen3.5-0.8B Q4_0, with the user expanding the original
+  0.1–0.5B size target. Laya and the prior 0.5B are comparison baselines.
 - Explanation demo: show feature values and contributions from a tiny positive-weight
   classifier. This explains that classifier, not every activation of a transformer.
 - Bridge demo: use the documented Office Kit workflow once account/device access is
@@ -37,8 +39,9 @@ Do not submit a pre-event prototype as event-created work.
 ## Android setup
 
 Installed SDK: `/Users/sanju/Library/Android/sdk`. Java 17 and adb are available.
-The development phone is detected over USB, but its initial state was `unauthorized`.
-Unlock it and accept the RSA authorization prompt. Then run:
+The development phone is now authorized; its initial state was `unauthorized`
+before the user accepted the RSA prompt. Verified: Nothing A059, Android 16/API 36,
+`SM7635`, ARM64, successful read-only shell command. Recheck with:
 
 ```sh
 python3 scripts/check_device.py

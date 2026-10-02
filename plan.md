@@ -12,7 +12,7 @@ demo, with an honest, measurable System 1 decision path.
 | 1 | Hackathon/repository research | Rules, licenses, tracks and hardware assumptions are sourced | In progress |
 | 2 | Phone and GitHub setup | Authorized ADB, device facts, secrets ignored, public source backup | In progress |
 | 3 | Research prototype | Focus/virtual penalty/decision trace/alarm workflow runs on Nothing phone | Planned pre-event experiment |
-| 4 | Local model baseline | 0.1–0.5B model loads on Android and produces bounded decisions offline | Pending |
+| 4 | Local model baseline | Selected Qwen3.5-0.8B model loads on Android and produces bounded decisions offline | Pending |
 | 5 | Few-shot sandbox | User-labelled examples improve held-out decisions with recorded comparison | Pending |
 | 6 | Voice and automation | Local speech availability established; approved commands verify outcomes | Pending |
 | 7 | iQOO acceleration and bridge | NPU backend and actual Office Kit flow measured on approved hardware | Needs hardware/account access |
@@ -28,10 +28,10 @@ initial milestone table as a completed-work report.
 user-set app category, budget overrun and repeated reopening. It recommends allow,
 nudge or confirm exit. It records exact feature contributions and obeys cooldowns.
 
-**Language lane:** evaluate Laya's 322M multilingual or 421M English decision model
-for short bounded intent selection. These are encoder/decision models, not a chat
-assistant that freely writes plans. Compare a small generative model only if a
-decision model cannot handle required command slots. Keep action candidates closed.
+**Language lane:** use quantized Qwen3.5-0.8B Q4_0 as the selected command-understanding
+candidate, with llama.cpp CPU instrumentation for selected activation experiments.
+Keep Laya 322M/421M as a decision-model comparison. Validate a closed command
+schema and slots before executing. Keep action candidates closed.
 
 **Action lane:** Android native intents first, accessibility selectors later.
 An allowlist, user-confirmation gates and postcondition checks stay outside the model.
@@ -67,6 +67,13 @@ weights are a transparent baseline, not a trained model or claimed discovery.
 Adapt coding work to published Red/Green Light intervals; do not plan prohibited
 laptop use during Red Light. The table is an ordering plan, not permission to bypass
 the event schedule. Confirm final submission time at check-in.
+
+## Activation experiment and stretch work
+
+Follow [docs/interpretability-experiment.md](docs/interpretability-experiment.md)
+for the user-requested command-model activation inspector. Establish baseline
+command accuracy, no-op intervention parity and held-out controls before claiming
+a narrow causal result. NPU inference and CPU activation experiments are distinct.
 
 ## Stretch work after the baseline
 

@@ -2,7 +2,16 @@
 
 Reviewed 2 October 2026. This document records source inspection and proposed engineering choices. No model has been downloaded, benchmarked on the phone, fine-tuned, or shown to run on its NPU during this research.
 
-## Recommendation
+## Updated direction
+
+After this research, the user selected quantized Qwen3.5-0.8B Q4_0 as the primary
+command-understanding candidate, with selected activation capture and causal
+intervention experiments in llama.cpp. Laya remains a useful local decision-model
+comparison. See [activation protocol](interpretability-experiment.md) and
+[verified status](status.md) for subsequent experiments; findings below are the
+original source-based comparison, not claims that later downloads/tests are absent.
+
+## Initial recommendation
 
 Build an Android productivity coach with a **bounded decision model**, explicit phone actions, and a separate transparent coaching policy. Start with a few reliably executable tasks: identify a focus-session distraction, speak a reminder, return home when the user requests it, and open the phone's alarm workflow. A working phone loop is the priority for the deadline.
 

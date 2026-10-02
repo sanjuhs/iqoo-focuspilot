@@ -62,7 +62,8 @@ evidence is separate from self-reported measurements or a GitHub commit.
 
 The guide encourages a local/open-source core and targets Snapdragon NPU use.
 There is no verified mandatory parameter count or prescribed runtime in the public
-guide. We independently target 0.1–0.5B parameters and a 10–15 GB development budget.
+guide. The initial 0.1–0.5B design target was expanded by the user to quantized
+Qwen3.5-0.8B. The development disk budget remains 10–15 GB.
 
 Office Kit is advertised for iQOO phones running OriginOS 6, with macOS 10.14.6+
 or Windows 10+ laptops. Nothing-phone USB debugging establishes development access,

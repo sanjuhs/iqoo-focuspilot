@@ -1,0 +1,208 @@
+{
+  "architecture": "6 -> 8 ReLU -> 1 sigmoid; nonnegative connection weights, signed biases",
+  "dataset": {
+    "dev": {
+      "count": 320,
+      "families": [
+        "near_balanced_boundary",
+        "split_overtime"
+      ],
+      "positives": 200,
+      "sha256": "2f201cc0dca09e2468e183b7a3900f8fb01ef962c8ddcbe1c7ed08c752ec6d12"
+    },
+    "holdout": {
+      "count": 480,
+      "families": [
+        "correlated_overruns",
+        "moderate_everywhere",
+        "sparse_extremes"
+      ],
+      "positives": 254,
+      "sha256": "a098cacdaaa4444d8e95011fac0c251a7ef5c9122305e7139823cda82a544bd7"
+    },
+    "train": {
+      "count": 640,
+      "families": [
+        "broad_mixture",
+        "budget_dominant",
+        "reopening",
+        "session_dominant"
+      ],
+      "positives": 283,
+      "sha256": "6e15e46ffde99efe85b89d7bf9430ea06152c0cacf56f4c7f7596b557ac2db42"
+    }
+  },
+  "feature_domain": "Dimensionless synthetic risk values [0,1]; no calibrated real-world units",
+  "features": [
+    "selected_app_budget_overrun",
+    "continuous_session_overrun",
+    "reopen_count",
+    "active_focus_overlap",
+    "deferred_nudges",
+    "elapsed_time_overrun"
+  ],
+  "implementation_sha256": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+  "limitations": "Invented synthetic labels; no real productivity learning, phone integration, LLM interpretation, or NPU proof",
+  "origin": "Pre-event laboratory research created 2026-10-02; not event-created submission",
+  "parameter_count": 65,
+  "parameters": {
+    "hidden_biases": [
+      -2.4743536995133573,
+      -2.3010695684249503,
+      -2.8239634808701264,
+      -2.4010622836687694,
+      -1.4931551121151028,
+      -2.3050366190614686,
+      -2.0341060214856275,
+      -2.74456373307918
+    ],
+    "input_weights": [
+      [
+        2.1305307193301615,
+        1.7379740087665134,
+        0.6560759992133103,
+        0.5105105344984145,
+        0.2871009677598251,
+        0.5676423441373614
+      ],
+      [
+        1.9905720205894053,
+        1.623369414239104,
+        0.5852433284218196,
+        0.48731976111303477,
+        0.2741905578202183,
+        0.5253614522044658
+      ],
+      [
+        2.492592175068471,
+        2.004723062584796,
+        0.73445354215641,
+        0.5819265125936754,
+        0.31362718907640424,
+        0.6259060689698641
+      ],
+      [
+        2.0785671184934196,
+        1.7150791306750686,
+        0.6164254194865941,
+        0.5012626326038636,
+        0.27037512211767945,
+        0.5471232099268053
+      ],
+      [
+        1.2538080273709749,
+        1.0339875900571667,
+        0.40002282121351745,
+        0.33335883255516585,
+        0.1813121016683017,
+        0.33541171770552214
+      ],
+      [
+        1.99361439810309,
+        1.6373867582571413,
+        0.60185939110299,
+        0.4786586763289066,
+        0.27154518691659296,
+        0.5081702285904404
+      ],
+      [
+        1.7215551666202973,
+        1.4533429748604003,
+        0.5208031857320544,
+        0.44297363456738814,
+        0.2555978899609596,
+        0.4379447429582178
+      ],
+      [
+        2.3912639724373563,
+        1.9501016228774546,
+        0.702772883099633,
+        0.5873137887280563,
+        0.3169433956911058,
+        0.6016294370639662
+      ]
+    ],
+    "output_bias": -5.8347942455574575,
+    "output_weights": [
+      3.160900910738326,
+      2.932315101361946,
+      3.6471265439400407,
+      3.0780182005632546,
+      1.8696309547470953,
+      2.9549200860609806,
+      2.5732936899285757,
+      3.5305049169512093
+    ]
+  },
+  "parameters_sha256": "d1edaa8015959a4bd199850ef3492547363ecdd8131a824fd2bf4604062fc1a6",
+  "schema": "focuspilot.synthetic-positive-policy.v1",
+  "teacher": "3.1*x0+2.3*x1+x2+0.8*x3+0.55*x4+0.9*x5+2.5*relu(x0+x1-0.95)-4.1 >= 0",
+  "training": {
+    "epochs": 140,
+    "history": [
+      {
+        "dev_cross_entropy": 0.6128528397072174,
+        "epoch": 1,
+        "learning_rate": 0.0196116135138184
+      },
+      {
+        "dev_cross_entropy": 0.18127323450953006,
+        "epoch": 20,
+        "learning_rate": 0.014907119849998597
+      },
+      {
+        "dev_cross_entropy": 0.12680946958739595,
+        "epoch": 40,
+        "learning_rate": 0.012403473458920846
+      },
+      {
+        "dev_cross_entropy": 0.15980466974637658,
+        "epoch": 60,
+        "learning_rate": 0.01084652289093281
+      },
+      {
+        "dev_cross_entropy": 0.128533581060796,
+        "epoch": 80,
+        "learning_rate": 0.009759000729485332
+      },
+      {
+        "dev_cross_entropy": 0.10843833381678665,
+        "epoch": 100,
+        "learning_rate": 0.008944271909999158
+      },
+      {
+        "dev_cross_entropy": 0.13955433681182614,
+        "epoch": 120,
+        "learning_rate": 0.008304547985373997
+      },
+      {
+        "dev_cross_entropy": 0.11207866691178245,
+        "epoch": 140,
+        "learning_rate": 0.00778498944161523
+      }
+    ],
+    "initial_dev_metrics": {
+      "accuracy": 0.740625,
+      "binary_cross_entropy": 0.6411399789737235,
+      "brier": 0.22419748134962608,
+      "count": 320,
+      "ece_probability_bins_10": 0.19946724352530584,
+      "false_nudge_rate": 0.3416666666666667,
+      "fn": 42,
+      "fp": 41,
+      "positives": 200,
+      "precision": 0.7939698492462312,
+      "recall": 0.79,
+      "tn": 79,
+      "tp": 158
+    },
+    "initial_learning_rate": 0.02,
+    "learning_rate_schedule": "initial_rate / sqrt(1 + epoch/25)",
+    "optimizer": "per-example projected SGD; connection weights clipped at zero; signed biases",
+    "per_family": 160,
+    "seed": 20261002,
+    "selected_epoch": 100,
+    "selection": "lowest dev binary cross entropy; threshold maximizes dev accuracy",
+    "threshold": 0.62
+  }
+}

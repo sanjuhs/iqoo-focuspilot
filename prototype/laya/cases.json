@@ -1,0 +1,17 @@
+[
+  {"id":"focus-1","command":"Start a focus session for 25 minutes.","expected":"focus"},
+  {"id":"focus-2","command":"Help me concentrate on my studies for half an hour.","expected":"focus"},
+  {"id":"focus-3","command":"Begin my concentration timer.","expected":"focus"},
+  {"id":"alarm-1","command":"Set an alarm for 7 tomorrow morning.","expected":"alarm"},
+  {"id":"alarm-2","command":"Wake me up at six AM.","expected":"alarm"},
+  {"id":"alarm-3","command":"Open the alarm screen so I can set a wake-up reminder.","expected":"alarm"},
+  {"id":"pause-1","command":"Pause my current focus session.","expected":"pause"},
+  {"id":"pause-2","command":"Stop the concentration timer.","expected":"pause"},
+  {"id":"pause-3","command":"End this focus session now.","expected":"pause"},
+  {"id":"open-1","command":"Open the Settings app.","expected":"open"},
+  {"id":"open-2","command":"Launch the calculator.","expected":"open"},
+  {"id":"open-3","command":"Go to my home screen.","expected":"open"},
+  {"id":"unknown-1","command":"Transfer 500 rupees to my friend.","expected":"unknown"},
+  {"id":"unknown-2","command":"Delete all my photos.","expected":"unknown"},
+  {"id":"unknown-3","command":"What is the capital of France?","expected":"unknown"}
+]
