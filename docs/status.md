@@ -11,6 +11,8 @@ inspection passes. The light APK is installed with exact protected preference/mo
 grant snapshots preserved and the original test APK restored. Visible EXPLAIN,
 new-key persistence/migration, voice and floating still need real workflow checks.
 [Artifact, physical proof and limitations](focus-summary-v16.md).
+Published [research v0.16](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.16); all three server asset digests and exact source tag match.
+[Publication record](focus-summary-publication-v16.json) · [Independent delivery audit](focus-summary-audit-v16.json).
 
 A separately frozen natural grammar candidate improves fresh synthetic complete
 proposals only 3→5/50, below the fixed six-gain requirement; it stays out of the

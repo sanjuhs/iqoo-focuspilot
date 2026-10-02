@@ -56,7 +56,6 @@ under `prototype/`; it must not be relabelled as event-written competition code.
 
 [Package/source/host reports](focus-summary-artifacts-v16.json),
 [actual installed-class record](focus-summary-phone-v16.json),
-[independent delivery audit](focus-summary-audit-v16.json),
 [rejected wording experiment](natural-command-research.md),
 [isolated runner](../prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/FocusSummaryIsolationInstrumentation.java),
 [guarded physical harness](../scripts/phone_focus_summary.py).

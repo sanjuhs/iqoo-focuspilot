@@ -1,0 +1,31 @@
+{
+  "schema": "focuspilot.focus_summary_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.16",
+  "prerelease": true,
+  "eligible_submission": false,
+  "app_source_commit": "78f8b2b05d89965daf57c2cfc95abc6b70daf4a1",
+  "assets": [
+    {
+      "name": "focuspilot-research-v016-summary-light.apk",
+      "bytes": 5513492,
+      "sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.16/focuspilot-research-v016-summary-light.apk",
+      "server_digest": "sha256:1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b"
+    },
+    {
+      "name": "focus-summary-artifacts-v16.json",
+      "bytes": 16954,
+      "sha256": "528cc9f38360612488a58d835cb6f30b636e22f359d2b67b8e8cf74e9f187730",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.16/focus-summary-artifacts-v16.json",
+      "server_digest": "sha256:528cc9f38360612488a58d835cb6f30b636e22f359d2b67b8e8cf74e9f187730"
+    },
+    {
+      "name": "focus-summary-phone-v16.json",
+      "bytes": 4014,
+      "sha256": "cff432ba4ec3dd200adc9c18bfa021d0a931ddedc536339be8194b0e5e2c4760",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.16/focus-summary-phone-v16.json",
+      "server_digest": "sha256:cff432ba4ec3dd200adc9c18bfa021d0a931ddedc536339be8194b0e5e2c4760"
+    }
+  ],
+  "verification": "GitHub server metadata/digest parity; no binary redownload or new hardware run"
+}
