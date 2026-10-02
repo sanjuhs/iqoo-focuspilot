@@ -206,7 +206,7 @@
   "private_record_sha256": "ad40ecfe179e0da2e8bd71e67b82e9a76dbc20e4d9e47b94e30786ecbe884499",
   "documentation": {
     "file": "docs/companion-entry-v15.md",
-    "sha256": "59b0102b6d578a06c3b9721d993b74e3e6feec1433daa0a15cc362f3175202f2"
+    "sha256": "e1f49546987a3b9bb378fb7cde2db284950735992cb333725ca7ca1cbf042059"
   },
   "physical_interaction_verified": false,
   "actual_asr_verified": false,

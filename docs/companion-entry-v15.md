@@ -17,7 +17,7 @@ refuse background launches silently, so exception handling is not launch proof.
 On the dashboard, type a request or finish a voice draft, then tap **Ask Mira with
 this draft**. The new explicit internal Intent supplies editable text only. The
 existing **Run command** shortcut remains available. The destination is not
-exported. The handoff rejects null, blank, malformed, control-containing and
+exported. The handoff rejects null, blank, malformed, disallowed-control-containing and
 overlong text whole; it preserves accepted text exactly, up to 500 UTF-16 code
 units. It never truncates a request into a different command.
 
