@@ -5,7 +5,26 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
-## Current v0.11 readback and monitoring prerequisite check
+## Selected v0.12 task readback
+
+Mira now keeps speech feedback and Stop readback beside Speak, with unique request
+ownership, engine callbacks and a 20-second timeout. The selected source is
+`24f10b62a4a62c22ad6db90ac6339f29e2426dbd`; 148 JVM tests pass and lint has
+zero errors/65 warnings. Both signed packages passed model/native/license/version/
+permission inspection, and the light installation reused the pinned Qwen model.
+
+On Nothing, a synthetic authored plan passed save, mute refusal, explicit readback
+completion callback and an unconfirmed typed Qwen Pause proposal (1,749 ms native
+CPU). Checklist progress stayed unchanged. Cleanup restored empty goal/no guide/
+mute false; paused/off/100/57,331 ms and runtime grants stayed unchanged.
+[Actual record and repeat procedure](docs/guide-readback-phone.md),
+[package/source identities](docs/guidance-readback-artifacts.json).
+No speaker audibility, real ASR, permissioned monitoring/floating, disconnected
+operation, iQOO NPU, Office Kit or eligible accepted submission is established.
+The broader goal remains active. Earlier results below retain their historical
+package attribution.
+
+## Historical v0.11 readback and monitoring prerequisite check
 
 On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms
 reported CPU time. Explicit fixed-status readback reached Android's completed TTS
@@ -18,7 +37,7 @@ are off; English ASR support and transcription remain untested. No grants/settin
 changes or microphone activation occurred. Four harness tests and six report-binding
 tests pass. [Physical branches and repeat procedure](docs/readback-phone.md).
 
-## Current v0.11 authored-guide phone coverage
+## Historical v0.11 authored-guide phone coverage
 
 A synthetic three-step plan was tested through the installed app's own UI on
 Nothing: Save, Mark/Undo, completion/Undo, real process force-stop/restart with
@@ -32,7 +51,7 @@ reviews, goal-switch and other remaining branches are separate requirements.
 [Phone record](docs/task-guide-phone-v011.json),
 [coverage and repeat procedure](docs/task-guide-phone.md).
 
-## Current v0.11 phone countdown
+## Historical v0.11 phone countdown
 
 An actual typed Qwen3.5-0.8B request on Nothing produced a reviewed 20-second
 focus proposal (1,932 ms reported CPU inference), which was confirmed and completed
@@ -50,8 +69,8 @@ own-app foreground state. Seven harness tests pass.
 Actual local-model host planning failed useful-task criteria: the first candidate
 served 0/8 benign goals; the example-based repair fully met 4/10 fresh benign
 criteria and included nonsense/negation failures. Both experiments and a compiled
-but unapplied reviewed-import scaffold are preserved. The selected v0.11 app,
-model, prompt and native remain unchanged. [Evidence](docs/task-draft-research.md).
+but unapplied reviewed-import scaffold are preserved. At that experiment, the v0.11 app,
+model, prompt and native remained unchanged. [Evidence](docs/task-draft-research.md).
 
 ## Task guidance checkpoint — v0.11
 

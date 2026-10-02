@@ -3,26 +3,45 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current phone-control check:** typed Qwen proposals for Calculator and Clock
+## Selected v0.12 task readback
+
+Mira now keeps speech feedback and Stop readback beside Speak, with unique request
+ownership, engine callbacks and a 20-second timeout. The selected source is
+`24f10b62a4a62c22ad6db90ac6339f29e2426dbd`; 148 JVM tests pass and lint has
+zero errors/65 warnings. Both signed packages passed model/native/license/version/
+permission inspection, and the light installation reused the pinned Qwen model.
+
+On Nothing, a synthetic authored plan passed save, mute refusal, explicit readback
+completion callback and an unconfirmed typed Qwen Pause proposal (1,749 ms native
+CPU). Checklist progress stayed unchanged. Cleanup restored empty goal/no guide/
+mute false; paused/off/100/57,331 ms and runtime grants stayed unchanged.
+[Actual record and repeat procedure](docs/guide-readback-phone.md),
+[package/source identities](docs/guidance-readback-artifacts.json).
+No speaker audibility, real ASR, permissioned monitoring/floating, disconnected
+operation, iQOO NPU, Office Kit or eligible accepted submission is established.
+The broader goal remains active. Earlier results below retain their historical
+package attribution.
+
+**Historical v0.11 phone-control check:** typed Qwen proposals for Calculator and Clock
 passed review/Cancel/review/Confirm and opened the approved target apps, verified
 through foreground metadata. Native inference was about 2.0 s. Focus/grants stayed
 unchanged; no external-app UI was inspected and no alarm was created.
 [Actual launch coverage](docs/app-launch-phone.md).
 
-**Current Qwen3.5 activation check:** eight unconfirmed typed phone proposals
+**Historical v0.11 Qwen3.5 activation check:** eight unconfirmed typed phone proposals
 preserved the same Pause intent and token counts. Every capture-on run displayed
 all four selected tensor summaries; capture-off displayed none. Native timing
 ranged 1.86–2.17 s, and post-request PSS was about 1.25 GiB. Four pairs do not
 establish capture overhead or causal interpretation. [Measurements](docs/capture-benchmark-phone.md).
 
-**Current phone readback:** reviewed typed Pause (1,804 ms native CPU) reached the
+**Historical v0.11 phone readback:** reviewed typed Pause (1,804 ms native CPU) reached the
 installed offline-English TTS engine's completion callback. Audibility, actual ASR
 and disconnected operation remain unverified. Monitoring correctly refused an
 observation-off start; focus stayed paused/off/100 with unchanged elapsed time.
 [Physical coverage](docs/readback-phone.md). The latest setup check still reports
 Microphone, notifications and Usage Access off.
 
-**Current task-guide build: v0.11**, source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.
+**Historical task-guide build: v0.11**, source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.
 Mira can show the next step of your own private plan, mark it complete, undo and
 optionally read it through the existing local voice path. Task/record revision
 checks block stale progress and readback; authored text executes nothing.
@@ -32,7 +51,7 @@ A later authored-guide phone test passed Save, Mark/Undo, complete/Undo, process
 restart recovery, replacement Cancel/confirm and clear Cancel/confirm/restart.
 Its temporary goal and steps were cleaned up; focus stayed paused/off/100 and
 elapsed time unchanged. [Authored-guide evidence](docs/task-guide-phone.md).
-Readback and other task-guide branches remain untested. A later own-app phone countdown
+That record did not cover readback; the later v0.12 check covers a separate branch. A later own-app phone countdown
 passed: reviewed 20-second start, automatic pause, exactly 20,000 ms additional
 elapsed focus and unchanged observation-off/100 points. One typed CPU inference
 took 1,932 ms. [Physical evidence](docs/current-countdown-phone-v011.json),
@@ -115,8 +134,8 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 Actual local-model host planning failed useful-task criteria: the first candidate
 served 0/8 benign goals; the example-based repair fully met 4/10 fresh benign
 criteria and included nonsense/negation failures. Both experiments and a compiled
-but unapplied reviewed-import scaffold are preserved. The selected v0.11 app,
-model, prompt and native remain unchanged. [Evidence](docs/task-draft-research.md).
+but unapplied reviewed-import scaffold are preserved. At that experiment, the v0.11 app,
+model, prompt and native remained unchanged. [Evidence](docs/task-draft-research.md).
 
 ## Start here
 

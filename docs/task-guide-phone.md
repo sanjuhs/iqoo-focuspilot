@@ -69,3 +69,8 @@ backup/migration branches. Voice, monitoring, floating companion, disconnected
 inference, sleep, Clock, iQOO/NPU, Office Kit, event-code eligibility and accepted
 submission remain separate. This authored UI proof does not certify the rejected
 model-generated task-draft/import scaffold.
+
+The later [v0.12 authored-step readback record](guide-readback-phone.md) covers a
+separate exact package and one completion callback/mute-refusal branch. The v0.11
+record above is retained with its historical identity; broader voice/lifecycle
+coverage remains pending.

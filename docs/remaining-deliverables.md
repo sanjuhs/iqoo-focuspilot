@@ -53,6 +53,14 @@ are recorded. This verifies current observational capture, but establishes neith
 fixed overhead, peak memory nor causal interpretation. Final focus/grants/monitor
 state stayed unchanged. [Method and results](capture-benchmark-phone.md).
 
+**Later v0.12 authored-step readback:** selected feedback-layout packages are
+inspected; all four actual synthetic phone phases and cleanup passed. The installed
+engine completed explicit step speech, mute refusal was observed, saved guide
+progress stayed unchanged and an unconfirmed typed Qwen Pause proposed correctly.
+Focus/grants/monitor stayed unchanged. [Source-bound coverage](guide-readback-phone.md).
+This closes the narrow authored-step callback branch; full voice, monitoring,
+current video, NPU, Office Kit and eligible submission remain pending.
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

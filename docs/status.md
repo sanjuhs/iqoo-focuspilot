@@ -2,7 +2,26 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
-## Current v0.11 approved app launches — actual phone outcomes
+## Selected v0.12 task readback
+
+Mira now keeps speech feedback and Stop readback beside Speak, with unique request
+ownership, engine callbacks and a 20-second timeout. The selected source is
+`24f10b62a4a62c22ad6db90ac6339f29e2426dbd`; 148 JVM tests pass and lint has
+zero errors/65 warnings. Both signed packages passed model/native/license/version/
+permission inspection, and the light installation reused the pinned Qwen model.
+
+On Nothing, a synthetic authored plan passed save, mute refusal, explicit readback
+completion callback and an unconfirmed typed Qwen Pause proposal (1,749 ms native
+CPU). Checklist progress stayed unchanged. Cleanup restored empty goal/no guide/
+mute false; paused/off/100/57,331 ms and runtime grants stayed unchanged.
+[Actual record and repeat procedure](guide-readback-phone.md),
+[package/source identities](guidance-readback-artifacts.json).
+No speaker audibility, real ASR, permissioned monitoring/floating, disconnected
+operation, iQOO NPU, Office Kit or eligible accepted submission is established.
+The broader goal remains active. Earlier results below retain their historical
+package attribution.
+
+## Historical v0.11 approved app launches — actual phone outcomes
 
 Typed `Open calculator` and `Open clock` each produced Qwen `open_app`, review
 required, followed by Cancel and then reviewed Confirm. Native CPU inference was
@@ -15,7 +34,7 @@ at full-versus-shorthand component comparison; its report and exact executed sou
 are retained. APK/model/native and selected app sources stayed unchanged.
 [Current proof and repeat procedure](app-launch-phone.md).
 
-## Current v0.11 activation viewer — actual phone comparison
+## Historical v0.11 activation viewer — actual phone comparison
 
 Nine typed Qwen3.5-0.8B Q4_0 requests (one warm-up plus four off/on pairs) ran
 on the matching installed Nothing APK. All eight measured trials proposed Pause,
@@ -28,7 +47,7 @@ ranged about 1.25 GiB. Final focus/grants/monitor state stayed unchanged. Source
 APK/model/native and executed harness hashes are recorded; no build or model
 change was made. [Measurements and method](capture-benchmark-phone.md).
 
-## Current v0.11 readback and monitoring prerequisite check
+## Historical v0.11 readback and monitoring prerequisite check
 
 On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms
 reported CPU time. Explicit fixed-status readback reached Android's completed TTS
@@ -44,7 +63,7 @@ The post-test storage check measured 12,498,097,200 logical project bytes
 (12.498 decimal GB), including ignored files and Git, below the 15 GB cap;
 external shared SDK caches are excluded.
 
-## Current v0.11 authored-guide phone coverage
+## Historical v0.11 authored-guide phone coverage
 
 A synthetic three-step plan was tested through the installed app's own UI on
 Nothing: Save, Mark/Undo, completion/Undo, real process force-stop/restart with
@@ -61,7 +80,7 @@ The post-test storage check measured 12,497,893,061 logical project bytes
 (12.498 decimal GB), including ignored files and Git, below the strict 15 GB cap;
 external shared caches are excluded.
 
-## Current v0.11 reviewed countdown — actual phone outcome
+## Historical v0.11 reviewed countdown — actual phone outcome
 
 The installed light v0.11 APK and retained model hashes matched their pinned
 identities before an actual typed “Start focus for 20 seconds” request on Nothing
