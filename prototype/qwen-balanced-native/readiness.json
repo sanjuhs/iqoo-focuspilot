@@ -1,0 +1,40 @@
+{
+  "schema": "focuspilot.balanced_native_readiness.v1",
+  "verified_utc": "2026-10-02T22:38:17.010118+00:00",
+  "inference_executed": false,
+  "models_loaded": 0,
+  "boundary_tests_passed": 21,
+  "compile_only_binary_bytes": 121720,
+  "compile_only_binary_sha256": "32a6869b29816216654640127c9ab6d2e4d5c1763aa729645c36f27563186ce1",
+  "compile_provenance_sha256": "e7ff11371aa63584c8f90e3c7c59a73033ddcfb09292a02a1b4c35a680a49631",
+  "sources_sha256": {
+    "capture.cpp": "a63ef223c451944f13d5e2940bea0377225f0f15a5573011e24c935efcebf8da",
+    "CommandGateEval.java": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "run_capture.py": "777c681706ea1045bf1cb79cb2c5cc14a3e9999051bb40fb75eef5081d22187d",
+    "test_capture.py": "12e16345717aa3cdc19cf04043343050f4268d727e0760a6cb28abeb42383051",
+    "Render.java": "0288a5fcd4a652987646076e01af3dc2139cba998060933aeaa421b823aa1945",
+    "score.py": "4d93dd811b7c341d9d575f23f5af99d8f051bf85a20774ca9eea0c6f5168505c"
+  },
+  "prompt_parity": {
+    "train": {
+      "rows": 112,
+      "exact_java_python_matches": 112,
+      "gold_request_inventory_matches": 112,
+      "ignored_review_lock_sha256": "a8e7c01ffb4159f916589180ddd46967dc490de3695935d8db2244aaa528b100"
+    },
+    "development": {
+      "rows": 14,
+      "exact_java_python_matches": 14,
+      "gold_request_inventory_matches": 14,
+      "ignored_review_lock_sha256": "e55bfb190d6d43c0a4361d32e7a5fceab6ff04a2fa769bff38fdb9f682f14716"
+    },
+    "confirmation": {
+      "rows": 100,
+      "exact_java_python_matches": 100,
+      "gold_request_inventory_matches": 100,
+      "ignored_review_lock_sha256": "b882b6d49cf49aecbaada964f8111284d6cf3212496f76ff064418ccddc09b1b"
+    }
+  },
+  "method": "Original Java Render via pinned existing JNI initialization without native model calls; compare every resulting prompt byte to trainer.render_prompt. Independent manual gold inventory/slot schema validated against frozen request TSV. Boundary tests include actual compiled C++ --check-input parser with no model loading.",
+  "scope": "Tooling readiness only. No model accuracy, training, adapter compatibility, NPU or phone claims."
+}
