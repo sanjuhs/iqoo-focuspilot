@@ -1,0 +1,505 @@
+{
+  "schema": 1,
+  "research_only": true,
+  "prepared_utc": "2026-10-02T20:57:34.418253+00:00",
+  "actual_pre_capture_source_commit": "c0c7e898fcacf9cc93b6e1fb375d64e997bac7bb",
+  "selected_app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "scope": "Post-terminal read-only provenance, raw-output/label/slot/pair review of two actual frozen informed-synthetic CPU host captures; no new inference or source/result repair.",
+  "decision": {
+    "candidate_promoted": false,
+    "parent_decision": "Reject deployment",
+    "reason": [
+      "Start gate coverage10to9;Pause2to0;5timer gains mask3supported losses",
+      "One prospectively hard spoken-slot semantic/gate loss and two warned-focus semantic losses",
+      "No observed host speed benefit;89extra prompt tokens outweigh cheaper decoding"
+    ],
+    "observed_wrong_accepts": 0,
+    "safety_limit": "Zero wrong accepts on100 informed synthetic requests is not universal safety or independent real-user accuracy."
+  },
+  "host": {
+    "cpu": "Apple M4 Pro",
+    "backend": "CPU host JNI",
+    "context": 1024,
+    "threads": 4,
+    "capture_enabled": false,
+    "capture_order": [
+      "baseline",
+      "candidate"
+    ],
+    "separate_model_loads": 2,
+    "cache_thermals_power_controlled": false,
+    "phone_or_npu_claim": false
+  },
+  "public_artifacts": [
+    {
+      "path": "prototype/command-compact-confirm/PROTOCOL.md",
+      "bytes": 11053,
+      "sha256": "0f0a3368430213ef98d830e9a804341f8d71928684d69fa957392fa69c2aceed"
+    },
+    {
+      "path": "prototype/command-compact-confirm/protocol.json",
+      "bytes": 7903,
+      "sha256": "e678817a67e1d1bfc9c1c74db0e8edabee6d0ff3a047d019d12ce578618a44ba"
+    },
+    {
+      "path": "prototype/command-compact-confirm/generate_data.py",
+      "bytes": 23015,
+      "sha256": "ff939aa05a150f43677b2b952987580d37e35dd30e9475cd0ac1bb6b4dd6046c"
+    },
+    {
+      "path": "prototype/command-compact-confirm/test_data.py",
+      "bytes": 4123,
+      "sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df"
+    },
+    {
+      "path": "prototype/command-compact-confirm/corpus-manifest.json",
+      "bytes": 6315,
+      "sha256": "ac07800b5f2c211b0ddde3fb67b67a489647a435b6834e2d1079a795519ea3c5"
+    },
+    {
+      "path": "prototype/command-compact-confirm/freeze-manifest.json",
+      "bytes": 6809,
+      "sha256": "dee31274c153753ec41d334a79da569031ee386f5906a3ca49dce9e2def68336"
+    },
+    {
+      "path": "prototype/command-compact-confirm/results.json",
+      "bytes": 57372,
+      "sha256": "a3ec0ae0b6362a89346e230b185e36778b7242083ac0b0d37fab4d5a8b5251ee"
+    },
+    {
+      "path": "prototype/command-compact-runner/selection-lock.json",
+      "bytes": 1015,
+      "sha256": "e12687bc090d33d090af7b4e490794b70a41592e093f52562bda97f085cb226d"
+    },
+    {
+      "path": "prototype/command-compact-runner/run_evaluation.py",
+      "bytes": 23633,
+      "sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6"
+    },
+    {
+      "path": "prototype/command-compact-runner/CompactCapture.java",
+      "bytes": 2526,
+      "sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71"
+    },
+    {
+      "path": "prototype/command-compact-runner/test_scoring.py",
+      "bytes": 7964,
+      "sha256": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386"
+    },
+    {
+      "path": "prototype/command-compact-dev/CompactIntentCandidate.java",
+      "bytes": 1693,
+      "sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9"
+    },
+    {
+      "path": "prototype/command-compact-dev/candidate.json",
+      "bytes": 2174,
+      "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa"
+    },
+    {
+      "path": "prototype/command-v10-confirm/CommandGateEval.java",
+      "bytes": 1800,
+      "sha256": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1"
+    },
+    {
+      "path": "prototype/command-v10-confirm/run_evaluation.py",
+      "bytes": 14921,
+      "sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a"
+    }
+  ],
+  "private_ignored_artifacts": [
+    {
+      "path": "prototype/command-compact-confirm/build/cases.jsonl",
+      "bytes": 28137,
+      "sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef"
+    },
+    {
+      "path": "prototype/command-compact-confirm/build/requests.tsv",
+      "bytes": 6679,
+      "sha256": "1ee813c5060a2ec2bab7354c390b7cb3b7000364ee97033e78d1677052a94cb6"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/paired-transitions.json",
+      "bytes": 34045,
+      "sha256": "ec3e5e203676d0aa54306dc0cd46e4ecaf75e0caf77d4043c96944e097276651"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/baseline-model-output.tsv",
+      "bytes": 37831,
+      "sha256": "36ee965c186cbe1db1ef55d76ff376fbdec5bb3afe17cebf8e4b7f56924c1d15"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/baseline-model-metadata.json",
+      "bytes": 762,
+      "sha256": "53dd48708282676353e96941ba37b09da19ffbb8f5625f758cbd07fd72a2a14f"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/baseline-model.log",
+      "bytes": 45280,
+      "sha256": "305d68d429ec883178b68e046f975559ab8aabe43bd2915fed221a5c3a622096"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-baseline-input.tsv",
+      "bytes": 7621,
+      "sha256": "b63bf73dc6b8a723324d22e70478934edb7644093487452c666a2d35f0c9f7b9"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-baseline-output.tsv",
+      "bytes": 15057,
+      "sha256": "0b08d55abc42beb3123610ed2e883a098361c6e501543f05900dc84670473ec3"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-baseline-results.json",
+      "bytes": 28840,
+      "sha256": "20bdeda5d9d947de091f027c4fee6893f19c5e4e56dd3e15d4a07677fa01b067"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/candidate-model-output.tsv",
+      "bytes": 34555,
+      "sha256": "17e9eabde9a8efab3d801280ff5e9e596dff5b741fb54c327e99f8bf1f996ecb"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/candidate-model-metadata.json",
+      "bytes": 762,
+      "sha256": "e550a40f0c3e4d9f6eac3f322518f6938bca277cbac1afc9c8bcfe9955c5e4c6"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/candidate-model.log",
+      "bytes": 45280,
+      "sha256": "56b508e1acf647ff75a0d6441518eeea0720bda9fc9cd5c4b0ffba4b03424b0d"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-candidate-input.tsv",
+      "bytes": 7495,
+      "sha256": "e09958cab31e306888b23b94bb97fccc2498df87321438fb7de3216208e5497c"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-candidate-output.tsv",
+      "bytes": 14665,
+      "sha256": "0878e1f436bc265f9cfa0817b5211d0e6f314cbbb2835d01a2136e036be6cdb3"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-candidate-results.json",
+      "bytes": 28824,
+      "sha256": "ba9bdc1b4a78f1adc3297167a2e86caf95cd3bd4bc3122173e257591a5eaeeca"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-oracle-input.tsv",
+      "bytes": 7525,
+      "sha256": "02beb94fe6a47dd0780dbc7ea687837a7c46b750ea8a6a61e8613e5f55b9647d"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-oracle-output.tsv",
+      "bytes": 14317,
+      "sha256": "cbd2fd0cecc8985245657d094d7668f61c104caded9dc14fac33066f1c9b08ea"
+    },
+    {
+      "path": "prototype/command-compact-runner/build/selected-oracle-results.json",
+      "bytes": 28830,
+      "sha256": "e9105d7296ccc5d3062ede69974037b8beff7893bc02f81be8c7f1fa2fea646c"
+    }
+  ],
+  "local_ignored_model_runtime_artifacts": [
+    {
+      "path": "models/qwen/Qwen3.5-0.8B-Q4_0.gguf",
+      "bytes": 563036064,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    {
+      "path": "prototype/command-eval/build/native/libfocuspilot_local.dylib",
+      "bytes": 85224,
+      "sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e"
+    },
+    {
+      "path": "prototype/native/build/host/libfocuspilot_local.dylib",
+      "bytes": 85224,
+      "sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156"
+    }
+  ],
+  "runtime_attribution": {
+    "confirmation_native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "seen_development_native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+    "distinct_artifacts": true
+  },
+  "capture_completion": {
+    "baseline": {
+      "exit_code": 0,
+      "timed_out": false,
+      "started_utc": "2026-10-02T20:52:20.419106+00:00",
+      "wall_seconds": 45.04464333294891,
+      "request_ids": 100,
+      "format_and_eos_valid": 100,
+      "actions_executed": 0
+    },
+    "candidate": {
+      "exit_code": 0,
+      "timed_out": false,
+      "started_utc": "2026-10-02T20:53:05.712192+00:00",
+      "wall_seconds": 47.17146087496076,
+      "request_ids": 100,
+      "format_and_eos_valid": 100,
+      "actions_executed": 0
+    }
+  },
+  "corpus": {
+    "selected_utc": "2026-10-02T20:45:46.855733+00:00",
+    "authored_utc": "2026-10-02T20:49:11.996227+00:00",
+    "frozen_utc": "2026-10-02T20:51:21.943037+00:00",
+    "rows": 100,
+    "families": 50,
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "supported_by_intent": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8
+    },
+    "hard_supported_rows": 25,
+    "hard_tag_counts": {
+      "current_focus_pause": 2,
+      "duration_boundary": 4,
+      "midnight_noon": 2,
+      "resume_vs_start": 4,
+      "spoken_number_slot": 14,
+      "warned_focus_explanation": 2
+    },
+    "prior_texts_with_duplicates": 1027,
+    "prior_unique_exact_texts": 800,
+    "prior_unique_normalized_texts": 798,
+    "exact_overlap": 0,
+    "normalized_overlap": 0
+  },
+  "metrics": {
+    "baseline": {
+      "semantic_correct": 36,
+      "supported_semantic_correct": 35,
+      "unknown_semantic_correct": 1,
+      "schema_and_eos_valid": 100,
+      "exact_supported_gate": 30,
+      "supported_false_abstentions": 20,
+      "unsupported_false_accepts": 0,
+      "wrong_accepted": 0,
+      "gate_by_intent": {
+        "start_focus": 10,
+        "pause_focus": 2,
+        "alarm": 7,
+        "timer": 4,
+        "open_app": 6,
+        "explain": 1
+      },
+      "load_ms": 367.3605,
+      "first_native_ms": 463.18696,
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 448.70258,
+        "nearest_rank_p95": 465.37767,
+        "min": 410.92171,
+        "max": 486.13662
+      },
+      "prompt_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 164.0,
+        "nearest_rank_p95": 167,
+        "min": 160,
+        "max": 173
+      },
+      "generated_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 8.0,
+        "nearest_rank_p95": 8,
+        "min": 6,
+        "max": 10
+      }
+    },
+    "candidate": {
+      "semantic_correct": 44,
+      "supported_semantic_correct": 35,
+      "unknown_semantic_correct": 9,
+      "schema_and_eos_valid": 100,
+      "exact_supported_gate": 32,
+      "supported_false_abstentions": 18,
+      "unsupported_false_accepts": 0,
+      "wrong_accepted": 0,
+      "gate_by_intent": {
+        "start_focus": 9,
+        "pause_focus": 0,
+        "alarm": 7,
+        "timer": 9,
+        "open_app": 6,
+        "explain": 1
+      },
+      "load_ms": 372.491167,
+      "first_native_ms": 465.491,
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 465.73758,
+        "nearest_rank_p95": 480.20558,
+        "min": 454.80604,
+        "max": 482.77525
+      },
+      "prompt_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 253.0,
+        "nearest_rank_p95": 256,
+        "min": 249,
+        "max": 262
+      },
+      "generated_tokens": {
+        "sample_count": 100,
+        "missing_or_nonfinite": 0,
+        "median": 1.0,
+        "nearest_rank_p95": 1,
+        "min": 1,
+        "max": 1
+      }
+    }
+  },
+  "paired_supported": {
+    "supported_gains": 5,
+    "supported_losses": 3,
+    "gains_per_family": {
+      "timer_count_down_conversational": 2,
+      "timer_prefix_numeric_minutes": 1,
+      "timer_request_suffix_duration": 1,
+      "timer_seconds_endpoints": 1
+    },
+    "losses_per_family": {
+      "focus_spoken_new_duration": 1,
+      "pause_break_from_domain": 1,
+      "pause_named_focus_countdown": 1
+    }
+  },
+  "paired_semantic_gate_counts": {
+    "semantic_gain": 5,
+    "semantic_loss": 5,
+    "gate_gain": 5,
+    "gate_loss": 3,
+    "baseline_wrong_accept": 0,
+    "candidate_wrong_accept": 0
+  },
+  "hard_supported_transitions": {
+    "current_focus_pause": {
+      "semantic_gain": 0,
+      "semantic_loss": 0,
+      "gate_gain": 0,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "duration_boundary": {
+      "semantic_gain": 1,
+      "semantic_loss": 0,
+      "gate_gain": 1,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "midnight_noon": {
+      "semantic_gain": 0,
+      "semantic_loss": 0,
+      "gate_gain": 0,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "resume_vs_start": {
+      "semantic_gain": 0,
+      "semantic_loss": 0,
+      "gate_gain": 0,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "spoken_number_slot": {
+      "semantic_gain": 3,
+      "semantic_loss": 1,
+      "gate_gain": 3,
+      "gate_loss": 1,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "warned_focus_explanation": {
+      "semantic_gain": 0,
+      "semantic_loss": 2,
+      "gate_gain": 0,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    }
+  },
+  "private_loss_ids": {
+    "gate": [
+      "compact_confirm_003",
+      "compact_confirm_014",
+      "compact_confirm_017"
+    ],
+    "semantic": [
+      "compact_confirm_003",
+      "compact_confirm_014",
+      "compact_confirm_017",
+      "compact_confirm_044",
+      "compact_confirm_045"
+    ]
+  },
+  "oracle": {
+    "supported_correct": 43,
+    "supported_false_abstentions": 7,
+    "correct_abstentions": 50,
+    "wrong_accepted": 0
+  },
+  "verification": {
+    "all_selection_source_protocol_freeze_corpus_overlap_capture_hashes_match": true,
+    "pre_capture_public_source_bytes_match_commit": true,
+    "same_current_selected_app_source_bytes": true,
+    "captured_metadata_matches_results": true,
+    "complete_unique_request_ids_each": true,
+    "strict_raw_json_or_digit_and_native_eos": true,
+    "all_expected_kind_hour_minute_seconds_match_authored_labels": true,
+    "all_supported_pair_and_hard_tag_transitions_recomputed": true,
+    "concrete_label_or_scoring_mismatch_found": false,
+    "labels_requests_source_results_changed_after_capture": false,
+    "method": "Independent standard-library read-only checks of exact hashes, pinned Git source bytes, decoded rawcapture schema/EOS/IDs, authored expected tuples, actual gate details and every hard-tag paired transition; no runner rerun or native generation."
+  },
+  "tests": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "suites": [
+      {
+        "path": "prototype/command-compact-confirm/test_data.py",
+        "sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+        "tests": 8,
+        "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s prototype/command-compact-confirm -p 'test_*.py' -v"
+      },
+      {
+        "path": "prototype/command-compact-runner/test_scoring.py",
+        "sha256": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386",
+        "tests": 12,
+        "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s prototype/command-compact-runner -p 'test_*.py' -v"
+      }
+    ],
+    "native_generation_in_tests": false
+  },
+  "new_inference_during_review": 0,
+  "training_performed": false,
+  "actions_executed": 0,
+  "phone_operations": 0,
+  "permission_changes": 0,
+  "app_model_native_modified": false,
+  "candidate_promoted": false,
+  "eligible_submission_claim": false,
+  "limits": [
+    "Informed synthetic author, not human-blind or independently sampled user/ASR language",
+    "Known gate wording limitations retained in denominators",
+    "Sequential host timing with uncontrolled cache/thermals/power;no device latency/energy inference",
+    "No phone/NPU,ASR/monitoring,OfficeKit,disconnected operation,causal interpretation,event eligibility or accepted submission evidence"
+  ]
+}

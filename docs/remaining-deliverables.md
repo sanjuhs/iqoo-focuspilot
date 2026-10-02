@@ -94,6 +94,13 @@ three named preference identities, two recorded grants and checkpoint were resto
 This closes the selected missing-model import branch of action 3, leaving clean
 fresh-data installation and the broader workflow open. [Evidence](bundled-import-phone-v012.md).
 
+**Later compact-intent experiment — rejected:** a locked one-digit prompt on 100
+fresh host cases gives 30→32/50 exact supported proposals with five gains/three
+losses; Pause falls 2→0/8 and prospective hard cases regress. The longer prompt
+raises measured host median448.70→465.74 ms. All outcomes/failed candidates are
+preserved; current app/model/prompt unchanged. Twenty research validation tests
+pass. This does not close real-language/voice reliability. [Evidence](compact-intent-research.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

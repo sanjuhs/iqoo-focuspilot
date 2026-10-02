@@ -1,0 +1,2052 @@
+{
+  "research_only": true,
+  "scope": "Frozen informed synthetic host comparison; not human sampling or phone evidence",
+  "frozen_manifest": {
+    "schema": 1,
+    "phase": "fully_frozen_before_capture",
+    "selection_lock_sha256": "e12687bc090d33d090af7b4e490794b70a41592e093f52562bda97f085cb226d",
+    "selected_utc": "2026-10-02T20:45:46.855733+00:00",
+    "generator_sha256": "ff939aa05a150f43677b2b952987580d37e35dd30e9475cd0ac1bb6b4dd6046c",
+    "protocol_sha256": "e678817a67e1d1bfc9c1c74db0e8edabee6d0ff3a047d019d12ce578618a44ba",
+    "protocol_markdown_sha256": "0f0a3368430213ef98d830e9a804341f8d71928684d69fa957392fa69c2aceed",
+    "candidate_source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+    "candidate_metadata_sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+    "selected_source_sha256": {
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+    },
+    "cases_sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+    "requests_sha256": "1ee813c5060a2ec2bab7354c390b7cb3b7000364ee97033e78d1677052a94cb6",
+    "rows": 100,
+    "families": 50,
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "supported_by_intent": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8
+    },
+    "hard_tag_counts": {
+      "current_focus_pause": 2,
+      "duration_boundary": 4,
+      "midnight_noon": 2,
+      "resume_vs_start": 4,
+      "spoken_number_slot": 14,
+      "warned_focus_explanation": 2
+    },
+    "hard_supported_rows": 25,
+    "overlap_inventory": [
+      {
+        "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-compact-dev/candidate.json",
+        "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+        "text_count": 15,
+        "method": "JSON examples list from actual rendered prompt inventory"
+      },
+      {
+        "path": "prototype/command-eval/build/cases.jsonl",
+        "sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+        "text_count": 58,
+        "method": "JSONL utterance field"
+      },
+      {
+        "path": "prototype/command-v08-eval/build/cases.jsonl",
+        "sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+        "text_count": 100,
+        "method": "JSONL utterance field"
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/cases.jsonl",
+        "sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+        "text_count": 100,
+        "method": "JSONL utterance field"
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON examples list from actual rendered prompt inventory"
+      },
+      {
+        "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV second column; full original request"
+      },
+      {
+        "path": "prototype/command-v10-eval/build/cases.jsonl",
+        "sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+        "text_count": 100,
+        "method": "JSONL utterance field"
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON examples list from actual rendered prompt inventory"
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+        "sha256": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+        "text_count": 13,
+        "method": "JSON examples list from actual rendered prompt inventory"
+      },
+      {
+        "path": "prototype/intent-head/build/all-cases.jsonl",
+        "sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+        "text_count": 373,
+        "method": "JSONL utterance field"
+      }
+    ],
+    "prior_texts_with_duplicates": 1027,
+    "prior_unique_exact_texts": 800,
+    "prior_unique_normalized_texts": 798,
+    "exact_overlap": 0,
+    "normalized_overlap": 0,
+    "normalization": "Lowercase; replace outside ASCII a-z/0-9 runs by spaces; collapse whitespace. No semantic or number-word normalization.",
+    "author_scope": "Informed synthetic author aware of previous results; fresh wording after lock, not human-blind or independently sampled user data.",
+    "requests_disclosed_to_parent_before_terminal": false,
+    "new_inference_captures": 0,
+    "actions_executed": 0,
+    "candidate_promoted": false,
+    "authored_utc": "2026-10-02T20:49:11.996227+00:00",
+    "corpus_manifest_sha256": "ac07800b5f2c211b0ddde3fb67b67a489647a435b6834e2d1079a795519ea3c5",
+    "runner_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+    "capture_source_sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71",
+    "gate_harness_sha256": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "generator_test_sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+    "frozen_utc": "2026-10-02T20:51:21.943037+00:00"
+  },
+  "models": {
+    "baseline": {
+      "rows": 100,
+      "semantic_correct": 36,
+      "supported_rows": 50,
+      "supported_correct": 35,
+      "unknown_rows": 50,
+      "unknown_correct": 1,
+      "schema_and_eos_valid": 100,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 3
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 4
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 10
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 5
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 1
+        }
+      },
+      "invalid_outputs": 0,
+      "eos_truncations": 0,
+      "confusion": {
+        "alarm": {
+          "INVALID": 0,
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 3,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 5,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 6,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "INVALID": 0,
+          "alarm": 1,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 4,
+          "start_focus": 3,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 5,
+          "timer": 5,
+          "unknown": 0
+        },
+        "unknown": {
+          "INVALID": 0,
+          "alarm": 15,
+          "explain": 2,
+          "open_app": 4,
+          "pause_focus": 1,
+          "start_focus": 21,
+          "timer": 6,
+          "unknown": 1
+        }
+      },
+      "load_ms": 367.3605,
+      "first_native_ms": 463.18696,
+      "subsequent_native_ms_median": 448.70258,
+      "prompt_tokens_median": 164.0,
+      "prompt_tokens_min": 160,
+      "prompt_tokens_max": 173,
+      "metadata": {
+        "started_utc": "2026-10-02T20:52:20.419106+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 45.04464333294891,
+        "output_sha256": "36ee965c186cbe1db1ef55d76ff376fbdec5bb3afe17cebf8e4b7f56924c1d15",
+        "requests_sha256": "1ee813c5060a2ec2bab7354c390b7cb3b7000364ee97033e78d1677052a94cb6",
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "candidate_source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+        "capture_source_sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71",
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0
+      },
+      "timing_limit": "Host CPU, separate baseline then candidate loads; state cleared each request. No OS-cache-cold, controlled thermal/power, phone, NPU or complete action latency claim.",
+      "descriptive_metrics": {
+        "total_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 448.70875,
+          "nearest_rank_p95": 464.04987,
+          "min": 410.92171,
+          "max": 486.13662
+        },
+        "prefill_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 287.606355,
+          "nearest_rank_p95": 298.08321,
+          "min": 276.638,
+          "max": 305.75496
+        },
+        "decode_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 165.926185,
+          "nearest_rank_p95": 168.48071,
+          "min": 129.01825,
+          "max": 206.5535
+        },
+        "prompt_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 164.0,
+          "nearest_rank_p95": 167,
+          "min": 160,
+          "max": 173
+        },
+        "generated_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 8.0,
+          "nearest_rank_p95": 8,
+          "min": 6,
+          "max": 10
+        },
+        "java_wall_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 449.464146,
+          "nearest_rank_p95": 464.792292,
+          "min": 411.660042,
+          "max": 486.877875
+        }
+      },
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 448.70258,
+        "nearest_rank_p95": 465.37767,
+        "min": 410.92171,
+        "max": 486.13662
+      }
+    },
+    "candidate": {
+      "rows": 100,
+      "semantic_correct": 44,
+      "supported_rows": 50,
+      "supported_correct": 35,
+      "unknown_rows": 50,
+      "unknown_correct": 9,
+      "schema_and_eos_valid": 100,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 1
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 2
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 9
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 10
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 9
+        }
+      },
+      "invalid_outputs": 0,
+      "eos_truncations": 0,
+      "confusion": {
+        "alarm": {
+          "INVALID": 0,
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 1,
+          "unknown": 0
+        },
+        "explain": {
+          "INVALID": 0,
+          "alarm": 2,
+          "explain": 1,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 5,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 6,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "INVALID": 0,
+          "alarm": 1,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 2,
+          "start_focus": 3,
+          "timer": 0,
+          "unknown": 2
+        },
+        "start_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 9,
+          "timer": 1,
+          "unknown": 0
+        },
+        "timer": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 10,
+          "unknown": 0
+        },
+        "unknown": {
+          "INVALID": 0,
+          "alarm": 14,
+          "explain": 3,
+          "open_app": 4,
+          "pause_focus": 0,
+          "start_focus": 7,
+          "timer": 13,
+          "unknown": 9
+        }
+      },
+      "load_ms": 372.491167,
+      "first_native_ms": 465.491,
+      "subsequent_native_ms_median": 465.73758,
+      "prompt_tokens_median": 253.0,
+      "prompt_tokens_min": 249,
+      "prompt_tokens_max": 262,
+      "metadata": {
+        "started_utc": "2026-10-02T20:53:05.712192+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 47.17146087496076,
+        "output_sha256": "17e9eabde9a8efab3d801280ff5e9e596dff5b741fb54c327e99f8bf1f996ecb",
+        "requests_sha256": "1ee813c5060a2ec2bab7354c390b7cb3b7000364ee97033e78d1677052a94cb6",
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "candidate_source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+        "capture_source_sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71",
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0
+      },
+      "timing_limit": "Host CPU, separate baseline then candidate loads; state cleared each request. No OS-cache-cold, controlled thermal/power, phone, NPU or complete action latency claim.",
+      "descriptive_metrics": {
+        "total_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 465.669915,
+          "nearest_rank_p95": 478.71713,
+          "min": 454.80604,
+          "max": 482.77525
+        },
+        "prefill_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 430.59756500000003,
+          "nearest_rank_p95": 443.16842,
+          "min": 418.87387,
+          "max": 446.57238
+        },
+        "decode_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 35.208333499999995,
+          "nearest_rank_p95": 36.270792,
+          "min": 33.993375,
+          "max": 38.606333
+        },
+        "prompt_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 253.0,
+          "nearest_rank_p95": 256,
+          "min": 249,
+          "max": 262
+        },
+        "generated_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 1.0,
+          "nearest_rank_p95": 1,
+          "min": 1,
+          "max": 1
+        },
+        "java_wall_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 466.517021,
+          "nearest_rank_p95": 479.598125,
+          "min": 455.645208,
+          "max": 483.67425
+        }
+      },
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 465.73758,
+        "nearest_rank_p95": 480.20558,
+        "min": 454.80604,
+        "max": 482.77525
+      }
+    }
+  },
+  "gates": {
+    "baseline": {
+      "rows": 100,
+      "strict_correct": 80,
+      "supported_rows": 50,
+      "supported_correct": 30,
+      "supported_false_abstentions": 20,
+      "supported_wrong_accepted": 0,
+      "supported_wrong_slots": 0,
+      "must_abstain_rows": 50,
+      "correct_abstentions": 50,
+      "unsupported_false_accepts": 0,
+      "accepted": 30,
+      "wrong_accepted": 0,
+      "coverage": 0.3,
+      "accepted_precision": 1.0,
+      "actions_executed": 0,
+      "per_family": {
+        "alarm_colon_24_hour": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "alarm_hour_only_midnight_noon": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_leading_zero_minute": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_new_meridians": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "explain_focus_overview": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "explain_remaining_study": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "explain_reminder_cause": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warned_during_focus": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "focus_digit_endpoint_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_request_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_ongoing": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_replacement_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_spoken_new_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "open_calculator_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "open_clock_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "open_settings_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "pause_break_from_domain": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_current_personal_session": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "pause_end_work_wrapper": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "pause_named_focus_countdown": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_alternative_times": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_date_repeat": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_invalid_clock": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_without_meridian": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_cancel_and_injection": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_combined_alarm_open": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_combined_focus_timer": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_conditional_timer": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_extra_timer_modifier": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_focus_invalid_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_future_condition": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_imagined_workflow": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_money_outgoing_message": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_quotation_as_data": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_app_open": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_clock_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_concentration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_countdown": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_focus_pause": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_reported_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_sensitive_phone_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_timer_multiple_bounds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_timer_signed_fraction": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_unapproved_launch": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_unrelated_explanation": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_count_down_conversational": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "timer_prefix_numeric_minutes": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_request_suffix_duration": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_seconds_endpoints": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_words_fresh_values": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        }
+      },
+      "host_java_process_ms": 73.97549995221198,
+      "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+      "raw_result_sha256": "20bdeda5d9d947de091f027c4fee6893f19c5e4e56dd3e15d4a07677fa01b067",
+      "invalid_output_fallback_abstentions": 0,
+      "wrong_accepted_kinds": 0,
+      "per_intent": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 1,
+          "false_abstentions": 7,
+          "wrong_accepted": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 2,
+          "false_abstentions": 6,
+          "wrong_accepted": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 10,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 4,
+          "false_abstentions": 6,
+          "wrong_accepted": 0
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 50,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        }
+      }
+    },
+    "candidate": {
+      "rows": 100,
+      "strict_correct": 82,
+      "supported_rows": 50,
+      "supported_correct": 32,
+      "supported_false_abstentions": 18,
+      "supported_wrong_accepted": 0,
+      "supported_wrong_slots": 0,
+      "must_abstain_rows": 50,
+      "correct_abstentions": 50,
+      "unsupported_false_accepts": 0,
+      "accepted": 32,
+      "wrong_accepted": 0,
+      "coverage": 0.32,
+      "accepted_precision": 1.0,
+      "actions_executed": 0,
+      "per_family": {
+        "alarm_colon_24_hour": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "alarm_hour_only_midnight_noon": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_leading_zero_minute": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_new_meridians": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "explain_focus_overview": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "explain_remaining_study": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "explain_reminder_cause": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warned_during_focus": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "focus_digit_endpoint_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_request_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_ongoing": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_replacement_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_spoken_new_duration": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "open_calculator_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "open_clock_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "open_settings_fresh_wrapper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "pause_break_from_domain": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "pause_current_personal_session": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "pause_end_work_wrapper": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "pause_named_focus_countdown": {
+          "rows": 2,
+          "correct": 0,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_alternative_times": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_date_repeat": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_invalid_clock": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_alarm_without_meridian": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_cancel_and_injection": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_combined_alarm_open": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_combined_focus_timer": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_conditional_timer": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_extra_timer_modifier": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_focus_invalid_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_future_condition": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_imagined_workflow": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_money_outgoing_message": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_quotation_as_data": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_app_open": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_clock_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_concentration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_countdown": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_refused_focus_pause": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_reported_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_sensitive_phone_action": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_timer_multiple_bounds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_timer_signed_fraction": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_unapproved_launch": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "reject_unrelated_explanation": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_count_down_conversational": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_prefix_numeric_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_request_suffix_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_seconds_endpoints": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_words_fresh_values": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        }
+      },
+      "host_java_process_ms": 74.61454102303833,
+      "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+      "raw_result_sha256": "ba9bdc1b4a78f1adc3297167a2e86caf95cd3bd4bc3122173e257591a5eaeeca",
+      "invalid_output_fallback_abstentions": 0,
+      "wrong_accepted_kinds": 0,
+      "per_intent": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 1,
+          "false_abstentions": 7,
+          "wrong_accepted": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 0,
+          "false_abstentions": 8,
+          "wrong_accepted": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 9,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 9,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 50,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        }
+      }
+    }
+  },
+  "oracle": {
+    "rows": 100,
+    "strict_correct": 93,
+    "supported_rows": 50,
+    "supported_correct": 43,
+    "supported_false_abstentions": 7,
+    "supported_wrong_accepted": 0,
+    "supported_wrong_slots": 0,
+    "must_abstain_rows": 50,
+    "correct_abstentions": 50,
+    "unsupported_false_accepts": 0,
+    "accepted": 43,
+    "wrong_accepted": 0,
+    "coverage": 0.43,
+    "accepted_precision": 1.0,
+    "actions_executed": 0,
+    "per_family": {
+      "alarm_colon_24_hour": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_hour_only_midnight_noon": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_spoken_leading_zero_minute": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_spoken_new_meridians": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "explain_focus_overview": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "explain_remaining_study": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_reminder_cause": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_warned_during_focus": {
+        "rows": 2,
+        "correct": 0,
+        "wrong_accepted": 0
+      },
+      "focus_digit_endpoint_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_request_personal": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_resume_ongoing": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_resume_replacement_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_spoken_new_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "open_calculator_fresh_wrapper": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "open_clock_fresh_wrapper": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "open_settings_fresh_wrapper": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_break_from_domain": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_current_personal_session": {
+        "rows": 2,
+        "correct": 0,
+        "wrong_accepted": 0
+      },
+      "pause_end_work_wrapper": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_named_focus_countdown": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_alarm_alternative_times": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_alarm_date_repeat": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_alarm_invalid_clock": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_alarm_without_meridian": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_cancel_and_injection": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_combined_alarm_open": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_combined_focus_timer": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_conditional_timer": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_extra_timer_modifier": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_focus_invalid_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_future_condition": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_imagined_workflow": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_money_outgoing_message": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_quotation_as_data": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_refused_app_open": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_refused_clock_action": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_refused_concentration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_refused_countdown": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_refused_focus_pause": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_reported_action": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_sensitive_phone_action": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_timer_multiple_bounds": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_timer_signed_fraction": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_unapproved_launch": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "reject_unrelated_explanation": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_count_down_conversational": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_prefix_numeric_minutes": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_request_suffix_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_seconds_endpoints": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_words_fresh_values": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      }
+    },
+    "host_java_process_ms": 72.08841701503843,
+    "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+    "raw_result_sha256": "e9105d7296ccc5d3062ede69974037b8beff7893bc02f81be8c7f1fa2fea646c"
+  },
+  "paired": {
+    "supported_gains": 5,
+    "supported_losses": 3,
+    "gains_per_family": {
+      "timer_count_down_conversational": 2,
+      "timer_prefix_numeric_minutes": 1,
+      "timer_request_suffix_duration": 1,
+      "timer_seconds_endpoints": 1
+    },
+    "losses_per_family": {
+      "focus_spoken_new_duration": 1,
+      "pause_break_from_domain": 1,
+      "pause_named_focus_countdown": 1
+    }
+  },
+  "paired_full": {
+    "all_rows": {
+      "semantic_gain": 13,
+      "semantic_loss": 5,
+      "gate_gain": 5,
+      "gate_loss": 3,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "supported_rows": {
+      "semantic_gain": 5,
+      "semantic_loss": 5,
+      "gate_gain": 5,
+      "gate_loss": 3,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "per_intent": {
+      "alarm": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain": {
+        "semantic_gain": 0,
+        "semantic_loss": 2,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_app": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 2,
+        "gate_gain": 0,
+        "gate_loss": 2,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "start_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer": {
+        "semantic_gain": 5,
+        "semantic_loss": 0,
+        "gate_gain": 5,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "unknown": {
+        "semantic_gain": 8,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    },
+    "per_family": {
+      "alarm_colon_24_hour": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_hour_only_midnight_noon": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_spoken_leading_zero_minute": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_spoken_new_meridians": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_focus_overview": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_remaining_study": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_reminder_cause": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_warned_during_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 2,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_digit_endpoint_duration": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_request_personal": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_resume_ongoing": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_resume_replacement_duration": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_spoken_new_duration": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_calculator_fresh_wrapper": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_clock_fresh_wrapper": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_settings_fresh_wrapper": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_break_from_domain": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_current_personal_session": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_end_work_wrapper": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_named_focus_countdown": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_alarm_alternative_times": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_alarm_date_repeat": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_alarm_invalid_clock": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_alarm_without_meridian": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_cancel_and_injection": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_combined_alarm_open": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_combined_focus_timer": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_conditional_timer": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_extra_timer_modifier": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_focus_invalid_duration": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_future_condition": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_imagined_workflow": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_money_outgoing_message": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_quotation_as_data": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_refused_app_open": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_refused_clock_action": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_refused_concentration": {
+        "semantic_gain": 2,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_refused_countdown": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_refused_focus_pause": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_reported_action": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_sensitive_phone_action": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_timer_multiple_bounds": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_timer_signed_fraction": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_unapproved_launch": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "reject_unrelated_explanation": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_count_down_conversational": {
+        "semantic_gain": 2,
+        "semantic_loss": 0,
+        "gate_gain": 2,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_prefix_numeric_minutes": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_request_suffix_duration": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_seconds_endpoints": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_words_fresh_values": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    },
+    "hard_supported": {
+      "current_focus_pause": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "duration_boundary": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "midnight_noon": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "resume_vs_start": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "spoken_number_slot": {
+        "semantic_gain": 3,
+        "semantic_loss": 1,
+        "gate_gain": 3,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "warned_focus_explanation": {
+        "semantic_gain": 0,
+        "semantic_loss": 2,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    }
+  },
+  "paired_candidate_minus_baseline_metrics": {
+    "total_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 21.027770000000004,
+      "nearest_rank_p95": 46.273000000000025,
+      "min": -29.10208,
+      "max": 57.69020999999998
+    },
+    "prefill_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 143.123315,
+      "nearest_rank_p95": 156.76288,
+      "min": 128.97899999999998,
+      "max": 160.54909000000004
+    },
+    "decode_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": -130.53765099999998,
+      "nearest_rank_p95": -94.79328999999998,
+      "min": -172.342,
+      "max": -93.48862499999998
+    },
+    "prompt_tokens": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 89.0,
+      "nearest_rank_p95": 89,
+      "min": 89,
+      "max": 89
+    },
+    "generated_tokens": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": -7.0,
+      "nearest_rank_p95": -5,
+      "min": -9,
+      "max": -5
+    }
+  },
+  "private_paired_transitions_sha256": "ec3e5e203676d0aa54306dc0cd46e4ecaf75e0caf77d4043c96944e097276651",
+  "runner_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+  "capture_source_sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71",
+  "shared_scorer_sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "actions_executed": 0,
+  "training_performed": false,
+  "candidate_promoted": false
+}

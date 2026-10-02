@@ -2,6 +2,16 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Compact intent experiment — rejected
+
+A locked one-digit Qwen candidate was compared with the shipped prompt on 100
+fresh synthetic host requests. Supported complete proposals rose 30→32/50, but
+five gains came with three focus/pause losses, including a hard spoken-number
+case; Pause coverage fell 2→0/8. Warm host native median rose 448.70→465.74 ms.
+The candidate is rejected; selected app/model/prompt remain unchanged. Twenty
+research validation tests pass. This is host research, not phone/NPU evidence.
+[Results, regressions and source bindings](compact-intent-research.md).
+
 ## Current v0.12 bundled-model import
 
 The selected bundled APK imported Qwen3.5-0.8B Q4_0 on Nothing with the canonical
