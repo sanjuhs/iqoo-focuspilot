@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "phase": "DESIGN_LOCKED_BEFORE_CORPUS",
+  "date_ist": "2026-10-03",
+  "configuration_authority": "Root confirmed fixed configuration before corpus authoring; no data/inference/training performed by protocol author.",
+  "files": {
+    "protocol.json": {
+      "sha256": "ce9000c4a6426f2c1ca322b5f7bbc6af35269b689a377d22e60e037a3a52f6fd",
+      "bytes": 7325
+    },
+    "README.md": {
+      "sha256": "5a91f4e7363b939b174eb2c193175421bf6e4d1439ffda1f6e5cf9eb9226335f",
+      "bytes": 6211
+    }
+  },
+  "source_runtime_bindings": "Separate immutable manifests required before execution; never rewrite locked choices.",
+  "training_data_bindings": "Before training",
+  "confirmation_bindings": "After terminal candidate freeze, before confirmation inference",
+  "no_success_claim": true
+}

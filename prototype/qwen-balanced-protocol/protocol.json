@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "status": "DESIGN_LOCKED_BEFORE_CORPUS",
+  "research_only": true,
+  "prospective": true,
+  "corpus_created": false,
+  "training_started": false,
+  "candidate_outputs_seen": false,
+  "model_family": "Qwen3.5-0.8B",
+  "base_identity_equivalence_claim": false,
+  "original_native_model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "lineage_and_quantization_difference": "Unresolved; independently pin MLX base/tokenizer and existing GGUF. Dev concordance is diagnostic, not equivalence proof.",
+  "intents": [
+    "start_focus",
+    "pause_focus",
+    "alarm",
+    "timer",
+    "open_app",
+    "explain",
+    "unknown"
+  ],
+  "training": {
+    "rows": 112,
+    "rows_per_class": 16,
+    "dev_rows": 14,
+    "dev_rows_per_class": 2,
+    "seed": 20261003,
+    "epochs": 2,
+    "optimizer_updates": 224,
+    "batch_size": 1,
+    "learning_rate": 0.0002,
+    "learning_rate_schedule": "constant",
+    "rank": 4,
+    "scale": 8,
+    "dropout": 0,
+    "target_layer": 23,
+    "target_modules": [
+      "mlp.gate_proj",
+      "mlp.up_proj",
+      "mlp.down_proj"
+    ],
+    "max_sequence_tokens_including_prompt_completion_eos": 256,
+    "overlength": "FAIL_PREFLIGHT_NO_TRUNCATION",
+    "packing": false,
+    "class_order": "Per epoch shuffle each class; 16 rounds, one row/class/round; shuffle seven-class order per round. RNG implementation bound by trainer source.",
+    "optimizer": "PENDING_ROOT_CONFIRMATION",
+    "terminal_candidate": "update_224_only",
+    "checkpoint_selection": false,
+    "prompt_selection": false
+  },
+  "loss": {
+    "name": "teacher_forced_weighted_completion_cross_entropy",
+    "prompt_weight": 0,
+    "intent_value_token_weight": 8,
+    "other_completion_json_token_weight": 1,
+    "terminal_eos_weight": 1,
+    "normalization": "For each example: sum(weight_i * CE_i) / sum(supervised weight_i). Batch1, no additional class rescaling.",
+    "span_policy": "Use exact cumulative tokenizer.decode(prefix) offsets against canonical ASCII completion JSON and explicit EOS contract. A token intersecting the intent-value character span receives weight8, including mixed punctuation boundaries. Fail non-prefix decoding or inconsistent offsets; do not guess/truncate spans. Record every mixed-boundary token and its weight effect.",
+    "padding_supervision": false,
+    "mixed_value_delimiter_token_weight": 8
+  },
+  "pretraining_dev": {
+    "required": true,
+    "arms": [
+      "unchanged_mlx_base",
+      "unchanged_native_gguf"
+    ],
+    "requests": 14,
+    "records": [
+      "raw_text",
+      "intent",
+      "canonical_json",
+      "reached_eos",
+      "complete_gated_action_slots",
+      "timing"
+    ],
+    "disagreement_policy": "Disclose paired disagreement, evaluate both anyway; never claim base identity.",
+    "selection_allowed": false
+  },
+  "data_boundary": {
+    "training_provenance": "author-written informed synthetic; no personal phone data",
+    "train_dev_overlap": "Reject exact/normalized duplicates and shared heldout template families.",
+    "confirmation_provenance": "independently authored fresh informed synthetic; no train/dev-template reuse",
+    "confirmation_visibility": "Frozen expectations/families/data hashes before confirmation outputs; no post-output candidate selection",
+    "corpus_lock_required_before_training": true
+  },
+  "native_confirmation": {
+    "requests": 100,
+    "supported": 50,
+    "unknown": 50,
+    "class_counts": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8,
+      "unknown": 50
+    },
+    "arms": [
+      "original_q4_0_gguf",
+      "same_q4_0_gguf_plus_converted_adapter"
+    ],
+    "prompt": "unchanged_original_command_prompt",
+    "gate": "unchanged_selected_original_request_full_slot_gate",
+    "backend": "CPU",
+    "threads": 4,
+    "context": 1024,
+    "maximum_generated_tokens": 128,
+    "capture": false,
+    "fresh_context_per_request": true,
+    "same_request_order_both_arms": true,
+    "checkpoint_retries": 0,
+    "metrics": [
+      "raw_semantic_accuracy_by_class",
+      "raw_unknown_recall",
+      "canonical_json_eos",
+      "complete_action_and_exact_slots",
+      "paired_gains_losses",
+      "wrong_accepted_proposals",
+      "false_abstentions",
+      "first_request_latency",
+      "subsequent_latency",
+      "load_and_context_setup_separately"
+    ]
+  },
+  "qualification": {
+    "all_required": true,
+    "supported_complete_candidate_minus_baseline_at_least": 4,
+    "supported_complete_losses_max": 0,
+    "supported_per_class_decline_allowed": false,
+    "pause_candidate_correct_at_least": 4,
+    "pause_denominator": 8,
+    "pause_candidate_at_least_baseline": true,
+    "wrong_accepted_proposals_max": 0,
+    "raw_unknown_recall_at_least_baseline": true,
+    "both_arms_canonical_eos_count": 100,
+    "runtime_failures_max": 0,
+    "promotion": "HOST_RESEARCH_ONLY; additional phone/package/runtime/lifecycle/permission/review/voice checks required"
+  },
+  "storage": {
+    "incremental_reserve_bytes": 25000000,
+    "project_ceiling_bytes": 15000000000,
+    "models": "reuse existing local weights only",
+    "full_model_merge_or_copy": false,
+    "native_adapter_route": "Small GGUF LoRA adapter loaded with original pinned model; mapping/dtype/orientation/scaling parity independently verified.",
+    "unavailable_native_route": "STOP_NATIVE_COMPARISON; MLX-only unpromoted evidence",
+    "downloads": false,
+    "paid_api_cloud": false
+  },
+  "later_artifact_bindings": {
+    "train_data_sha256": null,
+    "dev_data_sha256": null,
+    "confirmation_data_and_expectations_sha256": null,
+    "terminal_mlx_adapter_sha256": null,
+    "native_adapter_sha256": null,
+    "per_tensor_conversion_manifest_sha256": null,
+    "result_sha256": null
+  },
+  "limitations": [
+    "Synthetic informed-author data, not real ASR/user distribution",
+    "Small dev set cannot establish base equality",
+    "MLX and native quantization/lineage differences unresolved",
+    "Host adapter improvements not phone/NPU/Office Kit proof",
+    "Weighted intent CE is not causal mechanistic interpretation",
+    "Zero observed wrong accepts is bounded evidence, not universal safety"
+  ],
+  "required_bindings_before_execution": {
+    "trainer_source_sha256": null,
+    "training_dependencies_versions": null,
+    "mlx_base_artifact_manifest_sha256": null,
+    "mlx_tokenizer_artifact_manifest_sha256": null,
+    "original_prompt_source_sha256": null,
+    "gate_source_sha256": null,
+    "number_parser_source_sha256": null,
+    "native_runner_source_sha256": null,
+    "native_runtime_binary_sha256": null,
+    "adapter_conversion_source_sha256": null,
+    "effective_mlx_native_scale_contract": null,
+    "rng_optimizer_contract": null
+  },
+  "binding_manifest_policy": "Append immutable separate source/runtime/data/artifact manifests before their required stage; do not alter locked numerical/data/qualification choices in this protocol. Source/tool/conversion/runtime bindings required before execution. Corpus bindings required before training; confirmation bindings before confirmation inference, with candidate terminal artifact already fixed.",
+  "design_lock_record": "design-lock.json binds exact protocol/README bytes; later bindings are separate append-only manifests."
+}
