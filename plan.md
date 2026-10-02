@@ -1,5 +1,20 @@
 # FocusPilot delivery plan
 
+## Natural wording experiment — rejected; summary build in progress
+
+The selected Qwen3.5-0.8B Q4_0 stays unchanged. A frozen grammar candidate
+improves fresh synthetic complete proposals only 3→5/50, below the fixed six-gain
+requirement; it remains off phone. All50 unknowns are refused with no wrong accepted
+slots in the sample, but conversational coverage remains poor. Independent actual-record
+and Java replay audits pass. No post-output repair or retry.
+[Evidence](docs/natural-command-research.md).
+
+Version16 separately packages honest focus summaries and original countdown-target
+metadata. Host182 JVM checks passed before packaging; final APK/install/12pure Android
+fixtures are still pending. Original model/prompt/gate/native and opt-in permissions
+remain selected. Live ASR/floating, actual iQOO/NPU, Office Kit and accepted eligible
+submission remain active requirements.
+
 ## Balanced adapter result and next product work
 
 The fixed Qwen3.5-0.8B experiment learns an audited 55,296-parameter adapter and

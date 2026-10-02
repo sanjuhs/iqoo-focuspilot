@@ -1,0 +1,637 @@
+{
+  "schema": "focuspilot.natural_gate_result.v1",
+  "source_commit": "c17c8a86b17ce590000c6a45c9796116641e9962",
+  "promoted": false,
+  "research_only": true,
+  "scope": "One unchanged original-model host CPU capture reused by both Java gates; no task executed",
+  "lock_sha256": "32be60b1d5dfcfe92a41b9f019de88f7ff438e19f8448784dccba424336d9a97",
+  "gold_sha256": "bbf2339a05b99274584a6750c864b45ff8feba69c732c83477902532bf1b1f97",
+  "process_sha256": "78166410d60641035f7da0054f60ec31d65cdd4ab82b6303c8c8940dfe9320d8",
+  "candidate_gate_sha256": "9a8e45d86be21ee076e4e5fb5953834e79630d2c0004de0753a5f3580560d13f",
+  "baseline_gate_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "canonical_actual_eos": 100,
+  "load_ms": 306.045292,
+  "baseline": {
+    "generated": {
+      "rows": 100,
+      "supported_rows": 50,
+      "unknown_rows": 50,
+      "semantic_correct": 42,
+      "supported_semantic_correct": 38,
+      "unknown_model_abstentions": 4,
+      "supported_complete_proposals": 3,
+      "supported_false_abstentions": 47,
+      "unknown_refused_by_gate": 50,
+      "wrong_accepts": 0,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "semantic_correct": 7,
+          "complete_proposal_correct": 0
+        },
+        "explain": {
+          "rows": 8,
+          "semantic_correct": 2,
+          "complete_proposal_correct": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "semantic_correct": 5,
+          "complete_proposal_correct": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "semantic_correct": 6,
+          "complete_proposal_correct": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "semantic_correct": 10,
+          "complete_proposal_correct": 2
+        },
+        "timer": {
+          "rows": 10,
+          "semantic_correct": 8,
+          "complete_proposal_correct": 1
+        },
+        "unknown": {
+          "rows": 50,
+          "semantic_correct": 4,
+          "complete_proposal_correct": 50
+        }
+      },
+      "confusion": {
+        "alarm": {
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "alarm": 0,
+          "explain": 2,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 6,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 5,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 6,
+          "start_focus": 2,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 2,
+          "timer": 8,
+          "unknown": 0
+        },
+        "unknown": {
+          "alarm": 6,
+          "explain": 6,
+          "open_app": 1,
+          "pause_focus": 2,
+          "start_focus": 26,
+          "timer": 5,
+          "unknown": 4
+        }
+      }
+    },
+    "oracle": {
+      "rows": 100,
+      "supported_rows": 50,
+      "unknown_rows": 50,
+      "semantic_correct": 42,
+      "supported_semantic_correct": 38,
+      "unknown_model_abstentions": 4,
+      "supported_complete_proposals": 4,
+      "supported_false_abstentions": 46,
+      "unknown_refused_by_gate": 50,
+      "wrong_accepts": 0,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "semantic_correct": 7,
+          "complete_proposal_correct": 0
+        },
+        "explain": {
+          "rows": 8,
+          "semantic_correct": 2,
+          "complete_proposal_correct": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "semantic_correct": 5,
+          "complete_proposal_correct": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "semantic_correct": 6,
+          "complete_proposal_correct": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "semantic_correct": 10,
+          "complete_proposal_correct": 2
+        },
+        "timer": {
+          "rows": 10,
+          "semantic_correct": 8,
+          "complete_proposal_correct": 2
+        },
+        "unknown": {
+          "rows": 50,
+          "semantic_correct": 4,
+          "complete_proposal_correct": 50
+        }
+      },
+      "confusion": {
+        "alarm": {
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "alarm": 0,
+          "explain": 2,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 6,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 5,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 6,
+          "start_focus": 2,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 2,
+          "timer": 8,
+          "unknown": 0
+        },
+        "unknown": {
+          "alarm": 6,
+          "explain": 6,
+          "open_app": 1,
+          "pause_focus": 2,
+          "start_focus": 26,
+          "timer": 5,
+          "unknown": 4
+        }
+      }
+    }
+  },
+  "candidate": {
+    "generated": {
+      "rows": 100,
+      "supported_rows": 50,
+      "unknown_rows": 50,
+      "semantic_correct": 42,
+      "supported_semantic_correct": 38,
+      "unknown_model_abstentions": 4,
+      "supported_complete_proposals": 5,
+      "supported_false_abstentions": 45,
+      "unknown_refused_by_gate": 50,
+      "wrong_accepts": 0,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "semantic_correct": 7,
+          "complete_proposal_correct": 1
+        },
+        "explain": {
+          "rows": 8,
+          "semantic_correct": 2,
+          "complete_proposal_correct": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "semantic_correct": 5,
+          "complete_proposal_correct": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "semantic_correct": 6,
+          "complete_proposal_correct": 1
+        },
+        "start_focus": {
+          "rows": 10,
+          "semantic_correct": 10,
+          "complete_proposal_correct": 2
+        },
+        "timer": {
+          "rows": 10,
+          "semantic_correct": 8,
+          "complete_proposal_correct": 1
+        },
+        "unknown": {
+          "rows": 50,
+          "semantic_correct": 4,
+          "complete_proposal_correct": 50
+        }
+      },
+      "confusion": {
+        "alarm": {
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "alarm": 0,
+          "explain": 2,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 6,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 5,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 6,
+          "start_focus": 2,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 2,
+          "timer": 8,
+          "unknown": 0
+        },
+        "unknown": {
+          "alarm": 6,
+          "explain": 6,
+          "open_app": 1,
+          "pause_focus": 2,
+          "start_focus": 26,
+          "timer": 5,
+          "unknown": 4
+        }
+      }
+    },
+    "oracle": {
+      "rows": 100,
+      "supported_rows": 50,
+      "unknown_rows": 50,
+      "semantic_correct": 42,
+      "supported_semantic_correct": 38,
+      "unknown_model_abstentions": 4,
+      "supported_complete_proposals": 6,
+      "supported_false_abstentions": 44,
+      "unknown_refused_by_gate": 50,
+      "wrong_accepts": 0,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "semantic_correct": 7,
+          "complete_proposal_correct": 1
+        },
+        "explain": {
+          "rows": 8,
+          "semantic_correct": 2,
+          "complete_proposal_correct": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "semantic_correct": 5,
+          "complete_proposal_correct": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "semantic_correct": 6,
+          "complete_proposal_correct": 1
+        },
+        "start_focus": {
+          "rows": 10,
+          "semantic_correct": 10,
+          "complete_proposal_correct": 2
+        },
+        "timer": {
+          "rows": 10,
+          "semantic_correct": 8,
+          "complete_proposal_correct": 2
+        },
+        "unknown": {
+          "rows": 50,
+          "semantic_correct": 4,
+          "complete_proposal_correct": 50
+        }
+      },
+      "confusion": {
+        "alarm": {
+          "alarm": 7,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "alarm": 0,
+          "explain": 2,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 6,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 5,
+          "pause_focus": 0,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 6,
+          "start_focus": 2,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 2,
+          "timer": 8,
+          "unknown": 0
+        },
+        "unknown": {
+          "alarm": 6,
+          "explain": 6,
+          "open_app": 1,
+          "pause_focus": 2,
+          "start_focus": 26,
+          "timer": 5,
+          "unknown": 4
+        }
+      }
+    }
+  },
+  "paired": {
+    "all_rows": {
+      "semantic_gain": 0,
+      "semantic_loss": 0,
+      "gate_gain": 2,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "supported_rows": {
+      "semantic_gain": 0,
+      "semantic_loss": 0,
+      "gate_gain": 2,
+      "gate_loss": 0,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "per_intent": {
+      "alarm": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_app": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "start_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "unknown": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    },
+    "hard_supported": {
+      "current_or_spoken_focus_pause": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "duration_boundary": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "midnight_noon": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "nudge_cause": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_preservation": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "resume_vs_start": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "spoken_number": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    }
+  },
+  "qualification_checks": {
+    "exact_denominators": true,
+    "supported_complete_net_gain_at_least_6": false,
+    "supported_complete_losses_zero": true,
+    "supported_per_class_preserved": true,
+    "pause_preserved": true,
+    "wrong_accepts_zero_generated_and_oracle": true,
+    "all_unknown_refused_generated_and_oracle": true,
+    "canonical_actual_eos_100": true,
+    "runtime_failures_zero": true,
+    "oracle_coverage_preserved": true
+  },
+  "qualified": false,
+  "decision": "REJECTED_KEEP_BASELINE",
+  "private_evidence_sha256": {
+    "prototype/qwen-natural-eval/build/scoring/paired-details.json": "b8a1097542a5a2109784d1896dea88e2db829bd53d332c652bc22ffa8d5f6df0",
+    "prototype/qwen-natural-eval/build/scoring/baseline-generated-details.json": "a982e34f406190eb8adef0576d49b79f9c9735f4b49c396aff434684b703afa0",
+    "prototype/qwen-natural-eval/build/scoring/baseline-oracle-output.tsv": "69c3421f5fa2559114478f300584c7ca81056a5fcbb5118eebe2fc7703a2007c",
+    "prototype/qwen-natural-eval/build/scoring/candidate-oracle-details.json": "c25c0f066592e849920730205e69c0cc22a55730f51dbea53de97fcf87b39c6f",
+    "prototype/qwen-natural-eval/build/scoring/baseline-generated-output.tsv": "a65d4814c23648ae257cb7a676b73daad8991e466ccc7e38dde70b129e1f8ba1",
+    "prototype/qwen-natural-eval/build/scoring/candidate-oracle-input.tsv": "c522e27ba2fcd9dde477cfc834b6cb0771b974fac45b221de7d85a4050bbef25",
+    "prototype/qwen-natural-eval/build/scoring/baseline-oracle-details.json": "c6efec9230e66516da36e34847b5823460152200caf64fb88dbcdd689e184a16",
+    "prototype/qwen-natural-eval/build/scoring/baseline-oracle-input.tsv": "c522e27ba2fcd9dde477cfc834b6cb0771b974fac45b221de7d85a4050bbef25",
+    "prototype/qwen-natural-eval/build/scoring/candidate-oracle-output.tsv": "49ae6b0831237420225dc3af1fb54872d26163e9f472492b752e405d9dc2fdc4",
+    "prototype/qwen-natural-eval/build/scoring/candidate-generated-input.tsv": "c9aca4a0bbe2d451fbe03b81cd826da01f7b9e541f68f2cdd6685ae8340a914b",
+    "prototype/qwen-natural-eval/build/scoring/baseline-generated-input.tsv": "c9aca4a0bbe2d451fbe03b81cd826da01f7b9e541f68f2cdd6685ae8340a914b",
+    "prototype/qwen-natural-eval/build/scoring/candidate-generated-output.tsv": "a72b4b981527bfa488cc459072dba93dc95ae5fa1bba4efd2050857727f9336a",
+    "prototype/qwen-natural-eval/build/scoring/candidate-generated-details.json": "bb6b5c798b37b7a835c1b60dee3b26e8b055d4ad798e08792c464973a6429d03"
+  }
+}

@@ -264,7 +264,8 @@ public final class LocalModelActivity extends Activity {
                         usage<0?FocusStatusSummary.UNKNOWN:usage,repository.budgetMs,repository.ledger.points(),
                         repository.observe,FocusRepository.usageGranted(this));
                     String summary=FocusStatusSummary.format(snapshot);
-                    result.setText(summary);confirmedFocusText=summary;
+                    result.setText(summary);
+                    confirmedFocusText="At the time you reviewed this focus snapshot: "+summary;
                     break;
                 default: result.setText("Unsupported action. Nothing executed.");
             }
