@@ -15,10 +15,10 @@ from pathlib import Path
 PACKAGE = "dev.focuspilot.prototype"
 
 
-def own_interactive_foreground(window, activity):
+def own_interactive_foreground(window, activity, package=PACKAGE):
     """Require observed awake/unlocked state; missing flags never imply unlocked."""
     focus = next((line for line in window.splitlines() if "mCurrentFocus=" in line), "")
-    owner = re.search(r"(?:^|\s)" + re.escape(PACKAGE) + r"/", focus)
+    owner = re.search(r"(?:^|\s)" + re.escape(package) + r"/", focus)
     awake = re.findall(r"\bmAwake\s*=\s*(true|false)", window)
     legacy = re.findall(r"\bmShowingLockscreen\s*=\s*(true|false)", window)
     keyguard = re.findall(r"\bmKeyguardShowing\s*=\s*(true|false)", activity)
