@@ -1,0 +1,197 @@
+{
+  "batch": 512,
+  "cache_policy": "New llama_context for every case; no recurrent/KV memory reuse",
+  "context": 512,
+  "controls": [
+    "zero selected channels",
+    "opposite-class patch",
+    "same-class discovery patch",
+    "random4-channel opposite patch",
+    "norm-matched random-channel patch",
+    "identical-vector no-op write",
+    "zero then restore before downstream compute",
+    "whole last-token ffn_out zeroing",
+    "unrelated alarm/timer/open/negation cases"
+  ],
+  "discovery_rule": "Rank channels by absolute start/pause mean difference divided by within-group standard deviation floor1e-3; top4 per layer",
+  "examples": [
+    {
+      "command": "Start focus.",
+      "family": "direct",
+      "id": "direct_start_focus",
+      "split": "discovery",
+      "target": "start_focus"
+    },
+    {
+      "command": "Stop focus.",
+      "family": "direct",
+      "id": "direct_pause_focus",
+      "split": "discovery",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Begin a work session.",
+      "family": "work_session",
+      "id": "work_session_start_focus",
+      "split": "discovery",
+      "target": "start_focus"
+    },
+    {
+      "command": "End my work session.",
+      "family": "work_session",
+      "id": "work_session_pause_focus",
+      "split": "discovery",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Switch focus mode on.",
+      "family": "mode",
+      "id": "mode_start_focus",
+      "split": "discovery",
+      "target": "start_focus"
+    },
+    {
+      "command": "Switch focus mode off.",
+      "family": "mode",
+      "id": "mode_pause_focus",
+      "split": "discovery",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Start a twenty-minute focus session.",
+      "family": "timed",
+      "id": "timed_start_focus",
+      "split": "discovery",
+      "target": "start_focus"
+    },
+    {
+      "command": "Stop my twenty-minute focus session.",
+      "family": "timed",
+      "id": "timed_pause_focus",
+      "split": "discovery",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Put me into focus mode.",
+      "family": "in_out",
+      "id": "in_out_start_focus",
+      "split": "selection",
+      "target": "start_focus"
+    },
+    {
+      "command": "Take me out of focus mode.",
+      "family": "in_out",
+      "id": "in_out_pause_focus",
+      "split": "selection",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Begin a concentration session.",
+      "family": "concentration",
+      "id": "concentration_start_focus",
+      "split": "selection",
+      "target": "start_focus"
+    },
+    {
+      "command": "Pause my concentration session.",
+      "family": "concentration",
+      "id": "concentration_pause_focus",
+      "split": "selection",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Let's begin a block of focused work.",
+      "family": "work_block",
+      "id": "work_block_start_focus",
+      "split": "holdout",
+      "target": "start_focus"
+    },
+    {
+      "command": "Let's finish this block of focused work.",
+      "family": "work_block",
+      "id": "work_block_pause_focus",
+      "split": "holdout",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Resume my focus session now.",
+      "family": "resume_suspend",
+      "id": "resume_suspend_start_focus",
+      "split": "holdout",
+      "target": "start_focus"
+    },
+    {
+      "command": "Suspend my focus session now.",
+      "family": "resume_suspend",
+      "id": "resume_suspend_pause_focus",
+      "split": "holdout",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Activate focus while I work.",
+      "family": "activate",
+      "id": "activate_start_focus",
+      "split": "holdout",
+      "target": "start_focus"
+    },
+    {
+      "command": "Deactivate focus while I work.",
+      "family": "activate",
+      "id": "activate_pause_focus",
+      "split": "holdout",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Please help me enter focus mode.",
+      "family": "enter_leave",
+      "id": "enter_leave_start_focus",
+      "split": "holdout",
+      "target": "start_focus"
+    },
+    {
+      "command": "Please help me leave focus mode.",
+      "family": "enter_leave",
+      "id": "enter_leave_pause_focus",
+      "split": "holdout",
+      "target": "pause_focus"
+    },
+    {
+      "command": "Set an alarm for seven thirty in the morning.",
+      "family": "alarm",
+      "id": "alarm",
+      "split": "unrelated_control",
+      "target": "alarm"
+    },
+    {
+      "command": "Start a ten-minute countdown timer.",
+      "family": "timer",
+      "id": "timer",
+      "split": "unrelated_control",
+      "target": "timer"
+    },
+    {
+      "command": "Open calculator.",
+      "family": "calculator",
+      "id": "calculator",
+      "split": "unrelated_control",
+      "target": "open_app"
+    },
+    {
+      "command": "Do not start a focus session.",
+      "family": "negation",
+      "id": "negation",
+      "split": "unrelated_control",
+      "target": "unknown"
+    }
+  ],
+  "gguf_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "holdout_rule": "Freeze layer/channels before holdout interventions; no holdout-driven tuning",
+  "origin": "Pre-event laboratory, 2026-10-02",
+  "position": "Last token of forced assistant JSON prefix {\"intent\":\"; all prefill in one microbatch",
+  "runtime_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "scoring": "Greedy argmax among seven unique first-label-token logits; not full generated JSON or calibrated command probability",
+  "seed": 20261002,
+  "selection_rule": "Among three frozen layer/channel bundles choose largest mean opposite-donor directional margin shift on selection only",
+  "threads": 4,
+  "ubatch": 512
+}

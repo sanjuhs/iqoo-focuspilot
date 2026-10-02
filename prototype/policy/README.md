@@ -9,10 +9,14 @@ python3 prototype/policy/cli.py train
 python3 prototype/policy/cli.py evaluate --output prototype/policy/evaluation.json
 python3 prototype/policy/cli.py inspect --features 0.7,0.6,0.4,0.8,0.2,0.5 --intervene selected_app_budget_overrun=0.1
 python3 prototype/policy/cli.py inspect --features 1,1,1,1,1,1 --paused
+python3 prototype/policy/export_java.py
+python3 prototype/policy/export_java.py --verify
 python3 -m unittest discover -s prototype/policy -p 'test_*.py' -v
 ```
 
 The default training seed is 20261002, with 140 epochs and 160 examples per scenario family. `--seed`, `--epochs`, `--per-family`, `--learning-rate`, and `--output` select a new experiment. A custom output path keeps the committed reference artifact intact. `train` writes the model and measured results; `evaluate` regenerates the procedural data and verifies its manifest before evaluating. The saved artifact includes feature order, seed, optimizer, selection rule, source hash, dataset hashes, weights, and weight checksum. Training is deterministic for the same implementation and Python arithmetic; wall-clock timings are not deterministic.
+
+`export_java.py` verifies the checkpoint/source/dataset provenance and writes a pure Java `TrainedPolicy` and JVM parity test under `prototype/android`. It embeds the same 65 learned parameters as constants, with seed/epoch/source and parameter hashes. It generates nine held-out reference fixtures (low/high/near-threshold from each family), plus contribution and ablation references. `--verify` requires a JDK on PATH (or `--java-home`), compiles in a temporary directory, compares all 480 held-out scores/logits/hidden contributions/feature ablations against Python, and writes [java-export-results.json](java-export-results.json). The class evaluates only explicit six-element synthetic vectors; it does not extract phone features or replace the Android monitoring policy. Pause/consent/cooldown/freshness gates remain outside it. Android UI wiring and physical-phone execution require separate verification.
 
 ## Features, teacher, and partitioning
 

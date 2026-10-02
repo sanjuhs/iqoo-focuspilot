@@ -1,0 +1,51 @@
+{
+  "schema": "focuspilot.companion-motion.v1",
+  "status": "Design handoff, not implemented animation",
+  "origin": "Original project vector artwork, 2026-10-02; pre-event research",
+  "asset": "avatar.svg",
+  "viewbox": [0, 0, 240, 320],
+  "working_name": "Mira",
+  "character": "Adult woman, approximately mid-twenties; friendly goth focus helper",
+  "palette": {
+    "charcoal": "#21212D", "surface": "#292837", "lilac": "#C9B7EA",
+    "streak": "#B8A0DD", "teal": "#79DBC8", "text": "#F4EFFA"
+  },
+  "layers": {
+    "breathing-body": "All torso/head artwork; pivot at (120,309)",
+    "head": "Face/hair/ears; pivot at (120,180)",
+    "eyes-open": "Visible except while blink closes",
+    "eyes-closed": "Visible only during blink; default hidden",
+    "eyebrows": "Optional soft raise for nudge",
+    "mouth-smile": "Default visible",
+    "mouth-neutral": "Paused/listening alternative; default hidden",
+    "mouth-celebrate": "Brief positive result; default hidden",
+    "listening-halo": "Teal listening indicator; default opacity zero",
+    "celebration-sparkles": "One-shot positive-result ornament; default hidden"
+  },
+  "blink": {
+    "interval_ms": [4500, 8000], "close_ms": 55, "closed_ms": 65, "open_ms": 65,
+    "implementation": "Scale open-eye layer vertically, swap to closed-eye paths, reopen; never scale the whole face",
+    "reduced_motion": "Disable autonomous blinking; use eyes-open"
+  },
+  "states": {
+    "idle": {"body_translate_y_px": [0, -1.5, 0], "period_ms": 4200, "mouth": "smile", "loop": true},
+    "breathe": {"body_translate_y_px": [0, -1.5, 0], "body_scale_y": [1, 1.006, 1], "period_ms": 4200, "loop": true},
+    "listen": {"mouth": "neutral", "halo_opacity": [0.3, 0.65, 0.3], "period_ms": 1600,
+      "loop": true, "entry_gate": "Microphone permission granted AND active user-started capture"},
+    "celebrate": {"mouth": "celebrate", "sparkles": true, "head_rotation_deg": [0, -2, 0],
+      "duration_ms": 700, "loop": false, "entry_gate": "Verified user-requested task success"},
+    "nudge": {"mouth": "smile", "head_rotation_deg": -2, "eyebrow_translate_y_px": -1,
+      "loop": false, "entry_gate": "Explicit focus session and fresh opted-in usage threshold; one surfaced nudge"},
+    "paused": {"mouth": "neutral", "halo_opacity": 0, "loop": false, "autonomous_blink": false}
+  },
+  "precedence": ["hidden", "paused", "listen", "celebrate", "nudge", "idle"],
+  "controls": {
+    "reduce_motion": "No transforms, blinking or pulsing; static expression plus text state",
+    "mute": "Stop companion TTS/audio output immediately; does not imply microphone permission/capture changes",
+    "hide": "Remove companion visuals/animation only; preserve independent focus status and pause control",
+    "pause_session": "Stop focus observation/nudges and active listening; distinct from hide/mute"
+  },
+  "performance": "Only animate while visible/active; no work when hidden, paused or app background without a visible opted-in overlay",
+  "android": "Port geometry to Canvas or VectorDrawable; SVG animations are not directly supported by native VectorDrawable",
+  "claims": "State reflects executor/service events; no inferred emotion, consciousness, financial pressure, or LLM activation mapping"
+}

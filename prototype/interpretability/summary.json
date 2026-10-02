@@ -1,0 +1,172 @@
+{
+  "baseline_correct": {
+    "discovery": {
+      "correct": 7,
+      "n": 8
+    },
+    "holdout": {
+      "correct": 6,
+      "n": 8
+    },
+    "selection": {
+      "correct": 3,
+      "n": 4
+    },
+    "unrelated_control": {
+      "correct": 3,
+      "n": 4
+    }
+  },
+  "elapsed_seconds": 36.040540707996115,
+  "frozen_channels": [
+    970,
+    430,
+    948,
+    941
+  ],
+  "frozen_node": "ffn_out-11",
+  "holdout": {
+    "matched_norm_random_patch": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": -0.04525565812499993,
+      "mean_patch_delta_l2": 0.004417619783027123,
+      "n": 8,
+      "predicted_direction_count": 2
+    },
+    "noop": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": 0.0,
+      "mean_patch_delta_l2": 0.0,
+      "n": 8,
+      "predicted_direction_count": 0
+    },
+    "opposite_patch": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": -0.00829434324999978,
+      "mean_patch_delta_l2": 0.0044176197830271225,
+      "n": 8,
+      "predicted_direction_count": 4
+    },
+    "random_patch": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": -0.009764670874999933,
+      "mean_patch_delta_l2": 0.0042816716460473345,
+      "n": 8,
+      "predicted_direction_count": 4
+    },
+    "restore": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": 0.0,
+      "mean_patch_delta_l2": 0.0,
+      "n": 8,
+      "predicted_direction_count": 0
+    },
+    "same_class_patch": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": -0.019793984499999872,
+      "mean_patch_delta_l2": 0.008248688783152186,
+      "n": 8,
+      "predicted_direction_count": 5
+    },
+    "zero": {
+      "correct": 6,
+      "intent_changes": 0,
+      "mean_directional_margin_shift": 0.03409719724999988,
+      "mean_patch_delta_l2": 0.0,
+      "n": 8,
+      "predicted_direction_count": 5
+    },
+    "zero_layer": {
+      "correct": 5,
+      "intent_changes": 1,
+      "mean_directional_margin_shift": -0.3419977392499998,
+      "mean_patch_delta_l2": 0.0,
+      "n": 8,
+      "predicted_direction_count": 3
+    }
+  },
+  "limitations": [
+    "10 hand-authored command pairs, only4 heldout pairs",
+    "One seed and one random4-channel control bundle",
+    "Forced common JSON prefix and first-token scoring, not the app's full grammar decoding",
+    "All comparisons use same Q4_0 CPU artifact; no phone or NPU replication",
+    "Selection considers only three layers and four channels per bundle",
+    "No generic focus neuron or transformer-wide mechanistic understanding established"
+  ],
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_calls": 108,
+  "noop_restore_full_logits_parity": true,
+  "probe_source_sha256": "eb1e4d5cccfca96feb6d9565523678e241f73e9a52063b3f3d18e2937213b495",
+  "random_channels": [
+    164,
+    694,
+    144,
+    884
+  ],
+  "runner_source_sha256": "722d3a6c9cee7e8df4fa8b0eca0a5a4b93f782ced1b2cf3b6baddb0cc069ddfb",
+  "status": "Actual CPU interventions; exploratory narrow command experiment, no universal semantic circuit claim",
+  "unrelated_controls": [
+    {
+      "baseline_intent": "alarm",
+      "changed_intent": "alarm",
+      "id": "alarm",
+      "margin_delta": -0.014232629999999968,
+      "mode": "zero"
+    },
+    {
+      "baseline_intent": "alarm",
+      "changed_intent": "alarm",
+      "id": "alarm",
+      "margin_delta": 1.5796136899999995,
+      "mode": "zero_layer"
+    },
+    {
+      "baseline_intent": "timer",
+      "changed_intent": "timer",
+      "id": "timer",
+      "margin_delta": 0.017968180000000444,
+      "mode": "zero"
+    },
+    {
+      "baseline_intent": "timer",
+      "changed_intent": "timer",
+      "id": "timer",
+      "margin_delta": 2.1802015299999997,
+      "mode": "zero_layer"
+    },
+    {
+      "baseline_intent": "open_app",
+      "changed_intent": "open_app",
+      "id": "calculator",
+      "margin_delta": -0.0744924600000001,
+      "mode": "zero"
+    },
+    {
+      "baseline_intent": "open_app",
+      "changed_intent": "open_app",
+      "id": "calculator",
+      "margin_delta": 1.59159088,
+      "mode": "zero_layer"
+    },
+    {
+      "baseline_intent": "start_focus",
+      "changed_intent": "start_focus",
+      "id": "negation",
+      "margin_delta": -0.019075390000000025,
+      "mode": "zero"
+    },
+    {
+      "baseline_intent": "start_focus",
+      "changed_intent": "unknown",
+      "id": "negation",
+      "margin_delta": 0.9017601000000002,
+      "mode": "zero_layer"
+    }
+  ]
+}

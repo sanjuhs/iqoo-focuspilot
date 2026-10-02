@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="320" viewBox="0 0 240 320" role="img" aria-labelledby="title desc">
+  <title id="title">Mira, FocusPilot's adult goth companion</title>
+  <desc id="desc">Original flat vector portrait with charcoal hair, lilac streak, teal earrings, a soft smile, and a moon pin. Static base artwork; native motion is specified separately.</desc>
+  <!-- Original project artwork, created 2026-10-02. No external bitmap, font, or Grok character asset. -->
+  <g id="listening-halo" opacity="0">
+    <ellipse cx="120" cy="155" rx="103" ry="126" fill="none" stroke="#79DBC8" stroke-width="4"/>
+  </g>
+  <g id="breathing-body">
+    <path id="back-hair" d="M51 131C45 62 69 30 120 29C177 28 196 70 190 145L202 250C166 274 71 278 37 250Z" fill="#21212D"/>
+    <path d="M53 145C43 197 55 239 66 250M183 151C191 196 179 237 171 249" fill="none" stroke="#373343" stroke-width="5" stroke-linecap="round"/>
+    <path id="jacket" d="M88 214L65 220C42 228 25 258 22 309L218 309C216 258 198 229 174 221L153 214Z" fill="#292837" stroke="#171720" stroke-width="3"/>
+    <path d="M80 220L66 251L97 280L90 304M160 220L174 251L143 280L150 304" fill="#363145" stroke="#554861" stroke-width="2" stroke-linejoin="round"/>
+    <path id="neck" d="M95 183L95 221Q120 246 145 221L145 183Z" fill="#E6B9B7"/>
+    <path d="M98 190Q120 211 142 190L141 206Q120 220 99 205Z" fill="#CB969C"/>
+    <path id="shirt" d="M87 218Q120 239 153 218L158 309L82 309Z" fill="#1B1D28"/>
+    <path id="choker" d="M94 214Q120 227 146 214L146 224Q120 237 94 224Z" fill="#303040"/>
+    <circle cx="120" cy="227" r="3.5" fill="#C9B7EA"/>
+    <path id="moon-pin" d="M62 264A9 9 0 1 0 74 277A9 9 0 0 1 62 264Z" fill="#C9B7EA"/>
+    <g id="head">
+      <ellipse cx="67" cy="135" rx="11" ry="18" fill="#DEACAE"/>
+      <ellipse cx="173" cy="135" rx="11" ry="18" fill="#DEACAE"/>
+      <path id="face" d="M70 101Q73 66 120 61Q168 68 170 103L168 151C165 179 146 202 120 208C94 201 75 179 72 151Z" fill="#EDC5BF"/>
+      <path d="M75 146C78 173 96 194 120 200C144 195 161 174 166 147" fill="none" stroke="#DAA6AB" stroke-width="2"/>
+      <ellipse cx="89" cy="153" rx="10" ry="4" fill="#D69CA9" opacity="0.4"/>
+      <ellipse cx="151" cy="153" rx="10" ry="4" fill="#D69CA9" opacity="0.4"/>
+      <g id="eyebrows" fill="none" stroke="#3C303B" stroke-width="3.5" stroke-linecap="round">
+        <path d="M83 117Q94 113 104 117"/>
+        <path d="M136 117Q148 113 157 117"/>
+      </g>
+      <g id="eyes-open">
+        <path d="M80 131Q94 121 108 131Q95 143 83 136Z" fill="#FAF3F1"/>
+        <path d="M132 131Q146 121 160 131L157 136Q145 143 132 131Z" fill="#FAF3F1"/>
+        <ellipse cx="95" cy="132" rx="6" ry="7" fill="#668A84"/>
+        <ellipse cx="145" cy="132" rx="6" ry="7" fill="#668A84"/>
+        <ellipse cx="95" cy="133" rx="3" ry="5" fill="#282833"/>
+        <ellipse cx="145" cy="133" rx="3" ry="5" fill="#282833"/>
+        <circle cx="97" cy="129" r="1.7" fill="#FFFFFF"/>
+        <circle cx="147" cy="129" r="1.7" fill="#FFFFFF"/>
+        <path d="M79 130Q94 121 108 131M132 131Q146 121 161 130" fill="none" stroke="#292330" stroke-width="3" stroke-linecap="round"/>
+        <path d="M79 130L74 126M161 130L166 126" fill="none" stroke="#292330" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <g id="eyes-closed" display="none" fill="none" stroke="#292330" stroke-width="3" stroke-linecap="round">
+        <path d="M80 133Q94 142 108 133M132 133Q146 142 160 133"/>
+      </g>
+      <path id="nose" d="M122 136L118 154Q120 158 125 155" fill="none" stroke="#C8949C" stroke-width="2" stroke-linecap="round"/>
+      <g id="mouth-smile">
+        <path d="M106 172Q120 180 135 169Q126 186 115 181Z" fill="#5C384F"/>
+        <path d="M109 173Q121 177 131 172" fill="none" stroke="#D9A8BC" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <g id="mouth-neutral" display="none">
+        <path d="M108 175Q120 178 133 174" fill="none" stroke="#5C384F" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <g id="mouth-celebrate" display="none">
+        <path d="M106 171Q120 180 135 170Q132 187 120 187Q109 187 106 171Z" fill="#5C384F"/>
+        <path d="M109 174Q121 181 132 174" fill="none" stroke="#FAF3F1" stroke-width="4"/>
+      </g>
+      <g id="earrings" fill="none" stroke="#79DBC8" stroke-width="3">
+        <circle cx="67" cy="155" r="5"/>
+        <circle cx="173" cy="155" r="5"/>
+      </g>
+      <path id="front-hair" d="M67 126C58 88 72 49 110 43C149 36 177 67 176 120L160 104C154 91 148 85 140 79L133 110L117 100L112 81L104 108L86 104L80 89L75 122Z" fill="#242330"/>
+      <path id="lilac-streak" d="M131 50C145 56 156 76 157 105L147 94L139 79L133 101L127 97L130 73L126 55Z" fill="#B8A0DD"/>
+      <path d="M84 68Q92 56 108 54M164 113L170 186" fill="none" stroke="#434052" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g id="celebration-sparkles" display="none" fill="#C9B7EA">
+    <path d="M31 96L34 105L43 108L34 111L31 120L28 111L19 108L28 105Z"/>
+    <path d="M207 76L210 85L219 88L210 91L207 100L204 91L195 88L204 85Z"/>
+  </g>
+</svg>

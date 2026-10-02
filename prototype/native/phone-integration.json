@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-02",
+  "device": "Nothing A059",
+  "soc": "SM7635",
+  "android_api": 36,
+  "model": "Qwen3.5-0.8B-Q4_0",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "995a2b5e6fd9fc8a7459c6d2bb40f7214d92a86f8878b5fb9c7d424cc2f2235b",
+  "backend": "CPU",
+  "runtime_selection_log": [
+    "kleidiai: primary q4 kernel feature I8MM",
+    "kleidiai: primary q8 kernel feature I8MM",
+    "kleidiai: SME disabled"
+  ],
+  "context": 1024,
+  "threads": 4,
+  "synthetic_command": "Please start a focus session",
+  "capture": false,
+  "intent": "start_focus",
+  "gate": "REVIEW REQUIRED",
+  "inference_total_ms": 1688,
+  "prefill_ms": 801,
+  "decode_ms": 888,
+  "confirmation_executed": true,
+  "actual_focus_state_became_active": true,
+  "dashboard_stop_pressed": true,
+  "active_checkpoint_after_stop": false,
+  "limitations": [
+    "One inference observation; not p50/p95",
+    "Not an iQOO measurement",
+    "No NPU backend",
+    "Airplane-mode and USB-disconnected physical demonstration pending",
+    "Usage/mic/notification permissions remain ungranted by agent"
+  ]
+}

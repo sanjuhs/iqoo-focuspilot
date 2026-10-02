@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "Real host JNI smoke on pinned Qwen3.5-0.8B Q4_0; new Android optimized library compiled but not installed by this test",
+  "modelSHA256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "java": "17.0.19",
+  "command": "JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home prototype/native/build-host.sh; java -Djava.library.path=prototype/native/build/host -cp prototype/native/build/java dev.focuspilot.prototype.NativeSmoke models/qwen/Qwen3.5-0.8B-Q4_0.gguf",
+  "checks": [
+    "real grammar-constrained inference",
+    "activation capture with context mode changes",
+    "prepare then cancel before JNI generation entry rejects request",
+    "fresh preparation after pre-entry cancel succeeds",
+    "cross-thread in-flight cancellation terminates",
+    "fresh recurrent/KV memory generation after cancellation",
+    "idempotent close and cancel for invalid handle"
+  ],
+  "stdout": "Real JNI inference, activation observation, pre-entry and in-flight cancellation, fresh request recovery, memory reset and idempotent closed-handle operations passed.",
+  "exitCode": 0,
+  "sourceSHA256": {
+    "core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "java/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "java/NativeSmoke.java": "3d6ce882b4bbbc5cac962a7a032ecfdc42c42dd149f690559ca35e06ec789f14"
+  }
+}

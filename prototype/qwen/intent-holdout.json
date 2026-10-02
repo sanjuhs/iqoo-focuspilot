@@ -1,0 +1,18 @@
+[
+ {"id":"focus-1","command":"Start a concentration session for 40 minutes.","expected":{"intent":"start_focus"}},
+ {"id":"focus-2","command":"Help me stay focused on studies for half an hour.","expected":{"intent":"start_focus"}},
+ {"id":"pause","command":"End this focus session now.","expected":{"intent":"pause_focus"}},
+ {"id":"alarm-am","command":"Wake me up at 6:45 AM.","expected":{"intent":"alarm"}},
+ {"id":"alarm-open","command":"Show my alarm screen.","expected":{"intent":"alarm"}},
+ {"id":"timer","command":"Start a countdown for 12 minutes.","expected":{"intent":"timer"}},
+ {"id":"open-app","command":"Launch the calculator.","expected":{"intent":"open_app"}},
+ {"id":"open-settings","command":"Take me to settings.","expected":{"intent":"open_app"}},
+ {"id":"explain","command":"Why did you warn me about scrolling?","expected":{"intent":"explain"}},
+ {"id":"status","command":"How is my current focus session going?","expected":{"intent":"explain"}},
+ {"id":"unsupported-app","command":"Open Instagram.","expected":{"intent":"unknown"}},
+ {"id":"negation","command":"Do not set an alarm.","expected":{"intent":"unknown"}},
+ {"id":"compound","command":"Start focus for 10 minutes and open settings.","expected":{"intent":"unknown"}},
+ {"id":"destructive","command":"Delete all my photos.","expected":{"intent":"unknown"}},
+ {"id":"payment","command":"Transfer 500 rupees to my friend.","expected":{"intent":"unknown"}},
+ {"id":"knowledge","command":"What is the capital of France?","expected":{"intent":"unknown"}}
+]

@@ -1,0 +1,4034 @@
+[
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3428898,
+        "explain": 16.1084938,
+        "open_app": 17.7054176,
+        "pause_focus": 16.0934048,
+        "start_focus": 24.1510735,
+        "timer": 14.5253325,
+        "unknown": 12.8989172
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17237856494906631160",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.05766869,
+      "max_full_vocab_logit_delta": 0.260681629,
+      "prefill_ms": 322.118625,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.04377365000000033,
+    "id": "work_block_start_focus",
+    "margin_delta": -0.04377365000000033,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.006591181168276969,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3721991,
+        "explain": 16.0635014,
+        "open_app": 17.7961998,
+        "pause_focus": 16.1490936,
+        "start_focus": 24.1952629,
+        "timer": 14.5873365,
+        "unknown": 12.8509169
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "3663999998270630805",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.04616928,
+      "max_full_vocab_logit_delta": 0.246604919,
+      "prefill_ms": 321.199042,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.05527305999999932,
+    "id": "work_block_start_focus",
+    "margin_delta": -0.05527305999999932,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3456106,
+        "explain": 16.121933,
+        "open_app": 17.6965408,
+        "pause_focus": 16.1666584,
+        "start_focus": 24.2399235,
+        "timer": 14.5085821,
+        "unknown": 12.9158993
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "7456102260694068",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.07326508,
+      "max_full_vocab_logit_delta": 0.211624384,
+      "prefill_ms": 318.973291,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.02817725999999965,
+    "id": "work_block_start_focus",
+    "margin_delta": -0.02817725999999965,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004082955785483342,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3758984,
+        "explain": 16.0685749,
+        "open_app": 17.7396278,
+        "pause_focus": 16.1428509,
+        "start_focus": 24.2508068,
+        "timer": 14.5360966,
+        "unknown": 12.9376507
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "10231912729703509143",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10795593,
+      "max_full_vocab_logit_delta": 0.289415359,
+      "prefill_ms": 319.073917,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.00651358999999907,
+    "id": "work_block_start_focus",
+    "margin_delta": 0.00651358999999907,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0065911811682769685,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3339586,
+        "explain": 16.024292,
+        "open_app": 17.7496281,
+        "pause_focus": 16.15131,
+        "start_focus": 24.2382507,
+        "timer": 14.5383244,
+        "unknown": 12.8022623
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "5772532853088181923",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.08694077,
+      "max_full_vocab_logit_delta": 0.267982006,
+      "prefill_ms": 319.576458,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.014501570000000186,
+    "id": "work_block_start_focus",
+    "margin_delta": -0.014501570000000186,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.008570356611871428,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 316.520375,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "work_block_start_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 319.788083,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "work_block_start_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.3565321,
+        "explain": 16.1622448,
+        "open_app": 17.8011551,
+        "pause_focus": 16.1522732,
+        "start_focus": 24.2537155,
+        "timer": 14.543355,
+        "unknown": 12.8505421
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "9033783440977616657",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.10144234,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.541958,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 11.084383,
+        "explain": 15.9644585,
+        "open_app": 16.4791183,
+        "pause_focus": 13.9645529,
+        "start_focus": 23.3789692,
+        "timer": 11.7229366,
+        "unknown": 12.1242838
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "15395845997136571848",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 9.41441631,
+      "max_full_vocab_logit_delta": 3.27214909,
+      "prefill_ms": 317.06,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -1.3129739699999998,
+    "id": "work_block_start_focus",
+    "margin_delta": 1.3129739699999998,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.2403917,
+        "explain": 17.6310673,
+        "open_app": 16.8528843,
+        "pause_focus": 17.9885368,
+        "start_focus": 23.0453072,
+        "timer": 15.5334339,
+        "unknown": 10.9029675
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "7627430955583034074",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.05677032,
+      "max_full_vocab_logit_delta": 0.32314992,
+      "prefill_ms": 317.32475,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.15047646000000015,
+    "id": "work_block_pause_focus",
+    "margin_delta": -0.15047646000000015,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.006591181168276969,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.2308464,
+        "explain": 17.5750599,
+        "open_app": 16.7400665,
+        "pause_focus": 17.9515514,
+        "start_focus": 23.0767536,
+        "timer": 15.6086731,
+        "unknown": 10.8543482
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17051115100478371557",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.12520218,
+      "max_full_vocab_logit_delta": 0.293490529,
+      "prefill_ms": 320.073,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.08204460000000058,
+    "id": "work_block_pause_focus",
+    "margin_delta": -0.08204460000000058,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3807077,
+        "explain": 17.67523,
+        "open_app": 16.9648533,
+        "pause_focus": 18.0322895,
+        "start_focus": 23.0859966,
+        "timer": 15.5820875,
+        "unknown": 10.9895859
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "9970646124178227756",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.05370712,
+      "max_full_vocab_logit_delta": 0.324617416,
+      "prefill_ms": 317.391875,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.15353965999999986,
+    "id": "work_block_pause_focus",
+    "margin_delta": -0.15353965999999986,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004082955785483342,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.1917715,
+        "explain": 17.6497612,
+        "open_app": 16.8398724,
+        "pause_focus": 17.9498405,
+        "start_focus": 23.0050259,
+        "timer": 15.5525007,
+        "unknown": 10.8960867
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17162143394678227910",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.05518532,
+      "max_full_vocab_logit_delta": 0.221966267,
+      "prefill_ms": 321.613459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.15206146000000054,
+    "id": "work_block_pause_focus",
+    "margin_delta": -0.15206146000000054,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0065911811682769685,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.338253,
+        "explain": 17.5868778,
+        "open_app": 16.7939739,
+        "pause_focus": 17.9501991,
+        "start_focus": 22.9880333,
+        "timer": 15.5826025,
+        "unknown": 10.8522263
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "10433394275547168550",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.03783417,
+      "max_full_vocab_logit_delta": 0.290593505,
+      "prefill_ms": 319.116875,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.16941261000000019,
+    "id": "work_block_pause_focus",
+    "margin_delta": -0.16941261000000019,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.013905035420027027,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 321.366542,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "work_block_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 320.705792,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "work_block_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.2651587,
+        "explain": 17.6788254,
+        "open_app": 16.9052696,
+        "pause_focus": 17.9402599,
+        "start_focus": 23.1475067,
+        "timer": 15.6050892,
+        "unknown": 10.9134283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11154578076690207822",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.20724678,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.319459,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 11.4953623,
+        "explain": 17.9672928,
+        "open_app": 15.2061796,
+        "pause_focus": 15.7706747,
+        "start_focus": 21.5327358,
+        "timer": 13.3654881,
+        "unknown": 9.97955608
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2980289098392613230",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.76206112,
+      "max_full_vocab_logit_delta": 3.16494679,
+      "prefill_ms": 317.41625,
+      "prompt_tokens": 165,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.5548143400000001,
+    "id": "work_block_pause_focus",
+    "margin_delta": 0.5548143400000001,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.7844458,
+        "explain": 17.9579353,
+        "open_app": 16.4821472,
+        "pause_focus": 17.8903542,
+        "start_focus": 22.8585854,
+        "timer": 14.855154,
+        "unknown": 12.8483095
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2061860650593388901",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.9682312,
+      "max_full_vocab_logit_delta": 0.33430624,
+      "prefill_ms": 308.442208,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.00420379999999998,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": -0.00420379999999998,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004400593494702158,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.8633423,
+        "explain": 17.9962788,
+        "open_app": 16.4768085,
+        "pause_focus": 17.9430122,
+        "start_focus": 22.8903008,
+        "timer": 14.9664803,
+        "unknown": 12.8809099
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "14074080082193676851",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.94728851,
+      "max_full_vocab_logit_delta": 0.260030746,
+      "prefill_ms": 309.162167,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.02514649000000002,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": -0.02514649000000002,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.7535582,
+        "explain": 18.0795078,
+        "open_app": 16.640461,
+        "pause_focus": 17.8924942,
+        "start_focus": 22.8959827,
+        "timer": 14.8021688,
+        "unknown": 12.9221411
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "8853411078564467630",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.00348854,
+      "max_full_vocab_logit_delta": 0.284942985,
+      "prefill_ms": 308.116917,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.031053540000000268,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": 0.031053540000000268,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0056188575881395515,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.7453537,
+        "explain": 18.031538,
+        "open_app": 16.5589848,
+        "pause_focus": 17.8324356,
+        "start_focus": 22.9174862,
+        "timer": 14.8011265,
+        "unknown": 12.903616
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2463844374591335899",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.08505058,
+      "max_full_vocab_logit_delta": 0.25836277,
+      "prefill_ms": 309.785709,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.11261557999999994,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": 0.11261557999999994,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004400593494702159,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.7920122,
+        "explain": 18.0185452,
+        "open_app": 16.5025978,
+        "pause_focus": 17.8960495,
+        "start_focus": 22.932785,
+        "timer": 14.8613663,
+        "unknown": 12.9168158
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "1609212613712770496",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 5.03673553,
+      "max_full_vocab_logit_delta": 0.250464946,
+      "prefill_ms": 309.1955,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.06430052999999969,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": 0.06430052999999969,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.00749590215714716,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 307.79125,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 310.506041,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.8661795,
+        "explain": 17.9800396,
+        "open_app": 16.5858192,
+        "pause_focus": 17.8766098,
+        "start_focus": 22.8490448,
+        "timer": 14.8804178,
+        "unknown": 12.9565592
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "7144543018764965654",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.972435,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.446583,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 11.9141998,
+        "explain": 17.9975491,
+        "open_app": 14.6404285,
+        "pause_focus": 16.6093006,
+        "start_focus": 20.9725933,
+        "timer": 13.3821402,
+        "unknown": 13.0070686
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "9678752500395951894",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 4.36329269,
+      "max_full_vocab_logit_delta": 2.29607391,
+      "prefill_ms": 303.591625,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.6091423100000002,
+    "id": "resume_suspend_start_focus",
+    "margin_delta": -0.6091423100000002,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8549042,
+        "explain": 15.5498257,
+        "open_app": 13.3614788,
+        "pause_focus": 21.6996574,
+        "start_focus": 20.382349,
+        "timer": 13.1836996,
+        "unknown": 15.8759193
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "3932126074125736258",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.31730843,
+      "max_full_vocab_logit_delta": 0.241180986,
+      "prefill_ms": 315.497875,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.009368899999999902,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": -0.009368899999999902,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004400593494702158,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.0044756,
+        "explain": 15.541791,
+        "open_app": 13.3929195,
+        "pause_focus": 21.7331696,
+        "start_focus": 20.4169598,
+        "timer": 13.2624273,
+        "unknown": 15.8851328
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "7172991952935570703",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.31620979,
+      "max_full_vocab_logit_delta": 0.248117447,
+      "prefill_ms": 315.454625,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.008270259999999974,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": -0.008270259999999974,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.9315987,
+        "explain": 15.6391325,
+        "open_app": 13.3168716,
+        "pause_focus": 21.7210789,
+        "start_focus": 20.428669,
+        "timer": 13.197073,
+        "unknown": 15.8128357
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "10525226553285509858",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.2924099,
+      "max_full_vocab_logit_delta": 0.272436082,
+      "prefill_ms": 316.757292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.015529630000000072,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": 0.015529630000000072,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0056188575881395515,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8873701,
+        "explain": 15.6022711,
+        "open_app": 13.4011354,
+        "pause_focus": 21.7683945,
+        "start_focus": 20.4348125,
+        "timer": 13.216217,
+        "unknown": 15.8690577
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "6050683984833593879",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.33358192,
+      "max_full_vocab_logit_delta": 0.245904922,
+      "prefill_ms": 314.510958,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.025642390000000015,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": -0.025642390000000015,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.00440059349470216,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8107338,
+        "explain": 15.687912,
+        "open_app": 13.2937641,
+        "pause_focus": 21.7404289,
+        "start_focus": 20.4476452,
+        "timer": 13.1184635,
+        "unknown": 15.8875704
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "9138436361132707129",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.29278374,
+      "max_full_vocab_logit_delta": 0.273434281,
+      "prefill_ms": 317.884292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.015155790000000113,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": 0.015155790000000113,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.008330095507397838,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 316.926959,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 324.645458,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.8408251,
+        "explain": 15.5076923,
+        "open_app": 13.376111,
+        "pause_focus": 21.6709309,
+        "start_focus": 20.3629913,
+        "timer": 13.1235876,
+        "unknown": 15.8882389
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "13350561240071221364",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.30793953,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 315.932417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.2384081,
+        "explain": 16.4985294,
+        "open_app": 12.361639,
+        "pause_focus": 20.2171383,
+        "start_focus": 18.7582684,
+        "timer": 12.2541103,
+        "unknown": 15.9443655
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "11295613508958205652",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -1.45886993,
+      "max_full_vocab_logit_delta": 1.96569157,
+      "prefill_ms": 323.307708,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.15093040000000002,
+    "id": "resume_suspend_pause_focus",
+    "margin_delta": -0.15093040000000002,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.7567863,
+        "explain": 15.5457153,
+        "open_app": 15.8602209,
+        "pause_focus": 16.9671707,
+        "start_focus": 23.0572815,
+        "timer": 13.5316124,
+        "unknown": 14.65763
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "11006562866063034307",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.09011078,
+      "max_full_vocab_logit_delta": 0.288470268,
+      "prefill_ms": 305.840167,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.09021187000000008,
+    "id": "activate_start_focus",
+    "margin_delta": -0.09021187000000008,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0026739428927806466,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.8576374,
+        "explain": 15.6000147,
+        "open_app": 15.9759855,
+        "pause_focus": 16.986805,
+        "start_focus": 23.0334282,
+        "timer": 13.5538874,
+        "unknown": 14.7487402
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "3137499203661421930",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.04662323,
+      "max_full_vocab_logit_delta": 0.353123784,
+      "prefill_ms": 303.653458,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.13369942000000012,
+    "id": "activate_start_focus",
+    "margin_delta": -0.13369942000000012,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.7618818,
+        "explain": 15.6223392,
+        "open_app": 15.8916454,
+        "pause_focus": 16.9412556,
+        "start_focus": 23.0242691,
+        "timer": 13.524972,
+        "unknown": 14.7606525
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2295125771714578903",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.08301353,
+      "max_full_vocab_logit_delta": 0.254667759,
+      "prefill_ms": 303.94775,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.09730912000000025,
+    "id": "activate_start_focus",
+    "margin_delta": -0.09730912000000025,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004588033855656078,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.6984653,
+        "explain": 15.5836344,
+        "open_app": 15.9130392,
+        "pause_focus": 16.893362,
+        "start_focus": 23.0666714,
+        "timer": 13.4337778,
+        "unknown": 14.6316872
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "4502327785139322851",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.17330933,
+      "max_full_vocab_logit_delta": 0.260253906,
+      "prefill_ms": 303.260375,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.0070133199999995455,
+    "id": "activate_start_focus",
+    "margin_delta": -0.0070133199999995455,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.002673942892780647,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.7346525,
+        "explain": 15.6175814,
+        "open_app": 15.9111958,
+        "pause_focus": 16.9045887,
+        "start_focus": 23.0593319,
+        "timer": 13.4867887,
+        "unknown": 14.6906414
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "14536344255108852907",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.15474319,
+      "max_full_vocab_logit_delta": 0.268841267,
+      "prefill_ms": 303.197625,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.02557946000000033,
+    "id": "activate_start_focus",
+    "margin_delta": -0.02557946000000033,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.00598413801522572,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 302.76575,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "activate_start_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 300.062917,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "activate_start_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 15.7830381,
+        "explain": 15.5909233,
+        "open_app": 15.8871241,
+        "pause_focus": 16.9210377,
+        "start_focus": 23.1013603,
+        "timer": 13.5318565,
+        "unknown": 14.7481146
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "11266313023918393992",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 6.18032265,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 309.861,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.5466385,
+        "explain": 15.517457,
+        "open_app": 14.8833628,
+        "pause_focus": 14.7435646,
+        "start_focus": 22.1946754,
+        "timer": 11.8418779,
+        "unknown": 14.8870831
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "5387446277048559653",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 7.45111084,
+      "max_full_vocab_logit_delta": 2.34983444,
+      "prefill_ms": 303.422709,
+      "prompt_tokens": 162,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -1.2707881900000002,
+    "id": "activate_start_focus",
+    "margin_delta": 1.2707881900000002,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8173294,
+        "explain": 16.3090858,
+        "open_app": 13.451026,
+        "pause_focus": 19.5855064,
+        "start_focus": 19.3540249,
+        "timer": 12.8209801,
+        "unknown": 17.2769985
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "761709780814244906",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.231481552,
+      "max_full_vocab_logit_delta": 0.259918213,
+      "prefill_ms": 306.9825,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.007341385000000006,
+    "id": "activate_pause_focus",
+    "margin_delta": 0.007341385000000006,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0026739428927806466,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.7480707,
+        "explain": 16.2465076,
+        "open_app": 13.6004648,
+        "pause_focus": 19.6242733,
+        "start_focus": 19.3365784,
+        "timer": 12.8377666,
+        "unknown": 17.216095
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "6694704191603998336",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.287694931,
+      "max_full_vocab_logit_delta": 0.32245028,
+      "prefill_ms": 312.307166,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.048871993999999974,
+    "id": "activate_pause_focus",
+    "margin_delta": -0.048871993999999974,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.7562361,
+        "explain": 16.3805542,
+        "open_app": 13.569993,
+        "pause_focus": 19.5945168,
+        "start_focus": 19.3012543,
+        "timer": 12.7860899,
+        "unknown": 17.2828979
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "18199459216855736900",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.293262482,
+      "max_full_vocab_logit_delta": 0.261394262,
+      "prefill_ms": 310.301458,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.05443954499999998,
+    "id": "activate_pause_focus",
+    "margin_delta": -0.05443954499999998,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004588033855656078,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.8332367,
+        "explain": 16.3895493,
+        "open_app": 13.599371,
+        "pause_focus": 19.5490475,
+        "start_focus": 19.2493687,
+        "timer": 12.8219414,
+        "unknown": 17.2992249
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2356123642046454532",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.299678802,
+      "max_full_vocab_logit_delta": 0.252712488,
+      "prefill_ms": 309.496708,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.06085586500000001,
+    "id": "activate_pause_focus",
+    "margin_delta": -0.06085586500000001,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.002673942892780647,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.6992321,
+        "explain": 16.2462959,
+        "open_app": 13.5806141,
+        "pause_focus": 19.5156155,
+        "start_focus": 19.2816849,
+        "timer": 12.7443943,
+        "unknown": 17.1623745
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17501778455694515416",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.233930588,
+      "max_full_vocab_logit_delta": 0.232481599,
+      "prefill_ms": 311.665125,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.004892349000000018,
+    "id": "activate_pause_focus",
+    "margin_delta": 0.004892349000000018,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.00387935333630321,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 306.629916,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "activate_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 306.889,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "activate_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.7666149,
+        "explain": 16.2990608,
+        "open_app": 13.5689831,
+        "pause_focus": 19.5243778,
+        "start_focus": 19.2855549,
+        "timer": 12.8113327,
+        "unknown": 17.2628784
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "12056824235338495466",
+      "intent": "pause_focus",
+      "margin_start_minus_pause": -0.238822937,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.012375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.2376986,
+        "explain": 16.6891499,
+        "open_app": 12.8497849,
+        "pause_focus": 18.0710068,
+        "start_focus": 18.2248402,
+        "timer": 12.0136452,
+        "unknown": 17.6804752
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "5873723545319155152",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.153833389,
+      "max_full_vocab_logit_delta": 2.39809895,
+      "prefill_ms": 309.855625,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.392656326,
+    "id": "activate_pause_focus",
+    "margin_delta": 0.392656326,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.2056532,
+        "explain": 17.727581,
+        "open_app": 18.5255184,
+        "pause_focus": 16.3734283,
+        "start_focus": 24.5791111,
+        "timer": 13.3713398,
+        "unknown": 13.8463926
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "5705995917102053747",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.20568275,
+      "max_full_vocab_logit_delta": 0.240949154,
+      "prefill_ms": 307.478417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.022790899999998615,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 0.022790899999998615,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004004761576348717,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.3928146,
+        "explain": 17.7825298,
+        "open_app": 18.6192951,
+        "pause_focus": 16.5868149,
+        "start_focus": 24.6341801,
+        "timer": 13.4572334,
+        "unknown": 13.8974762
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "3468429376050825423",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.04736519,
+      "max_full_vocab_logit_delta": 0.329510689,
+      "prefill_ms": 310.730959,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.13552666000000002,
+    "id": "enter_leave_start_focus",
+    "margin_delta": -0.13552666000000002,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.2885151,
+        "explain": 17.7723484,
+        "open_app": 18.68367,
+        "pause_focus": 16.488554,
+        "start_focus": 24.6754169,
+        "timer": 13.4213858,
+        "unknown": 13.9596004
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "7135965078080124423",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18686295,
+      "max_full_vocab_logit_delta": 0.257782936,
+      "prefill_ms": 311.364792,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.003971099999999339,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 0.003971099999999339,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.002836839354910368,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.3708038,
+        "explain": 17.8111629,
+        "open_app": 18.6739044,
+        "pause_focus": 16.4804726,
+        "start_focus": 24.6802807,
+        "timer": 13.4886465,
+        "unknown": 13.9974499
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "13996054267023904336",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.19980812,
+      "max_full_vocab_logit_delta": 0.258858681,
+      "prefill_ms": 310.601834,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": -0.0169162699999994,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 0.0169162699999994,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004004761576348718,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.363308,
+        "explain": 17.6935387,
+        "open_app": 18.6477528,
+        "pause_focus": 16.5130138,
+        "start_focus": 24.5855751,
+        "timer": 13.4645739,
+        "unknown": 13.8898373
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "15624478336070574845",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.07256126,
+      "max_full_vocab_logit_delta": 0.304548264,
+      "prefill_ms": 306.592125,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.11033059000000023,
+    "id": "enter_leave_start_focus",
+    "margin_delta": -0.11033059000000023,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.00629289576493876,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 310.405458,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 307.393417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.0,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 13.3272905,
+        "explain": 17.7343559,
+        "open_app": 18.6618328,
+        "pause_focus": 16.4757843,
+        "start_focus": 24.6586761,
+        "timer": 13.4329481,
+        "unknown": 13.890811
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "10415746177648713831",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 8.18289185,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 334.825208,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 10.3274412,
+        "explain": 17.7447472,
+        "open_app": 17.6366787,
+        "pause_focus": 14.2231874,
+        "start_focus": 23.9459972,
+        "timer": 11.0146465,
+        "unknown": 12.9957838
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "9724782768684421611",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 9.72280979,
+      "max_full_vocab_logit_delta": 3.1506176,
+      "prefill_ms": 310.380375,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -1.5399179399999987,
+    "id": "enter_leave_start_focus",
+    "margin_delta": 1.5399179399999987,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "start_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.0681,
+        "explain": 16.1053734,
+        "open_app": 16.1000938,
+        "pause_focus": 19.9821396,
+        "start_focus": 20.1789551,
+        "timer": 12.9005375,
+        "unknown": 15.3102226
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17863628650299117008",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.196815491,
+      "max_full_vocab_logit_delta": 0.349594593,
+      "prefill_ms": 307.028917,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.02924919099999998,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": -0.02924919099999998,
+    "mode": "opposite_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004004761576348717,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.173604,
+        "explain": 16.1018028,
+        "open_app": 16.2371712,
+        "pause_focus": 20.0240536,
+        "start_focus": 20.3124371,
+        "timer": 13.0051718,
+        "unknown": 15.3990736
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "13717235690391235875",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.288383484,
+      "max_full_vocab_logit_delta": 0.266647339,
+      "prefill_ms": 306.835042,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.062318802000000034,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": 0.062318802000000034,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.9735889,
+        "explain": 16.1714077,
+        "open_app": 16.1746731,
+        "pause_focus": 19.9572697,
+        "start_focus": 20.2072048,
+        "timer": 12.85884,
+        "unknown": 15.4635906
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2196074227502228213",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.24993515,
+      "max_full_vocab_logit_delta": 0.280335665,
+      "prefill_ms": 311.873,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.023870468000000006,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": 0.023870468000000006,
+    "mode": "random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.002836839354910368,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.0198336,
+        "explain": 16.1796665,
+        "open_app": 16.0919514,
+        "pause_focus": 19.9820652,
+        "start_focus": 20.2136765,
+        "timer": 12.8570957,
+        "unknown": 15.4535036
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "4797980621290583333",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.231611252,
+      "max_full_vocab_logit_delta": 0.266462088,
+      "prefill_ms": 310.428166,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      164,
+      694,
+      144,
+      884
+    ],
+    "directional_shift": 0.005546570000000001,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": 0.005546570000000001,
+    "mode": "matched_norm_random_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.004004761576348718,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 15.0558748,
+        "explain": 16.1362953,
+        "open_app": 16.0909729,
+        "pause_focus": 20.0259399,
+        "start_focus": 20.1569061,
+        "timer": 12.8569212,
+        "unknown": 15.3348513
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "359296100852964785",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.130966187,
+      "max_full_vocab_logit_delta": 0.277402222,
+      "prefill_ms": 313.27475,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.09509849499999998,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": -0.09509849499999998,
+    "mode": "same_class_patch",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.011531733452306342,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.0205,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "noop",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 310.651958,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 2
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": 0.0,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": 0.0,
+    "mode": "restore",
+    "noop_full_logits_equal": true,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 14.9882908,
+        "explain": 16.0489979,
+        "open_app": 16.0731449,
+        "pause_focus": 19.9849854,
+        "start_focus": 20.21105,
+        "timer": 12.8970613,
+        "unknown": 15.3446283
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "16148632194408873900",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.226064682,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.167292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 12.2492638,
+        "explain": 15.9496861,
+        "open_app": 13.973608,
+        "pause_focus": 18.103096,
+        "start_focus": 18.3111763,
+        "timer": 11.0387831,
+        "unknown": 14.8300343
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "10143011927476513681",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 0.208080292,
+      "max_full_vocab_logit_delta": 3.34563732,
+      "prefill_ms": 308.0105,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": -0.01798438999999999,
+    "id": "enter_leave_pause_focus",
+    "margin_delta": -0.01798438999999999,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "holdout",
+    "target": "pause_focus"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 24.8397694,
+        "explain": 13.3390265,
+        "open_app": 16.1934242,
+        "pause_focus": 16.4324226,
+        "start_focus": 20.0045891,
+        "timer": 15.8158541,
+        "unknown": 15.2501097
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "4185800012911654668",
+      "intent": "alarm",
+      "margin_start_minus_pause": 3.57216644,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 316.6745,
+      "prompt_tokens": 166,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 24.8153858,
+        "explain": 13.4144001,
+        "open_app": 16.3708668,
+        "pause_focus": 16.4019585,
+        "start_focus": 19.9598923,
+        "timer": 15.8571014,
+        "unknown": 15.3891048
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "2429313534975808571",
+      "intent": "alarm",
+      "margin_start_minus_pause": 3.55793381,
+      "max_full_vocab_logit_delta": 0.352330208,
+      "prefill_ms": 315.164292,
+      "prompt_tokens": 166,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "alarm",
+    "margin_delta": -0.014232629999999968,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "alarm"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 24.8397694,
+        "explain": 13.3390265,
+        "open_app": 16.1934242,
+        "pause_focus": 16.4324226,
+        "start_focus": 20.0045891,
+        "timer": 15.8158541,
+        "unknown": 15.2501097
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "4185800012911654668",
+      "intent": "alarm",
+      "margin_start_minus_pause": 3.57216644,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 316.6745,
+      "prompt_tokens": 166,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 23.4377213,
+        "explain": 13.5422277,
+        "open_app": 15.2483959,
+        "pause_focus": 14.2478628,
+        "start_focus": 19.3996429,
+        "timer": 15.1091738,
+        "unknown": 14.718298
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "15698758283298932246",
+      "intent": "alarm",
+      "margin_start_minus_pause": 5.15178013,
+      "max_full_vocab_logit_delta": 2.95318174,
+      "prefill_ms": 313.179667,
+      "prompt_tokens": 166,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "alarm",
+    "margin_delta": 1.5796136899999995,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "alarm"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 18.0317249,
+        "explain": 10.4067507,
+        "open_app": 14.2432194,
+        "pause_focus": 15.0095625,
+        "start_focus": 21.4224243,
+        "timer": 24.0478172,
+        "unknown": 14.2230902
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "1476000717373673225",
+      "intent": "timer",
+      "margin_start_minus_pause": 6.41286182,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.457959,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 18.038826,
+        "explain": 10.3936291,
+        "open_app": 14.3191948,
+        "pause_focus": 15.0930882,
+        "start_focus": 21.5239182,
+        "timer": 23.969717,
+        "unknown": 14.2772684
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "8643364565611150681",
+      "intent": "timer",
+      "margin_start_minus_pause": 6.43083,
+      "max_full_vocab_logit_delta": 0.336286545,
+      "prefill_ms": 311.505292,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "timer",
+    "margin_delta": 0.017968180000000444,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "timer"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 18.0317249,
+        "explain": 10.4067507,
+        "open_app": 14.2432194,
+        "pause_focus": 15.0095625,
+        "start_focus": 21.4224243,
+        "timer": 24.0478172,
+        "unknown": 14.2230902
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "1476000717373673225",
+      "intent": "timer",
+      "margin_start_minus_pause": 6.41286182,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 318.457959,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 16.9008617,
+        "explain": 10.8633184,
+        "open_app": 14.5547533,
+        "pause_focus": 13.144783,
+        "start_focus": 21.7378464,
+        "timer": 23.2341442,
+        "unknown": 13.653285
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "13490555190656725457",
+      "intent": "timer",
+      "margin_start_minus_pause": 8.59306335,
+      "max_full_vocab_logit_delta": 3.68590164,
+      "prefill_ms": 313.124458,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "timer",
+    "margin_delta": 2.1802015299999997,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "timer"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 18.8406315,
+        "explain": 14.6773424,
+        "open_app": 23.9654903,
+        "pause_focus": 15.0317211,
+        "start_focus": 18.5972385,
+        "timer": 17.0704517,
+        "unknown": 16.1409454
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "4352738461917068915",
+      "intent": "open_app",
+      "margin_start_minus_pause": 3.56551743,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.418958,
+      "prompt_tokens": 159,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 18.9513092,
+        "explain": 14.6847134,
+        "open_app": 24.0025806,
+        "pause_focus": 15.1746683,
+        "start_focus": 18.6656933,
+        "timer": 17.1337738,
+        "unknown": 16.2093887
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "15360723913927361418",
+      "intent": "open_app",
+      "margin_start_minus_pause": 3.49102497,
+      "max_full_vocab_logit_delta": 0.263747334,
+      "prefill_ms": 305.525792,
+      "prompt_tokens": 159,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "calculator",
+    "margin_delta": -0.0744924600000001,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "open_app"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 18.8406315,
+        "explain": 14.6773424,
+        "open_app": 23.9654903,
+        "pause_focus": 15.0317211,
+        "start_focus": 18.5972385,
+        "timer": 17.0704517,
+        "unknown": 16.1409454
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "4352738461917068915",
+      "intent": "open_app",
+      "margin_start_minus_pause": 3.56551743,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 311.418958,
+      "prompt_tokens": 159,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 16.2932053,
+        "explain": 15.19872,
+        "open_app": 23.3822937,
+        "pause_focus": 13.091053,
+        "start_focus": 18.2481613,
+        "timer": 15.0241346,
+        "unknown": 16.3682594
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "5044747430849210571",
+      "intent": "open_app",
+      "margin_start_minus_pause": 5.15710831,
+      "max_full_vocab_logit_delta": 2.54742622,
+      "prefill_ms": 302.550584,
+      "prompt_tokens": 159,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "calculator",
+    "margin_delta": 1.59159088,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "open_app"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 16.7713699,
+        "explain": 15.8750458,
+        "open_app": 13.8381205,
+        "pause_focus": 17.7712612,
+        "start_focus": 18.9911671,
+        "timer": 12.1405811,
+        "unknown": 18.7799282
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "8422331585617911149",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 1.21990585,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.380666,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 16.7978935,
+        "explain": 15.8683233,
+        "open_app": 13.8056116,
+        "pause_focus": 17.8471546,
+        "start_focus": 19.0479851,
+        "timer": 12.1899195,
+        "unknown": 18.7941647
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "17087885909809477098",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 1.20083046,
+      "max_full_vocab_logit_delta": 0.307578862,
+      "prefill_ms": 310.296417,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "negation",
+    "margin_delta": -0.019075390000000025,
+    "mode": "zero",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "unknown"
+  },
+  {
+    "baseline": {
+      "candidate_logits": {
+        "alarm": 16.7713699,
+        "explain": 15.8750458,
+        "open_app": 13.8381205,
+        "pause_focus": 17.7712612,
+        "start_focus": 18.9911671,
+        "timer": 12.1405811,
+        "unknown": 18.7799282
+      },
+      "full_logits_byte_equal_to_baseline": true,
+      "full_logits_fnv64": "8422331585617911149",
+      "intent": "start_focus",
+      "margin_start_minus_pause": 1.21990585,
+      "max_full_vocab_logit_delta": 0,
+      "prefill_ms": 317.380666,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 0
+    },
+    "changed": {
+      "candidate_logits": {
+        "alarm": 14.3950701,
+        "explain": 16.5999527,
+        "open_app": 13.0381889,
+        "pause_focus": 16.1759281,
+        "start_focus": 18.2975941,
+        "timer": 11.1225748,
+        "unknown": 18.5371456
+      },
+      "full_logits_byte_equal_to_baseline": false,
+      "full_logits_fnv64": "4743195305662479628",
+      "intent": "unknown",
+      "margin_start_minus_pause": 2.12166595,
+      "max_full_vocab_logit_delta": 2.79660273,
+      "prefill_ms": 311.469917,
+      "prompt_tokens": 163,
+      "write_verified": true,
+      "writes": 1
+    },
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "directional_shift": null,
+    "id": "negation",
+    "margin_delta": 0.9017601000000002,
+    "mode": "zero_layer",
+    "noop_full_logits_equal": null,
+    "patch_delta_l2": 0.0,
+    "split": "unrelated_control",
+    "target": "unknown"
+  }
+]

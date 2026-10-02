@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-02",
+  "device": "Nothing A059/SM7635/API36",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model": "Qwen3.5-0.8B-Q4_0",
+  "actual_cancel_verified": true,
+  "fresh_request_after_cancel": {
+    "command": "Please start a focus session",
+    "capture": true,
+    "intent": "start_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1869.0,
+    "prefill_ms": 1016.0,
+    "decode_ms": 853.0,
+    "action_executed": false
+  },
+  "actual_q4_backend_selection": "CPU KleidiAI I8MM",
+  "npu": false,
+  "airplane_mode_verified": false
+}

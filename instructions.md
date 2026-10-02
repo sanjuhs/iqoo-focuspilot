@@ -22,6 +22,9 @@ Do not submit a pre-event prototype as event-created work.
 ## Product contract
 
 - Track: Productivity; Open Innovation is the fallback if organizers classify it differently.
+- Companion: friendly original goth character with subtle motion, mute/hide/reduce-motion
+  controls. Persistent mode is opt-in foreground monitoring with visible Stop, not
+  a constantly lit screen or silent microphone. See [design](docs/companion-design.md).
 - Main demo: start focus mode, recognize excessive use of a user-selected distracting app,
   explain a nudge, record a simulated penalty, and return the user to their chosen task.
 - Voice demo: a push-to-talk request creates a proposed alarm through Android's clock intent.
@@ -60,7 +63,7 @@ Nothing-phone tests establish Android compatibility, not Snapdragon/iQOO eligibi
 
 ## Implementation order
 
-1. Establish a Kotlin Android app with a visible session switch and local settings.
+1. Establish a native Java Android app with a visible session switch and local settings.
 2. Implement usage accounting, simulator balance, event log, and positive-weight decision head.
 3. Add bounded commands: focus session, pause/resume, open approved app, propose alarm.
 4. Integrate and benchmark one small local LLM with constrained output and abstention.

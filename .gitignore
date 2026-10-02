@@ -28,5 +28,7 @@ __pycache__/
 *.bin
 *.apk
 *.aab
+*.so
+*.dylib
 *.mp4
 .DS_Store

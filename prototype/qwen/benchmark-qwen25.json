@@ -1,0 +1,676 @@
+{
+  "status": "Pre-event laptop research, one fixed hand-written holdout; not phone/NPU inference or a broad reliability benchmark",
+  "measuredAt": "2026-10-02T09:58:02.997Z",
+  "intentOnly": false,
+  "modelId": "qwen25",
+  "model": {
+    "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "bytes": 491400032,
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "quantization": "Q4_K_M",
+    "architecture": "qwen2",
+    "license": "Apache-2.0"
+  },
+  "runtime": {
+    "name": "llama.cpp",
+    "build": 9620,
+    "commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+    "license": "MIT"
+  },
+  "runtimeVersion": "version: 9620 (57fe1f07c)\nbuilt with AppleClang 21.0.0.21000099 for Darwin arm64",
+  "backend": "llama.cpp CPU, device none, 0 GPU layers, operation offload disabled",
+  "cpu": "Apple M4 Pro",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "context": 2048,
+  "threads": 4,
+  "temperature": 0,
+  "thinkingEnabled": false,
+  "promptCacheEnabled": false,
+  "verificationMs": 237.508042,
+  "serverReadyMs": 427.32779200000004,
+  "firstRequestMs": 656.6268339999999,
+  "warmMedianMs": 661.0815000000002,
+  "warmP95Ms": 683.0175829999998,
+  "count": 16,
+  "intentsCorrect": 8,
+  "slotsCorrect": 7,
+  "validationFailures": 9,
+  "rows": [
+    {
+      "id": "focus-duration",
+      "command": "Start a focus session for 40 minutes.",
+      "expected": {
+        "intent": "focus",
+        "minutes": 40
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"focus\",\"minutes\":40,\"hour\":0,\"minute\":0,\"app\":\"none\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 675.132167,
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 418,
+        "total_tokens": 441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 418,
+        "prompt_ms": 545.119,
+        "prompt_per_token_ms": 1.3041124401913877,
+        "prompt_per_second": 766.8050462376104,
+        "predicted_n": 23,
+        "predicted_ms": 124.809,
+        "predicted_per_token_ms": 5.426478260869565,
+        "predicted_per_second": 184.28158225768976
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "focus-default",
+      "command": "Begin my focus session.",
+      "expected": {
+        "intent": "focus",
+        "minutes": 25
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"focus\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": "Focus duration is required",
+      "requestMs": 654.3161659999996,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 413,
+        "total_tokens": 435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 413,
+        "prompt_ms": 529.073,
+        "prompt_per_token_ms": 1.281048426150121,
+        "prompt_per_second": 780.6106151703074,
+        "predicted_n": 22,
+        "predicted_ms": 119.168,
+        "predicted_per_token_ms": 5.416727272727273,
+        "predicted_per_second": 184.61331901181524
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "alarm-am",
+      "command": "Wake me up at 6:45 AM.",
+      "expected": {
+        "intent": "alarm",
+        "hour": 6,
+        "minute": 45
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"home\",\"minutes\":0,\"hour\":6,\"minute\":45,\"app\":\"none\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 678.5890829999998,
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 419,
+        "total_tokens": 442,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 419,
+        "prompt_ms": 547.632,
+        "prompt_per_token_ms": 1.306997613365155,
+        "prompt_per_second": 765.1123382125223,
+        "predicted_n": 23,
+        "predicted_ms": 124.398,
+        "predicted_per_token_ms": 5.408608695652174,
+        "predicted_per_second": 184.89043232206308
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "alarm-pm",
+      "command": "Set an alarm for 8:10 PM.",
+      "expected": {
+        "intent": "alarm",
+        "hour": 20,
+        "minute": 10
+      },
+      "output": {
+        "intent": "alarm",
+        "minutes": 0,
+        "hour": 23,
+        "minute": 10,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"alarm\",\"minutes\":0,\"hour\":23,\"minute\":10,\"app\":\"none\"}",
+      "validationError": null,
+      "requestMs": 683.0175829999998,
+      "usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 419,
+        "total_tokens": 443,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 419,
+        "prompt_ms": 547.964,
+        "prompt_per_token_ms": 1.3077899761336518,
+        "prompt_per_second": 764.6487725471015,
+        "predicted_n": 24,
+        "predicted_ms": 130.185,
+        "predicted_per_token_ms": 5.424375,
+        "predicted_per_second": 184.35303606406268
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": false
+    },
+    {
+      "id": "alarm-open",
+      "command": "Show my alarm screen.",
+      "expected": {
+        "intent": "alarm",
+        "hour": -1,
+        "minute": -1
+      },
+      "output": {
+        "intent": "open",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "clock"
+      },
+      "rawContent": "{\"intent\":\"open\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"clock\"}",
+      "validationError": null,
+      "requestMs": 664.9748749999999,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 413,
+        "total_tokens": 435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 413,
+        "prompt_ms": 528.992,
+        "prompt_per_token_ms": 1.2808523002421306,
+        "prompt_per_second": 780.7301433670075,
+        "predicted_n": 22,
+        "predicted_ms": 130.064,
+        "predicted_per_token_ms": 5.912,
+        "predicted_per_second": 169.14749661705008
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "pause",
+      "command": "End this focus session now.",
+      "expected": {
+        "intent": "pause"
+      },
+      "output": {
+        "intent": "status",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"status\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": null,
+      "requestMs": 663.1202919999996,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 414,
+        "total_tokens": 436,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 414,
+        "prompt_ms": 530.192,
+        "prompt_per_token_ms": 1.2806570048309178,
+        "prompt_per_second": 780.8492017985936,
+        "predicted_n": 22,
+        "predicted_ms": 127.286,
+        "predicted_per_token_ms": 5.785727272727272,
+        "predicted_per_second": 172.8391182062442
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "open-app",
+      "command": "Launch the calculator.",
+      "expected": {
+        "intent": "open",
+        "app": "calculator"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"open\",\"minutes\":0,\"hour\":-1,\"minute\":0,\"app\":\"calculator\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 647.5254159999995,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 412,
+        "total_tokens": 434,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 412,
+        "prompt_ms": 523.868,
+        "prompt_per_token_ms": 1.2715242718446602,
+        "prompt_per_second": 786.4576572724426,
+        "predicted_n": 22,
+        "predicted_ms": 117.953,
+        "predicted_per_token_ms": 5.3615,
+        "predicted_per_second": 186.51496782616806
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "home",
+      "command": "Take me to the home screen.",
+      "expected": {
+        "intent": "home"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"home\",\"minutes\":0,\"hour\":0,\"minute\":0,\"app\":\"none\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 659.6287919999995,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 415,
+        "total_tokens": 437,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 415,
+        "prompt_ms": 536.669,
+        "prompt_per_token_ms": 1.293178313253012,
+        "prompt_per_second": 773.28856334165,
+        "predicted_n": 22,
+        "predicted_ms": 116.912,
+        "predicted_per_token_ms": 5.314181818181819,
+        "predicted_per_second": 188.17572191049678
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "status",
+      "command": "How is my current focus session going?",
+      "expected": {
+        "intent": "status"
+      },
+      "output": {
+        "intent": "status",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"status\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": null,
+      "requestMs": 656.0887910000001,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 416,
+        "total_tokens": 438,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 416,
+        "prompt_ms": 532.817,
+        "prompt_per_token_ms": 1.2808100961538462,
+        "prompt_per_second": 780.7558692759428,
+        "predicted_n": 22,
+        "predicted_ms": 117.468,
+        "predicted_per_token_ms": 5.3394545454545455,
+        "predicted_per_second": 187.28504784281677
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "unsupported-app",
+      "command": "Open Instagram.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"open\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": "Supported app required",
+      "requestMs": 652.4289160000008,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 411,
+        "total_tokens": 433,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 411,
+        "prompt_ms": 520.594,
+        "prompt_per_token_ms": 1.2666520681265208,
+        "prompt_per_second": 789.4827831285031,
+        "predicted_n": 22,
+        "predicted_ms": 126.234,
+        "predicted_per_token_ms": 5.737909090909091,
+        "predicted_per_second": 174.27951265110826
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "negation",
+      "command": "Do not set an alarm.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"unknown\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": null,
+      "requestMs": 652.226334,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 414,
+        "total_tokens": 436,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 414,
+        "prompt_ms": 529.082,
+        "prompt_per_token_ms": 1.277975845410628,
+        "prompt_per_second": 782.4874027088429,
+        "predicted_n": 22,
+        "predicted_ms": 117.539,
+        "predicted_per_token_ms": 5.342681818181818,
+        "predicted_per_second": 187.17191740613754
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "compound",
+      "command": "Start focus for 10 minutes and open settings.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"focus\",\"minutes\":10,\"hour\":-1,\"minute\":-1,\"app\":\"settings\"}",
+      "validationError": "Unexpected app",
+      "requestMs": 682.40625,
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 419,
+        "total_tokens": 442,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 419,
+        "prompt_ms": 542.342,
+        "prompt_per_token_ms": 1.2943723150357995,
+        "prompt_per_second": 772.5752385026423,
+        "predicted_n": 23,
+        "predicted_ms": 134.466,
+        "predicted_per_token_ms": 5.846347826086957,
+        "predicted_per_second": 171.04695610786368
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "destructive",
+      "command": "Delete all my photos.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"unknown\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"none\"}",
+      "validationError": null,
+      "requestMs": 647.0905829999992,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 413,
+        "total_tokens": 435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 413,
+        "prompt_ms": 524.159,
+        "prompt_per_token_ms": 1.2691501210653753,
+        "prompt_per_second": 787.9288536493698,
+        "predicted_n": 22,
+        "predicted_ms": 117.287,
+        "predicted_per_token_ms": 5.331227272727273,
+        "predicted_per_second": 187.57407044258954
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "payment",
+      "command": "Transfer 500 rupees to my friend.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "open",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "clock"
+      },
+      "rawContent": "{\"intent\":\"open\",\"minutes\":0,\"hour\":-1,\"minute\":-1,\"app\":\"clock\"}",
+      "validationError": null,
+      "requestMs": 665.8370419999992,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 419,
+        "total_tokens": 441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 419,
+        "prompt_ms": 543.804,
+        "prompt_per_token_ms": 1.2978615751789975,
+        "prompt_per_second": 770.498194202323,
+        "predicted_n": 22,
+        "predicted_ms": 116.482,
+        "predicted_per_token_ms": 5.294636363636363,
+        "predicted_per_second": 188.87038340687832
+      },
+      "executed": false,
+      "intentCorrect": false,
+      "slotsCorrect": false
+    },
+    {
+      "id": "out-of-range",
+      "command": "Focus for 900 minutes.",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"focus\",\"minutes\":90,\"hour\":0,\"minute\":0,\"app\":\"none\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 670.3545000000013,
+      "usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 416,
+        "total_tokens": 439,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 416,
+        "prompt_ms": 532.488,
+        "prompt_per_token_ms": 1.2800192307692309,
+        "prompt_per_second": 781.2382626462943,
+        "predicted_n": 23,
+        "predicted_ms": 132.42,
+        "predicted_per_token_ms": 5.757391304347825,
+        "predicted_per_second": 173.6897749584655
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    },
+    {
+      "id": "knowledge",
+      "command": "What is the capital of France?",
+      "expected": {
+        "intent": "unknown"
+      },
+      "output": {
+        "intent": "unknown",
+        "minutes": 0,
+        "hour": -1,
+        "minute": -1,
+        "app": "none"
+      },
+      "rawContent": "{\"intent\":\"home\",\"minutes\":0,\"hour\":0,\"minute\":0,\"app\":\"none\"}",
+      "validationError": "Unexpected alarm time",
+      "requestMs": 661.0815000000002,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 415,
+        "total_tokens": 437,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 415,
+        "prompt_ms": 531.672,
+        "prompt_per_token_ms": 1.2811373493975904,
+        "prompt_per_second": 780.5564332896973,
+        "predicted_n": 22,
+        "predicted_ms": 123.495,
+        "predicted_per_token_ms": 5.613409090909091,
+        "predicted_per_second": 178.14486416454108
+      },
+      "executed": false,
+      "intentCorrect": true,
+      "slotsCorrect": true
+    }
+  ]
+}

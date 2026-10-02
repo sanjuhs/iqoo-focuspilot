@@ -39,12 +39,15 @@ flowchart LR
     G --> B
 ```
 
-Quantized Qwen3.5-0.8B Q4_0 is the selected command-understanding candidate;
-Laya's 322M/421M models are a decision-model comparison. Neither is an established
-Android deployment here yet. The [activation experiment](docs/interpretability-experiment.md)
-defines the causal tests for the command-model inspector. The research prototype starts with deterministic
-commands and a transparent hand-set scorer; it visibly reports that no LLM is
-installed. CPU/GPU local inference and Snapdragon NPU execution are separately tested.
+Quantized **Qwen3.5-0.8B Q4_0 runs inside the Android app** through a pinned llama.cpp
+CPU bridge. The model proposes a bounded intent; independent code validates the
+original request and asks for confirmation. Actual activation summaries are visible
+in the model lab. Laya is a laptop comparison. The [activation experiment](docs/interpretability-experiment.md)
+defines controlled causal tests; observing tensors alone does not establish their meaning.
+Recurring nudges use a hand-set policy; a separate 65-parameter trained sandbox
+shows hidden-unit contributions and interventions. Mira is an original animated
+goth companion with mute, hide and reduce-motion controls. Snapdragon NPU execution
+and Office Kit remain unverified.
 An ADB connection is a development tool, not Office Kit integration.
 
 ## Device check
@@ -61,7 +64,17 @@ Unlock the phone and accept the USB debugging RSA prompt. The script reads devic
 properties without capturing screens or granting app permissions. Verified development
 device: Nothing A059, Android 16/API 36, `SM7635`, `arm64-v8a`.
 
-See the prototype's own README for build/run instructions as it becomes available.
+See [Android research app](prototype/android/README.md) and
+[selected-model deployment](docs/on-device-model.md) for build/run instructions.
+
+```sh
+node prototype/qwen/prepare-model.mjs qwen35
+./scripts/build_android.sh
+python3 scripts/prepare_phone.py --serial YOUR_DEVICE_SERIAL
+```
+
+Downloaded weights and generated native libraries/APKs remain ignored; the preparation
+script checks the model hash and streams it into debug app-private storage.
 
 ## Contribution and attribution
 
@@ -85,7 +98,14 @@ pre-push check, not a guarantee that every possible secret format is recognized.
 
 ## Milestone status
 
-Research and device authorization are complete. App/model prototypes, learning,
+Research, device authorization and real phone CPU inference are verified. One cold
+request took 19.9 seconds; a subsequent request with tensor capture took 4.1 seconds
+on Nothing A059. These are two smoke observations, not p50/p95 or iQOO measurements.
+The optimized ARM CPU lab later ran warm requests around1.65–1.72 seconds and
+verified I8MM kernel selection. Two unsafe requests were rejected by the external
+validator despite model misclassification. A local few-shot label sandbox is
+implemented with honest abstention/coverage reporting. The Android app has no
+INTERNET permission. Broader phone tests,
 NPU/Office Kit verification and final video remain work in progress; consult
 [verified status](docs/status.md) for current evidence. A public repo is a backup,
 not a completed hackathon application or submission.

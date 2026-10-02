@@ -1,0 +1,196 @@
+{
+  "status": "Pre-event synthetic shifted-preference comparison, not real user outcomes or neural fine-tuning",
+  "seed": 20261003,
+  "support": {
+    "lenient": {
+      "count": 32,
+      "families": [
+        "broad_mixture",
+        "budget_dominant",
+        "reopening",
+        "session_dominant"
+      ],
+      "sha256": "9daba82fd0c23f673cf961e18e4fde1a5a3c5421b37e90a1d435302a9da72b36"
+    },
+    "strict": {
+      "count": 32,
+      "families": [
+        "broad_mixture",
+        "budget_dominant",
+        "reopening",
+        "session_dominant"
+      ],
+      "sha256": "29cf9515e237ab1fc693fb26dfb2753941e4cf22fe39629a9d405cbb88d35c33"
+    },
+    "focus_sensitive": {
+      "count": 32,
+      "families": [
+        "broad_mixture",
+        "budget_dominant",
+        "reopening",
+        "session_dominant"
+      ],
+      "sha256": "155d52eec68d9e0bb9b4f9bbe06c71d260a8b51c40a9ae10f0fe2030fd7b209c"
+    }
+  },
+  "heldout": {
+    "count_per_profile": 240,
+    "families": [
+      "correlated_overruns",
+      "moderate_everywhere",
+      "sparse_extremes"
+    ],
+    "features_sha256": "21531673b02450e43d95dd0d5c88a2d68132bb8bfc96cd16a39e14472acbb6da"
+  },
+  "frozen_retrieval": {
+    "maximum_examples": 32,
+    "nearest_neighbors": 3,
+    "max_rms_distance": 0.25,
+    "allow_threshold": 0.35,
+    "nudge_threshold": 0.65,
+    "weight": "1/(0.05+RMS_distance)",
+    "abstention_is_counted_correct": false,
+    "fallback_to_baseline": false
+  },
+  "profiles": {
+    "lenient": [
+      -1.2,
+      0.0
+    ],
+    "strict": [
+      1.2,
+      0.0
+    ],
+    "focus_sensitive": [
+      0.0,
+      2.4
+    ]
+  },
+  "summary": {
+    "lenient": {
+      "total": 240,
+      "baseline_correct": 187,
+      "fewshot_correct": 155,
+      "answered": 168,
+      "abstained": 72,
+      "coverage": 0.7,
+      "selective_accuracy": 0.9226190476190477,
+      "baseline_accuracy_same_covered_cases": 0.7440476190476191,
+      "per_heldout_family": {
+        "correlated_overruns": {
+          "total": 80,
+          "baseline_correct": 65,
+          "fewshot_correct": 61,
+          "answered": 65,
+          "abstained": 15
+        },
+        "moderate_everywhere": {
+          "total": 80,
+          "baseline_correct": 52,
+          "fewshot_correct": 61,
+          "answered": 70,
+          "abstained": 10
+        },
+        "sparse_extremes": {
+          "total": 80,
+          "baseline_correct": 70,
+          "fewshot_correct": 33,
+          "answered": 33,
+          "abstained": 47
+        }
+      }
+    },
+    "strict": {
+      "total": 240,
+      "baseline_correct": 169,
+      "fewshot_correct": 145,
+      "answered": 175,
+      "abstained": 65,
+      "coverage": 0.7291666666666666,
+      "selective_accuracy": 0.8285714285714286,
+      "baseline_accuracy_same_covered_cases": 0.7085714285714285,
+      "per_heldout_family": {
+        "correlated_overruns": {
+          "total": 80,
+          "baseline_correct": 63,
+          "fewshot_correct": 53,
+          "answered": 70,
+          "abstained": 10
+        },
+        "moderate_everywhere": {
+          "total": 80,
+          "baseline_correct": 50,
+          "fewshot_correct": 75,
+          "answered": 77,
+          "abstained": 3
+        },
+        "sparse_extremes": {
+          "total": 80,
+          "baseline_correct": 56,
+          "fewshot_correct": 17,
+          "answered": 28,
+          "abstained": 52
+        }
+      }
+    },
+    "focus_sensitive": {
+      "total": 240,
+      "baseline_correct": 202,
+      "fewshot_correct": 145,
+      "answered": 167,
+      "abstained": 73,
+      "coverage": 0.6958333333333333,
+      "selective_accuracy": 0.8682634730538922,
+      "baseline_accuracy_same_covered_cases": 0.844311377245509,
+      "per_heldout_family": {
+        "correlated_overruns": {
+          "total": 80,
+          "baseline_correct": 69,
+          "fewshot_correct": 56,
+          "answered": 66,
+          "abstained": 14
+        },
+        "moderate_everywhere": {
+          "total": 80,
+          "baseline_correct": 68,
+          "fewshot_correct": 65,
+          "answered": 71,
+          "abstained": 9
+        },
+        "sparse_extremes": {
+          "total": 80,
+          "baseline_correct": 65,
+          "fewshot_correct": 24,
+          "answered": 30,
+          "abstained": 50
+        }
+      }
+    }
+  },
+  "java_python_parity": {
+    "cases": 720,
+    "maximum_absolute_error": 1.0547118733938987e-15,
+    "status": "passed"
+  },
+  "source_sha256": {
+    "evaluate.py": "1b8d615a8cc68f643a47bdd9eeef109f3d1c7e581d5a99a2c0376576966cad2f",
+    "FewShotPolicy.java": "f0dfa83ee74c28aee7d0c74d4a25125ffd78b8764a8724cfec462c8d19b18a56",
+    "FewShotParity.java": "fae18a1f988beddaa2b78d9ebd90cfd811c02bb78ccacdb8c92d58d77103309a"
+  },
+  "baseline_checkpoint_sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+  "limitations": [
+    "All preference labels are invented mathematical rules.",
+    "Support examples are selected by fixed family/order; no heldout-based selection or hyperparameter search.",
+    "Same feature geometry as original synthetic lab; preference teacher is shifted.",
+    "Distance/uncertainty are heuristic, uncalibrated; sparse support often abstains.",
+    "Grouped family split reduces row-level leakage but does not establish real-world generalization.",
+    "Personalization may lower accuracy; report coverage and baseline on the same answered cases."
+  ],
+  "androidVerification": {
+    "jvmTests": 8,
+    "failures": 0,
+    "errors": 0,
+    "debugCompilation": "passed",
+    "phoneInteractionVerifiedByThisSlice": false
+  }
+}

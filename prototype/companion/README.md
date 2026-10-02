@@ -1,0 +1,7 @@
+# Mira companion design assets
+
+Original adult goth companion artwork for the FocusPilot **pre-event research** prototype. The working name is Mira. [avatar.svg](avatar.svg) is a 240×320 transparent vector with named face, eye, mouth, halo, and sparkle layers. It is a **static base portrait**, not a sprite sheet or a finished animation. [motion-spec.json](motion-spec.json) specifies blink, breathe, listening, celebration, nudge, and paused motion for a native renderer. Android integration is owned by the Android prototype and must separately verify behavior.
+
+The SVG was authored from vector paths for this project on 2 October 2026. It embeds no image, external font, Grok asset, or copied bitmap from the older personal repository. Its aesthetic follows the user's requested friendly goth direction: charcoal hair/clothes, lilac streak, teal accessories, and a soft smile. The older portrait hashes and attribution are recorded in [companion-design.md](../../docs/companion-design.md); those bitmaps have not been redistributed here.
+
+Default expression is open eyes and a small smile. Alternate eyes, mouths, sparkles and listening halo are present but hidden. A native Canvas renderer can follow the layer/coordinate specification; an Android VectorDrawable import will need SVG conversion and cannot directly use the SVG's named DOM groups. Reduced motion displays a stable portrait and readable state text. Mute, hide, and pause are distinct user controls.

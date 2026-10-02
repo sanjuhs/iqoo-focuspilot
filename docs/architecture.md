@@ -39,6 +39,23 @@ flowchart TD
 | Local store | Goals, coarse usage aggregates, simulated balance, decision traces, model manifest | App-private data; opt-out and erase controls; personal data excluded from Git |
 | Laptop worker | Optional heavier planning and opt-in example training | Offline core still works without it; execution location visible |
 
+## Friendly companion and persistent mode
+
+The user requested a friendly goth companion inspired by their earlier productivity
+browser and expressive live companions. Use the original design and motion states
+in [companion-design.md](companion-design.md): supportive adult character,
+blink/breathe/listen/focus/celebrate/nudge/paused, with reduced-motion, mute and hide.
+The companion encourages action and supports breaks; it should not become a second
+attention feed. Technical model/activation details belong in the developer inspector.
+
+Persistent mode means a user-enabled Android foreground focus monitor with a
+visible ongoing notification and Stop control. It does not mean a permanently lit
+screen or an always-listening microphone. Start it from the visible app, require
+usage/notification consent, and verify the valid service type on the target API.
+Do not promise survival through OEM process killing, force-stop or reboot without
+proof. The app must show interrupted/stopped state honestly. An optional over-app
+companion bubble needs separate overlay consent and is a later gate.
+
 ## Android capability contract
 
 **Observation.** `UsageStatsManager` offers app usage history and requires `PACKAGE_USAGE_STATS` access for cross-app queries. The owner must grant usage access in Settings. It does not provide a complete screen recording or a guaranteed immediate callback for every user action. Handle denied/revoked access, locked-user null results, event gaps, reboot, and multi-window ambiguities without fabricating usage. For the initial build, collect reports on app resume and during an explicitly active, supported focus session. A proposed across-app monitor needs its service lifecycle and current platform requirements verified on the actual phone before promising continuous operation. [Android UsageStatsManager](https://developer.android.com/reference/android/app/usage/UsageStatsManager)

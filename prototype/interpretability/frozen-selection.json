@@ -1,0 +1,547 @@
+{
+  "candidates": [
+    {
+      "channels": [
+        0,
+        355,
+        315,
+        619
+      ],
+      "discovery_ranks": [
+        {
+          "channel": 0,
+          "difference": -0.001873538000000008,
+          "rank_score": 1.873538000000008
+        },
+        {
+          "channel": 355,
+          "difference": -0.0011342139749999994,
+          "rank_score": 1.1342139749999993
+        },
+        {
+          "channel": 315,
+          "difference": 0.0009530249154000001,
+          "rank_score": 0.9530249154
+        },
+        {
+          "channel": 619,
+          "difference": -0.0009386790750000006,
+          "rank_score": 0.9386790750000006
+        }
+      ],
+      "node": "ffn_out-0",
+      "selection_cases": [
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.9342279,
+              "explain": 14.2799969,
+              "open_app": 17.3713112,
+              "pause_focus": 17.237524,
+              "start_focus": 24.5771275,
+              "timer": 12.4009981,
+              "unknown": 14.0220718
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "11585692876835328102",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.33960342,
+            "max_full_vocab_logit_delta": 0.268967032,
+            "prefill_ms": 310.434,
+            "prompt_tokens": 162,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": -0.03350448000000039,
+          "id": "in_out_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 14.0163298,
+              "explain": 16.3665943,
+              "open_app": 16.556776,
+              "pause_focus": 18.5404243,
+              "start_focus": 21.4650097,
+              "timer": 12.8122568,
+              "unknown": 15.2070093
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "8058475935305489453",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 2.92458534,
+            "max_full_vocab_logit_delta": 0.354320765,
+            "prefill_ms": 313.809459,
+            "prompt_tokens": 163,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": -0.10054969999999974,
+          "id": "in_out_pause_focus",
+          "target": "pause_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.9214449,
+              "explain": 15.1694956,
+              "open_app": 15.3342123,
+              "pause_focus": 16.2637939,
+              "start_focus": 23.741106,
+              "timer": 13.7742367,
+              "unknown": 12.0518894
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "12477335204857458489",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.47731209,
+            "max_full_vocab_logit_delta": 0.271457434,
+            "prefill_ms": 311.080875,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.09376143999999975,
+          "id": "concentration_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 13.1359386,
+              "explain": 13.8771076,
+              "open_app": 13.2886391,
+              "pause_focus": 23.8421478,
+              "start_focus": 20.1984692,
+              "timer": 13.0042248,
+              "unknown": 14.5242329
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "17816102477901232846",
+            "intent": "pause_focus",
+            "margin_start_minus_pause": -3.64367867,
+            "max_full_vocab_logit_delta": 0.280196667,
+            "prefill_ms": 311.68575,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.20415687000000027,
+          "id": "concentration_pause_focus",
+          "target": "pause_focus"
+        }
+      ],
+      "selection_mean_shift": 0.04096603249999997
+    },
+    {
+      "channels": [
+        970,
+        430,
+        948,
+        941
+      ],
+      "discovery_ranks": [
+        {
+          "channel": 970,
+          "difference": 0.0045834535442250005,
+          "rank_score": 4.583453544225001
+        },
+        {
+          "channel": 430,
+          "difference": 0.004331241375000003,
+          "rank_score": 4.331241375000003
+        },
+        {
+          "channel": 948,
+          "difference": -0.005052083124999995,
+          "rank_score": 3.5061848400689795
+        },
+        {
+          "channel": 941,
+          "difference": -0.0036840010550000003,
+          "rank_score": 3.2454214107283903
+        }
+      ],
+      "node": "ffn_out-11",
+      "selection_cases": [
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.8902464,
+              "explain": 14.2327433,
+              "open_app": 17.3467007,
+              "pause_focus": 17.2270947,
+              "start_focus": 24.5446262,
+              "timer": 12.2988939,
+              "unknown": 13.9932575
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "9527020038469072978",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.31753159,
+            "max_full_vocab_logit_delta": 0.256346703,
+            "prefill_ms": 307.147291,
+            "prompt_tokens": 162,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": -0.011432649999999711,
+          "id": "in_out_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 13.6801958,
+              "explain": 16.3408604,
+              "open_app": 16.540432,
+              "pause_focus": 18.5190639,
+              "start_focus": 21.5517941,
+              "timer": 12.7776556,
+              "unknown": 15.0602684
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "4202631433329048998",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 3.0327301,
+            "max_full_vocab_logit_delta": 0.272332191,
+            "prefill_ms": 318.146833,
+            "prompt_tokens": 163,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.00759506000000032,
+          "id": "in_out_pause_focus",
+          "target": "pause_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.8261023,
+              "explain": 15.1337547,
+              "open_app": 15.4430637,
+              "pause_focus": 16.2091351,
+              "start_focus": 23.6837311,
+              "timer": 13.8086796,
+              "unknown": 12.0769711
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "17750563331990028234",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.47459602,
+            "max_full_vocab_logit_delta": 0.243306279,
+            "prefill_ms": 310.885792,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.09647750999999971,
+          "id": "concentration_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 13.0007038,
+              "explain": 13.8329172,
+              "open_app": 13.2352238,
+              "pause_focus": 23.7878094,
+              "start_focus": 20.0505295,
+              "timer": 12.9576569,
+              "unknown": 14.469224
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "10123363866109452396",
+            "intent": "pause_focus",
+            "margin_start_minus_pause": -3.73727989,
+            "max_full_vocab_logit_delta": 0.26766634,
+            "prefill_ms": 313.33425,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.11055565000000023,
+          "id": "concentration_pause_focus",
+          "target": "pause_focus"
+        }
+      ],
+      "selection_mean_shift": 0.05079889250000014
+    },
+    {
+      "channels": [
+        207,
+        895,
+        878,
+        356
+      ],
+      "discovery_ranks": [
+        {
+          "channel": 207,
+          "difference": -0.023659351999999995,
+          "rank_score": 8.085602062156307
+        },
+        {
+          "channel": 895,
+          "difference": 0.08179132387499999,
+          "rank_score": 7.743806870081321
+        },
+        {
+          "channel": 878,
+          "difference": -0.1186364255,
+          "rank_score": 6.7960185972160385
+        },
+        {
+          "channel": 356,
+          "difference": -0.10730214424999998,
+          "rank_score": 6.062284401208853
+        }
+      ],
+      "node": "ffn_out-23",
+      "selection_cases": [
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.9717531,
+              "explain": 14.2691422,
+              "open_app": 17.3225746,
+              "pause_focus": 17.2455921,
+              "start_focus": 24.5449162,
+              "timer": 12.3704424,
+              "unknown": 14.0031796
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "16806699337958788709",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.29932404,
+            "max_full_vocab_logit_delta": 0.161913723,
+            "prefill_ms": 312.8555,
+            "prompt_tokens": 162,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.006774899999999917,
+          "id": "in_out_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 13.8319635,
+              "explain": 16.420023,
+              "open_app": 16.706234,
+              "pause_focus": 18.5837097,
+              "start_focus": 21.6167488,
+              "timer": 12.8026104,
+              "unknown": 15.1135349
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "15162402248484568012",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 3.03303909,
+            "max_full_vocab_logit_delta": 0.157130361,
+            "prefill_ms": 315.572625,
+            "prompt_tokens": 163,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": 0.007904050000000051,
+          "id": "in_out_pause_focus",
+          "target": "pause_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 12.7920418,
+              "explain": 15.1693211,
+              "open_app": 15.525979,
+              "pause_focus": 16.2765446,
+              "start_focus": 23.8505611,
+              "timer": 13.8584223,
+              "unknown": 12.1406136
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "2462987881072725480",
+            "intent": "start_focus",
+            "margin_start_minus_pause": 7.57401657,
+            "max_full_vocab_logit_delta": 0.317574263,
+            "prefill_ms": 314.029,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": -0.002943040000000785,
+          "id": "concentration_start_focus",
+          "target": "start_focus"
+        },
+        {
+          "changed": {
+            "candidate_logits": {
+              "alarm": 13.1658945,
+              "explain": 13.7738152,
+              "open_app": 13.1496849,
+              "pause_focus": 23.8991375,
+              "start_focus": 20.0462475,
+              "timer": 12.970603,
+              "unknown": 14.5072451
+            },
+            "full_logits_byte_equal_to_baseline": false,
+            "full_logits_fnv64": "7103013146717887506",
+            "intent": "pause_focus",
+            "margin_start_minus_pause": -3.85289001,
+            "max_full_vocab_logit_delta": 0.27278924,
+            "prefill_ms": 313.346208,
+            "prompt_tokens": 161,
+            "write_verified": true,
+            "writes": 1
+          },
+          "directional_shift": -0.0050544699999997,
+          "id": "concentration_pause_focus",
+          "target": "pause_focus"
+        }
+      ],
+      "selection_mean_shift": 0.0016703599999998708
+    }
+  ],
+  "chosen": {
+    "channels": [
+      970,
+      430,
+      948,
+      941
+    ],
+    "discovery_ranks": [
+      {
+        "channel": 970,
+        "difference": 0.0045834535442250005,
+        "rank_score": 4.583453544225001
+      },
+      {
+        "channel": 430,
+        "difference": 0.004331241375000003,
+        "rank_score": 4.331241375000003
+      },
+      {
+        "channel": 948,
+        "difference": -0.005052083124999995,
+        "rank_score": 3.5061848400689795
+      },
+      {
+        "channel": 941,
+        "difference": -0.0036840010550000003,
+        "rank_score": 3.2454214107283903
+      }
+    ],
+    "node": "ffn_out-11",
+    "selection_cases": [
+      {
+        "changed": {
+          "candidate_logits": {
+            "alarm": 12.8902464,
+            "explain": 14.2327433,
+            "open_app": 17.3467007,
+            "pause_focus": 17.2270947,
+            "start_focus": 24.5446262,
+            "timer": 12.2988939,
+            "unknown": 13.9932575
+          },
+          "full_logits_byte_equal_to_baseline": false,
+          "full_logits_fnv64": "9527020038469072978",
+          "intent": "start_focus",
+          "margin_start_minus_pause": 7.31753159,
+          "max_full_vocab_logit_delta": 0.256346703,
+          "prefill_ms": 307.147291,
+          "prompt_tokens": 162,
+          "write_verified": true,
+          "writes": 1
+        },
+        "directional_shift": -0.011432649999999711,
+        "id": "in_out_start_focus",
+        "target": "start_focus"
+      },
+      {
+        "changed": {
+          "candidate_logits": {
+            "alarm": 13.6801958,
+            "explain": 16.3408604,
+            "open_app": 16.540432,
+            "pause_focus": 18.5190639,
+            "start_focus": 21.5517941,
+            "timer": 12.7776556,
+            "unknown": 15.0602684
+          },
+          "full_logits_byte_equal_to_baseline": false,
+          "full_logits_fnv64": "4202631433329048998",
+          "intent": "start_focus",
+          "margin_start_minus_pause": 3.0327301,
+          "max_full_vocab_logit_delta": 0.272332191,
+          "prefill_ms": 318.146833,
+          "prompt_tokens": 163,
+          "write_verified": true,
+          "writes": 1
+        },
+        "directional_shift": 0.00759506000000032,
+        "id": "in_out_pause_focus",
+        "target": "pause_focus"
+      },
+      {
+        "changed": {
+          "candidate_logits": {
+            "alarm": 12.8261023,
+            "explain": 15.1337547,
+            "open_app": 15.4430637,
+            "pause_focus": 16.2091351,
+            "start_focus": 23.6837311,
+            "timer": 13.8086796,
+            "unknown": 12.0769711
+          },
+          "full_logits_byte_equal_to_baseline": false,
+          "full_logits_fnv64": "17750563331990028234",
+          "intent": "start_focus",
+          "margin_start_minus_pause": 7.47459602,
+          "max_full_vocab_logit_delta": 0.243306279,
+          "prefill_ms": 310.885792,
+          "prompt_tokens": 161,
+          "write_verified": true,
+          "writes": 1
+        },
+        "directional_shift": 0.09647750999999971,
+        "id": "concentration_start_focus",
+        "target": "start_focus"
+      },
+      {
+        "changed": {
+          "candidate_logits": {
+            "alarm": 13.0007038,
+            "explain": 13.8329172,
+            "open_app": 13.2352238,
+            "pause_focus": 23.7878094,
+            "start_focus": 20.0505295,
+            "timer": 12.9576569,
+            "unknown": 14.469224
+          },
+          "full_logits_byte_equal_to_baseline": false,
+          "full_logits_fnv64": "10123363866109452396",
+          "intent": "pause_focus",
+          "margin_start_minus_pause": -3.73727989,
+          "max_full_vocab_logit_delta": 0.26766634,
+          "prefill_ms": 313.33425,
+          "prompt_tokens": 161,
+          "write_verified": true,
+          "writes": 1
+        },
+        "directional_shift": 0.11055565000000023,
+        "id": "concentration_pause_focus",
+        "target": "pause_focus"
+      }
+    ],
+    "selection_mean_shift": 0.05079889250000014
+  },
+  "random_control_channels": [
+    164,
+    694,
+    144,
+    884
+  ],
+  "selection_frozen_before_holdout": true
+}

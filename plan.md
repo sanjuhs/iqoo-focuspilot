@@ -9,10 +9,10 @@ demo, with an honest, measurable System 1 decision path.
 
 | Order | Deliverable | Done when | Status |
 | --- | --- | --- | --- |
-| 1 | Hackathon/repository research | Rules, licenses, tracks and hardware assumptions are sourced | In progress |
-| 2 | Phone and GitHub setup | Authorized ADB, device facts, secrets ignored, public source backup | In progress |
-| 3 | Research prototype | Focus/virtual penalty/decision trace/alarm workflow runs on Nothing phone | Planned pre-event experiment |
-| 4 | Local model baseline | Selected Qwen3.5-0.8B model loads on Android and produces bounded decisions offline | Pending |
+| 1 | Hackathon/repository research | Rules, licenses, tracks and hardware assumptions are sourced | Verified; dashboard details pending |
+| 2 | Phone and GitHub setup | Authorized ADB, device facts, secrets ignored, public source backup | Verified; ongoing source backup |
+| 3 | Research prototype | Focus/virtual penalty/decision trace/alarm workflow runs on Nothing phone | Installed; bounded focus/sandbox tested, alarm outcome pending |
+| 4 | Local model baseline | Selected Qwen3.5-0.8B model loads on Android and produces bounded decisions offline | Actual CPU inference and activation capture verified; offline disconnect test pending |
 | 5 | Few-shot sandbox | User-labelled examples improve held-out decisions with recorded comparison | Pending |
 | 6 | Voice and automation | Local speech availability established; approved commands verify outcomes | Pending |
 | 7 | iQOO acceleration and bridge | NPU backend and actual Office Kit flow measured on approved hardware | Needs hardware/account access |
@@ -37,8 +37,18 @@ schema and slots before executing. Keep action candidates closed.
 An allowlist, user-confirmation gates and postcondition checks stay outside the model.
 Phone control is bounded by permissions and Android restrictions, not unrestricted.
 
-The first research prototype has no LLM and must say so visibly. Its hand-set
-weights are a transparent baseline, not a trained model or claimed discovery.
+The initial research prototype used only a deterministic parser. The current app
+adds actual Qwen3.5 CPU inference in the model lab. Recurring dashboard nudges still
+use transparent hand-set weights; a separate trained sandbox demonstrates the
+65-parameter network. Keep each component clearly identified.
+
+## Companion and persistent-mode slice
+
+Create the original friendly companion from [design](docs/companion-design.md).
+Add subtle native animation, reduced-motion, mute/hide and a persistent foreground
+monitor started explicitly from the visible app. Validate notification Stop, consent
+revocation, background/return and process-interruption behavior. Always-listening
+voice and floating overlays are separate later gates.
 
 ## Today and tomorrow: preparation
 
@@ -86,7 +96,8 @@ a narrow causal result. NPU inference and CPU activation experiments are distinc
   counterfactual screen states. Treat these as evidence about the small policy head.
 - One real IoT command can be added with hardware in hand and local protocol support;
   no broad Smart Living claim from a simulated lamp alone.
-- Persistent observation, wake words and broad cross-app automation follow battery,
+- Background foreground-service monitoring is implemented but still needs real
+  permission/lifecycle checks. Wake words and broad cross-app automation follow battery,
   privacy and reliability testing. They are outside the first runnable slice.
 
 ## Storage budget

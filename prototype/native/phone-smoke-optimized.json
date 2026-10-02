@@ -1,0 +1,64 @@
+{
+  "variant": "arm-kleidiai",
+  "model": "Qwen3.5-0.8B-Q4_0",
+  "device": "Nothing A059/SM7635/API36",
+  "backend": "CPU",
+  "context": 1024,
+  "threads": 4,
+  "synthetic_smoke_only": true,
+  "results": [
+    {
+      "command": "Please start a focus session",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 13521.0,
+      "prefill_ms": 12629.0,
+      "decode_ms": 892.0,
+      "action_executed": false
+    },
+    {
+      "command": "Please start a focus session",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1646.0,
+      "prefill_ms": 783.0,
+      "decode_ms": 863.0,
+      "action_executed": false
+    },
+    {
+      "command": "Please start a focus session",
+      "capture": true,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1719.0,
+      "prefill_ms": 829.0,
+      "decode_ms": 890.0,
+      "action_executed": false
+    },
+    {
+      "command": "Do not start focus",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "ABSTAIN",
+      "total_ms": 1724.0,
+      "prefill_ms": 843.0,
+      "decode_ms": 882.0,
+      "action_executed": false
+    },
+    {
+      "command": "Start focus and open settings",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "ABSTAIN",
+      "total_ms": 1663.0,
+      "prefill_ms": 775.0,
+      "decode_ms": 888.0,
+      "action_executed": false
+    }
+  ],
+  "native_library_sha256": "425cceb189864e9039b9561c33e779b97f8f7930a7f5608074ea36c18b9902a8",
+  "date": "2026-10-02",
+  "note": "First optimized artifact, before Android selection-only log hook. No screen capture or action execution."
+}

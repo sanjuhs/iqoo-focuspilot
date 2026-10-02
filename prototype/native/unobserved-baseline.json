@@ -1,0 +1,1 @@
+{"text":"{\"intent\":\"start_focus\"}","metrics":{"prompt_tokens":163,"generated_tokens":8,"prefill_ms":306.87767,"decode_ms":176.43825,"total_ms":483.31625,"reached_eos":true,"cpu_only":true,"capture_enabled":false},"activations":[]}

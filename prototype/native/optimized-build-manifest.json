@@ -1,0 +1,69 @@
+{
+  "status": "Actual Nothing CPU I8MM inference, phone cancellation and fresh-request recovery verified",
+  "llamaCommit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "ndk": "28.2.13676358",
+  "api": 28,
+  "abi": "arm64-v8a",
+  "cpuArchitecture": "armv8.2-a+dotprod+i8mm+fp16",
+  "requiredDeviceFeatures": [
+    "asimddp",
+    "i8mm",
+    "fphp",
+    "asimdhp"
+  ],
+  "artifact": "build/android-arm64-optimized/libfocuspilot_local.so",
+  "bytes": 5146144,
+  "sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "exports": [
+    "Java_dev_focuspilot_prototype_LocalModel_nativeCancel",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeClose",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeGenerate",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeInit",
+    "Java_dev_focuspilot_prototype_LocalModel_nativePrepare"
+  ],
+  "kleidiAI": {
+    "release": "v1.24.0",
+    "url": "https://github.com/ARM-software/kleidiai/releases/download/v1.24.0/kleidiai-v1.24.0-src.tar.gz",
+    "upstreamMD5": "2f02ebe29573d45813e671eb304f2a00",
+    "archiveSHA256": "9348b969e042d8890a54b01a463dbe71f5a4c074b5329e9c26a85ef3b68aa19b",
+    "license": "Apache-2.0 and BSD-3-Clause by source file; license texts preserved",
+    "quantizationPath": "Q4_0 CPU kernels; runtime I8MM/DOTPROD selection present in upstream code; actual selected kernel must be checked in phone logs"
+  },
+  "sourceSHA256": {
+    "core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "CMakeLists.txt": "499f6e1937e28f00945a27c01959d30bc890a8967d3835f76d6b68059f032cca",
+    "build-android.sh": "cef79f8c2662d18cdfbc7747b9ce761e0ad85049c8d2fb4cf447654f1d84abef"
+  },
+  "context": {
+    "microbatch": 256,
+    "unobservedEvalCallback": false,
+    "modeSwitch": "Destroy/recreate one context while reusing the existing model weights",
+    "contextSetupLatencyReportedSeparately": true,
+    "recurrentAndKVResetEveryRequest": true
+  },
+  "gpuBackends": false,
+  "openMP": false,
+  "npuInference": false,
+  "hostJNISmoke": "passed: real inference, mode changes, capture, pre-entry cancellation, in-flight cancellation, fresh request recovery, closed-handle safety",
+  "phoneInferenceMeasuredForThisArtifact": true,
+  "genericArtifactPreserved": true,
+  "elfLoadAlignmentBytes": 16384,
+  "systemDependencies": [
+    "liblog.so",
+    "libm.so",
+    "libdl.so",
+    "libc.so"
+  ],
+  "backendLog": "Android tag FocusPilotBackend records only KleidiAI selection diagnostics",
+  "phoneEvidence": "phone-cancellation-smoke.json",
+  "previousPhoneVerifiedArtifact": {
+    "sha256": "995a2b5e6fd9fc8a7459c6d2bb40f7214d92a86f8878b5fb9c7d424cc2f2235b",
+    "bytes": 5144848,
+    "status": "Compiled optimized CPU variant; actual Nothing phone inference and I8MM selection verified",
+    "phoneInferenceMeasuredForThisArtifact": true,
+    "phoneEvidence": "phone-integration.json"
+  },
+  "cancellation": "Prepare on submitting thread before queueing; generate never clears cancellation. Activity foreground/epoch gates invalidate queued work and stale confirmations."
+}

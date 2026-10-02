@@ -5,7 +5,7 @@ Reviewed 2 October 2026. This document records source inspection and proposed en
 ## Updated direction
 
 After this research, the user selected quantized Qwen3.5-0.8B Q4_0 as the primary
-command-understanding candidate, with selected activation capture and causal
+command-understanding candidate, with selected activation capture and planned causal
 intervention experiments in llama.cpp. Laya remains a useful local decision-model
 comparison. See [activation protocol](interpretability-experiment.md) and
 [verified status](status.md) for subsequent experiments; findings below are the

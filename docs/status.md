@@ -12,9 +12,23 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 - Phone initially unauthorized; user accepted RSA prompt and ADB now reports `device`.
 - Read-only shell check succeeded: Settings package located.
 - Device properties: Nothing A059, Android 16, API 36, SoC `SM7635`, `arm64-v8a`.
-- Android lab APK built, installed and launched on Nothing A059. Four JVM tests and
-  lint passed (zero errors); app has no INTERNET permission. Device start/pause,
+- Android lab APK built, installed and launched on Nothing A059. Twenty-six JVM tests
+  and lint passed (zero errors); app has no INTERNET permission. Device start/pause,
   sandbox nudge and cooldown verified. Broader runtime/permissions remain unverified.
+- Qwen3.5-0.8B Q4_0 actually loaded from checksummed app-private storage and generated
+  inside the Android process through CPU JNI. First request: 19,853 ms total
+  (18,626 prefill / 1,227 decode); next request with capture: 4,107 ms total
+  (3,178 / 928). Both proposed start_focus correctly, with independent review gates.
+  Context 1,024, four threads, 158 prompt / eight generated tokens. Two smoke
+  observations do not establish p50/p95, accuracy or capture overhead.
+- Actual phone activation observations succeeded: ffn_out-0/11/23 and result_norm,
+  1,024-wide vectors summarized at last prefill position. This is observational
+  evidence, not causal semantic interpretation.
+- Phone memory snapshot during loaded-model testing: PSS 791,083 KiB, RSS 899,052
+  KiB; one sample, not a measured peak. Model bytes 563,036,064 / SHA-256
+  57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf.
+- Original native Canvas companion Mira and opt-in foreground monitor code built.
+  Actual phone artwork inspected; persistent service/notification tests await user permissions.
 - Fixed system-bar insets after actual device visual inspection.
 - Laya 421M pinned/checksummed comparison runs on laptop ONNX CPU: 15 smoke cases,
   13/15 labels correct; warm median 234 ms/p95 249 ms on Apple M4 Pro. Four tests,
@@ -22,25 +36,55 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 - A separate 65-parameter positive-weight network was actually trained on synthetic
   scenario-group splits: 472/480 holdout correct, seven tests passed, 1,800 monotonic
   pairs with zero violations. This reproduces a synthetic teacher, not human productivity
-  or LLM mechanistic understanding; not yet integrated with the Android app.
+  or LLM mechanistic understanding. Exported Android Java policy matches all 480
+  holdout outputs (maximum score error 1.22e-15); separate sandbox UI built.
 - Research checkouts, downloaded weights and dependencies are ignored. Workspace
-  was about 3.9 GB before the new 0.8B runtime/build experiment.
+  is about 4.8 GiB including models, checkouts and incremental builds.
 - User selected Qwen3.5-0.8B Q4_0 as main model, expanding the initial size cap.
+- Native pre-entry/in-flight cancellation race fixed and real host JNI checks pass.
+  Updated phone build cancellation settled correctly; a fresh captured request
+  then produced start_focus in1,869ms with I8MM confirmed.
+- Safe phone model preparation now force-stops only the research app, checksums
+  a temporary private file and atomically renames it; actual retransfer succeeded.
+- Latest CPU backend log on phone verifies actual KleidiAI I8MM kernel selection.
+  Confirming a local-model proposal started the actual focus state; dashboard Stop
+  returned its persisted checkpoint to paused. Latest request1,688ms.
+- First optimized ARM CPU five-case phone smoke completed: cold13,521ms; three
+  unobserved warm cases1,646/1,724/1,663ms; captured warm1,719ms. Model misclassified
+  negated/compound requests as start_focus; independent gate rejected both. No
+  actions executed in that batch. See prototype/native/phone-smoke-optimized.json.
+- Local few-shot sandbox phone screen opens; saving and deleting synthetic labels
+  verified against app-private storage. Gates stayed paused/off; no actions ran.
+- Local few-shot sandbox implemented with32-record limit, neighbor explanations,
+  delete controls and non-overridable simulated gates. Eight targeted JVM tests
+  passed;720 synthetic Java/Python outputs match. Answered-case accuracy improves
+  under shifted toy preferences, but coverage~70% and total correct count is
+  below the trained baseline because of abstentions. No language-model fine-tuning
+  or live personalization claim.
+- Actual laptop Qwen activation-write experiment ran108 fresh-context cases.
+  Selected channel patch/ablation gave no reliable steering advantage; random
+  controls comparable, held-out baseline6/8. All16 no-op/restoration full-logit
+  comparisons exactly matched. This is a negative semantic result with verified
+  intervention machinery, separate from observational phone capture.
 
 ## In progress
 
-- Friendly animated goth companion inspired by user's earlier MIT project;
-  opt-in persistent focus monitor with foreground notification/Stop.
-- Qwen3.5-0.8B laptop and Android-native CPU port, distinct from measured phone inference.
-- Selected-activation instrumentation and controlled command-model experiment.
+- Actual persistent notification/Stop verification after user grants permissions.
+- Optimized ARM CPU inference comparison; generic baseline preserved.
+- Few-shot retrieval remains a sandbox; integration into recurring live decisions
+  requires additional user-labelled evaluation.
+- Controlled command-model experiment completed with a negative steering result;
+  phone replication and wider controls remain pending.
 - Updated GitHub backup and staged secret audit.
+- Three-to-five-minute research pitch video review and source backup.
 
 ## Unverified / remaining
 
 - Completed direct-entry application, deadline, required video format and admission.
 - Permission to reuse any pre-event prototype in an eligible event submission.
 - Full APK end-to-end/permission/voice/alarm/background behavior beyond verified slice.
-- Phone LLM inference, language-model fine-tuning, few-shot improvement and causal outcomes.
+- Airplane-mode/USB-disconnected proof, language-model fine-tuning, few-shot
+  improvement and causal LLM outcomes. Actual app-process CPU inference is verified.
 - Snapdragon NPU execution, acceleration metrics and Office Kit on an iQOO device.
 - Persistent monitoring under actual OEM lifecycle, wake word and general cross-app automation.
 - Real financial deductions: out of scope; accountability balance is simulated.

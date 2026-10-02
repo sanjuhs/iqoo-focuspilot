@@ -1,0 +1,17 @@
+KleidiAI v1.24.0 — upstream attribution
+Source: https://github.com/ARM-software/kleidiai/tree/v1.24.0
+Archive SHA-256: 9348b969e042d8890a54b01a463dbe71f5a4c074b5329e9c26a85ef3b68aa19b
+
+Copyright headers retained from the downloaded upstream source:
+2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
+SPDX-FileCopyrightText: Copyright 2024 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2024, 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2024-2025 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2024-2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2025 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2025-2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+SPDX-FileCopyrightText: Copyright 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+
+License texts: LICENSE.KleidiAI.Apache-2.0.txt and LICENSE.KleidiAI.BSD-3-Clause.txt.
+The BSD file preserves the upstream license template; the actual notices above
+identify the upstream owners. Source-file SPDX markers determine each file license.

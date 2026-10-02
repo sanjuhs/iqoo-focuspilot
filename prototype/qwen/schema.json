@@ -1,0 +1,12 @@
+{
+  "type":"object",
+  "additionalProperties":false,
+  "properties":{
+    "intent":{"type":"string","enum":["focus","alarm","pause","open","home","status","unknown"]},
+    "minutes":{"type":"integer","minimum":0,"maximum":180},
+    "hour":{"type":"integer","minimum":-1,"maximum":23},
+    "minute":{"type":"integer","minimum":-1,"maximum":59},
+    "app":{"type":"string","enum":["none","settings","calculator","clock"]}
+  },
+  "required":["intent","minutes","hour","minute","app"]
+}

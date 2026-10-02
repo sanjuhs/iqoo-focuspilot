@@ -1,0 +1,674 @@
+{
+  "status": "Host CPU regression comparison on previously evaluated fixed cases; not an independent untouched holdout",
+  "runtime": "llama.cpp 57fe1f07c via Homebrew, CPU-only 4 threads",
+  "context": 1024,
+  "microbatch": 256,
+  "capture": false,
+  "thinking": false,
+  "contextMemoryResetPerCase": true,
+  "modelSha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "benchmarkSourceSha256": "2d072d7984dd5ac3b04c94049d2cb0a77df49b0fdf9acb9deff924ee7e07e55c",
+  "summary": {
+    "original": {
+      "correct": 9,
+      "total": 16,
+      "medianTokens": 160.5,
+      "medianPrefillMs": 286.42844,
+      "medianTotalMs": 451.571145,
+      "failures": [
+        {
+          "id": "timer",
+          "expected": "timer",
+          "actual": "start_focus"
+        },
+        {
+          "id": "status",
+          "expected": "explain",
+          "actual": "start_focus"
+        },
+        {
+          "id": "unsupported-app",
+          "expected": "unknown",
+          "actual": "open_app"
+        },
+        {
+          "id": "negation",
+          "expected": "unknown",
+          "actual": "start_focus"
+        },
+        {
+          "id": "compound",
+          "expected": "unknown",
+          "actual": "start_focus"
+        },
+        {
+          "id": "payment",
+          "expected": "unknown",
+          "actual": "pause_focus"
+        },
+        {
+          "id": "knowledge",
+          "expected": "unknown",
+          "actual": "start_focus"
+        }
+      ]
+    },
+    "lean": {
+      "correct": 10,
+      "total": 16,
+      "medianTokens": 81.5,
+      "medianPrefillMs": 142.96827000000002,
+      "medianTotalMs": 284.906395,
+      "failures": [
+        {
+          "id": "pause",
+          "expected": "pause_focus",
+          "actual": "alarm"
+        },
+        {
+          "id": "timer",
+          "expected": "timer",
+          "actual": "start_focus"
+        },
+        {
+          "id": "unsupported-app",
+          "expected": "unknown",
+          "actual": "open_app"
+        },
+        {
+          "id": "negation",
+          "expected": "unknown",
+          "actual": "alarm"
+        },
+        {
+          "id": "compound",
+          "expected": "unknown",
+          "actual": "start_focus"
+        },
+        {
+          "id": "knowledge",
+          "expected": "unknown",
+          "actual": "open_app"
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "focus-1",
+      "expected": "start_focus",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 163,
+        "generated_tokens": 8,
+        "prefill_ms": 301.23429,
+        "decode_ms": 171.45646,
+        "total_ms": 472.69117,
+        "reached_eos": true,
+        "context_setup_ms": 0.000042,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "focus-1",
+      "expected": "start_focus",
+      "variant": "lean",
+      "intent": "start_focus",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 84,
+        "generated_tokens": 7,
+        "prefill_ms": 147.18738,
+        "decode_ms": 154.24158,
+        "total_ms": 301.42925,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "focus-2",
+      "expected": "start_focus",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 164,
+        "generated_tokens": 8,
+        "prefill_ms": 289.72921,
+        "decode_ms": 169.05367,
+        "total_ms": 458.78308,
+        "reached_eos": true,
+        "context_setup_ms": 0.00025,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "focus-2",
+      "expected": "start_focus",
+      "variant": "lean",
+      "intent": "start_focus",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 85,
+        "generated_tokens": 7,
+        "prefill_ms": 149.00767,
+        "decode_ms": 147.66404,
+        "total_ms": 296.67204,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "pause",
+      "expected": "pause_focus",
+      "variant": "original",
+      "intent": "pause_focus",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 159,
+        "generated_tokens": 8,
+        "prefill_ms": 286.80638,
+        "decode_ms": 169.08779,
+        "total_ms": 455.89446,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "pause",
+      "expected": "pause_focus",
+      "variant": "lean",
+      "intent": "alarm",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 80,
+        "generated_tokens": 6,
+        "prefill_ms": 137.98142,
+        "decode_ms": 129.72496,
+        "total_ms": 267.70662,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "alarm-am",
+      "expected": "alarm",
+      "variant": "original",
+      "intent": "alarm",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 164,
+        "generated_tokens": 6,
+        "prefill_ms": 288.0715,
+        "decode_ms": 129.33892,
+        "total_ms": 417.41071,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "alarm-am",
+      "expected": "alarm",
+      "variant": "lean",
+      "intent": "alarm",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 85,
+        "generated_tokens": 6,
+        "prefill_ms": 149.40129,
+        "decode_ms": 130.76683,
+        "total_ms": 280.16829,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "alarm-open",
+      "expected": "alarm",
+      "variant": "original",
+      "intent": "alarm",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 158,
+        "generated_tokens": 7,
+        "prefill_ms": 279.17829,
+        "decode_ms": 148.329,
+        "total_ms": 427.50754,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "alarm-open",
+      "expected": "alarm",
+      "variant": "lean",
+      "intent": "alarm",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 79,
+        "generated_tokens": 6,
+        "prefill_ms": 142.79575,
+        "decode_ms": 129.69321,
+        "total_ms": 272.48925,
+        "reached_eos": true,
+        "context_setup_ms": 0.000084,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "timer",
+      "expected": "timer",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 162,
+        "generated_tokens": 8,
+        "prefill_ms": 284.13225,
+        "decode_ms": 166.84404,
+        "total_ms": 450.9765,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "timer",
+      "expected": "timer",
+      "variant": "lean",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 83,
+        "generated_tokens": 7,
+        "prefill_ms": 147.89279,
+        "decode_ms": 147.16946,
+        "total_ms": 295.06258,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "open-app",
+      "expected": "open_app",
+      "variant": "original",
+      "intent": "open_app",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 157,
+        "generated_tokens": 8,
+        "prefill_ms": 282.24579,
+        "decode_ms": 167.56037,
+        "total_ms": 449.80696,
+        "reached_eos": true,
+        "context_setup_ms": 0.000208,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "open-app",
+      "expected": "open_app",
+      "variant": "lean",
+      "intent": "open_app",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 78,
+        "generated_tokens": 7,
+        "prefill_ms": 136.81542,
+        "decode_ms": 149.06862,
+        "total_ms": 285.88475,
+        "reached_eos": true,
+        "context_setup_ms": 0.000166,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "open-settings",
+      "expected": "open_app",
+      "variant": "original",
+      "intent": "open_app",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 158,
+        "generated_tokens": 8,
+        "prefill_ms": 280.86796,
+        "decode_ms": 167.67183,
+        "total_ms": 448.54012,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "open-settings",
+      "expected": "open_app",
+      "variant": "lean",
+      "intent": "open_app",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 79,
+        "generated_tokens": 7,
+        "prefill_ms": 142.2275,
+        "decode_ms": 149.30354,
+        "total_ms": 291.53142,
+        "reached_eos": true,
+        "context_setup_ms": 0.000083,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "explain",
+      "expected": "explain",
+      "variant": "original",
+      "intent": "explain",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 161,
+        "generated_tokens": 7,
+        "prefill_ms": 287.13133,
+        "decode_ms": 148.36179,
+        "total_ms": 435.49342,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "explain",
+      "expected": "explain",
+      "variant": "lean",
+      "intent": "explain",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 82,
+        "generated_tokens": 7,
+        "prefill_ms": 142.28358,
+        "decode_ms": 148.12838,
+        "total_ms": 290.41292,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "status",
+      "expected": "explain",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 161,
+        "generated_tokens": 8,
+        "prefill_ms": 286.49492,
+        "decode_ms": 167.91813,
+        "total_ms": 454.41371,
+        "reached_eos": true,
+        "context_setup_ms": 0.000208,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "status",
+      "expected": "explain",
+      "variant": "lean",
+      "intent": "explain",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 82,
+        "generated_tokens": 6,
+        "prefill_ms": 143.14079,
+        "decode_ms": 129.39763,
+        "total_ms": 272.54192,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "unsupported-app",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "open_app",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 156,
+        "generated_tokens": 8,
+        "prefill_ms": 273.99942,
+        "decode_ms": 168.58229,
+        "total_ms": 442.58204,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "unsupported-app",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "open_app",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 77,
+        "generated_tokens": 7,
+        "prefill_ms": 137.16792,
+        "decode_ms": 146.75992,
+        "total_ms": 283.92804,
+        "reached_eos": true,
+        "context_setup_ms": 0.000208,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "negation",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 159,
+        "generated_tokens": 8,
+        "prefill_ms": 287.7465,
+        "decode_ms": 168.00188,
+        "total_ms": 455.74933,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "negation",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "alarm",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 80,
+        "generated_tokens": 6,
+        "prefill_ms": 137.724,
+        "decode_ms": 129.86062,
+        "total_ms": 267.58525,
+        "reached_eos": true,
+        "context_setup_ms": 0.000125,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "compound",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 164,
+        "generated_tokens": 8,
+        "prefill_ms": 285.89112,
+        "decode_ms": 166.27437,
+        "total_ms": 452.16579,
+        "reached_eos": true,
+        "context_setup_ms": 0.000083,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "compound",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 85,
+        "generated_tokens": 7,
+        "prefill_ms": 148.95263,
+        "decode_ms": 148.78383,
+        "total_ms": 297.73679,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "destructive",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "unknown",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 158,
+        "generated_tokens": 7,
+        "prefill_ms": 279.73138,
+        "decode_ms": 149.03838,
+        "total_ms": 428.77008,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "destructive",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "unknown",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 79,
+        "generated_tokens": 6,
+        "prefill_ms": 142.20842,
+        "decode_ms": 129.15842,
+        "total_ms": 271.36704,
+        "reached_eos": true,
+        "context_setup_ms": 0.000042,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "payment",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "pause_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 164,
+        "generated_tokens": 10,
+        "prefill_ms": 286.36196,
+        "decode_ms": 204.51925,
+        "total_ms": 490.88154,
+        "reached_eos": true,
+        "context_setup_ms": 0.000166,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "payment",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "unknown",
+      "correct": true,
+      "metrics": {
+        "prompt_tokens": 85,
+        "generated_tokens": 6,
+        "prefill_ms": 149.21779,
+        "decode_ms": 131.5845,
+        "total_ms": 280.80262,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "knowledge",
+      "expected": "unknown",
+      "variant": "original",
+      "intent": "start_focus",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 160,
+        "generated_tokens": 8,
+        "prefill_ms": 287.88025,
+        "decode_ms": 185.25913,
+        "total_ms": 473.14013,
+        "reached_eos": true,
+        "context_setup_ms": 0.000166,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    },
+    {
+      "id": "knowledge",
+      "expected": "unknown",
+      "variant": "lean",
+      "intent": "open_app",
+      "correct": false,
+      "metrics": {
+        "prompt_tokens": 81,
+        "generated_tokens": 7,
+        "prefill_ms": 171.39675,
+        "decode_ms": 162.38471,
+        "total_ms": 333.78175,
+        "reached_eos": true,
+        "context_setup_ms": 0.000167,
+        "cpu_only": true,
+        "capture_enabled": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+root ::= "{\"intent\":\"" intent "\"}"
+intent ::= "start_focus" | "pause_focus" | "alarm" | "timer" | "open_app" | "explain" | "unknown"

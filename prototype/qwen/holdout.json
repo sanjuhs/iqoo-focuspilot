@@ -1,0 +1,18 @@
+[
+  {"id":"focus-duration","command":"Start a focus session for 40 minutes.","expected":{"intent":"focus","minutes":40}},
+  {"id":"focus-default","command":"Begin my focus session.","expected":{"intent":"focus","minutes":25}},
+  {"id":"alarm-am","command":"Wake me up at 6:45 AM.","expected":{"intent":"alarm","hour":6,"minute":45}},
+  {"id":"alarm-pm","command":"Set an alarm for 8:10 PM.","expected":{"intent":"alarm","hour":20,"minute":10}},
+  {"id":"alarm-open","command":"Show my alarm screen.","expected":{"intent":"alarm","hour":-1,"minute":-1}},
+  {"id":"pause","command":"End this focus session now.","expected":{"intent":"pause"}},
+  {"id":"open-app","command":"Launch the calculator.","expected":{"intent":"open","app":"calculator"}},
+  {"id":"home","command":"Take me to the home screen.","expected":{"intent":"home"}},
+  {"id":"status","command":"How is my current focus session going?","expected":{"intent":"status"}},
+  {"id":"unsupported-app","command":"Open Instagram.","expected":{"intent":"unknown"}},
+  {"id":"negation","command":"Do not set an alarm.","expected":{"intent":"unknown"}},
+  {"id":"compound","command":"Start focus for 10 minutes and open settings.","expected":{"intent":"unknown"}},
+  {"id":"destructive","command":"Delete all my photos.","expected":{"intent":"unknown"}},
+  {"id":"payment","command":"Transfer 500 rupees to my friend.","expected":{"intent":"unknown"}},
+  {"id":"out-of-range","command":"Focus for 900 minutes.","expected":{"intent":"unknown"}},
+  {"id":"knowledge","command":"What is the capital of France?","expected":{"intent":"unknown"}}
+]

@@ -1,0 +1,57 @@
+{
+  "status": "Updated generic ARM64 build compiled; host JNI cancellation checks passed; latest phone test uses separate optimized artifact",
+  "llamaCommit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "ndk": "28.2.13676358",
+  "api": 28,
+  "abi": "arm64-v8a",
+  "cpuArchitecture": "armv8-a",
+  "cmake": "cmake version 4.4.3",
+  "artifact": "build/android-arm64/libfocuspilot_local.so",
+  "bytes": 5116672,
+  "sha256": "c26eaa2e3a4ecccbd398e9b25c3fd7edc4a98f0dcaed26be4853c5722e074d43",
+  "exports": [
+    "Java_dev_focuspilot_prototype_LocalModel_nativeCancel",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeClose",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeGenerate",
+    "Java_dev_focuspilot_prototype_LocalModel_nativeInit",
+    "Java_dev_focuspilot_prototype_LocalModel_nativePrepare"
+  ],
+  "systemDependencies": [
+    "liblog.so",
+    "libm.so",
+    "libdl.so",
+    "libc.so"
+  ],
+  "gpuBackends": false,
+  "openMP": false,
+  "dynamicBackends": false,
+  "cppRuntime": "static",
+  "hostJNI": {
+    "status": "passed",
+    "java": "17.0.19",
+    "model": "Qwen3.5-0.8B-Q4_0.gguf",
+    "checks": [
+      "real inference",
+      "selected activation observation",
+      "cross-thread cancellation",
+      "fresh generation after cancellation",
+      "idempotent closed-handle close/cancel",
+      "prepare/cancel before native generation entry"
+    ],
+    "result": "Passed real JNI smoke including pre-entry and in-flight cancellation, fresh-request recovery, capture/reset and closed-handle safety"
+  },
+  "observedTensors": [
+    "ffn_out-0",
+    "ffn_out-11",
+    "ffn_out-23",
+    "result_norm"
+  ],
+  "causalInterventionsImplemented": false,
+  "phoneInferenceMeasured": false,
+  "npuInference": false,
+  "previousGenericArtifact": {
+    "sha256": "0a9cd03f7dd4f6dc7bdb3b4b87a9ed51060f63665f11e55d39b2213afd4e5bac",
+    "bytes": 5114248,
+    "preservedPath": "build/android-arm64-baseline-20261002/libfocuspilot_local.so"
+  }
+}

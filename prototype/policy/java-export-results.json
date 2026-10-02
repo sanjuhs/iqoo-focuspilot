@@ -1,0 +1,22 @@
+{
+  "command": "python3 prototype/policy/export_java.py --verify",
+  "generated_java_sha256": "8bdb4a25108be2a83a1d86ff79ff20a98818ceec915f3b96cedbd0e6c19436d9",
+  "heldout_count": 480,
+  "heldout_scenario_families": [
+    "correlated_overruns",
+    "moderate_everywhere",
+    "sparse_extremes"
+  ],
+  "javac": "javac 17.0.19",
+  "maximum_absolute_difference": {
+    "feature_ablation_scores": 1.8318679906315083e-15,
+    "hidden_contributions": 7.105427357601002e-15,
+    "logit": 1.4210854715202004e-14,
+    "score": 1.2212453270876722e-15
+  },
+  "parameters_sha256": "d1edaa8015959a4bd199850ef3492547363ecdd8131a824fd2bf4604062fc1a6",
+  "source_sha256": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+  "status": "verified standalone desktop JVM, not physical phone/NPU execution",
+  "threshold": 0.62,
+  "threshold_disagreements": 0
+}
