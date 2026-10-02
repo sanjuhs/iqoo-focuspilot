@@ -2,16 +2,38 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
-## Reviewed reset candidate — v0.13
+## Reviewed reset — v0.13
 
 The research source now requires explicit session-reset review, dismisses that
 review when the activity pauses, and refuses confirmation after the session
 generation changes. Reset clears the stale interrupted-session warning. Qwen3.5
 0.8B Q4_0, prompt, gate, native runtime and companion assets remain unchanged.
-The app and separate isolated-preference instrumentation APK build; all 148 JVM
-tests pass, with zero lint errors and 65 warnings. Physical isolated reset and
-production cancellation verification are pending at this source checkpoint.
-The existing v0.12 phone and published demo evidence retain their original scope.
+App source `1eed4348d3d0233d786bcd3b86c05d225ebf8db6` builds both light and
+model-bundled APKs plus a separate test APK. All 148 JVM tests pass, with zero lint
+errors and 65 warnings; five host harness boundary tests pass. Both app packages
+pass signature, native/model, version, permission and six-notice inspection.
+
+Actual Nothing instrumentation passes 22 checks using two uniquely owned
+preference stores: paused interrupted checkpoint reset, counters/points, retained
+settings and authored-data sentinels, same-process repository reconstruction and
+a reset active countdown checked after its old deadline. The fixtures are removed.
+The three named production preference identities, original model bytes/hash/inode,
+paused/off/100/97,331 ms, microphone/notification grants and absent own services
+match before/after. The v0.13 light APK and its separate test APK remain installed.
+This fixture-only run uses no UI, model inference, wake or production reset. The
+phone locked before the interactive repeat: Keep/Back/background-dismissal and
+stale-generation UI branches remain pending. The first formatted-output checker
+failure is preserved; the successful repeat captures raw structured results.
+
+Packaging reserved a 14,966,902,017-byte two-copy peak below the strict 15 GB cap;
+actual post-packaging project files are about 14.398 GB. A new bundled missing-model
+phone import is not tested: v0.12's import result remains historical. The existing
+v0.12 model/action/video evidence retains its original APK attribution. ASR,
+permissioned monitoring/floating, disconnected operation, iQOO NPU, Office Kit and
+eligible accepted submission remain unfinished.
+[Reset scope and repeat procedure](reviewed-reset.md),
+[physical fixture record](reviewed-reset-phone-v013.json),
+[package identities](reviewed-reset-artifacts.json).
 
 ## Compact intent experiment — rejected
 

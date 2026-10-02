@@ -4,6 +4,19 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current v0.13 reviewed reset
+
+Keep Qwen3.5-0.8B Q4_0 as requested. Reset now requires an action-level review
+and clears the stale interrupted-session warning. Both app packages pass inspection;
+the light APK and separate isolated test APK are installed. All 148 JVM tests and
+22 actual Android fixture checks pass. Production preferences, model identity,
+paused/off/100/97,331 ms and microphone/notification grants remain unchanged.
+The phone locked before UI cancellation checks; those remain pending. The v0.12
+video and model/import measurements retain their own package attribution.
+[Reset behavior, artifacts and repeat procedure](docs/reviewed-reset.md).
+The broader goal remains active, including ASR, opt-in persistent/floating use,
+disconnected inference, actual iQOO/NPU, Office Kit and accepted eligible submission.
+
 ## Compact intent experiment — rejected
 
 A locked one-digit Qwen candidate was compared with the shipped prompt on 100

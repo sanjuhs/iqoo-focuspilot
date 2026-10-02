@@ -1,5 +1,14 @@
 # Remaining deliverables — full-scope audit
 
+**Later v0.13 reset update:** reviewed reset and interrupted-warning repair are
+built and installed with Qwen3.5 unchanged. Twenty-two actual isolated Android
+checks pass with exact production preference/model/checkpoint preservation;
+Keep/Back/background-dismissal UI checks await an unlocked phone. Both app
+packages pass inspection; the existing v0.12 video and inference/import outcomes
+remain historical. This closes only the isolated reset branch, with the full
+assistant and accepted eligible submission still unfinished.
+[Evidence and remaining branches](reviewed-reset.md).
+
 Audited 2 October 2026 (IST) against the original request, [instructions](../instructions.md), [plan](../plan.md), [rules/rubric](../hackathon.md) and [status](status.md). **The complete assistant and accepted hackathon submission are unfinished.** The initial audit below is bound to research v0.9 or explicitly historical builds. A later v0.10 source/build/package/installation update is recorded separately; its update installation changed no permission, focus, observation or virtual balance. No registration or submission operation was performed.
 
 **Later v0.10 host-only confirmation:** the fixed gate with unchanged original prompt/Qwen/native improved supported exact proposals **15→31/50**, with 16 gains/zero losses and all 50 unsupported requests rejected; zero wrong accepts were observed, but 19 supported requests falsely abstained. Raw model correctness was 36/100, with 49/50 unsupported tool proposals. This fresh synthetic result completes the host confirmation portion of action 2 below; source/build/package/installation identities are recorded in the v0.10 manifest, while current phone-action and full-scope gates remain pending. [Selection and limitations](conversational-commands.md), [frozen confirmation](../prototype/command-v10-confirm/README.md). No blind requests were inspected by this audit.

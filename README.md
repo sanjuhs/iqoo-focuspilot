@@ -4,14 +4,15 @@ A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.
 
-**Qwen3.5-0.8B Q4_0 runs inside the Android app on CPU.** The current research
-build has real Nothing-phone evidence for typed commands, countdowns, paused
-process recovery and explicit task readback. Voice, permissioned monitoring,
-iQOO NPU and Office Kit still need physical verification.
+**Qwen3.5-0.8B Q4_0 remains the local command model.** Earlier v0.12 Nothing-phone
+tests establish CPU inference, typed commands, countdowns, paused recovery and task
+readback. v0.13 adds reviewed session reset, verified through 22 isolated Android
+checks with production state preserved. Visible reset cancellation, voice,
+permissioned monitoring, iQOO NPU and Office Kit still need physical verification.
 
-[Download research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
+[Download research v0.13](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
 · [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.12)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.13)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -21,7 +22,7 @@ iQOO NPU and Office Kit still need physical verification.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. Published v0.12 packages use an
+The app supports Android 9/API 28+ on ARM64. Published v0.13 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.

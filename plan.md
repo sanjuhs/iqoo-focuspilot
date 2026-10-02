@@ -5,6 +5,17 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## Current v0.13 reset checkpoint
+
+The requested Qwen3.5-0.8B Q4_0 model remains selected. Reviewed reset and recovery
+warning repair build into light and bundled packages; 148 JVM tests pass. Actual
+Android isolated fixtures pass 22 checks while preserving production preferences,
+model identity, paused/off/100/97,331 ms and the two runtime grant snapshots.
+Next, finish visible reset cancellation/background checks when the phone is unlocked,
+then resume the existing voice/monitor/floating and complete-workflow gates.
+Keep historical v0.12 video/inference/import evidence attributed to that APK.
+[Scope, sources and repeat procedure](docs/reviewed-reset.md).
+
 ## Compact intent experiment — rejected
 
 A locked one-digit Qwen candidate was compared with the shipped prompt on 100

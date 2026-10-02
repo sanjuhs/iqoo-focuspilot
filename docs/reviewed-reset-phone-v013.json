@@ -1,0 +1,99 @@
+{
+  "kind": "pre-event reviewed reset; isolated real Android repository and production UI cancellation only",
+  "source_commit": "9fa0b583d31783209c60f8137d5a0ccad3996035",
+  "harness_sha256": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+  "light_apk": {
+    "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+    "bytes": 5497068
+  },
+  "test_apk": {
+    "sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+    "bytes": 29334
+  },
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "before": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true
+  },
+  "previous_installed_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+  "phases": [
+    "isolated recovered + active reset; fixture cleanup; production snapshot exact"
+  ],
+  "production_reset_confirmed": false,
+  "permission_grants": 0,
+  "model_inference": false,
+  "fixture_only": true,
+  "production_ui_cancellation_verified": false,
+  "limitations": [
+    "Repository reconstruction is same-process persistence, not a process-restart/disk-read test.",
+    "Checklist/live-label sentinels verify key preservation, not full valid-record deserialization.",
+    "Generation-mismatch confirmation is source-reviewed, not physically exercised.",
+    "No microphone, monitoring, disconnected inference, NPU or Office Kit evidence."
+  ],
+  "instrumentation": "INSTRUMENTATION_RESULT: checks=22\nINSTRUMENTATION_RESULT: isolated_stores=2\nINSTRUMENTATION_RESULT: passed=true\nINSTRUMENTATION_RESULT: production_singleton_used=false\nINSTRUMENTATION_RESULT: stream=FocusRepository reset isolation: true, 22 checks; no production preference store or model access.\n\nINSTRUMENTATION_CODE: -1\n",
+  "after": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true
+  },
+  "installed_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+  "passed": true,
+  "project_bytes_after": 14397887431
+}

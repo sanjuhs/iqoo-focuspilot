@@ -1,0 +1,221 @@
+{
+  "kind": "Pre-event reviewed-reset research packages and isolated Android fixtures; no eligible submission or full app proof",
+  "app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "app_source_sha256": {
+    "prototype/android/app/build.gradle": "c0eb3001b1f9fcdd48b80dc801c6ec634b28724a5cb1481c3698f5e551318c63",
+    "prototype/android/app/src/main/AndroidManifest.xml": "4e9e5a38f7b582234edb98aa3a66341d7b3b5202ff651b8f4c70d9b86a9e726f",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "0bcdf9dc83d301fe9370f8d6dd1e78a6550f616445c569fe5f4f833e0c70a77a",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java": "e620d1f159ecadde98e18c851538244542b784faead876bc1d60dfed35dbd83b",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionView.java": "6657249dd728e43842d90bb46f9b9079b24ef59a480cba185d9177f41458795b",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/ResetIsolationInstrumentation.java": "ae47fcabbe88a06f595c23e041e53ad4829b0bedc307da7746d7161471df7d5b"
+  },
+  "executed_harness_commit": "9fa0b583d31783209c60f8137d5a0ccad3996035",
+  "executed_harness_sha256": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+  "version_code": 13,
+  "version_name": "0.13-reviewed-reset-research",
+  "packages": [
+    {
+      "artifact": {
+        "name": "focuspilot-research-v013-reset-light.apk",
+        "bytes": 5497068,
+        "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "bundled_model": false,
+        "version_code": 13,
+        "version_name": "0.13-reviewed-reset-research"
+      },
+      "audit": {
+        "identity": {
+          "status": "verified",
+          "scope": "local byte identity against declared manifest",
+          "observed": {
+            "bytes": 5497068,
+            "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+          },
+          "declared": {
+            "bytes": 5497068,
+            "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+          }
+        },
+        "runtime_verified": false,
+        "android_payload_present": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "native_hash_parity": true,
+        "licenses": {
+          "FocusPilot-MIT.txt": true,
+          "Qwen3.5-Apache-2.0.txt": true,
+          "llama.cpp-MIT.txt": true,
+          "KleidiAI-Apache-2.0.txt": true,
+          "KleidiAI-BSD-3-Clause.txt": true,
+          "KleidiAI-notices.txt": true
+        },
+        "model_files": [],
+        "bundle_presence_parity": true,
+        "permissions": [
+          "android.permission.PACKAGE_USAGE_STATS",
+          "android.permission.RECORD_AUDIO",
+          "com.android.alarm.permission.SET_ALARM",
+          "android.permission.POST_NOTIFICATIONS",
+          "android.permission.FOREGROUND_SERVICE",
+          "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+          "android.permission.SYSTEM_ALERT_WINDOW"
+        ],
+        "package_identity": true,
+        "internet_absent": true,
+        "permission_scope": "parsed from packaged APK, not user permission grants",
+        "version_parity": true,
+        "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+        "status": "verified"
+      }
+    },
+    {
+      "artifact": {
+        "name": "focuspilot-research-v013-reset-bundled.apk",
+        "bytes": 568538615,
+        "sha256": "6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0",
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "bundled_model": true,
+        "version_code": 13,
+        "version_name": "0.13-reviewed-reset-research"
+      },
+      "audit": {
+        "identity": {
+          "status": "verified",
+          "scope": "local byte identity against declared manifest",
+          "observed": {
+            "bytes": 568538615,
+            "sha256": "6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0"
+          },
+          "declared": {
+            "bytes": 568538615,
+            "sha256": "6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0"
+          }
+        },
+        "runtime_verified": false,
+        "android_payload_present": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "native_hash_parity": true,
+        "licenses": {
+          "FocusPilot-MIT.txt": true,
+          "Qwen3.5-Apache-2.0.txt": true,
+          "llama.cpp-MIT.txt": true,
+          "KleidiAI-Apache-2.0.txt": true,
+          "KleidiAI-BSD-3-Clause.txt": true,
+          "KleidiAI-notices.txt": true
+        },
+        "model_files": [
+          "assets/qwen35.gguf"
+        ],
+        "bundle_presence_parity": true,
+        "model": {
+          "bytes": 563036064,
+          "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+          "zip_compression": 0
+        },
+        "model_hash_parity": true,
+        "permissions": [
+          "android.permission.PACKAGE_USAGE_STATS",
+          "android.permission.RECORD_AUDIO",
+          "com.android.alarm.permission.SET_ALARM",
+          "android.permission.POST_NOTIFICATIONS",
+          "android.permission.FOREGROUND_SERVICE",
+          "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+          "android.permission.SYSTEM_ALERT_WINDOW"
+        ],
+        "package_identity": true,
+        "internet_absent": true,
+        "permission_scope": "parsed from packaged APK, not user permission grants",
+        "version_parity": true,
+        "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+        "status": "verified"
+      }
+    }
+  ],
+  "test_apk": {
+    "file": "artifacts/focuspilot-research-v013-reset-test.apk",
+    "bytes": 29334,
+    "sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b"
+  },
+  "physical_record": {
+    "file": "docs/reviewed-reset-phone-v013.json",
+    "bytes": 3686,
+    "sha256": "c3b8ed3eb33e43d048fc965523c20154b29a780df4f0c2da012484b875fd10ec"
+  },
+  "failed_first_checker_record": {
+    "file": "docs/reviewed-reset-phone-v013-first-attempt.json",
+    "bytes": 2259,
+    "sha256": "a8a83eb6a63badd08a6cb0a0d38bfc9286ab54a4e4ad0091fe846f751f463b6a"
+  },
+  "build": {
+    "command": "./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug; subsequent assembleDebugAndroidTest lintDebug after fixture refinements",
+    "jvm_tests": 148,
+    "jvm_failures": 0,
+    "lint_errors": 0,
+    "lint_warnings": 65,
+    "harness_host_tests": 5,
+    "fixture_checks": 22,
+    "native_rebuilt": false,
+    "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e"
+  },
+  "packaging": {
+    "packager": {
+      "file": "scripts/package_bundled_apk.py",
+      "bytes": 13652,
+      "sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36"
+    },
+    "report": {
+      "file": "artifacts/bundled-apk-v013-reset.json",
+      "bytes": 4586,
+      "sha256": "836f91ecb7557178ab3ae041950b1be8d9b957462784fdba86fb1e6838bc5e74"
+    },
+    "storage": {
+      "project_bytes_before": 13829311465,
+      "per_copy_byte_cap": 568795276,
+      "reserved_temporary_bytes": 1137590552,
+      "estimated_peak_project_bytes": 14966902017,
+      "project_limit_bytes": 15000000000,
+      "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+    },
+    "original_non_signature_payload_parity": true,
+    "only_added_non_signature_entry": "assets/qwen35.gguf",
+    "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf"
+  },
+  "phone_scopes": {
+    "light_installed": true,
+    "test_apk_installed": true,
+    "bundle_installed": false,
+    "fixture_only": true,
+    "production_reset_confirmed": false,
+    "ui_cancel_background_verified": false,
+    "model_inference_in_this_run": false,
+    "model_identity_preserved": true,
+    "three_production_preference_identities_preserved": true,
+    "microphone_notification_grants_preserved": true,
+    "services_absent": true,
+    "fixture_cleanup_verified": true
+  },
+  "historical_evidence": {
+    "bundled_import": "docs/bundled-import-phone-v012.json",
+    "recorded_video": "artifacts/v012-pitch/pitch-v012.mp4",
+    "warning": "All v0.12 runtime/video/import measurements retain their own APK attribution; unchanged model/native identities do not replay those tests on v0.13."
+  },
+  "pending": [
+    "Interactive Keep/Back/background dismissal",
+    "Stale-generation UI confirmation refusal",
+    "Model/guide/voice/monitoring/floating full workflow",
+    "Disconnected operation",
+    "Actual iQOO NPU",
+    "Actual Office Kit",
+    "Event-written eligibility and accepted submission"
+  ],
+  "phone_device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "android": "16",
+    "api": "36"
+  },
+  "initial_v012_to_final_v013_production_snapshot_exact": true
+}
