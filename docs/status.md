@@ -27,6 +27,9 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   timer and research results below keep their original binary/source scopes.
 - Latest measured logical workspace size is **11.51 GiB**, within the authorized
   15 GB ceiling. No model download or paid API use in this update.
+- [0.8 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.8)
+  publishes both APKs and their manifest. All three server sizes/SHA-256 digests
+  match local files and the source tag matches the stated app commit.
 
 ## Frozen-Qwen decision-head research
 

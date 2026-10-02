@@ -2,6 +2,12 @@
 
 Prepared 2 October 2026. The v0.8 source expands the **model-facing original-request validator**, retaining explicit proposal review. Qwen3.5-0.8B weights, the `LocalModel` prompt and native runtime are unchanged. The frozen-representation intent classifier remains unpromoted. The integrated build reports **119 passing JVM cases**, zero failures/errors/skips, zero lint errors and **59 warnings**. Both light/bundled APKs passed signature/native/model/license/permission inspection. The light APK installed on Nothing and its installed APK/private-model hashes match. Physical v0.8 command/countdown outcomes remain pending an unlocked own-app foreground. [Artifact identities](natural-commands-artifacts.json). The source-locked independent 100-request/50-family host evaluation is complete, with low supported-task coverage described below. Host tests and evaluation do not establish phone outcomes.
 
+[Research v0.8](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.8)
+publishes both APKs and the artifact manifest, bound to source
+`a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`. All three GitHub asset sizes and
+server SHA-256 digests match local files; earlier packages/video remain preserved.
+This is delivery/identity evidence, not a physical result or submission acceptance.
+
 ## Whole-request validation
 
 Qwen proposes an intent; `ModelCommandGate` then consumes one complete supported original request and validates its slots independently. A matching word inside unrelated prose is insufficient. Supported conversational wrappers such as “Please,” “Could you,” “Help me” and a Mira greeting may surround the bounded forms. Terminal punctuation and supported politeness suffixes are normalized; quoted statements, arbitrary additional prose and a second instruction do not become commands.

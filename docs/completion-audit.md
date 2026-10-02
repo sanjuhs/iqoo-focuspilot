@@ -2,7 +2,7 @@
 
 This project is an implemented **pre-event research prototype**, with useful public artifacts and some reported Nothing-phone behavior. It is **not a completed iQOO deployment or an eligible, accepted hackathon submission**. This audit preserves the full requested scope; it does not redefine success as passing tests, publishing an APK, or recording a concept video.
 
-The requirements were read from `instructions.md`, `plan.md`, `hackathon.md`, and `docs/status.md`, including later additions: a friendly companion, local model, few-shot personalization, interpretability, foreground monitoring, voice, iQOO NPU deployment, Office Kit, open-source backup, and submission. Broader cross-app control and IoT remain proposed work; actual local LLM fine-tuning is now being evaluated separately and is not promoted to the phone; these cannot be inferred from the current assistant UI.
+The requirements were read from `instructions.md`, `plan.md`, `hackathon.md`, and `docs/status.md`, including later additions: a friendly companion, local model, few-shot personalization, interpretability, foreground monitoring, voice, iQOO NPU deployment, Office Kit, open-source backup, and submission. Broader cross-app control and IoT remain proposed work; actual local LLM fine-tuning completed with a rejected adapter, and a separate trained representation classifier remains unpromoted; these cannot be inferred from the current assistant UI.
 
 ## Reproduce the read-only audit
 
@@ -15,7 +15,32 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
-## Current 0.7 addition
+## Current 0.8 addition
+
+Both signed APKs are bound to app source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`.
+The auditor checks their byte/native/model/license/permission identities and required
+public release assets. Light installation and installed APK/private-model hashes
+were verified on Nothing; no v0.8 physical command/countdown report exists, so that
+requirement remains **incomplete**. Phone asleep/own-app not foreground is the
+current device precondition; OS permissions were not changed.
+
+Current XML reports **119 JVM cases**, zero failures/errors/skips, lint zero errors
+and **59 warnings**. Four separate new command-evaluation tests pass; these are not
+Android execution or lifecycle evidence. The frozen-before-edit 100-request host
+comparison improves generated-plus-gate strict correctness 64→72/100 and supported
+success 9→12/40, with wrong accepts five→zero. It retains 28 supported false
+abstentions, nine gains/six regressions and raw Qwen semantic correctness 29/100.
+No phone actions ran. [Contract/results](natural-commands.md),
+[artifact identities](natural-commands-artifacts.json).
+
+The separate [representation classifier](intent-head.md) trained 7,175 parameters
+on frozen Qwen activations, raising raw synthetic intent correctness 46→76/90.
+Its validation threshold relies on numerical saturation and strict supported
+command coverage worsens 17→15/65 under the frozen v0.7 gate. It remains unpromoted;
+head-only contribution algebra is not full-Qwen mechanistic understanding. Neither
+research result substitutes for the physical, iQOO, Office Kit or submission gates.
+
+## Previous 0.7 addition
 
 The auditor also inspects both 0.7 APKs and their public assets, bound to app source
 `6bd4841b170be0445470eff9977133bc2accc8f6`. It reports the phone-countdown requirement
