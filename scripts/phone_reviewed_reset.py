@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reset synthetic isolated stores only; production UI exercises Keep/Back/Home.
 
-Requires the already unlocked own app, paused observation-off production state,
+UI mode requires the already unlocked own app. Both modes require paused observation-off production state,
 frozen light/test APK hashes, absent own services and matching pinned model.
 Never confirms production Reset, grants permissions, wakes or clears app data.
 """
@@ -51,8 +51,10 @@ def main():
     p.add_argument('--test-sha',required=True);p.add_argument('--source',required=True)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--execute-isolated-reset',action='store_true')
     p.add_argument('--reuse-installed-test',action='store_true',help='Reuse only the exact frozen previously installed synthetic test APK')
+    p.add_argument('--fixture-only',action='store_true',help='Only isolated repository fixtures; no UI, wake or APK installation, exact already installed APKs required')
     a=p.parse_args()
     if not a.execute_isolated_reset:p.error('Explicit isolated synthetic reset flag required')
+    if a.fixture_only and not a.reuse_installed_test:p.error('Fixture-only requires exact installed test reuse')
     output=a.output.resolve()
     if not output.is_relative_to(ROOT/'artifacts') or output.exists():raise RuntimeError('New ignored artifact record required')
     source=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
@@ -62,9 +64,12 @@ def main():
     with zipfile.ZipFile(a.light) as apk:
         if hashlib.sha256(apk.read('lib/arm64-v8a/libfocuspilot_local.so')).hexdigest()!=NATIVE:raise RuntimeError('Native differs')
         if any(name.endswith('.gguf') for name in apk.namelist()):raise RuntimeError('Light APK required')
-    lab=PhoneLab(a.serial);lab.guard();before=snapshot(lab)
+    lab=PhoneLab(a.serial)
+    if not a.fixture_only:lab.guard()
+    before=snapshot(lab)
     if before['checkpoint']['active'] or before['checkpoint']['observation'] or not before['services_absent'] or not pinned(before['model']):raise RuntimeError('Paused/off/no services/pinned model required')
     reuse_test=require_test_application_absent(lab,reuse_sha=a.test_sha if a.reuse_installed_test else None)
+    if a.fixture_only and (not reuse_test or installed_sha(lab)!=a.light_sha):raise RuntimeError('Fixture-only requires both exact installed APKs; nothing installed')
     if project_bytes(ROOT)+10_000_000>15_000_000_000:raise RuntimeError('Small test record storage reserve exceeds budget')
     record={'kind':'pre-event reviewed reset; isolated real Android repository and production UI cancellation only',
         'source_commit':source,'harness_sha256':sha(Path(__file__)),
@@ -72,12 +77,13 @@ def main():
         'test_apk':{'sha256':a.test_sha,'bytes':a.test_apk.stat().st_size},
         'native_sha256':NATIVE,'before':before,'previous_installed_sha256':installed_sha(lab),'phases':[],
         'production_reset_confirmed':False,'permission_grants':0,'model_inference':False,
+        'fixture_only':a.fixture_only,'production_ui_cancellation_verified':False,
         'limitations':['Repository reconstruction is same-process persistence, not a process-restart/disk-read test.',
                       'Checklist/live-label sentinels verify key preservation, not full valid-record deserialization.',
                       'Generation-mismatch confirmation is source-reviewed, not physically exercised.',
                       'No microphone, monitoring, disconnected inference, NPU or Office Kit evidence.']}
     try:
-        install(lab,a.light,a.light_sha)
+        if not a.fixture_only:install(lab,a.light,a.light_sha)
         if not reuse_test:
             result=subprocess.run(lab.base+['install','-r',str(a.test_apk)],text=True,capture_output=True,timeout=90)
             if result.returncode or 'Success' not in result.stdout:raise RuntimeError('Synthetic test application install failed')
@@ -92,22 +98,24 @@ def main():
         if any(name.startswith('reset_isolation_') for name in leftovers):raise RuntimeError('Isolated preference cleanup not established')
         if snapshot(lab)!=before:raise RuntimeError('Production snapshot changed during isolated test')
         record['phases'].append('isolated recovered + active reset; fixture cleanup; production snapshot exact')
-        main_screen(lab);lab.top();lab.tap('Reset this session')
-        lab.find('Reset your focus session?',False);lab.find('Reset session',False)
-        if snapshot(lab)!=before:raise RuntimeError('Opening reset review changed production state')
-        lab.tap('Keep session',False)
-        if snapshot(lab)!=before:raise RuntimeError('Keep session changed production state')
-        record['phases'].append('review and Keep session preserve all production snapshots')
-        lab.tap('Reset this session');lab.find('Reset your focus session?',False)
-        lab.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK')
-        if any(n.get('text')=='Reset your focus session?' for n in lab.nodes()) or snapshot(lab)!=before:raise RuntimeError('Back cancellation failed')
-        record['phases'].append('Back cancels review with exact production snapshot')
-        lab.tap('Reset this session');lab.find('Reset your focus session?',False)
-        lab.guard();lab.adb('shell','input','keyevent','KEYCODE_HOME')
-        # No launcher UI dump: return directly to the exact own activity.
-        main_screen(lab)
-        if any(n.get('text')=='Reset your focus session?' for n in lab.nodes()) or snapshot(lab)!=before:raise RuntimeError('Background review dismissal failed')
-        record['phases'].append('Home/background dismisses review; own activity return preserves snapshot')
+        if not a.fixture_only:
+            main_screen(lab);lab.top();lab.tap('Reset this session')
+            lab.find('Reset your focus session?',False);lab.find('Reset session',False)
+            if snapshot(lab)!=before:raise RuntimeError('Opening reset review changed production state')
+            lab.tap('Keep session',False)
+            if snapshot(lab)!=before:raise RuntimeError('Keep session changed production state')
+            record['phases'].append('review and Keep session preserve all production snapshots')
+            lab.tap('Reset this session');lab.find('Reset your focus session?',False)
+            lab.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK')
+            if any(n.get('text')=='Reset your focus session?' for n in lab.nodes()) or snapshot(lab)!=before:raise RuntimeError('Back cancellation failed')
+            record['phases'].append('Back cancels review with exact production snapshot')
+            lab.tap('Reset this session');lab.find('Reset your focus session?',False)
+            lab.guard();lab.adb('shell','input','keyevent','KEYCODE_HOME')
+            # No launcher UI dump: return directly to the exact own activity.
+            main_screen(lab)
+            if any(n.get('text')=='Reset your focus session?' for n in lab.nodes()) or snapshot(lab)!=before:raise RuntimeError('Background review dismissal failed')
+            record['phases'].append('Home/background dismisses review; own activity return preserves snapshot')
+            record['production_ui_cancellation_verified']=True
         record['after']=snapshot(lab);record['installed_sha256']=installed_sha(lab)
         if record['installed_sha256']!=a.light_sha:raise RuntimeError('Current installed light APK differs')
         record['passed']=True
