@@ -33,6 +33,13 @@ the new diagnostic source is `aff6fb940fb76f64f77aca8d4c0ff33164a7de43`.
 [source/artifact bindings](network-isolation-artifacts.json),
 [preserved failed first attempt](network-isolation-phone-v013-first-attempt.json).
 
+Three diagnostic assets are now published alongside the original five v0.13
+assets. All eight server sizes/digests match; the original assets and app-source
+tag are unchanged. The evidence/source backup is remote-equal. Measured project
+storage is 14,398,647,815 logical file bytes, below 15 GB. This publication does
+not add a runtime or eligibility result.
+[Publication verification](network-isolation-publication-v013.json).
+
 ## Reviewed reset — v0.13
 
 The research source now requires explicit session-reset review, dismisses that

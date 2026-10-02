@@ -115,6 +115,14 @@ and protected production state. Its evidence remains separate; it establishes
 no numeric socket-denial result. The later direct-Os probe changed the API used
 to observe denial while retaining the numeric-denial requirement.
 
+## Published diagnostic artifacts
+
+The [v0.13 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
+now includes the separate native-isolation test APK and two sanitized evidence
+records. All eight asset sizes/digests were checked against server metadata;
+the original five assets and app-source tag are unchanged.
+[Publication record](network-isolation-publication-v013.json).
+
 ## Repeat procedure
 
 Use the reviewed source and packages, an authorised ADB connection and the

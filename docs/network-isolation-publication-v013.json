@@ -1,0 +1,51 @@
+{
+  "kind": "Three diagnostic asset publication checks; eight total v0.13 assets verified; no new runtime or eligible submission",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13",
+  "release_id": 402158776,
+  "tag": "research-v0.13",
+  "tag_resolves_to": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "prerelease": true,
+  "draft": false,
+  "proof_commit": "040b2c01ced7cde7823a4650719e695a76ac47f6",
+  "proof_commit_remote_equal": true,
+  "diagnostic_source_commit": "aff6fb940fb76f64f77aca8d4c0ff33164a7de43",
+  "original_five_assets_unchanged": true,
+  "original_publication_record": "docs/reviewed-reset-publication-v013.json",
+  "new_assets": [
+    {
+      "name": "focuspilot-research-v013-network-test-direct.apk",
+      "file": "artifacts/focuspilot-research-v013-network-test-direct.apk",
+      "bytes": 49586,
+      "sha256": "36d24aedbe0cd1593125af1b7b8c9873f1589cd0106063f5d12e4833fd928b46",
+      "server_bytes": 49586,
+      "server_digest": "sha256:36d24aedbe0cd1593125af1b7b8c9873f1589cd0106063f5d12e4833fd928b46",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-network-test-direct.apk"
+    },
+    {
+      "name": "network-isolation-phone-v013.json",
+      "file": "docs/network-isolation-phone-v013.json",
+      "bytes": 20945,
+      "sha256": "79bc4a65fd07a0d1053905a2b64e044a59f884bcc28bb084e8d3ee8351ce76b9",
+      "server_bytes": 20945,
+      "server_digest": "sha256:79bc4a65fd07a0d1053905a2b64e044a59f884bcc28bb084e8d3ee8351ce76b9",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/network-isolation-phone-v013.json"
+    },
+    {
+      "name": "network-isolation-artifacts.json",
+      "file": "docs/network-isolation-artifacts.json",
+      "bytes": 3292,
+      "sha256": "cf85312334e09f2ab3dde36bb2a4c2124235ceca6ef5b594ad330ba3af957b70",
+      "server_bytes": 3292,
+      "server_digest": "sha256:cf85312334e09f2ab3dde36bb2a4c2124235ceca6ef5b594ad330ba3af957b70",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/network-isolation-artifacts.json"
+    }
+  ],
+  "eight_asset_sizes_and_digests_match": true,
+  "release_note_diagnostic_source_and_limits_present": true,
+  "project_logical_file_bytes": 14398647815,
+  "storage_cap_bytes": 15000000000,
+  "runtime_scope": "Ten openly seen native CPU requests after direct socket creation EPERM; no general accuracy, full disconnected voice/actions, NPU or causal interpretation."
+}
