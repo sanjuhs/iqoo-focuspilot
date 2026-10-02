@@ -2,6 +2,19 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Current v0.11 activation viewer — actual phone comparison
+
+Nine typed Qwen3.5-0.8B Q4_0 requests (one warm-up plus four off/on pairs) ran
+on the matching installed Nothing APK. All eight measured trials proposed Pause,
+155 prompt/eight generated tokens, with no action confirmed. Every capture-on
+trial displayed all four finite width-1,024 tensor summaries, identical within UI
+formatting across repeats; off emitted none. Native totals ranged 1,864–2,166 ms,
+with paired differences −199, −302, −46 and +135 ms. No fixed overhead, full-request
+latency or causal semantic finding is established. Post-request PSS snapshots
+ranged about 1.25 GiB. Final focus/grants/monitor state stayed unchanged. Source,
+APK/model/native and executed harness hashes are recorded; no build or model
+change was made. [Measurements and method](capture-benchmark-phone.md).
+
 ## Current v0.11 readback and monitoring prerequisite check
 
 On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms

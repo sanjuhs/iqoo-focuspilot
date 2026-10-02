@@ -3,6 +3,12 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
+**Current Qwen3.5 activation check:** eight unconfirmed typed phone proposals
+preserved the same Pause intent and token counts. Every capture-on run displayed
+all four selected tensor summaries; capture-off displayed none. Native timing
+ranged 1.86–2.17 s, and post-request PSS was about 1.25 GiB. Four pairs do not
+establish capture overhead or causal interpretation. [Measurements](docs/capture-benchmark-phone.md).
+
 **Current phone readback:** reviewed typed Pause (1,804 ms native CPU) reached the
 installed offline-English TTS engine's completion callback. Audibility, actual ASR
 and disconnected operation remain unverified. Monitoring correctly refused an

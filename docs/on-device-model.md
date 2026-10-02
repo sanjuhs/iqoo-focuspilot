@@ -57,6 +57,12 @@ identity are still unknown. The connected phone is Nothing A059/SM7635.
 
 ## What must be measured
 
+The [current v0.11 phone capture comparison](capture-benchmark-phone.md) adds four
+ordered pairs of an identical typed Pause request, with matching token counts,
+all four actual tensor summaries, separate setup timings and post-request PSS/RSS
+snapshots. Mixed timing differences establish no fixed capture overhead. It does
+not supply population latency/accuracy, peak memory or NPU performance.
+
 Report raw and post-validation intent accuracy, abstention/false-accept rates,
 slot validity, cold/warm p50/p95 with sample count, separate prompt/decode timing,
 RSS/peak memory, context/thread settings and capture overhead. Small hand-written

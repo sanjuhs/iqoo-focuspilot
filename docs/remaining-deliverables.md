@@ -40,6 +40,13 @@ profile onboarding with personal fields and Terms/Privacy choices. No fields,
 agreements or application were changed; actual cutoff/admission/video constraints
 remain inaccessible until the user completes that step. [Observed fields](hackathon-research.md).
 
+**Later v0.11 capture comparison:** four actual Nothing CPU pairs preserve Pause
+and token counts, with all four selected tensor summaries on every capture-on
+trial. Native timing differences have mixed signs; post-request memory snapshots
+are recorded. This verifies current observational capture, but establishes neither
+fixed overhead, peak memory nor causal interpretation. Final focus/grants/monitor
+state stayed unchanged. [Method and results](capture-benchmark-phone.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

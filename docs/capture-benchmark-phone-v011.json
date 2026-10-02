@@ -1,0 +1,582 @@
+{
+  "research_only": true,
+  "model": "Qwen3.5-0.8B Q4_0",
+  "backend": "CPU",
+  "context": 1024,
+  "threads": 4,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "harness_sha256": "8de034e22e38693c097243715c208c4903fafb577511c32d37ecbb38ce6242fd",
+  "pair_orders": [
+    [
+      false,
+      true
+    ],
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      true,
+      false
+    ]
+  ],
+  "command": "Stop focus",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "trials": [
+    {
+      "command": "Stop focus",
+      "capture": false,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 2069.0,
+      "prefill_ms": 998.0,
+      "decode_ms": 1071.0,
+      "action_executed": false,
+      "context_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 1,
+      "activations": [],
+      "memory": {
+        "pss_kib": 1309805,
+        "rss_kib": 1418156
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": true,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1870.0,
+      "prefill_ms": 789.0,
+      "decode_ms": 1081.0,
+      "action_executed": false,
+      "context_setup_ms": 37.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 1,
+      "activations": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00036,
+          "rms": 0.01544,
+          "min": -0.0505,
+          "max": 0.22183,
+          "first_values": [
+            0.22183347,
+            -0.00072032248,
+            0.0065699513,
+            0.0022087621,
+            -0.00016121729,
+            -0.0029685292,
+            0.017375367,
+            0.0016866969
+          ]
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": -0.00028,
+          "rms": 0.03094,
+          "min": -0.11547,
+          "max": 0.10341,
+          "first_values": [
+            -0.021840721,
+            -0.0019751545,
+            0.0020368637,
+            -0.0013815633,
+            0.035677161,
+            -0.047037855,
+            -0.021915525,
+            0.042965271
+          ]
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00987,
+          "rms": 0.20706,
+          "min": -1.0558,
+          "max": 2.94813,
+          "first_values": [
+            2.9481306,
+            0.15220349,
+            0.22413556,
+            0.065544836,
+            0.18794766,
+            0.013547033,
+            -0.12512405,
+            -0.15931693
+          ]
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "mean": 0.16724,
+          "rms": 4.36566,
+          "min": -23.07918,
+          "max": 14.98569,
+          "first_values": [
+            0.26920566,
+            4.0578966,
+            0.71723992,
+            10.443491,
+            7.4677224,
+            1.7269794,
+            1.2207621,
+            3.2154086
+          ]
+        }
+      ],
+      "memory": {
+        "pss_kib": 1312259,
+        "rss_kib": 1420612
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": true,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1864.0,
+      "prefill_ms": 777.0,
+      "decode_ms": 1086.0,
+      "action_executed": false,
+      "context_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 2,
+      "activations": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00036,
+          "rms": 0.01544,
+          "min": -0.0505,
+          "max": 0.22183,
+          "first_values": [
+            0.22183347,
+            -0.00072032248,
+            0.0065699513,
+            0.0022087621,
+            -0.00016121729,
+            -0.0029685292,
+            0.017375367,
+            0.0016866969
+          ]
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": -0.00028,
+          "rms": 0.03094,
+          "min": -0.11547,
+          "max": 0.10341,
+          "first_values": [
+            -0.021840721,
+            -0.0019751545,
+            0.0020368637,
+            -0.0013815633,
+            0.035677161,
+            -0.047037855,
+            -0.021915525,
+            0.042965271
+          ]
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00987,
+          "rms": 0.20706,
+          "min": -1.0558,
+          "max": 2.94813,
+          "first_values": [
+            2.9481306,
+            0.15220349,
+            0.22413556,
+            0.065544836,
+            0.18794766,
+            0.013547033,
+            -0.12512405,
+            -0.15931693
+          ]
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "mean": 0.16724,
+          "rms": 4.36566,
+          "min": -23.07918,
+          "max": 14.98569,
+          "first_values": [
+            0.26920566,
+            4.0578966,
+            0.71723992,
+            10.443491,
+            7.4677224,
+            1.7269794,
+            1.2207621,
+            3.2154086
+          ]
+        }
+      ],
+      "memory": {
+        "pss_kib": 1314889,
+        "rss_kib": 1423248
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": false,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 2166.0,
+      "prefill_ms": 980.0,
+      "decode_ms": 1186.0,
+      "action_executed": false,
+      "context_setup_ms": 30.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 2,
+      "activations": [],
+      "memory": {
+        "pss_kib": 1311197,
+        "rss_kib": 1419556
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": false,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1965.0,
+      "prefill_ms": 883.0,
+      "decode_ms": 1082.0,
+      "action_executed": false,
+      "context_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 3,
+      "activations": [],
+      "memory": {
+        "pss_kib": 1307961,
+        "rss_kib": 1413104
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": true,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1919.0,
+      "prefill_ms": 829.0,
+      "decode_ms": 1090.0,
+      "action_executed": false,
+      "context_setup_ms": 30.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 3,
+      "activations": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00036,
+          "rms": 0.01544,
+          "min": -0.0505,
+          "max": 0.22183,
+          "first_values": [
+            0.22183347,
+            -0.00072032248,
+            0.0065699513,
+            0.0022087621,
+            -0.00016121729,
+            -0.0029685292,
+            0.017375367,
+            0.0016866969
+          ]
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": -0.00028,
+          "rms": 0.03094,
+          "min": -0.11547,
+          "max": 0.10341,
+          "first_values": [
+            -0.021840721,
+            -0.0019751545,
+            0.0020368637,
+            -0.0013815633,
+            0.035677161,
+            -0.047037855,
+            -0.021915525,
+            0.042965271
+          ]
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00987,
+          "rms": 0.20706,
+          "min": -1.0558,
+          "max": 2.94813,
+          "first_values": [
+            2.9481306,
+            0.15220349,
+            0.22413556,
+            0.065544836,
+            0.18794766,
+            0.013547033,
+            -0.12512405,
+            -0.15931693
+          ]
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "mean": 0.16724,
+          "rms": 4.36566,
+          "min": -23.07918,
+          "max": 14.98569,
+          "first_values": [
+            0.26920566,
+            4.0578966,
+            0.71723992,
+            10.443491,
+            7.4677224,
+            1.7269794,
+            1.2207621,
+            3.2154086
+          ]
+        }
+      ],
+      "memory": {
+        "pss_kib": 1310541,
+        "rss_kib": 1415684
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": true,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 2034.0,
+      "prefill_ms": 817.0,
+      "decode_ms": 1217.0,
+      "action_executed": false,
+      "context_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 4,
+      "activations": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00036,
+          "rms": 0.01544,
+          "min": -0.0505,
+          "max": 0.22183,
+          "first_values": [
+            0.22183347,
+            -0.00072032248,
+            0.0065699513,
+            0.0022087621,
+            -0.00016121729,
+            -0.0029685292,
+            0.017375367,
+            0.0016866969
+          ]
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": -0.00028,
+          "rms": 0.03094,
+          "min": -0.11547,
+          "max": 0.10341,
+          "first_values": [
+            -0.021840721,
+            -0.0019751545,
+            0.0020368637,
+            -0.0013815633,
+            0.035677161,
+            -0.047037855,
+            -0.021915525,
+            0.042965271
+          ]
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00987,
+          "rms": 0.20706,
+          "min": -1.0558,
+          "max": 2.94813,
+          "first_values": [
+            2.9481306,
+            0.15220349,
+            0.22413556,
+            0.065544836,
+            0.18794766,
+            0.013547033,
+            -0.12512405,
+            -0.15931693
+          ]
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "mean": 0.16724,
+          "rms": 4.36566,
+          "min": -23.07918,
+          "max": 14.98569,
+          "first_values": [
+            0.26920566,
+            4.0578966,
+            0.71723992,
+            10.443491,
+            7.4677224,
+            1.7269794,
+            1.2207621,
+            3.2154086
+          ]
+        }
+      ],
+      "memory": {
+        "pss_kib": 1315619,
+        "rss_kib": 1420764
+      }
+    },
+    {
+      "command": "Stop focus",
+      "capture": false,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1899.0,
+      "prefill_ms": 773.0,
+      "decode_ms": 1126.0,
+      "action_executed": false,
+      "context_setup_ms": 34.0,
+      "prompt_tokens": 155,
+      "generated_tokens": 8,
+      "pair": 4,
+      "activations": [],
+      "memory": {
+        "pss_kib": 1310775,
+        "rss_kib": 1415892
+      }
+    }
+  ],
+  "action_executed": false,
+  "microphone_started": false,
+  "npu_verified": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "completed": true,
+  "memory_scope": "Post-request PSS/RSS snapshots, not peak or continuous memory",
+  "activation_scope": "UI-rounded summaries of latest prefill chunk/last position; observational only",
+  "loaded_memory": {
+    "pss_kib": 1289129,
+    "rss_kib": 1397668
+  },
+  "warmup": {
+    "command": "Stop focus",
+    "capture": false,
+    "intent": "pause_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1855.0,
+    "prefill_ms": 776.0,
+    "decode_ms": 1079.0,
+    "action_executed": false
+  },
+  "paired_total_deltas_ms": [
+    -199.0,
+    -302.0,
+    -46.0,
+    135.0
+  ],
+  "median_paired_delta_ms": -122.5,
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "cleanup_verified": true,
+  "evidence": {
+    "recorded_date_ist": "2026-10-03",
+    "raw_report_sha256": "1f6f4f731e49cfee8fea0f6ba14b27ec4460bfddbd943aff2111b85ae3887417",
+    "release_manifest": "docs/task-guide-artifacts.json",
+    "release_manifest_sha256": "bed19b192b5a5a9e615f6a9bed91c8f97104c594c587c56a32c6089945f51832",
+    "current_and_committed_source_sha256": {
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0"
+    },
+    "harness_import_sha256": {
+      "scripts/phone_model_smoke.py": "91e709fb8201141a3a09f48a14b874cf902c4082cefcc2f8b70d41a4fd51e27f",
+      "scripts/phone_focus_actions.py": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+      "scripts/phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+      "scripts/phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57"
+    },
+    "source_scope": "Installed APK/model byte equality and existing release source manifest; current relevant source bytes equal the referenced commit. No compilation replay.",
+    "fresh_post_return_checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 57331
+    },
+    "fresh_post_return_permissions": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "fresh_post_return_monitor_present": false,
+    "fresh_post_return_memory": {
+      "pss_kib": 131370,
+      "rss_kib": 236516
+    },
+    "inspection": "Eight unconfirmed synthetic proposals; all four finite selected capture summaries on every capture-on run; same rounded summaries across repeats."
+  }
+}
