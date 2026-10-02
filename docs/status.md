@@ -2,6 +2,23 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Current v0.11 authored-guide phone coverage
+
+A synthetic three-step plan was tested through the installed app's own UI on
+Nothing: Save, Mark/Undo, completion/Undo, real process force-stop/restart with
+exact record recovery, replacement Cancel/confirm and clear Cancel/confirm with
+cleared-state recovery. All 12 recorded phases passed. The temporary plan was
+removed and the original empty goal restored; focus stayed paused, observation off,
+points 100 and total elapsed 57,331 ms. No model, voice, permission or external-app
+action was invoked. Eight harness boundary/cleanup tests and six report-binding
+tests pass; the latter preserve the full-task gate as incomplete. Readback, stale
+reviews, goal-switch and other remaining branches are separate requirements.
+[Phone record](task-guide-phone-v011.json),
+[coverage and repeat procedure](task-guide-phone.md).
+The post-test storage check measured 12,497,893,061 logical project bytes
+(12.498 decimal GB), including ignored files and Git, below the strict 15 GB cap;
+external shared caches are excluded.
+
 ## Current v0.11 reviewed countdown — actual phone outcome
 
 The installed light v0.11 APK and retained model hashes matched their pinned
@@ -27,7 +44,7 @@ model, command prompt or native change was made. After these experiments, the
 storage check measured 12,497,522,266 logical project bytes (12.498 decimal GB),
 including ignored files and Git, below the 15 GB cap; external shared SDK caches
 are excluded. This attributed typed process-live
-case does not verify ASR/TTS, task-guide UI, monitoring, floating mode, deep sleep,
+case alone does not verify ASR/TTS, task-guide UI, monitoring, floating mode, deep sleep,
 recovery, disconnect, Clock, iQOO/NPU or Office Kit.
 
 ## Unpromoted local task-planning research
@@ -56,7 +73,8 @@ focus paused, observation off and 100 points stayed unchanged during that instal
 No wake, UI, permission or task action occurred during installation; the separate
 reviewed countdown above was subsequently tested. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
 all four server asset sizes/SHA-256 digests match local files and the tag resolves
-to the exact app source above. Physical step/readback tests remain pending.
+to the exact app source above. The later authored-guide test covers selected steps
+and restart branches; readback and other task-guide branches remain pending.
 Qwen3.5 Q4_0, prompt, gate and native are unchanged. The publication preflight measured
 12,491,320,741 logical project bytes (about 12.491 GB), below the strict 15 GB cap;
 ignored files and Git are included, pre-existing shared SDK caches excluded.

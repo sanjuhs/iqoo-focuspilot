@@ -9,7 +9,11 @@ optionally read it through the existing local voice path. Task/record revision
 checks block stale progress and readback; authored text executes nothing.
 **143 JVM tests pass**, lint zero errors/65 warnings. Signed light APK inspected
 and installed with matching APK/model hashes; paused/off/100 points unchanged.
-Actual task UI/readback remains untested. A later own-app phone countdown
+A later authored-guide phone test passed Save, Mark/Undo, complete/Undo, process
+restart recovery, replacement Cancel/confirm and clear Cancel/confirm/restart.
+Its temporary goal and steps were cleaned up; focus stayed paused/off/100 and
+elapsed time unchanged. [Authored-guide evidence](docs/task-guide-phone.md).
+Readback and other task-guide branches remain untested. A later own-app phone countdown
 passed: reviewed 20-second start, automatic pause, exactly 20,000 ms additional
 elapsed focus and unchanged observation-off/100 points. One typed CPU inference
 took 1,932 ms. [Physical evidence](docs/current-countdown-phone-v011.json),

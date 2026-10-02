@@ -277,6 +277,42 @@ def task_guide_source_binding(root,manifest):
  required={'prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java','prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java','prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java','prototype/android/app/build.gradle','prototype/android/app/src/main/res/values/task_guide_resources.xml','prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java'}
  return {'status':'verified' if required.issubset(declared) and all(current.values()) and all(frozen.values()) else 'incomplete','scope':'current/full-commit source byte binding, not compilation replay or actual task progress','current_source':current,'commit_source':frozen,'physical_verified':False}
 
+def authored_phone_binding(root,record,manifest):
+ """Bind an attributed synthetic UI report; never replay or certify whole guidance."""
+ expected=next(x for x in manifest['artifacts'] if not x['bundled_model'])
+ identity=phone_record(record,expected,manifest['source_commit'])
+ checks={'identities':identity['status']=='verified',
+  'full_app_source':record.get('source_commit')==manifest['source_commit'] and bool(re.fullmatch('[0-9a-f]{40}',record.get('source_commit',''))),
+  'terminal_success':record.get('completed') is True and record.get('cleanup_verified') is True and not any(k in record for k in ('failure','failure_type','cleanup_failure_type')),
+  'research_scope':all(record.get(k) is expected for k,expected in {'research_only':True,'model_inference_performed':False,'permission_or_settings_actions':False,'tts_or_microphone_actions':False,'external_app_actions':False,'npu_verified':False,'private_original_text_exported':False}.items()),
+  'cleanup':record.get('empty_goal_restored') is True and record.get('guide_record_removed') is True}
+ before=record.get('before_checkpoint',{});final=record.get('final_checkpoint',{})
+ checks['unchanged_checkpoint']=before==final and before.get('active') is False and before.get('observation') is False and type(before.get('points')) is int and before['points']==100 and type(before.get('elapsed_ms')) is int and before['elapsed_ms']>=0
+ phase_specs=[('synthetic_goal_saved',{}),('authored_steps_saved',{'count':3,'completed':0,'revision_present':True}),
+  ('mark_ui_and_durable_state',{'completed':1}),('undo_ui_and_durable_state',{'completed':0}),
+  ('process_restart_recovery',{'exact_record_preserved':True}),('all_steps_completed_ui',{'completed':3,'mark_disabled':True}),
+  ('undo_after_complete',{'completed':2}),('replacement_cancel',{'exact_record_preserved':True}),
+  ('replacement_confirmed',{'count':2,'completed':0}),('clear_cancel',{'exact_record_preserved':True}),
+  ('clear_confirmed',{'task_goal_retained':True}),('clear_process_restart',{'guide_record_absent':True})]
+ phases=record.get('phases',[])
+ checks['ordered_phases']=isinstance(phases,list) and all(isinstance(p,dict) for p in phases) and [p.get('name') for p in phases]==[name for name,_ in phase_specs]
+ checks['phase_outcomes']=checks['ordered_phases'] and all(p.get('checkpoint_unchanged') is True and all(type(p.get(k)) is type(v) and p[k]==v for k,v in spec.items()) for p,(_,spec) in zip(phases,phase_specs))
+ required={'prototype/phone-guide-proof/reference/phone_task_guide.py','scripts/phone_model_smoke.py','scripts/phone_focus_actions.py'}
+ hashes=record.get('harness_sha256',{});commit=record.get('harness_source_commit')
+ checks['harness_inventory']=isinstance(hashes,dict) and set(hashes)==required
+ bindings={name:public_evidence_path(root,root/name) and (root/name).is_file() and sha(root/name)==expected and source_commit_binding(root,name,expected,commit) for name,expected in hashes.items() if name in required} if isinstance(hashes,dict) else {}
+ checks['harness_bindings']=checks['harness_inventory'] and all(bindings.values())
+ raw_path=root/'prototype/phone-guide-proof/result.json'
+ checks['raw_report_hash']=raw_path.is_file() and sha(raw_path)==record.get('raw_report_sha256')
+ raw=read_json(raw_path) if checks['raw_report_hash'] else {}
+ checks['raw_projection']=bool(raw) and all(record.get(k)==v for k,v in raw.items())
+ return {'status':'verified' if all(checks.values()) else 'incomplete',
+  'scope':'attributed synthetic authored UI report structure/source/byte binding; no independent physical replay, inference, readback or full guidance certification',
+  'report_sha256':sha(root/'docs/task-guide-phone-v011.json') if (root/'docs/task-guide-phone-v011.json').is_file() else None,
+  'checks':checks,'harness_bindings':bindings,'reported_phase_count':len(phases) if isinstance(phases,list) else None,
+  'device':record.get('device'),'physical_independently_repeated':False,'full_task_guide_complete':False,
+  'remaining':['readback','stale-instance reviews','task switch association','input bounds and corruption','disk failure','global deletion','export and backup','voice and monitoring','iQOO/NPU','Office Kit','eligible accepted submission']}
+
 class Audit:
  def __init__(self,root):self.root=root;self.result={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'goal_complete':False,'label':'PRE-EVENT RESEARCH; byte/metadata audit cannot certify whole assistant or submission','checks':{},'errors':{}}
  def check(self,key,fn):
@@ -344,7 +380,9 @@ def main():
    audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
   audit.check('v11_task_source_binding',lambda:task_guide_source_binding(root,v11))
   audit.check('v11_installation_binding',lambda:phone_record(read_json(root/'docs/task-guide-install.json'),next(x for x in v11['artifacts'] if not x['bundled_model']),v11['source_commit']))
-  audit.result['checks']['v11_task_phone_proof']={'status':'incomplete','reason':'Installation/source/pure-state tests do not establish actual authored-step UI, readback, stale review, recovery, deletion or export outcomes.'}
+  if (root/'docs/task-guide-phone-v011.json').is_file():
+   audit.check('v11_authored_task_report_binding',lambda:authored_phone_binding(root,read_json(root/'docs/task-guide-phone-v011.json'),v11))
+  audit.result['checks']['v11_task_phone_proof']={'status':'incomplete','reason':'The attributed authored UI report may cover save/progress/process-restart/cancel/clear branches; readback, stale-instance, task-switch, validation/corruption, deletion/export and broader workflow still require physical evidence.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))

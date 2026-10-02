@@ -1,6 +1,18 @@
 # One small step — private authored task guide
 
-Prepared 2 October 2026. **Pre-event research; v0.11 source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.** The final source passes 143 JVM tests and lint zero errors/65 warnings. Signed light packaging is inspected and installed with APK/private-model hash parity; paused focus, observation off and 100 points are unchanged. No wake, UI, task action or permission grant was requested. [Immutable packaging identity](task-guide-artifacts.json) records both inspected signed packages. Actual task/voice outcomes remain unverified.
+Prepared 2 October 2026. **Pre-event research; v0.11 source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.** The final source passes 143 JVM tests and lint zero errors/65 warnings. Signed light packaging is inspected and installed with APK/private-model hash parity; paused focus, observation off and 100 points are unchanged. During the initial installation snapshot, no wake, UI, task action or permission grant was requested. [Immutable packaging identity](task-guide-artifacts.json) records both inspected signed packages. Later authored UI outcomes are recorded below; voice and the remaining branches stay unverified.
+
+## Later physical coverage
+
+The [12-phase Nothing-phone report](task-guide-phone-v011.json) covers a synthetic
+three-step save, Mark/Undo, completion/Undo, exact saved-record recovery after real
+process restart, replacement Cancel/confirm and clear Cancel/confirm with cleared
+state still absent after restart. Focus remained paused, observation off, points
+100 and elapsed 57,331 ms throughout. Cleanup restored the original empty goal
+and removed the synthetic guide; task-save event entries and zero target keys may
+remain. No model, voice, permission/settings or external-app action was invoked.
+This is attributed physical evidence, not an independent replay, generated plan
+or verification of real-world step completion. [Repeat and limitations](task-guide-phone.md).
 
 ## What the user controls
 
@@ -32,7 +44,13 @@ Task steps do not enter the bounded private summary export, event trail, model p
 
 MainActivity's existing `onStop` stops playback and `onDestroy` shuts down TTS. Checklist progress/replacement, confirmed clear, global deletion and saved task edits explicitly request playback stop through the supplied callback. Periodic refresh does not automatically stop unrelated status speech. No checklist operation starts a microphone, monitor, overlay, exact alarm, wake lock or new permission prompt. Actual installed voice availability, audio, mute and lifecycle stop behavior remain physical test requirements. [Existing voice boundary](voice-integration.md).
 
-## Manual checklist — all pending
+## Manual checklist — partial physical coverage
+
+The later record covers parts of items 1–4 and 6: exactly three steps, progression,
+replacement and scoped clear, plus actual process restart. Input limits/corruption,
+stale two-instance reviews, task switching, all-data deletion, TTS and exports
+remain pending. The complete checklist is retained below so partial proof cannot
+close those branches.
 
 Use synthetic, harmless authored text on the exact final installed APK; record source/APK/model identities and initial focus/observation/virtual-point state. No OS grant is needed just to create/mark a checklist.
 
@@ -47,4 +65,4 @@ Use synthetic, harmless authored text on the exact final installed APK; record s
 
 The [v0.11 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11) is published with both APKs and both immutable evidence files;
 all four server sizes/SHA-256 digests match local files and the tag resolves to the full app-source commit above.
-All actual task-guide Android outcomes remain **pending**. An authored checklist is a useful guidance layer; it does not complete broad phone automation, actual iQOO/NPU/Office Kit use or eligible submission. [Remaining deliverables](remaining-deliverables.md).
+The authored branches above are observed; the **full task-guide verification remains incomplete**. An authored checklist is a useful guidance layer; it does not complete broad phone automation, actual iQOO/NPU/Office Kit use or eligible submission. [Remaining deliverables](remaining-deliverables.md).

@@ -31,6 +31,26 @@ This evidence changes the next action to model-quality repair, not automatic
 step guidance. The full physical workflow and submission requirements remain incomplete; the
 separate countdown below establishes one narrow current phone branch.
 
+## Current v0.11 authored-guide attributed report
+
+A public raw report, exact executed-harness archive and full source/APK/model/native
+bindings preserve 12 real own-app phases: Save, Mark/Undo, completion/Undo, process
+force-stop/restart recovery, replacement Cancel/confirm and clear Cancel/confirm
+with cleared-state restart. The empty goal and no-guide state were restored;
+focus stayed paused/off/100 with elapsed 57,331 ms. The harness archive was copied
+while live and checked unchanged at terminal completion, rather than attested
+before start. Later failure-path cleanup repairs are mock-tested and distinguished
+from that actual execution.
+
+The added audit checks source/archive/full-commit and raw-report byte bindings,
+ordered typed outcomes and unchanged checkpoint. Six fixtures reject partial
+source references, changed committed harness bytes, tampering, Boolean progress,
+reordered/missing phases and failed cleanup. Eight harness boundary/cleanup tests
+pass. **These checks do not replay physical behavior.** The full-task gate remains
+incomplete for readback/stale/task-switch/bounds/corruption/global deletion/export
+and broader assistant requirements. [Coverage](task-guide-phone.md),
+[immutable report](task-guide-phone-v011.json).
+
 ## Current v0.11 physical countdown
 
 An attributed current Nothing-phone record binds source, matching installed light
@@ -52,8 +72,8 @@ checks, explicit progress/undo, reviewed replacement/clear and local readback.
 143 JVM tests pass; lint zero errors/65 warnings. Light signature/native/licenses/
 permissions and installed APK/private-model identities are verified; paused/off/100
 unchanged during installation, with no wake/UI/action/permission operation then.
-A separate later countdown test is recorded above. Actual task/readback/recovery is
-incomplete. [Contract](task-guide.md), [immutable artifacts](task-guide-artifacts.json). Both
+A separate later countdown test is recorded above. Later save/progress/process-restart/cancel/clear branches are recorded above;
+readback and other task branches remain incomplete. [Contract](task-guide.md), [immutable artifacts](task-guide-artifacts.json). Both
 signed version-11 packages pass model/native/license/permission/version checks;
 the [v0.11 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11) contains both APKs and both immutable evidence files
 with matching server sizes/digests and exact app-source tag. Sixteen audit tests pass,

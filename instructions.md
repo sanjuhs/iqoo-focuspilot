@@ -4,6 +4,20 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current v0.11 authored-guide phone coverage
+
+A synthetic three-step plan was tested through the installed app's own UI on
+Nothing: Save, Mark/Undo, completion/Undo, real process force-stop/restart with
+exact record recovery, replacement Cancel/confirm and clear Cancel/confirm with
+cleared-state recovery. All 12 recorded phases passed. The temporary plan was
+removed and the original empty goal restored; focus stayed paused, observation off,
+points 100 and total elapsed 57,331 ms. No model, voice, permission or external-app
+action was invoked. Eight harness boundary/cleanup tests and six report-binding
+tests pass; the latter preserve the full-task gate as incomplete. Readback, stale
+reviews, goal-switch and other remaining branches are separate requirements.
+[Phone record](docs/task-guide-phone-v011.json),
+[coverage and repeat procedure](docs/task-guide-phone.md).
+
 ## Current v0.11 phone countdown
 
 An actual typed Qwen3.5-0.8B request on Nothing produced a reviewed 20-second
@@ -33,10 +47,12 @@ and clear, and optional local readback. Goal/revision checks block stale progres
 and speech; step text executes no phone action and enters no model/export.
 **143 JVM tests pass**, lint zero errors/65 warnings. Signed light packaging passed
 native/license/permission inspection and installed with matching APK/model hashes;
-focus paused, observation off and 100 points stayed unchanged. No wake, UI,
-permission or task action occurred. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
+focus paused, observation off and 100 points stayed unchanged during installation.
+No wake, UI, permission or task action occurred during that installation; the
+separate later phone tests above used the same installed APK. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
 all four server asset sizes/SHA-256 digests match local files and the tag resolves
-to the exact app source above. Physical step/readback tests remain pending.
+to the exact app source above. Authored step/save/progress/restart branches are observed above; readback and the
+remaining task-guide branches stay pending.
 Qwen3.5 Q4_0, prompt, gate and native are unchanged. The publication preflight measured
 12,491,320,741 logical project bytes (about 12.491 GB), below the strict 15 GB cap;
 ignored files and Git are included, pre-existing shared SDK caches excluded.
