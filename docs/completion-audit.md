@@ -15,7 +15,33 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
-## Current 0.9 addition
+## Current 0.10 addition
+
+App source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` ships the gate-only conversational update.
+The auditor checks both signed APK/native/model/license/permission identities,
+recorded confirmation/source digests and required 0.10 release assets. Model,
+original prompt and native runtime are unchanged. Fresh source-selected synthetic
+confirmation reports 15→31/50 supported exact proposals, 16 gains/zero losses,
+50/50 unsupported rejections and zero wrong accepts observed; 19 false abstentions
+and raw model 36/100 are retained. This is a recorded host experiment by the same
+informed author, not a replay, independent human sampling or actual phone actions.
+The source-binding check detects changed app sources or result bytes and never
+self-certifies physical success. Both longer prompt candidates remain rejected.
+
+Current XML reports 133 JVM tests, zero failures/errors/skips and lint zero
+errors/62 warnings; 11 artifact-audit tests and six fresh-evaluator tests pass.
+The updated light APK installed with APK and retained private-model hash parity,
+focus paused, observation off and 100 virtual points unchanged. Microphone,
+notification and overlay permissions were not changed. No display wake, UI launch,
+command or overlay test occurred on the asleep/not-own-app-focused phone.
+Actual current command/timer/voice/floating/offline and broader completion proof
+remain incomplete. Logical project files total 13.511 decimal GB (12.583 GiB),
+including ignored models/builds/releases; pre-existing shared SDK/cache excluded.
+[Contract/results](conversational-commands.md),
+[identities](conversational-commands-artifacts.json),
+[full outstanding scope](remaining-deliverables.md).
+
+## Previous 0.9 addition
 
 App source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds the independent optional floating visual
 companion. The auditor checks both signed APK/native/model/license/permission
@@ -24,7 +50,7 @@ Actual overlay grant/Show/drag/outside touch/Hide/Pause, screen/lock/revocation,
 rotation/keyboard and Android app-stop proof remains **incomplete**. No settings
 were granted or app UI launched by this update. Qwen/prompt/gate remain unchanged.
 
-Current XML reports **127 JVM tests**, zero failures/errors/skips; lint zero errors
+At the 0.9 checkpoint XML reported **127 JVM tests**, zero failures/errors/skips; lint zero errors
 and **62 warnings**. Eight new pure geometry cases verify clamp/overflow/stable
 original-position drag math, not Android windows or OEM process survival. Workspace
 logical files total **12.05 GiB** including ignored builds, models and releases.

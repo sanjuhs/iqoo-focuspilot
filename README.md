@@ -3,20 +3,29 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current research build: v0.9**, source `6e483aaf9e42889794ed77c272b8a912539cfc7c`.
-Adds optional movable Mira with reviewed Show and Open/Pause focus/Hide controls.
-Permission return starts nothing; screen-off/lock/revocation stop floating mode.
-**127 JVM tests pass**; lint zero errors/62 warnings. Both signed APKs passed
-packaging inspection; light installed with matching APK/private-model identities.
-Actual floating permission/UI/lifecycle proof is pending an unlocked phone and
-user-granted permission. Qwen3.5-0.8B Q4_0 and the v0.8 command gate are unchanged.
-[Companion contract and limits](docs/floating-companion.md).
+**Current research build: v0.10**, source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`.
+Qwen3.5-0.8B Q4_0, its original prompt and native CPU runtime are unchanged.
+The reviewed command gate now accepts explicitly listed greetings and polite
+wrappers while consuming the complete request and preserving exact tool arguments.
+On 100 fresh frozen synthetic requests, correct supported proposals rose
+**15→31/50**, with 16 gains/zero losses, all 50 unsupported requests rejected and
+zero wrong accepts observed. **19 supported requests still abstain**. Raw model
+intent correctness is only 36/100; the external gate rejects its 49 unsupported
+non-unknown proposals. This is host evidence, not ASR, autonomy or phone accuracy.
+[Contract, prompt rejection and limits](docs/conversational-commands.md).
 
-On a newly frozen 100-request test, unchanged Qwen + the gate correctly proposed
-**12/40 supported commands** versus 9/40, with **0/60 unsupported false accepts**
-versus five. Nine gains accompany six regressions; 28 supported requests abstain.
-Raw model intent correctness is 29/100. These host results do not establish
-voice, autonomous reliability or live phone outcomes.
+**133 JVM tests pass**; lint zero errors/62 warnings. Both signed APKs passed
+model/native/license/permission inspection. Light installed with matching APK and
+retained private-model identities; paused focus, observation off, 100 virtual points
+and permissions were unchanged. The phone remains asleep, so current command,
+voice, countdown and floating proof is pending. Optional movable Mira retains
+reviewed Show and Open/Pause focus/Hide controls; screen-off/lock/revocation ends
+floating mode. [Companion proof gates](docs/floating-companion.md),
+[full remaining deliverables](docs/remaining-deliverables.md).
+
+Historical v0.8 tested 12/40 supported proposals versus 9/40, with 28 false
+abstentions and nine gains/six regressions. Preserve that experiment separately;
+its different sample cannot establish v0.10's gain.
 
 **New System 1 research:** a separate classifier trained on actual frozen Qwen
 activations scored 76/90 raw intents versus 46/90 for generation on the same
@@ -37,7 +46,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.9)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
 are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
@@ -75,6 +84,8 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
 | [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
+| [docs/conversational-commands.md](docs/conversational-commands.md) | Fresh gate-only confirmation and rejected prompt experiments |
+| [docs/remaining-deliverables.md](docs/remaining-deliverables.md) | Full outstanding scope and physical/account gates |
 | [docs/natural-commands.md](docs/natural-commands.md) | Whole-request forms, English slots and frozen comparison |
 | [docs/timed-focus.md](docs/timed-focus.md) | Countdown semantics, regression fixes and pending phone checks |
 | [docs/command-readiness.md](docs/command-readiness.md) | Setup screen and confirmed typed phone actions |

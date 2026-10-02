@@ -2,7 +2,48 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
-## Floating companion update — v0.9
+## Conversational gate update — v0.10
+
+Source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`, version code **10** /
+`0.10-conversational-gate-research`, selects the expanded original-request gate
+while keeping **Qwen3.5-0.8B Q4_0, native runtime and original prompt unchanged**.
+The longer prompt candidate was rejected; there is no deployed model fine-tuning.
+
+Fresh frozen synthetic confirmation: correct supported actions/slots **15→31/50**,
+16 gains/zero losses, all 50 unsupported requests rejected and zero wrong accepted
+proposals observed. **19/50 supported requests still falsely abstain**. Raw model
+semantic correctness is **36/100** (35 supported, one unknown), with 49 unsupported
+tool proposals. This is host evidence by an informed author, not voice/phone or
+universal safety. Explicit action review remains required.
+
+**133 Android JVM tests pass**, lint zero errors/**62 warnings**; **11 artifact-audit
+tests pass**. Both signed version-10 packages passed native/model/license/permission
+inspection: all six notices present and no `INTERNET` permission.
+
+| Package | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Light | 5,480,648 | `a1a85e70f5d459df6e73b4294dcbeed81518489fe419b30729333ec11e083103` |
+| Bundled | 568,516,824 | `1cb5678781ca3a4aa63f462d445b05516d93f1d363e78f6e2a05f7f46a777bf0` |
+
+The light APK installed on Nothing with matching installed-APK/private-model
+hashes. Focus inactive, observation off and virtual points 100 stayed unchanged;
+microphone and notification grants stayed false, overlay remained default with no
+operation. Display was asleep and own app not focused; the lockscreen metadata flag
+was false, which does not establish a usable unlocked foreground state. **No wake,
+UI test, command, permission grant or overlay test occurred.** Physical timer,
+voice/TTS, monitor/Stop, Clock, disconnected inference, iQOO/NPU and Office Kit remain
+pending. Prior build outcomes retain their historical binary/source attribution.
+
+Measured project files total **13,511,076,286 bytes = 13.511 GB = 12.583 GiB**,
+below the strict decimal 15 GB limit. This includes ignored project files and
+excludes pre-existing shared SDK/`.gradle` caches; it is not peak RAM. Publication
+of the v0.10 research release is **pending root**, not yet a published-delivery claim.
+
+[Command selection and confirmation](conversational-commands.md),
+[planned artifact manifest](conversational-commands-artifacts.json) (root preparing),
+[full remaining deliverables](remaining-deliverables.md).
+
+## Historical floating companion update — v0.9
 
 Source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds optional floating Mira with explicit reviewed
 Show, movable portrait, Open, Pause focus and Hide controls. The separate service

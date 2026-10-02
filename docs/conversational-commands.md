@@ -63,12 +63,30 @@ failures and coverage are retained, with no repair after scoring. No phone actio
 executed and host CPU timing is not phone/NPU latency.
 
 The expanded gate is **selected for v0.10 research packaging**, retaining the
-original prompt, Qwen3.5 Q4_0 weights and native runtime. Final source revision,
-package/build identities, installation and physical regressions remain pending
-root verification. Prior v0.9 APKs and historical phone outcomes do not prove this
-new gate's physical behavior.
+original prompt, Qwen3.5 Q4_0 weights and native runtime. Source/package/build
+and installation identities are recorded below; physical regressions remain
+pending. Prior v0.9 APKs and historical phone outcomes do not prove this new
+gate's physical behavior.
 
 [Seen development](../prototype/command-v10-dev/README.md),
 [first frozen experiment](../prototype/command-v10-eval/README.md),
 [fresh frozen confirmation](../prototype/command-v10-confirm/README.md),
 [full remaining deliverables](remaining-deliverables.md).
+
+## Packaged research revision
+
+App source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` is versionCode10,
+`0.10-conversational-gate-research`. 133 Android JVM tests pass, lint has zero errors
+and 62 warnings, and 11 artifact-audit tests pass. Both signed light/bundled APKs
+passed version/native/model/license/permission inspection. Updated light installed
+with matching APK and retained private-model hashes; focus paused, observation off,
+100 virtual points and OS permissions remained unchanged. No wake/UI/command
+operation was performed: the display remained asleep and own app not focused.
+Fresh bundled import, voice, timer, floating and disconnected outcomes are pending.
+
+[Immutable package manifest](conversational-commands-artifacts.json) records exact
+bytes/hashes and source attribution. The frozen experiment's no-promotion field
+describes its evaluation run; this later source/package selection ships only the
+gate, not either rejected prompt or new model parameters. Logical project files
+total 13.511 decimal GB (12.583 GiB), including ignored builds/models/releases;
+pre-existing shared developer SDK/Gradle caches are outside that measured scope.

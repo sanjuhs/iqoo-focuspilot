@@ -1,0 +1,111 @@
+{
+  "version": "0.10-conversational-gate-research",
+  "research_only": true,
+  "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+  "backend": "CPU/KleidiAI I8MM; optimized ARM64 hardware required",
+  "tests": {
+    "android_jvm": 133,
+    "lint_errors": 0,
+    "lint_warnings": 62,
+    "audit": 11,
+    "frozen_confirmation": 6,
+    "first_frozen_experiment": 6
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "model_changed": false,
+  "prompt_changed": false,
+  "native_changed": false,
+  "gate_changed": true,
+  "gate_sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+  "prompt_adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+  "fresh_confirmation": {
+    "scope": "Fresh source-selected synthetic requests by same informed author; host CPU, one unchanged prompt capture shared by both gates; no phone actions",
+    "rows": 100,
+    "supported_rows": 50,
+    "required_abstentions": 50,
+    "supported_correct_baseline": 15,
+    "supported_correct_selected": 31,
+    "supported_false_abstentions": 19,
+    "wrong_accepted_observed": 0,
+    "required_abstentions_correct": 50,
+    "paired_gains": 16,
+    "paired_losses": 0,
+    "raw_model_correct": 36,
+    "raw_supported_correct": 35,
+    "raw_unknown_correct": 1,
+    "raw_unknown_nonunknown_proposals": 49,
+    "results_sha256": "f559ae877ac392b3a2535a3a392b35ef99bd699974d5d5c9340386556c78af8e",
+    "universal_reliability_established": false
+  },
+  "rejected_prompt_candidate": true,
+  "fresh_bundle_import_tested": false,
+  "overlay_tested": false,
+  "permissions_granted_by_tools": false,
+  "phone_test_status": "Update installation/byte identity only; current command/timer/voice/floating/offline physical outcomes pending",
+  "workspace_logical_bytes": 13511076286,
+  "workspace_decimal_gb": 13.511,
+  "workspace_logical_gib": 12.583,
+  "workspace_scope": "Logical regular files under project including ignored model/checkouts/build/artifacts; pre-existing shared Android SDK/Gradle caches excluded",
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v010-light.apk",
+      "bytes": 5480648,
+      "sha256": "a1a85e70f5d459df6e73b4294dcbeed81518489fe419b30729333ec11e083103",
+      "bundled_model": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    },
+    {
+      "name": "focuspilot-research-v010-bundled.apk",
+      "bytes": 568516824,
+      "sha256": "1cb5678781ca3a4aa63f462d445b05516d93f1d363e78f6e2a05f7f46a777bf0",
+      "bundled_model": true,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    }
+  ],
+  "installation": {
+    "research_only": true,
+    "source_commit": "bcc24733655e4eced67d68ff5c47f7ab97d60b36",
+    "installed_light_apk": true,
+    "installed_apk_sha256": "a1a85e70f5d459df6e73b4294dcbeed81518489fe419b30729333ec11e083103",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "before": {
+      "checkpoint": {
+        "activeCheckpoint": "false",
+        "observe": "false",
+        "points": "100"
+      },
+      "display_awake": false,
+      "own_app_focused": false,
+      "lockscreen_flag": false,
+      "overlay_mode": "No operations.\nDefault mode: default",
+      "permissions": {
+        "android.permission.RECORD_AUDIO": "false",
+        "android.permission.POST_NOTIFICATIONS": "false"
+      }
+    },
+    "after": {
+      "checkpoint": {
+        "activeCheckpoint": "false",
+        "observe": "false",
+        "points": "100"
+      },
+      "display_awake": false,
+      "own_app_focused": false,
+      "lockscreen_flag": false,
+      "overlay_mode": "No operations.\nDefault mode: default",
+      "permissions": {
+        "android.permission.RECORD_AUDIO": "false",
+        "android.permission.POST_NOTIFICATIONS": "false"
+      }
+    },
+    "permissions_changed": false,
+    "ui_tested": false,
+    "overlay_tested": false,
+    "phone_commands_executed": 0,
+    "fresh_bundle_import_tested": false,
+    "npu_verified": false,
+    "scope": "Update installation and byte identity only; no display wake, UI launch, command, permission grant or observation change."
+  }
+}

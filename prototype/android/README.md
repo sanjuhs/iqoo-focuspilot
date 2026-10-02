@@ -4,7 +4,25 @@
 
 This standalone native Java application demonstrates a friendly original animated companion, bounded phone commands, a local focus timer, opt-in visible foreground monitoring and an explainable hand-set focus policy. **The model lab runs Qwen3.5-0.8B Q4_0 in the actual phone app process on CPU**, with checksummed local weights and optional selected-tensor observations. A separate trained 65-parameter policy lab exposes contributions and ablations on synthetic inputs. Accessibility, Snapdragon NPU and Office Kit remain pending. No internet permission or remote API keys are present.
 
-## Floating companion update 0.9
+## Current command gate update 0.10
+
+Source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` ships only the conversational gate revision.
+Qwen3.5-0.8B Q4_0, original prompt and native runtime remain unchanged; longer
+few-shot prompts were rejected after worse useful-command accuracy and higher
+host latency. Fresh frozen synthetic model-backed supported proposals rose
+15→31/50 with 16 gains/zero losses, all 50 required abstentions and zero wrong
+accepts observed. Raw model semantic correctness remains 36/100; 19 supported
+requests still abstain. Full-request validation and explicit action review remain.
+
+133 JVM tests pass; lint zero errors/62 warnings. Both signed APKs passed
+version/native/model/license/permission inspection. Updated light installation
+verified APK and retained model hashes; paused/off/100 points and permissions
+were unchanged. No UI/command/overlay test ran on the asleep phone. These are
+host and package results, not physical voice, countdown or NPU evidence.
+[Contract/results](../../docs/conversational-commands.md),
+[artifact identities](../../docs/conversational-commands-artifacts.json).
+
+## Previous floating companion update 0.9
 
 Source `6e483aaf9e42889794ed77c272b8a912539cfc7c` adds a separate visual `specialUse` service.
 On the dashboard expand **Mira while you use your phone**, review Android overlay
@@ -48,7 +66,7 @@ Expect roughly1.1GiB installed model/APK storage plus installation staging space
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`. Application ID: `dev.focuspilot.prototype`.
 
-Verified on 2 October 2026: 26 JVM tests and `assembleDebug lintDebug` completed successfully with Gradle 8.14 / AGP 8.12.1 / Java 17 / SDK 36; lint had zero errors. Tests cover core policy, monitor gates, trained-policy parity and independent model-command validation. APK permission inspection confirms no internet permission. Actual phone inference and selected activation capture were observed on Nothing A059; latency and remaining tests are recorded in [status](../../docs/status.md).
+Initially verified on 2 October 2026: 26 JVM tests and `assembleDebug lintDebug` completed successfully with Gradle 8.14 / AGP 8.12.1 / Java 17 / SDK 36; lint had zero errors. Tests cover core policy, monitor gates, trained-policy parity and independent model-command validation. APK permission inspection confirms no internet permission. Actual phone inference and selected activation capture were observed on Nothing A059; latency and remaining tests are recorded in [status](../../docs/status.md).
 
 ## Research demo
 
