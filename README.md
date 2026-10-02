@@ -7,7 +7,7 @@ Working research prototype for the iQOO Grand Finale, Productivity track.
 Adds reviewed timed focus, a 25-minute shortcut, pause/resume and bounded focus
 explanations. **105 JVM tests pass**; lint zero errors/59 warnings. Both APKs
 passed artifact inspection. Actual v0.7 countdown testing awaits an unlocked,
-foreground phone; release publication is pending. [Timed focus contract](docs/timed-focus.md).
+foreground phone; [v0.7 APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). [Timed focus contract](docs/timed-focus.md).
 
 **Previous verified phone-action build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
 Set up Mira shows optional feature readiness; typed local-model Start/Pause were
@@ -21,7 +21,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7)
 are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on

@@ -20,7 +20,8 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   Handler delivery can be delayed by deep sleep; elapsed/usage accounting caps at
   the deadline when the app can run. No exact-alarm/wakelock or 24/7 promise.
 - Workspace logical file size **10.96 GiB**, within the authorized 15 GB ceiling.
-  Publication is pending. Voice/monitor/actual iQOO/NPU/Office Kit and final
+  [0.7 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7)
+  contains both APKs and the artifact manifest. Voice/monitor/actual iQOO/NPU/Office Kit and final
   event eligibility/submission remain pending as recorded below.
 
 ## Command readiness and laptop bridge update 0.6

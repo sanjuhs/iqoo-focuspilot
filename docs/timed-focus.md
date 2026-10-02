@@ -1,6 +1,6 @@
 # Timed focus — research v0.7
 
-Prepared 2 October 2026. This is a pre-event research implementation. The integrated build passes 105 JVM tests and lint with zero errors and 59 warnings. Both signed debug APKs passed package/native/model/license checks; [artifact identities](timed-focus-artifacts.json) bind them to source `6bd4841b170be0445470eff9977133bc2accc8f6`. Actual v0.7 phone countdown verification is pending: the light APK installed, but the own-app UI guard refused the unlocked-own-app foreground precondition before inference or action.
+Prepared 2 October 2026. This is a pre-event research implementation. The integrated build passes 105 JVM tests and lint with zero errors and 59 warnings. Both signed debug APKs passed package/native/model/license checks; [artifact identities](timed-focus-artifacts.json) bind them to source `6bd4841b170be0445470eff9977133bc2accc8f6`. [Both APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). Actual v0.7 phone countdown verification is pending: the light APK installed, but the own-app UI guard refused the unlocked-own-app foreground precondition before inference or action.
 
 ## Choosing and reviewing a duration
 

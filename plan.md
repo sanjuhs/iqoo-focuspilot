@@ -15,6 +15,7 @@ own-app unlocked/foreground guard failed. Actual countdown proof awaits the
 user's unlock. These known-case regression repairs do not replace the frozen
 0.6 reliability score. [Timer contract and test](docs/timed-focus.md).
 
+Both APKs and the manifest are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7).
 Current logical file size is **10.96 GiB** (2 October), within the 15 GB ceiling.
 
 ## Previous checkpoint — v0.6
