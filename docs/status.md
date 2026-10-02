@@ -1,6 +1,22 @@
 # Verified status
 
-Updated 2 October 2026 (IST). This file separates measured results from goals.
+Updated 3 October 2026 (IST). This file separates measured results from goals.
+
+## Current v0.11 readback and monitoring prerequisite check
+
+On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms
+reported CPU time. Explicit fixed-status readback reached Android's completed TTS
+callback for an installed offline English voice. Speaker audibility and whole-device
+network-disconnected operation are not verified. A visible-monitor attempt with
+observation off was refused; its switch stayed off and no own monitor-service record
+appeared. Paused/off/100 points/57,331 ms remained unchanged. Setup reports an
+on-device speech service available, but Microphone, notifications and Usage Access
+are off; English ASR support and transcription remain untested. No grants/settings
+changes or microphone activation occurred. Four harness tests and six report-binding
+tests pass. [Physical branches and repeat procedure](readback-phone.md).
+The post-test storage check measured 12,498,097,200 logical project bytes
+(12.498 decimal GB), including ignored files and Git, below the 15 GB cap;
+external shared SDK caches are excluded.
 
 ## Current v0.11 authored-guide phone coverage
 

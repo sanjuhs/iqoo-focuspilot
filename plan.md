@@ -5,6 +5,19 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## Current v0.11 readback and monitoring prerequisite check
+
+On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms
+reported CPU time. Explicit fixed-status readback reached Android's completed TTS
+callback for an installed offline English voice. Speaker audibility and whole-device
+network-disconnected operation are not verified. A visible-monitor attempt with
+observation off was refused; its switch stayed off and no own monitor-service record
+appeared. Paused/off/100 points/57,331 ms remained unchanged. Setup reports an
+on-device speech service available, but Microphone, notifications and Usage Access
+are off; English ASR support and transcription remain untested. No grants/settings
+changes or microphone activation occurred. Four harness tests and six report-binding
+tests pass. [Physical branches and repeat procedure](docs/readback-phone.md).
+
 ## Current v0.11 authored-guide phone coverage
 
 A synthetic three-step plan was tested through the installed app's own UI on
@@ -25,8 +38,8 @@ An actual typed Qwen3.5-0.8B request on Nothing produced a reviewed 20-second
 focus proposal (1,932 ms reported CPU inference), which was confirmed and completed
 automatically. Persisted elapsed time increased exactly 20,000 ms; focus ended
 paused, observation off and points 100. One synthetic process-live case establishes
-this narrow loop; task-guide UI, voice, sleep/recovery, iQOO/NPU and Office Kit
-remain pending. The failed immediate checkpoint test is preserved separately;
+this narrow loop; the later authored UI and TTS callback evidence above covers
+separate branches. Actual ASR, sleep/recovery, iQOO/NPU and Office Kit remain pending. The failed immediate checkpoint test is preserved separately;
 the harness now polls asynchronous persistence and requires observed awake/unlocked
 own-app foreground state. Seven harness tests pass.
 [Physical record](docs/current-countdown-phone-v011.json),

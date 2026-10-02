@@ -1,0 +1,32 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "observed_setup_readiness": [
+    "Focus paused \u00b7 background monitor stopped",
+    "Microphone off \u00b7 on-device speech service available; installed English still needs checking.",
+    "Notifications blocked \u00b7 background monitoring cannot start.",
+    "Usage Access off \u00b7 local usage reading off"
+  ],
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "after_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_or_settings_changed": false,
+  "microphone_started": false,
+  "model_inference_performed": false,
+  "recorded_date_ist": "2026-10-02",
+  "scope": "Attributed read-only Setup UI snapshot from the matching installed v0.11 APK; fixed labels only, no raw private UI. Service availability does not establish installed language or ASR.",
+  "app_source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java": "ffa28559ed90614e38197e541d0b19ba1fca774109e659d15af5621cb67ec3a6"
+  },
+  "observed_local_raw_report_mtime_ist": "2026-10-02T23:44:38.882945+05:30"
+}

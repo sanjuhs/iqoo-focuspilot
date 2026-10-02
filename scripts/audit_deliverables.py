@@ -313,6 +313,43 @@ def authored_phone_binding(root,record,manifest):
   'device':record.get('device'),'physical_independently_repeated':False,'full_task_guide_complete':False,
   'remaining':['readback','stale-instance reviews','task switch association','input bounds and corruption','disk failure','global deletion','export and backup','voice and monitoring','iQOO/NPU','Office Kit','eligible accepted submission']}
 
+def readback_phone_binding(root,record,manifest):
+ """Bind a reported engine callback; never upgrade it to audible/ASR/offline proof."""
+ expected=next(x for x in manifest['artifacts'] if not x['bundled_model'])
+ identity=phone_record(record,expected,manifest['source_commit'])
+ protocol_path=root/'prototype/readback-proof/protocol.json';raw_path=root/'prototype/readback-proof/result.json'
+ protocol=read_json(protocol_path) if protocol_path.is_file() else {}
+ raw=read_json(raw_path) if raw_path.is_file() else {}
+ checks={'identities':identity['status']=='verified','full_app_source':record.get('source_commit')==manifest['source_commit'],
+  'terminal_run':record.get('completed') is True and record.get('cleanup_verified') is True and not any(k in record for k in ('failure','failure_type','cleanup_failure_type')),
+  'bounded_scope':record.get('research_only') is True and all(record.get(k) is False for k in ('microphone_started','permissions_or_settings_actions','human_audibility_verified','offline_disconnect_verified','speech_recognition_tested','npu_verified')),
+  'protocol':bool(protocol) and record.get('protocol_file')=='prototype/readback-proof/protocol.json' and sha(protocol_path)==record.get('protocol_sha256') and protocol.get('prepared_before_physical_run') is True and protocol.get('selected_app_source')==manifest['source_commit'] and protocol.get('apk_sha256')==expected['sha256'] and protocol.get('model_sha256')==MODEL_SHA,
+  'raw_report':bool(raw) and sha(raw_path)==record.get('raw_report_sha256') and all(record.get(k)==v for k,v in raw.items())}
+ before=record.get('before_checkpoint',{});final=record.get('final_checkpoint',{})
+ checks['inert_checkpoint']=before==final and before.get('active') is False and before.get('observation') is False and type(before.get('points')) is int and before['points']==100 and type(before.get('elapsed_ms')) is int and before['elapsed_ms']>=0
+ phases=record.get('phases',[]);names=['monitor_prerequisite_block','reviewed_pause_on_already_paused_session','explicit_readback_terminal_ui']
+ checks['phases']=isinstance(phases,list) and len(phases)==3 and all(isinstance(p,dict) for p in phases) and [p.get('name') for p in phases]==names and all(p.get('checkpoint_unchanged') is True for p in phases)
+ if checks['phases']:
+  checks['monitor_block']=phases[0].get('switch_restored_off') is True and phases[0].get('own_service_record_absent') is True and record.get('own_monitor_service_record_absent_final') is True
+  checks['reviewed_pause']=phases[1].get('action_executed') is True and phases[1].get('original_request')=='Stop focus'
+  checks['readback_outcome']=phases[2].get('outcome')==record.get('tts_outcome') and phases[2].get('independently_audible') is False
+ result=record.get('typed_pause_result',{})
+ checks['model_pause']=result.get('command')=='Stop focus' and result.get('intent')=='pause_focus' and result.get('gate')=='REVIEW REQUIRED' and result.get('action_executed') is True and result.get('confirmation_tapped') is True and result.get('already_paused_before_action') is True and result.get('capture') is False
+ metrics=[result.get(k) for k in ('total_ms','prefill_ms','decode_ms')]
+ checks['native_metrics']=all(type(v) in (int,float) and math.isfinite(v) and v>=0 for v in metrics) and metrics[0]>0 and abs(metrics[0]-metrics[1]-metrics[2])<=2
+ checks['callback_classification']=record.get('tts_outcome') in protocol.get('declared_tts_outcomes',[]) and record.get('engine_completion_callback_observed') is (record.get('tts_outcome')=='engine_completed_callback')
+ required={'scripts/phone_readback.py','scripts/phone_model_smoke.py','scripts/phone_focus_actions.py','scripts/phone_task_guide.py'}
+ hashes=record.get('harness_sha256',{});commit=record.get('harness_source_commit')
+ checks['harness_inventory']=isinstance(hashes,dict) and set(hashes)==required and hashes==protocol.get('harness_sha256')
+ bindings={name:public_evidence_path(root,root/name) and (root/name).is_file() and sha(root/name)==expected and source_commit_binding(root,name,expected,commit) for name,expected in hashes.items() if name in required} if isinstance(hashes,dict) else {}
+ checks['harness_bindings']=checks['harness_inventory'] and all(bindings.values()) and source_commit_binding(root,'prototype/readback-proof/protocol.json',record.get('protocol_sha256'),commit)
+ app_required={f'prototype/android/app/src/main/java/dev/focuspilot/prototype/{name}.java' for name in ('SetupActivity','LocalModelActivity','LocalVoiceInput','FocusMonitorService','MainActivity')}
+ app=record.get('app_source_sha256',{})
+ checks['app_sources']=isinstance(app,dict) and set(app)==app_required and all(public_evidence_path(root,root/name) and (root/name).is_file() and sha(root/name)==value and source_commit_binding(root,name,value,manifest['source_commit']) for name,value in app.items())
+ return {'status':'verified' if all(checks.values()) else 'incomplete','scope':'attributed typed Pause/TTS terminal UI and prerequisite refusal report source/byte/structure binding; no independent phone replay or audible/offline/ASR certification',
+  'checks':checks,'harness_bindings':bindings,'reported_tts_outcome':record.get('tts_outcome'),'reported_native_ms':result.get('total_ms'),
+  'human_audibility_verified':False,'actual_asr_verified':False,'whole_device_offline_verified':False,'full_voice_monitor_workflow_complete':False}
+
 class Audit:
  def __init__(self,root):self.root=root;self.result={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'goal_complete':False,'label':'PRE-EVENT RESEARCH; byte/metadata audit cannot certify whole assistant or submission','checks':{},'errors':{}}
  def check(self,key,fn):
@@ -382,6 +419,8 @@ def main():
   audit.check('v11_installation_binding',lambda:phone_record(read_json(root/'docs/task-guide-install.json'),next(x for x in v11['artifacts'] if not x['bundled_model']),v11['source_commit']))
   if (root/'docs/task-guide-phone-v011.json').is_file():
    audit.check('v11_authored_task_report_binding',lambda:authored_phone_binding(root,read_json(root/'docs/task-guide-phone-v011.json'),v11))
+  if (root/'docs/readback-phone-v011.json').is_file():
+   audit.check('v11_readback_report_binding',lambda:readback_phone_binding(root,read_json(root/'docs/readback-phone-v011.json'),v11))
   audit.result['checks']['v11_task_phone_proof']={'status':'incomplete','reason':'The attributed authored UI report may cover save/progress/process-restart/cancel/clear branches; readback, stale-instance, task-switch, validation/corruption, deletion/export and broader workflow still require physical evidence.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))

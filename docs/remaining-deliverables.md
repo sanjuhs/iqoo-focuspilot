@@ -27,6 +27,19 @@ points stayed unchanged. [Record and remaining branches](task-guide-phone.md).
 This closes those specific parts of action 3, leaving readback, stale-instance,
 goal-switch, bounds/corruption, global deletion, export and broader workflows open.
 
+**Later v0.11 voice/monitor branches:** Setup reports the local speech factory
+available but Microphone/notifications/Usage Access off. A typed reviewed Pause
+(1,804 ms native CPU) followed by explicit fixed-status TTS reached its completed
+callback; independently audible playback and ASR remain unverified. Attempting a
+monitor with observation off was refused with switch reset/no service record.
+Paused/off/100/57,331 ms remained unchanged. [Coverage](readback-phone.md). This
+closes only the measured callback/early-guard branches, not full actions 4–6.
+
+**Current account check:** the signed-in provided registration route redirects to
+profile onboarding with personal fields and Terms/Privacy choices. No fields,
+agreements or application were changed; actual cutoff/admission/video constraints
+remain inaccessible until the user completes that step. [Observed fields](hackathon-research.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

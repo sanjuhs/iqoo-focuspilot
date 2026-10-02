@@ -1,4 +1,4 @@
-# Completion audit — 2 October 2026, IST
+# Completion audit — 3 October 2026, IST
 
 This project is an implemented **pre-event research prototype**, with useful public artifacts and some reported Nothing-phone behavior. It is **not a completed iQOO deployment or an eligible, accepted hackathon submission**. This audit preserves the full requested scope; it does not redefine success as passing tests, publishing an APK, or recording a concept video.
 
@@ -30,6 +30,23 @@ source was restored and rebuilt with 143 tests/zero lint errors/65 warnings.
 This evidence changes the next action to model-quality repair, not automatic
 step guidance. The full physical workflow and submission requirements remain incomplete; the
 separate countdown below establishes one narrow current phone branch.
+
+## Current v0.11 readback/prerequisite attributed report
+
+A protocol and harness frozen before the physical run bind three own-app branches:
+monitor refusal with observation off, reviewed typed Pause on an already-paused
+session, and explicit fixed-status TTS completed callback. Native CPU metrics were
+1,804 ms; paused/off/100/57,331 ms stayed unchanged. The separate Setup snapshot
+reports speech factory available, with Microphone/notifications/Usage Access off.
+[Record and scope](readback-phone.md). No audible speaker, ASR, installed recognition
+language or network-disconnected whole-device outcome is proved.
+
+The added `v11_readback_report_binding` checks full committed source/protocol/raw
+bytes, phase order, finite consistent metrics and callback classification. Six
+fixtures reject false ASR/audibility claims, changed committed sources, corrupted
+reports, reordered phases and failed cleanup. Four harness fixtures pass. The full
+voice/monitoring and goal gates remain incomplete; validators do not replay phone
+behavior. Profile onboarding still blocks account-specific application facts.
 
 ## Current v0.11 authored-guide attributed report
 

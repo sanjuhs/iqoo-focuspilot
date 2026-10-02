@@ -46,6 +46,24 @@ The [Terms & Conditions](https://iqoo.reskilll.com/terms), last updated 10 Septe
 
 **Planning implication:** research, architecture, environment verification and draft ideas can proceed now. Keep preparation experiments clearly labelled and dated. Obtain explicit organiser guidance before carrying pre-event application code into a competition submission; do not present today's code as event-written work. This is an interpretation of the rules, not an invented ban on research or setup.
 
+## Signed-in route recheck — no form changes
+
+The existing official Guide tab showed **SIGN OUT**, indicating an authenticated
+interface. No Dashboard/My application link was visible. Opening the exact
+user-provided [registration URL](https://iqoo.reskilll.com/register) in that same
+tab redirected to [profile onboarding](https://iqoo.reskilll.com/onboarding).
+The visible form labels were name, email, phone, gender, organisation, role,
+professional experience, city, state, LinkedIn, GitHub, referral source and
+Terms/Privacy acceptance. LinkedIn and GitHub were explicitly optional; the other
+fields lacked explicit mandatory markers, so their validation requirements were
+not tested. No personal values are retained here.
+
+No Finale cutoff, uploaded-video limits, admission status, selected track or team
+status was visible. The user must complete the personal profile/agreement choices
+to reach further application views. No field selection, edit, agreement acceptance,
+registration submission or external message was performed. This recheck confirms
+the existing onboarding gate; it does not prove an application was accepted.
+
 ## User targets versus unresolved official details
 
 | Item | Status / next evidence needed |

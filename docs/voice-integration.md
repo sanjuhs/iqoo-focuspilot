@@ -40,8 +40,19 @@ Ask Mira reads the existing `mute`, `reduceMotion` and `hideCompanion` preferenc
 
 The optional **Read confirmed focus status** button is enabled only after an explicitly confirmed Start/Pause focus action. It speaks a fixed benign acknowledgement, not the raw transcript, arbitrary model output or an unconfirmed action. It never speaks automatically. Muting blocks readback. The TTS engine must expose an installed English voice whose `isNetworkConnectionRequired()` is false; unavailable engines/voices leave the text on screen. Initialization/playback has a 20-second timeout, stops the engine and releases the audio busy gate; cancelled or late callbacks cannot announce success. Starting another task or leaving the screen stops audio. This follows Android's [Voice contract](https://developer.android.com/reference/android/speech/tts/Voice).
 
+## Later v0.11 phone coverage
+
+The [current physical record](readback-phone.md) reports the on-device speech
+factory available with Microphone off, but no installed-English ASR check or
+transcription. An explicitly reviewed typed Pause reached the fixed-status offline
+English TTS completion callback. The specific engine/voice ID and independently
+audible output were not recorded; full disconnected operation is untested. Muted,
+error/timeout, cancellation/background and actual guide readback branches remain
+pending. No microphone permission was granted or recording started. This later
+observation does not retroactively change the original slice evidence below.
+
 ## What is verified
 
 Seven isolated JVM tests pass for the pure lifecycle state: explicit permission/service/foreground prerequisites; partial versus final draft behavior; late-callback invalidation; background/destroyed screens; model/voice exclusion; malformed or over 500-character transcripts; and one-session bounds. The Android-facing sources were compiled with `javac` against the installed Android 36 SDK and existing app classes. No Gradle build or phone installation was run by this slice while other agents edited the app.
 
-Actual microphone audio transcription, installed language reporting, offline TTS, platform callbacks and permission prompt behavior require root's unified phone test. Their availability is not established by Java unit tests or by Qwen's successful CPU inference. Record device/API/service/language and observed outcomes for each tested branch, including unavailable/denied paths; do not present a simulated transcript as recognized speech.
+Actual microphone audio transcription, installed language reporting, independently audible TTS and the untested platform/permission branches still require unified phone testing; one later fixed-status completion callback is recorded above. Their availability is not established by Java unit tests or by Qwen's successful CPU inference. Record device/API/service/language and observed outcomes for each tested branch, including unavailable/denied paths; do not present a simulated transcript as recognized speech.

@@ -3,6 +3,13 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
+**Current phone readback:** reviewed typed Pause (1,804 ms native CPU) reached the
+installed offline-English TTS engine's completion callback. Audibility, actual ASR
+and disconnected operation remain unverified. Monitoring correctly refused an
+observation-off start; focus stayed paused/off/100 with unchanged elapsed time.
+[Physical coverage](docs/readback-phone.md). The latest setup check still reports
+Microphone, notifications and Usage Access off.
+
 **Current task-guide build: v0.11**, source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.
 Mira can show the next step of your own private plan, mark it complete, undo and
 optionally read it through the existing local voice path. Task/record revision

@@ -1,0 +1,79 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "backend": "CPU/KleidiAI I8MM",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "phases": [
+    {
+      "name": "monitor_prerequisite_block",
+      "checkpoint_unchanged": true,
+      "switch_restored_off": true,
+      "own_service_record_absent": true,
+      "scope": "Observation is off, so early prerequisite guard applies; later notification/revocation branches were not reached"
+    },
+    {
+      "name": "reviewed_pause_on_already_paused_session",
+      "checkpoint_unchanged": true,
+      "original_request": "Stop focus",
+      "action_executed": true
+    },
+    {
+      "name": "explicit_readback_terminal_ui",
+      "checkpoint_unchanged": true,
+      "outcome": "engine_completed_callback",
+      "independently_audible": false
+    }
+  ],
+  "microphone_started": false,
+  "permissions_or_settings_actions": false,
+  "human_audibility_verified": false,
+  "offline_disconnect_verified": false,
+  "speech_recognition_tested": false,
+  "npu_verified": false,
+  "completed": true,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "typed_pause_result": {
+    "command": "Stop focus",
+    "capture": false,
+    "intent": "pause_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1804.0,
+    "prefill_ms": 855.0,
+    "decode_ms": 949.0,
+    "action_executed": true,
+    "confirmation_tapped": true,
+    "already_paused_before_action": true
+  },
+  "readback_tapped": true,
+  "tts_outcome": "engine_completed_callback",
+  "engine_completion_callback_observed": true,
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "own_monitor_service_record_absent_final": true,
+  "cleanup_verified": true
+}

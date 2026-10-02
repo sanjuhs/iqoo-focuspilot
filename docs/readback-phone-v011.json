@@ -1,0 +1,123 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "backend": "CPU/KleidiAI I8MM",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "phases": [
+    {
+      "name": "monitor_prerequisite_block",
+      "checkpoint_unchanged": true,
+      "switch_restored_off": true,
+      "own_service_record_absent": true,
+      "scope": "Observation is off, so early prerequisite guard applies; later notification/revocation branches were not reached"
+    },
+    {
+      "name": "reviewed_pause_on_already_paused_session",
+      "checkpoint_unchanged": true,
+      "original_request": "Stop focus",
+      "action_executed": true
+    },
+    {
+      "name": "explicit_readback_terminal_ui",
+      "checkpoint_unchanged": true,
+      "outcome": "engine_completed_callback",
+      "independently_audible": false
+    }
+  ],
+  "microphone_started": false,
+  "permissions_or_settings_actions": false,
+  "human_audibility_verified": false,
+  "offline_disconnect_verified": false,
+  "speech_recognition_tested": false,
+  "npu_verified": false,
+  "completed": true,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "typed_pause_result": {
+    "command": "Stop focus",
+    "capture": false,
+    "intent": "pause_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1804.0,
+    "prefill_ms": 855.0,
+    "decode_ms": 949.0,
+    "action_executed": true,
+    "confirmation_tapped": true,
+    "already_paused_before_action": true
+  },
+  "readback_tapped": true,
+  "tts_outcome": "engine_completed_callback",
+  "engine_completion_callback_observed": true,
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "own_monitor_service_record_absent_final": true,
+  "cleanup_verified": true,
+  "recorded_date_ist": "2026-10-02",
+  "harness_source_commit": "cc6d5b1515334351aa503a5958b6b5fe4063b0c3",
+  "protocol_file": "prototype/readback-proof/protocol.json",
+  "protocol_sha256": "ccc0c46ad2ea7ccfda58314b291fe26617eea1e1329129a387875b289f57e430",
+  "harness_sha256": {
+    "scripts/phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+    "scripts/phone_model_smoke.py": "91e709fb8201141a3a09f48a14b874cf902c4082cefcc2f8b70d41a4fd51e27f",
+    "scripts/phone_focus_actions.py": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+    "scripts/phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1"
+  },
+  "app_source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java": "ffa28559ed90614e38197e541d0b19ba1fca774109e659d15af5621cb67ec3a6",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalVoiceInput.java": "65fef725fd4725b63a80e612472397a1d7d7d1791e326e844cc82f7903ad69d8",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusMonitorService.java": "92893791039a6dbf187a146a9da10b57bd154ae220a14d7da53768a635a9acba",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "696312fb75a480f37e282c076a65709826369fbc06a323d0bfe1ef95723c30a0"
+  },
+  "raw_report_sha256": "d07660bfbdb046382f18a444568ebc9f314756e95d51d21e2b7746e02c5a9a79",
+  "scope": "Attributed three-phase own-app monitor prerequisite block, typed reviewed Pause on an already-paused session, and explicit TTS terminal callback. Engine callback is not independent speaker audibility, actual ASR, or disconnected whole-device verification.",
+  "independent_post_run_readonly_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "independent_post_run_runtime_grants": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "independent_post_run_monitor_record_absent": true,
+  "remaining": [
+    "human-heard or independently captured audio",
+    "actual microphone transcription and installed English ASR support",
+    "muted/failed/timeout/background readback branches",
+    "disconnected workflow",
+    "permissioned selected-app usage and notification Stop/revocation",
+    "floating companion",
+    "Clock",
+    "iQOO/NPU",
+    "Office Kit",
+    "profile onboarding and accepted eligible submission"
+  ],
+  "observed_local_raw_report_mtime_ist": "2026-10-02T23:53:22.118028+05:30",
+  "documentation_updated_date_ist": "2026-10-03"
+}
