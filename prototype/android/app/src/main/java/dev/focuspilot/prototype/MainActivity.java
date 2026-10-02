@@ -50,6 +50,7 @@ public final class MainActivity extends Activity {
     private Switch livePreferenceSwitch;
     private boolean updatingLivePreference;
     private CompanionView companion;
+    private TaskGuidePanel taskGuide;
     private Button sessionButton, heroFocusButton;
     private TextView floatingStatus;
     private boolean floatingResumed;
@@ -189,6 +190,9 @@ public final class MainActivity extends Activity {
         button("Save task & targets",goals,v -> saveGoal(),true);
         sessionButton = button("Start focus",focus,v -> toggleFocus(),true);
         button("Reset this session",focus,v -> resetSession(),false);
+        LinearLayout steps=card("ONE SMALL STEP");
+        taskGuide=new TaskGuidePanel(this,prefs,()->prefs.getString("focusGoal",""),this::showStatus,this::speak,()->{if(tts!=null)tts.stop();});
+        steps.addView(taskGuide);
         LinearLayout monitor=card("STAY WITH ME · OPT-IN BACKGROUND FOCUS");
         monitorStatus=text("Monitor stopped",18,WHITE,true); monitor.addView(monitorStatus);
         monitor.addView(text("Continue one app-budget session when this app is closed, using a visible notification with Stop. Turn on usage reading, grant Usage Access, and allow notifications first. No always-listening microphone or screen capture. Android/OEM power rules can stop it.",13,MUTED,false));
@@ -279,6 +283,7 @@ public final class MainActivity extends Activity {
         renderClock();
         String goal=prefs.getString("focusGoal","");
         goalLabel.setText(goal.isEmpty() ? "One task at a time." : "Your task · "+goal);
+        taskGuide.refresh();
         sessionLabel.setText(session.isCompleted()?"Complete · a moment to breathe":session.isActive() ? "In your focus zone" : "Paused · you're in control"); sessionButton.setText(session.isActive() ? "Pause focus" : "Start / resume focus");
         heroFocusButton.setText(session.isActive() ? "Pause focus" : "Start focus");
         usageLabel.setText(!observe ? "Usage reading is off" : !usageGranted() ? "Usage Access needed" : String.format(Locale.US,"%.1f / %d min · %s",usage/60_000.0,budgetMs/60_000,monitoredPackage));
@@ -365,6 +370,7 @@ public final class MainActivity extends Activity {
         catch(IllegalArgumentException error) { showStatus(error.getMessage()); return; }
         stopMonitor("Task/targets changed; focus paused for review");
         prefs.edit().putString("focusGoal",value.goal).apply();
+        taskGuide.taskChanged();
         repository.configureShadowLimits(value.continuousMs,value.plannedMs);
         goalInput.setText(value.goal); simulated=false;
         showStatus("Task and declared targets saved privately. Restart focus when ready; targets don't stop it automatically."); refresh();
@@ -501,6 +507,7 @@ public final class MainActivity extends Activity {
         updateLivePreferenceSwitch();
         monitoredPackage="com.instagram.android"; budgetMs=300_000; packageInput.setText(monitoredPackage); budgetInput.setText("5");
         goalInput.setText(""); plannedInput.setText(""); continuousInput.setText("");
+        taskGuide.afterDataDeletion();
         renderLogs(); refresh(); showStatus(dataDeleted && practiceDeleted ? "Focus data and saved examples deleted. Model remains installed; observation off." : "Focus state reset, but deletion of some saved data could not be confirmed. Observation is off; retry deletion. Model remains installed.");
     }
 }
