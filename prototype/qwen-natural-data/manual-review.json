@@ -1,0 +1,23 @@
+{
+  "schema": "focuspilot.natural_manual_review.v1",
+  "reviewer": "root",
+  "all_rows_reviewed": 100,
+  "before_any_model_or_gate_output": true,
+  "corrections": 0,
+  "corpus_sha256": "bbf2339a05b99274584a6750c864b45ff8feba69c732c83477902532bf1b1f97",
+  "requests_sha256": "a7545e0dfe842a4ea7f5595a92e17e0e665c4187996610f8e79077e7f47b72df",
+  "notes": [
+    "All numeric durations, limits, and alarm AM/PM/noon/midnight slots independently checked.",
+    "Ordinary no-upload/no-recording preferences alone remain supported.",
+    "Focus-timer cancellation is a Pause intent; compound and future-conditioned actions remain unknown.",
+    "Explain gold denotes bounded proposal/domain recognition; actual elapsed/current-session/nudge-cause answer fulfillment is a separate product requirement."
+  ],
+  "independent_review": {
+    "reviewer": "architecture",
+    "all_rows_reviewed": 100,
+    "before_outputs": true,
+    "corrections": 0,
+    "gate_model_calls": 0,
+    "source_or_data_edits": 0
+  }
+}

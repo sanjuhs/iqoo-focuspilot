@@ -1,0 +1,66 @@
+{
+  "author_attempts": 1,
+  "author_informed_not_blind": true,
+  "candidate_grammar_tests_and_class_contents_read": false,
+  "checks_passed_before_outputs": [
+    "exact row schema and manually labelled intent/action/slots",
+    "fixed class and app target counts",
+    "reciprocal paired families and distinct template identities",
+    "hard case and twelve unknown boundary minimums",
+    "opaque exact/normalized/family/template exclusions",
+    "authorized committed generic/protocol/metadata byte identity"
+  ],
+  "contract_tests_passed": 12,
+  "fresh_rows": 100,
+  "frozen_output_changes": 0,
+  "hard_tag_counts": {
+    "current_or_spoken_focus_pause": 4,
+    "duration_boundary": 4,
+    "midnight_noon": 2,
+    "nudge_cause": 4,
+    "pause_preservation": 8,
+    "resume_vs_start": 2,
+    "spoken_number": 14
+  },
+  "identities": {
+    "frozen_corpus_sha256": "bbf2339a05b99274584a6750c864b45ff8feba69c732c83477902532bf1b1f97",
+    "frozen_requests_sha256": "a7545e0dfe842a4ea7f5595a92e17e0e665c4187996610f8e79077e7f47b72df",
+    "private_author_attempt_sha256": "f7f68c9521a3bda91827613f318447f1b6ed6e38e8633f61ae8b2a31f0e9ebb4",
+    "private_author_input_sha256": "f7f68c9521a3bda91827613f318447f1b6ed6e38e8633f61ae8b2a31f0e9ebb4",
+    "private_author_script_sha256": "536b2231d09bd36e3bbcdad40527877b2a275c21c9928446f4d63c6b37bce503",
+    "public_corpus_manifest_sha256": "fddd8f44282d23730c3229b9fe2be7c729c148fd48873f54e0370c8476b181c6"
+  },
+  "initial_attempt_preserved": true,
+  "manual_corrections": 0,
+  "manual_review_considerations": [
+    "Two supported requests contain ordinary privacy/non-recording preferences: one Start and one Explain. They request no new capture capability, so their main bounded intents remain supported.",
+    "Two-hour Start/Timer durations are exactly the declared 7,200-second upper endpoint; one-second cases are the lower endpoint. All expectations are manually assigned, without inspecting any candidate grammar.",
+    "Untimed Start requests have zero seconds. Alarm times are exact local wall-clock AM/PM or 24-hour values, including noon and midnight; no dates or future scheduling qualifiers are supported.",
+    "Some conversational Pause, wake-up and session-summary phrasing may expose validator coverage limits; retain all rows regardless of later results.",
+    "Unknown suffixes require additional unsupported call blocking, screen/photo capture, or permission changes. Quoted and conditional neighbors are not direct execution requests.",
+    "Explain elapsed/remaining/progress labels establish intended domain and a slotless proposal only; actual answer fulfillment remains a separate product proof."
+  ],
+  "model_gate_oracle_calls": 0,
+  "opaque_exclusion_sha256": "494b1e6f341c288817ee877f3ac1fed7c5f174549da366a9ea7c8200d3671628",
+  "opaque_rejected_attempts": 0,
+  "ordinary_privacy_constraints_alone_not_unknown": true,
+  "reciprocal_families": 50,
+  "remaining_step": "Parent independent manual gold review before any model/gate capture; no post-output row or gold edits",
+  "schema": "focuspilot.natural_author_audit.v1",
+  "source_authorization_commit": "29a2e97eab531fba14a1071b96ee701fa1e98628",
+  "source_freeze_sha256": "96ac5bd81e1a1cea7d44a3498875361917d903eca5620705c5009d7f4c8ca726",
+  "unknown_boundary_counts": {
+    "compound": 5,
+    "conditional": 3,
+    "deletion": 4,
+    "injection": 5,
+    "invalid_slot": 4,
+    "malformed_slot": 3,
+    "message": 4,
+    "negation": 5,
+    "payment": 5,
+    "quoted": 2,
+    "suffix": 5,
+    "unsupported": 5
+  }
+}
