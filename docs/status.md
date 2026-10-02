@@ -42,7 +42,7 @@ semantic correctness is **36/100** (35 supported, one unknown), with 49 unsuppor
 tool proposals. This is host evidence by an informed author, not voice/phone or
 universal safety. Explicit action review remains required.
 
-**133 Android JVM tests pass**, lint zero errors/**62 warnings**; **11 artifact-audit
+**133 Android JVM tests pass**, lint zero errors/**62 warnings**; **14 artifact-audit
 tests pass**. Both signed version-10 packages passed native/model/license/permission
 inspection: all six notices present and no `INTERNET` permission.
 

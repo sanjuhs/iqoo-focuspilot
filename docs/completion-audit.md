@@ -53,7 +53,9 @@ A separate [4:35 Mira pitch](current-pitch.md) adds original procedural animatio
 Media/manifest hashes, source bindings, measured streams and caption bounds are
 auditable. Full decode, encoded frames/transitions and audio levels passed during
 render QA; these are attributed checks, not complete human listening. No phone
-capture/actions, NPU or Office Kit demonstration occurred. The old video is preserved.
+capture/actions, NPU or Office Kit demonstration occurred. The extended auditor
+passes 14 fixtures, including missing/changed pitch sources and measured stream
+or caption mismatches; it attributes prior decode QA without replaying it. The old video is preserved.
 All four current-video release assets have matching server sizes/SHA-256 digests;
 the previous three package/manifest assets and app-source tag are unchanged.
 Logical project files now total approximately 13.604 decimal GB, below 15 GB.

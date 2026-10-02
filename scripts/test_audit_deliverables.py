@@ -2,7 +2,8 @@ import tempfile,unittest,hashlib,json,subprocess,sys
 from pathlib import Path
 from zipfile import ZipFile
 from audit_deliverables import artifact_identity,release_parity,inspect_apk,LICENSES,sha,reports,captions,manual_proofs,phone_record,MODEL_SHA,synthetic_arithmetic
-from audit_deliverables import command_confirmation_binding
+from audit_deliverables import command_confirmation_binding,current_pitch_audit,CURRENT_PITCH_RENDER_COMMIT,CURRENT_PITCH_APP_COMMIT
+from unittest.mock import patch
 
 class EvidenceAuditTests(unittest.TestCase):
  def setUp(self):self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
@@ -64,4 +65,50 @@ class EvidenceAuditTests(unittest.TestCase):
   self.assertEqual('incomplete',command_confirmation_binding(self.root)['status']);gate.write_bytes(original)
   result=self.root/lab/'results.json';record=json.loads(result.read_text());record['gates']['generated']['selected']['supported_correct']=50;result.write_text(json.dumps(record))
   self.assertEqual('incomplete',command_confirmation_binding(self.root)['status'])
+ def current_pitch_fixture(self):
+  source=self.write('docs/current-research-pitch-script.md',b'original narration')
+  renderer=self.write('scripts/render_current_pitch.py',b'original renderer')
+  policy_source=self.write('prototype/policy/policy.py',b'original policy')
+  policy=self.write('prototype/policy/synthetic-model.json',json.dumps({'implementation_sha256':sha(policy_source)}).encode())
+  gate=self.write('prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java',b'gate')
+  adapter=self.write('prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java',b'adapter')
+  narrative=self.write('docs/narrative.md',b'historical research')
+  metrics=self.write('prototype/current-pitch/metrics.json',json.dumps({'current_app':{'source_commit':CURRENT_PITCH_APP_COMMIT,'gate_sha256':sha(gate),'prompt_adapter_sha256':sha(adapter)},'policy':{'checkpoint_sha256':sha(policy)},'sources':{'docs/narrative.md':{'sha256':sha(narrative),'source_commit':CURRENT_PITCH_APP_COMMIT}}}).encode())
+  video=self.write('artifacts/pitch-current.mp4',b'video fixture')
+  subtitle=self.write('artifacts/pitch-current.srt',b'1\n00:00:00,000 --> 00:00:02,000\nResearch\n')
+  manifest={'app_source_commit':CURRENT_PITCH_APP_COMMIT,'source_sha256':sha(source),'renderer_sha256':sha(renderer),'metrics_sha256':sha(metrics),'policy_source_sha256':sha(policy_source),'policy_checkpoint_sha256':sha(policy),'video_sha256':sha(video),'captions_sha256':sha(subtitle),'evidence_bindings':{'docs/narrative.md':{'sha256':sha(narrative),'recorded_commit':CURRENT_PITCH_APP_COMMIT}},'phone_capture_used':False,'phone_actions_executed':0,'human_complete_audio_review':False,'seconds':200,'resolution':[1920,1080],'fps':24,'caption_segments':1}
+  manifest_file=self.write('docs/current-pitch-render-manifest.json',json.dumps(manifest).encode())
+  metadata={'render_source_commit':CURRENT_PITCH_RENDER_COMMIT,'app_source_commit':CURRENT_PITCH_APP_COMMIT,'source':str(source.relative_to(self.root)),'renderer':str(renderer.relative_to(self.root)),'metrics':str(metrics.relative_to(self.root)),'checks':{'seconds':200,'resolution':[1920,1080],'fps':24,'video_codec':'h264','audio_codec':'aac','audio_video_drift_seconds':0,'caption_segments':1,'full_decode':'reported previous pass','human_complete_audio_review':False,'live_phone_recording':False,'phone_capture_used':False,'phone_actions_executed':0,'npu_verified':False,'office_kit_verified':False}}
+  for key,path in [('video',video),('captions',subtitle),('render_manifest',manifest_file)]:metadata[key]={'file':str(path.relative_to(self.root)),'bytes':path.stat().st_size,'sha256':sha(path)}
+  self.write('docs/current-pitch-evidence.json',json.dumps(metadata).encode())
+  frozen={CURRENT_PITCH_RENDER_COMMIT+':'+str(path.relative_to(self.root)):path.read_text() for path in (source,renderer,metrics,policy_source,policy)}
+  frozen.update({CURRENT_PITCH_APP_COMMIT+':'+str(path.relative_to(self.root)):path.read_text() for path in (gate,adapter,narrative)})
+  probe={'format':{'duration':'200.0'},'streams':[{'codec_type':'video','codec_name':'h264','width':1920,'height':1080,'duration':'200','avg_frame_rate':'24/1'},{'codec_type':'audio','codec_name':'aac','duration':'200'}]}
+  def fake_command(args):
+   if args[0]=='git':return frozen[args[-1]]
+   if args[0]=='ffprobe':return json.dumps(probe)
+   raise AssertionError('Unexpected process (decode replay is forbidden): '+str(args))
+  return metadata,manifest,probe,fake_command
+ def pitch_call(self,metadata,manifest,fake_command,probe_available=True):
+  with patch('audit_deliverables.command',side_effect=fake_command),patch('audit_deliverables.shutil.which',return_value='/fixture/ffprobe' if probe_available else None):return current_pitch_audit(self.root,metadata,manifest)
+ def test_current_pitch_binds_commits_and_attributes_prior_qa_without_live_proof(self):
+  metadata,manifest,probe,runner=self.current_pitch_fixture();result=self.pitch_call(metadata,manifest,runner)
+  self.assertEqual('verified',result['status']);self.assertEqual('attributed_report',result['prior_decode_qa']['status']);self.assertFalse(result['prior_decode_qa']['independently_repeated']);self.assertFalse(result['human_complete_audio_review_verified']);self.assertFalse(result['live_demo']);self.assertFalse(result['npu_verified'])
+  metadata['app_source_commit']=CURRENT_PITCH_RENDER_COMMIT
+  with patch('audit_deliverables.source_commit_binding',return_value=True):self.assertEqual('incomplete',self.pitch_call(metadata,manifest,runner)['status'])
+ def test_current_pitch_rejects_missing_renderer_changed_narration_and_metric_binding(self):
+  metadata,manifest,probe,runner=self.current_pitch_fixture();renderer=self.root/'scripts/render_current_pitch.py';original=renderer.read_bytes();renderer.unlink()
+  result=self.pitch_call(metadata,manifest,runner);self.assertEqual('incomplete',result['status']);self.assertFalse(result['source_hash_bindings']['renderer_sha256']);renderer.write_bytes(original)
+  source=self.root/'docs/current-research-pitch-script.md';original=source.read_bytes();source.write_bytes(b'changed narration')
+  self.assertEqual('incomplete',self.pitch_call(metadata,manifest,runner)['status']);source.write_bytes(original)
+  manifest['metrics_sha256']='0'*64
+  self.assertEqual('incomplete',self.pitch_call(metadata,manifest,runner)['status'])
+ def test_current_pitch_rejects_measured_stream_and_caption_mismatch(self):
+  metadata,manifest,probe,runner=self.current_pitch_fixture();probe['streams'].pop()
+  self.assertEqual('incomplete',self.pitch_call(metadata,manifest,runner)['status'])
+  probe['streams'].append({'codec_type':'audio','codec_name':'aac','duration':'200'})
+  subtitle=self.root/'artifacts/pitch-current.srt';subtitle.write_text('1\n00:03:19,000 --> 00:03:21,000\nLate\n')
+  metadata['captions'].update(bytes=subtitle.stat().st_size,sha256=sha(subtitle));manifest['captions_sha256']=sha(subtitle)
+  mf=self.root/'docs/current-pitch-render-manifest.json';mf.write_text(json.dumps(manifest));metadata['render_manifest'].update(bytes=mf.stat().st_size,sha256=sha(mf))
+  result=self.pitch_call(metadata,manifest,runner);self.assertEqual('incomplete',result['status']);self.assertEqual('incomplete',result['captions']['status'])
 if __name__=='__main__':unittest.main()

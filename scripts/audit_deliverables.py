@@ -15,6 +15,9 @@ from xml.etree import ElementTree as ET
 
 MODEL_SHA='57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf'
 MODEL_BYTES=563036064
+CURRENT_PITCH_RENDER_COMMIT='6ca1d02284ecffd643b9d50ea6b1b18d610f88d1'
+CURRENT_PITCH_APP_COMMIT='bcc24733655e4eced67d68ff5c47f7ab97d60b36'
+V10_REQUIRED_ASSETS=['focuspilot-research-v010-light.apk','focuspilot-research-v010-bundled.apk','conversational-commands-artifacts.json','pitch-current.mp4','pitch-current.srt','current-pitch-render-manifest.json','current-pitch-evidence.json']
 LICENSES={'FocusPilot-MIT.txt':'LICENSE','Qwen3.5-Apache-2.0.txt':'prototype/qwen/LICENSE.Qwen3.5','llama.cpp-MIT.txt':'prototype/native/LICENSE.llama.cpp','KleidiAI-Apache-2.0.txt':'prototype/native/LICENSE.KleidiAI.Apache-2.0.txt','KleidiAI-BSD-3-Clause.txt':'prototype/native/LICENSE.KleidiAI.BSD-3-Clause.txt','KleidiAI-notices.txt':'prototype/native/NOTICE.KleidiAI.txt'}
 MANUAL_REQUIREMENTS={
  'offline_disconnected':'Actual airplane-mode/USB-disconnected Qwen execution, with settings state and successful result tied to APK/model hashes',
@@ -145,6 +148,62 @@ def video_audit(root,metadata,manifest):
  out['asset_provenance']={'avatar_recorded':asset,'current_asset_sha256':observed,'historical_avatar_hash_recorded':manifest.get('avatar_sha256'),'avatar_authorship':'original vector declared in docs/companion-design.md; not independently proved by hashing','phone_still_kind':'historical research UI screenshot, not live footage','phone_crop_recorded':manifest.get('phone_crop_pixels'),'phone_capture_hash_in_historical_manifest':manifest.get('phone_still_sha256'),'capture_consent_and_visual_privacy_review':'human attestation required; file presence/crop does not self-certify privacy','current_hashes_bind_historical_render_inputs':False}
  return out
 
+def source_commit_binding(root,name,expected,commit):
+ """Hash a public text source at a full commit; never execute source."""
+ p=Path(name)
+ if p.is_absolute() or '..' in p.parts or not p.parts or p.parts[0] not in ('docs','scripts','prototype') or not public_evidence_path(root,root/p):return False
+ if not isinstance(commit,str) or not re.fullmatch('[0-9a-f]{40}',commit):return False
+ try:return hashlib.sha256(command(['git','-C',root,'show',commit+':'+name]).encode()).hexdigest()==expected
+ except (OSError,subprocess.CalledProcessError):return False
+
+def current_pitch_audit(root,metadata,manifest):
+ """Current media identities/metadata; previous full decode is attributed only."""
+ out={'scope':'local media/source identity and ffprobe/SRT metadata, no decode replay or human review','live_demo':False,'human_complete_audio_review_verified':False,'npu_verified':False,'office_kit_verified':False}
+ paths={'video':'artifacts/pitch-current.mp4','captions':'artifacts/pitch-current.srt','render_manifest':'docs/current-pitch-render-manifest.json'}
+ out['identities']={}
+ for name,path in paths.items():
+  record=metadata.get(name,{})
+  out['identities'][name]=artifact_identity(root/path,record) if record.get('file')==path and public_evidence_path(root,root/path) else {'status':'incomplete','reason':'unexpected/non-public artifact path'}
+ if any(x['status']!='verified' for x in out['identities'].values()):
+  out['status']='missing' if any(x['status']=='missing' for x in out['identities'].values()) else 'incomplete';return out
+ checks={'parsed_manifest_matches_file':manifest==read_json(root/paths['render_manifest'])}
+ definitions={'source_sha256':('docs/current-research-pitch-script.md','source'),'renderer_sha256':('scripts/render_current_pitch.py','renderer'),'metrics_sha256':('prototype/current-pitch/metrics.json','metrics'),'policy_source_sha256':('prototype/policy/policy.py',None),'policy_checkpoint_sha256':('prototype/policy/synthetic-model.json',None)}
+ out['source_hash_bindings']={};out['render_commit_bindings']={}
+ for key,(name,field) in definitions.items():
+  path=root/name
+  out['source_hash_bindings'][key]=(field is None or metadata.get(field)==name) and public_evidence_path(root,path) and path.is_file() and sha(path)==manifest.get(key)
+  out['render_commit_bindings'][name]=source_commit_binding(root,name,manifest.get(key),metadata.get('render_source_commit'))
+ if not out['source_hash_bindings']['metrics_sha256'] or not out['source_hash_bindings']['policy_checkpoint_sha256']:
+  out['status']='incomplete';return out
+ metrics=read_json(root/definitions['metrics_sha256'][0]);policy=read_json(root/definitions['policy_checkpoint_sha256'][0]);app=metrics['current_app']
+ out['app_commit_bindings']={key:source_commit_binding(root,path,app.get(key),metadata.get('app_source_commit')) for key,path in {'gate_sha256':'prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java','prompt_adapter_sha256':'prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java'}.items()}
+ checks['commit_references']=metadata.get('render_source_commit')==CURRENT_PITCH_RENDER_COMMIT and metadata.get('app_source_commit')==manifest.get('app_source_commit')==app.get('source_commit')==CURRENT_PITCH_APP_COMMIT
+ checks['policy_checkpoint']=policy.get('implementation_sha256')==manifest.get('policy_source_sha256') and metrics['policy'].get('checkpoint_sha256')==manifest.get('policy_checkpoint_sha256')
+ checks['media_manifest']=manifest.get('video_sha256')==metadata['video']['sha256'] and manifest.get('captions_sha256')==metadata['captions']['sha256']
+ recorded=manifest.get('evidence_bindings',{});declared=metrics.get('sources',{});out['narrative_evidence_bindings']={}
+ for name,item in declared.items():
+  binding=recorded.get(name,{})
+  out['narrative_evidence_bindings'][name]=binding.get('sha256')==item.get('sha256') and binding.get('recorded_commit')==item.get('source_commit') and source_commit_binding(root,name,item.get('sha256'),item.get('source_commit'))
+ checks['narrative_inventory']=bool(declared) and set(recorded)==set(declared)
+ reported=metadata.get('checks',{})
+ checks['research_scope']=manifest.get('phone_capture_used') is False and manifest.get('phone_actions_executed')==0 and manifest.get('human_complete_audio_review') is False and all(reported.get(k) is False for k in ('human_complete_audio_review','live_phone_recording','phone_capture_used','npu_verified','office_kit_verified')) and reported.get('phone_actions_executed')==0
+ out['prior_decode_qa']={'status':'attributed_report','reported_result':reported.get('full_decode'),'evidence_file':'docs/current-pitch-evidence.json','evidence_sha256':sha(root/'docs/current-pitch-evidence.json') if (root/'docs/current-pitch-evidence.json').is_file() else None,'independently_repeated':False,'human_review_proved':False}
+ bindings_ok=all(checks.values()) and all(out['source_hash_bindings'].values()) and all(out['render_commit_bindings'].values()) and all(out['app_commit_bindings'].values()) and all(out['narrative_evidence_bindings'].values())
+ out['checks']=checks
+ if not shutil.which('ffprobe'):
+  out['status']='weak_evidence' if bindings_ok else 'incomplete';out['metadata_proof']='ffprobe unavailable; declared stream metadata not independently checked';return out
+ probe=json.loads(command(['ffprobe','-v','error','-show_entries','format=duration:stream=codec_name,codec_type,width,height,duration,avg_frame_rate','-of','json',root/paths['video']]))
+ video=next((s for s in probe['streams'] if s['codec_type']=='video'),{});audio=next((s for s in probe['streams'] if s['codec_type']=='audio'),{})
+ duration=float(probe['format']['duration']);ratio=video.get('avg_frame_rate','0/1').split('/');fps=float(ratio[0])/float(ratio[1]) if len(ratio)==2 and float(ratio[1]) else 0.
+ vd=float(video.get('duration',0));ad=float(audio.get('duration',0));drift=abs(vd-ad)
+ out['measured']={'seconds':duration,'resolution':[video.get('width'),video.get('height')],'fps':fps,'video_codec':video.get('codec_name'),'audio_codec':audio.get('codec_name'),'audio_present':bool(audio),'audio_video_drift_seconds':drift}
+ try:out['captions']=captions(root/paths['captions'],duration)
+ except (ValueError,IndexError):out['captions']={'status':'incomplete','reason':'malformed SRT timing'}
+ checks['stream_metadata']=math.isfinite(duration) and 180<=duration<=300 and abs(duration-manifest.get('seconds',0))<.05 and abs(duration-reported.get('seconds',0))<.05 and out['measured']['resolution']==manifest.get('resolution')==reported.get('resolution')==[1920,1080] and math.isclose(fps,manifest.get('fps',0),abs_tol=1e-6) and math.isclose(fps,reported.get('fps',0),abs_tol=1e-6) and fps==24 and bool(audio) and video.get('codec_name')==reported.get('video_codec')=='h264' and audio.get('codec_name')==reported.get('audio_codec')=='aac' and 0<vd<=duration+.05 and 0<ad<=duration+.05 and drift<=.05 and abs(drift-reported.get('audio_video_drift_seconds',-1))<.01
+ checks['caption_count']=out['captions'].get('segments')==manifest.get('caption_segments')==reported.get('caption_segments')
+ out['status']='verified' if bindings_ok and checks['stream_metadata'] and out['captions']['status']=='verified' and checks['caption_count'] else 'incomplete'
+ return out
+
 def phone_record(record, expected, source_tag=None):
  fields={'apk_sha256':expected['sha256'],'native_sha256':expected['native_sha256'],'model_sha256':MODEL_SHA}
  matches={key:record.get(key)==value for key,value in fields.items()}
@@ -267,6 +326,7 @@ def main():
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
+ audit.check('current_pitch',lambda:current_pitch_audit(root,read_json(root/'docs/current-pitch-evidence.json'),read_json(root/'docs/current-pitch-render-manifest.json')))
  audit.check('synthetic_research',lambda:synthetic_arithmetic(read_json(root/'prototype/policy/synthetic-model-results.json'),read_json(root/'prototype/personalization/evaluation.json'),read_json(root/'prototype/interpretability/summary.json')))
  audit.check('research_source_and_control_bindings',lambda:research_bindings(root))
  audit.check('historical_phone_counterexamples',lambda:{'scope':'recorded five-case historical CPU smoke, not current binary benchmark','record_sha256':sha(root/'prototype/native/phone-smoke-optimized.json'),'native_sha256':read_json(root/'prototype/native/phone-smoke-optimized.json')['native_library_sha256'],'current_native_sha256':native['sha256'],'same_binary':read_json(root/'prototype/native/phone-smoke-optimized.json')['native_library_sha256']==native['sha256'],'model_failures_rejected':[{'request':r['command'],'wrong_model_intent':r['intent'],'gate':r['gate'],'action_executed':r['action_executed']} for r in read_json(root/'prototype/native/phone-smoke-optimized.json')['results'] if r['gate']=='ABSTAIN']})
@@ -287,7 +347,7 @@ def main():
    if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
    v08_names=['focuspilot-research-v08-light.apk','focuspilot-research-v08-bundled.apk','natural-commands-artifacts.json']
    if (root/'docs/natural-commands-phone.json').is_file():v08_names.append('natural-commands-phone.json')
-   for tag,names in {'research-v0.10':['focuspilot-research-v010-light.apk','focuspilot-research-v010-bundled.apk','conversational-commands-artifacts.json'],'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   for tag,names in {'research-v0.10':V10_REQUIRED_ASSETS,'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']
