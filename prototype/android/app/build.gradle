@@ -1,5 +1,9 @@
 plugins { id 'com.android.application' }
 
+def diagnosticRunner = providers.gradleProperty('diagnosticRunner').getOrElse('reset')
+if (!(diagnosticRunner in ['reset', 'nativeIsolation']))
+    throw new GradleException('diagnosticRunner must be reset or nativeIsolation')
+
 def bundleLocalModel = providers.gradleProperty('bundleLocalModel').map { value ->
     if (!(value in ['true', 'false'])) throw new GradleException('bundleLocalModel must be true or false')
     value == 'true'
@@ -59,7 +63,9 @@ android {
         targetSdk 35
         versionCode 13
         versionName '0.13-reviewed-reset-research'
-        testInstrumentationRunner 'dev.focuspilot.prototype.ResetIsolationInstrumentation'
+        testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
+            ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
+            : 'dev.focuspilot.prototype.ResetIsolationInstrumentation'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }
