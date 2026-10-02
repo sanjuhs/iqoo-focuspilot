@@ -5,6 +5,16 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## JSON prompt comparison — rejected
+
+The locked candidate improves supported complete proposals 24→29/50 on fresh
+synthetic host wording but loses two Pause proposals and five semantic predictions.
+Pause coverage falls 2→1/8; warm host median rises 448.14→478.50 ms. The candidate
+is rejected. Original app/model/prompt and release APKs remain selected. The
+oracle gate's 19/50 supported abstentions identify an additional parser limitation;
+future repair requires new frozen evaluation. Twenty-seven research boundary tests
+and independent actual-record audits pass. [Full evidence](docs/json-command-research.md).
+
 ## Current network-denied native diagnostic
 
 The unchanged Qwen3.5-0.8B Q4_0 completed ten synthetic CPU requests in the actual

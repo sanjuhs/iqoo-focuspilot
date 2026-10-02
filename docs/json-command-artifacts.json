@@ -1,0 +1,41 @@
+{
+  "kind": "Actual JSON experiment evidence/source backup bindings; no APK update or eligible submission",
+  "executed_source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+  "selected_app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "files": [
+    {
+      "file": "prototype/command-json-confirm/results.json",
+      "bytes": 115821,
+      "sha256": "3ae4642c31e11f620f840745c8fb4ba902d34fb91d5973e7b3c6e742a7ce660f"
+    },
+    {
+      "file": "prototype/command-json-confirm/decision.json",
+      "bytes": 3196,
+      "sha256": "c2bce570210b3315efadc0f754581b4abe56147d6a93e1071e081d4bfdc895b6"
+    },
+    {
+      "file": "prototype/command-json-confirm/freeze-manifest.json",
+      "bytes": 31053,
+      "sha256": "af89a4677a8f9ec09df4d2631abf658e2a318fe3ab6c37ca1a6e698b53372779"
+    },
+    {
+      "file": "prototype/command-json-confirm/corpus-manifest.json",
+      "bytes": 31408,
+      "sha256": "a5ca7c6f8ab6762edbd0b56474dee699ec0d21fd8685d83ef3176e077b92fa8d"
+    },
+    {
+      "file": "docs/json-command-research.md",
+      "bytes": 5588,
+      "sha256": "a4cdd82b9ffd6c6aa1c3d41beecdfee6ea2b0f35b2c352658e93d780f3b3c174"
+    }
+  ],
+  "project_logical_file_bytes": 14400026082,
+  "storage_cap_bytes": 15000000000,
+  "host_tests": {
+    "authoring": 15,
+    "runner": 12
+  },
+  "independent_record_audit_passed": true,
+  "candidate_rejected": true,
+  "no_phone_actions_or_app_changes": true
+}

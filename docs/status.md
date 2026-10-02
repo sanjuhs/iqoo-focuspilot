@@ -2,15 +2,23 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
-## JSON command reliability — frozen comparison pending
+## JSON command prompt — rejected after frozen confirmation
 
-One revised JSON prompt improved complete supported proposals 12→16/18 on the
-same openly seen host development set, without supported losses or wrong accepts;
-Pause stayed 2/3 and two useful requests still abstained. Host subsequent native
-median rose 444.00→483.84 ms. Candidate/protocol were committed before 100 fresh
-informed-author requests were authored. The original app/Qwen/prompt are unchanged.
-Fresh baseline/candidate inference and the locked no-regression decision remain
-pending at this source checkpoint. [Scope and protocol](json-command-research.md).
+The locked JSON candidate improves complete supported proposals 24→29/50 on
+100 fresh informed-author host requests, but seven gains conceal two Pause losses.
+Five raw semantic predictions regress (four Pause, one warned-focus explanation);
+complete Pause coverage falls 2→1/8. Both arms have 100 exact JSON/EOS outputs and
+zero observed wrong accepts. Subsequent native host median rises 448.14→478.50 ms.
+The candidate fails its prospective criteria and is rejected; the selected app,
+Qwen3.5-0.8B Q4_0, prompt and phone/release state are unchanged.
+
+The same data's oracle-intent gate reaches only 31/50 supported full proposals,
+retaining 19 abstentions. This separates parser limitations from model errors;
+future grammar repairs need a new frozen confirmation. All 27 authoring/runner
+boundary tests pass, and independent raw/source/runtime/inventory/slot audits pass.
+Actual captures ran once at `1f36dfdd635d3b94c26a307d968673587eaf598c`, ending
+with exit zero. This is synthetic host research, not ASR, phone/NPU speed or
+real-user accuracy. [Results, decision and repeat scope](json-command-research.md).
 
 ## Network-denied Qwen phone diagnostic — verified
 

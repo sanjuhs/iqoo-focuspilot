@@ -1,0 +1,3692 @@
+{
+  "research_only": true,
+  "scope": "Frozen informed synthetic host comparison; not human sampling or phone evidence",
+  "frozen_manifest": {
+    "protocol_sha256": "bd5c598bdd330b44f671c6dd50391b1c3e125663ef2a7d88560060f79f0f9c95",
+    "protocol_markdown_sha256": "61498a7e6d69e6daefbba3656e461d2c554ee505b0be28b60f461658f2dee6dc",
+    "selection_lock_sha256": "db043f8805f5fd8bb9432ce08b418a96efca181a64071fa5d7ccec00a6546c2a",
+    "candidate_source_sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+    "candidate_metadata_sha256": "539d533c62cc8f1ff4201a8b99e71acb3e7a954135cc725da73e437c0d8f4c70",
+    "generator_sha256": "c7b5ca8de4ec1d32281842174bc685c7a9f691d3fdd39595f258bf3065683d4f",
+    "cases_sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+    "requests_sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+    "runner_sha256": "f5d3bf17f2f379b970ebaeec73db5dcb9db1cff0d0e8dddda587e741a9c6f785",
+    "capture_source_sha256": "58bdaa5ffd7807a39a48f565213c9065be796c44bb37c6943ada0abbf9d62a77",
+    "gate_harness_sha256": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "semantic_helper_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+    "gate_helper_sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+    "corpus_manifest_sha256": "a5ca7c6f8ab6762edbd0b56474dee699ec0d21fd8685d83ef3176e077b92fa8d",
+    "authoring_test_sha256": "56b36edc39a559ad9cf377fa8281f21ec6b3b7fb83e1e54cf829709a3965c9f9",
+    "scoring_test_sha256": "ed6f9c08e383c7db598927e6367ec96c2fbbac0b51cba82a4f97f99b197603c5",
+    "schema": 1,
+    "scope": "Frozen before either actual JSON confirmation capture; informed author, no general accuracy or phone claim",
+    "candidate_lock_commit": "542d9c5afd117fb32b4d3878e37d924a3e840451",
+    "selected_source_sha256": {
+      "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+    },
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "overlap_inventory": [
+      {
+        "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java",
+        "sha256": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+        "text_count": 200,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java",
+        "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "text_count": 28,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/BudgetPersonalizationIntegrationTest.java",
+        "sha256": "9d8881c9259998bdddecd7c406c5affd53139ae41f359523412bcac5394220a8",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CommandNumberWordsTest.java",
+        "sha256": "90bc05edc1473632e92f11d52216bc4a67b329e11caf8ce9b523d8ee67e4e358",
+        "text_count": 75,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ConversationalCommandGateTest.java",
+        "sha256": "f279baca16066c49fdb0a607677b70de35eeb867032de60c2da406bfecfdc386",
+        "text_count": 60,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CoreTest.java",
+        "sha256": "b22599172235a20722f9fb50f8112b2144c217bbc6d07c2ede8c511f41925864",
+        "text_count": 8,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FewShotPolicyTest.java",
+        "sha256": "5cf2b36c89acb1aca21a399883559d85a9915c7574e2e9bf45daf256e257efee",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FloatingWindowPositionTest.java",
+        "sha256": "a7767401c3b3faef32158033ac8039cb2cef12f9e460071dbf66195a90079970",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusDataExportTest.java",
+        "sha256": "7a86401c0a5bc61b76736c089a94682dadf9001c2735afc865e099bef6db002a",
+        "text_count": 58,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusGoalConfigTest.java",
+        "sha256": "8efba61015433f9a74a8a6feb6f3583223a770e96136bd07f7d49f2cb6a0f87c",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/LivePreferencePolicyTest.java",
+        "sha256": "f7224003a13c61439933f444eeca3aab24b3363311937e178d29fcd1eac57c8d",
+        "text_count": 23,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ModelCommandGateTest.java",
+        "sha256": "eeb39c59d773ba228d982f22cd453f8ecd5a29b03ea9ad673bbaa110d9f19e9b",
+        "text_count": 223,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/MonitorLifecycleTest.java",
+        "sha256": "0dfa156bf60449fea712bcd2c2d64c4af13371699dcef3fa5ed0d556bbbcb071",
+        "text_count": 4,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/NaturalCommandGateTest.java",
+        "sha256": "776b201acd4b803ed2a5563024a6c1d2051531fbd1fa4070f84633dab3fead27",
+        "text_count": 111,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservationSnapshotTest.java",
+        "sha256": "c132c54e0784c4e376d8845db78d2d23987d60ef0293f240e52a66a96e38a622",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservedNudgeGateTest.java",
+        "sha256": "354f178aaed5242892346983dd385d3d91675976c580a40f126ea9a810b37f0a",
+        "text_count": 2,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java",
+        "sha256": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/RetainedForegroundLabelPolicyTest.java",
+        "sha256": "216f9fe680e1354d483e36c99cc02f478d355fa79247053c7f1ce3769a3a7516",
+        "text_count": 3,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/SandboxActionGateTest.java",
+        "sha256": "7ed40c269166dd988a940e280bccd1b641999079065d2ed87592dcb0c4d8c9f3",
+        "text_count": 5,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java",
+        "sha256": "e48b24a9871bf3bacf0cac17871fc6aa1aee7d09431dfbe4a7899548cebc31fa",
+        "text_count": 50,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TimedFocusSessionTest.java",
+        "sha256": "c7545f90f581a4291be3ce71da27b53425dc770ebd4fe2a702cd7a0eb0997a37",
+        "text_count": 0,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TrainedPolicyTest.java",
+        "sha256": "8f0c66b91af55ba0646e061898609d6b70d568e252bb283342b72f5a7b0567ed",
+        "text_count": 4,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/VoiceDraftStateTest.java",
+        "sha256": "7eb41b675bf903a4c29e597e4e21fe16c9546f6c490942195c1048e6c059fa72",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-confirm/build/cases.jsonl",
+        "sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-confirm/test_data.py",
+        "sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+        "text_count": 45,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/CompactIntentCandidate.java",
+        "sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+        "text_count": 11,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-dev/candidate.json",
+        "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+        "text_count": 15,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-compact-runner/test_scoring.py",
+        "sha256": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386",
+        "text_count": 254,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-eval/build/cases.jsonl",
+        "sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+        "text_count": 58,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-eval/test_evaluation.py",
+        "sha256": "5182b36c8a8cf89eb72a16d002992996f7d9f7d078865b9c87caefaf5d511c27",
+        "text_count": 40,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-json-confirm/test_data.py",
+        "sha256": "56b36edc39a559ad9cf377fa8281f21ec6b3b7fb83e1e54cf829709a3965c9f9",
+        "text_count": 122,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-json-dev/JsonIntentCandidate.java",
+        "sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+        "text_count": 25,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-json-dev/build/json1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-json-dev/candidate.json",
+        "sha256": "539d533c62cc8f1ff4201a8b99e71acb3e7a954135cc725da73e437c0d8f4c70",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-json-runner/test_scoring.py",
+        "sha256": "ed6f9c08e383c7db598927e6367ec96c2fbbac0b51cba82a4f97f99b197603c5",
+        "text_count": 137,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": false
+      },
+      {
+        "path": "prototype/command-v08-eval/build/cases.jsonl",
+        "sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v08-eval/test_evaluation.py",
+        "sha256": "23d29cf5112750a2c2622327d4d8416d17832c08ce29dfdc43ea8a8966a099ba",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/cases.jsonl",
+        "sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-confirm/test_evaluation.py",
+        "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+        "text_count": 82,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+        "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "text_count": 36,
+        "method": "TSV complete original request column 2",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/candidates/round1/LocalModel.java",
+        "sha256": "8916ef91bb41a38a250333344803f23e22cc586272807b9f7d9d360a26848f45",
+        "text_count": 65,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-dev/candidates/round2/LocalModel.java",
+        "sha256": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+        "text_count": 54,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/cases.jsonl",
+        "sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+        "text_count": 100,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+        "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+        "text_count": 8,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+        "sha256": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+        "text_count": 13,
+        "method": "JSON fixed_examples/examples only; ignores result metadata",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/command-v10-eval/test_evaluation.py",
+        "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+        "text_count": 82,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/heldout.jsonl",
+        "sha256": "cf066dc847e27fb6be6afd3f086278e6b816f75a9960d2c4833650edba86d40a",
+        "text_count": 410,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/train.jsonl",
+        "sha256": "3aac21b829058147ecf91455abf7f55be52275404a90ab6b792bec387c12a3ff",
+        "text_count": 1160,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/finetuning/build/data/valid.jsonl",
+        "sha256": "3175db7d8961248d14a732cef2b3a2462856d44b5a33a947774372e045a26e63",
+        "text_count": 140,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/intent-head/build/all-cases.jsonl",
+        "sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+        "text_count": 373,
+        "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/laya/cases.json",
+        "sha256": "322e53d53aaa71c24e24cf92a4e7667dd75e81bc7c29f2bb7d959e6cfff1d57d",
+        "text_count": 15,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/build/prompt-cases.tsv",
+        "sha256": "fbdbe2acb956620bb514a68b1031e9b77f7de9fdcc62ada7ed3ac39e8f65037d",
+        "text_count": 16,
+        "method": "TSV complete original request column 3",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/LocalModel.java",
+        "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "text_count": 28,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/NativeSmoke.java",
+        "sha256": "3d6ce882b4bbbc5cac962a7a032ecfdc42c42dd149f690559ca35e06ec789f14",
+        "text_count": 22,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/native/java/PromptBenchmark.java",
+        "sha256": "2d072d7984dd5ac3b04c94049d2cb0a77df49b0fdf9acb9deff924ee7e07e55c",
+        "text_count": 15,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/build/cases.json",
+        "sha256": "248fc51f2bdbb771dc7045d01c87396e273522d5aaea3ac9004cce38fbe55244",
+        "text_count": 14,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/reference/LocalModel.java",
+        "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+        "text_count": 29,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-confirm/test_research.py",
+        "sha256": "917a0aca328c0ca445ec724d9f4c29608009f9aab1c9948c2e22319a01e85f09",
+        "text_count": 35,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/build/cases.json",
+        "sha256": "ab9a4f646e12174dcdc6232e3ce50d98d0aa7b6207803aaa5083401116aff203",
+        "text_count": 12,
+        "method": "JSON array goal/command fields only",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/reference/LocalModel.java",
+        "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+        "text_count": 29,
+        "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "prototype/task-draft-research/test_research.py",
+        "sha256": "ea20627513fddc5a2e3c1010a3d80e343cf7edea98434636325868eaf3eb81dd",
+        "text_count": 35,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_app_launch.py",
+        "sha256": "2e75747d171f4d2b19fc393e71e012c25f6732b849a2750c543a17134e2cc3b2",
+        "text_count": 134,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_bundled_import.py",
+        "sha256": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+        "text_count": 280,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_capture_benchmark.py",
+        "sha256": "8de034e22e38693c097243715c208c4903fafb577511c32d37ecbb38ce6242fd",
+        "text_count": 125,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_demo_capture.py",
+        "sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+        "text_count": 283,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_export.py",
+        "sha256": "2f2b67bdea0d7d5a2865998e0d0199b0a522335214feae9ac5a879eeb98f0c29",
+        "text_count": 301,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_focus_actions.py",
+        "sha256": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+        "text_count": 117,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_focus_recovery.py",
+        "sha256": "92adaeccb91b9baaa4f3455038d5f39e1a323d196e4c00d4086a0b3b1494ea06",
+        "text_count": 195,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_guide_readback.py",
+        "sha256": "6cb39df766a439cb7b6a7f64608db4c684b736604f82dbfddccc324acd8ff71c",
+        "text_count": 240,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_model_smoke.py",
+        "sha256": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+        "text_count": 168,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_network_isolation.py",
+        "sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+        "text_count": 187,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_readback.py",
+        "sha256": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+        "text_count": 162,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_reviewed_reset.py",
+        "sha256": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+        "text_count": 169,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_task_guide.py",
+        "sha256": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+        "text_count": 284,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/phone_timed_focus.py",
+        "sha256": "5b157c19cb09bab3ce9659c938833231f54e6cdfb6464b04f20b6950bb14aa2a",
+        "text_count": 142,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_bundled_import.py",
+        "sha256": "956e95da0aebd10845253f49945389d08dd1f9650a9a0688069b260a625c0995",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_checkpoint.py",
+        "sha256": "17c4849cba5b7114d4ed07e30ad0ffa55053fdd5a2aa3e6a33700e4f0c871941",
+        "text_count": 18,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_foreground.py",
+        "sha256": "0eb689f417f5233ee717a1f7a8f4e64c1c7b1256c09b7aa78264db3995efed65",
+        "text_count": 27,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_network_isolation.py",
+        "sha256": "f9598c6d9b17bb3c1b3c9e417a54dfe94eac5204e42d201cdd5f7205df7c7d4f",
+        "text_count": 25,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_readback.py",
+        "sha256": "5c3cc7fd63652858e4a621b2f41b50f93d40b0944263d94de011d7a7176d4980",
+        "text_count": 20,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_reviewed_reset.py",
+        "sha256": "f86cd0e2dc995c39a8b9af6ebbcc10395fef5a3f4f8ee9b3c3cd88d1b1d9d8e7",
+        "text_count": 23,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      },
+      {
+        "path": "scripts/test_phone_task_guide.py",
+        "sha256": "2e9f057e9ec4239b826ffe2fe964d9b4bec637b1051dbb561d25238784b3ccb1",
+        "text_count": 48,
+        "method": "Conservative Python AST string literals; no external output files",
+        "pinned_at_protocol": true
+      }
+    ],
+    "linked_libraries_sha256": {
+      "/opt/homebrew/opt/llama.cpp/lib/libllama.0.dylib": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668",
+      "/opt/homebrew/opt/ggml/lib/libggml.0.dylib": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3",
+      "/opt/homebrew/opt/ggml/lib/libggml-base.0.dylib": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+    },
+    "linked_library_scope": "Three referenced Homebrew libraries; not entire OS or dynamic backend closure",
+    "rows": 100,
+    "families": 50,
+    "exact_overlap": 0,
+    "normalized_overlap": 0,
+    "raw_data_ignored": true,
+    "actions_executed": 0,
+    "candidate_promoted": false,
+    "host_tests": {
+      "authoring": 15,
+      "runner": 12
+    }
+  },
+  "models": {
+    "baseline": {
+      "rows": 100,
+      "semantic_correct": 35,
+      "supported_rows": 50,
+      "supported_correct": 35,
+      "unknown_rows": 50,
+      "unknown_correct": 0,
+      "schema_and_eos_valid": 100,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 8
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 3
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 4
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 10
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 4
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 0
+        }
+      },
+      "invalid_outputs": 0,
+      "eos_truncations": 0,
+      "confusion": {
+        "alarm": {
+          "INVALID": 0,
+          "alarm": 8,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 3,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 5,
+          "timer": 0,
+          "unknown": 0
+        },
+        "open_app": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 6,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 4,
+          "start_focus": 4,
+          "timer": 0,
+          "unknown": 0
+        },
+        "start_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "INVALID": 0,
+          "alarm": 1,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 5,
+          "timer": 4,
+          "unknown": 0
+        },
+        "unknown": {
+          "INVALID": 0,
+          "alarm": 10,
+          "explain": 3,
+          "open_app": 4,
+          "pause_focus": 3,
+          "start_focus": 27,
+          "timer": 3,
+          "unknown": 0
+        }
+      },
+      "load_ms": 393.848917,
+      "first_native_ms": 470.40413,
+      "subsequent_native_ms_median": 448.14304,
+      "prompt_tokens_median": 164.0,
+      "prompt_tokens_min": 159,
+      "prompt_tokens_max": 172,
+      "metadata": {
+        "source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+        "pid": 7101,
+        "error_type": null,
+        "started_utc": "2026-10-02T21:45:34.101865+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 45.24699116696138,
+        "output_sha256": "d4c8ecbe673fd10018acd3210f9ef5e033742db9867ad018b167ea7963808d54",
+        "requests_sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "candidate_source_sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+        "capture_source_sha256": "58bdaa5ffd7807a39a48f565213c9065be796c44bb37c6943ada0abbf9d62a77",
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "cpu_only": true,
+        "log_sha256": "348ef3ae6fc48599669310a011e0707f9b4032d21964694b55aac6a00c22c16a",
+        "started_record_sha256": "d8f73d31cc8b344f7de69a992acac65e358553f0a233b72e5184339e09da19b2"
+      },
+      "timing_limit": "Host CPU, separate baseline then candidate loads; state cleared each request. No OS-cache-cold, controlled thermal/power, phone, NPU or complete action latency claim.",
+      "descriptive_metrics": {
+        "total_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 448.252415,
+          "nearest_rank_p95": 460.57662,
+          "min": 409.32596,
+          "max": 483.84808
+        },
+        "prefill_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 286.888895,
+          "nearest_rank_p95": 296.56,
+          "min": 274.95571,
+          "max": 306.05733
+        },
+        "decode_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 165.887125,
+          "nearest_rank_p95": 169.77996,
+          "min": 128.41904,
+          "max": 197.00208
+        },
+        "context_setup_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 0.000125,
+          "nearest_rank_p95": 0.000167,
+          "min": 0,
+          "max": 0.00025
+        },
+        "prompt_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 164.0,
+          "nearest_rank_p95": 168,
+          "min": 159,
+          "max": 172
+        },
+        "generated_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 8.0,
+          "nearest_rank_p95": 8,
+          "min": 6,
+          "max": 10
+        },
+        "java_wall_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 449.00739599999997,
+          "nearest_rank_p95": 461.343584,
+          "min": 410.075,
+          "max": 484.608125
+        }
+      },
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 448.14304,
+        "nearest_rank_p95": 460.57662,
+        "min": 409.32596,
+        "max": 483.84808
+      },
+      "native_total_ms_by_intent": {
+        "alarm": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 436.26297999999997,
+          "nearest_rank_p95": 444.34704,
+          "min": 430.94642,
+          "max": 444.34704
+        },
+        "explain": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 447.97798,
+          "nearest_rank_p95": 453.84221,
+          "min": 426.32629,
+          "max": 453.84221
+        },
+        "open_app": {
+          "sample_count": 6,
+          "missing_or_nonfinite": 0,
+          "median": 451.10244,
+          "nearest_rank_p95": 455.65996,
+          "min": 447.11154,
+          "max": 455.65996
+        },
+        "pause_focus": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 448.44833500000004,
+          "nearest_rank_p95": 483.84808,
+          "min": 432.05942,
+          "max": 483.84808
+        },
+        "start_focus": {
+          "sample_count": 10,
+          "missing_or_nonfinite": 0,
+          "median": 448.54499999999996,
+          "nearest_rank_p95": 470.40413,
+          "min": 438.47358,
+          "max": 470.40413
+        },
+        "timer": {
+          "sample_count": 10,
+          "missing_or_nonfinite": 0,
+          "median": 442.59608000000003,
+          "nearest_rank_p95": 457.12538,
+          "min": 409.32596,
+          "max": 457.12538
+        },
+        "unknown": {
+          "sample_count": 50,
+          "missing_or_nonfinite": 0,
+          "median": 450.77021,
+          "nearest_rank_p95": 462.21275,
+          "min": 425.82979,
+          "max": 465.91521
+        }
+      },
+      "native_total_ms_by_family": {
+        "alarm_colon_evening": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 439.238475,
+          "nearest_rank_p95": 442.32387,
+          "min": 436.15308,
+          "max": 442.32387
+        },
+        "alarm_colon_latest": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 437.52739499999996,
+          "nearest_rank_p95": 438.852,
+          "min": 436.20279,
+          "max": 438.852
+        },
+        "alarm_colon_morning": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 443.79783499999996,
+          "nearest_rank_p95": 444.34704,
+          "min": 443.24863,
+          "max": 444.34704
+        },
+        "alarm_midnight_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 435.401295,
+          "nearest_rank_p95": 439.85617,
+          "min": 430.94642,
+          "max": 439.85617
+        },
+        "alarm_noon_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 434.811855,
+          "nearest_rank_p95": 437.22317,
+          "min": 432.40054,
+          "max": 437.22317
+        },
+        "alarm_spoken_evening": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 433.772625,
+          "nearest_rank_p95": 437.64317,
+          "min": 429.90208,
+          "max": 437.64317
+        },
+        "alarm_spoken_morning": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 437.620145,
+          "nearest_rank_p95": 438.91712,
+          "min": 436.32317,
+          "max": 438.91712
+        },
+        "alarm_spoken_zero": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 440.70352,
+          "nearest_rank_p95": 445.89883,
+          "min": 435.50821,
+          "max": 445.89883
+        },
+        "calculator_go_to": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 455.317565,
+          "nearest_rank_p95": 458.90146,
+          "min": 451.73367,
+          "max": 458.90146
+        },
+        "calculator_launch_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 450.92856500000005,
+          "nearest_rank_p95": 453.11342,
+          "min": 448.74371,
+          "max": 453.11342
+        },
+        "clock_bring_up": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 448.40018499999996,
+          "nearest_rank_p95": 449.68883,
+          "min": 447.11154,
+          "max": 449.68883
+        },
+        "clock_show_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 452.472645,
+          "nearest_rank_p95": 452.64871,
+          "min": 452.29658,
+          "max": 452.64871
+        },
+        "explain_done_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 453.34675,
+          "nearest_rank_p95": 458.67792,
+          "min": 448.01558,
+          "max": 458.67792
+        },
+        "explain_focus_overview": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 456.96179,
+          "nearest_rank_p95": 460.57662,
+          "min": 453.34696,
+          "max": 460.57662
+        },
+        "explain_focus_status": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 452.01099999999997,
+          "nearest_rank_p95": 452.56,
+          "min": 451.462,
+          "max": 452.56
+        },
+        "explain_nudge_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 435.42945499999996,
+          "nearest_rank_p95": 439.24433,
+          "min": 431.61458,
+          "max": 439.24433
+        },
+        "explain_remaining_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 448.26917000000003,
+          "nearest_rank_p95": 448.59796,
+          "min": 447.94038,
+          "max": 448.59796
+        },
+        "explain_reminder_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 435.48444,
+          "nearest_rank_p95": 436.47167,
+          "min": 434.49721,
+          "max": 436.47167
+        },
+        "explain_warned_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 444.867915,
+          "nearest_rank_p95": 463.40954,
+          "min": 426.32629,
+          "max": 463.40954
+        },
+        "explain_warning_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 449.61121,
+          "nearest_rank_p95": 453.84221,
+          "min": 445.38021,
+          "max": 453.84221
+        },
+        "focus_activate_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 454.22623,
+          "nearest_rank_p95": 455.0865,
+          "min": 453.36596,
+          "max": 455.0865
+        },
+        "focus_begin_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 462.76315,
+          "nearest_rank_p95": 470.40413,
+          "min": 455.12217,
+          "max": 470.40413
+        },
+        "focus_digit_lower": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 450.50266999999997,
+          "nearest_rank_p95": 452.27713,
+          "min": 448.72821,
+          "max": 452.27713
+        },
+        "focus_digit_upper": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 447.1664,
+          "nearest_rank_p95": 447.29417,
+          "min": 447.03863,
+          "max": 447.29417
+        },
+        "focus_requested_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 457.1385,
+          "nearest_rank_p95": 465.91521,
+          "min": 448.36179,
+          "max": 465.91521
+        },
+        "focus_resume_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 452.433,
+          "nearest_rank_p95": 457.97467,
+          "min": 446.89133,
+          "max": 457.97467
+        },
+        "focus_resume_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 442.421625,
+          "nearest_rank_p95": 446.36967,
+          "min": 438.47358,
+          "max": 446.36967
+        },
+        "focus_resume_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 453.34181,
+          "nearest_rank_p95": 456.70258,
+          "min": 449.98104,
+          "max": 456.70258
+        },
+        "focus_words_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 457.06379000000004,
+          "nearest_rank_p95": 462.21275,
+          "min": 451.91483,
+          "max": 462.21275
+        },
+        "focus_words_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 451.486935,
+          "nearest_rank_p95": 455.56079,
+          "min": 447.41308,
+          "max": 455.56079
+        },
+        "pause_break_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 453.965815,
+          "nearest_rank_p95": 458.59721,
+          "min": 449.33442,
+          "max": 458.59721
+        },
+        "pause_break_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 438.91812500000003,
+          "nearest_rank_p95": 447.02646,
+          "min": 430.80979,
+          "max": 447.02646
+        },
+        "pause_cancel_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 449.49725,
+          "nearest_rank_p95": 450.85146,
+          "min": 448.14304,
+          "max": 450.85146
+        },
+        "pause_countdown_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 435.81775,
+          "nearest_rank_p95": 445.80571,
+          "min": 425.82979,
+          "max": 445.80571
+        },
+        "pause_current_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 454.147105,
+          "nearest_rank_p95": 457.58521,
+          "min": 450.709,
+          "max": 457.58521
+        },
+        "pause_finish_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 430.589855,
+          "nearest_rank_p95": 432.05942,
+          "min": 429.12029,
+          "max": 432.05942
+        },
+        "pause_halt_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 452.452395,
+          "nearest_rank_p95": 457.34254,
+          "min": 447.56225,
+          "max": 457.34254
+        },
+        "pause_ongoing_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 464.219645,
+          "nearest_rank_p95": 483.84808,
+          "min": 444.59121,
+          "max": 483.84808
+        },
+        "settings_bring_up": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 457.54294000000004,
+          "nearest_rank_p95": 459.42592,
+          "min": 455.65996,
+          "max": 459.42592
+        },
+        "settings_show_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 451.790375,
+          "nearest_rank_p95": 453.10954,
+          "min": 450.47121,
+          "max": 453.10954
+        },
+        "timer_count_down_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 452.623895,
+          "nearest_rank_p95": 455.39533,
+          "min": 449.85246,
+          "max": 455.39533
+        },
+        "timer_maximum_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 436.99977,
+          "nearest_rank_p95": 446.31079,
+          "min": 427.68875,
+          "max": 446.31079
+        },
+        "timer_minimum_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 430.975645,
+          "nearest_rank_p95": 435.23208,
+          "min": 426.71921,
+          "max": 435.23208
+        },
+        "timer_numeric_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 458.12735499999997,
+          "nearest_rank_p95": 459.12933,
+          "min": 457.12538,
+          "max": 459.12933
+        },
+        "timer_numeric_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 448.73204,
+          "nearest_rank_p95": 458.58271,
+          "min": 438.88137,
+          "max": 458.58271
+        },
+        "timer_prefix_duration": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 439.260665,
+          "nearest_rank_p95": 451.06496,
+          "min": 427.45637,
+          "max": 451.06496
+        },
+        "timer_request_countdown": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 424.262815,
+          "nearest_rank_p95": 437.27975,
+          "min": 411.24588,
+          "max": 437.27975
+        },
+        "timer_spoken_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 454.531415,
+          "nearest_rank_p95": 458.66812,
+          "min": 450.39471,
+          "max": 458.66812
+        },
+        "timer_spoken_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 425.412105,
+          "nearest_rank_p95": 441.49825,
+          "min": 409.32596,
+          "max": 441.49825
+        },
+        "timer_start_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 453.043855,
+          "nearest_rank_p95": 455.61225,
+          "min": 450.47546,
+          "max": 455.61225
+        }
+      },
+      "native_total_ms_by_hard_tag": {
+        "current_or_spoken_focus_pause": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 450.02171,
+          "nearest_rank_p95": 483.84808,
+          "min": 447.02646,
+          "max": 483.84808
+        },
+        "duration_boundary": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 446.80248,
+          "nearest_rank_p95": 448.72821,
+          "min": 426.71921,
+          "max": 448.72821
+        },
+        "midnight_noon": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 434.084795,
+          "nearest_rank_p95": 437.22317,
+          "min": 430.94642,
+          "max": 437.22317
+        },
+        "nudge_cause": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 433.05589499999996,
+          "nearest_rank_p95": 453.84221,
+          "min": 426.32629,
+          "max": 453.84221
+        },
+        "pause_preservation": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 448.44833500000004,
+          "nearest_rank_p95": 483.84808,
+          "min": 432.05942,
+          "max": 483.84808
+        },
+        "resume_vs_start": {
+          "sample_count": 3,
+          "missing_or_nonfinite": 0,
+          "median": 446.89133,
+          "nearest_rank_p95": 449.98104,
+          "min": 438.47358,
+          "max": 449.98104
+        },
+        "seconds_minutes_unit": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 428.36951999999997,
+          "nearest_rank_p95": 447.41308,
+          "min": 409.32596,
+          "max": 447.41308
+        },
+        "spoken_number_slot": {
+          "sample_count": 12,
+          "missing_or_nonfinite": 0,
+          "median": 442.26725,
+          "nearest_rank_p95": 455.61225,
+          "min": 409.32596,
+          "max": 455.61225
+        }
+      },
+      "grouped_timing_limit": "Intent/family/tag distributions include the first request when in that group; first request and overall subsequent distribution are separately reported. Small groups are descriptive only."
+    },
+    "candidate": {
+      "rows": 100,
+      "semantic_correct": 57,
+      "supported_rows": 50,
+      "supported_correct": 41,
+      "unknown_rows": 50,
+      "unknown_correct": 16,
+      "schema_and_eos_valid": 100,
+      "per_class": {
+        "alarm": {
+          "rows": 8,
+          "correct": 8
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 3
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 6
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 4
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 10
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 10
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 16
+        }
+      },
+      "invalid_outputs": 0,
+      "eos_truncations": 0,
+      "confusion": {
+        "alarm": {
+          "INVALID": 0,
+          "alarm": 8,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "explain": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 3,
+          "open_app": 1,
+          "pause_focus": 1,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 3
+        },
+        "open_app": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 6,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 0,
+          "unknown": 0
+        },
+        "pause_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 4,
+          "start_focus": 1,
+          "timer": 0,
+          "unknown": 3
+        },
+        "start_focus": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 10,
+          "timer": 0,
+          "unknown": 0
+        },
+        "timer": {
+          "INVALID": 0,
+          "alarm": 0,
+          "explain": 0,
+          "open_app": 0,
+          "pause_focus": 0,
+          "start_focus": 0,
+          "timer": 10,
+          "unknown": 0
+        },
+        "unknown": {
+          "INVALID": 0,
+          "alarm": 11,
+          "explain": 2,
+          "open_app": 4,
+          "pause_focus": 3,
+          "start_focus": 7,
+          "timer": 7,
+          "unknown": 16
+        }
+      },
+      "load_ms": 364.294333,
+      "first_native_ms": 499.66083,
+      "subsequent_native_ms_median": 478.49987,
+      "prompt_tokens_median": 206.0,
+      "prompt_tokens_min": 201,
+      "prompt_tokens_max": 214,
+      "metadata": {
+        "source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+        "pid": 7165,
+        "error_type": null,
+        "started_utc": "2026-10-02T21:46:20.132202+00:00",
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 48.41777145804372,
+        "output_sha256": "9c7b4105c80cb0e3c64c6dab9513d4169cfe3b15a8c2b4a9b20440f323eacce7",
+        "requests_sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+        "candidate_source_sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+        "capture_source_sha256": "58bdaa5ffd7807a39a48f565213c9065be796c44bb37c6943ada0abbf9d62a77",
+        "context": 1024,
+        "threads": 4,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "cpu_only": true,
+        "log_sha256": "305d68d429ec883178b68e046f975559ab8aabe43bd2915fed221a5c3a622096",
+        "started_record_sha256": "4b246769da49c1535641dfbb208adac21e0783479c775cddfe2b92282336fb47"
+      },
+      "timing_limit": "Host CPU, separate baseline then candidate loads; state cleared each request. No OS-cache-cold, controlled thermal/power, phone, NPU or complete action latency claim.",
+      "descriptive_metrics": {
+        "total_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 478.625145,
+          "nearest_rank_p95": 495.00838,
+          "min": 455.65117,
+          "max": 516.76096
+        },
+        "prefill_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 359.118915,
+          "nearest_rank_p95": 371.93933,
+          "min": 346.61775,
+          "max": 379.95046
+        },
+        "decode_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 113.299395,
+          "nearest_rank_p95": 132.1765,
+          "min": 108.32013,
+          "max": 151.41675
+        },
+        "context_setup_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 0.000125,
+          "nearest_rank_p95": 0.000208,
+          "min": 0,
+          "max": 0.000459
+        },
+        "prompt_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 206.0,
+          "nearest_rank_p95": 210,
+          "min": 201,
+          "max": 214
+        },
+        "generated_tokens": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 5.0,
+          "nearest_rank_p95": 6,
+          "min": 5,
+          "max": 7
+        },
+        "java_wall_ms": {
+          "sample_count": 100,
+          "missing_or_nonfinite": 0,
+          "median": 479.496,
+          "nearest_rank_p95": 495.886958,
+          "min": 456.490209,
+          "max": 517.648792
+        }
+      },
+      "subsequent_total_ms": {
+        "sample_count": 99,
+        "missing_or_nonfinite": 0,
+        "median": 478.49987,
+        "nearest_rank_p95": 495.00838,
+        "min": 455.65117,
+        "max": 516.76096
+      },
+      "native_total_ms_by_intent": {
+        "alarm": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 471.05698,
+          "nearest_rank_p95": 481.7415,
+          "min": 458.07513,
+          "max": 481.7415
+        },
+        "explain": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 488.28804,
+          "nearest_rank_p95": 501.92717,
+          "min": 464.88463,
+          "max": 501.92717
+        },
+        "open_app": {
+          "sample_count": 6,
+          "missing_or_nonfinite": 0,
+          "median": 490.222415,
+          "nearest_rank_p95": 492.69475,
+          "min": 477.3425,
+          "max": 492.69475
+        },
+        "pause_focus": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 479.76358500000003,
+          "nearest_rank_p95": 490.82079,
+          "min": 457.01283,
+          "max": 490.82079
+        },
+        "start_focus": {
+          "sample_count": 10,
+          "missing_or_nonfinite": 0,
+          "median": 480.58966499999997,
+          "nearest_rank_p95": 499.66083,
+          "min": 474.59379,
+          "max": 499.66083
+        },
+        "timer": {
+          "sample_count": 10,
+          "missing_or_nonfinite": 0,
+          "median": 469.79794000000004,
+          "nearest_rank_p95": 493.202,
+          "min": 457.47758,
+          "max": 493.202
+        },
+        "unknown": {
+          "sample_count": 50,
+          "missing_or_nonfinite": 0,
+          "median": 476.142835,
+          "nearest_rank_p95": 493.60733,
+          "min": 455.65117,
+          "max": 516.76096
+        }
+      },
+      "native_total_ms_by_family": {
+        "alarm_colon_evening": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 472.81552,
+          "nearest_rank_p95": 472.81629,
+          "min": 472.81475,
+          "max": 472.81629
+        },
+        "alarm_colon_latest": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 466.86002,
+          "nearest_rank_p95": 470.51483,
+          "min": 463.20521,
+          "max": 470.51483
+        },
+        "alarm_colon_morning": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 481.539395,
+          "nearest_rank_p95": 481.7415,
+          "min": 481.33729,
+          "max": 481.7415
+        },
+        "alarm_midnight_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 462.35063,
+          "nearest_rank_p95": 466.62613,
+          "min": 458.07513,
+          "max": 466.62613
+        },
+        "alarm_noon_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 470.113565,
+          "nearest_rank_p95": 471.59913,
+          "min": 468.628,
+          "max": 471.59913
+        },
+        "alarm_spoken_evening": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 466.177935,
+          "nearest_rank_p95": 473.0895,
+          "min": 459.26637,
+          "max": 473.0895
+        },
+        "alarm_spoken_morning": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 469.581065,
+          "nearest_rank_p95": 472.21642,
+          "min": 466.94571,
+          "max": 472.21642
+        },
+        "alarm_spoken_zero": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 470.64194,
+          "nearest_rank_p95": 471.83742,
+          "min": 469.44646,
+          "max": 471.83742
+        },
+        "calculator_go_to": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 480.039605,
+          "nearest_rank_p95": 482.73671,
+          "min": 477.3425,
+          "max": 482.73671
+        },
+        "calculator_launch_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 482.96275,
+          "nearest_rank_p95": 492.69475,
+          "min": 473.23075,
+          "max": 492.69475
+        },
+        "clock_bring_up": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 501.440645,
+          "nearest_rank_p95": 516.76096,
+          "min": 486.12033,
+          "max": 516.76096
+        },
+        "clock_show_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 479.259105,
+          "nearest_rank_p95": 490.49279,
+          "min": 468.02542,
+          "max": 490.49279
+        },
+        "explain_done_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 489.56541500000003,
+          "nearest_rank_p95": 493.44479,
+          "min": 485.68604,
+          "max": 493.44479
+        },
+        "explain_focus_overview": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 483.25369,
+          "nearest_rank_p95": 490.89571,
+          "min": 475.61167,
+          "max": 490.89571
+        },
+        "explain_focus_status": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 486.47654,
+          "nearest_rank_p95": 489.90337,
+          "min": 483.04971,
+          "max": 489.90337
+        },
+        "explain_nudge_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 493.95206499999995,
+          "nearest_rank_p95": 496.01721,
+          "min": 491.88692,
+          "max": 496.01721
+        },
+        "explain_remaining_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 474.43325000000004,
+          "nearest_rank_p95": 474.47304,
+          "min": 474.39346,
+          "max": 474.47304
+        },
+        "explain_reminder_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 494.018065,
+          "nearest_rank_p95": 501.92717,
+          "min": 486.10896,
+          "max": 501.92717
+        },
+        "explain_warned_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 481.94944,
+          "nearest_rank_p95": 499.01425,
+          "min": 464.88463,
+          "max": 499.01425
+        },
+        "explain_warning_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 488.04169,
+          "nearest_rank_p95": 489.41067,
+          "min": 486.67271,
+          "max": 489.41067
+        },
+        "focus_activate_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 489.13933499999996,
+          "nearest_rank_p95": 495.00838,
+          "min": 483.27029,
+          "max": 495.00838
+        },
+        "focus_begin_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 484.23920499999997,
+          "nearest_rank_p95": 499.66083,
+          "min": 468.81758,
+          "max": 499.66083
+        },
+        "focus_digit_lower": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 476.37001999999995,
+          "nearest_rank_p95": 484.90779,
+          "min": 467.83225,
+          "max": 484.90779
+        },
+        "focus_digit_upper": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 483.127065,
+          "nearest_rank_p95": 484.03071,
+          "min": 482.22342,
+          "max": 484.03071
+        },
+        "focus_requested_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 484.07885,
+          "nearest_rank_p95": 486.78133,
+          "min": 481.37637,
+          "max": 486.78133
+        },
+        "focus_resume_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 480.12158,
+          "nearest_rank_p95": 480.98404,
+          "min": 479.25912,
+          "max": 480.98404
+        },
+        "focus_resume_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 465.12248,
+          "nearest_rank_p95": 474.59379,
+          "min": 455.65117,
+          "max": 474.59379
+        },
+        "focus_resume_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 484.491435,
+          "nearest_rank_p95": 489.42487,
+          "min": 479.558,
+          "max": 489.42487
+        },
+        "focus_words_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 485.346585,
+          "nearest_rank_p95": 490.89021,
+          "min": 479.80296,
+          "max": 490.89021
+        },
+        "focus_words_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 480.67696,
+          "nearest_rank_p95": 482.6035,
+          "min": 478.75042,
+          "max": 482.6035
+        },
+        "pause_break_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 486.363875,
+          "nearest_rank_p95": 490.66629,
+          "min": 482.06146,
+          "max": 490.66629
+        },
+        "pause_break_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 477.98279,
+          "nearest_rank_p95": 478.49987,
+          "min": 477.46571,
+          "max": 478.49987
+        },
+        "pause_cancel_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 471.80793500000004,
+          "nearest_rank_p95": 473.30504,
+          "min": 470.31083,
+          "max": 473.30504
+        },
+        "pause_countdown_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 460.14756,
+          "nearest_rank_p95": 463.28229,
+          "min": 457.01283,
+          "max": 463.28229
+        },
+        "pause_current_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 466.84416999999996,
+          "nearest_rank_p95": 470.04296,
+          "min": 463.64538,
+          "max": 470.04296
+        },
+        "pause_finish_focus": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 487.50756,
+          "nearest_rank_p95": 490.82079,
+          "min": 484.19433,
+          "max": 490.82079
+        },
+        "pause_halt_work": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 476.29456,
+          "nearest_rank_p95": 482.36287,
+          "min": 470.22625,
+          "max": 482.36287
+        },
+        "pause_ongoing_study": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 471.84835499999997,
+          "nearest_rank_p95": 483.19025,
+          "min": 460.50646,
+          "max": 483.19025
+        },
+        "settings_bring_up": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 491.18518500000005,
+          "nearest_rank_p95": 492.41833,
+          "min": 489.95204,
+          "max": 492.41833
+        },
+        "settings_show_personal": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 492.92537500000003,
+          "nearest_rank_p95": 493.60733,
+          "min": 492.24342,
+          "max": 493.60733
+        },
+        "timer_count_down_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 467.07579,
+          "nearest_rank_p95": 476.674,
+          "min": 457.47758,
+          "max": 476.674
+        },
+        "timer_maximum_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 471.476815,
+          "nearest_rank_p95": 473.74342,
+          "min": 469.21021,
+          "max": 473.74342
+        },
+        "timer_minimum_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 464.60679,
+          "nearest_rank_p95": 465.27779,
+          "min": 463.93579,
+          "max": 465.27779
+        },
+        "timer_numeric_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 486.721585,
+          "nearest_rank_p95": 490.2725,
+          "min": 483.17067,
+          "max": 490.2725
+        },
+        "timer_numeric_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 482.942855,
+          "nearest_rank_p95": 493.202,
+          "min": 472.68371,
+          "max": 493.202
+        },
+        "timer_prefix_duration": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 474.76739499999996,
+          "nearest_rank_p95": 480.01379,
+          "min": 469.521,
+          "max": 480.01379
+        },
+        "timer_request_countdown": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 469.048605,
+          "nearest_rank_p95": 470.07488,
+          "min": 468.02233,
+          "max": 470.07488
+        },
+        "timer_spoken_minutes": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 475.80975,
+          "nearest_rank_p95": 476.91204,
+          "min": 474.70746,
+          "max": 476.91204
+        },
+        "timer_spoken_seconds": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 475.12785499999995,
+          "nearest_rank_p95": 480.73479,
+          "min": 469.52092,
+          "max": 480.73479
+        },
+        "timer_start_words": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 468.76800000000003,
+          "nearest_rank_p95": 473.45579,
+          "min": 464.08021,
+          "max": 473.45579
+        }
+      },
+      "native_total_ms_by_hard_tag": {
+        "current_or_spoken_focus_pause": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 479.76358500000003,
+          "nearest_rank_p95": 483.19025,
+          "min": 463.64538,
+          "max": 483.19025
+        },
+        "duration_boundary": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 476.62046,
+          "nearest_rank_p95": 484.90779,
+          "min": 463.93579,
+          "max": 484.90779
+        },
+        "midnight_noon": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 464.83713,
+          "nearest_rank_p95": 471.59913,
+          "min": 458.07513,
+          "max": 471.59913
+        },
+        "nudge_cause": {
+          "sample_count": 4,
+          "missing_or_nonfinite": 0,
+          "median": 491.34496,
+          "nearest_rank_p95": 501.92717,
+          "min": 464.88463,
+          "max": 501.92717
+        },
+        "pause_preservation": {
+          "sample_count": 8,
+          "missing_or_nonfinite": 0,
+          "median": 479.76358500000003,
+          "nearest_rank_p95": 490.82079,
+          "min": 457.01283,
+          "max": 490.82079
+        },
+        "resume_vs_start": {
+          "sample_count": 3,
+          "missing_or_nonfinite": 0,
+          "median": 479.25912,
+          "nearest_rank_p95": 479.558,
+          "min": 474.59379,
+          "max": 479.558
+        },
+        "seconds_minutes_unit": {
+          "sample_count": 2,
+          "missing_or_nonfinite": 0,
+          "median": 474.13567,
+          "nearest_rank_p95": 478.75042,
+          "min": 469.52092,
+          "max": 478.75042
+        },
+        "spoken_number_slot": {
+          "sample_count": 12,
+          "missing_or_nonfinite": 0,
+          "median": 472.344315,
+          "nearest_rank_p95": 479.80296,
+          "min": 457.47758,
+          "max": 479.80296
+        }
+      },
+      "grouped_timing_limit": "Intent/family/tag distributions include the first request when in that group; first request and overall subsequent distribution are separately reported. Small groups are descriptive only."
+    }
+  },
+  "gates": {
+    "baseline": {
+      "rows": 100,
+      "strict_correct": 74,
+      "supported_rows": 50,
+      "supported_correct": 24,
+      "supported_false_abstentions": 26,
+      "supported_wrong_accepted": 0,
+      "supported_wrong_slots": 0,
+      "must_abstain_rows": 50,
+      "correct_abstentions": 50,
+      "unsupported_false_accepts": 0,
+      "accepted": 24,
+      "wrong_accepted": 0,
+      "coverage": 0.24,
+      "accepted_precision": 1.0,
+      "actions_executed": 0,
+      "per_family": {
+        "alarm_colon_evening": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_colon_latest": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_colon_morning": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_midnight_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_noon_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_evening": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_morning": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_zero": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "calculator_go_to": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "calculator_launch_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "clock_bring_up": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "clock_show_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_done_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_focus_overview": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_focus_status": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_nudge_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_remaining_work": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_reminder_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warned_focus": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warning_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_activate_work": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_begin_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_digit_lower": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_digit_upper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_requested_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_resume_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_resume_work": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_words_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_words_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_break_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_break_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_cancel_study": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "pause_countdown_focus": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_current_work": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_finish_focus": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_halt_work": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "pause_ongoing_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "settings_bring_up": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "settings_show_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_count_down_words": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_maximum_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_minimum_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_numeric_minutes": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_numeric_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_prefix_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_request_countdown": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_spoken_minutes": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_spoken_seconds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_start_words": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        }
+      },
+      "host_java_process_ms": 76.05254207737744,
+      "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+      "raw_result_sha256": "49585d3e8845ed120c06445f1a628ed8923fffb312c33a32df5999b774b7bcad",
+      "invalid_output_fallback_abstentions": 0,
+      "wrong_accepted_kinds": 0,
+      "per_intent": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 0,
+          "false_abstentions": 8,
+          "wrong_accepted": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 5,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 2,
+          "false_abstentions": 6,
+          "wrong_accepted": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 7,
+          "false_abstentions": 3,
+          "wrong_accepted": 0
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 3,
+          "false_abstentions": 7,
+          "wrong_accepted": 0
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 50,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        }
+      }
+    },
+    "candidate": {
+      "rows": 100,
+      "strict_correct": 79,
+      "supported_rows": 50,
+      "supported_correct": 29,
+      "supported_false_abstentions": 21,
+      "supported_wrong_accepted": 0,
+      "supported_wrong_slots": 0,
+      "must_abstain_rows": 50,
+      "correct_abstentions": 50,
+      "unsupported_false_accepts": 0,
+      "accepted": 29,
+      "wrong_accepted": 0,
+      "coverage": 0.29,
+      "accepted_precision": 1.0,
+      "actions_executed": 0,
+      "per_family": {
+        "alarm_colon_evening": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_colon_latest": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_colon_morning": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_midnight_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_noon_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_evening": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_morning": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "alarm_spoken_zero": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "calculator_go_to": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "calculator_launch_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "clock_bring_up": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "clock_show_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_done_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_focus_overview": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_focus_status": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_nudge_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_remaining_work": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_reminder_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warned_focus": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "explain_warning_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_activate_work": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_begin_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_digit_lower": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_digit_upper": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_requested_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_resume_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_resume_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "focus_resume_work": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_words_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "focus_words_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_break_personal": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_break_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_cancel_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_countdown_focus": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_current_work": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_finish_focus": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "pause_halt_work": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "pause_ongoing_study": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "settings_bring_up": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "settings_show_personal": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_count_down_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_maximum_seconds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_minimum_seconds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_numeric_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_numeric_seconds": {
+          "rows": 2,
+          "correct": 1,
+          "wrong_accepted": 0
+        },
+        "timer_prefix_duration": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_request_countdown": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_spoken_minutes": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_spoken_seconds": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        },
+        "timer_start_words": {
+          "rows": 2,
+          "correct": 2,
+          "wrong_accepted": 0
+        }
+      },
+      "host_java_process_ms": 75.80429199151695,
+      "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+      "raw_result_sha256": "8dfb56ba0e956cefa2510a9dea164c21fa9d39bb2bc8d1a99a04ebd3ef554245",
+      "invalid_output_fallback_abstentions": 0,
+      "wrong_accepted_kinds": 0,
+      "per_intent": {
+        "alarm": {
+          "rows": 8,
+          "correct": 7,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "explain": {
+          "rows": 8,
+          "correct": 0,
+          "false_abstentions": 8,
+          "wrong_accepted": 0
+        },
+        "open_app": {
+          "rows": 6,
+          "correct": 5,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "pause_focus": {
+          "rows": 8,
+          "correct": 1,
+          "false_abstentions": 7,
+          "wrong_accepted": 0
+        },
+        "start_focus": {
+          "rows": 10,
+          "correct": 7,
+          "false_abstentions": 3,
+          "wrong_accepted": 0
+        },
+        "timer": {
+          "rows": 10,
+          "correct": 9,
+          "false_abstentions": 1,
+          "wrong_accepted": 0
+        },
+        "unknown": {
+          "rows": 50,
+          "correct": 50,
+          "false_abstentions": 0,
+          "wrong_accepted": 0
+        }
+      }
+    }
+  },
+  "oracle": {
+    "rows": 100,
+    "strict_correct": 81,
+    "supported_rows": 50,
+    "supported_correct": 31,
+    "supported_false_abstentions": 19,
+    "supported_wrong_accepted": 0,
+    "supported_wrong_slots": 0,
+    "must_abstain_rows": 50,
+    "correct_abstentions": 50,
+    "unsupported_false_accepts": 0,
+    "accepted": 31,
+    "wrong_accepted": 0,
+    "coverage": 0.31,
+    "accepted_precision": 1.0,
+    "actions_executed": 0,
+    "per_family": {
+      "alarm_colon_evening": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_colon_latest": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_colon_morning": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_midnight_words": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_noon_words": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_spoken_evening": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "alarm_spoken_morning": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "alarm_spoken_zero": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "calculator_go_to": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "calculator_launch_personal": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "clock_bring_up": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "clock_show_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_done_study": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_focus_overview": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_focus_status": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_nudge_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_remaining_work": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_reminder_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_warned_focus": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "explain_warning_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "focus_activate_work": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_begin_personal": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_digit_lower": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_digit_upper": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_requested_seconds": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "focus_resume_minutes": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_resume_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "focus_resume_work": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_words_minutes": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "focus_words_seconds": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "pause_break_personal": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "pause_break_study": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "pause_cancel_study": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_countdown_focus": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "pause_current_work": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "pause_finish_focus": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_halt_work": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "pause_ongoing_study": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "settings_bring_up": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "settings_show_personal": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_count_down_words": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_maximum_seconds": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_minimum_seconds": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_numeric_minutes": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_numeric_seconds": {
+        "rows": 2,
+        "correct": 1,
+        "wrong_accepted": 0
+      },
+      "timer_prefix_duration": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_request_countdown": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_spoken_minutes": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_spoken_seconds": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      },
+      "timer_start_words": {
+        "rows": 2,
+        "correct": 2,
+        "wrong_accepted": 0
+      }
+    },
+    "host_java_process_ms": 75.86204097606242,
+    "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+    "raw_result_sha256": "5d078afe36adc44d6649386e1baf18b4def62ef8c910123db1b6ae1fc1d8fccf"
+  },
+  "paired": {
+    "supported_gains": 7,
+    "supported_losses": 2,
+    "gains_per_family": {
+      "pause_finish_focus": 1,
+      "timer_count_down_words": 1,
+      "timer_maximum_seconds": 1,
+      "timer_minimum_seconds": 1,
+      "timer_numeric_minutes": 1,
+      "timer_spoken_minutes": 1,
+      "timer_start_words": 1
+    },
+    "losses_per_family": {
+      "pause_cancel_study": 1,
+      "pause_halt_work": 1
+    }
+  },
+  "paired_full": {
+    "all_rows": {
+      "semantic_gain": 27,
+      "semantic_loss": 5,
+      "gate_gain": 7,
+      "gate_loss": 2,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "supported_rows": {
+      "semantic_gain": 11,
+      "semantic_loss": 5,
+      "gate_gain": 7,
+      "gate_loss": 2,
+      "baseline_wrong_accept": 0,
+      "candidate_wrong_accept": 0
+    },
+    "per_intent": {
+      "alarm": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain": {
+        "semantic_gain": 1,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "open_app": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_focus": {
+        "semantic_gain": 4,
+        "semantic_loss": 4,
+        "gate_gain": 1,
+        "gate_loss": 2,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "start_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer": {
+        "semantic_gain": 6,
+        "semantic_loss": 0,
+        "gate_gain": 6,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "unknown": {
+        "semantic_gain": 16,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    },
+    "per_family": {
+      "alarm_colon_evening": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_colon_latest": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_colon_morning": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_midnight_words": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_noon_words": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_spoken_evening": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_spoken_morning": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "alarm_spoken_zero": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "calculator_go_to": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "calculator_launch_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "clock_bring_up": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "clock_show_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_done_study": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_focus_overview": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_focus_status": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_nudge_personal": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_remaining_work": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_reminder_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_warned_focus": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "explain_warning_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_activate_work": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_begin_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_digit_lower": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_digit_upper": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_requested_seconds": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_resume_minutes": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_resume_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_resume_work": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_words_minutes": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "focus_words_seconds": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_break_personal": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_break_study": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_cancel_study": {
+        "semantic_gain": 1,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_countdown_focus": {
+        "semantic_gain": 1,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_current_work": {
+        "semantic_gain": 1,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_finish_focus": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_halt_work": {
+        "semantic_gain": 1,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 1,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_ongoing_study": {
+        "semantic_gain": 2,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "settings_bring_up": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "settings_show_personal": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_count_down_words": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_maximum_seconds": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_minimum_seconds": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_numeric_minutes": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_numeric_seconds": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_prefix_duration": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_request_countdown": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_spoken_minutes": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_spoken_seconds": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "timer_start_words": {
+        "semantic_gain": 1,
+        "semantic_loss": 0,
+        "gate_gain": 1,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    },
+    "hard_supported": {
+      "current_or_spoken_focus_pause": {
+        "semantic_gain": 3,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "duration_boundary": {
+        "semantic_gain": 2,
+        "semantic_loss": 0,
+        "gate_gain": 2,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "midnight_noon": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "nudge_cause": {
+        "semantic_gain": 0,
+        "semantic_loss": 1,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "pause_preservation": {
+        "semantic_gain": 4,
+        "semantic_loss": 4,
+        "gate_gain": 1,
+        "gate_loss": 2,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "resume_vs_start": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "seconds_minutes_unit": {
+        "semantic_gain": 0,
+        "semantic_loss": 0,
+        "gate_gain": 0,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      },
+      "spoken_number_slot": {
+        "semantic_gain": 3,
+        "semantic_loss": 0,
+        "gate_gain": 3,
+        "gate_loss": 0,
+        "baseline_wrong_accept": 0,
+        "candidate_wrong_accept": 0
+      }
+    }
+  },
+  "promotion_review": {
+    "conditions": {
+      "at_least_four_supported_complete_gains": true,
+      "zero_all_semantic_losses": false,
+      "zero_supported_complete_gate_losses": false,
+      "zero_pause_semantic_and_complete_losses": false,
+      "no_per_intent_semantic_or_complete_decline": false,
+      "zero_wrong_accepts_both_arms": true,
+      "all_100_candidate_schema_and_real_eos_valid": true
+    },
+    "prospective_criteria_met": false,
+    "candidate_promoted": false,
+    "decision_limit": "Criteria are necessary only. Independent review required; no automatic app promotion."
+  },
+  "paired_candidate_minus_baseline_metrics": {
+    "total_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 32.218435,
+      "nearest_rank_p95": 58.76137,
+      "min": -0.6578299999999899,
+      "max": 67.42996
+    },
+    "prefill_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 71.84695500000001,
+      "nearest_rank_p95": 83.04945999999995,
+      "min": 61.24653999999998,
+      "max": 89.51708000000002
+    },
+    "decode_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": -38.23139499999999,
+      "nearest_rank_p95": -18.883790000000005,
+      "min": -69.28329000000001,
+      "max": -14.665410000000008
+    },
+    "prompt_tokens": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 42.0,
+      "nearest_rank_p95": 42,
+      "min": 42,
+      "max": 42
+    },
+    "generated_tokens": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": -2.0,
+      "nearest_rank_p95": -1,
+      "min": -4,
+      "max": -1
+    },
+    "context_setup_ms": {
+      "sample_count": 100,
+      "missing_or_nonfinite": 0,
+      "median": 0.0,
+      "nearest_rank_p95": 0.000124,
+      "min": -0.000126,
+      "max": 0.000334
+    }
+  },
+  "private_paired_transitions_sha256": "260c536c321fbe30673355a098da4bd04957dc653e1f610bd7816d183267f792",
+  "runner_sha256": "f5d3bf17f2f379b970ebaeec73db5dcb9db1cff0d0e8dddda587e741a9c6f785",
+  "capture_source_sha256": "58bdaa5ffd7807a39a48f565213c9065be796c44bb37c6943ada0abbf9d62a77",
+  "shared_gate_scorer_sha256": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+  "shared_semantic_scorer_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+  "app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "runner_source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+  "linked_library_binding_limit": "Only the three referenced Homebrew libraries are byte-bound; this is not an entire OS or dynamically loaded backend closure identity.",
+  "actions_executed": 0,
+  "training_performed": false,
+  "candidate_promoted": false
+}

@@ -1,5 +1,13 @@
 # Remaining deliverables — full-scope audit
 
+**Later JSON-prompt confirmation — rejected:** complete supported proposals
+24→29/50 conceal two Pause losses; five semantic predictions regress. Host warm
+median rises 448.14→478.50 ms; all 200 outputs have exact JSON/EOS and both gates
+observe zero wrong accepts. No deployment follows. The oracle route still falsely
+abstains on 19 supported requests, making full-request parser coverage a separate
+remaining repair. Twenty-seven boundary tests and independent evidence audit pass.
+[Decision and limitations](json-command-research.md).
+
 **Later v0.13 network-denied native diagnostic:** ten fixed synthetic Qwen CPU
 requests completed in the actual app process after direct IPv4 TCP socket creation
 failed with EPERM. First request 16.83 s; subsequent 1.48–2.43 s; 224 checks passed
