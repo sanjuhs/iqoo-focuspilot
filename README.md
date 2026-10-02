@@ -7,7 +7,9 @@ character with gentle reactions and mute, hide and reduce-motion controls.
 **Qwen3.5-0.8B Q4_0 remains the local command model.** Earlier v0.12 Nothing-phone
 tests establish CPU inference, typed commands, countdowns, paused recovery and task
 readback. v0.13 adds reviewed session reset, verified through 22 isolated Android
-checks with production state preserved. Visible reset cancellation, voice,
+checks with production state preserved. v0.14 improves whole-request validation
+and passes 334 actual Nothing pure gate checks with protected state preserved.
+Visible reset cancellation, voice,
 permissioned monitoring, iQOO NPU and Office Kit still need physical verification.
 
 The unchanged v0.13 app also completed ten synthetic Qwen CPU requests after
@@ -16,9 +18,9 @@ Production state and the original test APK were restored. This is a bounded nati
 path diagnostic; the complete disconnected voice workflow remains pending.
 [Proof and limits](docs/network-isolation-phone.md).
 
-[Download research v0.13](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
+[Download research v0.14](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.14)
 · [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.13)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.14)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -28,18 +30,18 @@ path diagnostic; the complete disconnected voice workflow remains pending.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. Published v0.13 packages use an
+The app supports Android 9/API 28+ on ARM64. Published v0.14 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.
 
 | Download | Size | Model setup |
 | --- | ---: | --- |
-| [Bundled APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-bundled.apk) | 568.54 MB | Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
-| [Light APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-light.apk) | 5.50 MB | Needs the developer model-preparation step below. |
+| [Bundled APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-bundled.apk) | 568.54 MB | Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
+| [Light APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-light.apk) | 5.50 MB | Needs the developer model-preparation step below. |
 
-Verify downloaded bytes against the [v0.13 SHA-256 manifest](docs/reviewed-reset-artifacts.json).
-The release tag identifies app source `1eed4348d3d0233d786bcd3b86c05d225ebf8db6`.
+Verify downloaded bytes against the [v0.14 SHA-256 manifest](docs/command-gate-v14-artifacts.json).
+The release tag identifies app source `1eb2fb55bf0322237bce0bc04942cb0d6652ddcc`.
 The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK
@@ -81,10 +83,10 @@ sets are not general automation accuracy or population latency benchmarks.
 | Focus action and recovery | **Ten v0.12 phone phases passed**: reviewed Cancel/Start, early Pause, paused-time exclusion, resume, automatic completion and exact paused recovery after force-stop. Two countdowns added exactly 40,000 ms; final total 97,331 ms, observation off and 100 points. This is last-checkpoint recovery, not deep-sleep survival. [Procedure](docs/focus-recovery-phone.md). |
 | Task guidance and speech | v0.12 save, mute refusal and explicit readback reached the installed offline-English TTS engine's completion callback; checklist state stayed unchanged. Speaker audibility and ASR remain unverified. Broader checklist/restart branches retain v0.11 attribution. [Readback](docs/guide-readback-phone.md) · [Checklist](docs/task-guide-phone.md). |
 | Approved app launches | Historical v0.11 reviewed Calculator/Clock launches matched foreground metadata. No external UI was touched and no alarm was created. Alarm completion and general cross-app automation remain pending. [Launch evidence](docs/app-launch-phone.md). |
-| Command reliability | The unchanged v0.10 gate/model combination accepted **31/50 supported** frozen synthetic host requests and rejected all 50 unsupported requests; **19 supported requests falsely abstained**. Raw intent correctness was 36/100. No universal safety or voice accuracy claim. [Selected evaluation](docs/conversational-commands.md) · [Rejected compact-output experiment](docs/compact-intent-research.md) · [Rejected JSON-prompt comparison](docs/json-command-research.md). |
+| Command reliability | v0.14 gate-only repair improves complete proposals **13→32/50** on 100 fresh informed synthetic host requests: 19 gains, zero losses/observed wrong accepts, all 50 unknown requests refused. Raw model correctness stays 32/100; 18 supported misses remain. **334 actual pure Android gate checks pass**. No universal safety or voice accuracy claim. [Selected evidence](docs/command-validation-v14.md) · [Rejected JSON prompt](docs/json-command-research.md). |
 | Activation viewer | Four finite width-1,024 tensor summaries are observed on phone, including v0.12 capture. Historical v0.11 paired timings establish no fixed capture overhead. Laptop interventions produced no positive semantic steering finding. [Capture comparison](docs/capture-benchmark-phone.md) · [Causal experiment](docs/interpretability-experiment.md). |
 | Fast decision research | A separate **65-parameter positive-weight policy** scored 472/480 synthetic held-out cases versus 469/480 for a logistic baseline. It remains sandbox/shadow-only. Few-shot retrieval has abstentions; rejected LoRA and intent-head candidates are not deployed. [Policy](docs/policy-baselines.md) · [Learning limits](docs/live-preferences.md). |
-| Build and packaging | Selected v0.12: **148 JVM tests**, zero lint errors/65 warnings, inspected model/native/license identities and no `INTERNET` permission. Fully disconnected operation, thermals and peak-memory measurement still need verification. [Artifact manifest](docs/guidance-readback-artifacts.json). |
+| Build and packaging | v0.14: **158 JVM tests**, zero lint errors/65 warnings, inspected signed model/native/license/version identities and no `INTERNET` permission. Actual pure gate checks preserve production state; disconnected UI/ASR, thermals and peak-memory measurement remain pending. [Artifact manifest](docs/command-gate-v14-artifacts.json). |
 | Phone export | v0.12 review/picker Cancel and actual local Save passed. A 496-byte empty summary matched phone/laptop checksums and passed zero-record schema validation. No policy inference or Office Kit transfer occurred. [Actual export](docs/phone-export.md). |
 | Hardware, bridge and submission | Actual iQOO/NPU execution, Office Kit pairing/transfer, live permissioned monitoring, IoT hardware, accepted application and eligible event submission remain unfinished. Local laptop export validation is separate from Office Kit. [Remaining deliverables](docs/remaining-deliverables.md). |
 
@@ -92,7 +94,7 @@ The [4:41 video](docs/v012-pitch.md) combines original Mira animation with two
 actual own-app clips at 1× speed: authored-step readback and unconfirmed typed
 Qwen inference (1,849 ms native CPU). Other scenes are labelled illustrations.
 Caption timing, full decode and sampled encoded visuals passed; complete human
-listening remains pending. The later recovery test is not in that recording.
+listening remains pending. Later recovery and the v0.14 validator are not depicted in that recording.
 Historical release results and videos remain in [status](docs/status.md) and
 [previous releases](https://github.com/sanjuhs/iqoo-focuspilot/releases).
 

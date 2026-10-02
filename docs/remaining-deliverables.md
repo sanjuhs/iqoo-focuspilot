@@ -4,7 +4,9 @@
 supported proposals 13→32/50 on 100 fresh informed synthetic requests, with 19 gains,
 no losses and no observed incorrect accepts. Oracle coverage reaches 50/50, but
 18 supported model errors remain. Qualified research app source builds with 158
-passing JVM tests and inspected signed packages; physical gate checks are pending.
+passing JVM tests and inspected signed packages. All 334 actual Nothing pure gate
+checks pass, preserving protected state; v0.14 light is installed and original
+test APK restored.
 This closes only host parsing coverage for this cohort, with full voice/monitoring,
 iQOO/NPU, Office Kit and eligible accepted submission unfinished.
 [Evidence](command-validation-v14.md).

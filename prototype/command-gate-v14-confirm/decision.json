@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "decision": "SELECTED_GATE_ONLY_RESEARCH_V014",
+  "automatic_promotion": false,
+  "root_review_completed": true,
+  "qualified_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "app_source_commit": "1eb2fb55bf0322237bce0bc04942cb0d6652ddcc",
+  "selected_app_version": 14,
+  "confirmation_results_sha256": "16f735849d3c4b7bdda52ea7172f67a36e9a0db1d913de008f5b7974108e85b0",
+  "prospective_review": {
+    "conditions": {
+      "at_least_four_supported_generated_full_proposal_gains": true,
+      "zero_supported_generated_losses": true,
+      "zero_supported_oracle_losses": true,
+      "zero_wrong_accepts_both_gates_both_routes": true,
+      "zero_pause_losses_both_routes": true,
+      "no_per_intent_complete_proposal_decline_both_routes": true,
+      "all_100_original_prompt_schema_and_real_eos_valid": true
+    },
+    "prospective_criteria_met": true,
+    "candidate_promoted": false,
+    "decision_limit": "Separate root review required; never automatic app promotion."
+  },
+  "independent_labels_source_full_slots_transitions_aggregates_privacy_audited": true,
+  "app_jvm_tests": 158,
+  "lint_errors": 0,
+  "lint_warnings": 65,
+  "physical_pure_gate_checks": 334,
+  "physical_report_sha256": "332ab70e31b4770a1f650f577152a3d2efa5241865406671734eee20f05d4834",
+  "qwen_model_prompt_number_parser_native_unchanged": true,
+  "raw_model_supported_correct": 32,
+  "supported_false_abstentions": 18,
+  "raw_unknown_correct": 0,
+  "raw_unknown_rows": 50,
+  "model_training_performed": false,
+  "full_assistant_or_submission_complete": false,
+  "scope": "Separate root selection after frozen passing comparison, build/package review and actual already-seen pure Android gate checks; retains explicit action review and all broader proof gates."
+}

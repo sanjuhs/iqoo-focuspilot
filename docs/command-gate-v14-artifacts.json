@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "kind": "Pre-event gate-only Android research packages and actual pure fixture evidence; not eligible submission or whole-assistant proof",
+  "created_utc": "2026-10-02T22:12:39.368656+00:00",
+  "app_source_commit": "1eb2fb55bf0322237bce0bc04942cb0d6652ddcc",
+  "app_source_sha256": {
+    "prototype/android/app/build.gradle": "647892adb159545462973fec90af5aac1878c5e64419a00e193342b7ec701be6",
+    "prototype/android/app/src/main/AndroidManifest.xml": "4e9e5a38f7b582234edb98aa3a66341d7b3b5202ff651b8f4c70d9b86a9e726f",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "0bcdf9dc83d301fe9370f8d6dd1e78a6550f616445c569fe5f4f833e0c70a77a",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java": "e620d1f159ecadde98e18c851538244542b784faead876bc1d60dfed35dbd83b",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionView.java": "6657249dd728e43842d90bb46f9b9079b24ef59a480cba185d9177f41458795b",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/GateIsolationInstrumentation.java": "d1013b83f64453b521b222482d05dc51f659d2cbb4122cc3f2735ccaf4877e54",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/CandidateGateTest.java": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1"
+  },
+  "executed_harness_commit": "98d6d970d4f51966777d2aeab860beae0671b789",
+  "version_code": 14,
+  "version_name": "0.14-command-gate-research",
+  "packages": [
+    {
+      "artifact": {
+        "name": "focuspilot-research-v014-gate-light.apk",
+        "bytes": 5497064,
+        "sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593",
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "bundled_model": false,
+        "version_code": 14,
+        "version_name": "0.14-command-gate-research"
+      },
+      "audit": {
+        "identity": {
+          "status": "verified",
+          "scope": "local byte identity against declared manifest",
+          "observed": {
+            "bytes": 5497064,
+            "sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593"
+          },
+          "declared": {
+            "bytes": 5497064,
+            "sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593"
+          }
+        },
+        "runtime_verified": false,
+        "android_payload_present": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "native_hash_parity": true,
+        "licenses": {
+          "FocusPilot-MIT.txt": true,
+          "Qwen3.5-Apache-2.0.txt": true,
+          "llama.cpp-MIT.txt": true,
+          "KleidiAI-Apache-2.0.txt": true,
+          "KleidiAI-BSD-3-Clause.txt": true,
+          "KleidiAI-notices.txt": true
+        },
+        "model_files": [],
+        "bundle_presence_parity": true,
+        "permissions": [
+          "android.permission.PACKAGE_USAGE_STATS",
+          "android.permission.RECORD_AUDIO",
+          "com.android.alarm.permission.SET_ALARM",
+          "android.permission.POST_NOTIFICATIONS",
+          "android.permission.FOREGROUND_SERVICE",
+          "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+          "android.permission.SYSTEM_ALERT_WINDOW"
+        ],
+        "package_identity": true,
+        "internet_absent": true,
+        "permission_scope": "parsed from packaged APK, not user permission grants",
+        "version_parity": true,
+        "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+        "status": "verified"
+      }
+    },
+    {
+      "artifact": {
+        "name": "focuspilot-research-v014-gate-bundled.apk",
+        "bytes": 568538615,
+        "sha256": "c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947",
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "bundled_model": true,
+        "version_code": 14,
+        "version_name": "0.14-command-gate-research"
+      },
+      "audit": {
+        "identity": {
+          "status": "verified",
+          "scope": "local byte identity against declared manifest",
+          "observed": {
+            "bytes": 568538615,
+            "sha256": "c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947"
+          },
+          "declared": {
+            "bytes": 568538615,
+            "sha256": "c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947"
+          }
+        },
+        "runtime_verified": false,
+        "android_payload_present": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "native_hash_parity": true,
+        "licenses": {
+          "FocusPilot-MIT.txt": true,
+          "Qwen3.5-Apache-2.0.txt": true,
+          "llama.cpp-MIT.txt": true,
+          "KleidiAI-Apache-2.0.txt": true,
+          "KleidiAI-BSD-3-Clause.txt": true,
+          "KleidiAI-notices.txt": true
+        },
+        "model_files": [
+          "assets/qwen35.gguf"
+        ],
+        "bundle_presence_parity": true,
+        "model": {
+          "bytes": 563036064,
+          "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+          "zip_compression": 0
+        },
+        "model_hash_parity": true,
+        "permissions": [
+          "android.permission.PACKAGE_USAGE_STATS",
+          "android.permission.RECORD_AUDIO",
+          "com.android.alarm.permission.SET_ALARM",
+          "android.permission.POST_NOTIFICATIONS",
+          "android.permission.FOREGROUND_SERVICE",
+          "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+          "android.permission.SYSTEM_ALERT_WINDOW"
+        ],
+        "package_identity": true,
+        "internet_absent": true,
+        "permission_scope": "parsed from packaged APK, not user permission grants",
+        "version_parity": true,
+        "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+        "status": "verified"
+      }
+    }
+  ],
+  "test_apk": {
+    "name": "focuspilot-research-v014-gate-test.apk",
+    "bytes": 57126,
+    "sha256": "5b1ea45caa6b8e990ba10dd945b083dd77b17fc6a710d61e86b211f892564423"
+  },
+  "test_runner": "dev.focuspilot.prototype.GateIsolationInstrumentation",
+  "build": {
+    "command": "./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug -PdiagnosticRunner=commandGate -PbundleLocalModel=false",
+    "jvm_tests": 158,
+    "jvm_failures": 0,
+    "lint_errors": 0,
+    "lint_warnings": 65,
+    "targeted_gate_junit_tests": 58,
+    "authoring_host_tests": 17,
+    "capture_runner_host_tests": 11,
+    "phone_harness_host_tests": 3,
+    "actual_android_pure_gate_checks": 334,
+    "native_rebuilt": false
+  },
+  "public_signing_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "packaging_reserved_peak_bytes": 14982537330,
+  "original_payload_parity_count": 16,
+  "model_zip_entry": "assets/qwen35.gguf",
+  "model_bytes": 563036064,
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "records": [
+    {
+      "path": "docs/command-validation-v14.md",
+      "bytes": 5637,
+      "sha256": "e4cb908f48401a5e050494accd864c1e388b69f18aa5ea26a1f7d5530f2e12bb"
+    },
+    {
+      "path": "docs/command-gate-phone-v014.json",
+      "bytes": 4374,
+      "sha256": "332ab70e31b4770a1f650f577152a3d2efa5241865406671734eee20f05d4834"
+    },
+    {
+      "path": "docs/command-gate-v14-storage.json",
+      "bytes": 839,
+      "sha256": "49665beeb3c1c1881e78a66d5953c1809147a77004404702c3e485a5b1539fbf"
+    },
+    {
+      "path": "prototype/command-gate-v14-confirm/results.json",
+      "bytes": 139838,
+      "sha256": "16f735849d3c4b7bdda52ea7172f67a36e9a0db1d913de008f5b7974108e85b0"
+    },
+    {
+      "path": "prototype/command-gate-v14-confirm/decision.json",
+      "bytes": 1799,
+      "sha256": "1ad24f485774933875ad2a73ba38448cb45f402c6427ff773deb7efe878d905f"
+    },
+    {
+      "path": "prototype/command-gate-v14-confirm/freeze-manifest.json",
+      "bytes": 48585,
+      "sha256": "254fecf42d26862cda71d4b1530caa382b24ac39a34a4b7a0f37d060ef719319"
+    },
+    {
+      "path": "prototype/command-gate-v14-device/run_phone.py",
+      "bytes": 13609,
+      "sha256": "10379af2807c7712c5fe72041c45d5aaf51289c33734f8be02597c6b9f3ae46e"
+    }
+  ],
+  "project_bytes_at_manifest_preparation": 14413642945,
+  "project_limit_bytes": 15000000000,
+  "full_goal_complete": false,
+  "limitations": [
+    "Model/prompt/native remain unchanged; actual fresh supported model proposals only32/50.",
+    "Phone fixture verifies pure gate rules; no model inference, UI/ASR/tool execution, NPU, Office Kit or new bundled-import proof.",
+    "Historical model/video measurements retain original package identities.",
+    "Competition code must be separately created in event window absent explicit organizer reuse approval."
+  ]
+}

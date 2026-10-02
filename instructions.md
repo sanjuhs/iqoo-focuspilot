@@ -5,8 +5,9 @@
 Keep Qwen3.5-0.8B Q4_0 and its original prompt. The qualified full-request gate
 improves fresh synthetic complete proposals 13→32/50 with no losses or observed
 wrong accepts; oracle coverage 19→50/50 leaves 18 model-intent misses. All 158 app
-JVM tests and signed package inspections pass. Android fixture/installation checks
-are pending; the full assistant and eligible accepted submission remain active.
+JVM tests and signed package inspections pass. The installed Nothing v0.14 passes
+334 pure gate checks with protected state preserved and the original test APK
+restored. The full assistant and eligible accepted submission remain active.
 [Evidence and limitations](docs/command-validation-v14.md).
 
 FocusPilot is the working name for an opt-in, local Android productivity assistant.

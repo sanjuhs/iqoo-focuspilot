@@ -5,9 +5,10 @@
 The frozen fresh test qualifies the original-request validator: supported complete
 proposals 13→32/50, 19 gains/no losses/no observed wrong accepts; oracle 19→50/50.
 Qwen3.5 Q4_0, prompt and native stay fixed. The research app builds with 158 passing
-JVM tests, zero lint errors and inspected light/bundled packages. Next: run the
-334-check pure Android gate fixture with protected-state verification, then resume
-permissioned voice/floating, actual iQOO/NPU and Office Kit work when available.
+JVM tests, zero lint errors and inspected light/bundled packages. All 334 actual
+Nothing pure gate checks pass with protected state preserved; v0.14 light remains
+installed and the original test APK is restored. Next: permissioned voice/floating,
+actual iQOO/NPU and Office Kit work when available.
 [Source, method and limits](docs/command-validation-v14.md).
 
 Prepared 2 October 2026, IST. Working preparation/application target: 3 October

@@ -1,6 +1,8 @@
 # Verified status
 
-## Original-request validator — qualified v0.14 research build
+Updated 3 October 2026 (IST). This file separates measured results from goals.
+
+## Original-request validator — installed v0.14 research
 
 The unchanged Qwen3.5-0.8B Q4_0 capture feeds both gates on 100 fresh informed
 synthetic requests. Complete supported proposals improve 13→32/50 with 19 gains,
@@ -12,11 +14,11 @@ outputs; no model or inference-speed improvement is claimed.
 Exact gate source is integrated into v0.14 at `1eb2fb55bf0322237bce0bc04942cb0d6652ddcc`.
 All 158 app JVM tests pass, lint zero errors/65 warnings, and both signed packages
 pass inspection. Targeted research checks pass 58 JUnit plus 17/11 host boundary
-tests. The separate 334-check Android fixture is prepared; installation/physical
-checks are pending. ASR, permissioned persistent/floating use, iQOO NPU, Office Kit
+tests. All 334 actual Nothing pure gate checks pass, with protected preference/
+checkpoint/model/two-grant/service snapshots equal across the upgrade and cleanup.
+The v0.14 light APK stays installed and original test APK is restored; three phone
+harness tests pass. No product UI/tool action or model inference occurs. ASR, permissioned persistent/floating use, iQOO NPU, Office Kit
 and eligible accepted submission remain unfinished. [Evidence](command-validation-v14.md).
-
-Updated 3 October 2026 (IST). This file separates measured results from goals.
 
 ## JSON command prompt — rejected after frozen confirmation
 

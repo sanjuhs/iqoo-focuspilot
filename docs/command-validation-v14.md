@@ -54,9 +54,16 @@ pass native/model, version, permission and six-notice inspection. Neither reques
 Internet access. Streaming packaging reserves a 14,982,537,330-byte peak below
 15 GB after removing one verified duplicate generated model asset.
 
-An already-seen pure Android validator fixture runner is prepared separately.
-It expects 334 complete checks, calls no model/executor/UI and changes no settings,
-permissions or production preferences. Physical installation/checks are pending.
+Actual Nothing instrumentation passes all 334 already-seen pure gate checks:
+25 positive full-slot checks, 273 negative-route checks and 36 wrong-route checks.
+The v0.14 light APK remains installed; the original test APK is restored. Three
+named preference identities, paused/off/100/97,331 ms checkpoint, model bytes/hash/
+inode, two measured runtime grants and absent own services match before upgrade,
+after upgrade, after instrumentation and after cleanup. No model inference,
+product UI/tool action, wake, permission grant or network setting change occurs.
+Instrumentation/cleanup restart and stop the own process; prior activity lifecycle
+is not preserved. Three harness boundary tests pass. [Actual phone record](command-gate-phone-v014.json).
+
 The model/prompt/native runtime, Mira assets and remaining voice/floating workflows
 retain their prior evidence scopes; no new NPU, Office Kit, causal interpretation,
 bundled-import or eligible accepted submission proof follows from this revision.
@@ -75,3 +82,8 @@ inputs. Integration changes the tracked app gate after that capture; its old
 inventory identity remains available in Git and the isolated source snapshots.
 Do not overwrite the first capture, reuse this now-seen corpus as a fresh holdout,
 or relabel this pre-event prototype as event-written competition code.
+
+The phone harness records the pinned v0.13→v0.14 upgrade once. It refuses a
+second run against the already-updated app; no downgrade or data clearing is
+part of this proof. [Signed package and source identities](command-gate-v14-artifacts.json),
+[separate root selection](../prototype/command-gate-v14-confirm/decision.json).

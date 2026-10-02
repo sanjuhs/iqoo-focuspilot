@@ -1,0 +1,105 @@
+{
+  "scope": "Actual already-seen pure validator checks in installed Nothing research app; no model inference or product tool/UI execution",
+  "created_utc": "2026-10-02T22:11:35.681965+00:00",
+  "app_source_commit": "1eb2fb55bf0322237bce0bc04942cb0d6652ddcc",
+  "executed_harness_commit": "98d6d970d4f51966777d2aeab860beae0671b789",
+  "harness_sha256": "10379af2807c7712c5fe72041c45d5aaf51289c33734f8be02597c6b9f3ae46e",
+  "helper_sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+  "light_apk": {
+    "sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593",
+    "bytes": 5497064
+  },
+  "previous_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+  "test_apk": {
+    "sha256": "5b1ea45caa6b8e990ba10dd945b083dd77b17fc6a710d61e86b211f892564423",
+    "bytes": 57126
+  },
+  "original_and_restored_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "public_signing_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "report": {
+    "schema": "focuspilot.gate_isolation.v1",
+    "passed": true,
+    "checks": 334,
+    "expected_checks": 334,
+    "expected_positive_full_slot_checks": 25,
+    "expected_all_route_negative_checks": 273,
+    "expected_wrong_route_checks": 36,
+    "failed_fixture_ids": [],
+    "failure_type": null,
+    "gate_class": "dev.focuspilot.prototype.ModelCommandGate",
+    "scope": "Already-seen pure gate fixtures; no model inference or tool execution",
+    "actions_executed": 0,
+    "model_accessed": false,
+    "production_preferences_accessed": false,
+    "services_started": false
+  },
+  "protected_preference_names": [
+    "focuspilot_fewshot_sandbox",
+    "focuspilot_live_preferences",
+    "focuspilot_research"
+  ],
+  "protected_preferences_equal_all_four_snapshots": true,
+  "checkpoint_before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "checkpoint_after": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "two_runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "two_runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "model_before": {
+    "exists": true,
+    "bytes": 563036064,
+    "inode": 1136035,
+    "links": 1,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "model_after": {
+    "exists": true,
+    "bytes": 563036064,
+    "inode": 1136035,
+    "links": 1,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "own_services_absent_all_four_snapshots": true,
+  "current_app_sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593",
+  "passed": true,
+  "restored": true,
+  "selected_light_left_installed": true,
+  "apk_installations": 3,
+  "phases": [
+    "pinned v14 light upgrade preserved protected snapshot",
+    "exact command-gate test APK installed",
+    "334 actual pure gate checks passed with protected state exact",
+    "original test APK exact; selected light and protected production retained"
+  ],
+  "model_inference_calls": 0,
+  "product_ui_or_tool_actions": false,
+  "permission_grants": 0,
+  "network_settings_changed": false,
+  "instrumentation_restarts_target_process": true,
+  "cleanup_force_stopped_known_paused_own_package": true,
+  "private_status_sha256": "294bde1835b78b0dcc81d95ffb47a9d27d91c467001571db7680a99cb5626886",
+  "private_report_sha256": "e648b21b30af0ac5ceb6169e5495646b1c515e1767fa254705f160ed81db1632",
+  "private_stdout_sha256": "19bcd6c2545ae4b7eec0eb8e9e6924824ce7fb1ca3d08773c939cd4b8e519f19",
+  "project_bytes_after": 14413633038,
+  "limitations": [
+    "Already-seen pure gate fixtures; no accuracy benchmark or execution of proposed tools.",
+    "No activity opened or screen unlocked; actual UI review, ASR and floating/monitoring remain pending.",
+    "No native model invocation, NPU, Office Kit, activation/causal, new bundled import or eligible accepted submission proof.",
+    "Instrumentation/cleanup restart/stop the own app process; prior activity lifecycle is not preserved."
+  ]
+}
