@@ -86,6 +86,14 @@ unchanged. This closes the empty local phone-write/schema branch of action 8,
 leaving real-record replay, provider failures and actual Office Kit transfer open.
 Private payload/aggregate remain ignored. [Evidence and preserved attempts](phone-export.md).
 
+**Later v0.12 missing-model bundled import:** all five selected-APK phone phases
+and restoration passed with retained app data. Asset import/SHA took 1,077 ms,
+CPU load 2,320 ms and the first unconfirmed typed Pause proposal 9,534 ms.
+Second load reused the same imported inode/checksum; original model, light APK,
+three named preference identities, two recorded grants and checkpoint were restored.
+This closes the selected missing-model import branch of action 3, leaving clean
+fresh-data installation and the broader workflow open. [Evidence](bundled-import-phone-v012.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

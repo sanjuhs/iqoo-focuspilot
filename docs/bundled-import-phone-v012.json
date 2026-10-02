@@ -1,0 +1,144 @@
+{
+  "research_only": true,
+  "scope": "Missing-model bundled import on retained app data; not a clean reinstall",
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "harness_commit": "c0039c7a019f5afc632682273c5157f4953180ca",
+  "harness_sha256": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+  "light_apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "bundled_apk_sha256": "8fb78f14311ddec0c92357f95d13603a19b009a5add399a05e6284894c0ba088",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "backend": "CPU; current-run kernel selection not captured",
+  "historical_pinned_native_backend": "KleidiAI I8MM; see earlier optimized CPU evidence",
+  "before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "preference_identity_before": {
+    "focuspilot_research": {
+      "exists": true,
+      "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+    },
+    "focuspilot_live_preferences": {
+      "exists": false
+    },
+    "focuspilot_fewshot_sandbox": {
+      "exists": true,
+      "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "original_model": {
+    "exists": true,
+    "bytes": 563036064,
+    "inode": 1136035,
+    "links": 1,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "owned_backup_basename": "qwen35-preserved-e286afdd0f6b496d.gguf",
+  "owned_hold_basename": "qwen35-import-check-e286afdd0f6b496d.gguf",
+  "phone_free_bytes_before": 9652473856,
+  "project_bytes_before": 13821970510,
+  "permissions_or_settings_actions": false,
+  "app_data_cleared": false,
+  "app_uninstalled": false,
+  "separate_gguf_transfer": false,
+  "offline_disconnect_verified": false,
+  "npu_verified": false,
+  "phases": [
+    {
+      "name": "original_model_preserved",
+      "checkpoint_unchanged": true,
+      "canonical_absent": true,
+      "no_model_copy": true
+    },
+    {
+      "name": "bundled_package_installed",
+      "checkpoint_unchanged": true,
+      "installed_apk_sha256": "8fb78f14311ddec0c92357f95d13603a19b009a5add399a05e6284894c0ba088",
+      "private_model_absent_before_load": true
+    },
+    {
+      "name": "asset_import_and_cpu_load",
+      "checkpoint_unchanged": true,
+      "import_and_sha_ms": 1077.0,
+      "private_file_hash_ms": 0.0,
+      "native_load_ms": 2320.0,
+      "independent_imported_file_verified": true
+    },
+    {
+      "name": "typed_pause_proposal_only",
+      "checkpoint_unchanged": true,
+      "model_result": {
+        "command": "Stop focus",
+        "capture": false,
+        "intent": "pause_focus",
+        "gate": "REVIEW REQUIRED",
+        "total_ms": 9534.0,
+        "prefill_ms": 8680.0,
+        "decode_ms": 854.0,
+        "action_executed": false
+      }
+    },
+    {
+      "name": "second_load_reuses_imported_model",
+      "checkpoint_unchanged": true,
+      "same_imported_inode_and_sha": true
+    }
+  ],
+  "completed": true,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "preservation_attempted": true,
+  "bundle_install_attempted": true,
+  "load_attempted": true,
+  "imported_model": {
+    "exists": true,
+    "bytes": 563036064,
+    "inode": 1125427,
+    "links": 1,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "restoration_mode": "hold_then_restore",
+  "final": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "preference_identity_after": {
+    "focuspilot_research": {
+      "exists": true,
+      "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+    },
+    "focuspilot_live_preferences": {
+      "exists": false
+    },
+    "focuspilot_fewshot_sandbox": {
+      "exists": true,
+      "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "restored_light_apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "restored_original_model": {
+    "exists": true,
+    "bytes": 563036064,
+    "inode": 1136035,
+    "links": 1,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "cleanup_verified": true
+}

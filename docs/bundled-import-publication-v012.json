@@ -1,0 +1,18 @@
+{
+  "research_only": true,
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+  "tag_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "original_14_assets_unchanged": true,
+  "total_asset_count": 15,
+  "new_metadata_asset": {
+    "id": 606446755,
+    "name": "bundled-import-phone-v012.json",
+    "size": 4697,
+    "digest": "sha256:cab379995cdc8cff1f6b023853e599f0308448f4a2b018c2690f89e74f1cb680",
+    "state": "uploaded",
+    "browser_download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/bundled-import-phone-v012.json"
+  },
+  "actual_model_weights_in_git": false,
+  "logical_project_bytes": 13821993204,
+  "limit_bytes": 15000000000
+}

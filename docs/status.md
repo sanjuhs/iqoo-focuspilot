@@ -2,6 +2,18 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Current v0.12 bundled-model import
+
+The selected bundled APK imported Qwen3.5-0.8B Q4_0 on Nothing with the canonical
+model absent and existing app data retained: 1,077 ms import/SHA, 2,320 ms CPU load.
+The first typed Pause proposal took 9,534 ms and required review; no action ran.
+Second load reused the exact imported file. Cleanup restored the original model
+and light APK, all named preference identities, paused/off/100/97,331 ms and the
+two measured runtime grants. Fifteen ownership/foreground boundary tests pass.
+This closes the selected missing-model import branch; clean fresh-data installation,
+ASR/monitoring, disconnected operation, iQOO NPU, Office Kit and eligible accepted
+submission remain pending. [Physical proof and repeat procedure](bundled-import-phone-v012.md).
+
 ## Current v0.12 phone export
 
 The selected Nothing APK passed export-review Cancel, document-picker Cancel and

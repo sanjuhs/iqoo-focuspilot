@@ -33,9 +33,12 @@ below. These are signed debug research packages, not a Play Store release.
 
 Verify downloaded bytes against the [v0.12 SHA-256 manifest](docs/guidance-readback-artifacts.json).
 The release tag identifies app source `24f10b62a4a62c22ad6db90ac6339f29e2426dbd`.
-The tested light installation retained the pinned model; clean first import on
-v0.12 is a separate pending check. [Earlier bundled-import proof](docs/bundled-model-evidence.json)
-retains its original build attribution.
+The selected bundled APK passed actual missing-model import and second-load reuse
+on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
+Its first unconfirmed typed request took **9,534 ms**. The original model, light APK
+and recorded app state were restored. Clean fresh-data installation remains a
+separate test. [Current import proof](docs/bundled-import-phone-v012.md) ·
+[Historical import proof](docs/bundled-model-evidence.json).
 
 1. Install the compatible APK and open FocusPilot. Observation starts off.
 2. Open **Ask Mira**, load the local model, and type `Start focus for 20 seconds`.
