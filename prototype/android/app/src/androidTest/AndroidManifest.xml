@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <instrumentation
+        android:name="dev.focuspilot.prototype.LocalModelIsolationInstrumentation"
+        android:targetPackage="dev.focuspilot.prototype"
+        android:functionalTest="true" />
+</manifest>

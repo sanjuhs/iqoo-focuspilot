@@ -2,6 +2,17 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Network-denied native diagnostic — prepared
+
+A separate test-only Android instrumentation runner is compiled for the unchanged
+v0.13 app. It requires the real target UID/process, denied INTERNET permission and
+a numeric EACCES/EPERM socket error before loading the pinned local model. Ten
+fixed openly seen synthetic requests exercise native completion, pure command
+proposals and observational tensor summaries. No action executor, UI, observation
+or model/prompt change is added. Lint has zero errors/65 warnings; three harness
+boundary tests pass. Physical network-denied inference remains pending at this
+source checkpoint. This probe cannot establish the full disconnected/ASR workflow.
+
 ## Reviewed reset — v0.13
 
 The research source now requires explicit session-reset review, dismisses that
