@@ -84,4 +84,3 @@ own-app foreground guard. No UI was inspected, permissions granted or commands
 executed; subsequent metadata still reported asleep/not-own-app-focused. Actual
 overlay and countdown tests remain pending. This later attempt is separate from
 the initial installation snapshot.
-
