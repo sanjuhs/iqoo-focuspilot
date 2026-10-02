@@ -2,7 +2,7 @@
 
 This project is an implemented **pre-event research prototype**, with useful public artifacts and some reported Nothing-phone behavior. It is **not a completed iQOO deployment or an eligible, accepted hackathon submission**. This audit preserves the full requested scope; it does not redefine success as passing tests, publishing an APK, or recording a concept video.
 
-The requirements were read from `instructions.md`, `plan.md`, `hackathon.md`, and `docs/status.md`, including later additions: a friendly companion, local model, few-shot personalization, interpretability, foreground monitoring, voice, iQOO NPU deployment, Office Kit, open-source backup, and submission. Broader cross-app control and IoT remain proposed work; actual local LLM fine-tuning is now being evaluated separately and is not promoted to the phone; these they cannot be inferred from the current assistant UI.
+The requirements were read from `instructions.md`, `plan.md`, `hackathon.md`, and `docs/status.md`, including later additions: a friendly companion, local model, few-shot personalization, interpretability, foreground monitoring, voice, iQOO NPU deployment, Office Kit, open-source backup, and submission. Broader cross-app control and IoT remain proposed work; actual local LLM fine-tuning is now being evaluated separately and is not promoted to the phone; these cannot be inferred from the current assistant UI.
 
 ## Reproduce the read-only audit
 
@@ -58,3 +58,5 @@ Then perform user-consented voice/Clock, real app-use monitoring, notification/r
 For the competition, verify authenticated admission and dashboard deadline, secure eligible original event code or explicit organizer reuse authorization, and capture an accepted submission receipt. Public research releases and the narrated video are useful preparation, but these external requirements cannot be resolved by local tests or an audit checklist.
 
 The fixture suite tests corruption, missing manifests/assets, wrong native/license contents, deceptive JUnit counts/failure elements, invalid captions, incomplete phone bindings, fabricated metric coverage and claimed NPU proof. Ten fixtures passed at this audit. A passing fixture suite establishes auditor behavior; it does not certify the app’s untested real-world features.
+
+The current auditor also inspects both v0.5 APKs, its separate exact phone binding and all four required v0.5 release assets. v0.4 and v0.3 historical checks remain separate. The v0.5 source tag is `9dade07f1c5a3d627e56a06704826d9b83621599`; phone observations are bound to that APK, while later commits add research/evidence.
