@@ -254,7 +254,18 @@ public final class LocalModelActivity extends Activity {
                 case OPEN_SETTINGS: startActivity(new Intent(Settings.ACTION_SETTINGS)); result.setText("Settings launch requested; outcome is verified separately."); break;
                 case OPEN_CALCULATOR: startActivity(Intent.makeMainSelectorActivity(Intent.ACTION_MAIN,Intent.CATEGORY_APP_CALCULATOR)); result.setText("Calculator launch requested; outcome is verified separately."); break;
                 case OPEN_CLOCK: startActivity(new Intent(AlarmClock.ACTION_SHOW_ALARMS)); result.setText("Clock launch requested; outcome is verified separately."); break;
-                case EXPLAIN: result.setText(String.format(Locale.US,"Focus %s · selected app %s · %.1f / %d minutes · %d virtual points. Main dashboard shows policy contributions; the separate Decision Lab explains the synthetic trained network.",repository.session.isActive()?"active":"paused",repository.selectedPackage,repository.usage()/60000.0,repository.budgetMs/60000,repository.ledger.points())); break;
+                case EXPLAIN:
+                    repository.completeTimedIfDue();
+                    long now=android.os.SystemClock.elapsedRealtime();
+                    long usage=repository.usage();
+                    FocusStatusSummary.Snapshot snapshot=new FocusStatusSummary.Snapshot(
+                        repository.session.isActive(),repository.session.isCompleted(),repository.interrupted,
+                        repository.session.elapsed(now),repository.session.remainingMs(now),repository.session.countdownTotalMs(),
+                        usage<0?FocusStatusSummary.UNKNOWN:usage,repository.budgetMs,repository.ledger.points(),
+                        repository.observe,FocusRepository.usageGranted(this));
+                    String summary=FocusStatusSummary.format(snapshot);
+                    result.setText(summary);confirmedFocusText=summary;
+                    break;
                 default: result.setText("Unsupported action. Nothing executed.");
             }
             updateControls();

@@ -1,0 +1,27 @@
+{
+  "schema": "focuspilot.natural_validation_candidate.v1",
+  "status": "SOURCE_READY_UNPROMOTED_DEVELOPMENT_ONLY",
+  "research_only": true,
+  "model_or_phone_calls": 0,
+  "baseline_gate_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "candidate_gate_sha256": "9a8e45d86be21ee076e4e5fb5953834e79630d2c0004de0753a5f3580560d13f",
+  "number_parser_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+  "java_development_tests_sha256": "99f4f36811a9e07191ce41d0bfc414710f5f51d721ee847b0b6776173a89e292",
+  "development_helper_sha256": "4f2d7e88ab531de169a0ed92697a99257c131477a277fd4bc1b28819681f5fa9",
+  "development_results_sha256": "248316995a8cde846afd10f7736224f024ee43638936386f35e3ea4e679bc070",
+  "readme_sha256": "8566a5ca718989a4e191f1816079887d49e45cee73f1ae6f6b5d0a45e70ce9a1",
+  "candidate_promoted": false,
+  "fresh_data_seen": false,
+  "production_gate_changed": false,
+  "preservation_scope": "All 1,582 intent routes over 226 explicitly seen requests; all 80 previously accepted routes preserve exact kind, slots and preview; 59 targeted JUnit methods pass. This establishes no broader behavior guarantee.",
+  "unchanged_restrictions": [
+    "explicit tools",
+    "global negation/compound/conditional refusal",
+    "One line, 1\u2013500 UTF-16 code units",
+    "whole anchored request matching",
+    "whole durations1..7200 seconds",
+    "unchanged number-word parser",
+    "explicit approved settings/calculator/clock apps",
+    "action review and execution separate"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "reason": "Generic data freezer finalized after provisional opaque inventory. Root source-freeze validation caught changed own-source hashes before any authoring; selected bundle rebuilt prospectively. Initial bytes preserved.",
+  "fresh_requests_authored": false,
+  "model_or_gate_output_used": false,
+  "candidate_grammar_or_development_fixtures_changed": false,
+  "initial_sha256": "5abdc52405359877552f475652c47b6f3d440769e0f345708770290258fc06d2",
+  "selected_sha256": "494b1e6f341c288817ee877f3ac1fed7c5f174549da366a9ea7c8200d3671628",
+  "changed_inventory_sources": [
+    "prototype/qwen-natural-data/generate_data.py",
+    "prototype/qwen-natural-data/test_data.py"
+  ],
+  "normalized_hashes_added": 2,
+  "normalized_hashes_removed": 0
+}

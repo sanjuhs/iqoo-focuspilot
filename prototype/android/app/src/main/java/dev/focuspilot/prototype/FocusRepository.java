@@ -50,7 +50,7 @@ public final class FocusRepository {
         shadowContinuousLimitMs=validShadowLimit(prefs.getLong("shadowContinuousLimit",0));
         shadowPlannedFocusMs=validShadowLimit(prefs.getLong("shadowPlannedFocus",0));
         session.restorePaused(prefs.getLong("elapsedCheckpoint",0),prefs.getBoolean("timedCheckpoint",false),
-            prefs.getLong("remainingCheckpoint",0),prefs.getBoolean("completedCheckpoint",false));
+            prefs.getLong("remainingCheckpoint",0),prefs.getBoolean("completedCheckpoint",false),savedCountdownTotal());
         accumulatedUsage = prefs.getLong("usageCheckpoint", 0);
         ledger.restore(prefs.getInt("points", 100), prefs.getLong("lastNudge", -1), SystemClock.elapsedRealtime());
         interrupted = prefs.getBoolean("activeCheckpoint", false);
@@ -61,6 +61,10 @@ public final class FocusRepository {
     public static boolean usageGranted(Context context) {
         AppOpsManager ops = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
         return ops.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, Process.myUid(), context.getPackageName()) == AppOpsManager.MODE_ALLOWED;
+    }
+    private long savedCountdownTotal() {
+        try { return prefs.getLong("countdownTotalCheckpoint",-1); }
+        catch(ClassCastException malformed) { return -1; }
     }
     public long usage() {
         if(!observe || !session.isActive() || intervalWall<=0 || !usageGranted(context)) return accumulatedUsage;
@@ -133,7 +137,8 @@ public final class FocusRepository {
     public void persist() {
         long now=SystemClock.elapsedRealtime();
         prefs.edit().putLong("elapsedCheckpoint",session.elapsed(now)).putBoolean("activeCheckpoint",session.isActive()).putLong("usageCheckpoint",usage()).putInt("points",ledger.points()).putLong("lastNudge",ledger.lastNudge())
-            .putBoolean("timedCheckpoint",session.isTimed()).putLong("remainingCheckpoint",Math.max(0,session.remainingMs(now))).putBoolean("completedCheckpoint",session.isCompleted()).apply();
+            .putBoolean("timedCheckpoint",session.isTimed()).putLong("remainingCheckpoint",Math.max(0,session.remainingMs(now))).putBoolean("completedCheckpoint",session.isCompleted())
+            .putLong("countdownTotalCheckpoint",session.countdownTotalMs()).apply();
     }
     /** Returns whether deletion of the separately persisted live-label cache was confirmed. */
     public boolean delete() {
