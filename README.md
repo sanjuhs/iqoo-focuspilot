@@ -49,7 +49,8 @@ execution remain pending.
 [Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
 are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
 reflects v0.10 with original animations, measured captions and source-bound figures.
-It is locally ready; complete human listening and live-phone proof remain pending.
+[Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);
+complete human listening and live-phone proof remain pending.
 The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on

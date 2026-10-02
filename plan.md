@@ -5,7 +5,7 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
-## Current research pitch — local video ready
+## Current research pitch — published video
 
 A new **4:35 (274.836-second)** application concept/research video is locally
 ready: `artifacts/pitch-current.mp4`, 1920×1080 H.264/24fps with AAC and **30 measured
@@ -22,9 +22,9 @@ their different evidence scopes; no live iQOO/NPU/Office Kit result or eligible-
 claim is established. Dashboard format/cutoff, event-code eligibility and accepted
 submission remain unresolved.
 
-This video/caption/evidence addition is **planned for the v0.10 research release;
-publication of these new assets remains pending root verification**. The existing
-APK publication below does not certify that the new video is already uploaded.
+The video, captions and both evidence manifests are [published with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10).
+All four new server sizes/SHA-256 digests match local files; the original three
+APK/manifest assets remain unchanged and the tag still points to the app source.
 
 [Current pitch and reproduction](docs/current-pitch.md),
 [immutable video evidence](docs/current-pitch-evidence.json),

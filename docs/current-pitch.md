@@ -17,6 +17,15 @@ Renderer source: `6ca1d02284ecffd643b9d50ea6b1b18d610f88d1`. App source shown in
 video remains `bcc24733655e4eced67d68ff5c47f7ab97d60b36`; adding a video does not
 change the installed APK or establish a new physical action result.
 
+## Public backup
+
+[The v0.10 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
+contains `pitch-current.mp4`, `pitch-current.srt`, `current-pitch-render-manifest.json`
+and `current-pitch-evidence.json`. All four server sizes/SHA-256 digests match local
+bytes. The original three APK/manifest assets and app-source tag are unchanged.
+Source and documentation are backed up on main; the historical v0.3 video remains
+in its own release. Public asset presence does not certify submission eligibility.
+
 ## Reproduce locally
 
 Python with Pillow, installed macOS Samantha/`say`, FFmpeg and FFprobe are required.
