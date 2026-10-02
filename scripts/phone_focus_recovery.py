@@ -96,6 +96,8 @@ def main():
         raise RuntimeError('Retained model mismatch')
     require_empty_test_state(preferences(lab))
     before = snapshot(lab); grants = permissions(lab)
+    if before['timed'] and not before['completed'] and before['remaining_ms'] > 0:
+        raise RuntimeError('Existing unfinished paused countdown left unchanged')
     if monitor_record_present(lab): raise RuntimeError('Existing monitor left unchanged')
     report = {'research_only': True, 'app_source_commit': APP_SOURCE,
               'harness_commit': harness_commit,
@@ -142,6 +144,7 @@ def main():
         lab.tap('Confirm action', scroll=False); report['resume_confirmation_tapped'] = True; save()
         resumed = wait_state(lab, lambda s: s['active'])
         assert_target(resumed, before['elapsed_ms'])
+        result.update(confirmation_tapped=True, action_executed=True)
         phase('reviewed_resume', model_result=result)
         done = wait_state(lab, lambda s: not s['active'] and s['completed'], 35)
         assert_target(done, before['elapsed_ms'])
@@ -150,7 +153,10 @@ def main():
         second_base = done['elapsed_ms']
         result = reviewed_proposal(lab, 'Start focus for 20 seconds')
         lab.tap('Confirm action', scroll=False); report['second_confirmation_tapped'] = True; save()
-        wait_state(lab, lambda s: s['active'])
+        active = wait_state(lab, lambda s: s['active'])
+        assert_target(active, second_base)
+        result.update(confirmation_tapped=True, action_executed=True)
+        phase('second_reviewed_countdown_active', model_result=result)
         lab.guard(); lab.adb('shell', 'am', 'force-stop', PACKAGE)
         # Read only scoped own-app persisted state while the process is absent.
         saved = snapshot(lab)
