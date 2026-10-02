@@ -1,0 +1,52 @@
+{
+  "research_only": true,
+  "version": "0.5-observed-learning-research",
+  "apk_sha256": "ce90bfc217ebca61b01c1716e5279393dbd439032ce1d5beb1c8cbfce3d9971a",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "source_commit": "9dade07f1c5a3d627e56a06704826d9b83621599",
+  "device": "Nothing A059/SM7635/API36",
+  "backend": "CPU/KleidiAI I8MM",
+  "context": 1024,
+  "threads": 4,
+  "test_input": "typed synthetic; not ASR",
+  "offline_disconnect_verified": false,
+  "results": [
+    {
+      "command": "Please start a focus session",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 11583.0,
+      "prefill_ms": 10678.0,
+      "decode_ms": 905.0,
+      "action_executed": false
+    },
+    {
+      "command": "Do not start focus",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "ABSTAIN",
+      "total_ms": 1723.0,
+      "prefill_ms": 770.0,
+      "decode_ms": 953.0,
+      "action_executed": false
+    }
+  ],
+  "ui_smoke_light_apk_sha256": "51b05da9e832bdf6558f9775fe24553336272ce2fa748cb0dd733307d47c2390",
+  "ui_smoke": {
+    "research_only": true,
+    "version": "0.5-observed-learning-research",
+    "device": "Nothing A059/API36",
+    "learning_default_off": true,
+    "permission_off_label_rejected": true,
+    "live_label_count": 0,
+    "sandbox_opened": true,
+    "sandbox_service_manually_enabled": false,
+    "selector_action_verified": false,
+    "actual_foreground_monitor_verified": false,
+    "export_provider_write_verified": false,
+    "test_input": "own-app synthetic UI only",
+    "action_executed": false
+  }
+}

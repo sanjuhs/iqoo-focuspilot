@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "system_sha256": "c25ec6e60d8ed18b639a19555eba0d85092359752bd33fa2f77524b4029a276d",
+  "split_rule": "Entire named utterance-template families assigned before training; no row/random split. Slot values also disjoint except allowed app names.",
+  "synthetic_only": true,
+  "splits": {
+    "train": {
+      "rows": 116,
+      "groups": 32,
+      "sha256": "3aac21b829058147ecf91455abf7f55be52275404a90ab6b792bec387c12a3ff",
+      "group_hashes": {
+        "train/alarm/0": "435e8316bddc432c3f147f10557c97a28a1266bf3993643434209195f147778b",
+        "train/alarm/1": "756c26b16d4657cb53ef920d36e8c3cf4a8dbeb7f747da115caeb62b1fc4719f",
+        "train/alarm/2": "9a221e65a9f1d706f25667dde7e02eba5f485198b8077752aa7f180dde0c5b2b",
+        "train/alarm/3": "ceec2e0d0b79cd7dce2e496d70d5bbff059b026c271986494aa2de4898f51e73",
+        "train/explain/0": "bfd8538c2ed1e63ecb86e904dafda1b6f41371b5e30bf5c3d1f8642ca86a3e40",
+        "train/explain/1": "39c759233fd8ac067fc4be3496677e2ae4a8c0abd3c13195fcba5ec5b5a11a27",
+        "train/explain/2": "348569d16947a2dad2d3476cf45dda4da5d934ca0e5f54232125a2fe0e400c55",
+        "train/explain/3": "212948dc9d2ace8973ca5266a7da4433f0d84b89678f5d641f2e32c8ab95b162",
+        "train/open_app/0": "763e2bfd99d94f55535e2aba0b58afd0e3787529c4cdb8463e1bf9462508dace",
+        "train/open_app/1": "5255c2be9927dd10642ca9fe992b369bf92de30c272dc150b66a9d3611ca2aa0",
+        "train/open_app/2": "5e6d37f9813d05b847f7a2d07b47aed96f3fa8d000cfadc7838ddef910be033d",
+        "train/open_app/3": "2c71046dbfb24178e9455614e50c10d5877e94e895efd2f27c8006c63005563b",
+        "train/pause_focus/0": "a84d69ff4c5671b2b9cb1372c1dbe97c1f7ce876ecd2b710ae8fd9755e5fc217",
+        "train/pause_focus/1": "395d1d4182432c1f4a3035fa49deac5445e5f5150beebfc3ddc8914e185fb3ab",
+        "train/pause_focus/2": "21f31c787e5aa53c4b0fd4fc3982c5aedb6a2ceea54cc1b8aeafc6a82ae08ae0",
+        "train/pause_focus/3": "f4b6ea28913610cf78585acdc85f60a961e7a14c5365e7aeff5662a858fd2202",
+        "train/start_focus/0": "5d2a64d0f24eec42f6e7bf656aaa55acc665601dac5c61c235c92e597d4c0b70",
+        "train/start_focus/1": "361c61f64fcbc025948a11f8c3c4ee8cfafa6b2b96186b752c4b44579ac38835",
+        "train/start_focus/2": "c5f6aeb61ccc349c11966d15f412bf31478e4ebeb7ceb61061be8ab737d1d446",
+        "train/start_focus/3": "0c83b89c4e4e42086c1e5fa20b6273c404c0ffb6dc484c95cf8e726a82fe6ce8",
+        "train/timer/0": "0cae3edf16f006764be8b1a9f3f5e185b59812a68a6f1be1c84df2d45f6435de",
+        "train/timer/1": "ffaf677fedc8c663359b238fc71c6839455b1711e5a9a732a438cce595666abf",
+        "train/timer/2": "6a227924f3bbe930572cd0fe2be886f5daaac435896e78fcc3a93c036f40617d",
+        "train/timer/3": "8d008b854d0d619a9078afbdebaef7f494b277cd0d80841d29a2f20e3005e034",
+        "train/unknown/0": "cbf149259ad4c8fe8aac13d0f133464d59311be511a9f7d1c392e2f88f10d961",
+        "train/unknown/1": "67aa6a82be8a8e3fed594df53f25d5fb12f7d93d8df6110d21d3e523dc6ffb64",
+        "train/unknown/2": "f60fae39f1889be6abbb0f706e7f7a9d0c2e094d41e0ee2ae5dad8b06f61602e",
+        "train/unknown/3": "45ef2bc6901d1c2b2c956e7b5a0e3244f09e620e90dfaa948fe9f03c6ca79e7c",
+        "train/unknown/4": "8b9031530eb776336b8942d079d3aaa8d9a7bb0ca0d61870ffa40cbd120adb0e",
+        "train/unknown/5": "b45db967a5148d063a64f6ea7630716a5a0ff1cc460287edbdc4cb61acd6eb3f",
+        "train/unknown/6": "f2815dbae5a3ff92a4d60a48aa635d457201579ef8ac97c8d36cbc5f8a0d7166",
+        "train/unknown/7": "f99f6ca549ee2c01706273e22c61b86bebfc09a80b6ec4886bf8b97954d093be"
+      }
+    },
+    "valid": {
+      "rows": 14,
+      "groups": 9,
+      "sha256": "3175db7d8961248d14a732cef2b3a2462856d44b5a33a947774372e045a26e63",
+      "group_hashes": {
+        "valid/alarm/0": "ecc379c637c93461441b5f72744f577a63d109115222988ec18bfc07804cdf38",
+        "valid/explain/0": "a5a3c01f5e2384e4eeacec4e5ddf335fda6549fe0a5f12f971e57a039111e2b9",
+        "valid/open_app/0": "a1eda3d431f7e2ee8575e2c7442b68051d3434d13ec84ae970368282ff09437b",
+        "valid/pause_focus/0": "e50ae33738e5f8da7dcb1d4f56b76e95052cb84bd7d3cad8d356490e62d717c9",
+        "valid/start_focus/0": "4c0f33418aee9cef5ebbb11d18a9f2633f0f78bfb7f33b0daf32877a4eb5577f",
+        "valid/timer/0": "15d718efe00ac9b33e0981d23738cfece8060dd891a32277db3fd9f68d18072a",
+        "valid/unknown/0": "df359ff1032200c11851e3924c4ceb7e6756041357f7a9d14d298159f439a13a",
+        "valid/unknown/1": "1b9521b351bc90e39c70795806a1255451fee72f96d9135d970cf7790502decc",
+        "valid/unknown/2": "03b79482e6d3347f6717282131661187a74b56384d8d261490fd0657a19fcec4"
+      }
+    },
+    "heldout": {
+      "rows": 41,
+      "groups": 21,
+      "sha256": "cf066dc847e27fb6be6afd3f086278e6b816f75a9960d2c4833650edba86d40a",
+      "group_hashes": {
+        "heldout/alarm/0": "bbadfb7f50880644fc8b2aa1ea55a6bf069835acced50a5554fdb0103482d4cd",
+        "heldout/alarm/1": "343545c13a38d256e3903f30855fe85da98db026451c11ae24f5112bb3bcc29c",
+        "heldout/explain/0": "8717dbe65dea80e711cd58483847054f98d8f86af7902d5a544b19c829b194fe",
+        "heldout/explain/1": "310df4a8e7479e753a2f716aba95c47ea1d15db2a331a0095491fadebfdfaf3c",
+        "heldout/open_app/0": "3f44877741b39d3e3252487bd17b86d92fa4897eb5a5d4b2ffd9345a39cf23d1",
+        "heldout/open_app/1": "12927768a763c6bb144b7ade8efcec866382ca2085b476ebe2d7e9729f343802",
+        "heldout/pause_focus/0": "417a671a16e546ea4b4a28990025090bbf0a454904f533a7eb0047eaf07259df",
+        "heldout/pause_focus/1": "4bb47e7400e67895f13d37a57254367dfd715845be61e40956bb97abd580f77f",
+        "heldout/start_focus/0": "6e55039b84486af8443fae9e1e6441c4cec312cbec4ed67875f936d2e73a743c",
+        "heldout/start_focus/1": "1a6f60e6aa0cf0975c53d6f1c89bad91ae5aa99263b494f6419f0317b3912310",
+        "heldout/timer/0": "4a1140d79913a0e1b586f0fb94333e249c545786d54edfcdef781106a0e5af17",
+        "heldout/timer/1": "8b3d32cc663c907e93b71a3f2c53d524c066de776c7bf3ac50617d323f0b384a",
+        "heldout/unknown/0": "c92d62816a8abb661a258408ad4b6b3d7e78636b7ac00a33ebbb22b112f2ab5f",
+        "heldout/unknown/1": "553253b4442abac14678e7ce7bc7267a521425e9996bbfb1d258d62685c48992",
+        "heldout/unknown/2": "7519086a15ec5fbcda1305c8952dec1cfc5bb910af899e4c61e33ef5bb8ddf4e",
+        "heldout/unknown/3": "d1831527e73741031de89cd36dd78fe0260f10653193ef224fb1e3148d077c40",
+        "heldout/unknown/4": "32063dd2f388f0fb1e245af2c26a67a3d35d695b29ce24aaeffd4aada757d2b6",
+        "heldout/unknown/5": "cf117d7772f652f2bbbedf138cd2e48ba9c428166e6aaa242575219a2d3fd85b",
+        "heldout/unknown/6": "490f4d4533fc6795d3226810aaccc57a1fa91492300ef21afa3b5ff22f181216",
+        "heldout/unknown/7": "a3f285e126e07905478835c86bc4785d547d323ed6549c680aa1198f764a29a9",
+        "heldout/unknown/8": "0b53e1d04248e5b934a7379c656f3eb2284e8547333fd112e20fc67697e34437"
+      }
+    }
+  }
+}

@@ -19,11 +19,26 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   task text, raw event trail/screens/tensors and other-app identities. Failed deletion
   or provider writes report an unconfirmed result. Physical export remains pending.
 - Integrated host build: **89 JVM tests pass**, zero failures/errors/skips; Android lint
-  zero errors. This report describes 0.5 source, not already published 0.4 APKs.
+  zero errors (52 warnings). This report describes 0.5 source, not already published 0.4 APKs.
 - Installed 0.4 evidence has now been bound to its exact bundled APK/private-model
   hashes: typed positive request required review at 1,705 ms; negation was wrongly
   proposed as start_focus but independently rejected at 1,710 ms. Neither performed
   an action. [Exact binding](companion-phone-bound-v04.json).
+- Both 0.5 signed debug APKs were built; bundled model/native hashes match the pin.
+  Light and bundled APKs installed on Nothing. Actual own-app permission-off UI
+  showed learning disabled with zero labels after a blocked save, and the selector
+  sandbox reported its service disconnected. No permission or selector was enabled.
+- Exact installed 0.5 bundled APK/private-model hashes were verified. Positive typed
+  command required review at 11,583 ms first request; negation was wrongly proposed
+  as start_focus but independently rejected at 1,723 ms warm. No action executed.
+  [Phone binding](observed-learning-phone.json). Disconnected offline proof is pending.
+- [0.5 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.5)
+  contains both APKs and artifact hashes, preserving earlier packages/video.
+- Actual local QLoRA performed 80 updates of 55,296 Qwen adapter parameters on laptop
+  GPU with frozen synthetic families. Canonical decoder baseline 29/41 vs adapter
+  12/41; unsupported abstention 3/13 vs 0/13. Candidate rejected; phone base unchanged.
+  Format learning is not safe semantic improvement. One exported adapter host fixture
+  loaded successfully; this is compatibility evidence only. [Training report](qwen-finetuning.md).
 - At the latest read-only check, microphone/notifications remain ungranted and Usage
   Access is default. User permission steps are pending; no ADB grants were used.
 

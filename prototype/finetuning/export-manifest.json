@@ -1,0 +1,55 @@
+{
+  "llama_source_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "adapter_safetensors_sha256": "221a2030d2af7122fcb1613059923ba024adecbdf71a81a00c729bbd542f6f9a",
+  "gguf_bytes": 221888,
+  "gguf_sha256": "ab8e90c470901652b66ab1d74de560a765cbe92deb92c4b8017389447259dd03",
+  "tensor_map": [
+    {
+      "name": "blk.23.ffn_gate.weight.lora_a",
+      "numpy_shape": [
+        4,
+        1024
+      ]
+    },
+    {
+      "name": "blk.23.ffn_gate.weight.lora_b",
+      "numpy_shape": [
+        3584,
+        4
+      ]
+    },
+    {
+      "name": "blk.23.ffn_up.weight.lora_a",
+      "numpy_shape": [
+        4,
+        1024
+      ]
+    },
+    {
+      "name": "blk.23.ffn_up.weight.lora_b",
+      "numpy_shape": [
+        3584,
+        4
+      ]
+    },
+    {
+      "name": "blk.23.ffn_down.weight.lora_a",
+      "numpy_shape": [
+        4,
+        3584
+      ]
+    },
+    {
+      "name": "blk.23.ffn_down.weight.lora_b",
+      "numpy_shape": [
+        1024,
+        4
+      ]
+    }
+  ],
+  "synthetic_matrix_equivalence_max_abs_error": 4.76837158203125e-07,
+  "adapter_alpha": 32,
+  "rank": 4,
+  "scale": 8,
+  "scope": "Experimental narrowly mapped 3 MLP projections; runtime loading and prediction transfer separate gates. Quantization base differs from MLX; not phone promoted."
+}

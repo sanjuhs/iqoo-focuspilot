@@ -1,0 +1,16 @@
+{
+  "source_sha256": {
+    "evaluate_bounded.py": "3cf1a28922311aaec52e66a4a21083b8cc5544d3f23086bbf416264ce8806444",
+    "export_mlp_adapter.py": "634ede0247894885bc4da69464df19cb864dccba2ef9d5f13754ec948395df06",
+    "generate_data.py": "be356fa49ea16ba4c413252fd1ef0120970544712f673d95c7e151925776664d",
+    "prepare_model.py": "5bc58986e6efa94c2ba41da2218b3ce33100a96f2e24318f0f88f9399ebfec07",
+    "run_experiment.py": "aad8654f41060a166a6b9ba3e55979c65badbf764ae6c2be19956e1b66df1e93",
+    "test_experiment.py": "66fd4eebbf274ef9d9e069bc5d75c712b84370de96f3fe3fe0841ba710f0ca37",
+    "token_trie.py": "259f4ef48acad9658964de32728e8afc2fbe8662fed03b2570d3ff3825559ce3"
+  },
+  "weights_and_generated_data_are_git_ignored": true,
+  "fixed_experiment_steps": 80,
+  "trained_candidate_selection": "Fixed80steps with no heldout adaptive selection. Syntax metrics/evaluation trie/export diagnostics were added after training; no adapter changes.",
+  "reported_workspace_du": "10G\t.",
+  "created_local_runtime": "Python3.12.13, MLX0.32.2, MLX-LM0.32.0; pinned transitive requirements.lock.txt"
+}

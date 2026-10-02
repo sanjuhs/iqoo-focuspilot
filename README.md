@@ -3,7 +3,7 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.4)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.5)
 are backed up as a prerelease. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
@@ -35,6 +35,7 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
 | [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
+| [docs/qwen-finetuning.md](docs/qwen-finetuning.md) | Actual local QLoRA experiment and rejected candidate |
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
 | [docs/data-export.md](docs/data-export.md) | User-selected private summary export |

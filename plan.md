@@ -90,7 +90,7 @@ a narrow causal result. NPU inference and CPU activation experiments are distinc
 
 ## Stretch work after the baseline
 
-- Fine-tune a decision adapter only after a baseline and immutable evaluation set exist.
+- Actual local QLoRA research now exists with a frozen evaluation; the first adapter regressed and was rejected. Fine-tune any next decision adapter only against a newly frozen independent evaluation set.
   Stop if export or regression tests fail; retain working baseline.
 - Train a nonnegative tiny network on synthetic/consented features; compare against
   hand-set weights, logistic regression and rules. Report accuracy/calibration and

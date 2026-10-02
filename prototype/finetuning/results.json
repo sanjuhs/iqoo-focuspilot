@@ -1,0 +1,591 @@
+{
+  "schema": 1,
+  "scope": "Pre-event synthetic local MLX GPU research, no phone/native promotion.",
+  "training": {
+    "steps": 80,
+    "seed": 20261002,
+    "learning_rate": 0.0005,
+    "batch_size": 1,
+    "rank": 4,
+    "scale": 8,
+    "last_layer": 23,
+    "targets": [
+      "mlp.gate_proj",
+      "mlp.up_proj",
+      "mlp.down_proj"
+    ],
+    "trainable_parameters": 55296,
+    "initial_parameters_sha256": "4cca6155a4dba982480104d3935f6e59349454f1dce4c515848dcd4685591446",
+    "final_parameters_sha256": "8ced7b0ee0b6a5399f2d8f616d87572f1e24d0423c2e2e77717235f042161252",
+    "parameter_delta_l2": 4.096164879262247,
+    "adapter_file_sha256": "221a2030d2af7122fcb1613059923ba024adecbdf71a81a00c729bbd542f6f9a",
+    "first_loss": 2.1093547344207764,
+    "last_loss": 0.13284125924110413,
+    "mean_first10_loss": 0.7615655779838562,
+    "mean_last10_loss": 0.4360222300514579,
+    "validation_completion_loss": 0.5985418016623173,
+    "peak_memory_bytes": 1348399715,
+    "seconds": 27.425033875042573
+  },
+  "baseline": {
+    "rows": 41,
+    "correct": 0,
+    "accuracy": 0.0,
+    "valid_json": 0,
+    "unknown_rows": 13,
+    "unknown_correct_abstention": 0,
+    "unknown_recall": 0.0,
+    "supported_rows": 28,
+    "supported_false_abstention": 0,
+    "predicted_unknown": 0,
+    "abstention_precision": null,
+    "seconds": 3.7426936249248683,
+    "per_intent": {
+      "alarm": {
+        "n": 6,
+        "correct": 0
+      },
+      "explain": {
+        "n": 2,
+        "correct": 0
+      },
+      "open_app": {
+        "n": 6,
+        "correct": 0
+      },
+      "pause_focus": {
+        "n": 2,
+        "correct": 0
+      },
+      "start_focus": {
+        "n": 6,
+        "correct": 0
+      },
+      "timer": {
+        "n": 6,
+        "correct": 0
+      },
+      "unknown": {
+        "n": 13,
+        "correct": 0
+      }
+    },
+    "per_group": {
+      "heldout/alarm/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/alarm/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/explain/0": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/explain/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/open_app/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/open_app/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/pause_focus/0": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/pause_focus/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/start_focus/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/start_focus/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/timer/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/timer/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/unknown/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/unknown/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/2": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/3": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/4": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/5": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/unknown/6": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/7": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/8": {
+        "n": 1,
+        "correct": 0
+      }
+    },
+    "syntactically_valid_json": 37,
+    "valid_intent_schema": 0,
+    "latency_seconds": {
+      "first": 0.36877166701015085,
+      "median": 0.07564445794560015,
+      "min": 0.06291766697540879,
+      "max": 0.36877166701015085
+    }
+  },
+  "adapter": {
+    "rows": 41,
+    "correct": 12,
+    "accuracy": 0.2926829268292683,
+    "valid_json": 41,
+    "unknown_rows": 13,
+    "unknown_correct_abstention": 0,
+    "unknown_recall": 0.0,
+    "supported_rows": 28,
+    "supported_false_abstention": 0,
+    "predicted_unknown": 0,
+    "abstention_precision": null,
+    "seconds": 2.6140398329589516,
+    "per_intent": {
+      "alarm": {
+        "n": 6,
+        "correct": 3
+      },
+      "explain": {
+        "n": 2,
+        "correct": 0
+      },
+      "open_app": {
+        "n": 6,
+        "correct": 0
+      },
+      "pause_focus": {
+        "n": 2,
+        "correct": 0
+      },
+      "start_focus": {
+        "n": 6,
+        "correct": 6
+      },
+      "timer": {
+        "n": 6,
+        "correct": 3
+      },
+      "unknown": {
+        "n": 13,
+        "correct": 0
+      }
+    },
+    "per_group": {
+      "heldout/alarm/0": {
+        "n": 3,
+        "correct": 3
+      },
+      "heldout/alarm/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/explain/0": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/explain/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/open_app/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/open_app/1": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/pause_focus/0": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/pause_focus/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/start_focus/0": {
+        "n": 3,
+        "correct": 3
+      },
+      "heldout/start_focus/1": {
+        "n": 3,
+        "correct": 3
+      },
+      "heldout/timer/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/timer/1": {
+        "n": 3,
+        "correct": 3
+      },
+      "heldout/unknown/0": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/unknown/1": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/2": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/3": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/4": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/5": {
+        "n": 3,
+        "correct": 0
+      },
+      "heldout/unknown/6": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/7": {
+        "n": 1,
+        "correct": 0
+      },
+      "heldout/unknown/8": {
+        "n": 1,
+        "correct": 0
+      }
+    },
+    "syntactically_valid_json": 41,
+    "valid_intent_schema": 41,
+    "latency_seconds": {
+      "first": 0.06775666703470051,
+      "median": 0.06386583298444748,
+      "min": 0.058650124934501946,
+      "max": 0.06823879107832909
+    }
+  },
+  "promoted": false,
+  "heldout_used_for_training_or_selection": false,
+  "adapter_sha256_after_evaluation": "221a2030d2af7122fcb1613059923ba024adecbdf71a81a00c729bbd542f6f9a",
+  "bounded_decoder_diagnostic": {
+    "baseline": {
+      "rows": 41,
+      "correct": 29,
+      "accuracy": 0.7073170731707317,
+      "valid_json": 41,
+      "unknown_rows": 13,
+      "unknown_correct_abstention": 3,
+      "unknown_recall": 0.23076923076923078,
+      "supported_rows": 28,
+      "supported_false_abstention": 0,
+      "predicted_unknown": 3,
+      "abstention_precision": 1.0,
+      "seconds": 3.369996582972817,
+      "per_intent": {
+        "alarm": {
+          "n": 6,
+          "correct": 6
+        },
+        "explain": {
+          "n": 2,
+          "correct": 2
+        },
+        "open_app": {
+          "n": 6,
+          "correct": 5
+        },
+        "pause_focus": {
+          "n": 2,
+          "correct": 1
+        },
+        "start_focus": {
+          "n": 6,
+          "correct": 6
+        },
+        "timer": {
+          "n": 6,
+          "correct": 6
+        },
+        "unknown": {
+          "n": 13,
+          "correct": 3
+        }
+      },
+      "per_group": {
+        "heldout/alarm/0": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/alarm/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/explain/0": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/explain/1": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/open_app/0": {
+          "n": 3,
+          "correct": 2
+        },
+        "heldout/open_app/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/pause_focus/0": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/pause_focus/1": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/start_focus/0": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/start_focus/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/timer/0": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/timer/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/unknown/0": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/unknown/1": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/unknown/2": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/unknown/3": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/4": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/5": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/unknown/6": {
+          "n": 1,
+          "correct": 1
+        },
+        "heldout/unknown/7": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/8": {
+          "n": 1,
+          "correct": 0
+        }
+      },
+      "latency_seconds": {
+        "first": 0.81173454108648,
+        "median": 0.06415087496861815,
+        "min": 0.058306540944613516,
+        "max": 0.81173454108648,
+        "scope": "single serial warm local MLX GPU run; includes Python token-trie masks, fresh recurrent/KV state per case"
+      }
+    },
+    "adapter": {
+      "rows": 41,
+      "correct": 12,
+      "accuracy": 0.2926829268292683,
+      "valid_json": 41,
+      "unknown_rows": 13,
+      "unknown_correct_abstention": 0,
+      "unknown_recall": 0.0,
+      "supported_rows": 28,
+      "supported_false_abstention": 0,
+      "predicted_unknown": 0,
+      "abstention_precision": null,
+      "seconds": 2.6520107079995796,
+      "per_intent": {
+        "alarm": {
+          "n": 6,
+          "correct": 3
+        },
+        "explain": {
+          "n": 2,
+          "correct": 0
+        },
+        "open_app": {
+          "n": 6,
+          "correct": 0
+        },
+        "pause_focus": {
+          "n": 2,
+          "correct": 0
+        },
+        "start_focus": {
+          "n": 6,
+          "correct": 6
+        },
+        "timer": {
+          "n": 6,
+          "correct": 3
+        },
+        "unknown": {
+          "n": 13,
+          "correct": 0
+        }
+      },
+      "per_group": {
+        "heldout/alarm/0": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/alarm/1": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/explain/0": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/explain/1": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/open_app/0": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/open_app/1": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/pause_focus/0": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/pause_focus/1": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/start_focus/0": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/start_focus/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/timer/0": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/timer/1": {
+          "n": 3,
+          "correct": 3
+        },
+        "heldout/unknown/0": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/unknown/1": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/2": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/3": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/4": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/5": {
+          "n": 3,
+          "correct": 0
+        },
+        "heldout/unknown/6": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/7": {
+          "n": 1,
+          "correct": 0
+        },
+        "heldout/unknown/8": {
+          "n": 1,
+          "correct": 0
+        }
+      },
+      "latency_seconds": {
+        "first": 0.0693198749795556,
+        "median": 0.06478641601279378,
+        "min": 0.05895974999293685,
+        "max": 0.0693198749795556,
+        "scope": "single serial warm local MLX GPU run; includes Python token-trie masks, fresh recurrent/KV state per case"
+      }
+    },
+    "decoder": "Canonical JSON token trie, greedy; forces syntax/schema only, not correct intent. Diagnostic added after fixed-candidate free-generation evaluation. No new training/checkpoint selection.",
+    "adapter_sha256_before": "221a2030d2af7122fcb1613059923ba024adecbdf71a81a00c729bbd542f6f9a",
+    "adapter_sha256_after": "221a2030d2af7122fcb1613059923ba024adecbdf71a81a00c729bbd542f6f9a",
+    "promoted": false,
+    "equivalent_to_native_gbnf": false
+  },
+  "decision": "Reject candidate: schema learning accompanied by semantic regression and zero unsupported-request abstention; do not promote."
+}
