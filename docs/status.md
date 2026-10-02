@@ -4,8 +4,9 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 
 ## Command readiness and laptop bridge update 0.6
 
-- Research build source is `29c4c3372fcc913d3672e59803a3aa870fa2426b`. v0.6 publication
-  is pending at this update; earlier releases and the 0.3 concept pitch remain historical.
+- Research build source is `29c4c3372fcc913d3672e59803a3aa870fa2426b`. Both APKs and
+  hash evidence are in the [0.6 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6);
+  earlier releases and the 0.3 concept pitch remain historical.
 - **Set up Mira** was opened on Nothing A059/API36: Usage Access off, notifications
   blocked and microphone off were displayed. No permission changed, monitor started
   or voice recording began. [Setup and repeat procedure](command-readiness.md).

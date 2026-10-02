@@ -7,8 +7,8 @@ demo, with an honest, measurable System 1 decision path.
 
 ## Current checkpoint — v0.6
 
-Research build source: `29c4c3372fcc913d3672e59803a3aa870fa2426b`; release publication
-is pending at this update. Setup readiness was inspected with permissions off;
+Research build source: `29c4c3372fcc913d3672e59803a3aa870fa2426b`; both APKs and
+hash evidence are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6). Setup readiness was inspected with permissions off;
 actual typed Start/Pause proposals were reviewed and confirmed on Nothing, with
 the final state paused, usage off and 100 virtual points. Cancellation abstained.
 The integrated host build has 93 passing JVM tests, zero lint errors and 60 warnings.

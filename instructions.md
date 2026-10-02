@@ -7,7 +7,7 @@ reasoning, and helps the user act through voice and a small set of reliable tool
 ## Current research baseline — v0.6
 
 Use source `29c4c3372fcc913d3672e59803a3aa870fa2426b` as the v0.6 build identity;
-publication is pending at this update. **Set up Mira** reads optional feature
+both APKs and hash evidence are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6). **Set up Mira** reads optional feature
 readiness without granting permissions or starting services. Actual typed Qwen
 Start/Pause were reviewed, confirmed and verified on Nothing; alarm cancellation
 was rejected. These tests do not establish voice, Clock, disconnected offline,

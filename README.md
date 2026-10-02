@@ -15,8 +15,8 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Published research releases](https://github.com/sanjuhs/iqoo-focuspilot/releases)
-preserve previous builds; v0.6 publication is pending at this documentation update. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.6)
+are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
 Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
