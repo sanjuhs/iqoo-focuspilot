@@ -30,10 +30,19 @@ def snapshot(lab):
             'grants':permissions(lab),'model':private_file(lab,'files/qwen35.gguf'),
             'services_absent':services_absent(lab)}
 
-def require_test_application_absent(lab):
+def require_test_application_absent(lab,*,reuse_sha=None):
     result=subprocess.run(lab.base+['shell','pm','path',TEST_PACKAGE],text=True,capture_output=True,timeout=20)
     if result.returncode not in (0,1) or result.stderr.strip():raise RuntimeError('Cannot establish test application absence')
-    if result.stdout.strip():raise RuntimeError('Existing test application respected; no replacement')
+    if result.stdout.strip():
+        if not reuse_sha:raise RuntimeError('Existing test application respected; no replacement')
+        lines=result.stdout.strip().splitlines()
+        if len(lines)!=1 or not lines[0].startswith('package:/data/app/'):
+            raise RuntimeError('Installed test application path is not exact')
+        path=lines[0].removeprefix('package:')
+        if lab.adb('shell','sha256sum',path).split()[0]!=reuse_sha:
+            raise RuntimeError('Installed test application differs; no replacement')
+        return True
+    return False
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -41,6 +50,7 @@ def main():
     p.add_argument('--test-apk',type=Path,required=True);p.add_argument('--light-sha',required=True)
     p.add_argument('--test-sha',required=True);p.add_argument('--source',required=True)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--execute-isolated-reset',action='store_true')
+    p.add_argument('--reuse-installed-test',action='store_true',help='Reuse only the exact frozen previously installed synthetic test APK')
     a=p.parse_args()
     if not a.execute_isolated_reset:p.error('Explicit isolated synthetic reset flag required')
     output=a.output.resolve()
@@ -54,7 +64,7 @@ def main():
         if any(name.endswith('.gguf') for name in apk.namelist()):raise RuntimeError('Light APK required')
     lab=PhoneLab(a.serial);lab.guard();before=snapshot(lab)
     if before['checkpoint']['active'] or before['checkpoint']['observation'] or not before['services_absent'] or not pinned(before['model']):raise RuntimeError('Paused/off/no services/pinned model required')
-    require_test_application_absent(lab)
+    reuse_test=require_test_application_absent(lab,reuse_sha=a.test_sha if a.reuse_installed_test else None)
     if project_bytes(ROOT)+10_000_000>15_000_000_000:raise RuntimeError('Small test record storage reserve exceeds budget')
     record={'kind':'pre-event reviewed reset; isolated real Android repository and production UI cancellation only',
         'source_commit':source,'harness_sha256':sha(Path(__file__)),
@@ -68,15 +78,16 @@ def main():
                       'No microphone, monitoring, disconnected inference, NPU or Office Kit evidence.']}
     try:
         install(lab,a.light,a.light_sha)
-        result=subprocess.run(lab.base+['install','-r',str(a.test_apk)],text=True,capture_output=True,timeout=90)
-        if result.returncode or 'Success' not in result.stdout:raise RuntimeError('Synthetic test application install failed')
+        if not reuse_test:
+            result=subprocess.run(lab.base+['install','-r',str(a.test_apk)],text=True,capture_output=True,timeout=90)
+            if result.returncode or 'Success' not in result.stdout:raise RuntimeError('Synthetic test application install failed')
         path=lab.adb('shell','pm','path',TEST_PACKAGE).strip().split('package:',1)[1]
         if lab.adb('shell','sha256sum',path).split()[0]!=a.test_sha:raise RuntimeError('Installed synthetic test APK differs')
-        run=subprocess.run(lab.base+['shell','am','instrument','-w',RUNNER],text=True,capture_output=True,timeout=45)
+        run=subprocess.run(lab.base+['shell','am','instrument','-r','-w',RUNNER],text=True,capture_output=True,timeout=45)
         raw=run.stdout
+        record['instrumentation']=raw
         required=('INSTRUMENTATION_RESULT: passed=true','INSTRUMENTATION_RESULT: production_singleton_used=false','INSTRUMENTATION_RESULT: isolated_stores=2','INSTRUMENTATION_CODE: -1')
         if run.returncode or not all(value in raw for value in required):raise RuntimeError('Isolated instrumentation did not pass')
-        record['instrumentation']=raw
         leftovers=lab.adb('shell','run-as',PACKAGE,'ls','shared_prefs').splitlines()
         if any(name.startswith('reset_isolation_') for name in leftovers):raise RuntimeError('Isolated preference cleanup not established')
         if snapshot(lab)!=before:raise RuntimeError('Production snapshot changed during isolated test')
