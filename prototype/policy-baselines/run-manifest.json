@@ -1,0 +1,17 @@
+{
+  "artifact_hashes": {
+    "counterexamples.json": "06ace217b61fe14ffba06325eeef2481758eac8958d8d6aa66f8c9973407d4dc",
+    "pre-fit-protocol.json": "2c7f2d4ef044c01632bb929da2b2137a2adf01d478a09790431724f4d73a5de7",
+    "procedural-rows.json": "94863cdb34defe38e18fc398e1218b6757c2a5fc6bbbe750f5e0de0e92f7f41a",
+    "projected_logistic.json": "5519d97bf6e6c94736c647077561a23e7bb2a637aa22dc5772f4ec2089d3955c",
+    "signed_logistic.json": "f713d78e14482b6a6c2fe33383f80f4cdb8319d374529273d7de1e78504a8d0b"
+  },
+  "protocol_sha256": "293a0e1f9672c22670d79f7066ae23d894e6a254e2c2f655dee038a36aac26c4",
+  "references": {
+    "policy.py": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+    "synthetic-model-results.json": "c53df744e75e5ab0ebe0f2f37da0b743c57bb42e1e44e56e210fe71f61123123",
+    "synthetic-model.json": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8"
+  },
+  "results_sha256": "0c9232a209565b74bfb7ee3a577316d8c97072e3d0bf80f242b12244e51f509f",
+  "source_sha256": "e7fecb2fb107216787dd5f52574878a8be452fc12ef560a85d74a3d55bd50068"
+}
