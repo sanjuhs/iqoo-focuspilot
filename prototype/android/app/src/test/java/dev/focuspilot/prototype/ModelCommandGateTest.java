@@ -24,7 +24,7 @@ public final class ModelCommandGateTest {
         assertEquals(300,ModelCommandGate.validate("timer","Set a 5 minute timer").seconds);
         assertFalse(ModelCommandGate.validate("timer","Set a 0 minute timer").executable());
         assertFalse(ModelCommandGate.validate("timer","Set a 121 minute timer").executable());
-        assertFalse(ModelCommandGate.validate("timer","Set a five minute timer").executable());
+        assertEquals(300,ModelCommandGate.validate("timer","Set a five minute timer").seconds);
         assertEquals(ModelCommandGate.Kind.OPEN_CALCULATOR,ModelCommandGate.validate("open_app","Launch calculator").kind);
         assertFalse(ModelCommandGate.validate("open_app","Open banking").executable());
     }
@@ -100,8 +100,8 @@ public final class ModelCommandGateTest {
         for(String command:invalid)assertFalse(command,ModelCommandGate.validate("start_focus",command).executable());
         assertFalse(ModelCommandGate.validate("start_focus","Start focus for 5 minutes for ten").executable());
     }
-    @Test public void malformedSpokenAndMultipleFocusDurationsNeverDisappear() {
-        String[] invalid={"Focus for twenty minutes", "Start focus for half an hour", "Start focus for -5 minutes", "Start focus for - 5 minutes", "Start focus for \u22125 minutes", "Start focus for +5 minutes", "Start focus for 1.5 minutes", "Start focus for .5 minutes", "Start focus for 5,5 minutes", "Start focus for 5e2 minutes", "Start focus for 1 hour", "Start focus for 5 hours", "Start focus for 5 minutes 20 seconds", "Start focus for 5 minutes and 10 minutes", "Start focus for 5 minutes five seconds", "Start focus for 5:30 minutes", "Start focus for 5", "Start focus tomorrow", "Start focus until 7:30", "Start a 1.5 minute focus session", "Start focus for 1,000 seconds", "Start focus for 5 milliseconds"};
+    @Test public void malformedAndMultipleFocusDurationsNeverDisappear() {
+        String[] invalid={"Start focus for half an hour", "Start focus for -5 minutes", "Start focus for - 5 minutes", "Start focus for \u22125 minutes", "Start focus for +5 minutes", "Start focus for 1.5 minutes", "Start focus for .5 minutes", "Start focus for 5,5 minutes", "Start focus for 5e2 minutes", "Start focus for 1 hour", "Start focus for 5 hours", "Start focus for 5 minutes 20 seconds", "Start focus for 5 minutes and 10 minutes", "Start focus for 5 minutes five seconds", "Start focus for 5:30 minutes", "Start focus for 5", "Start focus tomorrow", "Start focus until 7:30", "Start a 1.5 minute focus session", "Start focus for 1,000 seconds", "Start focus for 5 milliseconds"};
         for(String command:invalid)assertFalse(command,ModelCommandGate.validate("start_focus",command).executable());
     }
     @Test public void explanationsRequireBoundedFocusDomainAndAllowStatusQuestion() {

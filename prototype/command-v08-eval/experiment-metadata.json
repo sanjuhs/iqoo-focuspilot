@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "sources_sha256": {
+    "generate_data.py": "04b8b02c7cc01e34880bd44eecb917f5e0f13cc30a834337c78eba3bcfee42c5",
+    "run_evaluation.py": "0fdedd8da898f72194f495e2bda9cc09a8373611daa3b4cc053d9e96f1bd267e",
+    "CommandBaseline.java": "6235ae2d29b3b14cf758c349a94429375222c8dab94776f821467e4e71812a79",
+    "CommandGateEval.java": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+    "test_evaluation.py": "23d29cf5112750a2c2622327d4d8416d17832c08ce29dfdc43ea8a8966a099ba"
+  },
+  "evaluation_tests_passed": 4,
+  "frozen_data_unchanged": true,
+  "model_capture_started": true,
+  "download_bytes": 0,
+  "paid_api_cost": 0,
+  "actions_executed": 0,
+  "model_capture_complete": true,
+  "model_exit_code": 0,
+  "model_output_sha256": "66b9d26f341ab9bd63f8cce91af1f3f5d810ae89ad31a82a1b2f501d47a3be58",
+  "results_sha256": "c2cf26b00ae93c6b410b3ae165b4ea48a73f9d0da1412832c80b82311724a22e",
+  "new_storage": "628 KiB",
+  "candidate_gate_sha256": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+  "candidate_number_words_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+  "raw_gate_result_sha256": {
+    "v07-model": "1753dcf1b809d508ad9481a095be4725e65f26123730572f9048b7343d7ea3dc",
+    "v08-model": "3235ab250e7db2a41f6218527603b9681495600db2e44f9d49d55673674b4bde",
+    "v07-oracle": "91b81508d8af8038252f229bc20de9354c76e8dd5caaaeb377d962e7e3517d94",
+    "v08-oracle": "451e393ef1bbf262b8404002bf366c29240240fa754fbaa8badf9fa66548a60e"
+  }
+}

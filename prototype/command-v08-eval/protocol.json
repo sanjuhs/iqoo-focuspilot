@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "scope": "Independent frozen pre-event synthetic validator evaluation, host CPU; no actions, training, fine-tuning, model/prompt changes or downloads.",
+  "freeze_condition": "Dataset and generator fixed before root edits v0.8 validator; root does not inspect request text until candidate source is locked.",
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 40,
+  "must_abstain_rows": 60,
+  "contract": "One immediate reviewed focus start/resume, pause or focus status; Clock alarm at one valid clock-only time or timer; one approved Settings/Calculator/Clock app. Friendly Mira/polite wrappers and bounded integer English/digit numeric slots. Focus/timer duration 1 second to 120 minutes; hours, signed/fractional/multiple durations unsupported. Alarm hours/minutes may be digit-colon or integer English hour/minute with AM/PM. No dates, recurrence, commands in quotations/reported statements, capability/information questions, conditions, negation, destructive/unsupported actions, multi-action or unsupported extra qualifiers. Ordinary polite suffixes are supported.",
+  "oracle_intent": "Nearest domain intent for unsupported in-domain commands deliberately tests original-text rejection even when the model proposes that action; oracle unknown only for unrelated unsupported commands. This is validator ceiling evaluation, not overall raw semantic intent accuracy.",
+  "score": "Exact (kind,hour,minute,seconds); supported correct coverage, false abstentions, wrong accepted slots/action, unsupported false accepts, precision/coverage and family counts. Wrong accepted supported proposal is a failure even if benign. No action execution or outcome claims.",
+  "paths": "All raw requests, model outputs, gate outputs and compiled code in ignored build/. Tracked source/aggregate/manifests only.",
+  "comparison": "Generate model output once using unchanged existing LocalModel JNI CPU prompt/context1024/threads4; feed identical raw original request to separately compiled v0.7 and frozen v0.8 Java validators. Evaluate both generated model intents and oracle domain intents. No adaptive prompt/parser/data repair after seeing results.",
+  "base_gate_sha256": "30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d",
+  "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "download_bytes": 0,
+  "paid_api_cost": 0,
+  "actions_executed": 0
+}

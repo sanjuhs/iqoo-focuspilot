@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "frozen_utc": "2026-10-02T13:50:09.784611+00:00",
+  "frozen_before_candidate_gate_edits": true,
+  "root_has_not_seen_request_text": true,
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 40,
+  "must_abstain_rows": 60,
+  "exact_prior_overlap": 0,
+  "generator_sha256": "04b8b02c7cc01e34880bd44eecb917f5e0f13cc30a834337c78eba3bcfee42c5",
+  "protocol_sha256": "c6b304068ba9e8f9fc1faef72daab463ea08095d87df5095c39cae2917fa35d5",
+  "cases_sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+  "requests_sha256": "8dcf71e968331247f30bb8a41712d8907108d74a67227b088027f900ff5adb59",
+  "v07_gate_sha256": "30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d",
+  "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+}

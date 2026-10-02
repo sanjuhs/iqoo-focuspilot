@@ -216,6 +216,15 @@ def main():
   if (root/'docs/timed-focus-phone.json').is_file():
    audit.check('v07_phone_report_binding',lambda:phone_record(read_json(root/'docs/timed-focus-phone.json'),v07_light,v07['source_commit']))
   else:audit.result['checks']['v07_phone_report_binding']={'status':'incomplete','reason':'Physical countdown test awaits unlocked own-app foreground; installation and JVM tests do not establish this.'}
+ audit.check('natural_commands_manifest',lambda:read_json(root/'docs/natural-commands-artifacts.json'))
+ v08=audit.result['checks']['natural_commands_manifest']
+ if 'artifacts' in v08:
+  for item in v08['artifacts']:
+   audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
+  v08_light=next(item for item in v08['artifacts'] if not item['bundled_model'])
+  if (root/'docs/natural-commands-phone.json').is_file():
+   audit.check('v08_phone_report_binding',lambda:phone_record(read_json(root/'docs/natural-commands-phone.json'),v08_light,v08['source_commit']))
+  else:audit.result['checks']['v08_phone_report_binding']={'status':'incomplete','reason':'Natural-command/countdown physical proof awaits unlocked own-app foreground; host results and installation are insufficient.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
@@ -237,7 +246,9 @@ def main():
    bound=['companion-phone-bound-v04.json'] if (root/'docs/companion-phone-bound-v04.json').is_file() else []
    v07_names=['focuspilot-research-v07-light.apk','focuspilot-research-v07-bundled.apk','timed-focus-artifacts.json']
    if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
-   for tag,names in {'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   v08_names=['focuspilot-research-v08-light.apk','focuspilot-research-v08-bundled.apk','natural-commands-artifacts.json']
+   if (root/'docs/natural-commands-phone.json').is_file():v08_names.append('natural-commands-phone.json')
+   for tag,names in {'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']

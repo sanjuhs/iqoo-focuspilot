@@ -98,6 +98,8 @@ public final class LocalModelActivity extends Activity {
         android.graphics.drawable.GradientDrawable draftShape=new android.graphics.drawable.GradientDrawable();
         draftShape.setColor(Color.rgb(36,32,49));draftShape.setCornerRadius(dp(12));command.setBackground(draftShape);
         command.setContentDescription("Editable command draft. Review voice transcription here before local inference.");
+        command.setHint("Focus for twenty-five minutes");
+        label("Try: focus for twenty-five minutes · set a five-minute timer · wake me at seven thirty PM. Each action still needs review.",13);
         voiceStatus=label("Push-to-talk uses only an installed on-device speech service. Voice drafts never run a command automatically.",14);
         speak=button("Speak to Mira · on-device",v->requestVoice());
         finishVoice=button("Finish voice draft",v->{if(voice!=null)voice.finishListening();});

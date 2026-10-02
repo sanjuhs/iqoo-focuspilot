@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--source-commit',required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--execute-reviewed-countdown',action='store_true')
+    parser.add_argument('--spoken-duration',action='store_true',help='Type a synthetic English-number duration; this does not test speech recognition')
     args=parser.parse_args()
     if not args.execute_reviewed_countdown:parser.error('This test starts focus; explicitly pass --execute-reviewed-countdown')
     if not re.fullmatch('[0-9a-f]{64}',args.expected_apk_sha256) or not re.fullmatch('[0-9a-f]{40}',args.source_commit):parser.error('Full artifact/source identities required')
@@ -53,7 +54,10 @@ def main():
             if any(n.get('text','').startswith('LOCAL MODEL LOADED') for n in lab.nodes()):break
             time.sleep(.25)
         else:raise RuntimeError('Model did not load')
-        result=lab.run('Start focus for 20 seconds')
+        request='Start focus for twenty seconds' if args.spoken_duration else 'Start focus for 20 seconds'
+        report['synthetic_request']=request
+        report['speech_recognition_tested']=False
+        result=lab.run(request)
         report['results'].append(result);save()
         if result['intent']!='start_focus' or result['gate']!='REVIEW REQUIRED':raise RuntimeError('Unexpected model/gate proposal; never confirmed')
         lab.tap('Review proposed phone action')
