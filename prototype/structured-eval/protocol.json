@@ -1,0 +1,41 @@
+{
+  "schema": "focuspilot.structured_development_protocol.v1",
+  "research_only": true,
+  "phase": "first_development_feasibility",
+  "source_head_required_before_first_model_call": true,
+  "model": "Existing selected Qwen3.5-0.8B Q4_0; no adapter, training, download or model copy",
+  "scope": "Compare original intent-only prompt plus current Java gate with structured intent/arguments plus isolated source-evidence validator. No phone action or app integration.",
+  "cohort": {
+    "rows": 24,
+    "supported": 18,
+    "unknown": 6,
+    "counts": {"start_focus":4,"pause_focus":4,"alarm":3,"timer":3,"open_app":2,"explain":2,"unknown":6},
+    "author": "Manually labelled synthetic development, not blind/fresh confirmation; author sees response contract, not candidate implementation or outputs",
+    "review": "All labels and full slots reviewed before outputs; no post-output corpus edits or omissions"
+  },
+  "captures": {
+    "order": ["baseline", "structured"],
+    "attempts_per_arm": 1,
+    "runtime": "Same existing pinned standalone CPU binary/libraries, fresh contexts, four threads, context1024, batch1024, ubatch256, one sequence, captureoff, GBNF then greedy, max128, actual EOS",
+    "owned_child_deadline_seconds": 240,
+    "failures": "Preserve failed/partial attempt and diagnose; never silently restart or score a partial denominator",
+    "source_and_label_edits_after_outputs": false
+  },
+  "measurements": [
+    "Raw intent correctness and all-class confusion",
+    "Raw structured exact action/arguments separately from validator acceptance",
+    "Complete accepted supported action/slots, false abstentions, and per-class Pause coverage",
+    "Unknown raw abstentions separately from validator refusals",
+    "Wrong accepted action/slot counts on supported and unknown requests",
+    "Paired complete gains/losses and oracle source-evidence ceiling",
+    "Actual EOS/JSON/inventory/process failures and token/time distributions"
+  ],
+  "decision": "Development diagnostic only; no automatic phone promotion. Any app integration needs a separate prospectively frozen fresh confirmation and real Android workflows.",
+  "limitations": [
+    "Small informed synthetic development cases, not population, voice or blind accuracy",
+    "Constrained JSON/EOS does not establish semantic correctness or general safety",
+    "Different prompt/output lengths prevent claiming a pure inference speedup",
+    "Fresh-context host CPU is not unchanged Android/JNI, Snapdragon NPU or Office Kit evidence",
+    "Explain correctness is proposal recognition, not causal/reminder/task-answer fulfillment"
+  ]
+}

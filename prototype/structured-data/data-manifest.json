@@ -1,0 +1,49 @@
+{
+  "app_targets": {
+    "calculator": 1,
+    "settings": 1
+  },
+  "author_informed": true,
+  "author_input_sha256": "1c738d2db52f293b08455c4cfb47df7c35a5322e73f25a18e7290e0353142315",
+  "blind_claim": false,
+  "by_intent": {
+    "alarm": 3,
+    "explain": 2,
+    "open_app": 2,
+    "pause_focus": 4,
+    "start_focus": 4,
+    "timer": 3,
+    "unknown": 6
+  },
+  "candidate_prompt_validator_native_or_model_outputs_read": false,
+  "development_provenance": "Prior coverage-failure wording may recur; not excluded against earlier datasets and not an independent accuracy estimate",
+  "filtered_by_gate_or_oracle": false,
+  "fresh_confirmation_claim": false,
+  "gold": "Independent manual structured objects, complete action slots, strict field sets; object member order does not change gold meaning",
+  "jsonl_sha256": "b8ca8a201971dd7c25267866cf1e80f3c116d9ab48060337d09f5f5acb95ddb5",
+  "model_gate_oracle_calls": 0,
+  "next_step": "Parent manual gold review and source freeze before one development capture; no post-output label optimization",
+  "promotion_claim": false,
+  "requests_sha256": "a5bf14e02d87aca8b43de840aaede3d3883a7df7bb39245373cd936c5bc6b91d",
+  "research_only": true,
+  "rows": 24,
+  "schema": "focuspilot.structured_development_data.v1",
+  "scope": "FIRST_STRUCTURED_ACTION_DEVELOPMENT_FEASIBILITY",
+  "semantic_notes": [
+    "Start has one untimed zero-duration request, timed spoken requests, a resume and a 7,200-second endpoint",
+    "All four Pause requests stop/pause a focus or study session, including current and completed-session context",
+    "Alarm covers exact noon, midnight and a manually converted PM time; no date/calendar inference",
+    "Timer is a regular countdown, with exact seconds and minute/hour conversions",
+    "Ordinary privacy/no-audio-storage preferences alone remain supported",
+    "Unknown cases cover compound action, negation, conditional execution, out-of-range duration, destructive capability and additional private capture capability",
+    "Explain expected objects establish the intended bounded domain, not actual answer fulfillment"
+  ],
+  "source_sha256": {
+    "README.md": "b6054c262ce0f014c766311c25e8f7b5c7209f4efe6f9f77e062a0d0b9434739",
+    "generate_data.py": "49d4a2abe6e7dff27a389987cf0b2b52c310f0bda470c7e3f82384dcf72013f5",
+    "test_data.py": "464ef3316a341544d46963041d1d648e319b2a293182a4e273b6916ef8ed0c2e"
+  },
+  "supported": 18,
+  "synthetic_only": true,
+  "unknown": 6
+}

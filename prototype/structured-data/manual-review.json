@@ -1,0 +1,18 @@
+{
+  "schema": "focuspilot.structured_manual_review.v1",
+  "phase": "development_not_fresh_confirmation",
+  "reviewer": "root",
+  "rows_reviewed": 24,
+  "before_model_or_gate_outputs": true,
+  "corrections": 0,
+  "jsonl_sha256": "b8ca8a201971dd7c25267866cf1e80f3c116d9ab48060337d09f5f5acb95ddb5",
+  "requests_sha256": "a5bf14e02d87aca8b43de840aaede3d3883a7df7bb39245373cd936c5bc6b91d",
+  "notes": [
+    "All durations, noon/midnight/PM clock slots and app targets independently reviewed.",
+    "Untimed Start is zero seconds; focus resume is a Start proposal with the explicitly requested duration.",
+    "Ordinary no-upload/no-audio preferences alone do not make the main action unsupported.",
+    "The invalid two-hours-and-one-minute timer exceeds the exact 7200-second bound.",
+    "Pause study break and concentration-mode exit denote stopping the user's focus state.",
+    "Explain labels denote intent/proposal recognition, not causal or current-session answer fulfillment."
+  ]
+}

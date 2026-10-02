@@ -1,0 +1,25 @@
+{
+  "schema": "focuspilot.structured_native_readiness.v1",
+  "status": "source_ready_no_inference",
+  "native_binary_reused": true,
+  "native_binary_sha256": "32a6869b29816216654640127c9ab6d2e4d5c1763aa729645c36f27563186ce1",
+  "native_compilation_record_sha256": "e7ff11371aa63584c8f90e3c7c59a73033ddcfb09292a02a1b4c35a680a49631",
+  "runtime_guard": "passed: three pinned libraries, seven pinned headers, exact original compilation/source/binary and exported API symbols",
+  "boundary_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 prototype/structured-native/test_capture.py",
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "scope": "Strict generic JSON records, real-EOS/frame/token/timing boundaries, base64/native parser parity, grammar bounds, exclusive writes/private paths and same-lock alias retry refusal. No model loading."
+  },
+  "model_loaded": false,
+  "phone_operations": false,
+  "new_downloads_or_dependencies": false,
+  "source_sha256": {
+    "prototype/structured-native/.gitignore": "c7cd0fc55d4b88bc4ed87b1cdc33670d9046174ab762188a0f2ce10290bb56e0",
+    "prototype/structured-native/README.md": "23758c255d1bd9b86fd860e79c6c7d924cb8b787cca57a6e51d877ed810bccab",
+    "prototype/structured-native/run_capture.py": "d4eb744192574ae7b0f08d00093758324d280c4376d98289d1299dc5deff601f",
+    "prototype/structured-native/test_capture.py": "50d968a57d0fbd13157725e691c525b2a07d91c36f93a680515b0aba2291dbb1"
+  },
+  "qualification_or_promotion_claim": false
+}
