@@ -7,8 +7,9 @@ no losses and no observed incorrect accepts. Oracle coverage reaches 50/50, but
 passing JVM tests and inspected signed packages. All 334 actual Nothing pure gate
 checks pass, preserving protected state; v0.14 light is installed and original
 test APK restored.
-This closes only host parsing coverage for this cohort, with full voice/monitoring,
-iQOO/NPU, Office Kit and eligible accepted submission unfinished.
+This closes host and already-seen pure Android validation branches for this cohort;
+full voice/monitoring,
+iQOO/NPU, Office Kit and eligible accepted submission remain unfinished.
 [Evidence](command-validation-v14.md).
 
 **Later JSON-prompt confirmation — rejected:** complete supported proposals

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "scope": "Published pre-event research assets; metadata byte verification, not new runtime or eligible submission proof",
+  "checked_utc": "2026-10-02T22:15:12.567495+00:00",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.14",
+  "release_tag": "research-v0.14",
+  "tag_app_source": "1eb2fb55bf0322237bce0bc04942cb0d6652ddcc",
+  "prerelease": true,
+  "assets": [
+    {
+      "name": "focuspilot-research-v014-gate-light.apk",
+      "bytes": 5497064,
+      "sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593",
+      "server_digest": "sha256:c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593",
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-light.apk",
+      "verified": true
+    },
+    {
+      "name": "focuspilot-research-v014-gate-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947",
+      "server_digest": "sha256:c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947",
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-bundled.apk",
+      "verified": true
+    },
+    {
+      "name": "focuspilot-research-v014-gate-test.apk",
+      "bytes": 57126,
+      "sha256": "5b1ea45caa6b8e990ba10dd945b083dd77b17fc6a710d61e86b211f892564423",
+      "server_digest": "sha256:5b1ea45caa6b8e990ba10dd945b083dd77b17fc6a710d61e86b211f892564423",
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-test.apk",
+      "verified": true
+    },
+    {
+      "name": "command-gate-v14-artifacts.json",
+      "bytes": 9446,
+      "sha256": "4012dcff576308a74aaefac04f19164e62e09fb4b196562267ec72d2bf5d84d3",
+      "server_digest": "sha256:4012dcff576308a74aaefac04f19164e62e09fb4b196562267ec72d2bf5d84d3",
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/command-gate-v14-artifacts.json",
+      "verified": true
+    },
+    {
+      "name": "command-gate-phone-v014.json",
+      "bytes": 4374,
+      "sha256": "332ab70e31b4770a1f650f577152a3d2efa5241865406671734eee20f05d4834",
+      "server_digest": "sha256:332ab70e31b4770a1f650f577152a3d2efa5241865406671734eee20f05d4834",
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/command-gate-phone-v014.json",
+      "verified": true
+    }
+  ],
+  "all_five_assets_verified": true,
+  "project_bytes": 14413738986,
+  "strict_project_limit_bytes": 15000000000,
+  "model_weights_api_credentials_raw_captures_training_data_not_in_git": true,
+  "full_goal_complete": false
+}

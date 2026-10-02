@@ -20,6 +20,13 @@ The v0.14 light APK stays installed and original test APK is restored; three pho
 harness tests pass. No product UI/tool action or model inference occurs. ASR, permissioned persistent/floating use, iQOO NPU, Office Kit
 and eligible accepted submission remain unfinished. [Evidence](command-validation-v14.md).
 
+The [v0.14 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.14)
+is published with both app APKs, the separate pure gate test APK and two evidence
+records. All five server sizes/digests match; the tag resolves to exact app source.
+Project storage is 14,413,738,986 logical bytes at publication verification, below
+15 GB. This publication adds no runtime or eligibility proof.
+[Publication verification](command-gate-v14-publication.json).
+
 ## JSON command prompt — rejected after frozen confirmation
 
 The locked JSON candidate improves complete supported proposals 24→29/50 on
