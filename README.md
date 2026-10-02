@@ -3,6 +3,17 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
+## Current recorded v0.12 research demo
+
+A new 4:41 video includes original Mira artwork and two actual own-app phone clips
+at 1× speed: explicit authored-step readback and typed Qwen3.5-0.8B Q4_0 inference
+(1,849 ms native CPU, capture enabled, no action confirmed). Synthetic Mark/Undo,
+four finite tensor summaries and scoped cleanup were verified on the same APK;
+unfilmed flows remain labelled illustrations. Captions, full decode, deterministic
+seeks, sampled encoded visuals and source-clip comparisons passed. Complete human
+listening, actual ASR/monitoring/floating, iQOO/NPU, Office Kit and eligible accepted
+submission remain pending. [Video, source and scope](docs/v012-pitch.md).
+
 ## Selected v0.12 task readback
 
 Mira now keeps speech feedback and Stop readback beside Speak, with unique request
@@ -115,7 +126,7 @@ synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
 [Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
-are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
+are published; previous builds remain preserved. The historical [4:35 v0.10 Mira research pitch](docs/current-pitch.md)
 reflects v0.10 with original animations, measured captions and source-bound figures.
 [Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);
 complete human listening and a recorded current phone demonstration remain pending.

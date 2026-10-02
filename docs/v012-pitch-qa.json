@@ -1,0 +1,206 @@
+{
+  "kind": "Encoded research-pitch automated checks and sampled assistant visual review",
+  "video_sha256": "235be6e7a0a0b87fd774d6e1a05c0de091b430714da95e0a590f50915ab4f2aa",
+  "video_seconds": 280.638,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "video_codec": "h264",
+  "fps": "24/1",
+  "audio_codec": "aac",
+  "audio_video_duration_difference_seconds": 0.012999999999976808,
+  "mean_volume_db": -19.0,
+  "peak_volume_db": -4.2,
+  "full_decode_passed": true,
+  "caption_segments": 24,
+  "caption_timing_passed": true,
+  "encoded_beat_samples": [
+    {
+      "scene": 1,
+      "beat": 1,
+      "time": 2.0,
+      "png_sha256": "7837a3d0b49da58f855d05eb76bf2c8a6443798435bebe61e5a5216f395653fb"
+    },
+    {
+      "scene": 1,
+      "beat": 2,
+      "time": 11.917098000000001,
+      "png_sha256": "67c365e5423460d62e848024123fbc741c23feae2c35c960cb0c1163b9364abb"
+    },
+    {
+      "scene": 1,
+      "beat": 3,
+      "time": 22.972064000000003,
+      "png_sha256": "52dd5109494851397276af5a0089898d35aff66e09d2976f5fbd8e1a8fae32a5"
+    },
+    {
+      "scene": 2,
+      "beat": 1,
+      "time": 32.616282000000005,
+      "png_sha256": "007b5738fa7c87846758a58a94f13a0da7ba0bf3f37a92117ca4d5c8393cb166"
+    },
+    {
+      "scene": 2,
+      "beat": 2,
+      "time": 40.499774,
+      "png_sha256": "a8de20e295033a105fe2fd23189aa475e26092f2a5299113fe1b12f6cc222cb7"
+    },
+    {
+      "scene": 2,
+      "beat": 3,
+      "time": 52.252064000000004,
+      "png_sha256": "f29082a9f960ab9fdd3b8f13120f0fd92bd6ab77848be906e9db107f01fdc0a9"
+    },
+    {
+      "scene": 3,
+      "beat": 1,
+      "time": 64.49138400000001,
+      "png_sha256": "cae0eeda2530641466e9c30b8bfdde03f89d5278ef036a6075a58c24632f83c9"
+    },
+    {
+      "scene": 3,
+      "beat": 2,
+      "time": 76.28571500000001,
+      "png_sha256": "8fb42bc04748571c4f46dde3fc26f6b6949d73e54e111431400333559cbca0c9"
+    },
+    {
+      "scene": 3,
+      "beat": 3,
+      "time": 88.62172400000001,
+      "png_sha256": "3b2dd87a5eb0f10f721061b28de31620735e3cde584d4204885c0ca61554211c"
+    },
+    {
+      "scene": 4,
+      "beat": 1,
+      "time": 100.59972900000001,
+      "png_sha256": "101fa2f1b5942b133697e0c826a779f35d3734845aa853165810a4eaa91f2bef"
+    },
+    {
+      "scene": 4,
+      "beat": 2,
+      "time": 111.63546600000001,
+      "png_sha256": "173e807d869ea6732c22d85798a2cd9f3a5bdf226777fa918bef39b46133dfc5"
+    },
+    {
+      "scene": 4,
+      "beat": 3,
+      "time": 123.545353,
+      "png_sha256": "176b16e20a40b2ad8f8010d3942643d7cc91cb078c89605c74ba94a61eb95720"
+    },
+    {
+      "scene": 5,
+      "beat": 1,
+      "time": 136.684355,
+      "png_sha256": "f6bdaf29f71e6a104c1b310f9f5edca03defa320302ba6c9efd9caa1b2eabb5d"
+    },
+    {
+      "scene": 5,
+      "beat": 2,
+      "time": 146.684899,
+      "png_sha256": "2b15396bc0c236273391fa32fe9e5102bdd65070285b64d8256e562456f17981"
+    },
+    {
+      "scene": 5,
+      "beat": 3,
+      "time": 160.253153,
+      "png_sha256": "86293aa25b66929f9d031653316d9e40e9ad8ef906db9b620752aaeb821cb5c6"
+    },
+    {
+      "scene": 6,
+      "beat": 1,
+      "time": 174.58612399999998,
+      "png_sha256": "d89d7fef59a3202c1ee027ca2af553e86b8db39dab15826e4c8e00990f23e543"
+    },
+    {
+      "scene": 6,
+      "beat": 2,
+      "time": 186.59628299999997,
+      "png_sha256": "9bd0d5588275f1eb1db175d8df93eee5cd5ba91f871db350299151b2044dd09d"
+    },
+    {
+      "scene": 6,
+      "beat": 3,
+      "time": 198.85124899999997,
+      "png_sha256": "55582717137193508ac375d17235b3a7921fdbf277893656103a4ebb0c93c179"
+    },
+    {
+      "scene": 7,
+      "beat": 1,
+      "time": 208.53047799999996,
+      "png_sha256": "0b3bac20da39dc4aa004a9ac748bf11eefebae2478ee2697e01d35aca8eefcab"
+    },
+    {
+      "scene": 7,
+      "beat": 2,
+      "time": 222.68263199999996,
+      "png_sha256": "d1319bfbef80e79092c55d6530bbebd09b554e92a90c09d2d70c7193ee5f19e6"
+    },
+    {
+      "scene": 7,
+      "beat": 3,
+      "time": 235.03424199999995,
+      "png_sha256": "2b12055c9e1d5dc2b2a2667db5c5a5949946f4bb8da9607971b76571125c34cc"
+    },
+    {
+      "scene": 8,
+      "beat": 1,
+      "time": 243.81918499999995,
+      "png_sha256": "dce5ca6c51ea7fe290cb32ba79376ea8c43e967fe3946432e91658465ba48e18"
+    },
+    {
+      "scene": 8,
+      "beat": 2,
+      "time": 255.86489899999995,
+      "png_sha256": "4698eb6be500bcdf8619151aefae36decae59a2ed9fa4026c850cb335760295d"
+    },
+    {
+      "scene": 8,
+      "beat": 3,
+      "time": 269.62503499999997,
+      "png_sha256": "e92b717fa99d886f01502e4955e44c00764e25f37c0713020585a1e4963bb3c7"
+    }
+  ],
+  "assistant_visual_sample_review_passed": true,
+  "human_complete_playback_listening": false,
+  "phone_speaker_audibility_verified": false,
+  "storage_bytes": 13821346737,
+  "project_cap_bytes": 15000000000,
+  "diagram_note": "Scene5 historical activation bar heights are normalized independently per vector; shape/sign illustration, not a common-amplitude scale or semantic interpretation.",
+  "encoded_clip_source_comparisons": [
+    {
+      "clip": "guide",
+      "source_time_seconds": 1.0,
+      "pitch_time_seconds": 31.616282000000005,
+      "source_scaled_rgb_sha256": "139288516122d437aaebd8fbd5ff49b19f45fd876ffd2579910b58a34f6df460",
+      "encoded_phone_rgb_sha256": "736e8b7a4119ce23b54e289e6a5989116b560548b25f40479515619def19596e",
+      "psnr_db": 37.68376554124436
+    },
+    {
+      "clip": "guide",
+      "source_time_seconds": 7.0,
+      "pitch_time_seconds": 37.616282000000005,
+      "source_scaled_rgb_sha256": "10d3c4ea512a72e0a7f66650ee96dab311f02505630cd5668eac8f180b2b5d3c",
+      "encoded_phone_rgb_sha256": "41b350c45e6b784f553978fecbfbd2cfe88cdcb2c6c84e2ddbce1eaa5c305af6",
+      "psnr_db": 37.56131860050144
+    },
+    {
+      "clip": "model",
+      "source_time_seconds": 1.0,
+      "pitch_time_seconds": 63.491384000000004,
+      "source_scaled_rgb_sha256": "fb5340a755a4b0b629de5980e0ac0349e7448f104863e4255c80a100f99c66d8",
+      "encoded_phone_rgb_sha256": "09a18b53a19b20741bf667fb58c849c90f64cc6469ffec11dfc048a0d4f645ae",
+      "psnr_db": 39.5471550673276
+    },
+    {
+      "clip": "model",
+      "source_time_seconds": 7.0,
+      "pitch_time_seconds": 69.49138400000001,
+      "source_scaled_rgb_sha256": "bdd5e230da8c2e2fdbd24f239c63364d2eef0cfd772170d8dd057b2e8f3d3a47",
+      "encoded_phone_rgb_sha256": "2e07c752e0a6ac6bfa11bf9aadc5ed978784af8d5d3d8c6600daf5747f5e9283",
+      "psnr_db": 38.59738596938139
+    }
+  ],
+  "encoded_phone_pixels_changed_in_each_clip": true,
+  "visual_review_scope": "All24encoded beat samples inspected; full-size current model/activation/policy captions checked. Source phone crops were reviewed separately. This is sampled assistant review, not full human playback."
+}

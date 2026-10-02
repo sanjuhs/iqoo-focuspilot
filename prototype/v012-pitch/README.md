@@ -87,3 +87,24 @@ seek checks. Rendering does not certify encoded-frame visual review, complete hu
 listening, iQOO/NPU, Office Kit, disconnected operation, event eligibility or
 accepted submission. Those remain explicit false/unverified fields and separate
 completion requirements.
+
+## Retrieve the selected sanitized footage
+
+From a fresh checkout with no existing capture outputs, download the two sanitized
+clips and reviewed capture metadata from the research release. The JSON is copied
+to the renderer's dedicated input location; no raw private capture is required.
+
+```sh
+mkdir -p artifacts/v012-phone-demo
+gh release download research-v0.12 --repo sanjuhs/iqoo-focuspilot \
+  --pattern guide.mp4 --pattern model.mp4 --pattern demo-capture-phone-v012.json \
+  --dir artifacts/v012-phone-demo
+cp -n artifacts/v012-phone-demo/demo-capture-phone-v012.json artifacts/v012-phone-demo/record.json
+python3 scripts/render_v012_pitch.py --prepare-only
+python3 scripts/render_v012_pitch.py --render --reuse-timeline
+```
+
+Keep model weights, private raw screen captures and any credentials out of Git.
+This replay uses the existing public synthetic policy and filmed inputs, without
+a phone, LLM inference, Office Kit or NPU execution. See
+[the selected video and verification scope](../../docs/v012-pitch.md).

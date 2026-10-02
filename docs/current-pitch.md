@@ -1,4 +1,7 @@
-# Current Mira research pitch
+# Historical v0.10 Mira research pitch
+
+The selected current demo is [v0.12](v012-pitch.md); the historical assets below
+remain preserved unchanged.
 
 A separately rendered **4:35** video reflects v0.10 and keeps the historical v0.3
 pitch intact. This is a reviewable application concept/research asset with original

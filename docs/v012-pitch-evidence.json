@@ -1,0 +1,41 @@
+{
+  "kind": "Selected current research video identities; actual own-app footage plus original illustrations, not accepted submission",
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "renderer_source_commit": "930d8f30a34644d5254588ba2fde4491697bd734",
+  "narration_source_commit": "32650e881ec939e9ebf22faa0450e714de2ba551",
+  "artifacts": [
+    {
+      "name": "pitch-v012.mp4",
+      "file": "artifacts/v012-pitch/pitch-v012.mp4",
+      "bytes": 10100036,
+      "sha256": "235be6e7a0a0b87fd774d6e1a05c0de091b430714da95e0a590f50915ab4f2aa"
+    },
+    {
+      "name": "pitch-v012.srt",
+      "file": "artifacts/v012-pitch/pitch-v012.srt",
+      "bytes": 5472,
+      "sha256": "10d08f43a548227a4099bd9c4373657efa8d680cbce50c256785dd0f693e32a7"
+    },
+    {
+      "name": "v012-pitch-render-manifest.json",
+      "file": "docs/v012-pitch-render-manifest.json",
+      "bytes": 42256,
+      "sha256": "6466e010317cbd61c5ed20901e45b4960dc8f60c27518165ad10260fad63b1e8"
+    },
+    {
+      "name": "v012-pitch-qa.json",
+      "file": "docs/v012-pitch-qa.json",
+      "bytes": 6697,
+      "sha256": "5585554ca07d1f8b5fcb3309025210957c5afa5cc611724db5e5502ce5e9a6e5"
+    },
+    {
+      "name": "demo-capture-phone-v012.json",
+      "file": "docs/demo-capture-phone-v012.json",
+      "bytes": 5590,
+      "sha256": "b7e860ca57c1d7d2ea4f0459c197c85e58544bccb3018e44b6d6d570172e933e"
+    }
+  ],
+  "human_complete_playback_listening": false,
+  "phone_speaker_audibility_verified": false,
+  "full_goal_complete": false
+}

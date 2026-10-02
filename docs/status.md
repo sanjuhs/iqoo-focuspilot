@@ -2,6 +2,17 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Current recorded v0.12 research demo
+
+A new 4:41 video includes original Mira artwork and two actual own-app phone clips
+at 1× speed: explicit authored-step readback and typed Qwen3.5-0.8B Q4_0 inference
+(1,849 ms native CPU, capture enabled, no action confirmed). Synthetic Mark/Undo,
+four finite tensor summaries and scoped cleanup were verified on the same APK;
+unfilmed flows remain labelled illustrations. Captions, full decode, deterministic
+seeks, sampled encoded visuals and source-clip comparisons passed. Complete human
+listening, actual ASR/monitoring/floating, iQOO/NPU, Office Kit and eligible accepted
+submission remain pending. [Video, source and scope](v012-pitch.md).
+
 ## Selected v0.12 task readback
 
 Mira now keeps speech feedback and Stop readback beside Speak, with unique request

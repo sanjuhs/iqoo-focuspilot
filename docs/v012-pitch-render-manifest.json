@@ -1,0 +1,908 @@
+{
+  "kind": "Edited v0.12 pre-event research pitch; real own-app clips plus original procedural illustrations",
+  "completed": true,
+  "submission_accepted": false,
+  "eligible_event_code_verified": false,
+  "bindings": {
+    "footage_record": "artifacts/v012-phone-demo/record.json",
+    "footage_record_sha256": "b7e860ca57c1d7d2ea4f0459c197c85e58544bccb3018e44b6d6d570172e933e",
+    "record": {
+      "kind": "Current own-app synthetic research recording; silent cropped phone footage",
+      "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+      "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+      "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "harness_sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+      "manifest_sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a",
+      "pre_run_commit": "ac8935618a15060a4c6107b3f841f416e7551cfb",
+      "before_checkpoint": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 57331
+      },
+      "permissions_before": {
+        "android.permission.RECORD_AUDIO": false,
+        "android.permission.POST_NOTIFICATIONS": false
+      },
+      "clips": [
+        {
+          "name": "guide",
+          "file": "artifacts/v012-phone-demo/guide.mp4",
+          "sha256": "e834e5dfe905a36ca3178d93acc651de86793ff993183d831186f3a9f1c513fc",
+          "bytes": 271373,
+          "seconds": 10.369829,
+          "raw_sha256": "de3029b262d67968c7f3c8eea42abaa9403b233d6bbd585e9ff2aab8d330f2b6",
+          "crop": [
+            720,
+            1400,
+            0,
+            84
+          ],
+          "speed": 1,
+          "audio_track": false,
+          "own_foreground_guard": true,
+          "raw_file_public": false
+        },
+        {
+          "name": "model",
+          "file": "artifacts/v012-phone-demo/model.mp4",
+          "sha256": "6acfce24436d29b787d807d1dea22b75dfc81a6d8672172a26f2bbddc3cfa40f",
+          "bytes": 571058,
+          "seconds": 9.339,
+          "raw_sha256": "3d20d27789f0fd4ebcbad1d01f1195d51189d353912a6ab669e1f26973640716",
+          "crop": [
+            720,
+            1400,
+            0,
+            84
+          ],
+          "speed": 1,
+          "audio_track": false,
+          "own_foreground_guard": true,
+          "raw_file_public": false
+        }
+      ],
+      "phases": [
+        {
+          "name": "authored_synthetic_guide_saved"
+        },
+        {
+          "name": "mark_undo_verified_before_recording",
+          "progress_restored": true,
+          "revision_renewed": true
+        },
+        {
+          "name": "recorded_guide_readback_completed",
+          "outcome": "engine_completed_callback"
+        },
+        {
+          "name": "recorded_typed_pause_proposal_only",
+          "action_confirmed": false
+        }
+      ],
+      "completed": true,
+      "cleanup_verified": true,
+      "visual_privacy_review": true,
+      "microphone_started": false,
+      "npu_verified": false,
+      "human_audibility_verified": false,
+      "offline_disconnect_verified": false,
+      "action_confirmed": false,
+      "os_settings_changed": false,
+      "typed_model_request": {
+        "command": "Stop focus",
+        "capture": true,
+        "intent": "pause_focus",
+        "gate": "REVIEW REQUIRED",
+        "total_ms": 1849.0,
+        "prefill_ms": 899.0,
+        "decode_ms": 950.0,
+        "action_executed": false
+      },
+      "request_details": {
+        "context_setup_ms": 26.0,
+        "prompt_tokens": 155,
+        "generated_tokens": 8
+      },
+      "activation_observations": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00036,
+          "rms": 0.01544,
+          "min": -0.0505,
+          "max": 0.22183,
+          "first_values": [
+            0.22183347,
+            -0.00072032248,
+            0.0065699513,
+            0.0022087621,
+            -0.00016121729,
+            -0.0029685292,
+            0.017375367,
+            0.0016866969
+          ]
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": -0.00028,
+          "rms": 0.03094,
+          "min": -0.11547,
+          "max": 0.10341,
+          "first_values": [
+            -0.021840721,
+            -0.0019751545,
+            0.0020368637,
+            -0.0013815633,
+            0.035677161,
+            -0.047037855,
+            -0.021915525,
+            0.042965271
+          ]
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "mean": 0.00987,
+          "rms": 0.20706,
+          "min": -1.0558,
+          "max": 2.94813,
+          "first_values": [
+            2.9481306,
+            0.15220349,
+            0.22413556,
+            0.065544836,
+            0.18794766,
+            0.013547033,
+            -0.12512405,
+            -0.15931693
+          ]
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "mean": 0.16724,
+          "rms": 4.36566,
+          "min": -23.07918,
+          "max": 14.98569,
+          "first_values": [
+            0.26920566,
+            4.0578966,
+            0.71723992,
+            10.443491,
+            7.4677224,
+            1.7269794,
+            1.2207621,
+            3.2154086
+          ]
+        }
+      ],
+      "cleanup_scope": "Remove only this synthetic three-step guide, restore empty task and mute false; task-save log entries/zero target keys may remain.",
+      "final_checkpoint": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 57331
+      },
+      "empty_goal_restored": true,
+      "guide_record_removed": true,
+      "permissions_after": {
+        "android.permission.RECORD_AUDIO": false,
+        "android.permission.POST_NOTIFICATIONS": false
+      },
+      "visual_review": {
+        "reviewer": "Root assistant using view_image",
+        "capture_only_record_sha256": "a959706642cdd56fc804d8a49ca4957e0065fdccfaf2de0449b46913eb21a522",
+        "scope": "Cropped clips sampled at one-second intervals plus full-size guide terminal frame; own-foreground metadata guard during capture. No account, real task/history, keyboard or system bars seen. Full human playback/listening not established.",
+        "sample_files_private": [
+          "guide-review-private.png",
+          "guide-7-private.png",
+          "model-review-private.png"
+        ],
+        "phone_audio_used": false
+      }
+    },
+    "clips": {
+      "guide": {
+        "name": "guide",
+        "file": "artifacts/v012-phone-demo/guide.mp4",
+        "sha256": "e834e5dfe905a36ca3178d93acc651de86793ff993183d831186f3a9f1c513fc",
+        "bytes": 271373,
+        "seconds": 10.369829,
+        "raw_sha256": "de3029b262d67968c7f3c8eea42abaa9403b233d6bbd585e9ff2aab8d330f2b6",
+        "crop": [
+          720,
+          1400,
+          0,
+          84
+        ],
+        "speed": 1,
+        "audio_track": false,
+        "own_foreground_guard": true,
+        "raw_file_public": false,
+        "measured_seconds": 10.369829,
+        "resolution": [
+          720,
+          1400
+        ]
+      },
+      "model": {
+        "name": "model",
+        "file": "artifacts/v012-phone-demo/model.mp4",
+        "sha256": "6acfce24436d29b787d807d1dea22b75dfc81a6d8672172a26f2bbddc3cfa40f",
+        "bytes": 571058,
+        "seconds": 9.339,
+        "raw_sha256": "3d20d27789f0fd4ebcbad1d01f1195d51189d353912a6ab669e1f26973640716",
+        "crop": [
+          720,
+          1400,
+          0,
+          84
+        ],
+        "speed": 1,
+        "audio_track": false,
+        "own_foreground_guard": true,
+        "raw_file_public": false,
+        "measured_seconds": 9.339,
+        "resolution": [
+          720,
+          1400
+        ]
+      }
+    },
+    "evidence_bindings": {
+      "docs/guidance-readback-artifacts.json": {
+        "sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a",
+        "source_commit": "ada0e3bb6e040f7f21e5b686c1b64a4d21882888"
+      },
+      "docs/guide-readback-phone-v012.json": {
+        "sha256": "fd8dacf040ea4b1f84b71ff7a622fa92537b15d6a13d9dae75eb8996072e756f",
+        "source_commit": "219462683dee71133c25b4b1c0fd7e34abffe29f"
+      },
+      "docs/capture-benchmark-phone-v011.json": {
+        "sha256": "61476320e0eaa8607fb1d38876b53273c283bdcd0ac43f84c23df4a4acd49aef",
+        "source_commit": "c1d95b37636c85419bbdae4cd95e3206fb98ec5d"
+      },
+      "prototype/policy/synthetic-model.json": {
+        "sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+        "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238"
+      },
+      "prototype/policy/synthetic-model-results.json": {
+        "sha256": "c53df744e75e5ab0ebe0f2f37da0b743c57bb42e1e44e56e210fe71f61123123",
+        "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238"
+      },
+      "prototype/policy/policy.py": {
+        "sha256": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+        "source_commit": "da2c0df3082d37804a14998ceb842fe973bae238"
+      },
+      "docs/v012-research-pitch-script.md": {
+        "sha256": "7fbe194f87fbc30b8b3a742d8ab50f27f14b282af827b032cfec64f9f7242bc4",
+        "source_commit": "32650e881ec939e9ebf22faa0450e714de2ba551"
+      },
+      "scripts/render_v012_pitch.py": {
+        "sha256": "3317c1ac6f7e0e3f528009db64a176c58593f8f394d07ffa9f3ebc10c7f6bc55",
+        "source_commit": "930d8f30a34644d5254588ba2fde4491697bd734"
+      },
+      "scripts/render_current_pitch.py": {
+        "sha256": "155fb318b971f26ec347b8b20f76676a93d12731fd7ed2a251c320b6d788c123",
+        "source_commit": "6ca1d02284ecffd643b9d50ea6b1b18d610f88d1"
+      },
+      "scripts/phone_demo_capture.py": {
+        "sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+        "source_commit": "ac8935618a15060a4c6107b3f841f416e7551cfb"
+      },
+      "scripts/package_bundled_apk.py": {
+        "sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+        "source_commit": "70852027cea21423b483333240025fb27034ce50"
+      }
+    },
+    "app_source_sha256": {
+      "prototype/android/app/build.gradle": "a737742d6b9f98ca013b52b2e4312aca0aa1e81ffd62d9003236934325e6463e",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "20e5872a8c7af0afba75d9bb8ad94998d3ec51421fca68ca167fd8dd27fdb414",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java": "76d835f22dc4da683b5c6733228abd6b33b2c5488d191c91847ea8bd843bcb47",
+      "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java": "198ecf33399ddca773384aaadf837a5a28140746fe764eb65f593c5e422d14b5",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0"
+    },
+    "package_jvm_tests": 148,
+    "authored_steps": [
+      "Open my notes",
+      "Draft three points",
+      "Review the draft"
+    ]
+  },
+  "prepared_audio_sha256": "ebf03be0cd7e7e87038d66fb8f8a553fa4a7830b998bb2a90b52b9d49b6562e0",
+  "video": "artifacts/v012-pitch/pitch-v012.mp4",
+  "video_sha256": "235be6e7a0a0b87fd774d6e1a05c0de091b430714da95e0a590f50915ab4f2aa",
+  "bytes": 10100036,
+  "seconds": 280.638,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "caption_segments": 24,
+  "captions_sha256": "10d08f43a548227a4099bd9c4373657efa8d680cbce50c256785dd0f693e32a7",
+  "narration_sha256": "492915ec81f8c17f7e58fa4fb49a530b860c11f2d993457331fed6bacc3be324",
+  "voice": "Samantha",
+  "words_per_minute": 170,
+  "timeline": {
+    "scenes": [
+      {
+        "index": 0,
+        "title": "Meet Mira",
+        "utterances": [
+          "Your phone is where work begins, and where distraction can swallow half an hour. FocusPilot helps you find your next useful step without turning productivity into punishment.",
+          "Meet Mira, our original, friendly goth companion. Her job is simple: keep your chosen goal close, make the next step feel manageable, and give you controls you can understand.",
+          "This edited recording presents our Android research prototype, version zero point twelve: a personal assistant that responds locally and leaves the final choice with you."
+        ],
+        "visual_intent": "Original Mira portrait and gentle idle motion \u2192 clean title \u2192 cropped own-app dashboard; overlay \u201cv0.12 \u00b7 pre-event research \u00b7 Nothing development phone\u201d.",
+        "start": 0.0,
+        "beats": [
+          {
+            "start": 0.0,
+            "end": 9.617098,
+            "text": "Your phone is where work begins, and where distraction can swallow half an hour. FocusPilot helps you find your next useful step without turning productivity into punishment.",
+            "scene": 1
+          },
+          {
+            "start": 9.917098000000001,
+            "end": 20.672064,
+            "text": "Meet Mira, our original, friendly goth companion. Her job is simple: keep your chosen goal close, make the next step feel manageable, and give you controls you can understand.",
+            "scene": 1
+          },
+          {
+            "start": 20.972064000000003,
+            "end": 30.316282,
+            "text": "This edited recording presents our Android research prototype, version zero point twelve: a personal assistant that responds locally and leaves the final choice with you.",
+            "scene": 1
+          }
+        ],
+        "end": 30.616282000000005,
+        "duration": 30.616282000000005
+      },
+      {
+        "index": 1,
+        "title": "Make the task smaller",
+        "utterances": [
+          "Start with a goal you care about. Our demonstration goal: prepare a short focus demo. Break that job into three small steps.",
+          "Open my notes, draft three points, and review the draft. This checklist is already saved beside the focus task. These are authored instructions; the model has not invented or executed them.",
+          "Mark and undo keep progress editable. Explicit readback reaches the engine's completion status, with a clear Stop control. Phone audio is absent, so this recording does not prove speaker audibility."
+        ],
+        "visual_intent": "Actual cropped own-app guide clip begins after setup: goal \u201cPrepare a short focus demo\u201d, authored steps \u201cOpen my notes\u201d, \u201cDraft three points\u201d, \u201cReview the draft\u201d \u2192 explicit Speak \u2192 terminal completion status. No Save/Mark/Undo footage or phone audio; label any separate progress illustration as product capability, verified before recording.",
+        "start": 30.616282000000005,
+        "beats": [
+          {
+            "start": 30.616282000000005,
+            "end": 38.199774000000005,
+            "text": "Start with a goal you care about. Our demonstration goal: prepare a short focus demo. Break that job into three small steps.",
+            "scene": 2
+          },
+          {
+            "start": 38.499774,
+            "end": 49.952064,
+            "text": "Open my notes, draft three points, and review the draft. This checklist is already saved beside the focus task. These are authored instructions; the model has not invented or executed them.",
+            "scene": 2
+          },
+          {
+            "start": 50.252064000000004,
+            "end": 62.191384000000006,
+            "text": "Mark and undo keep progress editable. Explicit readback reaches the engine's completion status, with a clear Stop control. Phone audio is absent, so this recording does not prove speaker audibility.",
+            "scene": 2
+          }
+        ],
+        "end": 62.491384000000004,
+        "duration": 31.875102
+      },
+      {
+        "index": 2,
+        "title": "Understand on the phone",
+        "utterances": [
+          "The model is loaded, and stop focus is already typed. Tap Understand. Qwen three point five, zero point eight billion, quantized to Q four zero, processes those words on the phone.",
+          "Our pinned runtime uses the CPU. It produces a structured intent proposal, while Android code independently checks the original request. The screen separates the model suggestion from the reviewable action.",
+          "This recorded request reported one point eight four nine seconds of native CPU inference. That is one measured case, not a promised response time for every device or command. No action was confirmed."
+        ],
+        "visual_intent": "Actual cropped model clip starts with model already loaded and \u201cStop focus\u201d already typed \u2192 Understand \u2192 actual pause_focus proposal, REVIEW REQUIRED. Show current reported native CPU metrics: total 1,849 ms, prefill 899 ms, decode 950 ms. No keyboard/loading or Review/Cancel/Confirm footage; no action confirmed.",
+        "start": 62.491384000000004,
+        "beats": [
+          {
+            "start": 62.491384000000004,
+            "end": 73.985715,
+            "text": "The model is loaded, and stop focus is already typed. Tap Understand. Qwen three point five, zero point eight billion, quantized to Q four zero, processes those words on the phone.",
+            "scene": 3
+          },
+          {
+            "start": 74.28571500000001,
+            "end": 86.32172400000002,
+            "text": "Our pinned runtime uses the CPU. It produces a structured intent proposal, while Android code independently checks the original request. The screen separates the model suggestion from the reviewable action.",
+            "scene": 3
+          },
+          {
+            "start": 86.62172400000001,
+            "end": 98.29972900000001,
+            "text": "This recorded request reported one point eight four nine seconds of native CPU inference. That is one measured case, not a promised response time for every device or command. No action was confirmed.",
+            "scene": 3
+          }
+        ],
+        "end": 98.59972900000001,
+        "duration": 36.10834500000001
+      },
+      {
+        "index": 3,
+        "title": "Keep the action yours",
+        "utterances": [
+          "Understanding a sentence does not automatically change your phone. This diagram explains review choices: compare your request with the proposed action, or cancel before anything runs.",
+          "Confirmation is a separate decision. Supported commands cover focus controls and a small Android tool allowlist. Requests outside that boundary need clarification rather than an improvised chain of taps.",
+          "This makes everyday help easier to inspect. Our accountability balance is virtual points only. It illustrates a commitment you chose; this prototype never withdraws money, makes purchases, or sends messages for you."
+        ],
+        "visual_intent": "Explicitly labelled animated diagram: request \u2192 independent gate \u2192 review choices Cancel or Confirm. No actual dialog footage, filmed button press or executed action; distinguish the diagram from the model recording.",
+        "start": 98.59972900000001,
+        "beats": [
+          {
+            "start": 98.59972900000001,
+            "end": 109.33546600000001,
+            "text": "Understanding a sentence does not automatically change your phone. This diagram explains review choices: compare your request with the proposed action, or cancel before anything runs.",
+            "scene": 4
+          },
+          {
+            "start": 109.63546600000001,
+            "end": 121.24535300000001,
+            "text": "Confirmation is a separate decision. Supported commands cover focus controls and a small Android tool allowlist. Requests outside that boundary need clarification rather than an improvised chain of taps.",
+            "scene": 4
+          },
+          {
+            "start": 121.545353,
+            "end": 134.384355,
+            "text": "This makes everyday help easier to inspect. Our accountability balance is virtual points only. It illustrates a commitment you chose; this prototype never withdraws money, makes purchases, or sends messages for you.",
+            "scene": 4
+          }
+        ],
+        "end": 134.684355,
+        "duration": 36.084626
+      },
+      {
+        "index": 4,
+        "title": "Look inside carefully",
+        "utterances": [
+          "Optional activation capture opens another window into the local model. The viewer exposes selected tensor summaries from actual inference, alongside the command result.",
+          "Previous version eleven phone trials displayed four finite summaries consistently. Their labels, dimensions, and numerical ranges are observations of computation. They do not tell us that a neuron means focus or distraction.",
+          "Understanding a mechanism requires interventions and repeatable behavioral effects. Our laptop experiments explore those questions; the phone viewer currently observes. We keep that research separate from testing whether the requested command works."
+        ],
+        "visual_intent": "Clearly labelled historical v0.11 evidence diagram: four finite tensor summaries were observed outside the selected model clip. Present recorded facts and observational limits; do not imply all four summaries appear in new footage or invent tensor output.",
+        "start": 134.684355,
+        "beats": [
+          {
+            "start": 134.684355,
+            "end": 144.38489900000002,
+            "text": "Optional activation capture opens another window into the local model. The viewer exposes selected tensor summaries from actual inference, alongside the command result.",
+            "scene": 5
+          },
+          {
+            "start": 144.684899,
+            "end": 157.95315300000001,
+            "text": "Previous version eleven phone trials displayed four finite summaries consistently. Their labels, dimensions, and numerical ranges are observations of computation. They do not tell us that a neuron means focus or distraction.",
+            "scene": 5
+          },
+          {
+            "start": 158.253153,
+            "end": 172.286124,
+            "text": "Understanding a mechanism requires interventions and repeatable behavioral effects. Our laptop experiments explore those questions; the phone viewer currently observes. We keep that research separate from testing whether the requested command works.",
+            "scene": 5
+          }
+        ],
+        "end": 172.58612399999998,
+        "duration": 37.90176899999997
+      },
+      {
+        "index": 5,
+        "title": "Explain recurring decisions",
+        "utterances": [
+          "Recurring coaching has a different path. Users would choose the app budget and opt into permitted usage context. Explicit rules currently govern nudges, with permission, focus, and cooldown checks.",
+          "A separate sixty five parameter network was trained on synthetic examples. Its connection weights are nonnegative, its biases can be signed, and its inspector shows contributions and controlled ablations.",
+          "That network remains in shadow mode. Agreement with invented labels does not prove human productivity. Real usefulness needs consented testing with real sessions."
+        ],
+        "visual_intent": "Own-app Decision Lab or labelled synthetic policy diagram \u2192 contributions and ablation; persistent \u201csynthetic training \u00b7 shadow only \u00b7 signed biases\u201d caption.",
+        "start": 172.58612399999998,
+        "beats": [
+          {
+            "start": 172.58612399999998,
+            "end": 184.296283,
+            "text": "Recurring coaching has a different path. Users would choose the app budget and opt into permitted usage context. Explicit rules currently govern nudges, with permission, focus, and cooldown checks.",
+            "scene": 6
+          },
+          {
+            "start": 184.59628299999997,
+            "end": 196.55124899999998,
+            "text": "A separate sixty five parameter network was trained on synthetic examples. Its connection weights are nonnegative, its biases can be signed, and its inspector shows contributions and controlled ablations.",
+            "scene": 6
+          },
+          {
+            "start": 196.85124899999997,
+            "end": 206.23047799999998,
+            "text": "That network remains in shadow mode. Agreement with invented labels does not prove human productivity. Real usefulness needs consented testing with real sessions.",
+            "scene": 6
+          }
+        ],
+        "end": 206.53047799999996,
+        "duration": 33.944353999999976
+      },
+      {
+        "index": 6,
+        "title": "Let others verify it",
+        "utterances": [
+          "FocusPilot is open source. The repository contains build instructions, model attribution, reproducible test procedures, and evidence tied to specific source revisions and packages. Failed experiments stay visible too.",
+          "The selected Android source has one hundred forty eight passing JVM tests. Physical phone records answer narrower questions, such as checklist persistence or a reviewed command, with their limits documented.",
+          "Keeping those layers distinct helps others reproduce and improve the work. A useful assistant should earn trust through checkable behavior and a welcoming interface."
+        ],
+        "visual_intent": "Repository and source identity card \u2192 \u201c148 JVM tests\u201d \u2192 physical evidence labels; keep private phone captures, credentials and weights outside repository graphics.",
+        "start": 206.53047799999996,
+        "beats": [
+          {
+            "start": 206.53047799999996,
+            "end": 220.38263199999997,
+            "text": "FocusPilot is open source. The repository contains build instructions, model attribution, reproducible test procedures, and evidence tied to specific source revisions and packages. Failed experiments stay visible too.",
+            "scene": 7
+          },
+          {
+            "start": 220.68263199999996,
+            "end": 232.73424199999997,
+            "text": "The selected Android source has one hundred forty eight passing JVM tests. Physical phone records answer narrower questions, such as checklist persistence or a reviewed command, with their limits documented.",
+            "scene": 7
+          },
+          {
+            "start": 233.03424199999995,
+            "end": 241.51918499999994,
+            "text": "Keeping those layers distinct helps others reproduce and improve the work. A useful assistant should earn trust through checkable behavior and a welcoming interface.",
+            "scene": 7
+          }
+        ],
+        "end": 241.81918499999995,
+        "duration": 35.28870699999999
+      },
+      {
+        "index": 7,
+        "title": "Take it to iQOO",
+        "utterances": [
+          "Our next step is the iQOO device: measure this model on the supported hardware, verify any Snapdragon NPU backend, and demonstrate the actual Office Kit connection to deeper laptop compute.",
+          "Voice transcription, permissioned monitoring, floating mode, and disconnected operation still need verification. Eligibility and submission details need confirmation. We will demonstrate those capabilities with supporting evidence.",
+          "The product direction remains clear: a warm companion, local understanding, visible next steps, and actions you approve. FocusPilot helps turn the phone from a source of interruption into a place to make progress."
+        ],
+        "visual_intent": "Mira beside \u201cNext: iQOO \u00b7 verified backend \u00b7 Office Kit \u00b7 voice\u201d \u2192 repository address `github.com/sanjuhs/iqoo-focuspilot` \u2192 calm final portrait and product name.",
+        "start": 241.81918499999995,
+        "beats": [
+          {
+            "start": 241.81918499999995,
+            "end": 253.56489899999994,
+            "text": "Our next step is the iQOO device: measure this model on the supported hardware, verify any Snapdragon NPU backend, and demonstrate the actual Office Kit connection to deeper laptop compute.",
+            "scene": 8
+          },
+          {
+            "start": 253.86489899999995,
+            "end": 267.32503499999996,
+            "text": "Voice transcription, permissioned monitoring, floating mode, and disconnected operation still need verification. Eligibility and submission details need confirmation. We will demonstrate those capabilities with supporting evidence.",
+            "scene": 8
+          },
+          {
+            "start": 267.62503499999997,
+            "end": 280.33841399999994,
+            "text": "The product direction remains clear: a warm companion, local understanding, visible next steps, and actions you approve. FocusPilot helps turn the phone from a source of interruption into a place to make progress.",
+            "scene": 8
+          }
+        ],
+        "end": 280.63841399999995,
+        "duration": 38.81922900000001
+      }
+    ],
+    "captions": [
+      {
+        "start": 0.0,
+        "end": 9.617098,
+        "text": "Your phone is where work begins, and where distraction can swallow half an hour. FocusPilot helps you find your next useful step without turning productivity into punishment.",
+        "scene": 1
+      },
+      {
+        "start": 9.917098000000001,
+        "end": 20.672064,
+        "text": "Meet Mira, our original, friendly goth companion. Her job is simple: keep your chosen goal close, make the next step feel manageable, and give you controls you can understand.",
+        "scene": 1
+      },
+      {
+        "start": 20.972064000000003,
+        "end": 30.316282,
+        "text": "This edited recording presents our Android research prototype, version zero point twelve: a personal assistant that responds locally and leaves the final choice with you.",
+        "scene": 1
+      },
+      {
+        "start": 30.616282000000005,
+        "end": 38.199774000000005,
+        "text": "Start with a goal you care about. Our demonstration goal: prepare a short focus demo. Break that job into three small steps.",
+        "scene": 2
+      },
+      {
+        "start": 38.499774,
+        "end": 49.952064,
+        "text": "Open my notes, draft three points, and review the draft. This checklist is already saved beside the focus task. These are authored instructions; the model has not invented or executed them.",
+        "scene": 2
+      },
+      {
+        "start": 50.252064000000004,
+        "end": 62.191384000000006,
+        "text": "Mark and undo keep progress editable. Explicit readback reaches the engine's completion status, with a clear Stop control. Phone audio is absent, so this recording does not prove speaker audibility.",
+        "scene": 2
+      },
+      {
+        "start": 62.491384000000004,
+        "end": 73.985715,
+        "text": "The model is loaded, and stop focus is already typed. Tap Understand. Qwen three point five, zero point eight billion, quantized to Q four zero, processes those words on the phone.",
+        "scene": 3
+      },
+      {
+        "start": 74.28571500000001,
+        "end": 86.32172400000002,
+        "text": "Our pinned runtime uses the CPU. It produces a structured intent proposal, while Android code independently checks the original request. The screen separates the model suggestion from the reviewable action.",
+        "scene": 3
+      },
+      {
+        "start": 86.62172400000001,
+        "end": 98.29972900000001,
+        "text": "This recorded request reported one point eight four nine seconds of native CPU inference. That is one measured case, not a promised response time for every device or command. No action was confirmed.",
+        "scene": 3
+      },
+      {
+        "start": 98.59972900000001,
+        "end": 109.33546600000001,
+        "text": "Understanding a sentence does not automatically change your phone. This diagram explains review choices: compare your request with the proposed action, or cancel before anything runs.",
+        "scene": 4
+      },
+      {
+        "start": 109.63546600000001,
+        "end": 121.24535300000001,
+        "text": "Confirmation is a separate decision. Supported commands cover focus controls and a small Android tool allowlist. Requests outside that boundary need clarification rather than an improvised chain of taps.",
+        "scene": 4
+      },
+      {
+        "start": 121.545353,
+        "end": 134.384355,
+        "text": "This makes everyday help easier to inspect. Our accountability balance is virtual points only. It illustrates a commitment you chose; this prototype never withdraws money, makes purchases, or sends messages for you.",
+        "scene": 4
+      },
+      {
+        "start": 134.684355,
+        "end": 144.38489900000002,
+        "text": "Optional activation capture opens another window into the local model. The viewer exposes selected tensor summaries from actual inference, alongside the command result.",
+        "scene": 5
+      },
+      {
+        "start": 144.684899,
+        "end": 157.95315300000001,
+        "text": "Previous version eleven phone trials displayed four finite summaries consistently. Their labels, dimensions, and numerical ranges are observations of computation. They do not tell us that a neuron means focus or distraction.",
+        "scene": 5
+      },
+      {
+        "start": 158.253153,
+        "end": 172.286124,
+        "text": "Understanding a mechanism requires interventions and repeatable behavioral effects. Our laptop experiments explore those questions; the phone viewer currently observes. We keep that research separate from testing whether the requested command works.",
+        "scene": 5
+      },
+      {
+        "start": 172.58612399999998,
+        "end": 184.296283,
+        "text": "Recurring coaching has a different path. Users would choose the app budget and opt into permitted usage context. Explicit rules currently govern nudges, with permission, focus, and cooldown checks.",
+        "scene": 6
+      },
+      {
+        "start": 184.59628299999997,
+        "end": 196.55124899999998,
+        "text": "A separate sixty five parameter network was trained on synthetic examples. Its connection weights are nonnegative, its biases can be signed, and its inspector shows contributions and controlled ablations.",
+        "scene": 6
+      },
+      {
+        "start": 196.85124899999997,
+        "end": 206.23047799999998,
+        "text": "That network remains in shadow mode. Agreement with invented labels does not prove human productivity. Real usefulness needs consented testing with real sessions.",
+        "scene": 6
+      },
+      {
+        "start": 206.53047799999996,
+        "end": 220.38263199999997,
+        "text": "FocusPilot is open source. The repository contains build instructions, model attribution, reproducible test procedures, and evidence tied to specific source revisions and packages. Failed experiments stay visible too.",
+        "scene": 7
+      },
+      {
+        "start": 220.68263199999996,
+        "end": 232.73424199999997,
+        "text": "The selected Android source has one hundred forty eight passing JVM tests. Physical phone records answer narrower questions, such as checklist persistence or a reviewed command, with their limits documented.",
+        "scene": 7
+      },
+      {
+        "start": 233.03424199999995,
+        "end": 241.51918499999994,
+        "text": "Keeping those layers distinct helps others reproduce and improve the work. A useful assistant should earn trust through checkable behavior and a welcoming interface.",
+        "scene": 7
+      },
+      {
+        "start": 241.81918499999995,
+        "end": 253.56489899999994,
+        "text": "Our next step is the iQOO device: measure this model on the supported hardware, verify any Snapdragon NPU backend, and demonstrate the actual Office Kit connection to deeper laptop compute.",
+        "scene": 8
+      },
+      {
+        "start": 253.86489899999995,
+        "end": 267.32503499999996,
+        "text": "Voice transcription, permissioned monitoring, floating mode, and disconnected operation still need verification. Eligibility and submission details need confirmation. We will demonstrate those capabilities with supporting evidence.",
+        "scene": 8
+      },
+      {
+        "start": 267.62503499999997,
+        "end": 280.33841399999994,
+        "text": "The product direction remains clear: a warm companion, local understanding, visible next steps, and actions you approve. FocusPilot helps turn the phone from a source of interruption into a place to make progress.",
+        "scene": 8
+      }
+    ],
+    "seconds": 280.63841399999995,
+    "clip_segments": [
+      {
+        "clip": "guide",
+        "scene": 2,
+        "pitch_start": 30.616282000000005,
+        "pitch_end": 62.491384000000004,
+        "source_start_seconds": 0,
+        "source_end_seconds": 10.369829,
+        "playback_speed": 1,
+        "final_frame_hold_seconds": 21.505273,
+        "audio": "clip audio omitted; only separately generated local narration"
+      },
+      {
+        "clip": "model",
+        "scene": 3,
+        "pitch_start": 62.491384000000004,
+        "pitch_end": 98.59972900000001,
+        "source_start_seconds": 0,
+        "source_end_seconds": 9.339,
+        "playback_speed": 1,
+        "final_frame_hold_seconds": 26.76934500000001,
+        "audio": "clip audio omitted; only separately generated local narration"
+      }
+    ]
+  },
+  "deterministic_seek_checks": [
+    {
+      "scene": 1,
+      "times": [
+        1.0,
+        10.917098000000001,
+        21.972064000000003
+      ],
+      "rgb_sha256": [
+        "7a663ceac1b32d44ea97f8423da708a915cc62b1f998eeb6536375247f2e632d",
+        "9dd0acd9b3b539a30a79f46eb2b9d7ffd5d08d2a63e16bb988484839b3f73f26",
+        "8320236b5ff5789203da9de1304ebb841dbaa3ff9e88ccad5c962c6d38410302"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 2,
+      "times": [
+        31.616282000000005,
+        39.499774,
+        51.252064000000004
+      ],
+      "rgb_sha256": [
+        "2bca1dcdde1f2436b6edbc01ee6b0e76ecb56769d1fadb0eaa198794e033c1c3",
+        "4f5b49cb2f56211c9e26c76b09d1fe71db22d52bae162b1e067a8051e3836ea1",
+        "44fec0397f0e88cb27873696c5305e39b307dd4947bf103c1c61d3cf3ce2bb25"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 3,
+      "times": [
+        63.491384000000004,
+        75.28571500000001,
+        87.62172400000001
+      ],
+      "rgb_sha256": [
+        "2213ee3f792679bf97a07883eadbedf8054ca096345f658fd5c3e86aef3685e5",
+        "8f70c25372952c7cad76979ce90b7597ee0d6f485639da691fcf581b406e8d53",
+        "4197e014026b5989bd60caf376ee77dc80e427c74637abc9ae0377d05a991005"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 4,
+      "times": [
+        99.59972900000001,
+        110.63546600000001,
+        122.545353
+      ],
+      "rgb_sha256": [
+        "d8cc6a2719138b922a2d0de9c50591cd1a78dff86a824b55c25e4bfd0b19941c",
+        "b0cd470fbe774941d039266b970be556b1015805616d5cb1619d64cb129c9275",
+        "b5ac48f4d6c146014d29fbd99f557075c0f9103f74f52c3640307b05a6b8ae8a"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 5,
+      "times": [
+        135.684355,
+        145.684899,
+        159.253153
+      ],
+      "rgb_sha256": [
+        "65d2f3f011261daa0791ad40a351c3805f7feb0dd2d498c5a32f8c8fdcb724c7",
+        "157445aa0596274cc39e63ffad6ce748914e2c853e22503c43194f6325e6d6d3",
+        "d83962d8a5bd353cb64e0a2045d6ce2d15831ffc48fd2535318f8eb3f922855a"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 6,
+      "times": [
+        173.58612399999998,
+        185.59628299999997,
+        197.85124899999997
+      ],
+      "rgb_sha256": [
+        "9252bb2e751ffeb4db4ac4b20abb7483f1264db69213c0626168a7285424454f",
+        "fddb884eecd5e63761a7dd6b15cb4d717b675e3e64b388ca9bdf7d10a32d6d3f",
+        "2a75ab401bdc5ae7c5742b77bb635dbfc416f4fac84b943abf50a91ffc21e9a6"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 7,
+      "times": [
+        207.53047799999996,
+        221.68263199999996,
+        234.03424199999995
+      ],
+      "rgb_sha256": [
+        "ba5dc8351ae6a00a837a0eba7843fd5205e0e727bb373e7bd6dd80a6654966f4",
+        "b51458729e04ac89ea1eb51710ad769f279616ace8bf217c9042c5187985c015",
+        "b9eae4b9cb85ac616dd84aa26f132b448169272c950a65770416852b232267aa"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 8,
+      "times": [
+        242.81918499999995,
+        254.86489899999995,
+        268.62503499999997
+      ],
+      "rgb_sha256": [
+        "e227a94088358985df032ad24ef7ef4f2b3ddf0f83c0780fa24593fe28f55eda",
+        "691f3cbcc4ebf1d9c5e97eaa28e223550c59f683dc5d6298e5420939968611d9",
+        "e01d1abc1121b25d10ee1922afaabcd80c5708adada8670e81aa7f82260bfb86"
+      ],
+      "backward_seek_matches": true
+    }
+  ],
+  "full_decode_passed": true,
+  "phone_capture_used": true,
+  "phone_clip_speed": 1,
+  "clip_audio_used": false,
+  "renderer_phone_actions_executed": 0,
+  "human_complete_audio_review": false,
+  "human_speaker_audibility_verified": false,
+  "npu_verified": false,
+  "officekit_verified": false,
+  "offline_disconnect_verified": false,
+  "storage": {
+    "project_bytes": 13812269366,
+    "output_bytes": 79802467,
+    "project_limit_bytes": 15000000000,
+    "output_reservation_bytes": 600000000
+  },
+  "encoded_visual_review_complete": false
+}

@@ -61,6 +61,14 @@ Focus/grants/monitor stayed unchanged. [Source-bound coverage](guide-readback-ph
 This closes the narrow authored-step callback branch; full voice, monitoring,
 current video, NPU, Office Kit and eligible submission remain pending.
 
+**Later v0.12 recorded research pitch:** a measured 4:41 video adds two actual
+matching-APK own-app clips at original speed, labelled holds and original Mira
+illustrations. Actual typed CPU proposal, guide callback, Mark/Undo, finite tensor
+observation and cleanup are source-bound; no new permission or action was confirmed.
+All 24 narration beats, full decode, timing, sampled visuals and source-frame
+comparisons passed. Complete human listening/playback, permissioned live workflows
+and accepted eligible submission remain pending. [Selected demo](v012-pitch.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.
