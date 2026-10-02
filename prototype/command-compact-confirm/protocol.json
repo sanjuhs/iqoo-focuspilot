@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "created_date_ist": "2026-10-03",
+  "phase_at_creation": "prospective_protocol_before_candidate_review_and_corpus_authoring",
+  "scope": "Pre-event host CPU research. Fresh informed-author synthetic wording after locking one compact-digit candidate; not human-blind, independent user/ASR sampling or evidence of general accuracy. No captures/results exist at protocol creation.",
+  "authoring_gate": "Parent must lock candidate class/prompt/grammar/map/MAX_TOKENS and explicitly authorize fresh corpus before requests are authored.",
+  "fixed": {
+    "model": "Qwen3.5-0.8B-Q4_0",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_path": "prototype/command-eval/build/native/libfocuspilot_local.dylib",
+    "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "baseline_LocalModel_java_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate_java_sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords_java_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "context": 1024,
+    "threads": 4,
+    "activation_capture": false,
+    "backend": "CPU host JNI",
+    "baseline_max_tokens": 128,
+    "baseline_validation": "JSON object contains only intent, an allowed string label, plus native reached_eos true",
+    "candidate_validation": "Raw text exactly one ASCII digit 0 through 6, without trimming, plus native reached_eos true",
+    "candidate_digit_map": {
+      "0": "unknown",
+      "1": "start_focus",
+      "2": "pause_focus",
+      "3": "alarm",
+      "4": "timer",
+      "5": "open_app",
+      "6": "explain"
+    },
+    "candidate_class_sha256": null,
+    "candidate_identity_note": "Bound in separate freeze manifest before authoring; null is prospective, not an unfrozen execution permission."
+  },
+  "freeze_before_capture": [
+    "PROTOCOL.md and protocol.json",
+    "baseline and selected candidate adapter bytes/rendered examples/prompt/grammar/max_tokens/map",
+    "runner and Java gate harness",
+    "generator, complete cases/labels and ordered requests",
+    "all prior/example/development overlap inventory hashes and extraction methods",
+    "model/native/gate/parser exact identities"
+  ],
+  "corpus": {
+    "rows": 100,
+    "families": 50,
+    "rows_per_family": 2,
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "supported_by_intent": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8
+    },
+    "open_app_targets": {"Settings": 2, "Calculator": 2, "Clock": 2},
+    "row_fields": ["id", "family", "utterance", "semantic_intent", "oracle_intent", "expected_kind", "hour", "minute", "seconds", "hard_tags"],
+    "unsupported_semantic_label": "unknown",
+    "unknown_slots": {"hour": 0, "minute": 0, "seconds": 0},
+    "hard_tags_assigned_before_capture": ["duration_boundary", "midnight_noon", "spoken_number_slot", "resume_vs_start", "current_focus_pause", "warned_focus_explanation"],
+    "contract": "One immediate focus start/resume/pause/status/nudge explanation; one unambiguous alarm (colon or explicit AM/PM English); integer focus/timer 1..7200 seconds or 1..120 minutes; one approved Settings/Calculator/Clock open. Negated/compound/conditional/quoted/reported/hypothetical/destructive/payment/message/unapproved/unrelated/ambiguous/invalid/calendar/repeated/multiple/signed/fractional/out-of-range/extra-modifier/existing-action-cancel/injection requests require UNKNOWN. Keep known hard current-focus pause and warned-focus explanation as fresh rows even if unchanged gate abstains.",
+    "overlap": {
+      "required_exact_matches": 0,
+      "required_normalized_matches": 0,
+      "normalize": "Lowercase, replace runs outside ASCII a-z and 0-9 with spaces, collapse whitespace; no semantic, paraphrase or number-word normalization.",
+      "required_prior_paths": [
+        "prototype/command-eval/build/cases.jsonl",
+        "prototype/intent-head/build/all-cases.jsonl",
+        "prototype/command-v08-eval/build/cases.jsonl",
+        "prototype/command-v10-eval/build/cases.jsonl",
+        "prototype/command-v10-confirm/build/cases.jsonl",
+        "prototype/command-v10-dev/build/round2/requests.tsv",
+        "prototype/command-v10-eval/build/v09-prompt-inventory.json"
+      ],
+      "additional_required": "Locked candidate rendered examples/development fixtures and other known command fixtures; bind exact paths/hashes/extraction before corpus freeze. Missing mandatory inventory stops generation."
+    },
+    "publication": "Raw corpus/requests/output/details remain ignored; tracked hashes/counts/aggregate metrics only. Generator may reproduce the synthetic corpus; never commit generated raw data."
+  },
+  "execution": {
+    "captures": 2,
+    "capture_order": ["baseline", "candidate"],
+    "rows_each": 100,
+    "row_order": "Same frozen stable row order in both arms",
+    "model_loads": 2,
+    "state": "Clear native recurrent/KV state for every request",
+    "timeout_seconds_each": 300,
+    "retries": 0,
+    "candidate_repairs": 0,
+    "overwrite_capture": false,
+    "output_disclosure": "Only after both captures terminal",
+    "incomplete": "Preserve outputs/metadata and report missing IDs; no reduced-denominator confirmation or restart as unseen data.",
+    "gate": "Same actual compiled current gate/parser receives complete original utterance and validated mapped semantic intent; oracle domain route once and identical across arms.",
+    "invalid_output": "No semantic prediction, so semantic failure even on unknown; route to gate UNKNOWN and separately count invalid-output fallback abstention.",
+    "actions_executed": 0
+  },
+  "metrics": {
+    "model": ["semantic_exact", "supported_semantic_exact", "unknown_semantic_exact", "per_intent_confusion", "schema_and_eos_valid", "invalid_output", "eos_truncation"],
+    "gate": ["exact_kind_hour_minute_seconds", "supported_correct", "false_abstention", "wrong_accepted_kind", "wrong_accepted_slots", "unknown_false_accept", "coverage", "accepted_precision", "invalid_output_fallback_abstention"],
+    "paired": ["semantic_gains_losses", "gate_supported_gains_losses", "per_intent", "per_family", "prospective_hard_tags", "all_wrong_accepts", "all_supported_regressions"],
+    "timing": ["model_load", "first_native", "subsequent_native", "prefill", "decode", "total_native", "Java_wall", "prompt_tokens", "generated_tokens", "paired_differences", "median", "nearest_rank_p95", "ranges", "sample_counts", "missing_metrics"],
+    "timing_limit": "Descriptive host-only sequential baseline-first capture with separate loads, unflushed OS cache and uncontrolled thermals/power. Not measured phone/NPU/device energy, activation overhead or app speedup."
+  },
+  "promotion": {
+    "automatic": false,
+    "necessary_for_review": [
+      "Strictly more correct supported complete gate proposals",
+      "Zero observed wrong accepts among supported and unsupported rows",
+      "Zero paired semantic or full-gate losses on prospectively tagged hard supported rows",
+      "Per-intent and all other supported losses fully disclosed; any per-intent decrease rejected or separately reviewed as a tradeoff",
+      "Prompt-token and latency tradeoff reported even when coverage improves"
+    ],
+    "limits": "100 informed synthetic rows cannot prove universal safety/general accuracy or promote deployment. Root decision, broader language/voice evaluation, real phone regressions and device costs remain separate prerequisites; preserve rejected/uncertain outcome."
+  },
+  "prohibited": ["model_download", "provider_calls", "training", "model/native/gate/parser edits", "phone/settings/actions", "APK/release changes", "automatic source promotion"],
+  "work_budget_bytes": 1000000
+}

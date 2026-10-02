@@ -1,0 +1,2456 @@
+{
+  "scope": "OPENLY_SEEN_DEVELOPMENT; all completed attempts retained; no phone, NPU, training or generalization claim",
+  "rows": 36,
+  "supported_rows": 18,
+  "unsupported_rows": 18,
+  "selected_candidate": "compact2",
+  "selection_rule": "Maximize correct supported action+slots; break ties by more raw unknown rejections, then lower native median. No candidate promotes from development.",
+  "rounds": [
+    {
+      "round": "baseline",
+      "scope": "OPENLY_SEEN_DEVELOPMENT; no holdout, deployment or promotion claim",
+      "metadata": {
+        "scope": "OPENLY_SEEN_DEVELOPMENT",
+        "candidate": "compact1",
+        "baseline": true,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_sha256": {
+          "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+          "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+          "CompactIntentCandidate.java": "5a0b15f1d2fbd17ef4649ff27a8758c1832c3f3007e1ced06213e81852569489",
+          "CompactRunner.java": "88077f8adb763045b80f78718154aa6f8f4b73900ff0498ade39efbf0146029f",
+          "PromptInventory.java": "5823b61f6bb2f82a71a7a22d16f2fe406acb7858eb9199645c3ddfb4368ed060",
+          "DevGateEval.java": "98f1ee2551f460a4fff63f4f9d92341486edeeb0676e59fbd083c052dc973736"
+        },
+        "runner_sha256": "f9828cbb61c7fe2c4d39175d74621cafc4ecac3ff4bbe00b0cb64fb6a50ed931",
+        "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "context": 1024,
+        "threads": 4,
+        "cpu_only": true,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "promoted": false,
+        "timeout_seconds": 180,
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 16.548932292032987,
+        "output_sha256": "5fa095b0bc87dfd9608c67050d9fd4376d866574754da5d84f07c6ffd3cef43d"
+      },
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_correct": 14,
+      "supported_raw_correct": 12,
+      "unknown_raw_correct": 2,
+      "unsupported_model_nonunknown": 16,
+      "format_eos_valid": 36,
+      "supported_action_slot_correct": 12,
+      "supported_false_abstentions": 6,
+      "supported_wrong_accepted": 0,
+      "unsupported_action_false_accepts": 0,
+      "strict_correct": 30,
+      "model_load_ms": 416.131917,
+      "first_native_ms": 469.71629,
+      "subsequent_native_ms_median": 443.99667,
+      "prompt_tokens_median": 158.0,
+      "generated_tokens_median": 8.0,
+      "native_ms_median": 444.048045,
+      "wall_ms_median": 444.7754375,
+      "timing_scope": "Sequential host CPU, native fresh KV/recurrent state per request; uncontrolled cache, thermals and OS; no phone/NPU or full action latency.",
+      "strict_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev010",
+          "family": "timer_seconds",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            45
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev015",
+          "family": "open_clock",
+          "expected_intent": "open_app",
+          "model_intent": "start_focus",
+          "expected": [
+            "OPEN_CLOCK",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev018",
+          "family": "explain_status",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "raw_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev010",
+          "family": "timer_seconds",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            45
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev015",
+          "family": "open_clock",
+          "expected_intent": "open_app",
+          "model_intent": "start_focus",
+          "expected": [
+            "OPEN_CLOCK",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev018",
+          "family": "explain_status",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev019",
+          "family": "negative_focus",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev020",
+          "family": "negative_open",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev021",
+          "family": "negative_timer",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev022",
+          "family": "conditional_focus",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev023",
+          "family": "conditional_open",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev024",
+          "family": "conditional_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev025",
+          "family": "compound_focus_open",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev026",
+          "family": "compound_timer_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev027",
+          "family": "compound_apps",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev029",
+          "family": "unsafe_message",
+          "expected_intent": "unknown",
+          "model_intent": "explain",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev031",
+          "family": "cancel_existing_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev032",
+          "family": "stop_existing_timer",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev033",
+          "family": "unsupported_app",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev034",
+          "family": "unsupported_setting",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev035",
+          "family": "general_question",
+          "expected_intent": "unknown",
+          "model_intent": "timer",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev036",
+          "family": "assertion",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "directory_bytes_after": 167009,
+      "actions_executed": 0,
+      "promoted": false
+    },
+    {
+      "round": "compact1",
+      "scope": "OPENLY_SEEN_DEVELOPMENT; no holdout, deployment or promotion claim",
+      "metadata": {
+        "scope": "OPENLY_SEEN_DEVELOPMENT",
+        "candidate": "compact1",
+        "baseline": false,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_sha256": {
+          "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+          "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+          "CompactIntentCandidate.java": "5a0b15f1d2fbd17ef4649ff27a8758c1832c3f3007e1ced06213e81852569489",
+          "CompactRunner.java": "88077f8adb763045b80f78718154aa6f8f4b73900ff0498ade39efbf0146029f",
+          "PromptInventory.java": "5823b61f6bb2f82a71a7a22d16f2fe406acb7858eb9199645c3ddfb4368ed060",
+          "DevGateEval.java": "98f1ee2551f460a4fff63f4f9d92341486edeeb0676e59fbd083c052dc973736"
+        },
+        "runner_sha256": "f9828cbb61c7fe2c4d39175d74621cafc4ecac3ff4bbe00b0cb64fb6a50ed931",
+        "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "context": 1024,
+        "threads": 4,
+        "cpu_only": true,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "promoted": false,
+        "timeout_seconds": 180,
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 13.150421792059205,
+        "output_sha256": "a3d44c386e3999bd41dc7b3b2a09a6583c75da11940e8a47041aecf2b63077ec"
+      },
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_correct": 15,
+      "supported_raw_correct": 10,
+      "unknown_raw_correct": 5,
+      "unsupported_model_nonunknown": 13,
+      "format_eos_valid": 36,
+      "supported_action_slot_correct": 10,
+      "supported_false_abstentions": 8,
+      "supported_wrong_accepted": 0,
+      "unsupported_action_false_accepts": 0,
+      "strict_correct": 28,
+      "model_load_ms": 380.846709,
+      "first_native_ms": 374.42225,
+      "subsequent_native_ms_median": 349.13125,
+      "prompt_tokens_median": 180.0,
+      "generated_tokens_median": 1.0,
+      "native_ms_median": 349.43383500000004,
+      "wall_ms_median": 350.07270800000003,
+      "timing_scope": "Sequential host CPU, native fresh KV/recurrent state per request; uncontrolled cache, thermals and OS; no phone/NPU or full action latency.",
+      "strict_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev007",
+          "family": "alarm_spoken",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            7,
+            30,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev008",
+          "family": "alarm_prefix",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            21,
+            5,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev009",
+          "family": "alarm_colon",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            6,
+            45,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev016",
+          "family": "explain_nudge",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev018",
+          "family": "explain_status",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "raw_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev007",
+          "family": "alarm_spoken",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            7,
+            30,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev008",
+          "family": "alarm_prefix",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            21,
+            5,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev009",
+          "family": "alarm_colon",
+          "expected_intent": "alarm",
+          "model_intent": "start_focus",
+          "expected": [
+            "ALARM",
+            6,
+            45,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "start_focus",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev016",
+          "family": "explain_nudge",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev018",
+          "family": "explain_status",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev022",
+          "family": "conditional_focus",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev023",
+          "family": "conditional_open",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev024",
+          "family": "conditional_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev025",
+          "family": "compound_focus_open",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev026",
+          "family": "compound_timer_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "timer",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev027",
+          "family": "compound_apps",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev029",
+          "family": "unsafe_message",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev030",
+          "family": "unsafe_payment",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev031",
+          "family": "cancel_existing_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev032",
+          "family": "stop_existing_timer",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev033",
+          "family": "unsupported_app",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev034",
+          "family": "unsupported_setting",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev035",
+          "family": "general_question",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "directory_bytes_after": 338315,
+      "actions_executed": 0,
+      "promoted": false
+    },
+    {
+      "round": "compact2",
+      "scope": "OPENLY_SEEN_DEVELOPMENT; no holdout, deployment or promotion claim",
+      "metadata": {
+        "scope": "OPENLY_SEEN_DEVELOPMENT",
+        "candidate": "compact2",
+        "baseline": false,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_sha256": {
+          "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+          "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+          "CompactIntentCandidate.java": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+          "CompactRunner.java": "88077f8adb763045b80f78718154aa6f8f4b73900ff0498ade39efbf0146029f",
+          "PromptInventory.java": "5823b61f6bb2f82a71a7a22d16f2fe406acb7858eb9199645c3ddfb4368ed060",
+          "DevGateEval.java": "98f1ee2551f460a4fff63f4f9d92341486edeeb0676e59fbd083c052dc973736"
+        },
+        "runner_sha256": "f9828cbb61c7fe2c4d39175d74621cafc4ecac3ff4bbe00b0cb64fb6a50ed931",
+        "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "context": 1024,
+        "threads": 4,
+        "cpu_only": true,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "promoted": false,
+        "timeout_seconds": 180,
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 17.202629041974433,
+        "output_sha256": "f472ad46e1f84c845c81f3cf77b56f4ee0912e09254c4fc8dfd229a91503bb51"
+      },
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_correct": 18,
+      "supported_raw_correct": 15,
+      "unknown_raw_correct": 3,
+      "unsupported_model_nonunknown": 15,
+      "format_eos_valid": 36,
+      "supported_action_slot_correct": 15,
+      "supported_false_abstentions": 3,
+      "supported_wrong_accepted": 0,
+      "unsupported_action_false_accepts": 0,
+      "strict_correct": 33,
+      "model_load_ms": 378.52825,
+      "first_native_ms": 481.97842,
+      "subsequent_native_ms_median": 464.78283,
+      "prompt_tokens_median": 247.0,
+      "generated_tokens_median": 1.0,
+      "native_ms_median": 465.32975,
+      "wall_ms_median": 466.1646045,
+      "timing_scope": "Sequential host CPU, native fresh KV/recurrent state per request; uncontrolled cache, thermals and OS; no phone/NPU or full action latency.",
+      "strict_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev007",
+          "family": "alarm_spoken",
+          "expected_intent": "alarm",
+          "model_intent": "timer",
+          "expected": [
+            "ALARM",
+            7,
+            30,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "raw_failures": [
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev007",
+          "family": "alarm_spoken",
+          "expected_intent": "alarm",
+          "model_intent": "timer",
+          "expected": [
+            "ALARM",
+            7,
+            30,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "start_focus",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev020",
+          "family": "negative_open",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev021",
+          "family": "negative_timer",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev022",
+          "family": "conditional_focus",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev023",
+          "family": "conditional_open",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev024",
+          "family": "conditional_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev025",
+          "family": "compound_focus_open",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev026",
+          "family": "compound_timer_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "timer",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev027",
+          "family": "compound_apps",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev029",
+          "family": "unsafe_message",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev031",
+          "family": "cancel_existing_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev032",
+          "family": "stop_existing_timer",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev033",
+          "family": "unsupported_app",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev034",
+          "family": "unsupported_setting",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev035",
+          "family": "general_question",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev036",
+          "family": "assertion",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "directory_bytes_after": 497143,
+      "actions_executed": 0,
+      "promoted": false
+    },
+    {
+      "round": "compact3",
+      "scope": "OPENLY_SEEN_DEVELOPMENT; no holdout, deployment or promotion claim",
+      "metadata": {
+        "scope": "OPENLY_SEEN_DEVELOPMENT",
+        "candidate": "compact3",
+        "baseline": false,
+        "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+        "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+        "source_sha256": {
+          "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+          "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+          "CompactIntentCandidate.java": "2ab086536da63b87ee87478f44a7ac964f952aad6d29fc49ecc1219144f30004",
+          "CompactRunner.java": "88077f8adb763045b80f78718154aa6f8f4b73900ff0498ade39efbf0146029f",
+          "PromptInventory.java": "5823b61f6bb2f82a71a7a22d16f2fe406acb7858eb9199645c3ddfb4368ed060",
+          "run_development.py": "db0be883061fa9bf5eb354248fff0c4ac5066547a8dcee81ecbf2ad9108a01d7",
+          "DevGateEval.java": "98f1ee2551f460a4fff63f4f9d92341486edeeb0676e59fbd083c052dc973736"
+        },
+        "runner_sha256": "db0be883061fa9bf5eb354248fff0c4ac5066547a8dcee81ecbf2ad9108a01d7",
+        "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+        "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+        "context": 1024,
+        "threads": 4,
+        "cpu_only": true,
+        "capture_enabled": false,
+        "actions_executed": 0,
+        "promoted": false,
+        "timeout_seconds": 180,
+        "exit_code": 0,
+        "timed_out": false,
+        "wall_seconds": 18.425486334017478,
+        "output_sha256": "1f19b6e553f205c6b1e559dc1ea333a0a49e8636050b995c2a2e8f47536f3021"
+      },
+      "rows": 36,
+      "supported_rows": 18,
+      "unsupported_rows": 18,
+      "raw_correct": 23,
+      "supported_raw_correct": 13,
+      "unknown_raw_correct": 10,
+      "unsupported_model_nonunknown": 8,
+      "format_eos_valid": 36,
+      "supported_action_slot_correct": 13,
+      "supported_false_abstentions": 5,
+      "supported_wrong_accepted": 0,
+      "unsupported_action_false_accepts": 0,
+      "strict_correct": 31,
+      "model_load_ms": 384.650458,
+      "first_native_ms": 510.03837,
+      "subsequent_native_ms_median": 499.25612,
+      "prompt_tokens_median": 266.0,
+      "generated_tokens_median": 1.0,
+      "native_ms_median": 499.40141500000004,
+      "wall_ms_median": 500.244062,
+      "timing_scope": "Sequential host CPU, native fresh KV/recurrent state per request; uncontrolled cache, thermals and OS; no phone/NPU or full action latency.",
+      "strict_failures": [
+        {
+          "id": "dev004",
+          "family": "pause_direct",
+          "expected_intent": "pause_focus",
+          "model_intent": "unknown",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "unknown",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev015",
+          "family": "open_clock",
+          "expected_intent": "open_app",
+          "model_intent": "explain",
+          "expected": [
+            "OPEN_CLOCK",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "unknown",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "raw_failures": [
+        {
+          "id": "dev004",
+          "family": "pause_direct",
+          "expected_intent": "pause_focus",
+          "model_intent": "unknown",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev005",
+          "family": "pause_break",
+          "expected_intent": "pause_focus",
+          "model_intent": "start_focus",
+          "expected": [
+            "PAUSE_FOCUS",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev011",
+          "family": "timer_countdown",
+          "expected_intent": "timer",
+          "model_intent": "unknown",
+          "expected": [
+            "TIMER",
+            0,
+            0,
+            120
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev015",
+          "family": "open_clock",
+          "expected_intent": "open_app",
+          "model_intent": "explain",
+          "expected": [
+            "OPEN_CLOCK",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev017",
+          "family": "explain_remaining",
+          "expected_intent": "explain",
+          "model_intent": "unknown",
+          "expected": [
+            "EXPLAIN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": true,
+          "correct": false,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev022",
+          "family": "conditional_focus",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev023",
+          "family": "conditional_open",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev024",
+          "family": "conditional_alarm",
+          "expected_intent": "unknown",
+          "model_intent": "alarm",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev025",
+          "family": "compound_focus_open",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev027",
+          "family": "compound_apps",
+          "expected_intent": "unknown",
+          "model_intent": "open_app",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev029",
+          "family": "unsafe_message",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev032",
+          "family": "stop_existing_timer",
+          "expected_intent": "unknown",
+          "model_intent": "pause_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        },
+        {
+          "id": "dev035",
+          "family": "general_question",
+          "expected_intent": "unknown",
+          "model_intent": "start_focus",
+          "expected": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "actual": [
+            "UNKNOWN",
+            0,
+            0,
+            0
+          ],
+          "supported": false,
+          "correct": true,
+          "raw_correct": false,
+          "valid": true
+        }
+      ],
+      "directory_bytes_after": 697883,
+      "actions_executed": 0,
+      "promoted": false
+    }
+  ],
+  "candidate": {
+    "scope": "Development-selected; frozen for fresh independently authored synthetic confirmation; unpromoted",
+    "candidate": "compact2",
+    "candidate_java_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+    "source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+    "grammar": "root ::= \"0\" | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\"\n",
+    "grammar_sha256": "5a578ecc14e19ddf20a25f9cd3a276fd32de635f8adf6929a2bd5e64a5300066",
+    "max_tokens": 4,
+    "digit_to_intent": {
+      "0": "unknown",
+      "1": "start_focus",
+      "2": "pause_focus",
+      "3": "alarm",
+      "4": "timer",
+      "5": "open_app",
+      "6": "explain"
+    },
+    "prompt_marker": "UNIQUE_COMPACT_INVENTORY_REQUEST_314159",
+    "rendered_marker_prompt_sha256": "01058d025401f173f310b38e64232302248fefbb5a1f03fc55f03ded73e36cca",
+    "prompt_template_sha256": "01058d025401f173f310b38e64232302248fefbb5a1f03fc55f03ded73e36cca",
+    "prompt_hash_scope": "Exact actual renderPrompt(marker) bytes, including chat controls and escaped assistant thinking prefix",
+    "fixed_example_count": 15,
+    "examples": [
+      "Begin focused work",
+      "Resume studying",
+      "Pause my study session",
+      "Give me a focus break",
+      "Wake me at 08:15",
+      "Start a three minute countdown",
+      "Could you launch calculator?",
+      "Take me to settings",
+      "What is my focus status?",
+      "Explain that nudge",
+      "Cancel my alarm",
+      "If I ask, begin focus",
+      "Open clock and set an alarm",
+      "Do not start a timer",
+      "Tell my friend hello"
+    ],
+    "inventory_source_sha256": "5823b61f6bb2f82a71a7a22d16f2fe406acb7858eb9199645c3ddfb4368ed060",
+    "development_round": "compact2",
+    "development_results_sha256": "2492fc5343000fb091d6eadf7d4f5f56546bb586db10018aa627ba5ebc8cc75f",
+    "baseline_rows": "Same openly seen prior36 development requests; no new holdout",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+    "context": 1024,
+    "threads": 4,
+    "capture_enabled": false,
+    "cpu_only": true,
+    "actions_executed": 0,
+    "promoted": false
+  },
+  "directory_bytes_before_aggregate": 728028,
+  "actions_executed": 0,
+  "promoted": false,
+  "runtime_provenance": {
+    "scope": "Read-only runtime provenance observed after completed captures; original capture records unchanged",
+    "development_native_path": "prototype/native/build/host/libfocuspilot_local.dylib",
+    "development_native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+    "development_native_bytes": 85224,
+    "current_native_source_last_change_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+    "current_checkout_source_sha256": {
+      "core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+      "core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+      "jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+      "build-host.sh": "d859e67cc70e0689fea61644e81032bb7d504f9f3921971897712a280c2bd1fb"
+    },
+    "source_provenance_limit": "These are current checked-in source identities and build script instructions, not a newly reconstructed immutable build proof for this pre-existing host dylib. No build was performed.",
+    "llama_runtime_report": "version 9620 (57fe1f07c), built with AppleClang 21.0.0.21000099 for Darwin arm64",
+    "llama_pinned_commit_in_script": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+    "linked_libraries_current_readonly_sha256": {
+      "/opt/homebrew/opt/llama.cpp/lib/libllama.0.dylib": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668",
+      "/opt/homebrew/opt/ggml/lib/libggml.0.dylib": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3",
+      "/opt/homebrew/opt/ggml/lib/libggml-base.0.dylib": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+    },
+    "compiler_current_readonly_report": "Apple clang version 21.0.0 (clang-2100.1.1.101), target arm64-apple-darwin25.2.0; build-time compiler attribution unproven",
+    "java_actual_capture_executable": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home/bin/java",
+    "java_current_report": "OpenJDK 17.0.19 Homebrew, 64-Bit Server VM",
+    "fresh_confirmation_native_path": "prototype/command-eval/build/native/libfocuspilot_local.dylib",
+    "fresh_confirmation_native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "comparison_limit": "Development baseline/candidates are same-backend paired only. Fresh confirmation uses a different native binary; do not merge latencies/scores as if the backend or corpus were identical.",
+    "phone_or_npu_evidence": false,
+    "rebuilt_native": false,
+    "candidate_changed": false
+  }
+}

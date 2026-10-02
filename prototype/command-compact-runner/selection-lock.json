@@ -1,0 +1,14 @@
+{
+  "research_only": true,
+  "selected_utc": "2026-10-02T20:45:46.855733+00:00",
+  "candidate_source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+  "candidate_metadata_sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+  "protocol_sha256": "e678817a67e1d1bfc9c1c74db0e8edabee6d0ff3a047d019d12ce578618a44ba",
+  "protocol_markdown_sha256": "0f0a3368430213ef98d830e9a804341f8d71928684d69fa957392fa69c2aceed",
+  "selected_source_sha256": {
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+  },
+  "selection_basis": "Seen 36-request development; useful supported intent15/18 versus baseline12/18, unknown3/18 versus2/18; median465ms versus444ms, no speed improvement. Compact2 locked before fresh authoring. No promotion."
+}

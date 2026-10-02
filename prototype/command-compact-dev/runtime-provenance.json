@@ -1,0 +1,30 @@
+{
+  "scope": "Read-only runtime provenance observed after completed captures; original capture records unchanged",
+  "development_native_path": "prototype/native/build/host/libfocuspilot_local.dylib",
+  "development_native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+  "development_native_bytes": 85224,
+  "current_native_source_last_change_commit": "6487c27e569332160cf09cc1a3e9949c6dafb2c6",
+  "current_checkout_source_sha256": {
+    "core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "build-host.sh": "d859e67cc70e0689fea61644e81032bb7d504f9f3921971897712a280c2bd1fb"
+  },
+  "source_provenance_limit": "These are current checked-in source identities and build script instructions, not a newly reconstructed immutable build proof for this pre-existing host dylib. No build was performed.",
+  "llama_runtime_report": "version 9620 (57fe1f07c), built with AppleClang 21.0.0.21000099 for Darwin arm64",
+  "llama_pinned_commit_in_script": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "linked_libraries_current_readonly_sha256": {
+    "/opt/homebrew/opt/llama.cpp/lib/libllama.0.dylib": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668",
+    "/opt/homebrew/opt/ggml/lib/libggml.0.dylib": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3",
+    "/opt/homebrew/opt/ggml/lib/libggml-base.0.dylib": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+  },
+  "compiler_current_readonly_report": "Apple clang version 21.0.0 (clang-2100.1.1.101), target arm64-apple-darwin25.2.0; build-time compiler attribution unproven",
+  "java_actual_capture_executable": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home/bin/java",
+  "java_current_report": "OpenJDK 17.0.19 Homebrew, 64-Bit Server VM",
+  "fresh_confirmation_native_path": "prototype/command-eval/build/native/libfocuspilot_local.dylib",
+  "fresh_confirmation_native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "comparison_limit": "Development baseline/candidates are same-backend paired only. Fresh confirmation uses a different native binary; do not merge latencies/scores as if the backend or corpus were identical.",
+  "phone_or_npu_evidence": false,
+  "rebuilt_native": false,
+  "candidate_changed": false
+}

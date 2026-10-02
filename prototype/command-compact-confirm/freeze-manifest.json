@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "phase": "fully_frozen_before_capture",
+  "selection_lock_sha256": "e12687bc090d33d090af7b4e490794b70a41592e093f52562bda97f085cb226d",
+  "selected_utc": "2026-10-02T20:45:46.855733+00:00",
+  "generator_sha256": "ff939aa05a150f43677b2b952987580d37e35dd30e9475cd0ac1bb6b4dd6046c",
+  "protocol_sha256": "e678817a67e1d1bfc9c1c74db0e8edabee6d0ff3a047d019d12ce578618a44ba",
+  "protocol_markdown_sha256": "0f0a3368430213ef98d830e9a804341f8d71928684d69fa957392fa69c2aceed",
+  "candidate_source_sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+  "candidate_metadata_sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+  "selected_source_sha256": {
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+  },
+  "cases_sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+  "requests_sha256": "1ee813c5060a2ec2bab7354c390b7cb3b7000364ee97033e78d1677052a94cb6",
+  "rows": 100,
+  "families": 50,
+  "supported_rows": 50,
+  "must_abstain_rows": 50,
+  "supported_by_intent": {
+    "start_focus": 10,
+    "pause_focus": 8,
+    "alarm": 8,
+    "timer": 10,
+    "open_app": 6,
+    "explain": 8
+  },
+  "hard_tag_counts": {
+    "current_focus_pause": 2,
+    "duration_boundary": 4,
+    "midnight_noon": 2,
+    "resume_vs_start": 4,
+    "spoken_number_slot": 14,
+    "warned_focus_explanation": 2
+  },
+  "hard_supported_rows": 25,
+  "overlap_inventory": [
+    {
+      "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-compact-dev/candidate.json",
+      "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+      "text_count": 15,
+      "method": "JSON examples list from actual rendered prompt inventory"
+    },
+    {
+      "path": "prototype/command-eval/build/cases.jsonl",
+      "sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+      "text_count": 58,
+      "method": "JSONL utterance field"
+    },
+    {
+      "path": "prototype/command-v08-eval/build/cases.jsonl",
+      "sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+      "text_count": 100,
+      "method": "JSONL utterance field"
+    },
+    {
+      "path": "prototype/command-v10-confirm/build/cases.jsonl",
+      "sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+      "text_count": 100,
+      "method": "JSONL utterance field"
+    },
+    {
+      "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+      "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+      "text_count": 8,
+      "method": "JSON examples list from actual rendered prompt inventory"
+    },
+    {
+      "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV second column; full original request"
+    },
+    {
+      "path": "prototype/command-v10-eval/build/cases.jsonl",
+      "sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+      "text_count": 100,
+      "method": "JSONL utterance field"
+    },
+    {
+      "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+      "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+      "text_count": 8,
+      "method": "JSON examples list from actual rendered prompt inventory"
+    },
+    {
+      "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+      "sha256": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+      "text_count": 13,
+      "method": "JSON examples list from actual rendered prompt inventory"
+    },
+    {
+      "path": "prototype/intent-head/build/all-cases.jsonl",
+      "sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+      "text_count": 373,
+      "method": "JSONL utterance field"
+    }
+  ],
+  "prior_texts_with_duplicates": 1027,
+  "prior_unique_exact_texts": 800,
+  "prior_unique_normalized_texts": 798,
+  "exact_overlap": 0,
+  "normalized_overlap": 0,
+  "normalization": "Lowercase; replace outside ASCII a-z/0-9 runs by spaces; collapse whitespace. No semantic or number-word normalization.",
+  "author_scope": "Informed synthetic author aware of previous results; fresh wording after lock, not human-blind or independently sampled user data.",
+  "requests_disclosed_to_parent_before_terminal": false,
+  "new_inference_captures": 0,
+  "actions_executed": 0,
+  "candidate_promoted": false,
+  "authored_utc": "2026-10-02T20:49:11.996227+00:00",
+  "corpus_manifest_sha256": "ac07800b5f2c211b0ddde3fb67b67a489647a435b6834e2d1079a795519ea3c5",
+  "runner_sha256": "4ef9e7d579049df3648c3eda067ad14a91daf2c34ce049419a2e7339493d37e6",
+  "capture_source_sha256": "5c89d1aafedb65b772ce3a21d34b9c7c1283e7c3bb5fe962275c3cf3d8e3ac71",
+  "gate_harness_sha256": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+  "generator_test_sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+  "frozen_utc": "2026-10-02T20:51:21.943037+00:00"
+}
