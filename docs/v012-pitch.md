@@ -80,3 +80,7 @@ The selected video, captions, sanitized source clips, capture metadata, render
 manifest, QA and identity evidence are backed up with the
 [v0.12 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12).
 Raw private captures and host narration intermediates remain excluded.
+
+All eight new release assets match server sizes/SHA-256 digests. The original
+four APK/phone-evidence assets and exact app-source tag remain unchanged.
+[Verified publication and storage](v012-pitch-publication.json).

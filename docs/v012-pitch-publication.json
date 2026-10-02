@@ -1,0 +1,45 @@
+{
+  "kind": "Research v0.12 media backup verified from GitHub metadata; no re-download/runtime claim",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+  "exact_app_source_tag_unchanged": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "original_four_assets_unchanged": true,
+  "new_eight_assets_sizes_digests_verified": true,
+  "assets": {
+    "pitch-v012.mp4": {
+      "bytes": 10100036,
+      "sha256": "235be6e7a0a0b87fd774d6e1a05c0de091b430714da95e0a590f50915ab4f2aa"
+    },
+    "pitch-v012.srt": {
+      "bytes": 5472,
+      "sha256": "10d08f43a548227a4099bd9c4373657efa8d680cbce50c256785dd0f693e32a7"
+    },
+    "v012-pitch-render-manifest.json": {
+      "bytes": 42256,
+      "sha256": "6466e010317cbd61c5ed20901e45b4960dc8f60c27518165ad10260fad63b1e8"
+    },
+    "v012-pitch-qa.json": {
+      "bytes": 6697,
+      "sha256": "5585554ca07d1f8b5fcb3309025210957c5afa5cc611724db5e5502ce5e9a6e5"
+    },
+    "demo-capture-phone-v012.json": {
+      "bytes": 5590,
+      "sha256": "b7e860ca57c1d7d2ea4f0459c197c85e58544bccb3018e44b6d6d570172e933e"
+    },
+    "v012-pitch-evidence.json": {
+      "bytes": 1529,
+      "sha256": "777cdea553035e7e59c19fc95f786274fc2e09892ce4e5a93ac441a8612feb15"
+    },
+    "guide.mp4": {
+      "bytes": 271373,
+      "sha256": "e834e5dfe905a36ca3178d93acc651de86793ff993183d831186f3a9f1c513fc"
+    },
+    "model.mp4": {
+      "bytes": 571058,
+      "sha256": "6acfce24436d29b787d807d1dea22b75dfc81a6d8672172a26f2bbddc3cfa40f"
+    }
+  },
+  "logical_project_bytes": 13821501677,
+  "project_cap_bytes": 15000000000,
+  "human_complete_playback_listening": false,
+  "full_goal_complete": false
+}

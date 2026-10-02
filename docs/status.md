@@ -12,6 +12,10 @@ unfilmed flows remain labelled illustrations. Captions, full decode, determinist
 seeks, sampled encoded visuals and source-clip comparisons passed. Complete human
 listening, actual ASR/monitoring/floating, iQOO/NPU, Office Kit and eligible accepted
 submission remain pending. [Video, source and scope](v012-pitch.md).
+Eight new media/evidence assets and all original release identities were verified
+against server metadata. Post-publication storage is 13,821,501,677 logical bytes
+(about 13.822 GB), below the 15 GB cap.
+[Publication record](v012-pitch-publication.json).
 
 ## Selected v0.12 task readback
 
