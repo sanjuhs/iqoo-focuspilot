@@ -1,7 +1,13 @@
 # FocusPilot
 
 A phone-first productivity assistant designed for local, fast, explainable decisions.
-Working concept for the iQOO Grand Finale, Productivity track.
+Working research prototype for the iQOO Grand Finale, Productivity track.
+
+[Research APKs, narrated pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
+are backed up as a prerelease. The bundled APK includes Qwen; the light APK needs
+model preparation. Both currently use an optimized ARM64 CPU library verified on
+Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
+ARM64 devices.
 
 > **Pre-event research repository.** Public rules require event-written competition
 > code. Preparation prototypes are dated and kept under `prototype/`; this repository

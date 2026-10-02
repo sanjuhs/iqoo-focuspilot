@@ -79,6 +79,11 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   26 JVM tests/build/lint passed for both. ZIP inspection verifies the bundled
   uncompressed model size and SHA. See docs/research-artifacts.json.
 
+- Source commits 6487c27/5d75293 and research-v0.3 prerelease are public on
+  GitHub. Both APKs, sanitized pitch, captions and evidence manifests uploaded;
+  GitHub asset digests match local SHA-256 values. Secret/index checks passed.
+  https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3
+
 ## In progress
 
 - Actual persistent notification/Stop verification after user grants permissions.
@@ -87,7 +92,7 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   requires additional user-labelled evaluation.
 - Controlled command-model experiment completed with a negative steering result;
   phone replication and wider controls remain pending.
-- Updated GitHub backup and staged secret audit.
+- Future source changes continue through staged secret audits.
 - Final APK/background/voice/clock verification when the required user permissions
   and hardware are available.
 

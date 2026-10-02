@@ -13,10 +13,10 @@ demo, with an honest, measurable System 1 decision path.
 | 2 | Phone and GitHub setup | Authorized ADB, device facts, secrets ignored, public source backup | Verified; ongoing source backup |
 | 3 | Research prototype | Focus/virtual penalty/decision trace/alarm workflow runs on Nothing phone | Installed; bounded focus/sandbox tested, alarm outcome pending |
 | 4 | Local model baseline | Selected Qwen3.5-0.8B model loads on Android and produces bounded decisions offline | Actual CPU inference and activation capture verified; offline disconnect test pending |
-| 5 | Few-shot sandbox | User-labelled examples improve held-out decisions with recorded comparison | Pending |
+| 5 | Few-shot sandbox | User-labelled examples improve held-out decisions with recorded comparison | Implemented/tested; synthetic comparison trades coverage for accuracy, live evaluation pending |
 | 6 | Voice and automation | Local speech availability established; approved commands verify outcomes | Pending |
 | 7 | iQOO acceleration and bridge | NPU backend and actual Office Kit flow measured on approved hardware | Needs hardware/account access |
-| 8 | Demo and application assets | Reviewable 3–5 minute pitch, backup capture and upload requirements known | Pending dashboard requirements |
+| 8 | Demo and application assets | Reviewable 3–5 minute pitch, backup capture and upload requirements known | 4:53 research pitch rendered; dashboard/submission requirements pending |
 | 9 | Eligible event build | Competition app is created within permitted event window | October 9–11 unless rules clarified |
 
 Use [docs/status.md](docs/status.md) for up-to-date results rather than reading this
