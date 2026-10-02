@@ -1,0 +1,62 @@
+{
+  "kind": "Research v0.13 publication metadata verification; no runtime repetition or eligible submission",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13",
+  "release_id": 402158776,
+  "published_at": "2026-10-02T21:13:38Z",
+  "tag": "research-v0.13",
+  "tag_resolves_to": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "prerelease": true,
+  "draft": false,
+  "proof_commit": "f0c0a963612257b2c56b96c7b8eedcce81425810",
+  "proof_commit_remote_equal": true,
+  "assets": [
+    {
+      "name": "focuspilot-research-v013-reset-light.apk",
+      "bytes": 5497068,
+      "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+      "server_bytes": 5497068,
+      "server_digest": "sha256:33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-light.apk"
+    },
+    {
+      "name": "focuspilot-research-v013-reset-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0",
+      "server_bytes": 568538615,
+      "server_digest": "sha256:6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-bundled.apk"
+    },
+    {
+      "name": "focuspilot-research-v013-reset-test.apk",
+      "bytes": 29334,
+      "sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+      "server_bytes": 29334,
+      "server_digest": "sha256:b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-test.apk"
+    },
+    {
+      "name": "reviewed-reset-artifacts.json",
+      "bytes": 9564,
+      "sha256": "b47546c806fbeea8f1dc0f117009f330d9c353a306a8fcff2f87bef9892dfc6d",
+      "server_bytes": 9564,
+      "server_digest": "sha256:b47546c806fbeea8f1dc0f117009f330d9c353a306a8fcff2f87bef9892dfc6d",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/reviewed-reset-artifacts.json"
+    },
+    {
+      "name": "reviewed-reset-phone-v013.json",
+      "bytes": 3686,
+      "sha256": "c3b8ed3eb33e43d048fc965523c20154b29a780df4f0c2da012484b875fd10ec",
+      "server_bytes": 3686,
+      "server_digest": "sha256:c3b8ed3eb33e43d048fc965523c20154b29a780df4f0c2da012484b875fd10ec",
+      "server_state": "uploaded",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/reviewed-reset-phone-v013.json"
+    }
+  ],
+  "five_asset_sizes_and_digests_match": true,
+  "runtime_scope": "docs/reviewed-reset-phone-v013.json is isolated fixtures only; UI cancellation and broader goal remain pending",
+  "video": "Historical v0.12 video stays unchanged in its own release; no new v0.13 recording"
+}

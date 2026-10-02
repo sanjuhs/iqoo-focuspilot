@@ -35,6 +35,12 @@ eligible accepted submission remain unfinished.
 [physical fixture record](reviewed-reset-phone-v013.json),
 [package identities](reviewed-reset-artifacts.json).
 
+The [v0.13 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
+is published with both app APKs, the separate synthetic test APK and two evidence
+records. All five server asset sizes/digests match local files; the tag resolves
+to the exact app/test source. Publication does not repeat runtime tests or establish
+submission eligibility. [Publication verification](reviewed-reset-publication-v013.json).
+
 ## Compact intent experiment — rejected
 
 A locked one-digit Qwen candidate was compared with the shipped prompt on 100

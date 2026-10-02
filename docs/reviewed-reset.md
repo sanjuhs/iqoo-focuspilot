@@ -119,6 +119,11 @@ two temporary copies and stayed below the 15,000,000,000-byte project limit.
 This establishes the bundle's bytes and packaging; it does not establish a new
 v0.13 bundled import or LLM inference run.
 
+[Research v0.13](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
+publishes both app APKs, the separate synthetic test APK, package manifest and
+fixture record. All five server sizes/digests and the exact app-source tag are
+verified in the [publication record](reviewed-reset-publication-v013.json).
+
 Earlier [v0.12 bundled import](bundled-import-phone-v012.md),
 [countdown/recovery](focus-recovery-phone.md),
 [task readback](guide-readback-phone.md), [export](phone-export.md) and
