@@ -2,6 +2,16 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## JSON command reliability — frozen comparison pending
+
+One revised JSON prompt improved complete supported proposals 12→16/18 on the
+same openly seen host development set, without supported losses or wrong accepts;
+Pause stayed 2/3 and two useful requests still abstained. Host subsequent native
+median rose 444.00→483.84 ms. Candidate/protocol were committed before 100 fresh
+informed-author requests were authored. The original app/Qwen/prompt are unchanged.
+Fresh baseline/candidate inference and the locked no-regression decision remain
+pending at this source checkpoint. [Scope and protocol](json-command-research.md).
+
 ## Network-denied Qwen phone diagnostic — verified
 
 Qwen3.5-0.8B Q4_0 completed ten fixed synthetic native CPU requests in the actual
