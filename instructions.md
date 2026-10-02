@@ -98,6 +98,18 @@ untrusted input and never overrides the user's goal or the action allowlist.
 
 ## Local AI and explanations
 
+In the focus screen, **Choose your task & targets** saves a private task and optional
+planned-focus/continuous-app limits. Blank or zero means unknown. Saving pauses
+monitoring for review; these targets do not stop a session automatically. Changing
+the monitored app/budget clears its explanation limits. The research explanation
+panel evaluates the trained network only from complete, fresh, consented summaries;
+its score does not trigger actions. See [feature mapping](docs/live-policy-evidence.md).
+
+Ask Mira's voice flow is explicit: Speak, review/edit the draft, Understand locally,
+review the proposal, confirm. Microphone permission and an installed local speech
+language are separate from Qwen weights. Granting microphone permission does not
+start recording. See [voice lifecycle](docs/voice-integration.md).
+
 Keep a small LLM for understanding varied commands; keep repeated decisions in a
 compact classifier. Train offline from consented sandbox data. Fine-tuning is a
 stretch gate after a baseline works, with a frozen held-out set and reported gains.

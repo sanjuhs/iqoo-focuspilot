@@ -20,7 +20,12 @@ public final class FocusRepository {
     public final SharedPreferences prefs;
     public String selectedPackage;
     public long budgetMs, accumulatedUsage, intervalWall;
+    /** Explicit user limits; zero means unknown, never an inferred default. */
+    public long shadowContinuousLimitMs, shadowPlannedFocusMs;
     public boolean observe, interrupted;
+    private long shadowScopeId, shadowSinceWall, shadowStartedElapsed, focusActiveStartedElapsed;
+    private final ScopedNudgeFeedback shadowFeedback=new ScopedNudgeFeedback();
+    private ObservationSnapshot latestSnapshot;
     public final ArrayList<String> events = new ArrayList<>();
     public static synchronized FocusRepository get(Context context) {
         if(instance == null) instance = new FocusRepository(context.getApplicationContext());
@@ -31,6 +36,8 @@ public final class FocusRepository {
         selectedPackage = prefs.getString("package", "com.instagram.android"); budgetMs = Math.max(60_000, Math.min(7_200_000, prefs.getLong("budget", 300_000)));
         if(!MonitorConfig.valid(selectedPackage,budgetMs)) selectedPackage="com.instagram.android";
         observe = prefs.getBoolean("observe", false);
+        shadowContinuousLimitMs=validShadowLimit(prefs.getLong("shadowContinuousLimit",0));
+        shadowPlannedFocusMs=validShadowLimit(prefs.getLong("shadowPlannedFocus",0));
         session.restorePaused(prefs.getLong("elapsedCheckpoint", 0));
         accumulatedUsage = prefs.getLong("usageCheckpoint", 0);
         ledger.restore(prefs.getInt("points", 100), prefs.getLong("lastNudge", -1), SystemClock.elapsedRealtime());
@@ -49,27 +56,33 @@ public final class FocusRepository {
         catch(SecurityException error) { return accumulatedUsage; }
     }
     public void start() {
-        if(!session.isActive()) { intervalWall=System.currentTimeMillis(); session.start(SystemClock.elapsedRealtime()); interrupted=false; log("Focus session started / resumed"); }
+        if(!session.isActive()) { intervalWall=System.currentTimeMillis(); focusActiveStartedElapsed=SystemClock.elapsedRealtime(); session.start(focusActiveStartedElapsed); interrupted=false; beginShadowScope(); log("Focus session started / resumed"); }
         persist();
     }
     public void pause(String reason) {
-        if(session.isActive()) { accumulatedUsage=usage(); session.pause(SystemClock.elapsedRealtime()); intervalWall=0; log(reason); }
+        if(session.isActive()) { accumulatedUsage=usage(); session.pause(SystemClock.elapsedRealtime()); intervalWall=0; invalidateShadowScope(); log(reason); }
         persist();
     }
     public void tick() {
         long now=SystemClock.elapsedRealtime();
         DecisionPolicy.Result decision=policy.evaluate(usage(),budgetMs,session.isActive() && observe && usageGranted(context),now,ledger.lastNudge());
-        if(ledger.apply(decision,now)) log("LOCAL RULE: budget nudge · −5 virtual points; no money moved");
+        boolean nudged=ledger.apply(decision,now);
+        if(nudged) log("LOCAL RULE: budget nudge · −5 virtual points; no money moved");
+        refreshShadowObservation();
+        if(nudged && shadowSinceWall>0) shadowFeedback.recordActualNudge(now);
         persist();
     }
-    public void reset() { session.reset(); accumulatedUsage=0; intervalWall=0; ledger.reset(); log("Session reset"); persist(); }
+    public void reset() { session.reset(); accumulatedUsage=0; intervalWall=0; ledger.reset(); invalidateShadowScope(); log("Session reset"); persist(); }
     public void setObservation(boolean enabled) {
         observe=enabled; accumulatedUsage=0; intervalWall=session.isActive() ? System.currentTimeMillis() : 0;
+        beginShadowScope();
         prefs.edit().putBoolean("observe",enabled).apply(); log(enabled ? "Usage reading enabled locally" : "Usage reading disabled"); persist();
     }
     public void configure(String packageName,long budget) {
         if(!MonitorConfig.valid(packageName,budget)) throw new IllegalArgumentException("Invalid monitor configuration");
         selectedPackage=packageName; budgetMs=budget; accumulatedUsage=0; intervalWall=session.isActive() ? System.currentTimeMillis() : 0;
+        shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;
+        prefs.edit().remove("shadowContinuousLimit").remove("shadowPlannedFocus").apply();beginShadowScope();
         prefs.edit().putString("package",packageName).putLong("budget",budget).apply(); log("Budget/settings saved; usage interval restarted"); persist();
     }
     public void log(String value) {
@@ -81,6 +94,56 @@ public final class FocusRepository {
         prefs.edit().putLong("elapsedCheckpoint",session.elapsed(SystemClock.elapsedRealtime())).putBoolean("activeCheckpoint",session.isActive()).putLong("usageCheckpoint",usage()).putInt("points",ledger.points()).putLong("lastNudge",ledger.lastNudge()).apply();
     }
     public void delete() {
-        session.reset(); accumulatedUsage=0; intervalWall=0; observe=false; interrupted=false; ledger.reset(); events.clear(); selectedPackage="com.instagram.android"; budgetMs=300_000; prefs.edit().clear().apply();
+        session.reset(); accumulatedUsage=0; intervalWall=0; observe=false; interrupted=false; ledger.reset(); events.clear(); selectedPackage="com.instagram.android"; budgetMs=300_000;
+        shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;invalidateShadowScope();prefs.edit().clear().apply();
+    }
+    private static long validShadowLimit(long value) { return value>=0 && value<=86_400_000?value:0; }
+    /** Saves declared limits only. No model weights, observed vectors or event stream are saved. */
+    public void configureShadowLimits(long continuousMs,long plannedFocusMs) {
+        if(validShadowLimit(continuousMs)!=continuousMs || validShadowLimit(plannedFocusMs)!=plannedFocusMs)
+            throw new IllegalArgumentException("Shadow limits must be 0 (unknown) or at most 24 hours");
+        shadowContinuousLimitMs=continuousMs;shadowPlannedFocusMs=plannedFocusMs;
+        prefs.edit().putLong("shadowContinuousLimit",continuousMs).putLong("shadowPlannedFocus",plannedFocusMs).apply();
+        beginShadowScope();
+    }
+    private void invalidateShadowScope() {
+        shadowScopeId++;shadowSinceWall=0;shadowStartedElapsed=0;latestSnapshot=null;shadowFeedback.reset();
+    }
+    private void beginShadowScope() {
+        invalidateShadowScope();
+        if(observe && session.isActive() && usageGranted(context)) {
+            shadowSinceWall=System.currentTimeMillis();shadowStartedElapsed=SystemClock.elapsedRealtime();
+        }
+    }
+    /** Called by existing visible dashboard/service ticks, with the existing consent gates. */
+    public void refreshShadowObservation() {
+        if(!observe || !session.isActive() || !usageGranted(context)) { if(shadowSinceWall>0) invalidateShadowScope();return; }
+        if(shadowSinceWall<=0) beginShadowScope();
+        long nowWall=System.currentTimeMillis(), nowElapsed=SystemClock.elapsedRealtime();
+        SelectedAppObservation.Summary summary=UsageReader.observe(context,selectedPackage,shadowSinceWall,nowWall);
+        latestSnapshot=new ObservationSnapshot(shadowScopeId,selectedPackage,shadowSinceWall,nowWall,nowElapsed,shadowStartedElapsed,
+            focusActiveStartedElapsed>0?Math.max(0,nowElapsed-focusActiveStartedElapsed):-1,budgetMs,
+            shadowContinuousLimitMs,shadowPlannedFocusMs,shadowFeedback.count(),summary);
+    }
+    /** Fresh in-memory summary only; may contain NaN/missing features. Never triggers an OS query. */
+    public ObservationSnapshot latestObservation() {
+        long now=SystemClock.elapsedRealtime();
+        if(!observe || !session.isActive() || !usageGranted(context)) { if(shadowSinceWall>0) invalidateShadowScope();return null; }
+        if(latestSnapshot==null || latestSnapshot.scopeId!=shadowScopeId ||
+            now<latestSnapshot.observedAtElapsed || now-latestSnapshot.observedAtElapsed>ObservationSnapshot.MAX_AGE_MS) return null;
+        return latestSnapshot;
+    }
+    /** Exact trained-network trace if all six inputs are fresh and present. NEVER applies ledger/actions. */
+    public ObservationSnapshot.ShadowTrace shadowDecision() {
+        boolean permission=usageGranted(context), active=session.isActive();
+        if((!observe || !permission || !active) && shadowSinceWall>0) invalidateShadowScope();
+        return ObservationSnapshot.shadow(latestSnapshot,shadowScopeId,SystemClock.elapsedRealtime(),observe,permission,active);
+    }
+    /** Explicit feedback, at most once for an actual nudge in this scope within 60 seconds. */
+    public boolean userDeferredNudge() {
+        long now=SystemClock.elapsedRealtime();
+        if(!shadowFeedback.defer(now,observe && session.isActive() && usageGranted(context) && shadowSinceWall>0)) return false;
+        latestSnapshot=null;
+        return true;
     }
 }

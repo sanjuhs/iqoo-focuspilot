@@ -38,30 +38,42 @@ class PhoneLab:
         self.guard()
         return [n for n in root.iter("node") if n.get("package") == PACKAGE]
 
-    def tap(self, label, scroll=True):
+    def find(self, label, scroll=True):
         for _ in range(14 if scroll else 1):
             for node in self.nodes():
                 if node.get("text", "").casefold() == label.casefold():
                     xy = list(map(int, re.findall(r"\d+", node.get("bounds"))))
                     if xy[3] - xy[1] < 25:
                         continue
-                    self.guard()
-                    self.adb("shell", "input", "tap", str((xy[0]+xy[2])//2), str((xy[1]+xy[3])//2))
-                    return
+                    return node
             if scroll:
+                self.guard()
                 self.adb("shell", "input", "swipe", "540", "1800", "540", "700", "350")
         raise RuntimeError("Own-app control not visible: " + label)
+
+    def tap(self, label, scroll=True):
+        node=self.find(label,scroll)
+        xy=list(map(int,re.findall(r"\d+",node.get("bounds"))))
+        self.guard()
+        self.adb("shell","input","tap",str((xy[0]+xy[2])//2),str((xy[1]+xy[3])//2))
 
     def top(self):
         self.guard()
         for _ in range(5):
+            self.guard()
             self.adb("shell", "input", "swipe", "540", "650", "540", "1900", "180")
 
     def command(self, value):
         if not re.fullmatch(r"[A-Za-z0-9 :]+", value):
             raise ValueError("Smoke input must be simple synthetic ASCII")
         self.top()
-        node = next(n for n in self.nodes() if n.get("class") == "android.widget.EditText")
+        node=None
+        for _ in range(8):
+            node=next((n for n in self.nodes() if n.get("class")=="android.widget.EditText"),None)
+            if node is not None: break
+            self.guard()
+            self.adb("shell","input","swipe","540","1800","540","700","350")
+        if node is None: raise RuntimeError("Own-app editable command not visible")
         xy = list(map(int, re.findall(r"\d+", node.get("bounds"))))
         self.adb("shell", "input", "tap", str((xy[0]+xy[2])//2), str((xy[1]+xy[3])//2))
         self.adb("shell", "input", "keyevent", "KEYCODE_MOVE_END")
@@ -76,11 +88,12 @@ class PhoneLab:
 
     def run(self, value, capture=False):
         self.command(value)
-        for node in self.nodes():
-            if node.get("text") == "Capture selected actual activation summaries":
-                if (node.get("checked") == "true") != capture:
-                    self.tap(node.get("text"), scroll=False)
-        self.tap("Understand command locally", scroll=False)
+        node=self.find("Capture selected actual activation summaries")
+        if (node.get("checked")=="true")!=capture:
+            self.tap(node.get("text"),scroll=False)
+        self.tap("Understand command locally")
+        self.guard()
+        self.adb("shell","input","swipe","540","1800","540","1100","250")
         began = time.monotonic()
         while time.monotonic()-began < 60:
             # Wake display only; this does not bypass a keyguard.
@@ -115,7 +128,7 @@ def main():
         lab.tap("Ask Mira" if "Ask Mira" in texts else "Open local command model")
     texts = [n.get("text", "") for n in lab.nodes()]
     if not any(t.startswith("LOCAL MODEL LOADED") for t in texts):
-        lab.tap("Load verified local model", scroll=False)
+        lab.tap("Load verified local model")
         for _ in range(12):
             if any(n.get("text", "").startswith("LOCAL MODEL LOADED") for n in lab.nodes()):
                 break

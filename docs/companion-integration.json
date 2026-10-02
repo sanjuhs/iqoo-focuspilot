@@ -1,0 +1,41 @@
+{
+  "research": true,
+  "version": "0.4",
+  "device": "Nothing A059/SM7635/API36",
+  "backend": "CPU",
+  "input": "synthetic typed, no ASR claim",
+  "microphone_permission": false,
+  "usage_access": false,
+  "notifications_permission": false,
+  "results": [
+    {
+      "command": "Please start a focus session",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 15871.0,
+      "prefill_ms": 15018.0,
+      "decode_ms": 853.0,
+      "action_executed": false
+    },
+    {
+      "command": "Do not start focus",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "ABSTAIN",
+      "total_ms": 1736.0,
+      "prefill_ms": 794.0,
+      "decode_ms": 942.0,
+      "action_executed": false
+    }
+  ],
+  "focus_settings_test": {
+    "synthetic_goal_saved": true,
+    "planned_minutes": 25,
+    "continuous_minutes": 15,
+    "save_pauses_focus": true,
+    "missing_consent_blocks_shadow": true,
+    "invalid_deferral_no_points_change": true,
+    "synthetic_settings_cleared": true
+  }
+}

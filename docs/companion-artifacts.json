@@ -1,0 +1,32 @@
+{
+  "version": "0.4-companion-research",
+  "research_only": true,
+  "debug_arm64": true,
+  "backend": "CPU/KleidiAI I8MM, optimized hardware required",
+  "new_bundle_import_on_fresh_phone_tested": false,
+  "bundled_import_evidence": "0.3 same import code; docs/bundled-model-evidence.json",
+  "tests": {
+    "android_jvm": 47,
+    "lint_errors": 0,
+    "qualcomm_preflight": 6
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v04-light.apk",
+      "bytes": 5543813,
+      "sha256": "e2fb4f0115881e156c27af60b31f1dc62032061d912512209049c1580df9d8e6",
+      "bundled_model": false,
+      "internet_permission": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e"
+    },
+    {
+      "name": "focuspilot-research-v04-bundled.apk",
+      "bytes": 568579989,
+      "sha256": "966a5390527d35b4901a86048074c62a2f198b96d302e4c7bb9bff1d4e2812c2",
+      "bundled_model": true,
+      "internet_permission": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e"
+    }
+  ]
+}

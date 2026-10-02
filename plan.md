@@ -14,7 +14,7 @@ demo, with an honest, measurable System 1 decision path.
 | 3 | Research prototype | Focus/virtual penalty/decision trace/alarm workflow runs on Nothing phone | Installed; bounded focus/sandbox tested, alarm outcome pending |
 | 4 | Local model baseline | Selected Qwen3.5-0.8B model loads on Android and produces bounded decisions offline | Actual CPU inference and activation capture verified; offline disconnect test pending |
 | 5 | Few-shot sandbox | User-labelled examples improve held-out decisions with recorded comparison | Implemented/tested; synthetic comparison trades coverage for accuracy, live evaluation pending |
-| 6 | Voice and automation | Local speech availability established; approved commands verify outcomes | Pending |
+| 6 | Voice and automation | Local speech availability established; approved commands verify outcomes | Draft-only voice integrated/tested in code; physical ASR/TTS and action outcomes pending |
 | 7 | iQOO acceleration and bridge | NPU backend and actual Office Kit flow measured on approved hardware | Needs hardware/account access |
 | 8 | Demo and application assets | Reviewable 3–5 minute pitch, backup capture and upload requirements known | 4:53 research pitch rendered; dashboard/submission requirements pending |
 | 9 | Eligible event build | Competition app is created within permitted event window | October 9–11 unless rules clarified |
@@ -40,7 +40,10 @@ Phone control is bounded by permissions and Android restrictions, not unrestrict
 The initial research prototype used only a deterministic parser. The current app
 adds actual Qwen3.5 CPU inference in the model lab. Recurring dashboard nudges still
 use transparent hand-set weights; a separate trained sandbox demonstrates the
-65-parameter network. Keep each component clearly identified.
+65-parameter network. A shadow panel can evaluate that network on complete real
+summaries without changing actions. Private task/target settings are implemented;
+real-event calibration and live personalization remain pending. Keep each component
+clearly identified.
 
 ## Companion and persistent-mode slice
 

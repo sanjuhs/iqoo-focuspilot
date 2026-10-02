@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-02 IST",
+  "adapter_sha256": "ea7ab076f437dc411e30924a1a6f13703fb9b1eef2106053992abab9e1f39227",
+  "compiled_against": {
+    "android_sdk": 36,
+    "java_release": 17,
+    "geniex_aar": "0.7.0",
+    "aar_sha256": "a29e88e31e12fd636a9dfa6760c61d04001ab91a932dbd5efe7b0a4335b9f883"
+  },
+  "compile": "passed",
+  "preflight_tests": 6,
+  "app_integration": false,
+  "hardware_execution": false,
+  "npu_verified": false,
+  "binary_packaging_markers": [
+    "GGML_HEXAGON_PROFILE",
+    "GGML_HEXAGON_VERBOSE",
+    "profile-op"
+  ],
+  "markers_prove_execution": false
+}

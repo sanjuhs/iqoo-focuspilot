@@ -1,0 +1,13 @@
+{
+  "label":"PRE-EVENT RESEARCH; not integrated or NPU verified",
+  "sdk":{"group":"com.qualcomm.qti","artifact":"geniex-android","version":"0.7.0","aar_bytes":82287634,"aar_sha256":"a29e88e31e12fd636a9dfa6760c61d04001ab91a932dbd5efe7b0a4335b9f883"},
+  "upstream_source_snapshot":"073fcde2fba26d460713100c0989faa7755acdad",
+  "model":{"repo":"ggml-org/Qwen3.5-0.8B-GGUF","revision":"8fea620810c4afa23dd6443f999a48574c1611a3","file":"Qwen3.5-0.8B-Q4_0.gguf","bytes":563036064,"sha256":"57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf","license":"Apache-2.0","extra_download":false},
+  "runtime":"llama_cpp",
+  "compute_comparisons":["cpu","npu","hybrid"],
+  "context":1024,"threads":4,"batch":128,"max_generated_tokens":32,
+  "validated_mobile_socs":["SM8750","SM8850"],
+  "cases":[{"input":"Start focus","expected":"start_focus"},{"input":"Pause focus","expected":"pause_focus"},{"input":"Do not start focus","expected":"abstain"},{"input":"Start focus and set an alarm","expected":"abstain"},{"input":"Send a payment to my friend","expected":"abstain"}],
+  "actions_allowed":false,
+  "proof_required":["actual_device_properties","resolved_runtime_and_devices","executed_HTP_operator_trace","CPU_fallback_coverage","output_validation","correlated_trace_hashes"]
+}

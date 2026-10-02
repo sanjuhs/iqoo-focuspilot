@@ -19,9 +19,6 @@ import android.os.Process;
 import android.os.SystemClock;
 import android.provider.AlarmClock;
 import android.provider.Settings;
-import android.speech.RecognitionListener;
-import android.speech.RecognizerIntent;
-import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
 import android.view.Gravity;
@@ -48,10 +45,10 @@ public final class MainActivity extends Activity {
     private final CommandParser parser = new CommandParser();
     private SharedPreferences prefs;
     private LinearLayout root;
-    private TextView timer, sessionLabel, usageLabel, pointsLabel, trace, status, logView, speechState, monitorStatus, companionMessage;
+    private TextView timer, sessionLabel, usageLabel, pointsLabel, trace, status, logView, speechState, monitorStatus, companionMessage, goalLabel, shadowTrace;
     private CompanionView companion;
     private Button sessionButton, heroFocusButton;
-    private EditText commandInput, packageInput, budgetInput;
+    private EditText commandInput, packageInput, budgetInput, goalInput, plannedInput, continuousInput;
     private Switch observeSwitch;
     private String monitoredPackage;
     private long budgetMs;
@@ -59,7 +56,8 @@ public final class MainActivity extends Activity {
     private boolean muted, reduceMotion, hideCompanion, updatingMonitor;
     private long celebrateUntil;
     private Switch monitorSwitch;
-    private SpeechRecognizer recognizer;
+    private LocalVoiceInput voiceInput;
+    private final VoiceDraftState voiceDraft=new VoiceDraftState();
     private TextToSpeech tts;
     private final ArrayList<String> events = new ArrayList<>();
     private final Runnable refreshTask = new Runnable() {
@@ -73,6 +71,11 @@ public final class MainActivity extends Activity {
         muted=prefs.getBoolean("mute",false); reduceMotion=prefs.getBoolean("reduceMotion",false); hideCompanion=prefs.getBoolean("hideCompanion",false);
         try { JSONArray saved = new JSONArray(prefs.getString("events", "[]")); for (int i=0; i<saved.length(); i++) events.add(saved.getString(i)); } catch (Exception ignored) {}
         buildUi();
+        voiceInput=new LocalVoiceInput(this,voiceDraft,new LocalVoiceInput.Listener() {
+            public void onStatus(String value) { showStatus(value.startsWith("Voice draft ready.") ? "Voice draft ready. Review it, then tap Run command. Nothing executed." : value); }
+            public void onDraft(String value) { commandInput.setText(value); }
+            public void onChanged() { listening=voiceDraft.active(); if(visible) refresh(); }
+        });
         tts = new TextToSpeech(this, result -> {
             if (result == TextToSpeech.SUCCESS && tts != null && tts.getVoices() != null) {
                 for (Voice voice : tts.getVoices()) {
@@ -149,7 +152,20 @@ public final class MainActivity extends Activity {
         LinearLayout focus = card("YOUR FOCUS SESSION");
         sessionLabel = text("Ready when you are",20,WHITE,true); focus.addView(sessionLabel);
         timer = text("00:00",52,WHITE,true); focus.addView(timer);
-        focus.addView(text("A small commitment, one task at a time.",14,MUTED,false));
+        goalLabel=text("One task at a time.",16,WHITE,true); focus.addView(goalLabel);
+        LinearLayout goals=disclosure(focus,"Choose your task & targets");
+        goals.addView(text("Your task stays private on this phone. Optional targets help explain usage; the session runs until you pause it. Leave a target blank when you haven't chosen one.",13,MUTED,false));
+        goals.addView(text("What would you like to work on?",13,WHITE,false));
+        goalInput=input("One small task",prefs.getString("focusGoal",""),goals);
+        goalInput.setContentDescription("Focus task");
+        goalInput.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(120)});
+        goals.addView(text("Planned focus minutes · optional",13,WHITE,false));
+        plannedInput=input("Blank = no target",limitText(repository.shadowPlannedFocusMs),goals); plannedInput.setInputType(2);
+        plannedInput.setContentDescription("Planned focus minutes");
+        goals.addView(text("Continuous selected-app minutes · optional",13,WHITE,false));
+        continuousInput=input("Blank = no target",limitText(repository.shadowContinuousLimitMs),goals); continuousInput.setInputType(2);
+        continuousInput.setContentDescription("Continuous selected-app minutes");
+        button("Save task & targets",goals,v -> saveGoal(),true);
         sessionButton = button("Start focus",focus,v -> toggleFocus(),true);
         button("Reset this session",focus,v -> resetSession(),false);
         LinearLayout monitor=card("STAY WITH ME · OPT-IN BACKGROUND FOCUS");
@@ -174,6 +190,14 @@ public final class MainActivity extends Activity {
         trace=text("Hand-set positive weights. No trained model.",14,MUTED,false); decision.addView(trace);
         button("Try simulated over-budget state",decision,v -> { simulated=true; demoLedger.reset(); log("SIMULATED state: selected app at twice its budget"); companion.setState(CompanionView.State.NUDGE); refresh(); },false);
         button("Return to real session state",decision,v -> { simulated=false; showStatus("Simulation cleared."); refresh(); },false);
+        LinearLayout shadow=disclosure(decision,"Explain observed state · research");
+        shadow.addView(text("The tiny trained network can inspect six measured inputs here. It was trained on synthetic labels; its score is uncalibrated and changes no actions or points. Missing inputs block evaluation.",13,MUTED,false));
+        shadowTrace=text("Paused · no observation",13,MUTED,false); shadow.addView(shadowTrace);
+        button("Defer the latest real nudge",shadow,v -> {
+            boolean saved=repository.userDeferredNudge();
+            showStatus(saved ? "Feedback noted for this observation scope. No points refunded or actions changed." : "No fresh real nudge to defer. Practice nudges do not count.");
+            refresh();
+        },false);
         LinearLayout commands=card("ASK FOR A SMALL NEXT STEP");
         commands.addView(text("Quick shortcuts: start focus, pause, or set an alarm. These use a predictable parser. Ask Mira opens the local model for more natural requests, with a review before actions.",13,MUTED,false));
         commandInput=input("Try: alarm 7:30 pm", "",commands); commandInput.setInputType(1);
@@ -194,16 +218,16 @@ public final class MainActivity extends Activity {
         LinearLayout history=card("LOCAL EVENT TRAIL");
         logView=text("No events yet",13,MUTED,false); history.addView(logView);
         button("Delete focus data & saved examples",history,v -> new AlertDialog.Builder(this).setTitle("Delete FocusPilot data?").setMessage("Clears saved settings, event history and few-shot labels, stops the session and disables observation. The downloaded model stays installed. Android permissions can be revoked separately in system settings.").setNegativeButton("Cancel",null).setPositiveButton("Delete",(d,w) -> deleteData()).show(),false);
-        root.addView(text("RESEARCH BUILD · 0.3\nNo real money moves. You choose when to pause.",12,MUTED,false));
+        root.addView(text("RESEARCH BUILD · 0.4\nNo real money moves. You choose when to pause.",12,MUTED,false));
         screen.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout safetyBar=new LinearLayout(this); safetyBar.setOrientation(LinearLayout.VERTICAL); safetyBar.setPadding(dp(20),0,dp(20),dp(8)); safetyBar.setBackgroundColor(BG);
         button("Stop focus",safetyBar,v -> pauseFocus(),false);
         screen.addView(safetyBar,new LinearLayout.LayoutParams(-1,-2));
         setContentView(screen); screen.requestApplyInsets(); renderLogs();
     }
-    @Override protected void onResume() { super.onResume(); visible=true; handler.removeCallbacks(refreshTask); handler.post(refreshTask); }
-    @Override protected void onStop() { visible=false; handler.removeCallbacks(refreshTask); if(recognizer!=null) recognizer.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
-    @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(recognizer!=null) recognizer.destroy(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
+    @Override protected void onResume() { super.onResume(); visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); }
+    @Override protected void onStop() { visible=false; handler.removeCallbacks(refreshTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
+    @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
     private long realUsage() { return repository.usage(); }
     private void refresh() {
@@ -211,6 +235,8 @@ public final class MainActivity extends Activity {
         repository.tick();
         long now=SystemClock.elapsedRealtime(), duration=session.elapsed(now), usage=realUsage();
         timer.setText(String.format(Locale.US,"%02d:%02d",duration/60_000,(duration/1000)%60));
+        String goal=prefs.getString("focusGoal","");
+        goalLabel.setText(goal.isEmpty() ? "One task at a time." : "Your task · "+goal);
         sessionLabel.setText(session.isActive() ? "In your focus zone" : "Paused · you're in control"); sessionButton.setText(session.isActive() ? "Pause focus" : "Start / resume focus");
         heroFocusButton.setText(session.isActive() ? "Pause focus" : "Start focus");
         usageLabel.setText(!observe ? "Usage reading is off" : !usageGranted() ? "Usage Access needed" : String.format(Locale.US,"%.1f / %d min · %s",usage/60_000.0,budgetMs/60_000,monitoredPackage));
@@ -219,7 +245,8 @@ public final class MainActivity extends Activity {
         if(simulated && current.apply(result,now)) log("SIMULATED: budget nudge · −5 virtual points");
         pointsLabel.setText(current.points()+" virtual points"+(simulated ? " · SANDBOX" : ""));
         trace.setText((simulated ? "SIMULATED INPUT · 2× budget\n" : "REAL USAGE SUMMARY\n")+result.explanation()+"\n"+(current.lastNudge()>=0 && now-current.lastNudge()<DecisionPolicy.COOLDOWN_MS ? "Cooldown active" : "Ready to evaluate"));
-        speechState.setText(Build.VERSION.SDK_INT>=31 && SpeechRecognizer.isOnDeviceRecognitionAvailable(this) ? "On-device speech service available · language model may be missing" : "Offline voice unavailable here · type a command");
+        renderShadow();
+        speechState.setText(LocalVoiceInput.available(this) ? "On-device speech service available · language model may be missing" : "Offline voice unavailable here · type a command");
         setMonitorChecked(FocusMonitorService.running);
         monitorStatus.setText(FocusMonitorService.running ? "Visible monitor running · notification has Stop" : "Monitor stopped · dashboard-only checking");
         CompanionView.State mood=listening ? CompanionView.State.LISTEN : simulated ? CompanionView.State.NUDGE : !session.isActive() ? CompanionView.State.PAUSED : now<celebrateUntil ? CompanionView.State.CELEBRATE : usage>budgetMs ? CompanionView.State.NUDGE : CompanionView.State.FOCUS;
@@ -228,7 +255,7 @@ public final class MainActivity extends Activity {
         renderLogs();
     }
     private void startFocus() { repository.start(); simulated=false; celebrateUntil=SystemClock.elapsedRealtime()+1600; refresh(); handler.postDelayed(() -> { if(visible) refresh(); },1600); }
-    private void pauseFocus() { if(recognizer!=null) recognizer.cancel(); listening=false; if(tts!=null) tts.stop(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }
+    private void pauseFocus() { if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }
     private void toggleFocus() { if(session.isActive()) pauseFocus(); else startFocus(); }
     private void resetSession() { stopMonitor("Session reset; monitor stopped"); repository.reset(); simulated=false; refresh(); }
     private void setMonitorChecked(boolean checked) { updatingMonitor=true; monitorSwitch.setChecked(checked); updatingMonitor=false; }
@@ -248,9 +275,33 @@ public final class MainActivity extends Activity {
         try { minutes=Integer.parseInt(budgetInput.getText().toString()); } catch(Exception error) { showStatus("Enter a budget from 1 to 120 minutes."); return; }
         if(!MonitorConfig.valid(value,minutes*60_000L)) { showStatus("Use an Android app package and a 1–120 minute budget."); return; }
         stopMonitor("Settings changed; monitor/session paused for review"); monitoredPackage=value; budgetMs=minutes*60_000L;
-        repository.configure(value,budgetMs); simulated=false; showStatus("Settings saved. Restart focus/monitor when ready."); refresh();
+        repository.configure(value,budgetMs); plannedInput.setText(""); continuousInput.setText(""); simulated=false; showStatus("Settings saved. Optional explanation targets cleared for the new app/budget. Restart focus/monitor when ready."); refresh();
+    }
+    private static String limitText(long milliseconds) { return milliseconds<=0 ? "" : String.valueOf(milliseconds/60_000); }
+    private void saveGoal() {
+        FocusGoalConfig value;
+        try { value=FocusGoalConfig.parse(goalInput.getText().toString(),plannedInput.getText().toString(),continuousInput.getText().toString()); }
+        catch(IllegalArgumentException error) { showStatus(error.getMessage()); return; }
+        stopMonitor("Task/targets changed; focus paused for review");
+        prefs.edit().putString("focusGoal",value.goal).apply();
+        repository.configureShadowLimits(value.continuousMs,value.plannedMs);
+        goalInput.setText(value.goal); simulated=false;
+        showStatus("Task and declared targets saved privately. Restart focus when ready; targets don't stop it automatically."); refresh();
+    }
+    private void renderShadow() {
+        ObservationSnapshot.ShadowTrace shadow=repository.shadowDecision();
+        if(!shadow.evaluated()) { shadowTrace.setText("SHADOW · NO ACTIONS\nUnavailable: "+shadow.blockedReason); return; }
+        TrainedPolicy.Evaluation evaluation=shadow.evaluation;
+        StringBuilder details=new StringBuilder(String.format(Locale.US,"SHADOW · NO ACTIONS\nUncalibrated synthetic-teacher score: %.4f\n",evaluation.score));
+        String[] names=TrainedPolicy.featureNames(); double[] features=evaluation.features(),drops=evaluation.featureAblationDrops();
+        for(int i=0;i<names.length;i++) details.append(String.format(Locale.US,"%s: %.3f · zeroing changes score by %.4f\n",names[i].replace('_',' '),features[i],drops[i]));
+        details.append(String.format(Locale.US,"Exact hidden contributions to logit (bias %.4f):\n",evaluation.outputBias));
+        double[] contributions=evaluation.hiddenContributions();
+        for(int i=0;i<contributions.length;i++) details.append(String.format(Locale.US,"h%d %.4f%s",i,contributions[i],i==contributions.length-1 ? "" : " · "));
+        shadowTrace.setText(details.toString());
     }
     private void execute(String input) {
+        if(!voiceDraft.canUnderstand()) { showStatus("Finish or stop voice before running a reviewed command."); return; }
         CommandParser.Command command=parser.parse(input);
         if(command.kind==CommandParser.Kind.START) { startFocus(); showStatus("Focus session active."); }
         else if(command.kind==CommandParser.Kind.PAUSE) { pauseFocus(); showStatus("Focus session paused."); }
@@ -266,39 +317,24 @@ public final class MainActivity extends Activity {
         } else showStatus("Try “start focus”, “pause”, or “alarm 7:30 pm”. Unknown commands are not executed.");
     }
     private void microphone() {
-        if(listening) { recognizer.stopListening(); listening=false; showStatus("Processing on-device speech…"); return; }
-        if(Build.VERSION.SDK_INT<31 || !SpeechRecognizer.isOnDeviceRecognitionAvailable(this)) { showStatus("An on-device speech service is unavailable. Type your command; no cloud fallback is used."); return; }
+        if(voiceDraft.active()) {
+            if(voiceDraft.phase()==VoiceDraftState.Phase.LISTENING) voiceInput.finishListening();
+            else { voiceInput.cancel(); showStatus("Voice cancelled. Type a request or tap again to retry."); }
+            return;
+        }
+        if(!LocalVoiceInput.available(this)) { showStatus("On-device speech is unavailable. Type your command; no cloud fallback is used."); return; }
         if(checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED) { requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},11); return; }
-        beginListening();
+        if(tts!=null) tts.stop();
+        voiceInput.start();
     }
     @Override public void onRequestPermissionsResult(int requestCode,String[] permissions,int[] results) {
         super.onRequestPermissionsResult(requestCode,permissions,results);
-        if(requestCode==11 && results.length>0 && results[0]==PackageManager.PERMISSION_GRANTED && visible) beginListening();
+        if(requestCode==11 && results.length>0 && results[0]==PackageManager.PERMISSION_GRANTED && visible) showStatus("Microphone permission granted. Tap Push to talk when you want to start a local draft.");
         else if(requestCode==11) showStatus("Microphone not allowed. Typed commands still work.");
         if(requestCode==12 && results.length>0 && results[0]==PackageManager.PERMISSION_GRANTED && visible) enableMonitor();
         else if(requestCode==12) showStatus("Notifications not allowed. Background monitor stays off; the dashboard still works.");
     }
-    private void beginListening() {
-        if(Build.VERSION.SDK_INT<31 || !SpeechRecognizer.isOnDeviceRecognitionAvailable(this)) {
-            showStatus("On-device speech is unavailable. Type a command; no cloud fallback is used."); return;
-        }
-        try {
-            if(recognizer==null) {
-                recognizer=SpeechRecognizer.createOnDeviceSpeechRecognizer(this);
-                recognizer.setRecognitionListener(new RecognitionListener() {
-                    public void onReadyForSpeech(Bundle b) { listening=true; showStatus("Listening locally. Tap again to stop."); refresh(); }
-                    public void onBeginningOfSpeech() {} public void onRmsChanged(float r) {} public void onBufferReceived(byte[] b) {}
-                    public void onEndOfSpeech() { listening=false; showStatus("Processing locally…"); refresh(); }
-                    public void onError(int error) { listening=false; showStatus("Offline speech unavailable or failed (code "+error+"). Type your command. No cloud fallback."); refresh(); }
-                    public void onResults(Bundle results) { listening=false; ArrayList<String> values=results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION); if(values!=null && !values.isEmpty()) { commandInput.setText(values.get(0)); showStatus("Voice draft ready. Review it, then tap Run command."); } refresh(); }
-                    public void onPartialResults(Bundle b) {} public void onEvent(int e,Bundle b) {}
-                });
-            }
-            Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM).putExtra(RecognizerIntent.EXTRA_LANGUAGE,"en-IN").putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE,true);
-            recognizer.startListening(intent); listening=true;
-        } catch(Exception error) { showStatus("On-device speech could not start. Use a typed command."); }
-    }
-    private void speak(String value) { if(muted) { showStatus("Companion voice is muted. "+value); return; } if(offlineVoiceReady && tts!=null) tts.speak(value,TextToSpeech.QUEUE_FLUSH,null,"focuspilot-status"); else showStatus("Offline text-to-speech voice is not ready or installed. "+value); }
+    private void speak(String value) { if(voiceDraft.active()) { showStatus("Finish or cancel voice input before speaking a status."); return; } if(muted) { showStatus("Companion voice is muted. "+value); return; } if(offlineVoiceReady && tts!=null) tts.speak(value,TextToSpeech.QUEUE_FLUSH,null,"focuspilot-status"); else showStatus("Offline text-to-speech voice is not ready or installed. "+value); }
     private void showStatus(String value) { if(status!=null) status.setText(value); }
     private void log(String value) {
         repository.log(value); renderLogs();
@@ -309,6 +345,7 @@ public final class MainActivity extends Activity {
         observe=false; observeSwitch.setChecked(false); repository.delete();
         getSharedPreferences("focuspilot_fewshot_sandbox",MODE_PRIVATE).edit().clear().apply();
         monitoredPackage="com.instagram.android"; budgetMs=300_000; packageInput.setText(monitoredPackage); budgetInput.setText("5");
+        goalInput.setText(""); plannedInput.setText(""); continuousInput.setText("");
         renderLogs(); refresh(); showStatus("Focus data and saved examples deleted. Model remains installed; observation off.");
     }
 }

@@ -2,6 +2,37 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Companion update 0.4
+
+- Integrated Android build: **47 JVM tests pass**, lint has zero errors, light APK
+  installs and launches on the same Nothing phone. App still has no INTERNET permission.
+- Final 0.4 light/bundled APKs passed packaged model/native hash and permission checks;
+  bundled APK installed, and both companion screens launched. Bundled weights match
+  the exact 0.3 pin; fresh import was tested in 0.3 rather than repeated here.
+  [Artifact sizes and hashes](companion-artifacts.json). Workspace is now about 8.2 GiB.
+- Ask Mira now includes the original animated companion, styled action controls and
+  draft-only on-device speech integration. Main shortcuts use the same cancellation
+  and late-callback gate. Seven speech-state tests pass; no physical ASR/TTS claim.
+- Actual typed phone smoke: start-focus proposal required review (15,871 ms first
+  request); negated request was wrongly classified by Qwen but independently rejected
+  (1,736 ms warm). No actions executed. See [phone evidence](companion-integration.json).
+- Private task and explicit planned/continuous limits saved through actual phone UI;
+  saving pauses focus. Test settings were cleared afterward. Missing observation
+  consent blocked the shadow panel, and invalid deferral left points unchanged.
+- Ten new timestamp/feature/feedback tests verify the six-input shadow policy.
+  Missing values remain missing; the trained score changes no actions or points.
+  [Mapping and limits](live-policy-evidence.md) distinguish real summaries from
+  synthetic training. Complete live event/battery/permission testing is pending.
+- Microphone and notification permissions remain ungranted; Usage Access remains
+  default/ungranted. No permission was changed through ADB. The phone remains paused.
+- Isolated GenieX 0.7.0 adapter compiles against the published AAR and Android 36;
+  six preflight tests pass. SM8850 is vendor-validated; this SM7635 is outside its
+  validated set. [Deployment preparation](snapdragon-deployment.md) is host evidence,
+  with no SDK integration, NPU execution or Office Kit pairing claimed.
+
+The prior 0.3 release and 4:53 research pitch remain a preserved baseline. Newer
+source does not turn that video into proof of real speech, NPU or live training.
+
 ## Verified
 
 - Public guide/Terms/track research completed; Finale is October 9–11, with event-written code rules.

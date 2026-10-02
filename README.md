@@ -3,8 +3,9 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-[Research APKs, narrated pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
-are backed up as a prerelease. The bundled APK includes Qwen; the light APK needs
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.4)
+are backed up as a prerelease. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
+remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
 Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
 ARM64 devices.
@@ -32,6 +33,9 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
 | [docs/research-pitch-script.md](docs/research-pitch-script.md) | Editable narration for the rendered research pitch |
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
+| [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
+| [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
+| [docs/snapdragon-deployment.md](docs/snapdragon-deployment.md) | Isolated GenieX readiness and required device proof |
 
 ## Design
 
@@ -43,8 +47,7 @@ flowchart LR
     C --> D
     D --> E[Android intents / approved selectors]
     E --> F[Outcome verification and local log]
-    F --> G[User-labelled sandbox examples]
-    G --> B
+    H[Manually labelled synthetic examples] --> G[Separate few-shot sandbox]
 ```
 
 Quantized **Qwen3.5-0.8B Q4_0 runs inside the Android app** through a pinned llama.cpp
@@ -53,7 +56,12 @@ original request and asks for confirmation. Actual activation summaries are visi
 in the model lab. Laya is a laptop comparison. The [activation experiment](docs/interpretability-experiment.md)
 defines controlled causal tests; observing tensors alone does not establish their meaning.
 Recurring nudges use a hand-set policy; a separate 65-parameter trained sandbox
-shows hidden-unit contributions and interventions. Mira is an original animated
+shows hidden-unit contributions and interventions. New source also evaluates that
+network in a shadow panel against consented usage summaries when all inputs are
+known; its uncalibrated score changes no actions. User-declared task/time targets
+stay private. Push-to-talk can create editable command drafts through an installed
+on-device speech service, followed by manual inference and action review. Physical
+voice and full usage-permission tests are still pending. Mira is an original animated
 goth companion with mute, hide and reduce-motion controls. Snapdragon NPU execution
 and Office Kit remain unverified.
 An ADB connection is a development tool, not Office Kit integration.
