@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "scope": "Gate candidate and prospective protocol locked before new private corpus authoring; no app promotion",
+  "candidate_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "candidate_metadata_sha256": "f727167add342812c1ffa629693c68bf9358441b1dd1d96bd9b99d214da2ec5e",
+  "candidate_tests_sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+  "candidate_parser_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+  "protocol_sha256": "0aa35324791c260717a1bf1ea09b48a782f7f993c1af0b48f0f85961bec3734f",
+  "protocol_markdown_sha256": "c911123a45a2668ba7b3e3f8e924e42babc82f23e39f684f26c5646f73d247ab",
+  "selected_source_sha256": {
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "confirmation_native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "candidate_promoted": false,
+  "fresh_corpus_authoring_authorized_after_commit": true
+}

@@ -1,0 +1,1325 @@
+{
+  "schema": 1,
+  "scope": "Two openly seen gate-only development rounds on previously published JSON100; no fresh inference or promotion",
+  "selected_round": "explicit-domain",
+  "selected": {
+    "scope": "Same now-seen prior100 informed synthetic cases; gate-only development, not a fresh holdout",
+    "candidate_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "candidate_tests_sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+    "frozen_snapshot_sha256": {
+      "ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+      "CandidateGateTest.java": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+      "run_development.py": "22a831eb88ad87deb65155a024289ac2bb56c1be63ba743db3c350f6899704a7",
+      "run_evaluation.py": "60ad1a6d63ff063fc5e6f9946a89b4cac6a53df626ff24d1e67886425cf6ae2a",
+      "CommandGateEval.java": "c67bb261dd819f08b573f5757d7547cb6f9f05c974d8bc01a516ff98c30de3d1",
+      "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "SandboxActionGate.java": "c40dbc8a6f3e6369061f8597d2a17c542350d1b6814cd3cbe286f79cef93625f",
+      "ObservedNudgeGate.java": "2e9c758fb5f7f113676b3993e745564a307d63b1950c39e782b2272c276aa5d4",
+      "ObservationSnapshot.java": "bf62f655de7c828bd8b2fb3da3d62532b345955cdc6ceeb8f2c036638b2f487b",
+      "SelectedAppObservation.java": "21d46841d6c4d6f6a17648c52c3626bb5325fc769203d9eafd88081ecbe765ab",
+      "TrainedPolicy.java": "8bdb4a25108be2a83a1d86ff79ff20a98818ceec915f3b96cedbd0e6c19436d9",
+      "ModelCommandGateTest.java": "eeb39c59d773ba228d982f22cd453f8ecd5a29b03ea9ad673bbaa110d9f19e9b",
+      "NaturalCommandGateTest.java": "776b201acd4b803ed2a5563024a6c1d2051531fbd1fa4070f84633dab3fead27",
+      "ConversationalCommandGateTest.java": "f279baca16066c49fdb0a607677b70de35eeb867032de60c2da406bfecfdc386",
+      "CommandNumberWordsTest.java": "90bc05edc1473632e92f11d52216bc4a67b329e11caf8ce9b523d8ee67e4e358",
+      "ObservedNudgeGateTest.java": "354f178aaed5242892346983dd385d3d91675976c580a40f126ea9a810b37f0a",
+      "SandboxActionGateTest.java": "7ed40c269166dd988a940e280bccd1b641999079065d2ed87592dcb0c4d8c9f3"
+    },
+    "freeze_sha256": "ae597282774e27753ed91d121226704c10ec26489b4ab963a28e8630c06f8f85",
+    "old_native_capture_sha256": "d4c8ecbe673fd10018acd3210f9ef5e033742db9867ad018b167ea7963808d54",
+    "old_native_capture_source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+    "corpus_sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "tests": {
+      "count": 58,
+      "exit_code": 0,
+      "suite_names": [
+        "ModelCommandGateTest",
+        "NaturalCommandGateTest",
+        "ConversationalCommandGateTest",
+        "CommandNumberWordsTest",
+        "ObservedNudgeGateTest",
+        "SandboxActionGateTest",
+        "CandidateGateTest"
+      ],
+      "terminal_record_sha256": "be76e68113662a708c1470c2f18f61e787d409a3f92bd72d31d97ab57744d1dd"
+    },
+    "gates": {
+      "baseline": {
+        "generated": {
+          "rows": 100,
+          "strict_correct": 74,
+          "supported_rows": 50,
+          "supported_correct": 24,
+          "supported_false_abstentions": 26,
+          "supported_wrong_accepted": 0,
+          "supported_wrong_slots": 0,
+          "must_abstain_rows": 50,
+          "correct_abstentions": 50,
+          "unsupported_false_accepts": 0,
+          "accepted": 24,
+          "wrong_accepted": 0,
+          "coverage": 0.24,
+          "accepted_precision": 1.0,
+          "actions_executed": 0,
+          "per_family": {
+            "alarm_colon_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_latest": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_midnight_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_noon_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_morning": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_zero": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_go_to": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_launch_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_show_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_done_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_overview": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_status": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_nudge_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_remaining_work": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_reminder_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_warned_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_warning_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_activate_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_begin_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_lower": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_upper": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_requested_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_resume_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_resume_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_break_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_break_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_cancel_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_countdown_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_current_work": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_finish_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_halt_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_ongoing_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "settings_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "settings_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_count_down_words": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_maximum_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_minimum_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_minutes": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_prefix_duration": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_request_countdown": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_minutes": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_start_words": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            }
+          },
+          "host_java_process_ms": 77.87833292968571,
+          "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+          "raw_result_sha256": "49585d3e8845ed120c06445f1a628ed8923fffb312c33a32df5999b774b7bcad"
+        },
+        "oracle": {
+          "rows": 100,
+          "strict_correct": 81,
+          "supported_rows": 50,
+          "supported_correct": 31,
+          "supported_false_abstentions": 19,
+          "supported_wrong_accepted": 0,
+          "supported_wrong_slots": 0,
+          "must_abstain_rows": 50,
+          "correct_abstentions": 50,
+          "unsupported_false_accepts": 0,
+          "accepted": 31,
+          "wrong_accepted": 0,
+          "coverage": 0.31,
+          "accepted_precision": 1.0,
+          "actions_executed": 0,
+          "per_family": {
+            "alarm_colon_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_latest": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_midnight_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_noon_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_morning": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_zero": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_go_to": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_launch_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_show_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_done_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_overview": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_status": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_nudge_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_remaining_work": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_reminder_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_warned_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_warning_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_activate_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_begin_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_lower": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_upper": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_requested_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_resume_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_resume_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_break_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_break_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_cancel_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_countdown_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_current_work": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_finish_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_halt_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_ongoing_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "settings_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "settings_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_count_down_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_maximum_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_minimum_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_prefix_duration": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_request_countdown": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_start_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            }
+          },
+          "host_java_process_ms": 72.94149999506772,
+          "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+          "raw_result_sha256": "5d078afe36adc44d6649386e1baf18b4def62ef8c910123db1b6ae1fc1d8fccf"
+        }
+      },
+      "candidate": {
+        "generated": {
+          "rows": 100,
+          "strict_correct": 85,
+          "supported_rows": 50,
+          "supported_correct": 35,
+          "supported_false_abstentions": 15,
+          "supported_wrong_accepted": 0,
+          "supported_wrong_slots": 0,
+          "must_abstain_rows": 50,
+          "correct_abstentions": 50,
+          "unsupported_false_accepts": 0,
+          "accepted": 35,
+          "wrong_accepted": 0,
+          "coverage": 0.35,
+          "accepted_precision": 1.0,
+          "actions_executed": 0,
+          "per_family": {
+            "alarm_colon_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_latest": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_midnight_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_noon_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_zero": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_go_to": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_launch_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_done_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_overview": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_focus_status": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_nudge_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_remaining_work": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "explain_reminder_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_warned_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_warning_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "focus_activate_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_begin_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_lower": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_upper": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_requested_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_break_personal": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_break_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_cancel_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_countdown_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_current_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_finish_focus": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "pause_halt_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_ongoing_study": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "settings_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "settings_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_count_down_words": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_maximum_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_minimum_seconds": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_minutes": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_prefix_duration": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_request_countdown": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_minutes": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_start_words": {
+              "rows": 2,
+              "correct": 1,
+              "wrong_accepted": 0
+            }
+          },
+          "host_java_process_ms": 78.13504105433822,
+          "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+          "raw_result_sha256": "aa5da1f68d275c16f69d7920cd00fd8ebb8ac22fceb4685ecb4227bc5617531b"
+        },
+        "oracle": {
+          "rows": 100,
+          "strict_correct": 100,
+          "supported_rows": 50,
+          "supported_correct": 50,
+          "supported_false_abstentions": 0,
+          "supported_wrong_accepted": 0,
+          "supported_wrong_slots": 0,
+          "must_abstain_rows": 50,
+          "correct_abstentions": 50,
+          "unsupported_false_accepts": 0,
+          "accepted": 50,
+          "wrong_accepted": 0,
+          "coverage": 0.5,
+          "accepted_precision": 1.0,
+          "actions_executed": 0,
+          "per_family": {
+            "alarm_colon_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_latest": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_colon_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_midnight_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_noon_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_evening": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_morning": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "alarm_spoken_zero": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_go_to": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "calculator_launch_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "clock_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_done_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_focus_overview": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_focus_status": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_nudge_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_remaining_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_reminder_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_warned_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "explain_warning_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_activate_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_begin_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_lower": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_digit_upper": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_requested_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_resume_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "focus_words_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_break_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_break_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_cancel_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_countdown_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_current_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_finish_focus": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_halt_work": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "pause_ongoing_study": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "settings_bring_up": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "settings_show_personal": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_count_down_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_maximum_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_minimum_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_numeric_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_prefix_duration": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_request_countdown": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_minutes": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_spoken_seconds": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            },
+            "timer_start_words": {
+              "rows": 2,
+              "correct": 2,
+              "wrong_accepted": 0
+            }
+          },
+          "host_java_process_ms": 78.55033304076642,
+          "gate_timing_limit": "Includes JVM launch/100 validations/output; excludes compilation. Not isolated gate, phone, or inference latency.",
+          "raw_result_sha256": "600e5bf49a2cf826dfb5ff6ecb951bb27031a6f5534d397f708224ab035bc352"
+        }
+      }
+    },
+    "paired": {
+      "generated": {
+        "supported_gains": 11,
+        "supported_losses": 0,
+        "gains_per_family": {
+          "alarm_spoken_morning": 1,
+          "clock_show_personal": 1,
+          "explain_nudge_personal": 1,
+          "explain_reminder_personal": 1,
+          "explain_warned_focus": 1,
+          "focus_requested_seconds": 1,
+          "focus_resume_personal": 1,
+          "focus_words_seconds": 1,
+          "pause_countdown_focus": 1,
+          "pause_current_work": 1,
+          "timer_numeric_seconds": 1
+        },
+        "losses_per_family": {}
+      },
+      "oracle": {
+        "supported_gains": 19,
+        "supported_losses": 0,
+        "gains_per_family": {
+          "alarm_spoken_morning": 1,
+          "clock_show_personal": 1,
+          "explain_done_study": 1,
+          "explain_focus_overview": 1,
+          "explain_focus_status": 1,
+          "explain_nudge_personal": 1,
+          "explain_remaining_work": 1,
+          "explain_reminder_personal": 1,
+          "explain_warned_focus": 1,
+          "explain_warning_personal": 1,
+          "focus_requested_seconds": 1,
+          "focus_resume_personal": 1,
+          "focus_words_seconds": 1,
+          "pause_break_personal": 1,
+          "pause_break_study": 1,
+          "pause_countdown_focus": 1,
+          "pause_current_work": 1,
+          "pause_ongoing_study": 1,
+          "timer_numeric_seconds": 1
+        },
+        "losses_per_family": {}
+      }
+    },
+    "per_intent": {
+      "generated": {
+        "start_focus": {
+          "rows": 10,
+          "baseline": 7,
+          "candidate": 10
+        },
+        "pause_focus": {
+          "rows": 8,
+          "baseline": 2,
+          "candidate": 4
+        },
+        "alarm": {
+          "rows": 8,
+          "baseline": 7,
+          "candidate": 8
+        },
+        "timer": {
+          "rows": 10,
+          "baseline": 3,
+          "candidate": 4
+        },
+        "open_app": {
+          "rows": 6,
+          "baseline": 5,
+          "candidate": 6
+        },
+        "explain": {
+          "rows": 8,
+          "baseline": 0,
+          "candidate": 3
+        },
+        "unknown": {
+          "rows": 50,
+          "baseline": 50,
+          "candidate": 50
+        }
+      },
+      "oracle": {
+        "start_focus": {
+          "rows": 10,
+          "baseline": 7,
+          "candidate": 10
+        },
+        "pause_focus": {
+          "rows": 8,
+          "baseline": 3,
+          "candidate": 8
+        },
+        "alarm": {
+          "rows": 8,
+          "baseline": 7,
+          "candidate": 8
+        },
+        "timer": {
+          "rows": 10,
+          "baseline": 9,
+          "candidate": 10
+        },
+        "open_app": {
+          "rows": 6,
+          "baseline": 5,
+          "candidate": 6
+        },
+        "explain": {
+          "rows": 8,
+          "baseline": 0,
+          "candidate": 8
+        },
+        "unknown": {
+          "rows": 50,
+          "baseline": 50,
+          "candidate": 50
+        }
+      }
+    },
+    "new_inference_calls": 0,
+    "training_performed": false,
+    "actions_executed": 0,
+    "candidate_promoted": false,
+    "directory_bytes": 1059163
+  },
+  "attempts": [
+    {
+      "round": "initial",
+      "candidate_source_sha256": "cac57aaefdc39ab4381a79fd243b42503fe681458626da28976a7de65069628d",
+      "candidate_tests_sha256": "4ed1d90c0f6e4bf46aebbfc0d928db917e783ec0607f8a1878ddb90908bb6ea8",
+      "private_results_sha256": "23b04cf7d8670a790a3cf7a30418bc0f31943b80b25a74b434591c86d7f3928e",
+      "tests": {
+        "count": 58,
+        "exit_code": 0,
+        "suite_names": [
+          "ModelCommandGateTest",
+          "NaturalCommandGateTest",
+          "ConversationalCommandGateTest",
+          "CommandNumberWordsTest",
+          "ObservedNudgeGateTest",
+          "SandboxActionGateTest",
+          "CandidateGateTest"
+        ],
+        "terminal_record_sha256": "aa34c703bc45c3f8eb615d309de169d84f195b8f02dc8850357ad85705cfdef9"
+      },
+      "generated_complete_supported": 35,
+      "oracle_complete_supported": 50
+    },
+    {
+      "round": "explicit-domain",
+      "candidate_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+      "candidate_tests_sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+      "private_results_sha256": "969a47429170d3ce77f4fb95434e3de49ac2ff0de3fda97825e45f5155238958",
+      "tests": {
+        "count": 58,
+        "exit_code": 0,
+        "suite_names": [
+          "ModelCommandGateTest",
+          "NaturalCommandGateTest",
+          "ConversationalCommandGateTest",
+          "CommandNumberWordsTest",
+          "ObservedNudgeGateTest",
+          "SandboxActionGateTest",
+          "CandidateGateTest"
+        ],
+        "terminal_record_sha256": "be76e68113662a708c1470c2f18f61e787d409a3f92bd72d31d97ab57744d1dd"
+      },
+      "generated_complete_supported": 35,
+      "oracle_complete_supported": 50
+    }
+  ],
+  "initial_repair_disclosure": "Final round makes the two new passive/causal reason patterns require an explicit focus domain; source and tests changed together. Initial capture/source/logs retained. No best-of-repeat selection or new model calls.",
+  "unchanged_refusal_and_numeric_blocks_sha256": {
+    "refusal_and_normalization": "943545fe7e55b22d86678e4fac3400b1da55ee470af6830501297b2f5c169142",
+    "numeric_duration": "8ffaea5b75477c1a3743286b830ab455992490bae9929a166a4728265719ab08",
+    "numeric_clock": "8ad5a609e1c84c391111b5926c19aa746dee897e5264a3d9fa0b4aa3e1296829"
+  },
+  "new_inference_calls": 0,
+  "actions_executed": 0,
+  "candidate_promoted": false
+}

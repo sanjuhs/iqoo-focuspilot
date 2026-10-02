@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "scope": "Frozen gate candidate selected for independently authored fresh confirmation only; not deployed",
+  "candidate_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "candidate_tests_sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+  "development_runner_sha256": "22a831eb88ad87deb65155a024289ac2bb56c1be63ba743db3c350f6899704a7",
+  "development_results_sha256": "c3d83f4f2ef46466bab95c58fb5bafc0b8ab2aa76b345860c801a7fd897fd914",
+  "selected_round": "explicit-domain",
+  "selected_round_freeze_sha256": "ae597282774e27753ed91d121226704c10ec26489b4ab963a28e8630c06f8f85",
+  "original_source_sha256": {
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d"
+  },
+  "unchanged_refusal_and_numeric_blocks_sha256": {
+    "refusal_and_normalization": "943545fe7e55b22d86678e4fac3400b1da55ee470af6830501297b2f5c169142",
+    "numeric_duration": "8ffaea5b75477c1a3743286b830ab455992490bae9929a166a4728265719ab08",
+    "numeric_clock": "8ad5a609e1c84c391111b5926c19aa746dee897e5264a3d9fa0b4aa3e1296829"
+  },
+  "seen_cases_sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+  "seen_cases_path": "prototype/command-json-confirm/build/cases.jsonl",
+  "reused_original_prompt_capture_sha256": "d4c8ecbe673fd10018acd3210f9ef5e033742db9867ad018b167ea7963808d54",
+  "reused_capture_source_commit": "1f36dfdd635d3b94c26a307d968673587eaf598c",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "prompt_changed": false,
+  "number_parser_changed": false,
+  "new_inference_calls": 0,
+  "candidate_promoted": false,
+  "selection": "GO to fresh frozen gate-only confirmation; original Qwen prompt and numbers unchanged",
+  "seen_requests_path": "prototype/command-gate-v14-dev/build/development-requests.tsv",
+  "seen_requests_sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+  "raw_requests_ignored": true
+}
