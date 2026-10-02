@@ -3,16 +3,23 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current source/build: v0.7**, `6bd4841b170be0445470eff9977133bc2accc8f6`.
-Adds reviewed timed focus, a 25-minute shortcut, pause/resume and bounded focus
-explanations. **105 JVM tests pass**; lint zero errors/59 warnings. Both APKs
-passed artifact inspection. Actual v0.7 countdown testing awaits an unlocked,
-foreground phone; [v0.7 APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). [Timed focus contract](docs/timed-focus.md).
+**Current research build: v0.8**, source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`.
+Adds whole-request validation and bounded English-number duration/alarm slots,
+with explicit review. **119 JVM tests pass**; lint zero errors/59 warnings. Both
+APKs passed signature/model/native/license/permission inspection; light installed
+on Nothing with matching APK/private-model hashes. Physical command/countdown
+verification awaits an unlocked foreground app. [Contract and measured limits](docs/natural-commands.md).
+
+On a newly frozen 100-request test, unchanged Qwen + the gate correctly proposed
+**12/40 supported commands** versus 9/40, with **0/60 unsupported false accepts**
+versus five. Nine gains accompany six regressions; 28 supported requests abstain.
+Raw model intent correctness is 29/100. These host results do not establish
+voice, autonomous reliability or live phone outcomes.
 
 **New System 1 research:** a separate classifier trained on actual frozen Qwen
 activations scored 76/90 raw intents versus 46/90 for generation on the same
 synthetic held-out set. Its validation-selected abstention uses brittle numerical
-saturation, and the current action gate yields 15/65 correct supported commands
+saturation, and the frozen v0.7 action gate yields 15/65 correct supported commands
 versus 17/65 for generation. It remains research-only; APK/model weights are
 unchanged. [Results and limits](docs/intent-head.md).
 
@@ -28,7 +35,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.8)
 are published; previous builds remain preserved. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
@@ -65,6 +72,7 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
 | [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
+| [docs/natural-commands.md](docs/natural-commands.md) | Whole-request forms, English slots and frozen comparison |
 | [docs/timed-focus.md](docs/timed-focus.md) | Countdown semantics, regression fixes and pending phone checks |
 | [docs/command-readiness.md](docs/command-readiness.md) | Setup screen and confirmed typed phone actions |
 | [docs/command-reliability.md](docs/command-reliability.md) | Frozen host command results and accepted failures |

@@ -5,7 +5,26 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
-## Current checkpoint — v0.7
+## Current checkpoint — v0.8
+
+Source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3` adds whole-request validation
+and English-number slots while keeping Qwen3.5/prompt/native unchanged. 119 JVM
+cases pass; lint zero errors/59 warnings. Both APKs passed packaging inspection,
+and light installed on Nothing with APK/private-model identity verified. Physical
+spoken-number/countdown proof awaits an unlocked own-app foreground state.
+
+The independently frozen 100-request/50-family result improves generated+gate
+supported correctness 9→12/40 and wrong accepted proposals 5→0, but has 28 false
+abstentions, nine gains and six regressions. Raw semantic Qwen correctness is
+29/100. [Contract/results](docs/natural-commands.md). Keep these failures frozen;
+future usability repairs require a new evaluation rather than rescoring as unseen.
+
+Next delivery gates: actual reviewed short countdown, local speech, user-permitted
+monitor/background/Stop behavior, disconnected inference and actual iQOO/Office Kit.
+These remain physical evidence requirements, not satisfied by a new APK.
+Measured logical workspace file size is **11.51 GiB**, within the 15 GB ceiling.
+
+## Previous checkpoint — v0.7
 
 Source `6bd4841b170be0445470eff9977133bc2accc8f6` implements reviewed bounded timed
 focus and focus-domain explanations. 105 JVM tests pass; lint zero errors and

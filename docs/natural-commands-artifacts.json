@@ -1,0 +1,52 @@
+{
+  "version": "0.8-natural-commands-research",
+  "research_only": true,
+  "source_commit": "a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3",
+  "backend": "CPU/KleidiAI I8MM; optimized ARM64 hardware required",
+  "tests": {
+    "android_jvm": 119,
+    "lint_errors": 0,
+    "lint_warnings": 59,
+    "command_evaluation": 4,
+    "audit": 10
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "gate_sha256": "54d1f3d71ff76c8b271c76a2fe1475e185f1f07370f4664d121a1e87a78cbc71",
+  "number_words_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+  "fresh_bundle_import_tested": false,
+  "phone_test_status": "light APK installed and APK/private-model hashes verified; physical command/countdown test awaits unlocked own-app foreground",
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v08-light.apk",
+      "bytes": 5447652,
+      "sha256": "67a97acbbbeb47ec0c14aac6c3f926d2068c7016612d325ecb8607e8e517c5a3",
+      "bundled_model": false,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    },
+    {
+      "name": "focuspilot-research-v08-bundled.apk",
+      "bytes": 568483828,
+      "sha256": "79c592f13f09120f3804fc7adb980f8e084b8df75f63f9ac905324f5f8260a26",
+      "bundled_model": true,
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "internet_permission": false
+    }
+  ],
+  "installation": {
+    "research_only": true,
+    "source_commit": "a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3",
+    "installed_apk_sha256": "67a97acbbbeb47ec0c14aac6c3f926d2068c7016612d325ecb8607e8e517c5a3",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "installed_light_apk": true,
+    "fresh_bundle_import_tested": false,
+    "before": {
+      "activeCheckpoint": "false",
+      "points": "100"
+    },
+    "permissions_changed": false,
+    "phone_commands_executed": 0,
+    "ui_tested": false,
+    "npu_verified": false
+  }
+}

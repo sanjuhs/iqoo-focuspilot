@@ -9,7 +9,7 @@ The candidate is **not promoted**.
 The hypothesis was that one model prefill followed by a small decision head could
 understand bounded commands without generating JSON token by token. The result
 supports a narrow classification gain on authored English templates, but does not
-improve usable actions through the current Android validator.
+improve usable actions through the frozen v0.7 Android validator.
 
 ## Frozen experiment and actual training
 

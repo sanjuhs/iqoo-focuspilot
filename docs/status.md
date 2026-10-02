@@ -2,6 +2,32 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Natural-command update 0.8
+
+- App source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3` adds full-request
+  validation, bounded English integer/duration/clock slots and friendly examples.
+  Qwen3.5-0.8B Q4_0, its prompt and optimized CPU library are unchanged; the
+  separate trained representation classifier remains unpromoted.
+- **119 JVM tests pass**, zero failures/errors/skips; lint zero errors/59 warnings.
+  Four independent evaluation tests and ten artifact-audit tests pass. Both signed
+  light/bundled APKs passed packaged native/model/license/permission inspection.
+- Frozen-before-edit independent 100 requests/50 families: raw semantic model
+  29/100 (29/40 supported intents; all 60 unsupported requests proposed non-unknown).
+  Generated model + v0.7→v0.8 strict correctness **64→72/100**, supported **9→12/40**,
+  wrong accepts **5→0**. New gate has 28/40 false abstentions and nine gains/six
+  regressions; oracle support 14→19/40 still leaves 21 false abstentions. No actions
+  executed, prompt/data/source repairs or autonomous reliability claim.
+- Light APK installed on Nothing; actual installed APK and retained private-model
+  hashes verified. Before install, session checkpoint paused and points 100;
+  observation absent/default-off. No OS permissions changed. Own-app foreground
+  remained unavailable on the sleeping phone; physical v0.8 outcomes are pending.
+- [Contract and limits](natural-commands.md),
+  [artifact identities](natural-commands-artifacts.json),
+  [frozen evaluation](../prototype/command-v08-eval/README.md). Historical phone,
+  timer and research results below keep their original binary/source scopes.
+- Latest measured logical workspace size is **11.51 GiB**, within the authorized
+  15 GB ceiling. No model download or paid API use in this update.
+
 ## Frozen-Qwen decision-head research
 
 - Actual read-only CPU extraction captured 373 full 1,024-coordinate Qwen3.5

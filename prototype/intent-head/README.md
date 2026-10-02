@@ -21,7 +21,7 @@ Validation alone selects probability/margin thresholds from a predeclared grid, 
 | Supported intents correctly accepted |46/66|61/66|42/66|
 | Intent proposal coverage |90/90|75/90|43/90|
 
-Current v0.7 Java gate SHA `30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d` was compiled and called independently on original utterances and slots:
+Frozen v0.7 Java gate SHA `30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d` was compiled and called independently on original utterances and slots:
 
 | Strict gated result | Autoregressive base | Selected head |
 |---|---:|---:|
@@ -45,7 +45,7 @@ A **head-only** intervention set the strongest top-versus-runner coordinate to i
 
 ## Reproduce
 
-Use the existing local NumPy runtime and pinned model, not cloud training. Inspect `protocol.json`/`freeze-manifest.json` first. Reproducing this already-seen set does not create a new heldout result. Preserve original ignored captures/checkpoint before a fresh reproduction, and use a distinct training output directory.
+Use the existing local NumPy runtime and pinned model, not cloud training. Inspect `protocol.json`/`freeze-manifest.json` first. This historical experiment requires the v0.7 gate; use source commit `6a6cae582d130d28f4456f4483e3cd09b56dbeb1` in a separate checkout with the pinned existing artifacts. The current v0.8 gate is deliberately refused by the historical gate-hash check. Reproducing this already-seen set does not create a new heldout result. Preserve original ignored captures/checkpoint before a fresh reproduction, and use a distinct training output directory.
 
 ```sh
 python3 prototype/intent-head/generate_data.py

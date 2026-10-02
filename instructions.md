@@ -4,7 +4,22 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
-## Current research baseline — v0.7
+## Current research baseline — v0.8
+
+Use [natural commands](docs/natural-commands.md): one whole supported request,
+bounded English/digit slots and matching model intent, followed by explicit review.
+Spoken alarm times require AM/PM; colon times may use 24-hour notation. Malformed
+slots and extra prose must not disappear. The dashboard's quick parser is unchanged.
+Source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3` has 119 passing JVM tests,
+zero lint errors/59 warnings. Both APKs passed packaging inspection; light installed
+with verified APK/private-model hashes. No physical v0.8 command outcome yet.
+
+Frozen generated-model results are 12/40 correct supported commands versus 9/40
+for v0.7; wrong accepts fell five to zero on 60 unsupported cases. Nine gains and
+six regressions are retained. 28 supported requests still abstain. This is an
+independent synthetic host result, not ASR, live actions or autonomous reliability.
+
+## Previous research baseline — v0.7
 
 Timed focus accepts one validated digits duration of 1 second–120 minutes after
 review, or use the reviewed 25-minute shortcut. Pause retains the remainder;
