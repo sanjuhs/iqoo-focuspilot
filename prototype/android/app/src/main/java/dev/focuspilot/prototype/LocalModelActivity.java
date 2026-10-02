@@ -41,6 +41,7 @@ import java.util.concurrent.Executors;
 
 /** Actual app-process CPU inference and read-only activation observations. */
 public final class LocalModelActivity extends Activity {
+    private static final String SAVED_COMMAND_DRAFT="mira.editableCommandDraft", SAVED_DRAFT_DISCARDED="mira.discardedInvalidEdit";
     private static final String SHA256="57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf";
     private static final long MODEL_BYTES=563036064L;
     private static final int VOICE_PERMISSION=731;
@@ -80,6 +81,16 @@ public final class LocalModelActivity extends Activity {
     }
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
+        String initialDraft=null;
+        String draftNotice=null;
+        try {
+            initialDraft=CommandDraftHandoff.initialDraft(saved==null?getIntent().getStringExtra(CommandDraftHandoff.EXTRA_DRAFT):null,
+                saved==null?null:saved.getString(SAVED_COMMAND_DRAFT),saved!=null);
+            if(saved!=null)draftNotice=saved.getBoolean(SAVED_DRAFT_DISCARDED,false)?"An invalid or overlong edit was discarded whole. Enter a fresh draft; nothing executed.":"Your editable draft was restored. Load the model and tap Understand command locally when ready; no proposal or action review was restored.";
+            else if(initialDraft!=null)draftNotice="Draft received for editing only. Load the model, review these words, then tap Understand command locally. Nothing recorded, inferred or executed automatically.";
+        } catch(RuntimeException invalid) {
+            initialDraft="";draftNotice="The incoming draft was invalid or over 500 characters and was not imported. Type a fresh request; nothing executed.";
+        }
         ScrollView scroll=new ScrollView(this); scroll.setBackgroundColor(Color.rgb(26,23,36)); root=new LinearLayout(this); root.setOrientation(LinearLayout.VERTICAL); root.setPadding(dp(24),dp(18),dp(24),dp(24)); scroll.addView(root);
         scroll.setOnApplyWindowInsetsListener((view,insets)-> {
             if(Build.VERSION.SDK_INT>=30) { android.graphics.Insets bars=insets.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.displayCutout()); view.setPadding(bars.left,bars.top,bars.right,bars.bottom); }
@@ -93,7 +104,7 @@ public final class LocalModelActivity extends Activity {
         label("PRE-EVENT RESEARCH · Qwen3.5-0.8B Q4_0 · llama.cpp CPU. Outputs are proposals. No NPU or causal interpretation claim.",14);
         state=label("Model not loaded. A bundled APK can import its pinned model once into private storage. A light APK requires a prepared private model. No downloads or provider keys.",16);
         load=button("Load verified local model",v->load());
-        command=new EditText(this); command.setText("Please start a focus session"); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
+        command=new EditText(this); command.setText(initialDraft==null?"Please start a focus session":initialDraft); command.setSaveEnabled(false); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
         command.setPadding(dp(12),dp(10),dp(12),dp(10));
         android.graphics.drawable.GradientDrawable draftShape=new android.graphics.drawable.GradientDrawable();
         draftShape.setColor(Color.rgb(36,32,49));draftShape.setCornerRadius(dp(12));command.setBackground(draftShape);
@@ -108,6 +119,7 @@ public final class LocalModelActivity extends Activity {
         infer=button("Understand command locally",v->infer()); infer.setEnabled(false);
         button("Cancel inference",v->{cancelRequest();if(voice!=null)voice.cancel();stopReadback();});
         result=label("No command has been evaluated.",16);
+        if(draftNotice!=null)result.setText(draftNotice);
         review=button("Review proposed phone action",v->review()); review.setEnabled(false);
         readback=button("Read confirmed focus status",v->readConfirmedFocus());readback.setEnabled(false);
         activationView=label("Activation capture is opt-in and observational. No tensors have been captured. It can add latency.",13);
@@ -331,6 +343,12 @@ public final class LocalModelActivity extends Activity {
     }
     private static String hex(byte[] digest) {StringBuilder out=new StringBuilder();for(byte value:digest)out.append(String.format(Locale.US,"%02x",value&255));return out.toString();}
     private void cancelRequest() { requestEpoch++; lastIntent=null; lastOriginal=null; if(review!=null) review.setEnabled(false); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } }
+    @Override protected void onSaveInstanceState(Bundle out) {
+        String edited=command==null?"":command.getText().toString();
+        boolean valid=CommandDraftHandoff.restorableEdit(edited);
+        out.putString(SAVED_COMMAND_DRAFT,valid?edited:"");out.putBoolean(SAVED_DRAFT_DISCARDED,!valid);
+        super.onSaveInstanceState(out);
+    }
     @Override protected void onResume() { super.onResume(); foreground=true;voiceDraft.resume();updateControls(); }
     @Override protected void onStop() { foreground=false;voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();updateControls();super.onStop(); }
     @Override protected void onDestroy() { destroyed=true;if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }

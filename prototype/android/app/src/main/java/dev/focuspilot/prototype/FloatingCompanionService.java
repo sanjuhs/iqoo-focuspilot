@@ -37,7 +37,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.Locale;
 
-/** User-started visual companion only. No observation, model, voice or automatic restart. */
+/** User-started visual companion. Ask Mira opens the foreground draft screen only. */
 public final class FloatingCompanionService extends Service {
     public static final String CHANNEL="floating_mira", SHOW="dev.focuspilot.prototype.SHOW_MIRA",
         HIDE="dev.focuspilot.prototype.HIDE_MIRA", PAUSE="dev.focuspilot.prototype.PAUSE_FROM_MIRA";
@@ -99,7 +99,7 @@ public final class FloatingCompanionService extends Service {
     @Override public void onCreate(){
         super.onCreate();repository=FocusRepository.get(this);windows=getSystemService(WindowManager.class);
         NotificationChannel channel=new NotificationChannel(CHANNEL,"Floating Mira controls",NotificationManager.IMPORTANCE_LOW);
-        channel.setDescription("User-started visual companion with Open, Pause focus and Hide controls");
+        channel.setDescription("User-started visual companion with Ask Mira, Pause focus and Hide controls");
         getSystemService(NotificationManager.class).createNotificationChannel(channel);
     }
     @Override public int onStartCommand(Intent intent,int flags,int startId){
@@ -155,7 +155,7 @@ public final class FloatingCompanionService extends Service {
         mira.setOnClickListener(v->{});
         focusStatus=new TextView(this);focusStatus.setTextColor(Color.rgb(247,241,250));focusStatus.setTextSize(12);focusStatus.setGravity(Gravity.CENTER);bubble.addView(focusStatus,new LinearLayout.LayoutParams(-1,dp(24)));
         LinearLayout row=new LinearLayout(this);row.setOrientation(LinearLayout.HORIZONTAL);bubble.addView(row,new LinearLayout.LayoutParams(-1,dp(52)));
-        addButton(row,"Open",v->openApp(),true);addButton(row,"Hide",v->end("Mira hidden · focus and usage settings unchanged"),true);
+        addButton(row,"Ask Mira",v->openAssistant(),true);addButton(row,"Hide",v->end("Mira hidden · focus and usage settings unchanged"),true);
         pauseButton=addButton(bubble,"Pause focus",v->{if(eligibleTap())pauseFocus();},false);
         layout=new WindowManager.LayoutParams(dp(176),dp(250),WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,PixelFormat.TRANSLUCENT);
@@ -189,17 +189,22 @@ public final class FloatingCompanionService extends Service {
         repository.pause("Focus paused from floating Mira");stopService(new Intent(this,FocusMonitorService.class));updateOwnStatus();
         getSystemService(NotificationManager.class).notify(ID,notification());
     }
-    private void openApp(){
+    private void openAssistant(){
         if(!eligibleTap())return;
-        try{startActivity(new Intent(this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP));}
-        catch(RuntimeException error){lastStatus="Open refused by Android · use Mira’s notification or app launcher";}
+        // Explicit tap only: the activity still requires separate Speak/Load/Understand taps.
+        // Reuse an existing assistant instance; a repeated tap must not replace its draft.
+        try{startActivity(assistantIntent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));}
+        catch(RuntimeException error){lastStatus="Ask Mira launch failed · use Mira’s notification or app launcher";}
+    }
+    private Intent assistantIntent(){
+        return new Intent(this,LocalModelActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
     }
     private Notification notification(){
-        PendingIntent open=PendingIntent.getActivity(this,42,new Intent(this,MainActivity.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent open=PendingIntent.getActivity(this,42,assistantIntent(),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent hide=PendingIntent.getService(this,43,new Intent(this,FloatingCompanionService.class).setAction(HIDE),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pause=PendingIntent.getService(this,44,new Intent(this,FloatingCompanionService.class).setAction(PAUSE),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         return new Notification.Builder(this,CHANNEL).setSmallIcon(R.drawable.ic_notification).setContentTitle("Mira is floating")
-            .setContentText("Open FocusPilot, pause focus, or hide Mira. No microphone or screen reading.")
+            .setContentText("Tap to Ask Mira. Speak and model understanding start only in the app when you choose.")
             .setContentIntent(open).addAction(new Notification.Action.Builder(null,"Pause focus",pause).build()).addAction(new Notification.Action.Builder(null,"Hide Mira",hide).build())
             .setOngoing(true).setOnlyAlertOnce(true).setCategory(Notification.CATEGORY_SERVICE).build();
     }

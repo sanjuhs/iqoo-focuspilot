@@ -56,13 +56,14 @@ def generateLocalModelAssets = tasks.register('generateLocalModelAssets') {
 }
 android {
     namespace 'dev.focuspilot.prototype'
+    buildFeatures { buildConfig true }
     compileSdk 36
     defaultConfig {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 14
-        versionName '0.14-command-gate-research'
+        versionCode 15
+        versionName '0.15-companion-entry-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
             : diagnosticRunner == 'commandGate'

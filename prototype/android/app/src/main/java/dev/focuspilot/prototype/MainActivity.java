@@ -173,7 +173,7 @@ public final class MainActivity extends Activity {
         preferenceToggle(preferences,"Mute companion voice",muted,value -> { muted=value; prefs.edit().putBoolean("mute",value).apply(); if(value) stopReadback(); });
         preferenceToggle(preferences,"Hide companion artwork",hideCompanion,value -> { hideCompanion=value; prefs.edit().putBoolean("hideCompanion",value).apply(); companion.setVisibility(value ? View.GONE : View.VISIBLE); if(value)stopService(new Intent(this,FloatingCompanionService.class)); refreshFloating(); });
         LinearLayout floating=disclosure(friend,"Mira while you use your phone");
-        floating.addView(text("A small movable friend with Open, Pause focus and Hide. Show is separate from permission. She stops on screen-off or lock; Android may hide or stop her. No microphone or screen reading.",13,MUTED,false));
+        floating.addView(text("A small movable friend with Ask Mira, Pause focus and Hide. Ask Mira opens a foreground editable command screen; recording, inference and actions still require explicit taps. Show is separate from permission. She stops on screen-off or lock; Android may hide or stop her. No microphone or screen reading starts with Show.",13,MUTED,false));
         floatingStatus=text("Floating Mira is off",13,MUTED,false);floating.addView(floatingStatus);
         button("Review floating permission",floating,v->reviewFloatingPermission(),false);
         button("Show floating Mira",floating,v->reviewFloatingShow(),true);
@@ -254,6 +254,7 @@ public final class MainActivity extends Activity {
         commands.addView(text("Quick shortcuts: start focus, pause, or set an alarm. These use a predictable parser. Ask Mira opens the local model for more natural requests, with a review before actions.",13,MUTED,false));
         commandInput=input("Try: alarm 7:30 pm", "",commands); commandInput.setInputType(1);
         button("Run command",commands,v -> execute(commandInput.getText().toString()),true);
+        button("Ask Mira with this draft",commands,v -> handoffCommandDraft(),false);
         speechState=text("Voice: checking on-device availability",13,MUTED,false); commands.addView(speechState);
         button("Push to talk / stop",commands,v -> microphone(),false);
         button("Speak focus status offline",commands,v -> speak(session.isActive() ? "Your focus session is active. One task at a time." : "Your session is paused. Start when you are ready."),false);
@@ -272,7 +273,7 @@ public final class MainActivity extends Activity {
         logView=text("No events yet",13,MUTED,false); history.addView(logView);
         button("Export my focus summary",history,v -> new AlertDialog.Builder(this).setTitle("Export your private summary?").setMessage("Includes your selected app, limits, task hash, virtual points and labels for that app. Excludes task text, screen content and event history. Choose phone storage for an offline file; a cloud provider may sync it. Exported files remain after deleting app data.").setNegativeButton("Cancel",null).setPositiveButton("Choose destination",(d,w) -> exportFocusData()).show(),false);
         button("Delete focus data & saved examples",history,v -> new AlertDialog.Builder(this).setTitle("Delete FocusPilot data?").setMessage("Clears saved settings, event history and few-shot labels, stops the session and disables observation. The downloaded model stays installed. Android permissions can be revoked separately in system settings.").setNegativeButton("Cancel",null).setPositiveButton("Delete",(d,w) -> deleteData()).show(),false);
-        root.addView(text("RESEARCH BUILD · 0.12\nNo real money moves. You choose when to pause.",12,MUTED,false));
+        root.addView(text("RESEARCH BUILD · "+BuildConfig.VERSION_NAME+"\nNo real money moves. You choose when to pause.",12,MUTED,false));
         screen.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout safetyBar=new LinearLayout(this); safetyBar.setOrientation(LinearLayout.VERTICAL); safetyBar.setPadding(dp(20),0,dp(20),dp(8)); safetyBar.setBackgroundColor(BG);
         button("Stop focus",safetyBar,v -> pauseFocus(),false);
@@ -333,7 +334,7 @@ public final class MainActivity extends Activity {
         if(blocked!=null){showStatus(blocked+". Nothing started.");refreshFloating();return;}
         if(FloatingCompanionService.running){showStatus("Mira is already floating. Drag her portrait or use Hide.");refreshFloating();return;}
         new AlertDialog.Builder(this).setTitle("Keep Mira beside you?")
-            .setMessage("Show the visual companion and its control notification now. Drag her portrait to move; Open returns here, Pause stops focus and its monitor, and Hide leaves focus unchanged. She stops when the screen turns off or locks. No model, microphone or usage reading is started.")
+            .setMessage("Show the visual companion and its control notification now. Drag her portrait to move; Ask Mira opens the foreground editable command screen, Pause stops focus and its monitor, and Hide leaves focus unchanged. She stops when the screen turns off or locks. Opening Ask Mira starts no recording, inference or action automatically. No model, microphone or usage reading is started by Show.")
             .setNegativeButton("Cancel",null).setPositiveButton("Show Mira",(d,w)->{
                 if(!floatingResumed || FloatingCompanionService.blockedReason(this)!=null){showStatus("Show expired or a prerequisite changed. Review and tap Show again.");refreshFloating();return;}
                 try{startForegroundService(new Intent(this,FloatingCompanionService.class).setAction(FloatingCompanionService.SHOW));showStatus("Android is starting floating Mira. Hide is available here and in her notification.");}
@@ -461,6 +462,15 @@ public final class MainActivity extends Activity {
                     catch(ActivityNotFoundException error) { showStatus("No compatible Clock app found."); }
                 }).show();
         } else showStatus("Try “start focus”, “pause”, or “alarm 7:30 pm”. Unknown commands are not executed.");
+    }
+    private void handoffCommandDraft() {
+        if(!floatingResumed || !voiceDraft.canUnderstand()) { showStatus("Finish or stop voice before sending an editable draft to Mira.");return; }
+        final String draft;
+        try { draft=CommandDraftHandoff.validatedDraft(commandInput.getText().toString()); }
+        catch(IllegalArgumentException invalid) { showStatus(invalid.getMessage());return; }
+        stopReadback();
+        try { startActivity(new Intent(this,LocalModelActivity.class).putExtra(CommandDraftHandoff.EXTRA_DRAFT,draft)); }
+        catch(RuntimeException unavailable) { showStatus("Ask Mira could not open. Your editable draft is unchanged; nothing executed."); }
     }
     private void microphone() {
         if(voiceDraft.active()) {
