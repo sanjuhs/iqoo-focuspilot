@@ -9,8 +9,8 @@ import subprocess
 import time
 
 from phone_model_smoke import PhoneLab, PACKAGE
-from phone_task_guide import (GOAL, STEPS, preferences, checkpoint, require_empty_test_state,
-                              disclosure, find_attribute, tap_node, wait_preferences, assert_plan, cleanup_synthetic)
+from phone_task_guide import (STEPS, PREFIX, preferences, checkpoint, guide_record, require_empty_test_state,
+                              disclosure, find_attribute, tap_node, wait_preferences)
 from phone_readback import permissions, monitor_record_present
 
 OUTCOMES={
@@ -23,6 +23,21 @@ OUTCOMES={
     'Offline voice is not ready or installed. Your text is still here.':'offline_voice_unavailable',
 }
 MUTED="Mira's voice is muted. Your text is still here."
+GOAL='Prepare a short focus demo'
+
+
+def assert_test_plan(values):
+    record=guide_record(values)
+    expected={PREFIX+'schema':1,PREFIX+'count':3,PREFIX+'completed':0,
+              PREFIX+'goal':hashlib.sha256(GOAL.encode()).hexdigest()}
+    expected.update({PREFIX+'step.'+str(i):step for i,step in enumerate(STEPS)})
+    if values.get('focusGoal')!=GOAL or any(record.get(k)!=v for k,v in expected.items()):
+        raise RuntimeError('Synthetic guide shape, text, association or progress differs')
+    if not isinstance(record.get(PREFIX+'revision'),str) or not record[PREFIX+'revision']:
+        raise RuntimeError('Synthetic guide revision missing')
+    if any(PREFIX+'step.'+str(i) in record for i in range(3,8)):
+        raise RuntimeError('Unexpected retained synthetic step')
+    return record
 
 
 def set_test_field(lab,attribute,name,value):
@@ -44,8 +59,30 @@ def set_test_field(lab,attribute,name,value):
         if i:lab.guard();lab.adb('shell','input','keyevent','KEYCODE_ENTER')
         if line:lab.guard();lab.adb('shell','input','text',line.replace(' ','%s'))
     lab.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK');lab.top()
-    if find_attribute(lab,attribute,name).get('text','')!=value:
+    if value and find_attribute(lab,attribute,name).get('text','')!=value:
         raise RuntimeError('Synthetic field readback mismatch; no save')
+
+
+def cleanup(lab,before,created):
+    result={'cleanup_verified':False,'cleanup_scope':'Remove only this synthetic three-step guide, restore empty task and mute false; task-save log entries/zero target keys may remain.'}
+    try:
+        current=preferences(lab)
+        if checkpoint(current)!=before:raise RuntimeError('Changed focus state left untouched')
+        if created and current.get('focusGoal')==GOAL:
+            if guide_record(current):
+                assert_test_plan(current)
+                disclosure(lab,'Write or edit my steps');lab.tap('Clear my steps');lab.tap('Clear steps',scroll=False)
+            if guide_record(preferences(lab)):raise RuntimeError('Synthetic guide clear not observed')
+            disclosure(lab,'Choose your task & targets');set_test_field(lab,'content-desc','Focus task','')
+            lab.tap('Save task & targets');wait_preferences(lab,lambda v:v.get('focusGoal','')=='')
+        final=preferences(lab)
+        result.update(final_checkpoint=checkpoint(final),empty_goal_restored=final.get('focusGoal','')=='',
+                      guide_record_removed=not guide_record(final))
+        result['cleanup_verified']=(result['final_checkpoint']==before and result['empty_goal_restored']
+                                    and result['guide_record_removed'] and final.get('shadowPlannedFocus',0)==0
+                                    and final.get('shadowContinuousLimit',0)==0)
+    except Exception as error:result['cleanup_failure_type']=type(error).__name__
+    return result
 
 
 def main():
@@ -100,9 +137,9 @@ def main():
         wait_preferences(lab,lambda v:v.get('focusGoal')==GOAL)
         disclosure(lab,'Write or edit my steps')
         set_test_field(lab,'resource-id',PACKAGE+':id/task_guide_editor','\n'.join(STEPS));lab.tap('Save these steps')
-        original_record=assert_plan(preferences(lab),STEPS,0);phase('synthetic_authored_guide_saved',count=3,completed=0)
+        original_record=assert_test_plan(preferences(lab));phase('synthetic_authored_guide_saved',count=3,completed=0)
         mute_touched=True;set_mute(True);lab.tap('Speak this step offline');lab.find(MUTED)
-        if assert_plan(preferences(lab),STEPS,0)!=original_record:raise RuntimeError('Muted readback changed guide')
+        if assert_test_plan(preferences(lab))!=original_record:raise RuntimeError('Muted readback changed guide')
         phase('muted_readback_refusal',ui_refusal_observed=True,engine_completion_observed=False)
         set_mute(False);lab.tap('Speak this step offline');report['unmuted_readback_tapped']=True;save()
         began=time.monotonic();outcome=None
@@ -113,7 +150,7 @@ def main():
             time.sleep(.25)
         if outcome is None:raise RuntimeError('No terminal readback outcome observed')
         report['tts_outcome']=outcome;report['engine_completion_callback_observed']=outcome=='engine_completed_callback';save()
-        if assert_plan(preferences(lab),STEPS,0)!=original_record:raise RuntimeError('Readback changed authored record')
+        if assert_test_plan(preferences(lab))!=original_record:raise RuntimeError('Readback changed authored record')
         phase('unmuted_readback_terminal_ui',outcome=outcome,guide_record_unchanged=True)
         if outcome!='engine_completed_callback':raise RuntimeError('Readback did not complete; actual outcome preserved')
         lab.top();lab.tap('Ask Mira');lab.tap('Load verified local model')
@@ -124,7 +161,7 @@ def main():
         result=lab.run('Stop focus',False);report['typed_model_regression']=result;save()
         if result['intent']!='pause_focus' or result['gate']!='REVIEW REQUIRED':raise RuntimeError('Current typed Pause regression failed; no action confirmed')
         lab.guard();lab.adb('shell','am','start','-n',PACKAGE+'/.MainActivity','-f','0x04000000');lab.guard()
-        if assert_plan(preferences(lab),STEPS,0)!=original_record:raise RuntimeError('Model-screen roundtrip changed guide')
+        if assert_test_plan(preferences(lab))!=original_record:raise RuntimeError('Model-screen roundtrip changed guide')
         phase('typed_pause_proposal_only',action_confirmed=False,guide_record_unchanged=True)
         report['completed']=True;save()
     except Exception as error:
@@ -136,7 +173,7 @@ def main():
             lab.adb('shell','am','start','-n',PACKAGE+'/.MainActivity','-f','0x04000000');lab.guard()
             if mute_touched:set_mute(False)
         except Exception:report['mute_cleanup_failed']=True
-        report.update(cleanup_synthetic(lab,before,synthetic_created))
+        report.update(cleanup(lab,before,synthetic_created))
         try:
             report['grants_after']=permissions(lab);report['final_mute']=preferences(lab).get('mute',False)
             report['cleanup_verified']=(report['cleanup_verified'] and report['grants_after']==grants
