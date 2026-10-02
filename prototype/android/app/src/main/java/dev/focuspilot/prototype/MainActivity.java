@@ -71,7 +71,6 @@ public final class MainActivity extends Activity {
     private TextToSpeech tts;
     private final ReadbackState readback=new ReadbackState();
     private Runnable readbackTimeout;
-    private TextView readbackStatus;
     private final ArrayList<String> events = new ArrayList<>();
     private final Runnable refreshTask = new Runnable() {
         @Override public void run() { if (visible) { refresh(); handler.postDelayed(this, 5000); } }
@@ -201,10 +200,6 @@ public final class MainActivity extends Activity {
         LinearLayout steps=card("ONE SMALL STEP");
         taskGuide=new TaskGuidePanel(this,prefs,()->prefs.getString("focusGoal",""),this::showStatus,this::speak,this::stopReadback);
         steps.addView(taskGuide);
-        readbackStatus=text("Read a step when you're ready. Voice stays off until you tap.",13,MUTED,false);
-        readbackStatus.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE);
-        steps.addView(readbackStatus);
-        button("Stop readback",steps,v -> stopReadback(),false);
         LinearLayout monitor=card("STAY WITH ME · OPT-IN BACKGROUND FOCUS");
         monitorStatus=text("Monitor stopped",18,WHITE,true); monitor.addView(monitorStatus);
         monitor.addView(text("Continue one app-budget session when this app is closed, using a visible notification with Stop. Turn on usage reading, grant Usage Access, and allow notifications first. No always-listening microphone or screen capture. Android/OEM power rules can stop it.",13,MUTED,false));
@@ -502,13 +497,13 @@ public final class MainActivity extends Activity {
         if(readbackTimeout!=null){handler.removeCallbacks(readbackTimeout);readbackTimeout=null;}
         if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}
         if(wasActive) {
-            if(readbackStatus!=null)readbackStatus.setText("Readback stopped. Your text is still here.");
+            if(taskGuide!=null)taskGuide.showSpeechFeedback("Readback stopped. Your text is still here.");
             if(visible)showStatus("Readback stopped. Your text is still here.");
         }
     }
     private void showReadbackStatus(String message) {
         if(!visible)return;
-        if(readbackStatus!=null)readbackStatus.setText(message);
+        if(taskGuide!=null)taskGuide.showSpeechFeedback(message);
         showStatus(message);
     }
     private void showStatus(String value) { if(status!=null) status.setText(value); }

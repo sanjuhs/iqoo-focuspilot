@@ -29,7 +29,7 @@ public final class TaskGuidePanel extends LinearLayout {
     private final Supplier<String> goal;
     private final Consumer<String> status, speak;
     private final Runnable stopSpeech;
-    private final TextView progress, nextStep;
+    private final TextView progress, nextStep, speechFeedback;
     private final EditText editor;
     private final Button complete, undo, read;
     private TaskPlan plan;
@@ -45,6 +45,9 @@ public final class TaskGuidePanel extends LinearLayout {
         complete=action("I've done this step",v->advance(false),true);
         undo=action("Undo last completed step",v->advance(true),false);
         read=action("Speak this step offline",v->readStep(),false);
+        speechFeedback=label("Read a step when you're ready. Voice stays off until you tap.",13,MUTED,false);
+        speechFeedback.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE);addView(speechFeedback);
+        action("Stop readback",v->stopSpeech.run(),false);
         LinearLayout details=new LinearLayout(activity);details.setOrientation(VERTICAL);details.setVisibility(GONE);
         Button toggle=action("Write or edit my steps ▾",v->{boolean open=details.getVisibility()!=VISIBLE;details.setVisibility(open?VISIBLE:GONE);((Button)v).setText("Write or edit my steps"+(open?" ▴":" ▾"));v.setContentDescription("Write or edit my steps, "+(open?"expanded":"collapsed"));},false);
         toggle.setContentDescription("Write or edit my steps, collapsed");addView(details);
@@ -60,6 +63,7 @@ public final class TaskGuidePanel extends LinearLayout {
         reload(true);refresh();
     }
     private int dp(int value){return Math.round(value*getResources().getDisplayMetrics().density);}
+    public void showSpeechFeedback(String value){speechFeedback.setText(value);}
     private TextView label(String value,int size,int color,boolean bold){TextView text=new TextView(activity);text.setText(value);text.setTextSize(size);text.setTextColor(color);text.setPadding(0,dp(4),0,dp(4));if(bold)text.setTypeface(Typeface.DEFAULT,Typeface.BOLD);return text;}
     private Button action(String value,View.OnClickListener listener,boolean primary){return addAction(value,this,listener,primary);}
     private Button addAction(String value,LinearLayout parent,View.OnClickListener listener,boolean primary){

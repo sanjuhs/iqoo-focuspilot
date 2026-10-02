@@ -1,0 +1,113 @@
+{
+  "kind": "Pre-event dashboard readback controls; package/build/install evidence, not full voice workflow or eligible submission",
+  "source_commit": "9fb4f7a4b341b8d563f033429b505a4432e7e09e",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "a737742d6b9f98ca013b52b2e4312aca0aa1e81ffd62d9003236934325e6463e",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "7ecb5f119a4a76f9a2070235a965234dfe7ce34383626c20f091fbb136881fc2",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java": "76d835f22dc4da683b5c6733228abd6b33b2c5488d191c91847ea8bd843bcb47",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java": "d0eef6ed51c3f05e5e50916750ec057911bfb99726891d44cd7a8824d20deb78",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0"
+  },
+  "version_code": 12,
+  "version_name": "0.12-guidance-readback-research",
+  "model": {
+    "entry": "assets/qwen35.gguf",
+    "compression": "ZIP_STORED",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v012-light.apk",
+      "bytes": 5497080,
+      "sha256": "71cb02ef4295845cc0489eb7975f199988c6062a7f01f42ae9cf8e34190316aa",
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "bundled_model": false,
+      "version_code": 12,
+      "version_name": "0.12-guidance-readback-research"
+    },
+    {
+      "name": "focuspilot-research-v012-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "e51c8b47e07bdbd02dadb920b59e3e20e08fb8e7044e0852c8ea93dd83026299",
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "bundled_model": true,
+      "version_code": 12,
+      "version_name": "0.12-guidance-readback-research"
+    }
+  ],
+  "build": {
+    "jvm": {
+      "tests": 148,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint_errors": 0,
+    "lint_warnings": 66
+  },
+  "packaging": {
+    "report": "artifacts/bundled-apk-v012.json",
+    "report_sha256": "a6250b8833e5b5d4240628148fa8dee17df87e3f64cbf067a8eacf155ec76cc8",
+    "packager_sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+    "original_payload_parity": true,
+    "only_added_payload": "assets/qwen35.gguf",
+    "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+    "storage": {
+      "project_bytes_before": 12503892419,
+      "per_copy_byte_cap": 568795288,
+      "reserved_temporary_bytes": 1137590576,
+      "estimated_peak_project_bytes": 13641482995,
+      "project_limit_bytes": 15000000000,
+      "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+    }
+  },
+  "installation": {
+    "source_commit": "9fb4f7a4b341b8d563f033429b505a4432e7e09e",
+    "apk_sha256": "71cb02ef4295845cc0489eb7975f199988c6062a7f01f42ae9cf8e34190316aa",
+    "before_checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 57331
+    },
+    "grants_before": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model_reused": true,
+    "permissions_changed": false,
+    "installed_apk_sha256": "71cb02ef4295845cc0489eb7975f199988c6062a7f01f42ae9cf8e34190316aa",
+    "private_model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "after_checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 57331
+    },
+    "grants_after": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "monitor_record_absent": true,
+    "installed_verified": true
+  },
+  "unchanged": [
+    "Qwen3.5-0.8B Q4_0",
+    "model prompt",
+    "native library",
+    "command gate",
+    "permission contracts",
+    "virtual-only points"
+  ],
+  "limits": [
+    "Completion callback does not establish independent speaker audibility.",
+    "Installed light retained existing model; no clean bundled import in this test.",
+    "Actual ASR, permissioned monitoring/floating mode, iQOO NPU, Office Kit and accepted eligible submission remain pending.",
+    "v0.11 phone evidence retains its historical APK identity."
+  ]
+}
