@@ -147,6 +147,17 @@ def inputs(record_path):
         raise RuntimeError('Capture harness differs from its frozen pre-run identity')
     for key in ('apk_sha256', 'model_sha256', 'native_sha256'):
         full_hash(record.get(key))
+    request = record.get('typed_model_request', {})
+    if (request.get('command') != 'Stop focus' or request.get('capture') is not True
+            or request.get('intent') != 'pause_focus' or request.get('gate') != 'REVIEW REQUIRED'
+            or request.get('action_executed') is not False):
+        raise RuntimeError('Recorded model proposal differs from the narrated bounded request')
+    for key in ('total_ms', 'prefill_ms', 'decode_ms'):
+        value = request.get(key)
+        if type(value) not in (int, float) or not math.isfinite(value) or value < 0:
+            raise RuntimeError('Recorded native request timing must be finite and nonnegative')
+    if abs(request['total_ms'] - request['prefill_ms'] - request['decode_ms']) > 3:
+        raise RuntimeError('Recorded rounded total and phase timings differ')
     package = json.loads(public_path(EVIDENCE[0]).read_text())
     phone = json.loads(public_path(EVIDENCE[1]).read_text())
     if package['source_commit'] != record['source_commit']:
@@ -339,8 +350,9 @@ def shot(scene, t, bound, trace, activation):
             if phase >= 1:
                 text(d, (185, 647), 'Proposal → independent request gate → review', 32, INK)
             if phase == 2:
-                text(d, (185, 756), 'Earlier v0.12 test: 1,749 ms native inference', 30, GOLD)
-                text(d, (185, 812), 'One historical observation; current clip shows its own result.', 25, MUTED)
+                total = bound['record']['typed_model_request']['total_ms']
+                text(d, (185, 756), f'Recorded request: {total:,.0f} ms native CPU', 30, GOLD)
+                text(d, (185, 812), 'One case; capture enabled; no action confirmed', 25, MUTED)
     elif i == 3:
         names = [('Request', 135), ('Model proposal', 575), ('Original-text gate', 1015), ('Your review', 1455)]
         for n, (label, x) in enumerate(names):

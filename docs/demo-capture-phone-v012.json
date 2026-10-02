@@ -1,0 +1,202 @@
+{
+  "kind": "Current own-app synthetic research recording; silent cropped phone footage",
+  "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "harness_sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+  "manifest_sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a",
+  "pre_run_commit": "ac8935618a15060a4c6107b3f841f416e7551cfb",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "clips": [
+    {
+      "name": "guide",
+      "file": "artifacts/v012-phone-demo/guide.mp4",
+      "sha256": "e834e5dfe905a36ca3178d93acc651de86793ff993183d831186f3a9f1c513fc",
+      "bytes": 271373,
+      "seconds": 10.369829,
+      "raw_sha256": "de3029b262d67968c7f3c8eea42abaa9403b233d6bbd585e9ff2aab8d330f2b6",
+      "crop": [
+        720,
+        1400,
+        0,
+        84
+      ],
+      "speed": 1,
+      "audio_track": false,
+      "own_foreground_guard": true,
+      "raw_file_public": false
+    },
+    {
+      "name": "model",
+      "file": "artifacts/v012-phone-demo/model.mp4",
+      "sha256": "6acfce24436d29b787d807d1dea22b75dfc81a6d8672172a26f2bbddc3cfa40f",
+      "bytes": 571058,
+      "seconds": 9.339,
+      "raw_sha256": "3d20d27789f0fd4ebcbad1d01f1195d51189d353912a6ab669e1f26973640716",
+      "crop": [
+        720,
+        1400,
+        0,
+        84
+      ],
+      "speed": 1,
+      "audio_track": false,
+      "own_foreground_guard": true,
+      "raw_file_public": false
+    }
+  ],
+  "phases": [
+    {
+      "name": "authored_synthetic_guide_saved"
+    },
+    {
+      "name": "mark_undo_verified_before_recording",
+      "progress_restored": true,
+      "revision_renewed": true
+    },
+    {
+      "name": "recorded_guide_readback_completed",
+      "outcome": "engine_completed_callback"
+    },
+    {
+      "name": "recorded_typed_pause_proposal_only",
+      "action_confirmed": false
+    }
+  ],
+  "completed": true,
+  "cleanup_verified": true,
+  "visual_privacy_review": true,
+  "microphone_started": false,
+  "npu_verified": false,
+  "human_audibility_verified": false,
+  "offline_disconnect_verified": false,
+  "action_confirmed": false,
+  "os_settings_changed": false,
+  "typed_model_request": {
+    "command": "Stop focus",
+    "capture": true,
+    "intent": "pause_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1849.0,
+    "prefill_ms": 899.0,
+    "decode_ms": 950.0,
+    "action_executed": false
+  },
+  "request_details": {
+    "context_setup_ms": 26.0,
+    "prompt_tokens": 155,
+    "generated_tokens": 8
+  },
+  "activation_observations": [
+    {
+      "tensor": "ffn_out-0",
+      "width": 1024,
+      "positions_in_chunk": 155,
+      "mean": 0.00036,
+      "rms": 0.01544,
+      "min": -0.0505,
+      "max": 0.22183,
+      "first_values": [
+        0.22183347,
+        -0.00072032248,
+        0.0065699513,
+        0.0022087621,
+        -0.00016121729,
+        -0.0029685292,
+        0.017375367,
+        0.0016866969
+      ]
+    },
+    {
+      "tensor": "ffn_out-11",
+      "width": 1024,
+      "positions_in_chunk": 155,
+      "mean": -0.00028,
+      "rms": 0.03094,
+      "min": -0.11547,
+      "max": 0.10341,
+      "first_values": [
+        -0.021840721,
+        -0.0019751545,
+        0.0020368637,
+        -0.0013815633,
+        0.035677161,
+        -0.047037855,
+        -0.021915525,
+        0.042965271
+      ]
+    },
+    {
+      "tensor": "ffn_out-23",
+      "width": 1024,
+      "positions_in_chunk": 155,
+      "mean": 0.00987,
+      "rms": 0.20706,
+      "min": -1.0558,
+      "max": 2.94813,
+      "first_values": [
+        2.9481306,
+        0.15220349,
+        0.22413556,
+        0.065544836,
+        0.18794766,
+        0.013547033,
+        -0.12512405,
+        -0.15931693
+      ]
+    },
+    {
+      "tensor": "result_norm",
+      "width": 1024,
+      "positions_in_chunk": 1,
+      "mean": 0.16724,
+      "rms": 4.36566,
+      "min": -23.07918,
+      "max": 14.98569,
+      "first_values": [
+        0.26920566,
+        4.0578966,
+        0.71723992,
+        10.443491,
+        7.4677224,
+        1.7269794,
+        1.2207621,
+        3.2154086
+      ]
+    }
+  ],
+  "cleanup_scope": "Remove only this synthetic three-step guide, restore empty task and mute false; task-save log entries/zero target keys may remain.",
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "empty_goal_restored": true,
+  "guide_record_removed": true,
+  "permissions_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "visual_review": {
+    "reviewer": "Root assistant using view_image",
+    "capture_only_record_sha256": "a959706642cdd56fc804d8a49ca4957e0065fdccfaf2de0449b46913eb21a522",
+    "scope": "Cropped clips sampled at one-second intervals plus full-size guide terminal frame; own-foreground metadata guard during capture. No account, real task/history, keyboard or system bars seen. Full human playback/listening not established.",
+    "sample_files_private": [
+      "guide-review-private.png",
+      "guide-7-private.png",
+      "model-review-private.png"
+    ],
+    "phone_audio_used": false
+  }
+}

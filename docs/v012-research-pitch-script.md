@@ -1,9 +1,9 @@
 # FocusPilot v0.12 — research demo narration
 
-Production plan, 3 October 2026. This script is prepared for an edited recording;
-no new footage or narration audio has yet been verified for this version. Record
-only synthetic content in FocusPilot's own screens. Crop the keyboard and system
-bars out of exported shots. Use deliberate holds rather than accelerated inference.
+Production plan, 3 October 2026. This script uses an edited own-app recording
+with synthetic content. The source-bound footage record verifies scoped cleanup;
+cropped shots exclude keyboard and system bars. Narration preparation and final
+render checks are recorded separately. Use deliberate holds rather than accelerated inference.
 Keep numerical overlays bound to the recorded request or clearly labelled history.
 Record the guide after its synthetic setup, and the model after loading and typing.
 Guide footage shows explicit Speak and the terminal engine status, without phone
@@ -45,9 +45,9 @@ Visual: Actual cropped own-app guide clip begins after setup: goal “Prepare a 
 
 > Our pinned runtime uses the CPU. It produces a structured intent proposal, while Android code independently checks the original request. The screen separates the model suggestion from the reviewable action.
 
-> An earlier version twelve test reported one point seven four nine seconds of native inference for this request. That is one historical observation, not a promised response time for every device or command.
+> This recorded request reported one point eight four nine seconds of native CPU inference. That is one measured case, not a promised response time for every device or command. No action was confirmed.
 
-Visual: Actual cropped model clip starts with model already loaded and “Stop focus” already typed → Understand → actual proposal. No keyboard/loading or Review/Cancel/Confirm footage. Preserve actual metrics; label any historical 1,749 ms figure separately.
+Visual: Actual cropped model clip starts with model already loaded and “Stop focus” already typed → Understand → actual pause_focus proposal, REVIEW REQUIRED. Show current reported native CPU metrics: total 1,849 ms, prefill 899 ms, decode 950 ms. No keyboard/loading or Review/Cancel/Confirm footage; no action confirmed.
 
 ## Scene 4: Keep the action yours
 
