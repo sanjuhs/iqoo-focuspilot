@@ -15,6 +15,26 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
+## Current 0.6 addition
+
+The auditor now includes both 0.6 APKs, their required release assets and the
+separate [phone report](command-readiness-phone.json), bound to the **light** APK
+with already present, verified private weights. Source attribution is
+`29c4c3372fcc913d3672e59803a3aa870fa2426b`. Two typed model proposals were reviewed
+and confirmed through the own-app UI: focus started and then paused. A wrong alarm
+creation proposal for cancellation was rejected. These observations establish no
+ASR, Clock, disconnected-offline, NPU or Office Kit result. A new bundled-import
+test was not performed. Current host XML reports 93 JVM cases and lint zero errors
+with 60 warnings; these reports must not be attributed to historical releases.
+
+The separate frozen [58-case command evaluation](command-reliability.md) reports
+25/58 raw intent matches, 49/58 correct gated actions or rejections, and 16/23
+correct supported actions. Two accepted proposals were wrong, including a timed
+focus request becoming an open-ended session. The [laptop export consumer](officekit-export-workflow.md)
+passes 15 synthetic tests; actual Java-renderer → Python-CLI interoperability was
+tested with a synthetic fixture. Neither result proves real usage or Office Kit
+transport. Historical audit findings below retain their original version scope.
+
 ## What the actual audit establishes
 
 | Requirement | Evidence and result | Remaining scope |

@@ -4,6 +4,22 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current research baseline — v0.6
+
+Use source `29c4c3372fcc913d3672e59803a3aa870fa2426b` as the v0.6 build identity;
+publication is pending at this update. **Set up Mira** reads optional feature
+readiness without granting permissions or starting services. Actual typed Qwen
+Start/Pause were reviewed, confirmed and verified on Nothing; alarm cancellation
+was rejected. These tests do not establish voice, Clock, disconnected offline,
+iQOO NPU or Office Kit operation. [Readiness evidence](docs/command-readiness.md).
+
+Keep the [58-case command limits](docs/command-reliability.md) visible: 25/58 raw,
+49/58 gated including correct rejections, 16/23 supported commands correct, and
+two wrong accepted proposals. Continue explicit action review. The [laptop bridge](docs/officekit-export-workflow.md)
+validates one user-selected private export and computes aggregate shadow scores;
+15 bridge tests and synthetic [Java/Python interoperability](docs/bridge-java-interop.json)
+are verified. Never treat a temporary local-file test as an Office Kit transfer.
+
 ## Read this first
 
 1. Read [hackathon.md](hackathon.md) for eligibility and judging requirements.

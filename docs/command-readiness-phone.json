@@ -1,0 +1,69 @@
+{
+  "research_only": true,
+  "source_commit": "29c4c3372fcc913d3672e59803a3aa870fa2426b",
+  "apk_sha256": "01b72e8321a06cbcf0f0050be4b6332e377eabf5fac160ba31b8f1c4a34ab3fe",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "test_input": "typed synthetic own-app commands; explicit UI confirmations, not ASR",
+  "offline_disconnect_verified": false,
+  "phone_clock_action_verified": false,
+  "permissions_changed": false,
+  "results": [
+    {
+      "command": "Please start a focus session",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 17323.0,
+      "prefill_ms": 15653.0,
+      "decode_ms": 1669.0,
+      "action_executed": true,
+      "repository_focus_active_verified": true,
+      "background_observation_enabled": false
+    },
+    {
+      "command": "Stop focus",
+      "capture": false,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1814.0,
+      "prefill_ms": 873.0,
+      "decode_ms": 942.0,
+      "action_executed": true,
+      "repository_focus_active_verified": false,
+      "background_observation_enabled": false
+    },
+    {
+      "command": "Cancel my alarm at 7:30",
+      "capture": false,
+      "intent": "alarm",
+      "gate": "ABSTAIN",
+      "total_ms": 1655.0,
+      "prefill_ms": 779.0,
+      "decode_ms": 876.0,
+      "action_executed": false
+    }
+  ],
+  "completed": true,
+  "final_focus_paused": true,
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "native_identity_scope": "Packaged library in local APK matching actual installed APK SHA256",
+  "setup": {
+    "research_only": true,
+    "version": "0.6-command-readiness-research",
+    "apk_sha256": "01b72e8321a06cbcf0f0050be4b6332e377eabf5fac160ba31b8f1c4a34ab3fe",
+    "device": "Nothing A059/API36",
+    "setup_opened": true,
+    "usage_off_shown": true,
+    "notifications_blocked_shown": true,
+    "microphone_off_shown": true,
+    "permission_changed": false,
+    "monitor_started": false,
+    "voice_started": false
+  }
+}

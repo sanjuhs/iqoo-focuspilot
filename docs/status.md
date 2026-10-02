@@ -2,6 +2,47 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Command readiness and laptop bridge update 0.6
+
+- Research build source is `29c4c3372fcc913d3672e59803a3aa870fa2426b`. v0.6 publication
+  is pending at this update; earlier releases and the 0.3 concept pitch remain historical.
+- **Set up Mira** was opened on Nothing A059/API36: Usage Access off, notifications
+  blocked and microphone off were displayed. No permission changed, monitor started
+  or voice recording began. [Setup and repeat procedure](command-readiness.md).
+- Exact installed light-APK/model/native identities bind the typed phone test to
+  v0.6. Qwen Start took **17,323 ms** and Pause **1,814 ms**; both proposals required
+  review, were explicitly confirmed, and changed the private session checkpoint
+  active then paused. Alarm cancellation took **1,655 ms**, was wrongly proposed
+  as `alarm`, and the independent gate **ABSTAINED**; no Clock action executed.
+  Final state: focus paused, usage reading off, virtual points 100.
+  [Phone evidence](command-readiness-phone.json). Three observations are not p50/p95.
+- Root measured logical workspace file size at **10.43 GiB** on 2 October, within
+  the authorized 15 GB ceiling; this is measured file size, not peak RAM.
+- Integrated host build: **93 JVM tests pass**, zero failures/errors/skips; lint zero
+  errors and **60 warnings**. These reports describe this research build; newer tests
+  must not be attributed to earlier APKs.
+- Frozen 58-case native host evaluation: raw semantic intent correct **25/58**;
+  gated exact action/slot or correct abstention **49/58**; supported strict requests
+  correct **16/23**. Two wrong accepted proposals remain explicitly reported: timed
+  focus became open-ended focus, and erase-picture became local status display.
+  No actions ran in this evaluation. Format validity did not establish correctness.
+  [Evaluation and counterexamples](command-reliability.md).
+- Offline laptop consumer validates bounded private exports and replays the pinned
+  existing policy, without retraining, input discovery, uploads or phone actions.
+  It emits aggregate scores/counts plus byte/provenance identities, omitting app
+  identity, goal hash, timestamps and vectors. **15 tests pass**; an actual Java-rendered
+  synthetic export parsed/replayed through the Python CLI: three records, one exact
+  context group. [Interoperability evidence](bridge-java-interop.json) is a temporary
+  local-file workflow, **not actual app usage/export or Office Kit transfer**.
+- [Office Kit export workflow](officekit-export-workflow.md) documents the implemented
+  laptop-compute piece and current official India desktop V6+/OriginOS6+/account
+  guidance. Physical ASR/TTS, Clock outcome, user-enabled live/background monitoring,
+  disconnected offline execution, actual iQOO/NPU execution and Office Kit pairing/
+  transfer remain pending. Event eligibility, authenticated cutoff/admission and
+  accepted submission are still external completion gates.
+
+Earlier sections preserve their release-specific observations and limitations.
+
 ## Observed learning update 0.5
 
 - Research source adds a fresh current-foreground gate before recurring budget nudges.

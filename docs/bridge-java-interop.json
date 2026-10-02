@@ -1,0 +1,15 @@
+{
+  "research_only": true,
+  "input_provenance": "synthetic Java-renderer fixture, not actual app usage/export",
+  "transport": "temporary local file; not Office Kit",
+  "java_export_source_sha256": "4827a7dc5e3949cdaf83bfd2fbd6e35a8e01f59a11e40706fdd5814fe289aaf4",
+  "input_bytes": 1615,
+  "input_sha256": "2ba15d496af902304b3456482ab9634513cb37987e275d29a16e639fd20ee6dc",
+  "parsed_records": 3,
+  "context_groups": 1,
+  "policy_checkpoint_sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+  "phone_actions_executed": false,
+  "officekit_transport_verified": false,
+  "npu_verified": false,
+  "cli_exit_code": 0
+}

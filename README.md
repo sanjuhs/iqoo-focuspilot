@@ -3,8 +3,20 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.5)
-are backed up as a prerelease. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
+**Current research build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
+Set up Mira shows optional feature readiness; typed local-model Start/Pause were
+reviewed, confirmed and checked on Nothing. The app was left paused with usage off
+and 100 virtual points. A wrongly proposed alarm cancellation was rejected.
+[Command readiness](docs/command-readiness.md) and [58-case host reliability](docs/command-reliability.md)
+record the limits: 25/58 raw intent correctness, 49/58 gated correctness including
+abstentions, 16/23 supported commands correct, and two accepted mismatches.
+The [laptop export reviewer](docs/officekit-export-workflow.md) performs local CPU
+shadow replay; Java-export/Python-consumer interoperability is verified with
+synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
+execution remain pending.
+
+[Published research releases](https://github.com/sanjuhs/iqoo-focuspilot/releases)
+preserve previous builds; v0.6 publication is pending at this documentation update. The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
 Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
@@ -39,6 +51,9 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
 | [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
+| [docs/command-readiness.md](docs/command-readiness.md) | Setup screen and confirmed typed phone actions |
+| [docs/command-reliability.md](docs/command-reliability.md) | Frozen host command results and accepted failures |
+| [docs/officekit-export-workflow.md](docs/officekit-export-workflow.md) | Implemented laptop review; actual Office Kit pending |
 | [docs/completion-audit.md](docs/completion-audit.md) | Artifact audit and remaining completion gates |
 | [docs/snapdragon-deployment.md](docs/snapdragon-deployment.md) | Isolated GenieX readiness and required device proof |
 

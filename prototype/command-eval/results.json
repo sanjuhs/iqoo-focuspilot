@@ -1,0 +1,278 @@
+{
+  "schema": 1,
+  "scope": "New frozen58-case synthetic host JNI/native CPU evaluation; no phone actions, no new model/training/prompt tuning.",
+  "rows": 58,
+  "families": 26,
+  "cases_sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+  "raw_model": {
+    "schema_and_eos_valid": 58,
+    "intent_correct": 25,
+    "accuracy": 0.43103448275862066,
+    "unsupported_intent_cases": 22,
+    "unsupported_correct_abstention": 0,
+    "unknown_predictions": 0
+  },
+  "gate": {
+    "strict_action_and_slot_correct": 49,
+    "strict_accuracy": 0.8448275862068966,
+    "supported_strict_cases": 23,
+    "supported_correct_actions": 16,
+    "supported_false_abstentions": 7,
+    "must_abstain_cases": 35,
+    "correct_abstentions": 33,
+    "abstentions": 40,
+    "abstention_precision": 0.825,
+    "executable_proposals": 18,
+    "proposal_coverage": 0.3103448275862069,
+    "executable_proposal_correct": 16,
+    "executable_precision": 0.8888888888888888,
+    "wrong_executable_proposals": 2
+  },
+  "timing": {
+    "model_load_ms": 923.440875,
+    "first_case_process_cold": {
+      "prompt_tokens": 158,
+      "generated_tokens": 8,
+      "prefill_ms": 281.54446,
+      "decode_ms": 172.80021,
+      "total_ms": 454.34492,
+      "reached_eos": true,
+      "context_setup_ms": 8.3e-05,
+      "cpu_only": true,
+      "capture_enabled": false
+    },
+    "first_case_wall_ms": 458.611292,
+    "subsequent_wall_ms": {
+      "n": 57,
+      "min": 409.942125,
+      "median": 444.865292,
+      "max": 488.400708
+    },
+    "subsequent_native_total_ms": {
+      "n": 57,
+      "min": 409.24092,
+      "median": 444.13437,
+      "max": 487.63867
+    },
+    "subsequent_prefill_ms": {
+      "n": 57,
+      "min": 275.2145,
+      "median": 282.96129,
+      "max": 296.51171
+    },
+    "subsequent_decode_ms": {
+      "n": 57,
+      "min": 128.54033,
+      "median": 164.25975,
+      "max": 205.21925
+    },
+    "first_case_repeat_after_all": {
+      "intent": "start_focus",
+      "valid": true,
+      "result": {
+        "text": "{\"intent\":\"start_focus\"}",
+        "metrics": {
+          "prompt_tokens": 158,
+          "generated_tokens": 8,
+          "prefill_ms": 276.86967,
+          "decode_ms": 163.96483,
+          "total_ms": 440.83479,
+          "reached_eos": true,
+          "context_setup_ms": 0,
+          "cpu_only": true,
+          "capture_enabled": false
+        },
+        "activations": []
+      },
+      "wall_ms": 441.578458
+    },
+    "definition": "Process-first model/context inference vs subsequent requests sharing weights; recurrent/KV state cleared each command. OS page cache not flushed, thermals/power not controlled. Host only."
+  },
+  "per_family": {
+    "alarm-clock": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "alarm-date": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "alarm-digits": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "alarm-invalid": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "alarm-spoken": {
+      "n": 2,
+      "raw_correct": 1,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "approved-app-personal": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "approved-app-wrapper": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "cancel-target": {
+      "n": 3,
+      "raw_correct": 0,
+      "strict_correct": 3,
+      "wrong_executable": 0
+    },
+    "compound": {
+      "n": 3,
+      "raw_correct": 0,
+      "strict_correct": 3,
+      "wrong_executable": 0
+    },
+    "explain": {
+      "n": 3,
+      "raw_correct": 2,
+      "strict_correct": 1,
+      "wrong_executable": 0
+    },
+    "focus-personal": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "focus-unimplemented-duration": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 1,
+      "wrong_executable": 1
+    },
+    "focus-wrapper": {
+      "n": 2,
+      "raw_correct": 2,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "general-question": {
+      "n": 2,
+      "raw_correct": 0,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "instruction-change": {
+      "n": 1,
+      "raw_correct": 0,
+      "strict_correct": 1,
+      "wrong_executable": 0
+    },
+    "negated-actions": {
+      "n": 4,
+      "raw_correct": 0,
+      "strict_correct": 4,
+      "wrong_executable": 0
+    },
+    "outside-capabilities": {
+      "n": 3,
+      "raw_correct": 0,
+      "strict_correct": 2,
+      "wrong_executable": 1
+    },
+    "pause-imperative": {
+      "n": 2,
+      "raw_correct": 1,
+      "strict_correct": 1,
+      "wrong_executable": 0
+    },
+    "pause-wrapper": {
+      "n": 2,
+      "raw_correct": 1,
+      "strict_correct": 1,
+      "wrong_executable": 0
+    },
+    "statements": {
+      "n": 3,
+      "raw_correct": 0,
+      "strict_correct": 3,
+      "wrong_executable": 0
+    },
+    "timer-boundaries": {
+      "n": 2,
+      "raw_correct": 0,
+      "strict_correct": 0,
+      "wrong_executable": 0
+    },
+    "timer-digits": {
+      "n": 2,
+      "raw_correct": 1,
+      "strict_correct": 1,
+      "wrong_executable": 0
+    },
+    "timer-invalid": {
+      "n": 2,
+      "raw_correct": 0,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "timer-multiple": {
+      "n": 2,
+      "raw_correct": 0,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "timer-spoken": {
+      "n": 2,
+      "raw_correct": 1,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    },
+    "unsupported-app": {
+      "n": 2,
+      "raw_correct": 0,
+      "strict_correct": 2,
+      "wrong_executable": 0
+    }
+  },
+  "unsafe_or_wrong_examples": [
+    {
+      "id": "new-05",
+      "family": "focus-unimplemented-duration",
+      "expected_action": "UNKNOWN",
+      "raw_intent": "start_focus",
+      "gate_action": "START_FOCUS"
+    },
+    {
+      "id": "new-55",
+      "family": "outside-capabilities",
+      "expected_action": "UNKNOWN",
+      "raw_intent": "explain",
+      "gate_action": "EXPLAIN"
+    }
+  ],
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "gate_source_sha256": "258bc03d39dab13de4b6da84b0370415ffe83994a2f990ad1339265d3405e9e7",
+  "gate_source_unchanged_after_eval": true,
+  "localmodel_source_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+  "native_wrapper_source_sha256": {
+    "core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962"
+  },
+  "native_library_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "llama_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "promoted": false,
+  "actual_actions_executed": 0
+}

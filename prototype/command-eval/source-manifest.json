@@ -1,0 +1,14 @@
+{
+  "tracked_source_sha256": {
+    "GateEval.java": "9f694937861f3605776da197927b3be36279156bf06704d9dac6e369a6cdb290",
+    "NativeEval.java": "acb9d65e3953e16ea137485c0581ad65ea5106260f98c212ae2b677a1aaa40a6",
+    "evaluate.py": "d368f2bb2db2ef43a389d73deaeb4923258d2e99a421cbdbb896ffe4c223fc2d",
+    "generate_cases.py": "4796efbc69a47d54c59cf0cab0dfb831c24c88cd49d3e6fabc43d067835f31e7",
+    "run_native.sh": "de170606efbb132fea1adad3bb0c2b4bde9fe04bf0e82b2c10158cea90f0ec34",
+    "test_evaluation.py": "5182b36c8a8cf89eb72a16d002992996f7d9f7d078865b9c87caefaf5d511c27"
+  },
+  "git_ignored_runtime": true,
+  "tests_passed": 4,
+  "frozen_gate_sha256": "258bc03d39dab13de4b6da84b0370415ffe83994a2f990ad1339265d3405e9e7",
+  "workspace_storage": "8.4G\t."
+}

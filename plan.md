@@ -5,6 +5,29 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## Current checkpoint — v0.6
+
+Research build source: `29c4c3372fcc913d3672e59803a3aa870fa2426b`; release publication
+is pending at this update. Setup readiness was inspected with permissions off;
+actual typed Start/Pause proposals were reviewed and confirmed on Nothing, with
+the final state paused, usage off and 100 virtual points. Cancellation abstained.
+The integrated host build has 93 passing JVM tests, zero lint errors and 60 warnings.
+Root measured logical workspace file size at **10.43 GiB** on 2 October; this is
+within the authorized 15 GB ceiling. Recheck before adding another model/runtime.
+[Readiness](docs/command-readiness.md) records the narrow phone proof.
+
+The [frozen host evaluation](docs/command-reliability.md) reports 25/58 raw and
+49/58 gated correctness, with only 16/23 supported tasks correct and two accepted
+mismatches. Repairing known cases requires a new labelled evaluation rather than
+reusing this score. The [laptop bridge](docs/officekit-export-workflow.md) now runs
+existing-policy shadow replay after bounded export validation; 15 tests and actual
+synthetic Java-export/Python-consumer interoperability pass.
+
+Next acceptance gates remain user-consented physical voice/Clock and live monitoring,
+disconnected offline execution, actual iQOO/HTP execution and Office Kit pairing/
+transfer, followed by eligible event code and an accepted submission. The laptop
+consumer completes the local compute piece; it does not complete the transport gate.
+
 ## Milestones and acceptance gates
 
 | Order | Deliverable | Done when | Status |
