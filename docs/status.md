@@ -2,6 +2,19 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Current v0.11 approved app launches — actual phone outcomes
+
+Typed `Open calculator` and `Open clock` each produced Qwen `open_app`, review
+required, followed by Cancel and then reviewed Confirm. Native CPU inference was
+2,016 and 1,998 ms. Foreground metadata observed Calculator's resolved component
+and Clock's main activity after a same-package redirect from its resolved API
+handler. No target UI was inspected or touched; no alarm/timer was created.
+Return and a fresh-screen check left Review disabled. Focus paused/off/100/57,331
+ms, grants and absent monitor stayed unchanged. The first harness attempt stopped
+at full-versus-shorthand component comparison; its report and exact executed source
+are retained. APK/model/native and selected app sources stayed unchanged.
+[Current proof and repeat procedure](app-launch-phone.md).
+
 ## Current v0.11 activation viewer — actual phone comparison
 
 Nine typed Qwen3.5-0.8B Q4_0 requests (one warm-up plus four off/on pairs) ran

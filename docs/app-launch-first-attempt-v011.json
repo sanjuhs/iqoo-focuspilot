@@ -1,0 +1,73 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4"
+  },
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "harness_sha256": "d9faa611b51f1c4540e0d845433e251b426d00979613859ffac24a125d892e89",
+  "release_manifest_sha256": "bed19b192b5a5a9e615f6a9bed91c8f97104c594c587c56a32c6089945f51832",
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "backend": "CPU",
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "resolved_targets": {
+    "calculator": "com.google.android.calculator/com.android.calculator2.Calculator",
+    "clock": "com.google.android.deskclock/com.android.deskclock.HandleApiCalls"
+  },
+  "results": [
+    {
+      "command": "Open calculator",
+      "capture": false,
+      "intent": "open_app",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1910.0,
+      "prefill_ms": 761.0,
+      "decode_ms": 1149.0,
+      "action_executed": false,
+      "target": "calculator",
+      "resolved_component": "com.google.android.calculator/com.android.calculator2.Calculator",
+      "cancel_verified": false,
+      "confirmation_tapped": false,
+      "target_package_observed": false
+    }
+  ],
+  "completed": false,
+  "target_ui_inspected": false,
+  "target_ui_interacted": false,
+  "alarm_or_timer_creation_tested": false,
+  "settings_changed": false,
+  "microphone_started": false,
+  "npu_verified": false,
+  "asr_verified": false,
+  "failure_type": "RuntimeError",
+  "failure": "Cancel did not retain own model screen",
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "permissions_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "cleanup_verified": true
+}

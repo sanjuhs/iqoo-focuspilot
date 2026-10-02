@@ -3,6 +3,12 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
+**Current phone-control check:** typed Qwen proposals for Calculator and Clock
+passed review/Cancel/review/Confirm and opened the approved target apps, verified
+through foreground metadata. Native inference was about 2.0 s. Focus/grants stayed
+unchanged; no external-app UI was inspected and no alarm was created.
+[Actual launch coverage](docs/app-launch-phone.md).
+
 **Current Qwen3.5 activation check:** eight unconfirmed typed phone proposals
 preserved the same Pause intent and token counts. Every capture-on run displayed
 all four selected tensor summaries; capture-off displayed none. Native timing

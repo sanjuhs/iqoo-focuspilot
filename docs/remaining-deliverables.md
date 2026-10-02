@@ -40,6 +40,12 @@ profile onboarding with personal fields and Terms/Privacy choices. No fields,
 agreements or application were changed; actual cutoff/admission/video constraints
 remain inaccessible until the user completes that step. [Observed fields](hackathon-research.md).
 
+**Later v0.11 approved launches:** two actual typed Qwen commands passed Cancel
+then review/Confirm, with Calculator and Clock foreground packages observed via
+metadata only. Final own focus/grants/monitor state stayed unchanged. This closes
+the approved Calculator/Clock launch portion of action 10, not alarm creation,
+external task completion, arbitrary computer use, ASR or IoT. [Results](app-launch-phone.md).
+
 **Later v0.11 capture comparison:** four actual Nothing CPU pairs preserve Pause
 and token counts, with all four selected tensor summaries on every capture-on
 trial. Native timing differences have mixed signs; post-request memory snapshots
