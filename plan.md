@@ -1,5 +1,25 @@
 # FocusPilot delivery plan
 
+## Structured Qwen commands — development diagnostic
+
+Keep user-selected **Qwen3.5-0.8B Q4_0** as the main model. A separately frozen
+24-case host development comparison improves complete supported proposals
+2→9/18, seven gains/no losses; Pause 1→2/4, all six unsupported requests refused,
+zero observed wrong accepts. Both one-attempt captures complete JSON/actual EOS.
+Oracle coverage 5→16/18 separates source validation from model errors. All four
+Start cases still fail; incorrect duration conversions are safely refused.
+Candidate remains off the phone; v0.16 model/prompt/gate/native are unchanged.
+Independent actual-record audit verifies 154 hashes, both token inventories and
+four byte-identical Java replays. All 41 research boundary tests pass.
+
+The next separate contract should test source quantity/unit slots and deterministic
+Android conversion, followed by fresh frozen confirmation before integration.
+This development set establishes no general accuracy, phone speed, NPU or training
+result. USB stays authorized; phone is Dozing, with no permission/tool changes.
+Actual permissioned Mira workflows, iQOO/NPU, Office Kit and eligible accepted
+submission remain required. [Method/results](docs/structured-command-research.md).
+
+
 ## Current focus snapshots — v0.16 light research
 
 Qwen3.5-0.8B Q4_0, its original prompt, validator and native library stay selected.

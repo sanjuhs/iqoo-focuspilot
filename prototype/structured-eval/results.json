@@ -1,0 +1,435 @@
+{
+  "schema": "focuspilot.structured_development_result.v1",
+  "source_commit": "5fc35d4735c01389e0fc9d911487acfd3914ef5c",
+  "phase": "development_only",
+  "phone_promoted": false,
+  "training_performed": false,
+  "comparison_lock_sha256": "62f1c5b2d81dbdee84c025d371a725c086ec549e729735ed2dfaf2465b9b2ee2",
+  "gold_sha256": "b8ca8a201971dd7c25267866cf1e80f3c116d9ab48060337d09f5f5acb95ddb5",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "arms": {
+    "baseline": {
+      "capture_sha256": "2ec4914d63aceeb82e52029a9e18fdf90ca5022819357467e3b1fa998bfc601b",
+      "process_sha256": "c3ef08f4dec2a3613957d4149fe623d5cef7998bcc76dfc49ecf19987f8787b7",
+      "canonical_json_actual_eos": 24,
+      "load_ms": 333.792,
+      "generated": {
+        "rows": 24,
+        "supported_rows": 18,
+        "unknown_rows": 6,
+        "raw_intent_correct": 11,
+        "supported_complete": 2,
+        "supported_false_abstentions": 16,
+        "unknown_model_abstentions": 0,
+        "unknown_validator_refusals": 6,
+        "wrong_accepts": 0,
+        "raw_structured_exact_supported": null,
+        "confusion": {
+          "alarm": {
+            "alarm": 3,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 0,
+            "timer": 0,
+            "unknown": 0
+          },
+          "explain": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 2,
+            "timer": 0,
+            "unknown": 0
+          },
+          "open_app": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 1,
+            "pause_focus": 0,
+            "start_focus": 1,
+            "timer": 0,
+            "unknown": 0
+          },
+          "pause_focus": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 1,
+            "start_focus": 3,
+            "timer": 0,
+            "unknown": 0
+          },
+          "start_focus": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 4,
+            "timer": 0,
+            "unknown": 0
+          },
+          "timer": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 1,
+            "timer": 2,
+            "unknown": 0
+          },
+          "unknown": {
+            "alarm": 0,
+            "explain": 1,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 4,
+            "timer": 1,
+            "unknown": 0
+          }
+        },
+        "per_class": {
+          "alarm": {
+            "rows": 3,
+            "raw_intent_correct": 3,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "explain": {
+            "rows": 2,
+            "raw_intent_correct": 0,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "open_app": {
+            "rows": 2,
+            "raw_intent_correct": 1,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "pause_focus": {
+            "rows": 4,
+            "raw_intent_correct": 1,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "start_focus": {
+            "rows": 4,
+            "raw_intent_correct": 4,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "timer": {
+            "rows": 3,
+            "raw_intent_correct": 2,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "unknown": {
+            "rows": 6,
+            "raw_intent_correct": 0,
+            "complete_correct": 6,
+            "wrong_accepts": 0
+          }
+        }
+      },
+      "oracle": {
+        "rows": 24,
+        "supported_rows": 18,
+        "unknown_rows": 6,
+        "raw_intent_correct": null,
+        "supported_complete": 5,
+        "supported_false_abstentions": 13,
+        "unknown_model_abstentions": null,
+        "unknown_validator_refusals": 6,
+        "wrong_accepts": 0,
+        "raw_structured_exact_supported": null,
+        "confusion": null,
+        "per_class": {
+          "alarm": {
+            "rows": 3,
+            "raw_intent_correct": null,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "explain": {
+            "rows": 2,
+            "raw_intent_correct": null,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "open_app": {
+            "rows": 2,
+            "raw_intent_correct": null,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "pause_focus": {
+            "rows": 4,
+            "raw_intent_correct": null,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "start_focus": {
+            "rows": 4,
+            "raw_intent_correct": null,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "timer": {
+            "rows": 3,
+            "raw_intent_correct": null,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "unknown": {
+            "rows": 6,
+            "raw_intent_correct": null,
+            "complete_correct": 6,
+            "wrong_accepts": 0
+          }
+        }
+      },
+      "timing": {
+        "first_native_ms": 479.988416,
+        "subsequent_median_native_ms": 456.081792,
+        "prompt_tokens_min": 158,
+        "prompt_tokens_max": 165,
+        "generated_tokens_min": 6,
+        "generated_tokens_max": 8
+      }
+    },
+    "structured": {
+      "capture_sha256": "0b41b8a56f0786a3889b840b27630138a0fb1a69390461ac3c402d742a908972",
+      "process_sha256": "7fd00da54a1f692d61a218a8fe668a54a206ee858601d9fd24f7c60049307768",
+      "canonical_json_actual_eos": 24,
+      "load_ms": 328.94675,
+      "generated": {
+        "rows": 24,
+        "supported_rows": 18,
+        "unknown_rows": 6,
+        "raw_intent_correct": 16,
+        "supported_complete": 9,
+        "supported_false_abstentions": 9,
+        "unknown_model_abstentions": 3,
+        "unknown_validator_refusals": 6,
+        "wrong_accepts": 0,
+        "raw_structured_exact_supported": 9,
+        "confusion": {
+          "alarm": {
+            "alarm": 3,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 0,
+            "timer": 0,
+            "unknown": 0
+          },
+          "explain": {
+            "alarm": 0,
+            "explain": 1,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 0,
+            "timer": 0,
+            "unknown": 1
+          },
+          "open_app": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 2,
+            "pause_focus": 0,
+            "start_focus": 0,
+            "timer": 0,
+            "unknown": 0
+          },
+          "pause_focus": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 2,
+            "start_focus": 2,
+            "timer": 0,
+            "unknown": 0
+          },
+          "start_focus": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 3,
+            "timer": 0,
+            "unknown": 1
+          },
+          "timer": {
+            "alarm": 1,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 0,
+            "timer": 2,
+            "unknown": 0
+          },
+          "unknown": {
+            "alarm": 0,
+            "explain": 0,
+            "open_app": 0,
+            "pause_focus": 0,
+            "start_focus": 1,
+            "timer": 2,
+            "unknown": 3
+          }
+        },
+        "per_class": {
+          "alarm": {
+            "rows": 3,
+            "raw_intent_correct": 3,
+            "complete_correct": 3,
+            "wrong_accepts": 0
+          },
+          "explain": {
+            "rows": 2,
+            "raw_intent_correct": 1,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "open_app": {
+            "rows": 2,
+            "raw_intent_correct": 2,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "pause_focus": {
+            "rows": 4,
+            "raw_intent_correct": 2,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "start_focus": {
+            "rows": 4,
+            "raw_intent_correct": 3,
+            "complete_correct": 0,
+            "wrong_accepts": 0
+          },
+          "timer": {
+            "rows": 3,
+            "raw_intent_correct": 2,
+            "complete_correct": 1,
+            "wrong_accepts": 0
+          },
+          "unknown": {
+            "rows": 6,
+            "raw_intent_correct": 3,
+            "complete_correct": 6,
+            "wrong_accepts": 0
+          }
+        }
+      },
+      "oracle": {
+        "rows": 24,
+        "supported_rows": 18,
+        "unknown_rows": 6,
+        "raw_intent_correct": null,
+        "supported_complete": 16,
+        "supported_false_abstentions": 2,
+        "unknown_model_abstentions": null,
+        "unknown_validator_refusals": 6,
+        "wrong_accepts": 0,
+        "raw_structured_exact_supported": null,
+        "confusion": null,
+        "per_class": {
+          "alarm": {
+            "rows": 3,
+            "raw_intent_correct": null,
+            "complete_correct": 3,
+            "wrong_accepts": 0
+          },
+          "explain": {
+            "rows": 2,
+            "raw_intent_correct": null,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "open_app": {
+            "rows": 2,
+            "raw_intent_correct": null,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "pause_focus": {
+            "rows": 4,
+            "raw_intent_correct": null,
+            "complete_correct": 4,
+            "wrong_accepts": 0
+          },
+          "start_focus": {
+            "rows": 4,
+            "raw_intent_correct": null,
+            "complete_correct": 3,
+            "wrong_accepts": 0
+          },
+          "timer": {
+            "rows": 3,
+            "raw_intent_correct": null,
+            "complete_correct": 2,
+            "wrong_accepts": 0
+          },
+          "unknown": {
+            "rows": 6,
+            "raw_intent_correct": null,
+            "complete_correct": 6,
+            "wrong_accepts": 0
+          }
+        }
+      },
+      "timing": {
+        "first_native_ms": 733.475625,
+        "subsequent_median_native_ms": 858.813125,
+        "prompt_tokens_min": 324,
+        "prompt_tokens_max": 331,
+        "generated_tokens_min": 5,
+        "generated_tokens_max": 15
+      }
+    }
+  },
+  "private_evidence_sha256": {
+    "prototype/structured-native/build/dev-baseline-capture/stderr.log": "155a2f319177a52ee66f78ec3a22580ad26c1271b9b5f883762d4137eeb43300",
+    "prototype/structured-native/build/dev-baseline-capture/capture-summary.json": "0d5248dd6ab350d59369a4b0a0a9ab03cd554b0527ab2b692a596bf553afd0f1",
+    "prototype/structured-native/build/dev-baseline-capture/started.json": "d99fd28cda49e37b9e81b1c329806eec3c25b76f981ac367e989a1abc97c7885",
+    "prototype/structured-native/build/dev-baseline-capture/process.json": "c3ef08f4dec2a3613957d4149fe623d5cef7998bcc76dfc49ecf19987f8787b7",
+    "prototype/structured-native/build/dev-baseline-capture/initial.json": "8799d88b88803582e2d550c4fb935ef2aeb1142b6fe4f5275011fc5fc634ce51",
+    "prototype/structured-native/build/dev-baseline-capture/raw.jsonl": "2ec4914d63aceeb82e52029a9e18fdf90ca5022819357467e3b1fa998bfc601b",
+    "prototype/structured-native/build/dev-structured-capture/stderr.log": "75db6a91148b2cc647a4deca7b854dbc04f23822aaee0129fd6ea63585cbed3d",
+    "prototype/structured-native/build/dev-structured-capture/capture-summary.json": "caf950b9ecbb88ad952243b7c0b305cee7906c198601627e95dabe41fb717a2d",
+    "prototype/structured-native/build/dev-structured-capture/started.json": "f04b773c4cd28fcb7f16f7a57ee3b1c9f335b9125e70efa3596ca125c54e3bd3",
+    "prototype/structured-native/build/dev-structured-capture/process.json": "7fd00da54a1f692d61a218a8fe668a54a206ee858601d9fd24f7c60049307768",
+    "prototype/structured-native/build/dev-structured-capture/initial.json": "5a80a1fcddcd05970c5115bf77bbe72f4bc34544e64edff297665361367fe980",
+    "prototype/structured-native/build/dev-structured-capture/raw.jsonl": "0b41b8a56f0786a3889b840b27630138a0fb1a69390461ac3c402d742a908972",
+    "prototype/structured-eval/build/dev-scoring/structured-generated-output.tsv": "15fab4479eb72a3ca5c8e9b9706d00495fc6601f33044b6c89dfcc4996e0723c",
+    "prototype/structured-eval/build/dev-scoring/paired-details.json": "fbcbe75765e3fffc0f66318fd31aea3f7813a2cf0fff0098e744202e4325e09b",
+    "prototype/structured-eval/build/dev-scoring/baseline-generated-details.json": "0aa6645595285ea170f3969f0581114d186049caa6c69e209e7634ecdf4834e0",
+    "prototype/structured-eval/build/dev-scoring/structured-oracle-input.tsv": "0723f6c4226ff64fb0db7b37a8f2e3a586423ddfb849cfc9ba91496a02930e5a",
+    "prototype/structured-eval/build/dev-scoring/baseline-oracle-output.tsv": "57ebbb4b69048cc755e4f84e39f3b3208b1fa114ae5e65c378d18343004ce6d2",
+    "prototype/structured-eval/build/dev-scoring/baseline-generated-output.tsv": "601e9da0705231d0548aef721ccda6e1f186129e56e5eea2480ca874e5133781",
+    "prototype/structured-eval/build/dev-scoring/structured-generated-input.tsv": "9604954a9ede57c9ec6dd2d66df7caf6b09017a91dc686c03710caafeedabd7a",
+    "prototype/structured-eval/build/dev-scoring/structured-oracle-output.tsv": "93476019ed15e71c4cb8b200e6af2b4bea89877a2abbb880579f35611459f997",
+    "prototype/structured-eval/build/dev-scoring/structured-generated-details.json": "cdb064ac9e0d456b7e081d20a2b0e1f99b857df899b2c1caf597a00b9c49711b",
+    "prototype/structured-eval/build/dev-scoring/baseline-oracle-details.json": "4f1c7df91b5152920f8fd1cec17eaee494e10bde07d64687e9909c34c73fbcb9",
+    "prototype/structured-eval/build/dev-scoring/baseline-oracle-input.tsv": "72943b0f34c5d4dd3164622091531843172ff7a7507d6e3bc863f5c4faed2386",
+    "prototype/structured-eval/build/dev-scoring/baseline-generated-input.tsv": "cab2be1397367bea6a389458169ff11f9836e5e4d448aa20f5798208a696b3f0",
+    "prototype/structured-eval/build/dev-scoring/structured-oracle-details.json": "d3e8939a162198ed526430c1154472fff60610cdcda2a13d0774c87851a4b58a"
+  },
+  "paired_supported": {
+    "gain": 7,
+    "loss": 0
+  },
+  "decision": "DEVELOPMENT_DIAGNOSTIC_NO_PHONE_PROMOTION",
+  "limitations": [
+    "Small informed synthetic development cases, not population, voice or blind accuracy",
+    "Constrained JSON/EOS does not establish semantic correctness or general safety",
+    "Different prompt/output lengths prevent claiming a pure inference speedup",
+    "Fresh-context host CPU is not unchanged Android/JNI, Snapdragon NPU or Office Kit evidence",
+    "Explain correctness is proposal recognition, not causal/reminder/task-answer fulfillment"
+  ]
+}
