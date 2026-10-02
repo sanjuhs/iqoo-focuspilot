@@ -13,6 +13,12 @@ No monitor/microphone is enabled by a timer. The actual short phone-countdown te
 is pending an unlocked foreground app; current code has 105 passing JVM tests.
 See [timed focus](docs/timed-focus.md). Keep the earlier physical evidence separate.
 
+The [frozen-Qwen intent head](docs/intent-head.md) is a separate measured research
+candidate. Its raw semantic score improved on 90 synthetic cases, but strict action
+coverage decreased and the selected threshold relies on float rounding. Do not
+promote it, label it internal Qwen fine-tuning, or cite head-only time as app latency.
+Use a new frozen evaluation for future changes; preserve this negative result.
+
 ## Previous research baseline — v0.6
 
 Use source `29c4c3372fcc913d3672e59803a3aa870fa2426b` as the v0.6 build identity;

@@ -1,60 +1,44 @@
-# Demo and application video specification
+# Mira — current research demo and application pitch
 
-Prepared 2 October 2026, Asia/Kolkata. **This is a storyboard, not a record of completed capabilities.** Read [architecture.md](architecture.md), [hackathon.md](../hackathon.md), and [status.md](status.md) before filming. The official guide calls for a compelling 3–5 minute pitch. Target **4 minutes**. [iQOO event guide](https://iqoo.reskilll.com/guide)
+Prepared 2 October 2026. **Reviewable recording script; not a claim that every shot is already captured.** Target a 3–5 minute concept/research pitch, subject to the actual dashboard requirements. The public guide's presentation rubric describes a 3–5 minute pitch; no authenticated application upload format, word limit or deadline is assumed. [Official guide](https://iqoo.reskilll.com/guide).
 
-The rendered pre-event research pitch uses [this editable narration](research-pitch-script.md)
-and `scripts/render_pitch_video.py`: original graphics, a sanitized app still,
-measured local narration and captions. It explicitly labels research, simulations
-and remaining work. It is not a continuous live phone demo or an eligible event entry.
+Keep a visible **“Pre-event research prototype”** label. The current v0.7 build has 105 passing JVM tests, zero lint errors and 59 warnings; its timed countdown is implemented but the physical test is blocked until the phone is unlocked with the own app in front. Source-bound v0.6 typed Start/Pause is historical proof, not a measurement of v0.7. Read [status](status.md), [timed focus](timed-focus.md) and [application draft](application-draft.md) before filming.
 
-## Two different deliverables
+## Copyable opening
 
-The user's 3 October morning target is an early concept/application handoff unless the signed-in dashboard explicitly requires something else. For that video, show the problem, architecture, research, and actual completed diagnostics. Label storyboard screens “Proposed experience.” An actual pre-event prototype under `prototype/android` may be shown with its real research date and explicit “Pre-event laboratory prototype; not event-created submission” label. The current model lab has actual Qwen3.5 CPU inference; dashboard shortcuts and recurring nudges use deterministic logic. Identify the component actually shown. Do not imply a fine-tuned language model, NPU run, or Office Kit integration exists.
+“I pick up my phone for one task and lose the reason I opened it. Mira is a quiet productivity companion that helps me return to my own plan. I choose the task and limits, review her proposed actions, and can pause at any time. This is our dated pre-event research prototype. The local model runs on phone CPU; voice, permissioned monitoring and iQOO deployment still need physical verification.”
 
-The Grand Finale demo is prepared during the official 9–11 October build window, subject to the dashboard/organizer rules recorded in hackathon.md. It can use the live sequence below only after the respective proof gates pass. A required early working-app submission would conflict with the event-window interpretation and needs organizer/dashboard clarification; record that outcome before changing scope.
+## Four-minute research recording sequence
 
-## Four-minute final-demo sequence
+| Time | Visual / action | Narration and proof boundary |
+|---|---|---|
+|0:00–0:25|Original companion, project title and a synthetic task illustration.|“Mira helps me follow my own goal. The same app can support work or distract me, so the limits are mine.” State Productivity as the proposed track.|
+|0:25–0:55|Show Set up Mira on an unlocked app if available; otherwise use a clearly labelled readiness diagram.|“Optional features have visible setup. In the v0.6 phone test, usage, notifications and microphone were off; opening setup changed none of them.” Do not enable permissions as an unannounced filming step.|
+|0:55–1:30|Show the reviewed command flow, with source-bound v0.6 evidence card; record a fresh own-app Start/Pause only after its current proof gates pass.|“Qwen proposes an action. The original-request gate and my confirmation decide whether it runs. Historical v0.6 Start and Pause changed the session checkpoint; a wrong alarm-cancellation proposal was rejected.” Label 17.323s/1.814s/1.655s as three historical typed observations; no ASR or p50/p95 claim.|
+|1:30–1:55|Show the 25-minute review or a diagram labelled “v0.7 countdown — physical verification pending.”|“The new timed session preserves total focus and remaining time when paused. Completion pauses focus; process recovery stays paused.” Do not present a diagram as a completed phone countdown. If the short physical test later passes, insert its exact source-bound outcome.|
+|1:55–2:25|Show the synthetic decision lab and one contribution/ablation; label invented inputs.|“Repeated nudges use a bounded rule. This separate tiny trained head exposes contributions, and a shadow panel evaluates complete permitted summaries. Synthetic training accuracy is not human productivity accuracy.” No charge, monitor or real-event success inferred from the sandbox.|
+|2:25–3:05|Run the laptop consumer on a generated Java synthetic export; show only aggregate report and byte/policy identities.|“A deliberate private summary can support deeper laptop review. Here the actual Java export is understood by the Python consumer, which replays our existing policy without retraining.” State temporary local-file transport, 15 bridge tests and synthetic interoperability; **actual Office Kit transfer is pending**.|
+|3:05–3:35|Show frozen command results and the two known mismatches.|“The raw model got 25 of 58 intents correct. The gate got 49 of 58 including rejections; 16 of 23 supported requests were correct. Two proposals were still accepted incorrectly.” Explain timed focus became open-ended and erase-picture became status display in that frozen test; neither satisfied the request. Later repairs are regressions, not new independent accuracy.|
+|3:35–4:00|Show pause, simulated-points disclosure, repository/evidence links and remaining deployment gates.|“We have a local model, reviewed focus actions and a working laptop review path. Next are real permissioned monitoring, local speech and actual iQOO/Office Kit verification. No money moves. Eligible event code and submission remain separate steps.”|
 
-| Time | Visual and action | Spoken point | Required proof / rubric |
-| --- | --- | --- | --- |
-| 0:00–0:25 | Presenter and phone; show a small focus goal | “I pick up my phone for one task, drift into a feed, and lose the reason I opened it. This assistant helps me return to my own plan.” | Concrete Productivity problem; novelty and impact |
-| 0:25–0:50 | Start focus, choose a distracting app, enable observation, show pause control | “I choose the apps and limits. My usage and decisions stay local. This balance is simulated focus accountability.” | Working consent and pause; end-product quality |
-| 0:50–1:30 | Open opted-in feed; a short sandbox limit expires; nudge appears | “The app sees the session exceeded my limit. It asks whether I want a break or to return to work.” | Label “Demo limit: 15 seconds”; disclose sandbox acceleration; no real-money debit |
-| 1:30–2:00 | Open decision inspector with observed features, activations, score and policy reason; change one feature | “This small positive-weight scorer lets us inspect how a feature changes the nudge score. The language model routes the request separately.” | Actual ablation output; show values rather than invented confidence; technical depth |
-| 2:00–2:35 | Push-to-talk “Set a timer for five minutes” or “Set an alarm for 7:30 AM”; clock opens; verify created item | “A local decision model selects an allowed task, then Android's clock handles it.” | Offline speech proof if claiming local voice; receiver state, native adapter, action completion |
-| 2:35–3:05 | Airplane mode, laptop physically disconnected; repeat typed or voice command; show backend panel | “This verified component runs on the phone. Here are the model revision, runtime, backend, and measured latency.” | On-device AI / technical depth; explicitly CPU/GPU/NPU as measured |
-| 3:05–3:30 | Reconnect event Office Kit; send a permitted heavier task; show phone and laptop responses | “When I ask for a larger plan, the paired laptop helps. Core focus tasks still work without it.” | Official Office Kit trace. If absent, replace with transparent scope/limits instead of claiming rubric credit |
-| 3:30–4:00 | Pause and delete local history; show repository, evidence, measured result and next step | “Fast decisions, visible reasons, and a stop button. We built a focused assistant that helps people follow their own goals.” | Working product and concise finish; demo and presentation |
+## Short on-camera technical brief
 
-Do not call the phone “Snapdragon NPU powered” unless runtime/profiler evidence identifies accelerator execution for the demonstrated component. If only the tiny scorer runs on NPU, say exactly that. If speech is unavailable offline, type the command and explain the current limitation. A laptop-run model controlling a USB phone must be labeled as laptop inference.
+“Qwen3.5-0.8B Q4_0 runs inside Android through a pinned llama.cpp CPU bridge. Typed requests pass through a closed action validator and explicit review. A compact explainable policy handles repeated decisions; the laptop receives a bounded private export only when I choose to share it. We report the backend actually tested, retain failures and separate synthetic experiments from real phone outcomes.”
 
-## Early concept/application adaptation
+The measured frozen-Qwen-representation classifier is optional research. If mentioned: “A separately trained head classified 76 of 90 synthetic held-out requests correctly versus 46 for generation. That gain did not improve accepted phone commands under our current validator, so we kept it out of the app.” Explain the brittle confidence threshold if discussing rejection. Do not call it internal Qwen-weight fine-tuning, a deployed improvement, phone speedup or general mechanistic understanding. [Results](intent-head.md).
 
-Keep the same four-minute arc, replacing unbuilt operations with explicitly labeled storyboards, or a verified pre-event research prototype with its origin and limitations visible:
+## Historical video and eligible event demo
 
-1. 0:00–0:40: user problem and Productivity track choice.
-2. 0:40–1:30: three storyboard scenes: focus, explained nudge, voice alarm.
-3. 1:30–2:20: architecture and research: Cua interaction loop, Laya/Kev typed decisions, native Android adapters.
-4. 2:20–3:10: actual USB/device diagnosis and proposed model/NPU proof plan; only report verified diagnostics.
-5. 3:10–4:00: event build schedule, simulated accountability, offline-first intent, and limitations.
+The published **4:53 v0.3 research pitch** remains a preserved baseline: [video release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3), [editable narration](research-pitch-script.md). It uses original title cards, graphics and a sanitized app still. It is not continuous live phone footage and does not prove v0.6/v0.7 commands, timed focus, actual voice, Office Kit or NPU. Keep its historical label when sharing; do not overwrite the asset or imply the updated script has already been filmed.
 
-Suggested truthful opening: “This is our proposed build for the iQOO Grand Finale. Today we have completed research and preparation; competition implementation is planned for the eligible event window.” If showing the laboratory app, add: “This dated research prototype validates the phone workflow; it is pre-existing work and currently uses the backend named on screen.” Adjust implementation claims only when the verification record changes.
+For an eventual eligible event demo, create the competition code in the 9–11 October window unless the organizers explicitly authorize reuse. Add a live segment only after its specific proof passes: actual consented app use and notification Stop; local speech transcript and reviewed Clock outcome; USB-disconnected/airplane-mode run with exact model/backend identity; actual eligible iQOO operator placement; and paired Office Kit source/received checksum plus laptop review. A generic ADB copy, a renderer fixture or an SDK label does not establish those results. [Rules](../hackathon.md), [deployment gates](snapdragon-deployment.md), [Office Kit workflow](officekit-export-workflow.md).
 
-## Recording checklist
+## Recording and handoff checks
 
-- Obtain the dashboard's exact application/video requirements and submission deadline before exporting. The personal 3 October target is not proof of an official cutoff.
-- Film a clean test account and sandbox feed; hide notifications, contacts, debug serial numbers, tokens, and unrelated apps. Avoid recording passwords or banking apps.
-- Use a new alarm/timer that cannot interrupt an important existing one; show the result and delete the test item afterwards.
-- Capture a continuous offline proof segment with backend and model identity visible. Do not cut away from failed actions and imply they succeeded.
-- Show simulated balance text on screen while discussing penalties. No money moves.
-- Benchmark before narration: report sample count, hardware, p50/p95, warm/cold status, and whether speech/action time is included. Targets are not measurements.
-- Use the app's own phone-control path. ADB commands, prerecorded screens, or laptop-driven gestures must be identified if included.
-- Record official Office Kit activity only after integration. Generic screen mirroring or USB connection is not equivalent evidence.
-- Keep private raw phone recordings outside Git; place a sanitized exported video or link in the submission evidence only after review.
-- Export a readable 1080p MP4 if the dashboard accepts it; use clear voice and captions; verify duration, audio, upload playback, repository URL, and permissions.
-
-## Evidence attached to the final submission
-
-Maintain a small sanitized manifest: source commit and APK checksum; model/revision/checksum/license; phone model/SoC/API; runtime and active providers; fallback nodes; offline-run trace; command evaluation summary; nudge-scorer intervention results; Office Kit trace if integrated; limitations; video URL. Never attach .env, personal usage history, raw private recordings, or third-party model weights without license review.
-
-The video must match the manifest. Useful honest limitations include: only seven supported intents; monitoring only while supported services are active; access can be revoked; offline speech support varies; UI automation may fail on custom or secure views; accountability is simulated; mechanistic analysis covers the tiny scorer, not the entire LLM.
+- Confirm authenticated dashboard requirements, admission and cutoff. The user's preparation target is not an official deadline. Do not invent fields or submit placeholders.
+- Record only synthetic own-app content with the phone unlocked and an explicit action review. Mask system notifications, account identities, debug serials, contacts and unrelated screens. Keep raw private recordings/exports out of Git.
+- Use the exact installed APK/source/model hashes in the evidence manifest. A source update does not change which binary an old recording demonstrates. Keep historical latency observations and host results separately labelled.
+- Show denied/unavailable features truthfully; type a command when ASR is unavailable. No cuts may imply a failed action succeeded. A requested timer/Clock launch requires a verified result before claiming completion.
+- Keep virtual-points/no-money labels visible. Focus timer deep sleep and process loss can delay visible completion; no exact-alarm or 24/7 guarantee.
+- Review the final 3–5 minute export for readable text, complete narration/captions, privacy, audio and playback. Current timer/bridge additions require a new recording, not a renamed v0.3 video.
+- Submit only permitted assets after human review and organizer eligibility clarification; preserve the actual acceptance receipt. No submission has been performed by preparing this script.

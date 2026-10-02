@@ -18,6 +18,19 @@ user's unlock. These known-case regression repairs do not replace the frozen
 Both APKs and the manifest are [published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7).
 Current logical file size is **10.96 GiB** (2 October), within the 15 GB ceiling.
 
+## System 1 research checkpoint
+
+A separate 7,175-parameter intent head was actually trained on frozen Qwen3.5
+representations: 222 training / 61 validation / 90 held-out synthetic rows.
+Raw intent correctness rose from 46/90 for generation to 76/90; however, the
+selected abstaining head and current Java gate propose only 15/65 supported actions
+correctly versus 17/65 for generation. The threshold depends on numerical saturation.
+The candidate is not deployed. [Measured experiment](docs/intent-head.md).
+
+Next language work must evaluate calibrated rejection and argument/validation
+coverage on newly frozen families, followed by actual device costs. Preserve the
+existing held-out results; do not tune against them or infer autonomous reliability.
+
 ## Previous checkpoint — v0.6
 
 Research build source: `29c4c3372fcc913d3672e59803a3aa870fa2426b`; both APKs and

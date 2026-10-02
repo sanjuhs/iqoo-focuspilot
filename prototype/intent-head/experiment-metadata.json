@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "sources_sha256": {
+    "IntentBaseline.java": "f3612693cdea4ede0c5b841d2ce893863a49205d6e03b4a56eee5a0b43801696",
+    "IntentGateEval.java": "a4820f14604558c165e20efa43baa49c706121a2a3c780721e3a599613a95a04",
+    "build-probe.sh": "7d7ab04fa12a146bb94e599a3690990bb4071b9a64b20a263988eb1b6c9e8267",
+    "generate_data.py": "8a6f44d7893a33bb30b43f2dc3371db50e3d923dff9763fd4b3d02b5d85bc5fa",
+    "probe.cpp": "22275aa755102ca8b5e2987a6e9f5363cd4855d4ff6b7feeaecab8d6accfde40",
+    "test_training.py": "9c83ccca705e201508b81c69f6a62eb25db860ed47c532d4842c8467334f16de",
+    "train_evaluate.py": "8db67ce7e167262ed1071594ff85b0e715ca74306f946b50e959f26b246b9648"
+  },
+  "training_source_at_run_sha256": "c5781c0a6419a0017ae78b5fd01e8fbfa9b2e5087bf0c6b18f448d70cdf215bf",
+  "checkpoint_sha256": "fa72f4715788c1aab3391d533e8972a4f7c76e272cc5e23db07fee81e9403464",
+  "checkpoint_bytes": 71084,
+  "probe_vectors_sha256": "f429588cafd8eeb4e6b257940b4e9a5b2fe0299e4be483da1c0979c0c24cde59",
+  "probe_binary_sha256": "f4ec6c8afcbe77e1db3dfd72b00cac91f3b8c06d7560682cc23f5ae23e273bc5",
+  "numpy_runtime": "Existing prototype/finetuning/build/venv Python3.12.13,NumPy2.5.3",
+  "classifier_tests_passed": 7,
+  "probe_bad_input_tests_passed": 7,
+  "new_download_bytes": 0,
+  "paid_api_cost": 0,
+  "head_parameters": 7175,
+  "normalization_statistics": 2048,
+  "normalization_statistics_note": "Train-fitted means/std are stored preprocessing data, not additional learned classifier weights.",
+  "new_storage": "7.1M\tprototype/intent-head",
+  "workspace_storage": "11G\t.",
+  "promoted": false,
+  "frozen_protocol_unchanged": true,
+  "post_training_source_change": "Baseline provenance verification and read-only numerical confidence diagnostics; no second training run or threshold selection."
+}

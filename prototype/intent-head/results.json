@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "scope": "Separate7175parameter signed linear intent head on frozen realQwen result_norm observations. Not Qwen fine-tuning/positive feature-policy/phone/NPU deployment.",
+  "protocol_sha256": "ca99b403b3550a43f28ac72ae8e5b888a5c16880d0b52965e3ac3ae3106ad292",
+  "dataset_sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+  "vectors_sha256": "f429588cafd8eeb4e6b257940b4e9a5b2fe0299e4be483da1c0979c0c24cde59",
+  "template_sha256": "fe875818f135016b188f8bbff2973dcab93a374d13c4c8d7a8c919ff17344fd4",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "training": {
+    "epochs": 400,
+    "learning_rate": 0.02,
+    "regularization_mean_square_weight": 0.02,
+    "learned_parameters": 7175,
+    "initial_parameter_sha256": "03048f426ef2fa0b183f9a68e8200dfdf501d879239bc2c729a6b997fd3467a8",
+    "final_parameter_sha256": "087432badf15cf5ef04c273b6ced2b9111214a486cb607a763f92b9b3992f6b3",
+    "parameter_delta_l2": 10.199199792000485,
+    "first_loss": 1.9459101490553137,
+    "last_preupdate_loss": 0.0002906651462037751,
+    "seconds": 0.04997383407317102,
+    "std_floored_coordinates": 0,
+    "seed": 20261003,
+    "initialization": "All-zero; deterministic full-batch optimizer has no stochastic sampling"
+  },
+  "checkpoint_sha256": "fa72f4715788c1aab3391d533e8972a4f7c76e272cc5e23db07fee81e9403464",
+  "normalization_fit": "train only",
+  "validation_raw": {
+    "rows": 61,
+    "correct": 47,
+    "accuracy": 0.7704918032786885,
+    "supported_rows": 46,
+    "supported_correct_accepted": 40,
+    "supported_false_abstentions": 0,
+    "unknown_rows": 15,
+    "unknown_to_supported_false_positives": 8,
+    "unknown_correct": 7,
+    "accepted": 54,
+    "coverage": 0.8852459016393442,
+    "accepted_precision": 0.7407407407407407
+  },
+  "selected_validation_policy": {
+    "abstain_all": false,
+    "threshold": 1.0,
+    "margin": 0.0,
+    "validation": {
+      "rows": 61,
+      "correct": 40,
+      "accuracy": 0.6557377049180327,
+      "supported_rows": 46,
+      "supported_correct_accepted": 25,
+      "supported_false_abstentions": 21,
+      "unknown_rows": 15,
+      "unknown_to_supported_false_positives": 0,
+      "unknown_correct": 15,
+      "accepted": 25,
+      "coverage": 0.4098360655737705,
+      "accepted_precision": 1.0
+    }
+  },
+  "heldout_raw_head": {
+    "rows": 90,
+    "correct": 76,
+    "accuracy": 0.8444444444444444,
+    "supported_rows": 66,
+    "supported_correct_accepted": 61,
+    "supported_false_abstentions": 0,
+    "unknown_rows": 24,
+    "unknown_to_supported_false_positives": 9,
+    "unknown_correct": 15,
+    "accepted": 75,
+    "coverage": 0.8333333333333334,
+    "accepted_precision": 0.8133333333333334
+  },
+  "heldout_abstaining_head": {
+    "rows": 90,
+    "correct": 66,
+    "accuracy": 0.7333333333333333,
+    "supported_rows": 66,
+    "supported_correct_accepted": 42,
+    "supported_false_abstentions": 23,
+    "unknown_rows": 24,
+    "unknown_to_supported_false_positives": 0,
+    "unknown_correct": 24,
+    "accepted": 43,
+    "coverage": 0.4777777777777778,
+    "accepted_precision": 0.9767441860465116
+  },
+  "heldout_actions": {
+    "rows": 90,
+    "strict_action_and_slot_correct": 40,
+    "supported_rows": 65,
+    "supported_correct": 15,
+    "must_abstain_rows": 25,
+    "correct_abstentions": 25,
+    "supported_false_abstentions": 50,
+    "accepted": 15,
+    "coverage": 0.16666666666666666,
+    "correct_accepted": 15,
+    "wrong_accepted": 0,
+    "gate_sha256": "30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d",
+    "actions_executed": 0
+  },
+  "per_family": {
+    "heldout/alarm/0": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/alarm/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/alarm/2": {
+      "rows": 1,
+      "raw_correct": 1,
+      "policy_correct": 1
+    },
+    "heldout/explain/0": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 1
+    },
+    "heldout/explain/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/explain/2": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/open_app/0": {
+      "rows": 3,
+      "raw_correct": 3,
+      "policy_correct": 3
+    },
+    "heldout/open_app/1": {
+      "rows": 3,
+      "raw_correct": 3,
+      "policy_correct": 2
+    },
+    "heldout/open_app/2": {
+      "rows": 3,
+      "raw_correct": 3,
+      "policy_correct": 1
+    },
+    "heldout/pause_focus/0": {
+      "rows": 4,
+      "raw_correct": 3,
+      "policy_correct": 0
+    },
+    "heldout/pause_focus/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 3
+    },
+    "heldout/pause_focus/2": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 3
+    },
+    "heldout/start_focus/0": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 0
+    },
+    "heldout/start_focus/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 0
+    },
+    "heldout/start_focus/2": {
+      "rows": 4,
+      "raw_correct": 0,
+      "policy_correct": 0
+    },
+    "heldout/timer/0": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/timer/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/timer/2": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/unknown/0": {
+      "rows": 4,
+      "raw_correct": 0,
+      "policy_correct": 4
+    },
+    "heldout/unknown/1": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/unknown/2": {
+      "rows": 4,
+      "raw_correct": 0,
+      "policy_correct": 4
+    },
+    "heldout/unknown/3": {
+      "rows": 4,
+      "raw_correct": 3,
+      "policy_correct": 4
+    },
+    "heldout/unknown/4": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    },
+    "heldout/unknown/5": {
+      "rows": 4,
+      "raw_correct": 4,
+      "policy_correct": 4
+    }
+  },
+  "probe_metadata": {
+    "record_type": "intent_head_probe_metadata",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "probe_source_sha256": "22275aa755102ca8b5e2987a6e9f5363cd4855d4ff6b7feeaecab8d6accfde40",
+    "probe_binary_sha256": "f4ec6c8afcbe77e1db3dfd72b00cac91f3b8c06d7560682cc23f5ae23e273bc5",
+    "adapter_source_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prompt_template_sha256": "fe875818f135016b188f8bbff2973dcab93a374d13c4c8d7a8c919ff17344fd4",
+    "input_sha256": "4101ae41d4b6e8a9a5972a181b9e1174d0dcfc9fe269eef40b3a1b8a23b4b4de",
+    "llama_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+    "tensor": "result_norm",
+    "position": "last_prefill",
+    "cpu_only": true,
+    "generation": false,
+    "mutation": false,
+    "cases": 373
+  },
+  "probe_timing": {
+    "rows": 373,
+    "first_setup_plus_prefill_ms": 304.925166,
+    "subsequent_setup_plus_prefill_ms_median": 308.468083,
+    "prefill_ms_median": 303.998333,
+    "setup_ms_median": 4.469542,
+    "definition": "Host CPU-only full native prompt, fresh context plus full1024-vector eval observation; no generation. Not head-only timing or phone/NPU result.",
+    "sum_setup_plus_prefill_seconds": 115.61964856099999,
+    "model_load_ms": 323.452583
+  },
+  "head_only_cpu_ms": {
+    "first": 0.047291,
+    "median": 0.009041,
+    "max": 0.047291,
+    "definition": "Single-row numpy normalization+logits+softmax+threshold; existing captured vector assumed. Excludes model load/prefill/capture/Java gating."
+  },
+  "attribution": {
+    "exact_sum_max_abs_error": 1.7053025658242404e-13,
+    "head_only_intervention_max_abs_error": 2.7000623958883807e-13,
+    "strongest_top_vs_runner_coordinate_ablation_changed_argmax": 1,
+    "cases": 90,
+    "contribution_file": "ignored build/head-run/contribution-examples.json",
+    "limit": "Coordinate contributions explain this separate linear head exactly. Coordinates have no assigned human semantic meanings. No full Qwen causal/neuron/safety interpretation."
+  },
+  "autoregressive_baseline": {
+    "rows": 90,
+    "correct": 46,
+    "accuracy": 0.5111111111111111,
+    "supported_rows": 66,
+    "supported_correct_accepted": 46,
+    "supported_false_abstentions": 0,
+    "unknown_rows": 24,
+    "unknown_to_supported_false_positives": 24,
+    "unknown_correct": 0,
+    "accepted": 90,
+    "coverage": 1.0,
+    "accepted_precision": 0.5111111111111111,
+    "schema_and_eos_valid": 90,
+    "metadata": {
+      "research_only": true,
+      "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+      "input_sha256": "59056a3f7d6899fef1eb87fa7998816067e9cfce51b9c0436d0efd67165e4636",
+      "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+      "adapter_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "baseline_source_sha256": "f3612693cdea4ede0c5b841d2ce893863a49205d6e03b4a56eee5a0b43801696",
+      "cpu_only": true,
+      "phone_actions": false,
+      "prompt": "Unchanged Android LocalModel.renderPrompt",
+      "context": 1024,
+      "threads": 4,
+      "exit_code": 0,
+      "wall_seconds": 41.59836175001692,
+      "output_sha256": "9bffebf577c0869394efa9e523030443e6c9186c08f59be9826aaaa53bfa14e7"
+    },
+    "model_load_ms": 480.366958,
+    "native_total_ms_median": 456.85970999999995,
+    "wall_ms_median": 457.5873755,
+    "gate": {
+      "rows": 90,
+      "strict_action_and_slot_correct": 42,
+      "supported_rows": 65,
+      "supported_correct": 17,
+      "must_abstain_rows": 25,
+      "correct_abstentions": 25,
+      "supported_false_abstentions": 48,
+      "accepted": 17,
+      "coverage": 0.18888888888888888,
+      "correct_accepted": 17,
+      "wrong_accepted": 0,
+      "gate_sha256": "30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d",
+      "actions_executed": 0
+    }
+  },
+  "checkpoint_unchanged_after_eval": true,
+  "promoted": false,
+  "actions_executed": 0,
+  "wall_seconds": 0.4923366670263931,
+  "source_sha256": "c5781c0a6419a0017ae78b5fd01e8fbfa9b2e5087bf0c6b18f448d70cdf215bf",
+  "confidence_limitations": {
+    "selected_probability_threshold": 1.0,
+    "observed_float64_saturation": {
+      "train": {
+        "rows": 222,
+        "max_probability_exactly_1_due_to_float_rounding": 146,
+        "top_probability_median": 1.0,
+        "top2_logit_gap_median": 50.45456521359827
+      },
+      "validation": {
+        "rows": 61,
+        "max_probability_exactly_1_due_to_float_rounding": 25,
+        "top_probability_median": 0.9999999999795217,
+        "top2_logit_gap_median": 24.611827571643445
+      },
+      "heldout": {
+        "rows": 90,
+        "max_probability_exactly_1_due_to_float_rounding": 43,
+        "top_probability_median": 0.9999999999999996,
+        "top2_logit_gap_median": 35.65430447215061
+      }
+    },
+    "meaning": "A finite logit gap can round softmax to exactly 1. Threshold 1.0 accepts rounded values, not mathematically certain/calibrated decisions. Backend/precision changes can alter acceptance. Small synthetic validation zero FP does not guarantee safety. Do not deploy this frozen policy as a production confidence gate."
+  },
+  "decision": "Research-only; raw intent accuracy improved, but selected policy has brittle numerical threshold and worse strict supported action coverage than autoregressive baseline under current Java gate. No candidate promotion.",
+  "training_source_at_run_sha256": "c5781c0a6419a0017ae78b5fd01e8fbfa9b2e5087bf0c6b18f448d70cdf215bf",
+  "current_source_sha256": "8db67ce7e167262ed1071594ff85b0e715ca74306f946b50e959f26b246b9648",
+  "post_training_source_change": "Added baseline provenance verification and read-only numerical confidence diagnostics after the frozen training run; no fit, threshold selection, data, checkpoint or prediction changes."
+}

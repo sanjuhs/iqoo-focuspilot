@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "scope": "Pre-event synthetic research. Separate signed-weight linear classifier on observed frozen Qwen hidden states, not Qwen fine-tuning, not the positive-policy model, not phone/NPU deployment.",
+  "frozen_before_probe": true,
+  "classes": ["start_focus", "pause_focus", "alarm", "timer", "open_app", "explain", "unknown"],
+  "hidden_width": 1024,
+  "parameters": 7175,
+  "normalization": "Train-only per-coordinate mean and population standard deviation, std floor0.05; no validation/heldout fitting.",
+  "optimizer": "Full-batch class-balanced softmax cross-entropy plus0.02 mean-square weight penalty; Adam, lr0.02,400 fixed epochs, seed20261003.",
+  "weight_initialization": "All-zero weights and biases; actual updates recorded.",
+  "validation_threshold_grid": {"minimum_probability": [0.35,0.45,0.55,0.65,0.75,0.85,0.95,1.0], "minimum_top2_margin": [0.0,0.05,0.1,0.2,0.3]},
+  "threshold_selection": "Require zero validation unknown-to-supported false positives, maximize supported correct accepted predictions, then accepted precision, then lower probability threshold and margin. Explicit abstain-all fallback if no feasible option. No checkpoint/hyperparameter selection after heldout.",
+  "unknown_policy": "Predicted unknown stays unknown; below selected probability or top2 margin abstains to unknown. Softmax confidence is not calibrated risk.",
+  "heldout_policy": "Read/evaluate heldout once after immutable checkpoint and validation thresholds; no template/prompt/model/parameter tuning from result. Autoregressive comparison afterwards on same fixed heldout.",
+  "action_eval": "Exact current v0.7 Java ModelCommandGate separately validates original utterance and slots. Model intent classifier is not permission/confirmation/outcome proof.",
+  "gate_sha256": "30f35d17a54717318492110d39c5de260a57d6878bab1d1365f658bd8ee7200d",
+  "attribution": "For class logit, contribution_j = standardized_feature_j * signed_weight_j, plus class bias. Sum verified. Head-only intervention can zero/remove a feature contribution; no claim of Qwen semantic coordinate meaning or full-model causal mechanism.",
+  "compute": "Existing local Python/numpy CPU; fixed GGUF probe CPU4threads/context1024; no downloads, paid API or cloud jobs.",
+  "promotion": "None. Root review and new independent device/generalization gates required."
+}

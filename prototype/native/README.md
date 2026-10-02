@@ -85,6 +85,29 @@ This test performs real JNI inference, observes selected activations, requests c
 
 ## Next causal gate
 
+### Separate full-vector intent-head experiment
+
+The pre-event host research probe in [../intent-head/probe.cpp](../intent-head/probe.cpp) exports the **full 1024-channel `result_norm` vector at the final prompt-prefill position**. It generates no tokens, changes no tensors, and is separate from the deployed Android/JNI sources. Its prompt matches the frozen [prompt-template.json](../intent-head/prompt-template.json), including the current system instruction, user turn, closed thinking prefix, and reserved-control escaping. The build rejects adapter drift and verifies the literal C++ prompt against that frozen template.
+
+```sh
+python3 prototype/intent-head/generate_data.py
+sh prototype/intent-head/build-probe.sh
+prototype/intent-head/build/intent_vector_probe \
+  --model models/qwen/Qwen3.5-0.8B-Q4_0.gguf \
+  --input prototype/intent-head/build/all-cases.tsv \
+  --context 1024 --threads 4 \
+  > prototype/intent-head/build/vectors.jsonl \
+  2> prototype/intent-head/build/probe.log
+```
+
+Input is a selected UTF-8 TSV file, one `id<TAB>utterance` per line. IDs must be unique ASCII letters/digits/underscore/hyphen, 1–64 bytes. Utterances must contain 1–500 UTF-16 units, fit 2048 UTF-8 bytes, and contain no tab, control character, or line separator. CRLF rows are rejected. Files are bounded to 4096 rows and 8 MiB; the complete file is validated before model loading. Context must be 512 or 1024 and threads exactly four. Token overflow is rejected without truncation. Use 1024 for parity with the current JNI reference.
+
+Each stdout JSONL record contains `id`, `width`, `vector`, and `metrics`: `setup_ms`, `prefill_ms`, `model_load_ms`, `prompt_tokens`, `threads`, `context`, `callbacks`, `cpu_only:true`, and `generated_tokens:0`. Vector values use enough digits to round-trip float32. Setup includes tokenization and fresh context allocation; prefill includes the observational callback and synchronization. Model loading happens once per process and its shared duration is repeated in each record. These are instrumented host CPU timings, not Android or NPU measurements.
+
+The first stderr JSON record records the runtime-verified model SHA, binary/source/adapter/template/input SHA values, pinned llama commit, and observation settings. Remaining stderr contains upstream diagnostics. Ignored `build/build-manifest.json` additionally records compiler, build script, and linked-library hashes. This macOS-host-only build uses the existing Homebrew runtime and CommonCrypto for SHA-256; it downloads nothing. Keep vectors, logs and binaries under ignored `build/` and require process exit status zero before treating the dataset as complete.
+
+Every row receives a newly allocated context and explicit clearing of recurrent and KV memory. The callback only reads contiguous float32 `result_norm`, checks its embedding width and row shape, and copies the final row with `ggml_backend_tensor_get`. Missing callbacks, a width mismatch, nonfinite values, or an all-zero vector fail the run. No `tensor_set`, sampling, or token-generation path exists here. The separate intent-head evaluation must freeze data splits and training choices before capture; exported vectors alone establish neither a useful classifier nor semantic axes, mechanistic understanding, or suitability for phone deployment.
+
 Before claiming ablation/patching, implement controlled tensor writes at a verified graph boundary and test zero, restoration, and clean-to-corrupt patch conditions. Hold tokenization, quantized weights, grammar, sampling, selected position, and all other execution settings fixed; reset both recurrent state and KV memory before each run. Include no-op intervention controls and show output/logit changes across a separate holdout and repeated trials. Preserve an uninstrumented baseline and measure callback overhead. Qwen3.5's hybrid recurrent stack means cache/state contamination can imitate an intervention effect.
 
 Licenses: own repository license applies to the adapter; llama.cpp/ggml remain MIT, included as [LICENSE.llama.cpp](LICENSE.llama.cpp). The primary Qwen model is Apache-2.0 with the pinned [model manifest](../qwen/model-manifest.json) and converter/source attribution. No provider API or account key is embedded.

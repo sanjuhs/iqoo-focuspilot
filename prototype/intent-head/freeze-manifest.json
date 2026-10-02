@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "ca99b403b3550a43f28ac72ae8e5b888a5c16880d0b52965e3ac3ae3106ad292",
+  "data_manifest_sha256": "fa3ad778e115a53cede700bcecec6b44c7f073269023e477e90a8ddba06196fc",
+  "template_manifest_sha256": "7fb83eba5ab7b24cfffbb4aac5f8cb46237278cb09b978528f2768f45ba876b2",
+  "new_training_exact_overlap_with_previous58_case_set": 0,
+  "all_cases_tsv_sha256": "4101ae41d4b6e8a9a5972a181b9e1174d0dcfc9fe269eef40b3a1b8a23b4b4de",
+  "frozen_before_any_probe_capture": true
+}

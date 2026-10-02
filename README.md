@@ -9,6 +9,13 @@ explanations. **105 JVM tests pass**; lint zero errors/59 warnings. Both APKs
 passed artifact inspection. Actual v0.7 countdown testing awaits an unlocked,
 foreground phone; [v0.7 APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). [Timed focus contract](docs/timed-focus.md).
 
+**New System 1 research:** a separate classifier trained on actual frozen Qwen
+activations scored 76/90 raw intents versus 46/90 for generation on the same
+synthetic held-out set. Its validation-selected abstention uses brittle numerical
+saturation, and the current action gate yields 15/65 correct supported commands
+versus 17/65 for generation. It remains research-only; APK/model weights are
+unchanged. [Results and limits](docs/intent-head.md).
+
 **Previous verified phone-action build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
 Set up Mira shows optional feature readiness; typed local-model Start/Pause were
 reviewed, confirmed and checked on Nothing. The app was left paused with usage off
@@ -53,6 +60,7 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
 | [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
+| [docs/intent-head.md](docs/intent-head.md) | Trained representation classifier, same-set comparison and deployment limits |
 | [docs/qwen-finetuning.md](docs/qwen-finetuning.md) | Actual local QLoRA experiment and rejected candidate |
 | [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
 | [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |

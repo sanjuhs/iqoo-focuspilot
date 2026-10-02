@@ -2,6 +2,34 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Frozen-Qwen decision-head research
+
+- Actual read-only CPU extraction captured 373 full 1,024-coordinate Qwen3.5
+  `result_norm` vectors from the unchanged complete Android prompt, fresh context
+  per request. Protocol/data/template identities were frozen before capture.
+- A separate **7,175-parameter signed linear head** completed 400 updates on 222
+  synthetic training rows; 61 validation rows selected abstention before 90
+  held-out rows were scored. Qwen weights and Android APK remain unchanged.
+- Same-set raw intent correctness: autoregressive **46/90**, head **76/90**.
+  Unknown false accepts: **24/24** vs **9/24**. Selected abstaining head: **66/90**,
+  43/90 coverage and 0/24 unknown false accepts. Threshold **1.0** relies on
+  rounded softmax saturation and is explicitly unsuitable for deployment.
+- Actual frozen v0.7 gate yields only **15/65** correct supported actions for the
+  selected head versus **17/65** for generation; required abstentions 25/25 for
+  both, no wrong accepted proposals in this set and no actions executed. This
+  research gain does not improve end-to-end command coverage.
+- Host extraction setup+prefill median **308.47 ms**; head-only median **0.00904 ms**
+  excludes extraction. Generation native median **456.86 ms**. Different context
+  construction and sample sets prevent a paired speedup claim; no phone/NPU result.
+- Contribution reconstruction error 1.71e-13 and head-input intervention error
+  2.70e-13 verify the separate classifier's algebra. No semantic coordinate names
+  or full-Qwen causal understanding are established. Seven focused tests pass.
+- Candidate remains unpromoted. [Report](intent-head.md),
+  [aggregate evidence](../prototype/intent-head/results.json). Application copy
+  and recording script now reflect current verified and pending features.
+- Latest measured logical workspace file size is **10.98 GiB**, within the
+  authorized 15 GB ceiling. No new model download or cloud/API expense.
+
 ## Timed focus update 0.7
 
 - App source `6bd4841b170be0445470eff9977133bc2accc8f6` adds reviewed countdowns,
@@ -239,8 +267,8 @@ source does not turn that video into proof of real speech, NPU or live training.
 - Completed direct-entry application, deadline, required video format and admission.
 - Permission to reuse any pre-event prototype in an eligible event submission.
 - Full APK end-to-end/permission/voice/alarm/background behavior beyond verified slice.
-- Airplane-mode/USB-disconnected proof, language-model fine-tuning, few-shot
-  improvement and causal LLM outcomes. Actual app-process CPU inference is verified.
+- Airplane-mode/USB-disconnected proof, beneficial deployed language-model fine-tuning,
+  real-user few-shot improvement and causal LLM outcomes. Actual app-process CPU inference is verified.
 - Snapdragon NPU execution, acceleration metrics and Office Kit on an iQOO device.
 - Persistent monitoring under actual OEM lifecycle, wake word and general cross-app automation.
 - Real financial deductions: out of scope; accountability balance is simulated.
