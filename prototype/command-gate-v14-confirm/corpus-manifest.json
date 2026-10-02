@@ -1,0 +1,1014 @@
+{
+  "schema": 1,
+  "scope": "Fresh informed-author synthetic host confirmation after candidate lock; no model capture/result/promotion",
+  "authorized_after_source_commit": "7fb7a5b30f66fae7ceabfd526726f1151107607e",
+  "created_utc": "2026-10-02T22:02:44.560175+00:00",
+  "protocol_sha256": "0aa35324791c260717a1bf1ea09b48a782f7f993c1af0b48f0f85961bec3734f",
+  "protocol_markdown_sha256": "c911123a45a2668ba7b3e3f8e924e42babc82f23e39f684f26c5646f73d247ab",
+  "selection_lock_sha256": "796c20e3e39d1ff322f4da1da397884977701d5e6de53a3c6a5a7e7809712d4e",
+  "candidate_source_sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+  "candidate_metadata_sha256": "f727167add342812c1ffa629693c68bf9358441b1dd1d96bd9b99d214da2ec5e",
+  "candidate_parser_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+  "generator_sha256": "fa95ba2b4a9f7b9197d62fc04fc2c199932e0fb0e966377cea783fa30efd4701",
+  "author_cases_sha256": "a3debb1e2c05bad14e20d6efe57e9b816358e228e676ca7b724bf70386e6b211",
+  "cases_sha256": "a3debb1e2c05bad14e20d6efe57e9b816358e228e676ca7b724bf70386e6b211",
+  "requests_sha256": "867477b765cd7bf2c5e52c194af16787a44aede7eee5a942c6616d58fb8fdd56",
+  "selected_source_sha256": {
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "row_count": 100,
+  "families": 50,
+  "supported_by_intent": {
+    "start_focus": 10,
+    "pause_focus": 8,
+    "alarm": 8,
+    "timer": 10,
+    "open_app": 6,
+    "explain": 8
+  },
+  "unknown_rows": 50,
+  "hard_tag_counts": {
+    "spoken_number_slot": 11,
+    "seconds_minutes_unit": 4,
+    "duration_boundary": 4,
+    "resume_vs_start": 2,
+    "pause_preservation": 8,
+    "current_or_spoken_focus_pause": 5,
+    "midnight_noon": 2,
+    "nudge_cause": 4
+  },
+  "exact_overlap": 0,
+  "normalized_overlap": 0,
+  "overlap_inventory": [
+    {
+      "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java",
+      "sha256": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+      "text_count": 200,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/ResetIsolationInstrumentation.java",
+      "sha256": "ae47fcabbe88a06f595c23e041e53ad4829b0bedc307da7746d7161471df7d5b",
+      "text_count": 71,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java",
+      "sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "text_count": 32,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandParser.java",
+      "sha256": "268d1ad85fac17985117b705b657151d74f1939c441ddaa7e2f42a6e899e3f9f",
+      "text_count": 5,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionView.java",
+      "sha256": "6657249dd728e43842d90bb46f9b9079b24ef59a480cba185d9177f41458795b",
+      "text_count": 4,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/DecisionPolicy.java",
+      "sha256": "2665d7a9fbd46e3f9eead68a5d66114cbf5b530c40213b2c07f665b77ce796e0",
+      "text_count": 2,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FewShotPolicy.java",
+      "sha256": "f0dfa83ee74c28aee7d0c74d4a25125ffd78b8764a8724cfec462c8d19b18a56",
+      "text_count": 20,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingCompanionService.java",
+      "sha256": "22410c9450fcff212ee692616753f4036980abd94e83b50853f199f1617f7865",
+      "text_count": 43,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingWindowPosition.java",
+      "sha256": "3cefe905a72a1b69375595496f2db04f9bd400c1f7b93578b127d56a3d5c84fe",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusDataExport.java",
+      "sha256": "4827a7dc5e3949cdaf83bfd2fbd6e35a8e01f59a11e40706fdd5814fe289aaf4",
+      "text_count": 61,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusGoalConfig.java",
+      "sha256": "b359e0b19c1457ac3a4368910a0e6658e4e90aeffdd089e0f48833a28a347841",
+      "text_count": 5,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusMonitorService.java",
+      "sha256": "92893791039a6dbf187a146a9da10b57bd154ae220a14d7da53768a635a9acba",
+      "text_count": 19,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusRepository.java",
+      "sha256": "e620d1f159ecadde98e18c851538244542b784faead876bc1d60dfed35dbd83b",
+      "text_count": 55,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/FocusSession.java",
+      "sha256": "05f43a840025a8721a9ee6ad6963be67d1d4cd5b8fd1c33a7d7f3889ad50de1a",
+      "text_count": 1,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferencePolicy.java",
+      "sha256": "ac93baa9e2ae6c70006432f2ad98312b518e5e00bc8798e335f0b5b142de1448",
+      "text_count": 20,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferenceScope.java",
+      "sha256": "5f4c1f88e8fbced3369eb7f45ed32ff5bc2002285721d2b8af86cdf98d042183",
+      "text_count": 14,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LivePreferenceStore.java",
+      "sha256": "7df9729d936a9b706a51326c797e95322783b6b9b37ff467f6aecbbdbb1c3379",
+      "text_count": 61,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java",
+      "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "text_count": 28,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java",
+      "sha256": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+      "text_count": 134,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalVoiceInput.java",
+      "sha256": "65fef725fd4725b63a80e612472397a1d7d7d1791e326e844cc82f7903ad69d8",
+      "text_count": 36,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java",
+      "sha256": "0bcdf9dc83d301fe9370f8d6dd1e78a6550f616445c569fe5f4f833e0c70a77a",
+      "text_count": 309,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java",
+      "sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+      "text_count": 96,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MonitorConfig.java",
+      "sha256": "c3d8d401673dccfd450e07b5ba8d5cbfc06417bcc72cef8438ccec916ada3f4c",
+      "text_count": 1,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/MonitorGate.java",
+      "sha256": "591306e1dc36b30143594408b9cda04e41143773ea18c6be6a9c2add7b55a86c",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ObservationSnapshot.java",
+      "sha256": "bf62f655de7c828bd8b2fb3da3d62532b345955cdc6ceeb8f2c036638b2f487b",
+      "text_count": 17,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ObservedNudgeGate.java",
+      "sha256": "2e9c758fb5f7f113676b3993e745564a307d63b1950c39e782b2272c276aa5d4",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/PersonalizationActivity.java",
+      "sha256": "efdb3c601fca00a2b1ce516b1191a639d2ba92e3a721833ed901e29233007405",
+      "text_count": 73,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/PolicyLabActivity.java",
+      "sha256": "75628bf3595ba84288cc9fa6d5a52efe86861641dd71b67746614af2eeefdbd3",
+      "text_count": 58,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java",
+      "sha256": "76d835f22dc4da683b5c6733228abd6b33b2c5488d191c91847ea8bd843bcb47",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxAccessibilityService.java",
+      "sha256": "e6522f7537e0445a99b95b4a7fed102636044b9ad687ec0394d00ca18371563a",
+      "text_count": 33,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxActionGate.java",
+      "sha256": "c40dbc8a6f3e6369061f8597d2a17c542350d1b6814cd3cbe286f79cef93625f",
+      "text_count": 5,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SandboxAutomationActivity.java",
+      "sha256": "fb94d83e5396cb7371afd1043e7042d5a3e43f3184565b47611e0d2886faeb9f",
+      "text_count": 28,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/ScopedNudgeFeedback.java",
+      "sha256": "9594a7ed556455777d904674398ca56f38d866b988d379997b743852d1cabdcf",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SelectedAppObservation.java",
+      "sha256": "21d46841d6c4d6f6a17648c52c3626bb5325fc769203d9eafd88081ecbe765ab",
+      "text_count": 6,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java",
+      "sha256": "ffa28559ed90614e38197e541d0b19ba1fca774109e659d15af5621cb67ec3a6",
+      "text_count": 74,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java",
+      "sha256": "198ecf33399ddca773384aaadf837a5a28140746fe764eb65f593c5e422d14b5",
+      "text_count": 71,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java",
+      "sha256": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba",
+      "text_count": 12,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/TrainedPolicy.java",
+      "sha256": "8bdb4a25108be2a83a1d86ff79ff20a98818ceec915f3b96cedbd0e6c19436d9",
+      "text_count": 13,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/UsageReader.java",
+      "sha256": "196c29a96c8913f1fdcf4f0760fcf7ce6a52934cdfff248ab1f350e04f2f2830",
+      "text_count": 6,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/VirtualLedger.java",
+      "sha256": "34ec1b8f3ba6e6f03ee4e3347735504c4581b3d12405b4e42b7c35c17d9c771d",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/VoiceDraftState.java",
+      "sha256": "e4c5d872dce5cc6044ebc0f2d830c63de275362d280df0d07410a33d8de255a2",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/BudgetPersonalizationIntegrationTest.java",
+      "sha256": "9d8881c9259998bdddecd7c406c5affd53139ae41f359523412bcac5394220a8",
+      "text_count": 3,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CommandNumberWordsTest.java",
+      "sha256": "90bc05edc1473632e92f11d52216bc4a67b329e11caf8ce9b523d8ee67e4e358",
+      "text_count": 75,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ConversationalCommandGateTest.java",
+      "sha256": "f279baca16066c49fdb0a607677b70de35eeb867032de60c2da406bfecfdc386",
+      "text_count": 60,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CoreTest.java",
+      "sha256": "b22599172235a20722f9fb50f8112b2144c217bbc6d07c2ede8c511f41925864",
+      "text_count": 8,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FewShotPolicyTest.java",
+      "sha256": "5cf2b36c89acb1aca21a399883559d85a9915c7574e2e9bf45daf256e257efee",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FloatingWindowPositionTest.java",
+      "sha256": "a7767401c3b3faef32158033ac8039cb2cef12f9e460071dbf66195a90079970",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusDataExportTest.java",
+      "sha256": "7a86401c0a5bc61b76736c089a94682dadf9001c2735afc865e099bef6db002a",
+      "text_count": 58,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusGoalConfigTest.java",
+      "sha256": "8efba61015433f9a74a8a6feb6f3583223a770e96136bd07f7d49f2cb6a0f87c",
+      "text_count": 15,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/LivePreferencePolicyTest.java",
+      "sha256": "f7224003a13c61439933f444eeca3aab24b3363311937e178d29fcd1eac57c8d",
+      "text_count": 23,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ModelCommandGateTest.java",
+      "sha256": "eeb39c59d773ba228d982f22cd453f8ecd5a29b03ea9ad673bbaa110d9f19e9b",
+      "text_count": 223,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/MonitorLifecycleTest.java",
+      "sha256": "0dfa156bf60449fea712bcd2c2d64c4af13371699dcef3fa5ed0d556bbbcb071",
+      "text_count": 4,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/NaturalCommandGateTest.java",
+      "sha256": "776b201acd4b803ed2a5563024a6c1d2051531fbd1fa4070f84633dab3fead27",
+      "text_count": 111,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservationSnapshotTest.java",
+      "sha256": "c132c54e0784c4e376d8845db78d2d23987d60ef0293f240e52a66a96e38a622",
+      "text_count": 3,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservedNudgeGateTest.java",
+      "sha256": "354f178aaed5242892346983dd385d3d91675976c580a40f126ea9a810b37f0a",
+      "text_count": 2,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java",
+      "sha256": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/RetainedForegroundLabelPolicyTest.java",
+      "sha256": "216f9fe680e1354d483e36c99cc02f478d355fa79247053c7f1ce3769a3a7516",
+      "text_count": 3,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/SandboxActionGateTest.java",
+      "sha256": "7ed40c269166dd988a940e280bccd1b641999079065d2ed87592dcb0c4d8c9f3",
+      "text_count": 5,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java",
+      "sha256": "e48b24a9871bf3bacf0cac17871fc6aa1aee7d09431dfbe4a7899548cebc31fa",
+      "text_count": 50,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TimedFocusSessionTest.java",
+      "sha256": "c7545f90f581a4291be3ce71da27b53425dc770ebd4fe2a702cd7a0eb0997a37",
+      "text_count": 0,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TrainedPolicyTest.java",
+      "sha256": "8f0c66b91af55ba0646e061898609d6b70d568e252bb283342b72f5a7b0567ed",
+      "text_count": 4,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/VoiceDraftStateTest.java",
+      "sha256": "7eb41b675bf903a4c29e597e4e21fe16c9546f6c490942195c1048e6c059fa72",
+      "text_count": 15,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-confirm/build/cases.jsonl",
+      "sha256": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-confirm/test_data.py",
+      "sha256": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+      "text_count": 45,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/CompactIntentCandidate.java",
+      "sha256": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+      "text_count": 11,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-dev/candidate.json",
+      "sha256": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+      "text_count": 15,
+      "method": "JSON fixed_examples/examples only; ignores result metadata",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-compact-runner/test_scoring.py",
+      "sha256": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386",
+      "text_count": 254,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-eval/build/cases.jsonl",
+      "sha256": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+      "text_count": 58,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-eval/test_evaluation.py",
+      "sha256": "5182b36c8a8cf89eb72a16d002992996f7d9f7d078865b9c87caefaf5d511c27",
+      "text_count": 40,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-gate-v14-confirm/test_data.py",
+      "sha256": "54fd18302eb98751d9f39dee1eb332a26a543a48488876c2f5601228d4283dab",
+      "text_count": 134,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/command-gate-v14-dev/CandidateGateTest.java",
+      "sha256": "90c351fc9c05f07bff2de2f4db088d96a33de479e1e45c51dba33655fadcdfd1",
+      "text_count": 108,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/command-gate-v14-dev/ModelCommandGate.java",
+      "sha256": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+      "text_count": 111,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/command-gate-v14-dev/build/requests.tsv",
+      "sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+      "text_count": 100,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/command-gate-v14-runner/test_evaluation.py",
+      "sha256": "3029b2389d61d7bb481b0d0175111770f932dd8c6191f0a51340579fa89672e3",
+      "text_count": 132,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": false
+    },
+    {
+      "path": "prototype/command-json-confirm/build/author-cases-first.jsonl",
+      "sha256": "e8d53ccbbd7cefd38347a7af8616afd5238a54237661e4cd56a087fd0717bdd7",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-confirm/build/author-cases.jsonl",
+      "sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-confirm/build/cases.jsonl",
+      "sha256": "b28074ba843af6e69813b97399a4910b570b99fb2e5cda6475b9f9dfa9d9eb9f",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-confirm/build/requests.tsv",
+      "sha256": "739b0413f15b0279c0b05e5b1596f2c3ee937fb106180cfa0f42b3e8ebfaba64",
+      "text_count": 100,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-confirm/test_data.py",
+      "sha256": "56b36edc39a559ad9cf377fa8281f21ec6b3b7fb83e1e54cf829709a3965c9f9",
+      "text_count": 122,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-dev/JsonIntentCandidate.java",
+      "sha256": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+      "text_count": 25,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-dev/build/json1/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-dev/candidate.json",
+      "sha256": "539d533c62cc8f1ff4201a8b99e71acb3e7a954135cc725da73e437c0d8f4c70",
+      "text_count": 8,
+      "method": "JSON fixed_examples/examples only; ignores result metadata",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-json-runner/test_scoring.py",
+      "sha256": "ed6f9c08e383c7db598927e6367ec96c2fbbac0b51cba82a4f97f99b197603c5",
+      "text_count": 137,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v08-eval/build/cases.jsonl",
+      "sha256": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v08-eval/test_evaluation.py",
+      "sha256": "23d29cf5112750a2c2622327d4d8416d17832c08ce29dfdc43ea8a8966a099ba",
+      "text_count": 48,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-confirm/build/cases.jsonl",
+      "sha256": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+      "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+      "text_count": 8,
+      "method": "JSON fixed_examples/examples only; ignores result metadata",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-confirm/test_evaluation.py",
+      "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+      "text_count": 82,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+      "sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+      "text_count": 36,
+      "method": "TSV complete original request column 2",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-dev/candidates/round1/LocalModel.java",
+      "sha256": "8916ef91bb41a38a250333344803f23e22cc586272807b9f7d9d360a26848f45",
+      "text_count": 65,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-dev/candidates/round2/LocalModel.java",
+      "sha256": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+      "text_count": 54,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-eval/build/cases.jsonl",
+      "sha256": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+      "text_count": 100,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+      "sha256": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+      "text_count": 8,
+      "method": "JSON fixed_examples/examples only; ignores result metadata",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+      "sha256": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+      "text_count": 13,
+      "method": "JSON fixed_examples/examples only; ignores result metadata",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/command-v10-eval/test_evaluation.py",
+      "sha256": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+      "text_count": 82,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/finetuning/build/data/heldout.jsonl",
+      "sha256": "cf066dc847e27fb6be6afd3f086278e6b816f75a9960d2c4833650edba86d40a",
+      "text_count": 410,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/finetuning/build/data/train.jsonl",
+      "sha256": "3aac21b829058147ecf91455abf7f55be52275404a90ab6b792bec387c12a3ff",
+      "text_count": 1160,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/finetuning/build/data/valid.jsonl",
+      "sha256": "3175db7d8961248d14a732cef2b3a2462856d44b5a33a947774372e045a26e63",
+      "text_count": 140,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/intent-head/build/all-cases.jsonl",
+      "sha256": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+      "text_count": 373,
+      "method": "JSONL utterance plus user messages/system prompt examples; excludes assistant output",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/laya/cases.json",
+      "sha256": "322e53d53aaa71c24e24cf92a4e7667dd75e81bc7c29f2bb7d959e6cfff1d57d",
+      "text_count": 15,
+      "method": "JSON array goal/command fields only",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/native/build/prompt-cases.tsv",
+      "sha256": "fbdbe2acb956620bb514a68b1031e9b77f7de9fdcc62ada7ed3ac39e8f65037d",
+      "text_count": 16,
+      "method": "TSV complete original request column 3",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/native/java/LocalModel.java",
+      "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+      "text_count": 28,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/native/java/NativeSmoke.java",
+      "sha256": "3d6ce882b4bbbc5cac962a7a032ecfdc42c42dd149f690559ca35e06ec789f14",
+      "text_count": 22,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/native/java/PromptBenchmark.java",
+      "sha256": "2d072d7984dd5ac3b04c94049d2cb0a77df49b0fdf9acb9deff924ee7e07e55c",
+      "text_count": 15,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-confirm/build/cases.json",
+      "sha256": "248fc51f2bdbb771dc7045d01c87396e273522d5aaea3ac9004cce38fbe55244",
+      "text_count": 14,
+      "method": "JSON array goal/command fields only",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-confirm/reference/LocalModel.java",
+      "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+      "text_count": 29,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-confirm/test_research.py",
+      "sha256": "917a0aca328c0ca445ec724d9f4c29608009f9aab1c9948c2e22319a01e85f09",
+      "text_count": 35,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-research/build/cases.json",
+      "sha256": "ab9a4f646e12174dcdc6232e3ce50d98d0aa7b6207803aaa5083401116aff203",
+      "text_count": 12,
+      "method": "JSON array goal/command fields only",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-research/reference/LocalModel.java",
+      "sha256": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+      "text_count": 29,
+      "method": "Conservative decoded Java string literals plus embedded prompt examples; no outputs",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "prototype/task-draft-research/test_research.py",
+      "sha256": "ea20627513fddc5a2e3c1010a3d80e343cf7edea98434636325868eaf3eb81dd",
+      "text_count": 35,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_app_launch.py",
+      "sha256": "2e75747d171f4d2b19fc393e71e012c25f6732b849a2750c543a17134e2cc3b2",
+      "text_count": 134,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_bundled_import.py",
+      "sha256": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+      "text_count": 280,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_capture_benchmark.py",
+      "sha256": "8de034e22e38693c097243715c208c4903fafb577511c32d37ecbb38ce6242fd",
+      "text_count": 125,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_demo_capture.py",
+      "sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+      "text_count": 283,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_export.py",
+      "sha256": "2f2b67bdea0d7d5a2865998e0d0199b0a522335214feae9ac5a879eeb98f0c29",
+      "text_count": 301,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_focus_actions.py",
+      "sha256": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+      "text_count": 117,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_focus_recovery.py",
+      "sha256": "92adaeccb91b9baaa4f3455038d5f39e1a323d196e4c00d4086a0b3b1494ea06",
+      "text_count": 195,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_guide_readback.py",
+      "sha256": "6cb39df766a439cb7b6a7f64608db4c684b736604f82dbfddccc324acd8ff71c",
+      "text_count": 240,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_model_smoke.py",
+      "sha256": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+      "text_count": 168,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_network_isolation.py",
+      "sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+      "text_count": 187,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_readback.py",
+      "sha256": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+      "text_count": 162,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_reviewed_reset.py",
+      "sha256": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+      "text_count": 169,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_task_guide.py",
+      "sha256": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+      "text_count": 284,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/phone_timed_focus.py",
+      "sha256": "5b157c19cb09bab3ce9659c938833231f54e6cdfb6464b04f20b6950bb14aa2a",
+      "text_count": 142,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_bundled_import.py",
+      "sha256": "956e95da0aebd10845253f49945389d08dd1f9650a9a0688069b260a625c0995",
+      "text_count": 48,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_checkpoint.py",
+      "sha256": "17c4849cba5b7114d4ed07e30ad0ffa55053fdd5a2aa3e6a33700e4f0c871941",
+      "text_count": 18,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_foreground.py",
+      "sha256": "0eb689f417f5233ee717a1f7a8f4e64c1c7b1256c09b7aa78264db3995efed65",
+      "text_count": 27,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_network_isolation.py",
+      "sha256": "f9598c6d9b17bb3c1b3c9e417a54dfe94eac5204e42d201cdd5f7205df7c7d4f",
+      "text_count": 25,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_readback.py",
+      "sha256": "5c3cc7fd63652858e4a621b2f41b50f93d40b0944263d94de011d7a7176d4980",
+      "text_count": 20,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_reviewed_reset.py",
+      "sha256": "f86cd0e2dc995c39a8b9af6ebbcc10395fef5a3f4f8ee9b3c3cd88d1b1d9d8e7",
+      "text_count": 23,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    },
+    {
+      "path": "scripts/test_phone_task_guide.py",
+      "sha256": "2e9f057e9ec4239b826ffe2fe964d9b4bec637b1051dbb561d25238784b3ccb1",
+      "text_count": 48,
+      "method": "Conservative Python AST string literals; no external output files",
+      "pinned_at_protocol": true
+    }
+  ],
+  "authoring_note": "Private first author set and correction note retained. No model/confirmation/oracle output used for filtering or labels.",
+  "authoring_note_sha256": "3f974dc21e527e5f251184238332ddf3bcb4c235d60ecab17d5e37821fc47ffc",
+  "initial_author_cases_sha256": "a3debb1e2c05bad14e20d6efe57e9b816358e228e676ca7b724bf70386e6b211",
+  "pre_capture_overlap_replacement_count": 0,
+  "raw_data_private": true,
+  "model_captures": 0,
+  "candidate_promoted": false
+}
