@@ -21,6 +21,15 @@ operation, iQOO NPU, Office Kit or eligible accepted submission is established.
 The broader goal remains active. Earlier results below retain their historical
 package attribution.
 
+Both APKs, the package manifest and physical record are
+[published as research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12).
+The server's four sizes/digests and exact source tag were verified;
+[publication record](guidance-publication-v012.json).
+
+Post-publication storage measured 13,647,373,232 logical project bytes, including
+ignored files and Git, below the 15,000,000,000-byte cap. Shared pre-existing SDK
+caches are excluded.
+
 ## Historical v0.11 approved app launches — actual phone outcomes
 
 Typed `Open calculator` and `Open clock` each produced Qwen `open_app`, review

@@ -1,0 +1,27 @@
+{
+  "kind": "GitHub publication metadata verification; no asset redownload or runtime claim",
+  "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+  "tag": "research-v0.12",
+  "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "prerelease": true,
+  "all_four_server_sizes_digests_verified": true,
+  "assets": {
+    "focuspilot-research-v012-feedback-light.apk": {
+      "bytes": 5814632,
+      "sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0"
+    },
+    "focuspilot-research-v012-feedback-bundled.apk": {
+      "bytes": 568542711,
+      "sha256": "8fb78f14311ddec0c92357f95d13603a19b009a5add399a05e6284894c0ba088"
+    },
+    "guidance-readback-artifacts.json": {
+      "bytes": 5132,
+      "sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a"
+    },
+    "guide-readback-phone-v012.json": {
+      "bytes": 2728,
+      "sha256": "fd8dacf040ea4b1f84b71ff7a622fa92537b15d6a13d9dae75eb8996072e756f"
+    }
+  },
+  "full_goal_complete": false
+}

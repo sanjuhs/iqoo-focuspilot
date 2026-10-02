@@ -24,6 +24,11 @@ operation, iQOO NPU, Office Kit or eligible accepted submission is established.
 The broader goal remains active. Earlier results below retain their historical
 package attribution.
 
+Both APKs, the package manifest and physical record are
+[published as research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12).
+The server's four sizes/digests and exact source tag were verified;
+[publication record](docs/guidance-publication-v012.json).
+
 ## Historical v0.11 readback and monitoring prerequisite check
 
 On Nothing, typed `Stop focus` produced a reviewed Pause proposal in 1,804 ms

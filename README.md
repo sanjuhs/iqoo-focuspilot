@@ -22,6 +22,11 @@ operation, iQOO NPU, Office Kit or eligible accepted submission is established.
 The broader goal remains active. Earlier results below retain their historical
 package attribution.
 
+Both APKs, the package manifest and physical record are
+[published as research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12).
+The server's four sizes/digests and exact source tag were verified;
+[publication record](docs/guidance-publication-v012.json).
+
 **Historical v0.11 phone-control check:** typed Qwen proposals for Calculator and Clock
 passed review/Cancel/review/Confirm and opened the approved target apps, verified
 through foreground metadata. Native inference was about 2.0 s. Focus/grants stayed
@@ -109,7 +114,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
 are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
 reflects v0.10 with original animations, measured captions and source-bound figures.
 [Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);

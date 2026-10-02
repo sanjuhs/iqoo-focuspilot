@@ -70,3 +70,7 @@ editor, and the harness positions controls clear of this phone's fixed overlays.
 identify the later layout at `24f10b62a4a62c22ad6db90ac6339f29e2426dbd`.
 These revisions are pre-event research. Historical v0.11 results retain their
 original package attribution.
+
+[Published research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
+contains both APKs and source-bound manifest/phone evidence. Four server
+sizes/digests and the exact source tag matched [the publication record](guidance-publication-v012.json).
