@@ -1,5 +1,13 @@
 # Remaining deliverables — full-scope audit
 
+**Later v0.13 network-denied native diagnostic:** ten fixed synthetic Qwen CPU
+requests completed in the actual app process after direct IPv4 TCP socket creation
+failed with EPERM. First request 16.83 s; subsequent 1.48–2.43 s; 224 checks passed
+and protected production/model/grant snapshots plus original test APK were restored.
+This closes the bounded native-path socket-denial diagnostic, leaving complete
+disconnected UI/ASR/actions, persistent monitoring, iQOO/NPU, Office Kit and eligible
+accepted submission unfinished. [Evidence and limits](network-isolation-phone.md).
+
 **Later v0.13 reset update:** reviewed reset and interrupted-warning repair are
 built and installed with Qwen3.5 unchanged. Twenty-two actual isolated Android
 checks pass with exact production preference/model/checkpoint preservation;

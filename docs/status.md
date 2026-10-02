@@ -2,21 +2,36 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
-## Network-denied native diagnostic — prepared
+## Network-denied Qwen phone diagnostic — verified
 
-A separate test-only Android instrumentation runner is compiled for the unchanged
-v0.13 app. It requires the real target UID/process, denied INTERNET permission and
-a direct numeric EACCES/EPERM socket-creation error before loading the pinned local model. Ten
-fixed openly seen synthetic requests exercise native completion, pure command
-proposals and observational tensor summaries. No action executor, UI, observation
-or model/prompt change is added. Lint has zero errors/65 warnings; three harness
-boundary tests pass. The first actual phone attempt confirmed the target UID/main
-process and denied permission, but Java's socket wrapper omitted its numeric cause.
-It stopped before model access with zero requests and restored the original test
-APK and exact production snapshot. [Preserved failure](network-isolation-phone-v013-first-attempt.json).
-The runner now uses Android's public direct socket API; the repeated physical
-network-denied inference remains pending at this source checkpoint. This probe
-cannot establish the full disconnected/ASR workflow.
+Qwen3.5-0.8B Q4_0 completed ten fixed synthetic native CPU requests in the actual
+Nothing app process after IPv4 TCP socket creation failed with numeric EPERM.
+The first request took **16.83 seconds**; subsequent native requests took
+**1.48–2.43 seconds**. Fresh native load took 2.49 seconds after full-file SHA
+verification warmed the filesystem cache. Whole instrumented-process post-request
+PSS was about 1.172 GiB, including test/framework overhead; this is not peak RAM.
+
+The test-only runner passed 224 checks, observed four finite width-1,024 tensor
+summaries on its single capture-on request and closed the native model. Eight raw
+intents matched the illustrations; all ten gated proposals matched because the
+gate refused two unsupported misclassifications. These openly seen diagnostics
+are not an accuracy benchmark and do not replace the frozen host evaluation.
+
+The installed v0.13 app/model/prompt stayed unchanged. All three named preference
+identities, paused/off/100/97,331 ms checkpoint, model bytes/hash/inode, two runtime
+grants and absent own services matched before, after inference and after restoring
+the original test APK. Instrumentation restarted the paused target process; guarded
+cleanup force-stopped it. No UI, action executor, observation, ASR, network setting
+or grant change was used. The earlier Java-wrapper failure is preserved separately.
+
+This establishes the bounded native path with socket creation denied, not a full
+disconnected/voice workflow, NPU execution, Office Kit or causal interpretation.
+The original five release assets and app source retain their existing attribution;
+the new diagnostic source is `aff6fb940fb76f64f77aca8d4c0ff33164a7de43`.
+[Procedure and limits](network-isolation-phone.md),
+[sanitized phone record](network-isolation-phone-v013.json),
+[source/artifact bindings](network-isolation-artifacts.json),
+[preserved failed first attempt](network-isolation-phone-v013-first-attempt.json).
 
 ## Reviewed reset — v0.13
 

@@ -1,0 +1,638 @@
+{
+  "schema": "focuspilot.native_isolation.public.v1",
+  "kind": "Synthetic network-denied app-process native inference; not full offline workflow or airplane proof",
+  "diagnostic_source_commit": "aff6fb940fb76f64f77aca8d4c0ff33164a7de43",
+  "unchanged_app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "android": "16",
+    "api": 36
+  },
+  "candidate_test_apk": {
+    "sha256": "36d24aedbe0cd1593125af1b7b8c9873f1589cd0106063f5d12e4833fd928b46",
+    "bytes": 49586
+  },
+  "harness_sha256": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "identity": {
+    "process_uid": 10425,
+    "process_pid": 19609,
+    "target_package": "dev.focuspilot.prototype",
+    "target_application_uid": 10425,
+    "process_name": "dev.focuspilot.prototype",
+    "target_process_name": "dev.focuspilot.prototype",
+    "test_package": "dev.focuspilot.prototype.test",
+    "test_application_uid": 10427,
+    "target_manifest_requests_internet": false,
+    "test_manifest_requests_internet": false,
+    "target_context_process_internet_permission": -1
+  },
+  "socket_probe": {
+    "api": "android.system.Os.socket",
+    "family": 2,
+    "family_name": "AF_INET",
+    "type": 1,
+    "type_name": "SOCK_STREAM",
+    "protocol": 6,
+    "protocol_name": "IPPROTO_TCP",
+    "connect_attempted": false,
+    "dns_used": false,
+    "payload_sent": false,
+    "socket_creation_succeeded": false,
+    "returned_fd_closed": false,
+    "socket_creation_denied": true,
+    "permission_denial_proven": true,
+    "elapsed_ms": 0.080521,
+    "exception_type": "android.system.ErrnoException",
+    "attempted_function": "socket",
+    "exception_message": "socket failed: EPERM (Operation not permitted)",
+    "permission_errno": 1
+  },
+  "model": {
+    "filename": "qwen35.gguf",
+    "bytes": 563036064,
+    "inode": 1136035,
+    "device": 65083,
+    "links": 1,
+    "regular_file": true,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "verified_bytes": 563036064,
+    "verification_ms": 675.668386
+  },
+  "java_model_load_ms": 2487.314739,
+  "pss_after_load": {
+    "total_pss_kib": 1198597,
+    "native_pss_kib": 636873,
+    "dalvik_pss_kib": 595,
+    "other_pss_kib": 560575,
+    "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+  },
+  "checks": 224,
+  "passed": true,
+  "native_closed": true,
+  "java_instrumentation_ms": 39324.834152,
+  "requests": [
+    {
+      "id": "diagnostic-1",
+      "request": "Start focus for 20 seconds",
+      "capture": false,
+      "java_request_ms": 16830.270879,
+      "raw_intent": "start_focus",
+      "gated_kind": "START_FOCUS",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 20,
+      "illustrative_expected": {
+        "intent": "start_focus",
+        "kind": "START_FOCUS",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 20
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228721,
+        "native_pss_kib": 667354,
+        "dalvik_pss_kib": 332,
+        "other_pss_kib": 560796,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 160,
+        "generated_tokens": 8,
+        "prefill_ms": 15633.273,
+        "decode_ms": 1192.8264,
+        "total_ms": 16826.1,
+        "reached_eos": true,
+        "context_setup_ms": 0.00026,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-2",
+      "request": "Stop focus",
+      "capture": false,
+      "java_request_ms": 2165.010363,
+      "raw_intent": "pause_focus",
+      "gated_kind": "PAUSE_FOCUS",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "pause_focus",
+        "kind": "PAUSE_FOCUS",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228740,
+        "native_pss_kib": 667345,
+        "dalvik_pss_kib": 352,
+        "other_pss_kib": 560805,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 155,
+        "generated_tokens": 8,
+        "prefill_ms": 1204.7789,
+        "decode_ms": 956.28271,
+        "total_ms": 2161.0623,
+        "reached_eos": true,
+        "context_setup_ms": 0.000157,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-3",
+      "request": "Set an alarm for 07:30",
+      "capture": false,
+      "java_request_ms": 1486.478281,
+      "raw_intent": "alarm",
+      "gated_kind": "ALARM",
+      "gated_hour": 7,
+      "gated_minute": 30,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "alarm",
+        "kind": "ALARM",
+        "hour": 7,
+        "minute": 30,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228857,
+        "native_pss_kib": 667416,
+        "dalvik_pss_kib": 372,
+        "other_pss_kib": 560832,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 163,
+        "generated_tokens": 7,
+        "prefill_ms": 722.92229,
+        "decode_ms": 759.88448,
+        "total_ms": 1482.8077,
+        "reached_eos": true,
+        "context_setup_ms": 0.000417,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-4",
+      "request": "Set a five-minute timer",
+      "capture": false,
+      "java_request_ms": 2434.827187,
+      "raw_intent": "timer",
+      "gated_kind": "TIMER",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 300,
+      "illustrative_expected": {
+        "intent": "timer",
+        "kind": "TIMER",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 300
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228889,
+        "native_pss_kib": 667452,
+        "dalvik_pss_kib": 388,
+        "other_pss_kib": 560812,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 158,
+        "generated_tokens": 7,
+        "prefill_ms": 1452.8016,
+        "decode_ms": 978.31266,
+        "total_ms": 2431.1151,
+        "reached_eos": true,
+        "context_setup_ms": 0.000208,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-5",
+      "request": "Open calculator",
+      "capture": false,
+      "java_request_ms": 2081.69552,
+      "raw_intent": "open_app",
+      "gated_kind": "OPEN_CALCULATOR",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "open_app",
+        "kind": "OPEN_CALCULATOR",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1229125,
+        "native_pss_kib": 667672,
+        "dalvik_pss_kib": 404,
+        "other_pss_kib": 560812,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 155,
+        "generated_tokens": 8,
+        "prefill_ms": 1128.1827,
+        "decode_ms": 949.80094,
+        "total_ms": 2077.9844,
+        "reached_eos": true,
+        "context_setup_ms": 0.000208,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-6",
+      "request": "Why did you nudge me",
+      "capture": false,
+      "java_request_ms": 2013.029635,
+      "raw_intent": "explain",
+      "gated_kind": "EXPLAIN",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "explain",
+        "kind": "EXPLAIN",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1229025,
+        "native_pss_kib": 667556,
+        "dalvik_pss_kib": 420,
+        "other_pss_kib": 560812,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 159,
+        "generated_tokens": 7,
+        "prefill_ms": 1169.0696,
+        "decode_ms": 840.47,
+        "total_ms": 2009.5404,
+        "reached_eos": true,
+        "context_setup_ms": 0.000261,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-7",
+      "request": "Do not open settings",
+      "capture": false,
+      "java_request_ms": 2053.848906,
+      "raw_intent": "start_focus",
+      "gated_kind": "UNKNOWN",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "unknown",
+        "kind": "UNKNOWN",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": false,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1229245,
+        "native_pss_kib": 667764,
+        "dalvik_pss_kib": 432,
+        "other_pss_kib": 560812,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 157,
+        "generated_tokens": 8,
+        "prefill_ms": 1109.9165,
+        "decode_ms": 940.40891,
+        "total_ms": 2050.3262,
+        "reached_eos": true,
+        "context_setup_ms": 0.000313,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-8",
+      "request": "Start focus and open settings",
+      "capture": false,
+      "java_request_ms": 2083.353593,
+      "raw_intent": "start_focus",
+      "gated_kind": "UNKNOWN",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "unknown",
+        "kind": "UNKNOWN",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": false,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1229269,
+        "native_pss_kib": 667776,
+        "dalvik_pss_kib": 444,
+        "other_pss_kib": 560812,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 158,
+        "generated_tokens": 8,
+        "prefill_ms": 1131.4972,
+        "decode_ms": 948.33557,
+        "total_ms": 2079.8336,
+        "reached_eos": true,
+        "context_setup_ms": 0.000156,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    },
+    {
+      "id": "diagnostic-9",
+      "request": "Stop focus",
+      "capture": true,
+      "java_request_ms": 2147.622863,
+      "raw_intent": "pause_focus",
+      "gated_kind": "PAUSE_FOCUS",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "pause_focus",
+        "kind": "PAUSE_FOCUS",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228917,
+        "native_pss_kib": 667324,
+        "dalvik_pss_kib": 476,
+        "other_pss_kib": 560880,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 155,
+        "generated_tokens": 8,
+        "prefill_ms": 1172.3698,
+        "decode_ms": 949.03089,
+        "total_ms": 2121.4026,
+        "reached_eos": true,
+        "context_setup_ms": 22.555937,
+        "cpu_only": true,
+        "capture_enabled": true
+      },
+      "activation_metadata": [
+        {
+          "tensor": "ffn_out-0",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "finite_summary_verified": true
+        },
+        {
+          "tensor": "ffn_out-11",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "finite_summary_verified": true
+        },
+        {
+          "tensor": "ffn_out-23",
+          "width": 1024,
+          "positions_in_chunk": 155,
+          "finite_summary_verified": true
+        },
+        {
+          "tensor": "result_norm",
+          "width": 1024,
+          "positions_in_chunk": 1,
+          "finite_summary_verified": true
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-10",
+      "request": "Stop focus",
+      "capture": false,
+      "java_request_ms": 2144.414113,
+      "raw_intent": "pause_focus",
+      "gated_kind": "PAUSE_FOCUS",
+      "gated_hour": 0,
+      "gated_minute": 0,
+      "gated_seconds": 0,
+      "illustrative_expected": {
+        "intent": "pause_focus",
+        "kind": "PAUSE_FOCUS",
+        "hour": 0,
+        "minute": 0,
+        "seconds": 0
+      },
+      "raw_intent_matches_illustration": true,
+      "complete_proposal_matches_illustration": true,
+      "pss_after_request": {
+        "total_pss_kib": 1228989,
+        "native_pss_kib": 667376,
+        "dalvik_pss_kib": 492,
+        "other_pss_kib": 560884,
+        "scope": "Whole current instrumented target process; includes test/framework overhead and shared-page attribution"
+      },
+      "native_metrics": {
+        "prompt_tokens": 155,
+        "generated_tokens": 8,
+        "prefill_ms": 1136.0192,
+        "decode_ms": 982.38271,
+        "total_ms": 2118.4026,
+        "reached_eos": true,
+        "context_setup_ms": 22.46,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "activation_metadata": []
+    }
+  ],
+  "illustrative_totals": {
+    "raw_intent_matches": 8,
+    "complete_gate_matches": 10,
+    "requests": 10,
+    "accuracy_benchmark": false
+  },
+  "protected_before": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true,
+    "installed_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+  },
+  "protected_after_inference": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true,
+    "installed_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+  },
+  "protected_after_restoration": {
+    "preferences": {
+      "focuspilot_research": {
+        "exists": true,
+        "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+      },
+      "focuspilot_live_preferences": {
+        "exists": false
+      },
+      "focuspilot_fewshot_sandbox": {
+        "exists": true,
+        "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "checkpoint": {
+      "active": false,
+      "observation": false,
+      "points": 100,
+      "elapsed_ms": 97331
+    },
+    "grants": {
+      "android.permission.RECORD_AUDIO": false,
+      "android.permission.POST_NOTIFICATIONS": false
+    },
+    "model": {
+      "exists": true,
+      "bytes": 563036064,
+      "inode": 1136035,
+      "links": 1,
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    },
+    "services_absent": true,
+    "installed_app_sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+  },
+  "original_test_apk_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "restored_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "restored": true,
+  "private_artifact_hashes": {
+    "raw_report_sha256": "1793a8db5db5df6f208441ac423029be1c5a79c73a4b701e128df83b9311a862",
+    "raw_stdout_sha256": "7f8c7c8dfa5a9edeef5be2e6a67d684c755fb97fe840ca0ee6905d5f5b493c83",
+    "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend_log_sha256": "03fcecf9e8f35e009ac81f74e6b088698759f40d31f84c1a2d31a1e682fbf0eb"
+  },
+  "cpu_backend_log_lines": [
+    "kleidiai: primary q4 kernel feature I8MM",
+    "kleidiai: primary q8 kernel feature I8MM",
+    "kleidiai: SME disabled"
+  ],
+  "limitations": [
+    "Fixed openly seen diagnostics, not held-out or user accuracy. Semantic matching is not infrastructure pass criterion.",
+    "First native request 16826.1 ms; subsequent 1482.8077\u20132431.1151 ms. Different requests in one fixed order; no population latency benchmark.",
+    "Full SHA verification warmed filesystem cache before fresh process/native model load. Native timing excludes separately recorded context setup.",
+    "Whole instrumented-process PSS includes test/framework and shared-page attribution; not peak working RAM.",
+    "Socket creation failed with EPERM; no claim that absent INTERNET alone caused it, nor that IPC/system services or all device connectivity were blocked.",
+    "Instrumentation restarts target process; original activity lifecycle is not restored. Own paused target was force-stopped during guarded cleanup.",
+    "No UI, executor, observation, ASR, voice, settings or permission changes. No airplane-mode, NPU, Office Kit or full disconnected-workflow proof.",
+    "Finite tensor metadata is observational; no causal/mechanistic interpretation established. Raw tensor values remain private and ignored.",
+    "Pre-event research only; no eligible or accepted competition submission established."
+  ],
+  "fixture_scope": "Fixed openly seen synthetic requests; diagnostic only, no held-out accuracy claim",
+  "actions_executed": false,
+  "preferences_accessed": false,
+  "production_singleton_used": false,
+  "ui_used": false,
+  "network_settings_changed": false,
+  "permission_grants_changed": false,
+  "airplane_mode_claim": false,
+  "npu_claim": false,
+  "causal_interpretation_claim": false,
+  "semantic_accuracy_is_infrastructure_pass_condition": false,
+  "instrumentation_restarts_target_process": true
+}

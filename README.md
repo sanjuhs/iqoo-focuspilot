@@ -10,6 +10,12 @@ readback. v0.13 adds reviewed session reset, verified through 22 isolated Androi
 checks with production state preserved. Visible reset cancellation, voice,
 permissioned monitoring, iQOO NPU and Office Kit still need physical verification.
 
+The unchanged v0.13 app also completed ten synthetic Qwen CPU requests after
+Android denied socket creation: **16.83 s first request, then 1.48–2.43 s**.
+Production state and the original test APK were restored. This is a bounded native
+path diagnostic; the complete disconnected voice workflow remains pending.
+[Proof and limits](docs/network-isolation-phone.md).
+
 [Download research v0.13](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.13)
 · [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
 · [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.13)
@@ -29,12 +35,12 @@ below. These are signed debug research packages, not a Play Store release.
 
 | Download | Size | Model setup |
 | --- | ---: | --- |
-| [Bundled APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focuspilot-research-v012-feedback-bundled.apk) | 568.54 MB | Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
-| [Light APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focuspilot-research-v012-feedback-light.apk) | 5.81 MB | Needs the developer model-preparation step below. |
+| [Bundled APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-bundled.apk) | 568.54 MB | Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
+| [Light APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-light.apk) | 5.50 MB | Needs the developer model-preparation step below. |
 
-Verify downloaded bytes against the [v0.12 SHA-256 manifest](docs/guidance-readback-artifacts.json).
-The release tag identifies app source `24f10b62a4a62c22ad6db90ac6339f29e2426dbd`.
-The selected bundled APK passed actual missing-model import and second-load reuse
+Verify downloaded bytes against the [v0.13 SHA-256 manifest](docs/reviewed-reset-artifacts.json).
+The release tag identifies app source `1eed4348d3d0233d786bcd3b86c05d225ebf8db6`.
+The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK
 and recorded app state were restored. Clean fresh-data installation remains a

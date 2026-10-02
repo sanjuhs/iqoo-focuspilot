@@ -1,0 +1,64 @@
+{
+  "kind": "Scoped native diagnostic source/artifact bindings; app source and five original v0.13 release assets unchanged",
+  "diagnostic_source_commit": "aff6fb940fb76f64f77aca8d4c0ff33164a7de43",
+  "app_source_commit": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+  "diagnostic_source_sha256": {
+    "scripts/phone_network_isolation.py": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+    "scripts/test_phone_network_isolation.py": "f9598c6d9b17bb3c1b3c9e417a54dfe94eac5204e42d201cdd5f7205df7c7d4f",
+    "prototype/android/app/build.gradle": "a73371bc670ce4ad3aa6279fb1eab0a0cb2426c0b030adfa20f45574a85e4263",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745"
+  },
+  "unchanged_app_source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0"
+  },
+  "artifacts": [
+    {
+      "file": "artifacts/focuspilot-research-v013-network-test-direct.apk",
+      "bytes": 49586,
+      "sha256": "36d24aedbe0cd1593125af1b7b8c9873f1589cd0106063f5d12e4833fd928b46"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v013-reset-light.apk",
+      "bytes": 5497068,
+      "sha256": "33c0f61cc60b6186bd9a091d9021ba3feb5cc4e8a46a30b58fc8ca34cb218a7b"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v013-reset-test.apk",
+      "bytes": 29334,
+      "sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b"
+    },
+    {
+      "file": "docs/network-isolation-phone-v013.json",
+      "bytes": 20945,
+      "sha256": "79bc4a65fd07a0d1053905a2b64e044a59f884bcc28bb084e8d3ee8351ce76b9"
+    },
+    {
+      "file": "docs/network-isolation-phone-v013-first-attempt.json",
+      "bytes": 3935,
+      "sha256": "54226396574711c39f176245e78e4fed4442c43737a861e013903f9ef06b34f5"
+    }
+  ],
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "verification": {
+    "build_command": "./gradlew assembleDebugAndroidTest lintDebug -PdiagnosticRunner=nativeIsolation",
+    "build_succeeded": true,
+    "lint_errors": 0,
+    "lint_warnings": 65,
+    "host_harness_tests": 3,
+    "actual_android_checks": 224,
+    "actual_native_requests": 10,
+    "exact_protected_snapshots_and_original_test_restored": true,
+    "historical_jvm_tests": {
+      "count": 148,
+      "source": "1eed4348d3d0233d786bcd3b86c05d225ebf8db6",
+      "rerun_for_this_test_only_change": false
+    }
+  },
+  "measured_project_bytes_after_phone_run": 14398522575,
+  "storage_cap_bytes": 15000000000,
+  "publication": "Server verification is recorded separately in docs/network-isolation-publication-v013.json; this source/artifact manifest contains no server verification."
+}

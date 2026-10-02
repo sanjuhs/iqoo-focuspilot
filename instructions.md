@@ -4,6 +4,17 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current network-denied native diagnostic
+
+The unchanged Qwen3.5-0.8B Q4_0 completed ten synthetic CPU requests in the actual
+Nothing app process after IPv4 TCP socket creation was denied with EPERM. First
+native request: 16.83 seconds; subsequent requests: 1.48–2.43 seconds. The test-only
+runner passed 224 checks with four finite capture summaries and exact production
+snapshot/original test-APK restoration. These openly seen examples establish no
+general accuracy, NPU, full disconnected/ASR workflow or causal interpretation.
+[Actual proof and repeat procedure](docs/network-isolation-phone.md).
+The full assistant and accepted eligible submission remain the active goal.
+
 ## Current v0.13 reviewed reset
 
 Keep Qwen3.5-0.8B Q4_0 as requested. Reset now requires an action-level review

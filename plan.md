@@ -5,6 +5,17 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## Current network-denied native diagnostic
+
+The unchanged Qwen3.5-0.8B Q4_0 completed ten synthetic CPU requests in the actual
+Nothing app process after IPv4 TCP socket creation was denied with EPERM. First
+native request: 16.83 seconds; subsequent requests: 1.48–2.43 seconds. The test-only
+runner passed 224 checks with four finite capture summaries and exact production
+snapshot/original test-APK restoration. These openly seen examples establish no
+general accuracy, NPU, full disconnected/ASR workflow or causal interpretation.
+[Actual proof and repeat procedure](docs/network-isolation-phone.md).
+The full assistant and accepted eligible submission remain the active goal.
+
 ## Current v0.13 reset checkpoint
 
 The requested Qwen3.5-0.8B Q4_0 model remains selected. Reviewed reset and recovery
