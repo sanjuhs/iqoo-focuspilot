@@ -4,6 +4,17 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current v0.12 phone export
+
+The selected Nothing APK passed export-review Cancel, document-picker Cancel and
+actual local Save. A new 496-byte zero-label summary matched phone/laptop hashes;
+the laptop validator accepted zero records/contexts with no policy inference.
+Focus stayed paused/off/100/97,331 ms, grants unchanged and monitor absent.
+Payload and aggregate stay private/ignored; metadata and failed attempts are
+preserved. This proves a local export plus ADB interoperability. Actual Office Kit
+transport and real-record replay remain pending.
+[Physical proof and scope](docs/phone-export.md).
+
 ## Current v0.12 countdown and recovery
 
 Ten actual own-app phone phases passed on the selected APK: reviewed Cancel,

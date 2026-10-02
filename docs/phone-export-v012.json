@@ -1,0 +1,223 @@
+{
+  "research_only": true,
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "harness_commit": "e51a74f2703537c187e42e528f9d03636087d750",
+  "harness_sha256": "e8b5ead668ca43624c9b2869cdac98fa62e9bcb6d2a82dcd868832cae3fa9254",
+  "document_picker_component": "com.google.android.documentsui/com.android.documentsui.picker.PickActivity",
+  "before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "zero_saved_live_labels_precondition": true,
+  "default_settings_empty_goal": true,
+  "office_kit_verified": false,
+  "npu_verified": false,
+  "permissions_changed": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "phases": [
+    {
+      "name": "export_review_cancel",
+      "checkpoint_unchanged": true,
+      "review_closed": true
+    },
+    {
+      "name": "document_picker_cancel",
+      "checkpoint_unchanged": true,
+      "returned_to_own_app": true
+    },
+    {
+      "name": "local_document_saved_and_received",
+      "checkpoint_unchanged": true,
+      "bytes": 496,
+      "source_sha256": "b4ad013ff98b83a8b93576cb9c186b17d13b6e06eb7f6406edaf6f321994057f",
+      "received_sha256": "b4ad013ff98b83a8b93576cb9c186b17d13b6e06eb7f6406edaf6f321994057f",
+      "transport": "ADB read of exact new local test file; not Office Kit",
+      "zero_records": true,
+      "bridge_report_sha256": "23de480e08e3439a3ae63f28d3c1abc933613371e773140e8733d6e58577df41",
+      "bridge_completed": true
+    }
+  ],
+  "completed": true,
+  "picker_control_metadata": {
+    "resource_ids": [
+      "android:id/button1",
+      "android:id/content",
+      "android:id/icon",
+      "android:id/navigationBarBackground",
+      "android:id/title",
+      "com.google.android.documentsui:id/action_bar_root",
+      "com.google.android.documentsui:id/app_bar",
+      "com.google.android.documentsui:id/breadcrumb_text",
+      "com.google.android.documentsui:id/collapsing_toolbar",
+      "com.google.android.documentsui:id/container_directory",
+      "com.google.android.documentsui:id/container_save",
+      "com.google.android.documentsui:id/container_search_fragment",
+      "com.google.android.documentsui:id/coordinator_layout",
+      "com.google.android.documentsui:id/date",
+      "com.google.android.documentsui:id/details",
+      "com.google.android.documentsui:id/dir_list",
+      "com.google.android.documentsui:id/directory_header",
+      "com.google.android.documentsui:id/drawer_edge",
+      "com.google.android.documentsui:id/drawer_layout",
+      "com.google.android.documentsui:id/header_container",
+      "com.google.android.documentsui:id/header_title",
+      "com.google.android.documentsui:id/horizontal_breadcrumb",
+      "com.google.android.documentsui:id/icon",
+      "com.google.android.documentsui:id/icon_mime_lg",
+      "com.google.android.documentsui:id/icon_mime_sm",
+      "com.google.android.documentsui:id/icon_thumb",
+      "com.google.android.documentsui:id/item_root",
+      "com.google.android.documentsui:id/nameplate",
+      "com.google.android.documentsui:id/option_menu_create_dir",
+      "com.google.android.documentsui:id/refresh_layout",
+      "com.google.android.documentsui:id/sub_menu",
+      "com.google.android.documentsui:id/sub_menu_list",
+      "com.google.android.documentsui:id/thumbnail",
+      "com.google.android.documentsui:id/toolbar"
+    ],
+    "known_controls": [
+      {
+        "resource_id": "com.google.android.documentsui:id/breadcrumb_text",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.ImageButton",
+        "text": "",
+        "description": "Show roots"
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "android:id/button1",
+        "class": "android.widget.Button",
+        "text": "SAVE",
+        "description": ""
+      }
+    ],
+    "default_filename_editor_observed": true
+  },
+  "drawer_control_metadata": {
+    "resource_ids": [
+      "android:id/button1",
+      "android:id/content",
+      "android:id/icon",
+      "android:id/navigationBarBackground",
+      "android:id/summary",
+      "android:id/title",
+      "com.google.android.documentsui:id/action_bar_root",
+      "com.google.android.documentsui:id/app_bar",
+      "com.google.android.documentsui:id/breadcrumb_text",
+      "com.google.android.documentsui:id/collapsing_toolbar",
+      "com.google.android.documentsui:id/container_directory",
+      "com.google.android.documentsui:id/container_roots",
+      "com.google.android.documentsui:id/container_save",
+      "com.google.android.documentsui:id/container_search_fragment",
+      "com.google.android.documentsui:id/coordinator_layout",
+      "com.google.android.documentsui:id/date",
+      "com.google.android.documentsui:id/details",
+      "com.google.android.documentsui:id/dir_list",
+      "com.google.android.documentsui:id/directory_header",
+      "com.google.android.documentsui:id/drawer_edge",
+      "com.google.android.documentsui:id/drawer_layout",
+      "com.google.android.documentsui:id/drawer_roots",
+      "com.google.android.documentsui:id/header_container",
+      "com.google.android.documentsui:id/header_title",
+      "com.google.android.documentsui:id/horizontal_breadcrumb",
+      "com.google.android.documentsui:id/icon",
+      "com.google.android.documentsui:id/icon_mime_lg",
+      "com.google.android.documentsui:id/icon_mime_sm",
+      "com.google.android.documentsui:id/icon_thumb",
+      "com.google.android.documentsui:id/item_root",
+      "com.google.android.documentsui:id/nameplate",
+      "com.google.android.documentsui:id/option_menu_create_dir",
+      "com.google.android.documentsui:id/refresh_layout",
+      "com.google.android.documentsui:id/roots_list",
+      "com.google.android.documentsui:id/roots_toolbar",
+      "com.google.android.documentsui:id/sub_menu",
+      "com.google.android.documentsui:id/sub_menu_list",
+      "com.google.android.documentsui:id/thumbnail",
+      "com.google.android.documentsui:id/toolbar"
+    ],
+    "known_controls": [
+      {
+        "resource_id": "com.google.android.documentsui:id/breadcrumb_text",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.ImageButton",
+        "text": "",
+        "description": "Show roots"
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "android:id/button1",
+        "class": "android.widget.Button",
+        "text": "SAVE",
+        "description": ""
+      },
+      {
+        "resource_id": "android:id/title",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      }
+    ],
+    "default_filename_editor_observed": true
+  },
+  "local_save_tapped": true,
+  "private_payload_public": false,
+  "test_phone_copy_retained": true,
+  "bridge_actual_report_scope": [
+    "context_count",
+    "groups",
+    "input_sha256",
+    "kind",
+    "limitations",
+    "npu_verified",
+    "officekit_transport_verified",
+    "phone_actions_executed",
+    "policy",
+    "provenance",
+    "record_count",
+    "research_only",
+    "schema"
+  ],
+  "final": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "cleanup_verified": true
+}

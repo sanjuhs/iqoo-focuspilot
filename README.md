@@ -1,298 +1,189 @@
-# FocusPilot
+# FocusPilot · meet Mira
 
-A phone-first productivity assistant designed for local, fast, explainable decisions.
-Working research prototype for the iQOO Grand Finale, Productivity track.
+A private Android productivity companion: choose a task, keep a focus session,
+and ask Mira for a short, reviewed phone action. Mira is an original animated goth
+character with gentle reactions and mute, hide and reduce-motion controls.
 
-## Current v0.12 countdown and recovery
+**Qwen3.5-0.8B Q4_0 runs inside the Android app on CPU.** The current research
+build has real Nothing-phone evidence for typed commands, countdowns, paused
+process recovery and explicit task readback. Voice, permissioned monitoring,
+iQOO NPU and Office Kit still need physical verification.
 
-Ten actual own-app phone phases passed on the selected APK: reviewed Cancel,
-timed Start, early Pause, exclusion of paused time, reviewed resume, automatic
-completion, process force-stop/restart with exact paused checkpoint recovery,
-explicit resume and refused alarm cancellation. Two countdowns added exactly
-40,000 ms; final elapsed 97,331 ms, paused/off/100 points, empty goal/no guide,
-unchanged grants and no monitor. Three supported Qwen proposals took 1.824–1.928 s
-native CPU. Qwen misclassified cancellation, and validation correctly abstained.
-This establishes last-checkpoint recovery, with ASR, deep sleep, monitoring,
-iQOO/NPU, Office Kit and accepted eligible submission still pending.
-[Physical proof and repeat procedure](docs/focus-recovery-phone.md).
+[Download research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
+· [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.12)
+· [Verified status](docs/status.md)
 
-## Current recorded v0.12 research demo
+> **Pre-event research, not an eligible Finale submission.** The public iQOO
+> guide requires competition code to be written during the event. Preparation
+> prototypes live under `prototype/`; reuse needs explicit organizer approval.
+> [Rules, tracks and full judging rubric](hackathon.md).
 
-A new 4:41 video includes original Mira artwork and two actual own-app phone clips
-at 1× speed: explicit authored-step readback and typed Qwen3.5-0.8B Q4_0 inference
-(1,849 ms native CPU, capture enabled, no action confirmed). Synthetic Mark/Undo,
-four finite tensor summaries and scoped cleanup were verified on the same APK;
-unfilmed flows remain labelled illustrations. Captions, full decode, deterministic
-seeks, sampled encoded visuals and source-clip comparisons passed. Complete human
-listening, actual ASR/monitoring/floating, iQOO/NPU, Office Kit and eligible accepted
-submission remain pending. [Video, source and scope](docs/v012-pitch.md).
+## Try the research app
 
-## Selected v0.12 task readback
+The app supports Android 9/API 28+ on ARM64. Published v0.12 packages use an
+optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
+Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
+below. These are signed debug research packages, not a Play Store release.
 
-Mira now keeps speech feedback and Stop readback beside Speak, with unique request
-ownership, engine callbacks and a 20-second timeout. The selected source is
-`24f10b62a4a62c22ad6db90ac6339f29e2426dbd`; 148 JVM tests pass and lint has
-zero errors/65 warnings. Both signed packages passed model/native/license/version/
-permission inspection, and the light installation reused the pinned Qwen model.
+| Download | Size | Model setup |
+| --- | ---: | --- |
+| [Bundled APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focuspilot-research-v012-feedback-bundled.apk) | 568.54 MB | Includes the pinned 563.04 MB GGUF; first load verifies and imports it into private storage. Allow roughly 1.1 GiB plus installation staging space. |
+| [Light APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focuspilot-research-v012-feedback-light.apk) | 5.81 MB | Needs the developer model-preparation step below. |
 
-On Nothing, a synthetic authored plan passed save, mute refusal, explicit readback
-completion callback and an unconfirmed typed Qwen Pause proposal (1,749 ms native
-CPU). Checklist progress stayed unchanged. Cleanup restored empty goal/no guide/
-mute false; paused/off/100/57,331 ms and runtime grants stayed unchanged.
-[Actual record and repeat procedure](docs/guide-readback-phone.md),
-[package/source identities](docs/guidance-readback-artifacts.json).
-No speaker audibility, real ASR, permissioned monitoring/floating, disconnected
-operation, iQOO NPU, Office Kit or eligible accepted submission is established.
-The broader goal remains active. Earlier results below retain their historical
-package attribution.
+Verify downloaded bytes against the [v0.12 SHA-256 manifest](docs/guidance-readback-artifacts.json).
+The release tag identifies app source `24f10b62a4a62c22ad6db90ac6339f29e2426dbd`.
+The tested light installation retained the pinned model; clean first import on
+v0.12 is a separate pending check. [Earlier bundled-import proof](docs/bundled-model-evidence.json)
+retains its original build attribution.
 
-Both APKs, the package manifest and physical record are
-[published as research v0.12](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12).
-The server's four sizes/digests and exact source tag were verified;
-[publication record](docs/guidance-publication-v012.json).
+1. Install the compatible APK and open FocusPilot. Observation starts off.
+2. Open **Ask Mira**, load the local model, and type `Start focus for 20 seconds`.
+3. Choose **Understand command locally**, inspect the proposal, then review and confirm
+   the action. Cancel leaves it unexecuted. Stop pauses; Start can resume the
+   remaining countdown. Process recovery starts paused.
+4. Save your own task and one to eight steps. Mark/Undo changes your checklist;
+   **Speak** requests the current step and **Stop readback** cancels it.
+5. Explore the clearly labelled policy and few-shot sandboxes with synthetic
+   examples. The accountability balance is virtual; no money is withdrawn.
 
-**Historical v0.11 phone-control check:** typed Qwen proposals for Calculator and Clock
-passed review/Cancel/review/Confirm and opened the approved target apps, verified
-through foreground metadata. Native inference was about 2.0 s. Focus/grants stayed
-unchanged; no external-app UI was inspected and no alarm was created.
-[Actual launch coverage](docs/app-launch-phone.md).
+Use **Set up Mira** for optional microphone, notifications and Usage Access.
+Enable those through Android only when you choose the associated feature.
+Push-to-talk requires an installed on-device recognition language; recognition
+creates an editable draft before inference and action review. Availability alone
+is not a tested voice workflow. [Feature setup](docs/command-readiness.md).
 
-**Historical v0.11 Qwen3.5 activation check:** eight unconfirmed typed phone proposals
-preserved the same Pause intent and token counts. Every capture-on run displayed
-all four selected tensor summaries; capture-off displayed none. Native timing
-ranged 1.86–2.17 s, and post-request PSS was about 1.25 GiB. Four pairs do not
-establish capture overhead or causal interpretation. [Measurements](docs/capture-benchmark-phone.md).
+Persistent mode is an opt-in, visible focus-monitor service with Stop controls.
+Optional floating Mira has separate overlay permission and an explicit Show
+review. Neither is a silent microphone or a guarantee of 24/7 survival through
+Android/OEM process management. Actual monitoring, notification and floating
+lifecycle checks remain pending. [Background contract](prototype/android/README.md)
+· [Floating controls](docs/floating-companion.md).
 
-**Historical v0.11 phone readback:** reviewed typed Pause (1,804 ms native CPU) reached the
-installed offline-English TTS engine's completion callback. Audibility, actual ASR
-and disconnected operation remain unverified. Monitoring correctly refused an
-observation-off start; focus stayed paused/off/100 with unchanged elapsed time.
-[Physical coverage](docs/readback-phone.md). The latest setup check still reports
-Microphone, notifications and Usage Access off.
+## What is measured
 
-**Historical task-guide build: v0.11**, source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.
-Mira can show the next step of your own private plan, mark it complete, undo and
-optionally read it through the existing local voice path. Task/record revision
-checks block stale progress and readback; authored text executes nothing.
-**143 JVM tests pass**, lint zero errors/65 warnings. Signed light APK inspected
-and installed with matching APK/model hashes; paused/off/100 points unchanged.
-A later authored-guide phone test passed Save, Mark/Undo, complete/Undo, process
-restart recovery, replacement Cancel/confirm and clear Cancel/confirm/restart.
-Its temporary goal and steps were cleaned up; focus stayed paused/off/100 and
-elapsed time unchanged. [Authored-guide evidence](docs/task-guide-phone.md).
-That record did not cover readback; the later v0.12 check covers a separate branch. A later own-app phone countdown
-passed: reviewed 20-second start, automatic pause, exactly 20,000 ms additional
-elapsed focus and unchanged observation-off/100 points. One typed CPU inference
-took 1,932 ms. [Physical evidence](docs/current-countdown-phone-v011.json),
-[preserved failed test](docs/countdown-first-attempt-v011.json). Qwen3.5-0.8B Q4_0,
-prompt, command gate and native CPU library are unchanged.
-[Task guide and physical checks](docs/task-guide.md). Both signed packages inspected;
-[v0.11 is published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11); both APKs and both evidence files match server
-sizes/SHA-256 digests, and its tag resolves to the exact app source.
-[Artifact identities](docs/task-guide-artifacts.json).
+Results below describe the named research builds and experiments. Small smoke
+sets are not general automation accuracy or population latency benchmarks.
 
-The new [simpler-policy comparison](docs/policy-baselines.md) reports 469/480 for
-two seven-parameter logistic models versus 472/480 for the unchanged network.
-These informed synthetic results promote neither model to monitoring.
-
-**Previous command research build: v0.10**, source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`.
-Qwen3.5-0.8B Q4_0, its original prompt and native CPU runtime are unchanged.
-The reviewed command gate now accepts explicitly listed greetings and polite
-wrappers while consuming the complete request and preserving exact tool arguments.
-On 100 fresh frozen synthetic requests, correct supported proposals rose
-**15→31/50**, with 16 gains/zero losses, all 50 unsupported requests rejected and
-zero wrong accepts observed. **19 supported requests still abstain**. Raw model
-intent correctness is only 36/100; the external gate rejects its 49 unsupported
-non-unknown proposals. This is host evidence, not ASR, autonomy or phone accuracy.
-[Contract, prompt rejection and limits](docs/conversational-commands.md).
-
-**133 JVM tests pass**; lint zero errors/62 warnings. Both signed APKs passed
-model/native/license/permission inspection. Light installed with matching APK and
-retained private-model identities; paused focus, observation off, 100 virtual points
-and permissions were unchanged. At that installation the phone was asleep; the later v0.11 countdown above
-supplies one current typed case. Voice and floating proof remain pending. Optional movable Mira retains
-reviewed Show and Open/Pause focus/Hide controls; screen-off/lock/revocation ends
-floating mode. [Companion proof gates](docs/floating-companion.md),
-[full remaining deliverables](docs/remaining-deliverables.md).
-
-Historical v0.8 tested 12/40 supported proposals versus 9/40, with 28 false
-abstentions and nine gains/six regressions. Preserve that experiment separately;
-its different sample cannot establish v0.10's gain.
-
-**New System 1 research:** a separate classifier trained on actual frozen Qwen
-activations scored 76/90 raw intents versus 46/90 for generation on the same
-synthetic held-out set. Its validation-selected abstention uses brittle numerical
-saturation, and the frozen v0.7 action gate yields 15/65 correct supported commands
-versus 17/65 for generation. It remains research-only; APK/model weights are
-unchanged. [Results and limits](docs/intent-head.md).
-
-**Previous verified phone-action build: v0.6**, source `29c4c3372fcc913d3672e59803a3aa870fa2426b`.
-Set up Mira shows optional feature readiness; typed local-model Start/Pause were
-reviewed, confirmed and checked on Nothing. The app was left paused with usage off
-and 100 virtual points. A wrongly proposed alarm cancellation was rejected.
-[Command readiness](docs/command-readiness.md) and [58-case host reliability](docs/command-reliability.md)
-record the limits: 25/58 raw intent correctness, 49/58 gated correctness including
-abstentions, 16/23 supported commands correct, and two accepted mismatches.
-The [laptop export reviewer](docs/officekit-export-workflow.md) performs local CPU
-shadow replay; Java-export/Python-consumer interoperability is verified with
-synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
-execution remain pending.
-
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12)
-are published; previous builds remain preserved. The historical [4:35 v0.10 Mira research pitch](docs/current-pitch.md)
-reflects v0.10 with original animations, measured captions and source-bound figures.
-[Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);
-complete human listening and a recorded current phone demonstration remain pending.
-The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
-remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
-model preparation. Both currently use an optimized ARM64 CPU library verified on
-Nothing A059, requiring DOTPROD/I8MM/FP16. Use the generic source build on other
-ARM64 devices.
-
-> **Pre-event research repository.** Public rules require event-written competition
-> code. Preparation prototypes are dated and kept under `prototype/`; this repository
-> does not establish that they can be reused in the competition submission.
-
-The goal is a private assistant that understands a short command, notices when a
-user's chosen distraction budget is exceeded, explains its nudge and helps complete
-a task. Android native actions provide a reliable starting point; broader screen
-automation follows permission and sandbox testing. The penalty balance is virtual.
-
-## Task-planning experiments — unpromoted
-
-Actual local-model host planning failed useful-task criteria: the first candidate
-served 0/8 benign goals; the example-based repair fully met 4/10 fresh benign
-criteria and included nonsense/negation failures. Both experiments and a compiled
-but unapplied reviewed-import scaffold are preserved. At that experiment, the v0.11 app,
-model, prompt and native remained unchanged. [Evidence](docs/task-draft-research.md).
-
-## Start here
-
-| Document | Purpose |
+| Capability | Evidence and current boundary |
 | --- | --- |
-| [instructions.md](instructions.md) | Working instructions, setup, privacy and verification |
-| [plan.md](plan.md) | Milestones, implementation sequence and storage budget |
-| [hackathon.md](hackathon.md) | Full rubric, tracks, eligibility and submission checklist |
-| [docs/status.md](docs/status.md) | What is verified and what remains |
-| [docs/architecture.md](docs/architecture.md) | Android/model/action design |
-| [docs/model-research.md](docs/model-research.md) | Kev, Laya, CUA, licenses and small-model options |
-| [docs/hackathon-research.md](docs/hackathon-research.md) | Sourced event research |
-| [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
-| [docs/current-pitch.md](docs/current-pitch.md) | Current 4:35 pitch, reproducible narration/animation and evidence |
-| [docs/research-pitch-script.md](docs/research-pitch-script.md) | Historical v0.3 pitch narration |
-| [docs/task-guide.md](docs/task-guide.md) | Private authored steps, completion/undo and readback |
-| [docs/policy-baselines.md](docs/policy-baselines.md) | Logistic comparison and synthetic limitations |
-| [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
-| [docs/floating-companion.md](docs/floating-companion.md) | Optional floating controls and actual device proof gates |
-| [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
-| [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
-| [docs/intent-head.md](docs/intent-head.md) | Trained representation classifier, same-set comparison and deployment limits |
-| [docs/qwen-finetuning.md](docs/qwen-finetuning.md) | Actual local QLoRA experiment and rejected candidate |
-| [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
-| [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
-| [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
-| [docs/conversational-commands.md](docs/conversational-commands.md) | Fresh gate-only confirmation and rejected prompt experiments |
-| [docs/remaining-deliverables.md](docs/remaining-deliverables.md) | Full outstanding scope and physical/account gates |
-| [docs/natural-commands.md](docs/natural-commands.md) | Whole-request forms, English slots and frozen comparison |
-| [docs/timed-focus.md](docs/timed-focus.md) | Countdown semantics, regression fixes and pending phone checks |
-| [docs/command-readiness.md](docs/command-readiness.md) | Setup screen and confirmed typed phone actions |
-| [docs/command-reliability.md](docs/command-reliability.md) | Frozen host command results and accepted failures |
-| [docs/officekit-export-workflow.md](docs/officekit-export-workflow.md) | Implemented laptop review; actual Office Kit pending |
-| [docs/completion-audit.md](docs/completion-audit.md) | Artifact audit and remaining completion gates |
-| [docs/snapdragon-deployment.md](docs/snapdragon-deployment.md) | Isolated GenieX readiness and required device proof |
+| Local command understanding | Qwen3.5-0.8B Q4_0 executes through pinned llama.cpp JNI in the Nothing app process; ARM CPU/KleidiAI I8MM is observed. Three supported v0.12 timer proposals took **1.824–1.928 s native inference**, excluding interaction time. [Phone record](docs/focus-recovery-phone.md). |
+| Focus action and recovery | **Ten v0.12 phone phases passed**: reviewed Cancel/Start, early Pause, paused-time exclusion, resume, automatic completion and exact paused recovery after force-stop. Two countdowns added exactly 40,000 ms; final total 97,331 ms, observation off and 100 points. This is last-checkpoint recovery, not deep-sleep survival. [Procedure](docs/focus-recovery-phone.md). |
+| Task guidance and speech | v0.12 save, mute refusal and explicit readback reached the installed offline-English TTS engine's completion callback; checklist state stayed unchanged. Speaker audibility and ASR remain unverified. Broader checklist/restart branches retain v0.11 attribution. [Readback](docs/guide-readback-phone.md) · [Checklist](docs/task-guide-phone.md). |
+| Approved app launches | Historical v0.11 reviewed Calculator/Clock launches matched foreground metadata. No external UI was touched and no alarm was created. Alarm completion and general cross-app automation remain pending. [Launch evidence](docs/app-launch-phone.md). |
+| Command reliability | The unchanged v0.10 gate/model combination accepted **31/50 supported** frozen synthetic host requests and rejected all 50 unsupported requests; **19 supported requests falsely abstained**. Raw intent correctness was 36/100. No universal safety or voice accuracy claim. [Evaluation](docs/conversational-commands.md). |
+| Activation viewer | Four finite width-1,024 tensor summaries are observed on phone, including v0.12 capture. Historical v0.11 paired timings establish no fixed capture overhead. Laptop interventions produced no positive semantic steering finding. [Capture comparison](docs/capture-benchmark-phone.md) · [Causal experiment](docs/interpretability-experiment.md). |
+| Fast decision research | A separate **65-parameter positive-weight policy** scored 472/480 synthetic held-out cases versus 469/480 for a logistic baseline. It remains sandbox/shadow-only. Few-shot retrieval has abstentions; rejected LoRA and intent-head candidates are not deployed. [Policy](docs/policy-baselines.md) · [Learning limits](docs/live-preferences.md). |
+| Build and packaging | Selected v0.12: **148 JVM tests**, zero lint errors/65 warnings, inspected model/native/license identities and no `INTERNET` permission. Fully disconnected operation, thermals and peak-memory measurement still need verification. [Artifact manifest](docs/guidance-readback-artifacts.json). |
+| Phone export | v0.12 review/picker Cancel and actual local Save passed. A 496-byte empty summary matched phone/laptop checksums and passed zero-record schema validation. No policy inference or Office Kit transfer occurred. [Actual export](docs/phone-export.md). |
+| Hardware, bridge and submission | Actual iQOO/NPU execution, Office Kit pairing/transfer, live permissioned monitoring, IoT hardware, accepted application and eligible event submission remain unfinished. Local laptop export validation is separate from Office Kit. [Remaining deliverables](docs/remaining-deliverables.md). |
 
-## Design
+The [4:41 video](docs/v012-pitch.md) combines original Mira animation with two
+actual own-app clips at 1× speed: authored-step readback and unconfirmed typed
+Qwen inference (1,849 ms native CPU). Other scenes are labelled illustrations.
+Caption timing, full decode and sampled encoded visuals passed; complete human
+listening remains pending. The later recovery test is not in that recording.
+Historical release results and videos remain in [status](docs/status.md) and
+[previous releases](https://github.com/sanjuhs/iqoo-focuspilot/releases).
+
+## How it works
 
 ```mermaid
 flowchart LR
-    A[Opt-in phone context / push-to-talk] --> B[Local bounded intent model]
-    A --> C[Tiny explainable focus policy]
-    B --> D[Permission and confirmation gates]
-    C --> D
-    D --> E[Android intents / approved selectors]
-    E --> F[Outcome verification and local log]
-    H[Manually labelled synthetic examples] --> G[Separate few-shot sandbox]
+    A[Typed command / reviewed speech draft] --> B[Local Qwen intent proposal]
+    B --> C[Original-request validation]
+    C --> D[Explicit action review]
+    D --> E[Bounded Android action]
+    E --> F[Outcome and local checkpoint]
+    G[Opt-in usage summary] --> H[Budget / cooldown / override policy]
+    H --> I[Virtual accountability nudge]
+    J[Private authored steps] --> K[Mira checklist / explicit readback]
 ```
 
-Quantized **Qwen3.5-0.8B Q4_0 runs inside the Android app** through a pinned llama.cpp
-CPU bridge. The model proposes a bounded intent; independent code validates the
-original request and asks for confirmation. Actual activation summaries are visible
-in the model lab. Laya is a laptop comparison. The [activation experiment](docs/interpretability-experiment.md)
-defines controlled causal tests; observing tensors alone does not establish their meaning.
-Recurring nudges use a hand-set policy; a separate 65-parameter trained sandbox
-shows hidden-unit contributions and interventions. New source also evaluates that
-network in a shadow panel against consented usage summaries when all inputs are
-known; its uncalibrated score changes no actions. User-declared task/time targets
-stay private. Push-to-talk can create editable command drafts through an installed
-on-device speech service, followed by manual inference and action review. Physical
-voice and full usage-permission tests are still pending. Mira is an original animated
-goth companion with mute, hide and reduce-motion controls. Snapdragon NPU execution
-and Office Kit remain unverified.
-An ADB connection is a development tool, not Office Kit integration.
+The language model proposes an intent. Independent code validates the complete
+original request, arguments and permissions before execution. Repeated focus
+nudges use a hand-set policy; the trained tiny network evaluates explanations in
+a separate sandbox/shadow path. It cannot create live actions. Authored steps are
+inert private text, excluded from model input and exports.
 
-## Device check
+The larger goal includes voice-controlled assistance, few-shot personalization,
+a useful fast decision path, scoped phone automation, activation experiments and
+an actual iQOO/laptop bridge. [Architecture](docs/architecture.md) and
+[the delivery plan](plan.md) preserve those requirements and their acceptance gates.
+An ADB cable is development access, not Office Kit integration; local CPU inference
+is not Snapdragon NPU evidence.
 
-Requires Android SDK Platform Tools and Python 3.
+## Build from source
 
-```sh
-python3 scripts/check_device.py
-# If multiple phones are connected:
-python3 scripts/check_device.py --serial YOUR_DEVICE_SERIAL
-```
-
-Unlock the phone and accept the USB debugging RSA prompt. The script reads device
-properties without capturing screens or granting app permissions. Verified development
-device: Nothing A059, Android 16/API 36, `SM7635`, `arm64-v8a`.
-
-See [Android research app](prototype/android/README.md) and
-[selected-model deployment](docs/on-device-model.md) for build/run instructions.
+Use Java 17, Android SDK platform 36, NDK 28.2, Gradle 8.14, Node.js and Python 3.
+Set `ANDROID_HOME` to your SDK. The build script fetches the pinned llama.cpp
+source into ignored `research/`, builds JNI, and runs Android tests, assembly and
+lint. [Detailed Android setup](prototype/android/README.md)
+· [Model pin and runtime](docs/on-device-model.md).
 
 ```sh
+git clone https://github.com/sanjuhs/iqoo-focuspilot.git
+cd iqoo-focuspilot
+git checkout research-v0.12
+
+# Download and verify the selected model into ignored local storage.
 node prototype/qwen/prepare-model.mjs qwen35
-./scripts/build_android.sh
-python3 scripts/prepare_phone.py --serial YOUR_DEVICE_SERIAL
+
+# Generic ARM64 CPU build with bundled model.
+./scripts/build_android.sh -PbundleLocalModel=true
+
+# Inspect authorized USB debugging; unlock and accept RSA on the phone yourself.
+python3 scripts/check_device.py --serial YOUR_DEVICE_SERIAL
+adb -s YOUR_DEVICE_SERIAL install -r prototype/android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-For a standalone research APK that contains Qwen, use
-`./scripts/build_android.sh -PbundleLocalModel=true` (generic ARM64) or add
-`NATIVE_BUILD_VARIANT=optimized` only on supported DOTPROD/I8MM/FP16 hardware.
-The bundled APK imported and verified its own model on the phone, then generated
-without ADB model preparation. The light/bundled artifacts are documented in
-[research artifact evidence](docs/research-artifacts.json).
+For a light build, omit `-PbundleLocalModel=true`, install it, then run
+`python3 scripts/prepare_phone.py --serial YOUR_DEVICE_SERIAL --skip-install`. That preparation
+checks hashes and transfers the pinned model into the debug app's private storage.
+Use `NATIVE_BUILD_VARIANT=optimized` only after verifying the required CPU features.
+The generic build is portable to supported ARM64 CPUs; it is not byte-identical
+to the published optimized APK.
 
-Downloaded weights and generated native libraries/APKs remain ignored; the preparation
-script checks the model hash and streams it into debug app-private storage.
+No provider API key is required by the Android runtime. Keep total project,
+dependencies, models and generated artifacts under **15,000,000,000 bytes**;
+aim below 10 GB. Avoid redundant model/runtime copies. Model weights and private
+captures stay outside Git; only explicitly sanitized research media is published.
 
-## Contribution and attribution
+## Documentation and research
 
-Original project code/documentation is MIT licensed. Upstream model, runtime and
-dependency licenses remain their own. Research sources and immutable checkout pins
-are listed in [model research](docs/model-research.md). No upstream implementation
-has been copied into the initial project. Do not describe mixed-license CUA components
-as uniformly MIT, and do not redistribute weights without verifying their license.
+| Start with | Purpose |
+| --- | --- |
+| [instructions.md](instructions.md) · [plan.md](plan.md) | Working rules, implementation sequence and acceptance gates |
+| [hackathon.md](hackathon.md) · [event research](docs/hackathon-research.md) | Productivity track, 100% rubric, event-written code and application requirements |
+| [Verified status](docs/status.md) · [remaining deliverables](docs/remaining-deliverables.md) | Current proof, historical attribution and full unfinished scope |
+| [Architecture](docs/architecture.md) · [model research](docs/model-research.md) | Android design, Kev/Laya/CUA research, licenses and model comparisons |
+| [Companion design](docs/companion-design.md) · [voice](docs/voice-integration.md) | Original Mira artwork, accessibility controls and speech lifecycle |
+| [Task guide](docs/task-guide.md) · [timed focus](docs/timed-focus.md) | Authored steps, review/cancellation, countdown and recovery contracts |
+| [Data export](docs/data-export.md) · [phone proof](docs/phone-export.md) · [laptop review](docs/officekit-export-workflow.md) | Private export schema and bounded local replay; Office Kit proof gates |
+| [Tiny policy](docs/policy-baselines.md) · [fine-tuning](docs/qwen-finetuning.md) · [intent head](docs/intent-head.md) | Measured research, rejected candidates and synthetic limitations |
+| [Task-planning research](docs/task-draft-research.md) · [sandbox automation](docs/sandbox-automation.md) | Unpromoted planning experiments and two own-app selector controls |
+| [Snapdragon deployment](docs/snapdragon-deployment.md) · [activation experiments](docs/interpretability-experiment.md) | Actual-backend and causal-evidence requirements |
+| [Current pitch](docs/v012-pitch.md) · [editable narration](docs/v012-research-pitch-script.md) | Video, captions, exact evidence and reproducible rendering |
 
-Use synthetic or consented sandbox content. Keep downloaded weights, private data,
-captures and local `.env` files ignored. Optional cloud development tooling must not
-be a dependency of the claimed offline runtime or contain keys in the APK.
+## Contribute
+
+Original project code and documentation are [MIT licensed](LICENSE). Model,
+runtime and dependency licenses remain their own; immutable pins and notices are
+in [model research](docs/model-research.md). Check upstream redistribution terms,
+including mixed-license CUA components, before copying code or weights.
+
+Use synthetic or consented sandbox content. Keep `.env`, credentials, weights,
+training data and private phone captures ignored. Optional cloud development tools
+must not become a hidden dependency of the local runtime. Real payments,
+purchases, messages and destructive actions require action-level confirmation;
+the current accountability balance is simulated.
+
+Before a push, inspect the Git index and named changes:
 
 ```sh
 python3 scripts/check_secrets.py
 git status --short
 ```
 
-The secret checker scans the Git index without printing credentials. It is a helpful
-pre-push check, not a guarantee that every possible secret format is recognized.
-
-## Milestone status
-
-Research, device authorization and real phone CPU inference are verified. One cold
-request took 19.9 seconds; a subsequent request with tensor capture took 4.1 seconds
-on Nothing A059. These are two smoke observations, not p50/p95 or iQOO measurements.
-The optimized ARM CPU lab later ran warm requests around 1.65–1.72 seconds and
-verified I8MM kernel selection. Two unsafe requests were rejected by the external
-validator despite model misclassification. A local few-shot label sandbox is
-implemented with honest abstention/coverage reporting. The Android app has no
-INTERNET permission. Broader phone tests,
-NPU/Office Kit verification and final video remain work in progress; consult
-[verified status](docs/status.md) for current evidence. A public repo is a backup,
-not a completed hackathon application or submission.
+The checker avoids printing credentials but cannot recognize every secret format.
+Keep measured limitations with new evidence in [docs/status.md](docs/status.md).

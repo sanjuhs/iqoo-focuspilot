@@ -1,0 +1,40 @@
+{
+  "research_only": true,
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "harness_commit": "0c6f5d063ec12197b4f95096c4e41da03896aaae",
+  "harness_sha256": "bd5b58e0ac0d4ecab2cad5899729945594a2d9916a5c2e6a3de5a3f1064f2cc9",
+  "document_picker_component": "com.google.android.documentsui/com.android.documentsui.picker.PickActivity",
+  "before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "zero_saved_live_labels_precondition": true,
+  "default_settings_empty_goal": true,
+  "office_kit_verified": false,
+  "npu_verified": false,
+  "permissions_changed": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "phases": [
+    {
+      "name": "export_review_cancel",
+      "checkpoint_unchanged": true,
+      "review_closed": true
+    }
+  ],
+  "completed": false,
+  "failure_type": "RuntimeError",
+  "failure": "Expected unlocked document picker not in front",
+  "cleanup_verified": false
+}

@@ -1,0 +1,17 @@
+{
+  "research_only": true,
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+  "tag_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "original_13_assets_unchanged": true,
+  "total_asset_count": 14,
+  "new_metadata_asset": {
+    "name": "phone-export-v012.json",
+    "size": 7993,
+    "digest": "sha256:b6872bd82613eabd9545ffe41a503658316e4b75b413e7e798106fcab5a6bab6",
+    "state": "uploaded",
+    "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/phone-export-v012.json"
+  },
+  "private_payload_and_laptop_aggregate_published": false,
+  "logical_project_bytes": 13821810134,
+  "limit_bytes": 15000000000
+}

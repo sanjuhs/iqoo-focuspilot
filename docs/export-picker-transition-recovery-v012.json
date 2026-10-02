@@ -1,0 +1,86 @@
+{
+  "research_only": true,
+  "scope": "Manual guard-checked recovery after failed picker-transition harness; not a completed export run",
+  "harness_commit": "0c6f5d063ec12197b4f95096c4e41da03896aaae",
+  "picker_control_metadata": {
+    "resource_ids": [
+      "android:id/button1",
+      "android:id/content",
+      "android:id/icon",
+      "android:id/navigationBarBackground",
+      "android:id/title",
+      "com.google.android.documentsui:id/action_bar_root",
+      "com.google.android.documentsui:id/app_bar",
+      "com.google.android.documentsui:id/breadcrumb_text",
+      "com.google.android.documentsui:id/collapsing_toolbar",
+      "com.google.android.documentsui:id/container_directory",
+      "com.google.android.documentsui:id/container_save",
+      "com.google.android.documentsui:id/container_search_fragment",
+      "com.google.android.documentsui:id/coordinator_layout",
+      "com.google.android.documentsui:id/date",
+      "com.google.android.documentsui:id/details",
+      "com.google.android.documentsui:id/dir_list",
+      "com.google.android.documentsui:id/directory_header",
+      "com.google.android.documentsui:id/drawer_edge",
+      "com.google.android.documentsui:id/drawer_layout",
+      "com.google.android.documentsui:id/header_container",
+      "com.google.android.documentsui:id/header_title",
+      "com.google.android.documentsui:id/horizontal_breadcrumb",
+      "com.google.android.documentsui:id/icon",
+      "com.google.android.documentsui:id/icon_mime_lg",
+      "com.google.android.documentsui:id/icon_mime_sm",
+      "com.google.android.documentsui:id/icon_thumb",
+      "com.google.android.documentsui:id/item_root",
+      "com.google.android.documentsui:id/nameplate",
+      "com.google.android.documentsui:id/option_menu_create_dir",
+      "com.google.android.documentsui:id/refresh_layout",
+      "com.google.android.documentsui:id/sub_menu",
+      "com.google.android.documentsui:id/sub_menu_list",
+      "com.google.android.documentsui:id/thumbnail",
+      "com.google.android.documentsui:id/toolbar"
+    ],
+    "known_controls": [
+      {
+        "resource_id": "com.google.android.documentsui:id/breadcrumb_text",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.ImageButton",
+        "text": "",
+        "description": "Show roots"
+      },
+      {
+        "resource_id": "",
+        "class": "android.widget.TextView",
+        "text": "Downloads",
+        "description": ""
+      },
+      {
+        "resource_id": "android:id/button1",
+        "class": "android.widget.Button",
+        "text": "SAVE",
+        "description": ""
+      }
+    ],
+    "default_filename_editor_observed": true
+  },
+  "before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "final": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "runtime_grants_unchanged": true,
+  "cancel_status_observed": true,
+  "cleanup_verified": true,
+  "file_saved": false
+}

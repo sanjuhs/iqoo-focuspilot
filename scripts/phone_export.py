@@ -47,7 +47,8 @@ def require_research_defaults(lab):
 
 
 class Picker:
-    def __init__(self,lab): self.lab=lab
+    def __init__(self,lab,filename=FILENAME):
+        self.lab=lab;self.filename=filename;self.remote='/sdcard/Download/'+filename
     def wait(self,timeout=5):
         deadline=time.monotonic()+timeout
         while True:
@@ -106,16 +107,16 @@ class Picker:
         if filename is None: raise RuntimeError('Expected synthetic filename editor not identified')
         self.tap_node(filename)
         self.lab.adb('shell','input','keycombination','113','29')
-        self.lab.adb('shell','input','text',FILENAME)
+        self.lab.adb('shell','input','text',self.filename)
         self.lab.adb('shell','input','keyevent','KEYCODE_BACK')
         nodes=self.nodes()
-        if not any(n.get('class')=='android.widget.EditText' and n.get('text')==FILENAME for n in nodes):
+        if not any(n.get('class')=='android.widget.EditText' and n.get('text')==self.filename for n in nodes):
             raise RuntimeError('Test filename readback mismatch; no save')
         save=next((n for n in nodes if n.get('resource-id')=='android:id/button1'
                    and n.get('class')=='android.widget.Button' and n.get('clickable')=='true'
                    and n.get('text','').casefold()=='save' and n.get('enabled')=='true'),None)
         if save is None: raise RuntimeError('Enabled Save control not identified')
-        if subprocess.run(self.lab.base+['shell','test','-e',REMOTE],capture_output=True).returncode!=1:
+        if subprocess.run(self.lab.base+['shell','test','-e',self.remote],capture_output=True).returncode!=1:
             raise RuntimeError('Test destination collision or uncertain absence; no Save')
         self.tap_node(save)
         record_metadata('local_save_tapped',True)
@@ -128,8 +129,12 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--execute-export-test',action='store_true')
     parser.add_argument('--save-local',action='store_true')
+    parser.add_argument('--test-filename',default=FILENAME,help='A new synthetic test filename; existing copies are never overwritten')
     args=parser.parse_args()
     if not args.execute_export_test: parser.error('Explicit --execute-export-test required')
+    if not re.fullmatch(r'focuspilot-v012-export-test-[a-z0-9-]{1,64}\.json',args.test_filename):
+        raise RuntimeError('Test filename must use the fixed synthetic prefix and a safe unique suffix')
+    remote='/sdcard/Download/'+args.test_filename
     args.output=args.output.resolve()
     try:args.output.relative_to(ROOT/'artifacts')
     except ValueError:raise RuntimeError('Evidence output must stay in ignored artifacts')
@@ -145,13 +150,14 @@ def main():
     require_research_defaults(lab)
     before=checkpoint(preferences(lab));grants=permissions(lab)
     if monitor_record_present(lab): raise RuntimeError('Existing monitor left unchanged')
-    if subprocess.run(lab.base+['shell','test','-e',REMOTE],capture_output=True).returncode!=1:
+    if subprocess.run(lab.base+['shell','test','-e',remote],capture_output=True).returncode!=1:
         raise RuntimeError('Existing test destination or uncertain absence; no overwrite')
     report={'research_only':True,'app_source_commit':APP_SOURCE,'apk_sha256':APK_SHA,
             'harness_commit':commit,'harness_sha256':digest(Path(__file__)),
             'document_picker_component':COMPONENT,'before':before,'runtime_grants_before':grants,
+            'test_filename':args.test_filename,
             'zero_saved_live_labels_precondition':True,'default_settings_empty_goal':True,
-            'office_kit_verified':False,'npu_verified':False,'permissions_changed':False,
+            'office_kit_verified':False,'npu_verified':False,'runtime_permission_settings_actions':False,
             'device':{name:lab.adb('shell','getprop',prop).strip() for name,prop in
                       [('manufacturer','ro.product.manufacturer'),('model','ro.product.model'),
                        ('soc','ro.soc.model'),('api','ro.build.version.sdk')]},
@@ -167,7 +173,7 @@ def main():
     def review():
         lab.top();lab.tap('Export my focus summary')
         if not any(n.get('text')=='Export your private summary?' for n in lab.nodes()): raise RuntimeError('Expected export review absent')
-    record();picker=Picker(lab)
+    record();picker=Picker(lab,args.test_filename)
     try:
         review();lab.tap('Cancel',scroll=False)
         if any(n.get('text')=='Export your private summary?' for n in lab.nodes()):
@@ -182,19 +188,19 @@ def main():
         if args.save_local:
             review();lab.tap('Choose destination',scroll=False);picker.wait();picker.save_local(record_metadata);lab.guard()
             lab.top();lab.find('Private summary exported to your chosen destination. It is outside app-data deletion.')
-            data=lab.adb('shell','cat',REMOTE).encode('utf-8')
+            data=lab.adb('shell','cat',remote).encode('utf-8')
             if len(data)>80000: raise RuntimeError('Actual test export oversized')
             payload=json.loads(data)
             if payload['records']!=[] or payload['focus_active'] or payload['observation_enabled'] or payload['money_moved']:
                 raise RuntimeError('Unexpected actual export state; payload kept private')
             if payload['focus_elapsed_ms']!=before['elapsed_ms'] or payload['virtual_points']!=before['points']:
                 raise RuntimeError('Actual export checkpoint mismatch')
-            source_hash=lab.adb('shell','sha256sum',REMOTE).split()[0]
+            source_hash=lab.adb('shell','sha256sum',remote).split()[0]
             if hashlib.sha256(data).hexdigest()!=source_hash: raise RuntimeError('Read/source checksum mismatch')
-            private=ROOT/'artifacts'/FILENAME
+            private=ROOT/'artifacts'/args.test_filename
             if private.exists(): raise RuntimeError('Existing local private export respected')
             with private.open('xb') as output:output.write(data)
-            aggregate=ROOT/'artifacts'/'phone-export-bridge-review-v012.json'
+            aggregate=private.with_suffix('.review.json')
             if aggregate.exists(): raise RuntimeError('Existing aggregate respected')
             subprocess.run(['python3',str(ROOT/'prototype/bridge/review_export.py'),'--input',str(private),
                             '--expected-sha256',source_hash,'--output',str(aggregate)],cwd=ROOT,check=True,capture_output=True)

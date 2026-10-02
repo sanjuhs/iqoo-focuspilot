@@ -2,6 +2,16 @@
 
 This is an implemented local laptop-compute consumer for the app's explicit private export, **not an implemented or verified Office Kit integration**. The bridge can be prepared and tested without an iQOO phone, enabling services, signing in, fetching a SDK or downloading another model. It never executes a phone action or sends results back into the app.
 
+## Later actual v0.12 empty phone export
+
+[Physical evidence](phone-export.md) now establishes reviewed cancellation,
+document-picker cancellation and actual local Downloads Save on Nothing. A new
+496-byte empty summary matched phone/source and laptop-copy hashes; this consumer
+accepted zero records/contexts. No forward inference occurred. Transport was ADB,
+not Office Kit. The payload/aggregate remain private and the earlier synthetic
+interop below retains its original attribution. Actual nonempty observation export,
+Office Kit and supported iQOO hardware remain pending.
+
 ## What is implemented
 
 `prototype/bridge/review_export.py` reads exactly one operator-selected input file, validates the complete private export schema, then reuses the existing `prototype/policy/policy.py` implementation and `synthetic-model.json` checkpoint. It verifies their pinned byte identities before importing the implementation, checks the checkpoint parameter checksum/feature order, and performs only forward inference on standard-library Python CPU. No training or parameter update occurs. A changed implementation/checkpoint requires a deliberate compatibility review; it is not silently accepted.

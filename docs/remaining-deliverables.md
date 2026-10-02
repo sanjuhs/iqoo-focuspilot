@@ -78,6 +78,14 @@ This closes those specific current timer branches in action 3; it does not close
 replacement, deep sleep, bundled clean import or the full command/task/voice/
 background workflow. [Actual scope and repeat](focus-recovery-phone.md).
 
+**Later v0.12 actual export:** the selected phone APK passed both review/picker
+cancellation and closed-file local Save. The 496-byte zero-live-label summary
+matched phone/laptop SHA-256 and passed the bridge's full schema validation with
+zero records/contexts; no policy inference occurred. Own focus/grants/monitor stayed
+unchanged. This closes the empty local phone-write/schema branch of action 8,
+leaving real-record replay, provider failures and actual Office Kit transfer open.
+Private payload/aggregate remain ignored. [Evidence and preserved attempts](phone-export.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.
