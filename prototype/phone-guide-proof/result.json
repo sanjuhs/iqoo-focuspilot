@@ -1,0 +1,111 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_inference_performed": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "synthetic_goal": "Prepare a three point focus demo",
+  "synthetic_steps": [
+    "Open my notes",
+    "Draft three points",
+    "Review the draft"
+  ],
+  "synthetic_replacement": [
+    "Check the outline",
+    "Review the final notes"
+  ],
+  "before_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "phases": [
+    {
+      "name": "synthetic_goal_saved",
+      "checkpoint_unchanged": true
+    },
+    {
+      "name": "authored_steps_saved",
+      "checkpoint_unchanged": true,
+      "count": 3,
+      "completed": 0,
+      "revision_present": true
+    },
+    {
+      "name": "mark_ui_and_durable_state",
+      "checkpoint_unchanged": true,
+      "completed": 1
+    },
+    {
+      "name": "undo_ui_and_durable_state",
+      "checkpoint_unchanged": true,
+      "completed": 0
+    },
+    {
+      "name": "process_restart_recovery",
+      "checkpoint_unchanged": true,
+      "exact_record_preserved": true
+    },
+    {
+      "name": "all_steps_completed_ui",
+      "checkpoint_unchanged": true,
+      "completed": 3,
+      "mark_disabled": true
+    },
+    {
+      "name": "undo_after_complete",
+      "checkpoint_unchanged": true,
+      "completed": 2
+    },
+    {
+      "name": "replacement_cancel",
+      "checkpoint_unchanged": true,
+      "exact_record_preserved": true
+    },
+    {
+      "name": "replacement_confirmed",
+      "checkpoint_unchanged": true,
+      "count": 2,
+      "completed": 0
+    },
+    {
+      "name": "clear_cancel",
+      "checkpoint_unchanged": true,
+      "exact_record_preserved": true
+    },
+    {
+      "name": "clear_confirmed",
+      "checkpoint_unchanged": true,
+      "task_goal_retained": true
+    },
+    {
+      "name": "clear_process_restart",
+      "checkpoint_unchanged": true,
+      "guide_record_absent": true
+    }
+  ],
+  "completed": true,
+  "permission_or_settings_actions": false,
+  "tts_or_microphone_actions": false,
+  "external_app_actions": false,
+  "npu_verified": false,
+  "private_original_text_exported": false,
+  "final_checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331
+  },
+  "empty_goal_restored": true,
+  "guide_record_removed": true,
+  "cleanup_scope": "UI clears only this synthetic guide and restores the original empty goal. Task-save log entries and zero target keys may remain; no global deletion or byte-identical preference restoration.",
+  "cleanup_verified": true
+}
