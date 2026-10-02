@@ -4,12 +4,13 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import time
 
 from phone_model_smoke import PhoneLab, PACKAGE
 from phone_task_guide import (GOAL, STEPS, preferences, checkpoint, require_empty_test_state,
-                              disclosure, set_field, wait_preferences, assert_plan, cleanup_synthetic)
+                              disclosure, find_attribute, tap_node, wait_preferences, assert_plan, cleanup_synthetic)
 from phone_readback import permissions, monitor_record_present
 
 OUTCOMES={
@@ -22,6 +23,29 @@ OUTCOMES={
     'Offline voice is not ready or installed. Your text is still here.':'offline_voice_unavailable',
 }
 MUTED="Mira's voice is muted. Your text is still here."
+
+
+def set_test_field(lab,attribute,name,value):
+    if not re.fullmatch(r'[A-Za-z0-9 \n]*',value):raise ValueError('Synthetic ASCII only')
+    lab.top()
+    for _ in range(6):
+        node=find_attribute(lab,attribute,name)
+        bounds=list(map(int,re.findall(r'\d+',node.get('bounds',''))))
+        # Keep the field clear of this phone's fixed bottom Stop bar and top inset.
+        if len(bounds)==4 and 350<=(bounds[1]+bounds[3])//2<=1900:break
+        lab.guard();lab.adb('shell','input','swipe','540','1750','540','1100','250')
+    else:raise RuntimeError('Synthetic field not safely positioned; no text entered')
+    tap_node(lab,node)
+    if not any(n.get(attribute)==name and n.get('focused')=='true' for n in lab.nodes()):
+        raise RuntimeError('Named synthetic field did not gain focus; no text entered')
+    lab.guard();lab.adb('shell','input','keycombination','113','29')
+    lab.guard();lab.adb('shell','input','keyevent','KEYCODE_DEL')
+    for i,line in enumerate(value.split('\n')):
+        if i:lab.guard();lab.adb('shell','input','keyevent','KEYCODE_ENTER')
+        if line:lab.guard();lab.adb('shell','input','text',line.replace(' ','%s'))
+    lab.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK');lab.top()
+    if find_attribute(lab,attribute,name).get('text','')!=value:
+        raise RuntimeError('Synthetic field readback mismatch; no save')
 
 
 def main():
@@ -46,6 +70,10 @@ def main():
     initial=preferences(lab);require_empty_test_state(initial);before=checkpoint(initial);grants=permissions(lab)
     if initial.get('mute',False) is not False:raise RuntimeError('Existing mute preference respected; audible test not started')
     if monitor_record_present(lab):raise RuntimeError('Existing monitor left unchanged')
+    # Fresh own process removes unsaved editor state; no saved settings or model deletion.
+    lab.adb('shell','am','force-stop',PACKAGE)
+    lab.adb('shell','am','start','-n',PACKAGE+'/.MainActivity');lab.guard()
+    if checkpoint(preferences(lab))!=before:raise RuntimeError('Own process restart changed checkpoint')
     report=dict(research_only=True,source_commit=manifest['source_commit'],apk_sha256=sha,
                 model_sha256=manifest['model']['sha256'],native_sha256=artifact['native_sha256'],
                 harness_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
@@ -67,11 +95,11 @@ def main():
         wait_preferences(lab,lambda v:v.get('mute',False)==value)
     synthetic_created=False;mute_touched=False;save()
     try:
-        disclosure(lab,'Choose your task & targets');set_field(lab,'content-desc','Focus task',GOAL)
+        disclosure(lab,'Choose your task & targets');set_test_field(lab,'content-desc','Focus task',GOAL)
         synthetic_created=True;lab.tap('Save task & targets')
         wait_preferences(lab,lambda v:v.get('focusGoal')==GOAL)
         disclosure(lab,'Write or edit my steps')
-        set_field(lab,'resource-id',PACKAGE+':id/task_guide_editor','\n'.join(STEPS));lab.tap('Save these steps')
+        set_test_field(lab,'resource-id',PACKAGE+':id/task_guide_editor','\n'.join(STEPS));lab.tap('Save these steps')
         original_record=assert_plan(preferences(lab),STEPS,0);phase('synthetic_authored_guide_saved',count=3,completed=0)
         mute_touched=True;set_mute(True);lab.tap('Speak this step offline');lab.find(MUTED)
         if assert_plan(preferences(lab),STEPS,0)!=original_record:raise RuntimeError('Muted readback changed guide')
