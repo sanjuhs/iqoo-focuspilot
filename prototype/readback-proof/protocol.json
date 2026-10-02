@@ -1,0 +1,33 @@
+{
+  "research_only": true,
+  "prepared_before_physical_run": true,
+  "selected_app_source": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "synthetic_request": "Stop focus",
+  "initial_state": "Own unlocked foreground, focus paused, observation off, monitor service absent",
+  "actions": [
+    "Attempt visible monitor with observation off; require early guard refusal and switch reset",
+    "Typed pinned-model Stop focus; only confirm exact reviewed Pause",
+    "Explicit fixed confirmed-status TTS; record exact terminal UI",
+    "Return to own dashboard; verify checkpoint and own monitor-service state"
+  ],
+  "success_scope": "Terminal UI branch attribution only; engine callback does not certify independently audible output or whole-device offline speech",
+  "human_audibility_verified": false,
+  "speech_recognition_tested": false,
+  "permission_or_settings_actions": false,
+  "harness_sha256": {
+    "scripts/phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+    "scripts/phone_model_smoke.py": "91e709fb8201141a3a09f48a14b874cf902c4082cefcc2f8b70d41a4fd51e27f",
+    "scripts/phone_focus_actions.py": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+    "scripts/phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1"
+  },
+  "declared_tts_outcomes": [
+    "engine_completed_callback",
+    "offline_voice_unavailable",
+    "engine_start_failed",
+    "engine_error_callback",
+    "bounded_timeout",
+    "companion_muted"
+  ]
+}
