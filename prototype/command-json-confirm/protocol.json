@@ -1,0 +1,650 @@
+{
+  "schema": 1,
+  "created_date_ist": "2026-10-03",
+  "phase_at_creation": "prospective_before_candidate_review_or_corpus_authoring",
+  "scope": "Pre-event host CPU research; one new JSON prompt versus shipped seven-intent JSON baseline. Informed synthetic author; no corpus/captures/results yet; no eligibility or hardware claims.",
+  "authoring_gate": "Parent must provide locked candidate source/template/examples/grammar/max-token hashes and explicitly authorize corpus authoring. Do not inspect development outputs or fresh evaluation outputs.",
+  "fixed": {
+    "model": "Qwen3.5-0.8B-Q4_0",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_path": "prototype/command-eval/build/native/libfocuspilot_local.dylib",
+    "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+    "LocalModel_java_sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate_java_sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords_java_sha256": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "context": 1024,
+    "threads": 4,
+    "capture_enabled": false,
+    "backend": "CPU host JNI",
+    "max_tokens": 128,
+    "grammar": "Identical shipped LocalModel.INTENT_GRAMMAR, frozen by bytes/hash before authoring",
+    "output_validation": "Native reached_eos true and JSON object exactly one intent key with allowed string label; no repair/extraction/trimming/retry",
+    "intent_labels": [
+      "start_focus",
+      "pause_focus",
+      "alarm",
+      "timer",
+      "open_app",
+      "explain",
+      "unknown"
+    ],
+    "candidate_source_sha256": null,
+    "candidate_template_sha256": null,
+    "candidate_identity_note": "Prospective nulls are not permission to author or execute unfrozen candidate."
+  },
+  "freeze_before_capture": [
+    "Protocol Markdown/JSON",
+    "Both source adapters and rendered prompt/template/examples inventories",
+    "Identical grammar and 128 ceiling",
+    "Runner/scorer/Java gate harness/generator",
+    "Complete ordered cases/labels/requests",
+    "All prior/current/new development overlap inventories with hashes/counts/extraction",
+    "Model/native/gate/parser source identities"
+  ],
+  "corpus": {
+    "rows": 100,
+    "families": 50,
+    "rows_per_family": 2,
+    "family_design": "One supported row and one related required-UNKNOWN near negative per family",
+    "supported_rows": 50,
+    "must_abstain_rows": 50,
+    "supported_by_intent": {
+      "start_focus": 10,
+      "pause_focus": 8,
+      "alarm": 8,
+      "timer": 10,
+      "open_app": 6,
+      "explain": 8
+    },
+    "open_app_targets": {
+      "Settings": 2,
+      "Calculator": 2,
+      "Clock": 2
+    },
+    "row_fields": [
+      "id",
+      "family",
+      "counterpart_id",
+      "utterance",
+      "semantic_intent",
+      "oracle_intent",
+      "expected_kind",
+      "hour",
+      "minute",
+      "seconds",
+      "hard_tags"
+    ],
+    "hard_tag_minimum_rows": {
+      "pause_preservation": 8,
+      "current_or_spoken_focus_pause": 4,
+      "resume_vs_start": 2,
+      "nudge_cause": 4,
+      "spoken_number_slot": 8,
+      "duration_boundary": 4,
+      "seconds_minutes_unit": 2,
+      "midnight_noon": 2
+    },
+    "unknown_semantic_intent": "unknown",
+    "unknown_slots": {
+      "hour": 0,
+      "minute": 0,
+      "seconds": 0
+    },
+    "near_negative_categories": [
+      "negation/refusal",
+      "multiple actions",
+      "conditional/delayed/hypothetical",
+      "quotation/translation/reported",
+      "unapproved app",
+      "purchase/payment/message/deletion",
+      "unrelated question",
+      "ambiguous/invalid alarm",
+      "calendar/repeated/multiple alarm",
+      "signed/fractional/multiple/out-of-range duration",
+      "unsupported modifier",
+      "existing clock cancellation",
+      "prompt injection"
+    ],
+    "retain_known_gate_limits": true,
+    "overlap": {
+      "exact_matches_required": 0,
+      "normalized_matches_required": 0,
+      "normalization": "Lowercase; replace runs outside ASCII a-z/0-9 with spaces; collapse whitespace. No semantic or number-word normalization.",
+      "within_new_corpus": true,
+      "actual_available_required_sources": [
+        {
+          "path": "prototype/command-compact-confirm/build/cases.jsonl",
+          "sha256_at_protocol": "982ae35098683f77a47f153f26bafcc47c0d5ea57cc098588494f027712096ef",
+          "method": "JSONL utterance field only; no results",
+          "request_count_at_protocol": 100
+        },
+        {
+          "path": "prototype/command-eval/build/cases.jsonl",
+          "sha256_at_protocol": "383a20f742db966e466c5df9c835077c6f7dff4116e4b750cd7260e0f3e2d51e",
+          "method": "JSONL utterance field only; no results",
+          "request_count_at_protocol": 58
+        },
+        {
+          "path": "prototype/command-v08-eval/build/cases.jsonl",
+          "sha256_at_protocol": "4a185c1883d7ae533a846d3106442799ebeedc299959d2a1a41c62d1e814a0b9",
+          "method": "JSONL utterance field only; no results",
+          "request_count_at_protocol": 100
+        },
+        {
+          "path": "prototype/command-v10-confirm/build/cases.jsonl",
+          "sha256_at_protocol": "f8ae98f389106e80457683f75739c604be14cd6e3097b6eca4319ff0bc6d8f89",
+          "method": "JSONL utterance field only; no results",
+          "request_count_at_protocol": 100
+        },
+        {
+          "path": "prototype/command-v10-eval/build/cases.jsonl",
+          "sha256_at_protocol": "dd025c19189c7954f8c7cca214db6d6684e3bf0659c19bae420d8236fa904423",
+          "method": "JSONL utterance field only; no results",
+          "request_count_at_protocol": 100
+        },
+        {
+          "path": "prototype/intent-head/build/all-cases.jsonl",
+          "sha256_at_protocol": "17fbc44ecfd8023e4766c709887eba03a2edf8a14a9b6f38a89b1a279f2f9af2",
+          "method": "JSONL utterance field; supersets train/validation/heldout splits",
+          "request_count_at_protocol": 373
+        },
+        {
+          "path": "prototype/command-v10-dev/build/baseline-v08/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-v10-dev/build/round1/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-v10-dev/build/round2/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-compact-dev/build/baseline/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-compact-dev/build/compact1/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-compact-dev/build/compact2/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-compact-dev/build/compact3/requests.tsv",
+          "sha256_at_protocol": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+          "method": "TSV second column, complete original request",
+          "request_count_at_protocol": 36
+        },
+        {
+          "path": "prototype/command-v10-confirm/build/selected-prompt-inventory.json",
+          "sha256_at_protocol": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+          "method": "JSON examples array only; do not read result summary",
+          "request_count_at_protocol": 8
+        },
+        {
+          "path": "prototype/command-v10-eval/build/v09-prompt-inventory.json",
+          "sha256_at_protocol": "59891749075603f26e53db76c7afff4013f2ec0ef5521614e0361cbf813d2dfe",
+          "method": "JSON examples array only; do not read result summary",
+          "request_count_at_protocol": 8
+        },
+        {
+          "path": "prototype/command-v10-eval/build/v10-prompt-inventory.json",
+          "sha256_at_protocol": "e3057ad21109c44f21b72fa4eaea38468a553eee18f09b0b1b192c97878e59ee",
+          "method": "JSON examples array only; do not read result summary",
+          "request_count_at_protocol": 13
+        },
+        {
+          "path": "prototype/command-compact-dev/candidate.json",
+          "sha256_at_protocol": "f84c0921302cf9ada8af931fa1d6663538993df6e234a29bb18dfdfed2e6b0fa",
+          "method": "JSON examples array only; do not read development results",
+          "request_count_at_protocol": 15
+        },
+        {
+          "path": "prototype/finetuning/build/data/train.jsonl",
+          "sha256_at_protocol": "3aac21b829058147ecf91455abf7f55be52275404a90ab6b792bec387c12a3ff",
+          "method": "JSONL utterance field plus any user message content; exclude assistant outputs",
+          "request_count_at_protocol": 116
+        },
+        {
+          "path": "prototype/finetuning/build/data/valid.jsonl",
+          "sha256_at_protocol": "3175db7d8961248d14a732cef2b3a2462856d44b5a33a947774372e045a26e63",
+          "method": "JSONL utterance field plus any user message content; exclude assistant outputs",
+          "request_count_at_protocol": 14
+        },
+        {
+          "path": "prototype/finetuning/build/data/heldout.jsonl",
+          "sha256_at_protocol": "cf066dc847e27fb6be6afd3f086278e6b816f75a9960d2c4833650edba86d40a",
+          "method": "JSONL utterance field plus any user message content; exclude assistant outputs",
+          "request_count_at_protocol": 41
+        },
+        {
+          "path": "prototype/task-draft-research/build/cases.json",
+          "sha256_at_protocol": "ab9a4f646e12174dcdc6232e3ce50d98d0aa7b6207803aaa5083401116aff203",
+          "method": "JSON array goal field only",
+          "request_count_at_protocol": 12
+        },
+        {
+          "path": "prototype/task-draft-confirm/build/cases.json",
+          "sha256_at_protocol": "248fc51f2bdbb771dc7045d01c87396e273522d5aaea3ac9004cce38fbe55244",
+          "method": "JSON array goal field only",
+          "request_count_at_protocol": 14
+        },
+        {
+          "path": "prototype/laya/cases.json",
+          "sha256_at_protocol": "322e53d53aaa71c24e24cf92a4e7667dd75e81bc7c29f2bb7d959e6cfff1d57d",
+          "method": "JSON array command field only",
+          "request_count_at_protocol": 15
+        },
+        {
+          "path": "prototype/native/build/prompt-cases.tsv",
+          "sha256_at_protocol": "fbdbe2acb956620bb514a68b1031e9b77f7de9fdcc62ada7ed3ac39e8f65037d",
+          "method": "TSV third column original request",
+          "request_count_at_protocol": 16
+        },
+        {
+          "path": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java",
+          "sha256_at_protocol": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "method": "Extract actual rendered baseline prompt examples and conservative Java string-literal inventory; verify prompt renderer identity",
+          "request_count_at_protocol": 8
+        },
+        {
+          "path": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java",
+          "sha256_at_protocol": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+          "method": "Extract exactly REQUESTS Java string array; ten openly seen diagnostic rows including repeated Pause",
+          "request_count_at_protocol": 10
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/BudgetPersonalizationIntegrationTest.java",
+          "sha256_at_protocol": "9d8881c9259998bdddecd7c406c5affd53139ae41f359523412bcac5394220a8",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CommandNumberWordsTest.java",
+          "sha256_at_protocol": "90bc05edc1473632e92f11d52216bc4a67b329e11caf8ce9b523d8ee67e4e358",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ConversationalCommandGateTest.java",
+          "sha256_at_protocol": "f279baca16066c49fdb0a607677b70de35eeb867032de60c2da406bfecfdc386",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CoreTest.java",
+          "sha256_at_protocol": "b22599172235a20722f9fb50f8112b2144c217bbc6d07c2ede8c511f41925864",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FewShotPolicyTest.java",
+          "sha256_at_protocol": "5cf2b36c89acb1aca21a399883559d85a9915c7574e2e9bf45daf256e257efee",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FloatingWindowPositionTest.java",
+          "sha256_at_protocol": "a7767401c3b3faef32158033ac8039cb2cef12f9e460071dbf66195a90079970",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusDataExportTest.java",
+          "sha256_at_protocol": "7a86401c0a5bc61b76736c089a94682dadf9001c2735afc865e099bef6db002a",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/FocusGoalConfigTest.java",
+          "sha256_at_protocol": "8efba61015433f9a74a8a6feb6f3583223a770e96136bd07f7d49f2cb6a0f87c",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/LivePreferencePolicyTest.java",
+          "sha256_at_protocol": "f7224003a13c61439933f444eeca3aab24b3363311937e178d29fcd1eac57c8d",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ModelCommandGateTest.java",
+          "sha256_at_protocol": "eeb39c59d773ba228d982f22cd453f8ecd5a29b03ea9ad673bbaa110d9f19e9b",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/MonitorLifecycleTest.java",
+          "sha256_at_protocol": "0dfa156bf60449fea712bcd2c2d64c4af13371699dcef3fa5ed0d556bbbcb071",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/NaturalCommandGateTest.java",
+          "sha256_at_protocol": "776b201acd4b803ed2a5563024a6c1d2051531fbd1fa4070f84633dab3fead27",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservationSnapshotTest.java",
+          "sha256_at_protocol": "c132c54e0784c4e376d8845db78d2d23987d60ef0293f240e52a66a96e38a622",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ObservedNudgeGateTest.java",
+          "sha256_at_protocol": "354f178aaed5242892346983dd385d3d91675976c580a40f126ea9a810b37f0a",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java",
+          "sha256_at_protocol": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/RetainedForegroundLabelPolicyTest.java",
+          "sha256_at_protocol": "216f9fe680e1354d483e36c99cc02f478d355fa79247053c7f1ce3769a3a7516",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/SandboxActionGateTest.java",
+          "sha256_at_protocol": "7ed40c269166dd988a940e280bccd1b641999079065d2ed87592dcb0c4d8c9f3",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java",
+          "sha256_at_protocol": "e48b24a9871bf3bacf0cac17871fc6aa1aee7d09431dfbe4a7899548cebc31fa",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TimedFocusSessionTest.java",
+          "sha256_at_protocol": "c7545f90f581a4291be3ce71da27b53425dc770ebd4fe2a702cd7a0eb0997a37",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/TrainedPolicyTest.java",
+          "sha256_at_protocol": "8f0c66b91af55ba0646e061898609d6b70d568e252bb283342b72f5a7b0567ed",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "prototype/android/app/src/test/java/dev/focuspilot/prototype/VoiceDraftStateTest.java",
+          "sha256_at_protocol": "7eb41b675bf903a4c29e597e4e21fe16c9546f6c490942195c1048e6c059fa72",
+          "method": "All decoded Java string literals conservatively; includes command fixtures without inspecting results"
+        },
+        {
+          "path": "scripts/phone_app_launch.py",
+          "sha256_at_protocol": "2e75747d171f4d2b19fc393e71e012c25f6732b849a2750c543a17134e2cc3b2",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_bundled_import.py",
+          "sha256_at_protocol": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_capture_benchmark.py",
+          "sha256_at_protocol": "8de034e22e38693c097243715c208c4903fafb577511c32d37ecbb38ce6242fd",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_demo_capture.py",
+          "sha256_at_protocol": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_export.py",
+          "sha256_at_protocol": "2f2b67bdea0d7d5a2865998e0d0199b0a522335214feae9ac5a879eeb98f0c29",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_focus_actions.py",
+          "sha256_at_protocol": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_focus_recovery.py",
+          "sha256_at_protocol": "92adaeccb91b9baaa4f3455038d5f39e1a323d196e4c00d4086a0b3b1494ea06",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_guide_readback.py",
+          "sha256_at_protocol": "6cb39df766a439cb7b6a7f64608db4c684b736604f82dbfddccc324acd8ff71c",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_model_smoke.py",
+          "sha256_at_protocol": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_network_isolation.py",
+          "sha256_at_protocol": "e8231523de1a5fdfb738624bac98240b02a2d732848c8bf6b07d04f2402a658b",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_readback.py",
+          "sha256_at_protocol": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_reviewed_reset.py",
+          "sha256_at_protocol": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_task_guide.py",
+          "sha256_at_protocol": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/phone_timed_focus.py",
+          "sha256_at_protocol": "5b157c19cb09bab3ce9659c938833231f54e6cdfb6464b04f20b6950bb14aa2a",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_bundled_import.py",
+          "sha256_at_protocol": "956e95da0aebd10845253f49945389d08dd1f9650a9a0688069b260a625c0995",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_checkpoint.py",
+          "sha256_at_protocol": "17c4849cba5b7114d4ed07e30ad0ffa55053fdd5a2aa3e6a33700e4f0c871941",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_foreground.py",
+          "sha256_at_protocol": "0eb689f417f5233ee717a1f7a8f4e64c1c7b1256c09b7aa78264db3995efed65",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_network_isolation.py",
+          "sha256_at_protocol": "f9598c6d9b17bb3c1b3c9e417a54dfe94eac5204e42d201cdd5f7205df7c7d4f",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_readback.py",
+          "sha256_at_protocol": "5c3cc7fd63652858e4a621b2f41b50f93d40b0944263d94de011d7a7176d4980",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_reviewed_reset.py",
+          "sha256_at_protocol": "f86cd0e2dc995c39a8b9af6ebbcc10395fef5a3f4f8ee9b3c3cd88d1b1d9d8e7",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "scripts/test_phone_task_guide.py",
+          "sha256_at_protocol": "2e9f057e9ec4239b826ffe2fe964d9b4bec637b1051dbb561d25238784b3ccb1",
+          "method": "Python AST string literals conservatively; command/request fixtures, no external captures"
+        },
+        {
+          "path": "prototype/command-eval/test_evaluation.py",
+          "sha256_at_protocol": "5182b36c8a8cf89eb72a16d002992996f7d9f7d078865b9c87caefaf5d511c27",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/command-v08-eval/test_evaluation.py",
+          "sha256_at_protocol": "23d29cf5112750a2c2622327d4d8416d17832c08ce29dfdc43ea8a8966a099ba",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/command-v10-eval/test_evaluation.py",
+          "sha256_at_protocol": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/command-v10-confirm/test_evaluation.py",
+          "sha256_at_protocol": "be145dd4651d533a7b7c81b7236c70e191665888a38c24869488f2cf61336166",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/command-compact-confirm/test_data.py",
+          "sha256_at_protocol": "ec2059ed5b154d9de33a90d0bd9e05f9086321b1fe967fe5accadaf92896c0df",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/command-compact-runner/test_scoring.py",
+          "sha256_at_protocol": "d0b0bf0352a2dbdb15766d3ebfb8318d5353ec6c5638d4b365a43eb37afda386",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/task-draft-research/test_research.py",
+          "sha256_at_protocol": "ea20627513fddc5a2e3c1010a3d80e343cf7edea98434636325868eaf3eb81dd",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/task-draft-confirm/test_research.py",
+          "sha256_at_protocol": "917a0aca328c0ca445ec724d9f4c29608009f9aab1c9948c2e22319a01e85f09",
+          "method": "Python AST string literals conservatively; request examples/test fixtures only"
+        },
+        {
+          "path": "prototype/native/java/PromptBenchmark.java",
+          "sha256_at_protocol": "2d072d7984dd5ac3b04c94049d2cb0a77df49b0fdf9acb9deff924ee7e07e55c",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/native/java/LocalModel.java",
+          "sha256_at_protocol": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/native/java/NativeSmoke.java",
+          "sha256_at_protocol": "3d6ce882b4bbbc5cac962a7a032ecfdc42c42dd149f690559ca35e06ec789f14",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/command-v10-dev/candidates/round2/LocalModel.java",
+          "sha256_at_protocol": "2152a4f73579d4d3ceabbec219e6bfbd6973ab0c659706b554c26e84bf0a6329",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/command-v10-dev/candidates/round1/LocalModel.java",
+          "sha256_at_protocol": "8916ef91bb41a38a250333344803f23e22cc586272807b9f7d9d360a26848f45",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/command-compact-dev/CompactIntentCandidate.java",
+          "sha256_at_protocol": "9ab64c5c7291c713aca37822d32f5d822d63805da5c607ba3773b45052f9cef9",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/task-draft-research/reference/LocalModel.java",
+          "sha256_at_protocol": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        },
+        {
+          "path": "prototype/task-draft-confirm/reference/LocalModel.java",
+          "sha256_at_protocol": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+          "method": "Decoded Java string literals and actual rendered prompt examples; conservative seen-fixture superset; no output inspection"
+        }
+      ],
+      "additional_required": "Rescan every known command/request/example dataset and current fixtures at freeze. Add locked prototype/command-json-dev/JsonIntentCandidate.java rendered examples, candidate.json example inventory and every prototype/command-json-dev/build/*/requests.tsv development request file. Extract prior prompt renderer examples and test string literals conservatively. Missing required input fails freeze; never use result/capture/tensor files as request inventories.",
+      "not_semantic_independence": true
+    },
+    "publication": "Raw utterances, generated requests, raw outputs and detailed results stay in ignored build/. Tracked hashes/counts/aggregates only. No tracked generator containing the entire raw corpus."
+  },
+  "execution": {
+    "captures": 2,
+    "capture_order": [
+      "baseline",
+      "candidate"
+    ],
+    "rows_each": 100,
+    "model_loads": 2,
+    "context_reset_each_request": true,
+    "same_frozen_order": true,
+    "timeout_seconds_each": 300,
+    "retries": 0,
+    "candidate_repairs": 0,
+    "overwrite_existing_capture": false,
+    "retain_first_execution": true,
+    "disclose_model_scores_after": "Both arms terminal",
+    "incomplete": "Preserve first output/metadata/missing IDs; report incomplete, no reduced-denominator confirmation or fresh restart.",
+    "gate": "Unchanged original-full-request ModelCommandGate/CommandNumberWords for each validated semantic route; same separately authored oracle domain route once",
+    "invalid_output": "No semantic prediction; semantic failure even on unknown. Gate UNKNOWN fallback counted separately.",
+    "actions_executed": 0
+  },
+  "reporting": {
+    "model": [
+      "Raw exact semantic intent",
+      "Per-intent supported and unknown accuracy/confusion",
+      "Schema plus EOS validity",
+      "Truncation/invalid outputs",
+      "Invalid fallback abstention separately"
+    ],
+    "gate": [
+      "Exact kind/hour/minute/seconds",
+      "Supported correct and false abstention",
+      "Wrong accepted kinds/slots",
+      "Unknown false accepts",
+      "Accepted coverage/precision",
+      "Identical oracle coverage/limits"
+    ],
+    "paired": [
+      "All semantic gains/losses",
+      "Supported full-proposal gains/losses",
+      "All six intents",
+      "All families/tags",
+      "All Pause outcomes",
+      "Every supported regression"
+    ],
+    "timing": [
+      "Load",
+      "First request separately",
+      "Subsequent request distributions",
+      "Prefill/decode/native total/context setup/Java wall",
+      "Prompt/generated tokens",
+      "Paired differences",
+      "Sample counts/range/median/nearest-rank p95/missing values"
+    ],
+    "timing_limit": "Descriptive host baseline-first paired captures, separate loads, warmed OS cache and uncontrolled thermals/power; no phone/NPU/energy/activation-overhead claim"
+  },
+  "promotion": {
+    "automatic": false,
+    "necessary_for_separate_review": {
+      "complete_captures": 2,
+      "minimum_paired_supported_full_proposal_gains": 4,
+      "maximum_supported_full_proposal_losses": 0,
+      "minimum_supported_full_proposal_net_improvement": 4,
+      "maximum_paired_semantic_losses_all_rows": 0,
+      "maximum_per_intent_semantic_or_full_proposal_declines": 0,
+      "pause_rows_required": 8,
+      "maximum_pause_semantic_or_full_proposal_losses": 0,
+      "maximum_wrong_accepts_supported_each_arm": 0,
+      "maximum_unknown_gate_false_accepts_each_arm": 0,
+      "report_all_cost_tradeoffs": true
+    },
+    "failed_criterion": "Reject for promotion and preserve first result; do not retune or replace set.",
+    "limits": "Even passing 100 informed synthetic rows is only a prerequisite for root integration review, broader language/voice evidence and actual phone/cost regressions. No selected app/model/prompt/release change by this protocol."
+  },
+  "prohibited": [
+    "Model download/provider calls/training",
+    "Model/native/gate/parser edits",
+    "Phone/settings/permission/action operations",
+    "APK/release/Git operations by protocol author",
+    "Development-model-output or fresh-result inspection",
+    "Automatic promotion"
+  ],
+  "work_budget_bytes": 2000000
+}

@@ -1,0 +1,554 @@
+{
+  "schema": "focuspilot.json_development.v1",
+  "scope": "One fixed candidate on 36 openly seen synthetic development requests, not fresh accuracy or promotion",
+  "candidate": {
+    "rows": 36,
+    "supported_rows": 18,
+    "unsupported_rows": 18,
+    "raw_correct": 25,
+    "supported_raw_correct": 16,
+    "unknown_raw_correct": 9,
+    "unsupported_model_nonunknown": 9,
+    "format_eos_valid": 36,
+    "supported_action_slot_correct": 16,
+    "supported_false_abstentions": 2,
+    "supported_wrong_accepted": 0,
+    "unsupported_action_false_accepts": 0,
+    "strict_correct": 34,
+    "model_load_ms": 457.212333
+  },
+  "historical_same_backend_baseline": {
+    "rows": 36,
+    "supported_rows": 18,
+    "unsupported_rows": 18,
+    "raw_correct": 14,
+    "supported_raw_correct": 12,
+    "unknown_raw_correct": 2,
+    "unsupported_model_nonunknown": 16,
+    "format_eos_valid": 36,
+    "supported_action_slot_correct": 12,
+    "supported_false_abstentions": 6,
+    "supported_wrong_accepted": 0,
+    "unsupported_action_false_accepts": 0,
+    "strict_correct": 30,
+    "model_load_ms": 416.131917
+  },
+  "candidate_timing_tokens": {
+    "first_native_ms": 515.41667,
+    "warm_native_ms_median": 483.84112,
+    "native_ms_median": 483.923475,
+    "native_ms_range": [
+      456.74162,
+      525.30108
+    ],
+    "java_ms_median": 484.80947849999995,
+    "prompt_tokens_median": 200.0,
+    "prompt_tokens_range": [
+      197,
+      205
+    ],
+    "generated_tokens_median": 5.0,
+    "generated_tokens_range": [
+      5,
+      7
+    ]
+  },
+  "baseline_timing_tokens": {
+    "first_native_ms": 469.71629,
+    "warm_native_ms_median": 443.99667,
+    "native_ms_median": 444.048045,
+    "native_ms_range": [
+      423.95567,
+      469.71629
+    ],
+    "java_ms_median": 444.7754375,
+    "prompt_tokens_median": 158.0,
+    "prompt_tokens_range": [
+      155,
+      163
+    ],
+    "generated_tokens_median": 8.0,
+    "generated_tokens_range": [
+      7,
+      8
+    ]
+  },
+  "per_intent": [
+    {
+      "intent": "start_focus",
+      "rows": 3,
+      "baseline_raw_correct": 3,
+      "candidate_raw_correct": 3,
+      "baseline_complete_proposal_correct": 3,
+      "candidate_complete_proposal_correct": 3
+    },
+    {
+      "intent": "pause_focus",
+      "rows": 3,
+      "baseline_raw_correct": 2,
+      "candidate_raw_correct": 2,
+      "baseline_complete_proposal_correct": 2,
+      "candidate_complete_proposal_correct": 2
+    },
+    {
+      "intent": "alarm",
+      "rows": 3,
+      "baseline_raw_correct": 3,
+      "candidate_raw_correct": 3,
+      "baseline_complete_proposal_correct": 3,
+      "candidate_complete_proposal_correct": 3
+    },
+    {
+      "intent": "timer",
+      "rows": 3,
+      "baseline_raw_correct": 1,
+      "candidate_raw_correct": 3,
+      "baseline_complete_proposal_correct": 1,
+      "candidate_complete_proposal_correct": 3
+    },
+    {
+      "intent": "open_app",
+      "rows": 3,
+      "baseline_raw_correct": 2,
+      "candidate_raw_correct": 3,
+      "baseline_complete_proposal_correct": 2,
+      "candidate_complete_proposal_correct": 3
+    },
+    {
+      "intent": "explain",
+      "rows": 3,
+      "baseline_raw_correct": 1,
+      "candidate_raw_correct": 2,
+      "baseline_complete_proposal_correct": 1,
+      "candidate_complete_proposal_correct": 2
+    },
+    {
+      "intent": "unknown",
+      "rows": 18,
+      "baseline_raw_correct": 2,
+      "candidate_raw_correct": 9,
+      "baseline_complete_proposal_correct": 18,
+      "candidate_complete_proposal_correct": 18
+    }
+  ],
+  "full_proposal_gain_ids": [
+    "dev010",
+    "dev011",
+    "dev015",
+    "dev018"
+  ],
+  "full_proposal_loss_ids": [],
+  "supported_raw_intent_loss_ids": [],
+  "remaining_supported_failure_ids": [
+    "dev005",
+    "dev017"
+  ],
+  "all_row_correctness": [
+    {
+      "id": "dev001",
+      "family": "focus_duration",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev002",
+      "family": "focus_prefix",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev003",
+      "family": "focus_resume",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev004",
+      "family": "pause_direct",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev005",
+      "family": "pause_break",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": false,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev006",
+      "family": "pause_concentration",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev007",
+      "family": "alarm_spoken",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev008",
+      "family": "alarm_prefix",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev009",
+      "family": "alarm_colon",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev010",
+      "family": "timer_seconds",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev011",
+      "family": "timer_countdown",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev012",
+      "family": "timer_hyphen",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev013",
+      "family": "open_settings",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev014",
+      "family": "open_calculator",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev015",
+      "family": "open_clock",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev016",
+      "family": "explain_nudge",
+      "supported": true,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev017",
+      "family": "explain_remaining",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": false,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev018",
+      "family": "explain_status",
+      "supported": true,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": false,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev019",
+      "family": "negative_focus",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev020",
+      "family": "negative_open",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev021",
+      "family": "negative_timer",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev022",
+      "family": "conditional_focus",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev023",
+      "family": "conditional_open",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev024",
+      "family": "conditional_alarm",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev025",
+      "family": "compound_focus_open",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev026",
+      "family": "compound_timer_alarm",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev027",
+      "family": "compound_apps",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev028",
+      "family": "unsafe_delete",
+      "supported": false,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev029",
+      "family": "unsafe_message",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev030",
+      "family": "unsafe_payment",
+      "supported": false,
+      "baseline_raw_correct": true,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev031",
+      "family": "cancel_existing_alarm",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev032",
+      "family": "stop_existing_timer",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev033",
+      "family": "unsupported_app",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": false,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev034",
+      "family": "unsupported_setting",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev035",
+      "family": "general_question",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    },
+    {
+      "id": "dev036",
+      "family": "assertion",
+      "supported": false,
+      "baseline_raw_correct": false,
+      "candidate_raw_correct": true,
+      "baseline_complete_proposal_correct": true,
+      "candidate_complete_proposal_correct": true,
+      "candidate_format_eos_valid": true
+    }
+  ],
+  "decision": "GO to a fresh frozen confirmation; no app promotion",
+  "promoted": false,
+  "actions_executed": 0,
+  "cpu_only": true,
+  "capture_enabled": false,
+  "context": 1024,
+  "threads": 4,
+  "native_timeout_seconds": 180,
+  "actual_capture_wall_seconds": 18.034229082986712,
+  "actual_capture_exit_code": 0,
+  "actual_capture_timed_out": false,
+  "candidate_sources": {
+    "LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "JsonIntentCandidate.java": "a0dcde6e8adeb86e7ef22d07195abe074be86e9ba3700e6d6e6f7899d4245f13",
+    "JsonRunner.java": "f8c3ba78024ab77da5f25712bceb29f5de947e242b29f646014a7f683ee1d6d9",
+    "run_development.py": "4d3cc36660f7538bfc8a1c2f741f8334f09ebe759c8a1e306937ee93c3a158d0",
+    "DevGateEval.java": "98f1ee2551f460a4fff63f4f9d92341486edeeb0676e59fbd083c052dc973736"
+  },
+  "linked_libraries_verified_sha256": {
+    "/opt/homebrew/opt/llama.cpp/lib/libllama.0.dylib": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668",
+    "/opt/homebrew/opt/ggml/lib/libggml.0.dylib": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3",
+    "/opt/homebrew/opt/ggml/lib/libggml-base.0.dylib": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+  },
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "2e9fa6676c4d68d0b4119cf13d8176d4d6674939c9361c48883c15cfad2cb156",
+  "requests_sha256": "f235a31a35e74240da4cb2b1924ca201c73f1968d69345d4cc3fbeddee918ee1",
+  "corpus_generator_sha256": "e5661469620b8a525e9cfeeb07843b356723ae528f95a89cab8e62bf225036ff",
+  "private_evidence_sha256": {
+    "candidate_output": "b1166cce36833b1abe26d37dfbcc20b80c0c9199e6971decb3c9269999c42630",
+    "candidate_results": "849dd5271f2d11679647446f2b3415d138ed61ca00d15ff3329b20485fda3daa",
+    "candidate_capture_metadata": "7500f45c08fc89f1ed292a7bc5d5c12c937e3f644620c8c979d88f674bfa70fa",
+    "baseline_output": "5fa095b0bc87dfd9608c67050d9fd4376d866574754da5d84f07c6ffd3cef43d",
+    "baseline_results": "9873b40e554a8b52091afa3d866612bbaa603b9132e6223ce262065af8708f6e",
+    "baseline_capture_metadata": "9eb064fdb915c0ab53108196a7c0b69b78e583b9a71ab7026d000cfde31ddd21"
+  },
+  "freeze_sha256": "d2eff0fd421ec4665b550ada8ee52f3cfb375433897a69d77948f105f1253b21",
+  "aggregate_publisher_sha256": "4e558652c767613268a544f9ac708f710946fe8d1b84140a64edb246ae093f10",
+  "limits": [
+    "Both captures use already seen development requests; examples and development selection can overfit.",
+    "Historical baseline and candidate run at different times; no controlled thermal, cache or scheduler experiment.",
+    "No phone, NPU, ASR, action execution, training, new model or causal interpretation evidence.",
+    "Two supported false abstentions remain; nine unsupported raw intents remain non-unknown and depend on the independent gate.",
+    "Pre-existing host dylib was not rebuilt; observed identity is established, immutable build-time compiler/source provenance is not newly established."
+  ]
+}
