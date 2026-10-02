@@ -97,6 +97,8 @@ def package(args):
  output=new_project_path(args.output,'Output APK');report=new_project_path(args.report,'Report') if args.report else None
  if report==output:raise ValueError('Report must differ from APK output')
  if not output.parent.is_dir() or (report and not report.parent.is_dir()):raise ValueError('Output/report parent must already exist')
+ ignored_output=subprocess.run(['git','-C',str(ROOT),'check-ignore','--quiet',str(output)],capture_output=True)
+ if ignored_output.returncode!=0:raise ValueError('APK output path must be ignored by Git')
  if report:
   ignored=subprocess.run(['git','-C',str(ROOT),'check-ignore','--quiet',str(report)],capture_output=True)
   if ignored.returncode!=0:raise ValueError('Report path must be ignored by Git')

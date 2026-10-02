@@ -15,7 +15,25 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
-## Current 0.10 addition
+## Current 0.11 task guide
+
+Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds private authored steps with goal/revision
+checks, explicit progress/undo, reviewed replacement/clear and local readback.
+143 JVM tests pass; lint zero errors/65 warnings. Light signature/native/licenses/
+permissions and installed APK/private-model identities are verified; paused/off/100
+unchanged, no wake/UI/action/permission operation. Actual task/readback/recovery is
+incomplete. [Contract](task-guide.md), [immutable artifacts](task-guide-artifacts.json). Both
+signed version-11 packages pass model/native/license/permission/version checks;
+publication remains pending. Sixteen audit tests pass, including changed task
+source and a signed package reporting the wrong release version.
+
+The [seven-parameter policy comparison](policy-baselines.md) closes the planned
+logistic baseline gap: 469/480 versus the unchanged network's 472/480, with six
+network wins and three losses on the same informed synthetic rows. No promotion
+or human-productivity/NPU inference follows. Three focused tests and metric
+verification pass; the original policy/source/checkpoint hashes remain unchanged.
+
+## Previous 0.10 addition
 
 App source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` ships the gate-only conversational update.
 The auditor checks both signed APK/native/model/license/permission identities,

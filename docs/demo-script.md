@@ -17,6 +17,17 @@ during the v0.10 installation on the asleep phone. [Floating contract](floating-
 
 Historical v0.8 build has 119 passing JVM tests, zero lint errors and 59 warnings. Both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes. Physical v0.8 command/countdown outcomes remain pending. The completed frozen 100-request/50-family host test improved gated strict correctness 64→72/100 with zero wrong accepts, but only 12/40 supported successes and 28/40 false abstentions, including nine gains and six losses. Its model-facing gate adds whole-request forms and deterministic English-number/clock slots while leaving Qwen weights/prompt/native unchanged. [Command contract](natural-commands.md). Historical v0.7 has 105 tests/59 lint warnings with timer phone proof pending unlock; source-bound v0.6 Start/Pause remains historical. Read [status](status.md), [timed focus](timed-focus.md) and [application draft](application-draft.md) before filming.
 
+## Task-guide addition, physical shots pending
+
+v0.11 adds private user-authored steps with Mark/Undo, goal/revision checks and
+optional local readback. Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` passes
+143 JVM tests and signed package inspection; updated light installation matches
+APK/model hashes, with no actual task UI or speech test. Keep the v0.10 animated
+pitch intact: this new panel has not been filmed or physically verified. Add
+create/mark/undo/task-change/recovery shots only after [task-guide tests](task-guide.md)
+pass; completing authored text is a user report, never proof that an external
+task executed.
+
 ## Current rendered research pitch
 
 The separate **4:35** [current Mira pitch](current-pitch.md) is rendered with original

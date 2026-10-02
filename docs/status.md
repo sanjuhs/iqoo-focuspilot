@@ -2,6 +2,24 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Task guidance checkpoint — v0.11
+
+Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds a private, user-authored plan for the
+saved focus task: one to eight steps, explicit completion/undo, reviewed replacement
+and clear, and optional local readback. Goal/revision checks block stale progress
+and speech; step text executes no phone action and enters no model/export.
+**143 JVM tests pass**, lint zero errors/65 warnings. Signed light packaging passed
+native/license/permission inspection and installed with matching APK/model hashes;
+focus paused, observation off and 100 points stayed unchanged. No wake, UI,
+permission or task action occurred. Both signed packages are inspected; publication and physical
+step/readback tests remain pending. Qwen3.5 Q4_0, prompt, gate and native are unchanged.
+[Task guide](task-guide.md),
+[immutable identities](task-guide-artifacts.json).
+
+A seven-parameter logistic comparison now scores 469/480 synthetic cases versus
+472/480 for the existing 65-parameter network. This informed known-teacher result
+closes the baseline gap and promotes neither policy. [Evidence](policy-baselines.md).
+
 ## Current research pitch — published video
 
 A new **4:35 (274.836-second)** application concept/research video is locally

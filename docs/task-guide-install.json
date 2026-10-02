@@ -1,0 +1,33 @@
+{
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "installation": "updated light with retained private model",
+  "before": {
+    "activeCheckpoint": "false",
+    "observe": "false",
+    "points": "100"
+  },
+  "after": {
+    "activeCheckpoint": "false",
+    "observe": "false",
+    "points": "100"
+  },
+  "state_parity": true,
+  "ui_or_command_tested": false,
+  "wake_attempted": false,
+  "npu_verified": false,
+  "office_kit_verified": false,
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "native_identity_scope": "Library from local signed APK matching installed APK SHA-256",
+  "permission_grants_requested": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "backend": "CPU/KleidiAI I8MM; unchanged native package, no new inference run",
+  "scope": "Installation byte identity and private checkpoint observation only; no task UI, speech, process recovery or offline proof",
+  "offline_disconnect_verified": false
+}

@@ -2,7 +2,7 @@ import tempfile,unittest,hashlib,json,subprocess,sys
 from pathlib import Path
 from zipfile import ZipFile
 from audit_deliverables import artifact_identity,release_parity,inspect_apk,LICENSES,sha,reports,captions,manual_proofs,phone_record,MODEL_SHA,synthetic_arithmetic
-from audit_deliverables import command_confirmation_binding,current_pitch_audit,CURRENT_PITCH_RENDER_COMMIT,CURRENT_PITCH_APP_COMMIT
+from audit_deliverables import command_confirmation_binding,current_pitch_audit,CURRENT_PITCH_RENDER_COMMIT,CURRENT_PITCH_APP_COMMIT,task_guide_source_binding
 from unittest.mock import patch
 
 class EvidenceAuditTests(unittest.TestCase):
@@ -111,4 +111,30 @@ class EvidenceAuditTests(unittest.TestCase):
   metadata['captions'].update(bytes=subtitle.stat().st_size,sha256=sha(subtitle));manifest['captions_sha256']=sha(subtitle)
   mf=self.root/'docs/current-pitch-render-manifest.json';mf.write_text(json.dumps(manifest));metadata['render_manifest'].update(bytes=mf.stat().st_size,sha256=sha(mf))
   result=self.pitch_call(metadata,manifest,runner);self.assertEqual('incomplete',result['status']);self.assertEqual('incomplete',result['captions']['status'])
+ def test_task_guide_cannot_bind_changed_source_to_frozen_build(self):
+  repo=Path(__file__).resolve().parents[1];commit='e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a'
+  names=['prototype/android/app/src/main/java/dev/focuspilot/prototype/'+name for name in ('TaskPlan.java','TaskGuidePanel.java','MainActivity.java')]+['prototype/android/app/build.gradle','prototype/android/app/src/main/res/values/task_guide_resources.xml','prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java']
+  frozen={};hashes={}
+  for name in names:
+   p=self.write(name,(repo/name).read_bytes());hashes[name]=sha(p);frozen[commit+':'+name]=p.read_text()
+  manifest={'source_commit':commit,'source_sha256':hashes}
+  with patch('audit_deliverables.command',side_effect=lambda args:frozen[args[-1]]):
+   r=task_guide_source_binding(self.root,manifest);self.assertEqual('verified',r['status']);self.assertFalse(r['physical_verified'])
+   (self.root/names[1]).write_bytes(b'changed guide')
+   self.assertEqual('incomplete',task_guide_source_binding(self.root,manifest)['status'])
+ def test_signed_apk_wrong_version_cannot_pass_declared_release(self):
+  for name,source in LICENSES.items():self.write(source,b'notice')
+  p=self.root/'fixture.apk'
+  with ZipFile(p,'w') as z:
+   z.writestr('AndroidManifest.xml',b'manifest');z.writestr('classes.dex',b'dex');z.writestr('lib/arm64-v8a/libfocuspilot_local.so',b'native')
+   for name in LICENSES:z.writestr('assets/licenses/'+name,b'notice')
+  declared={'bytes':p.stat().st_size,'sha256':sha(p),'native_sha256':hashlib.sha256(b'native').hexdigest(),'bundled_model':False,'version_code':11,'version_name':'guide'}
+  version=11
+  def tools(args):
+   if 'permissions' in args:return 'package: dev.focuspilot.prototype'
+   if 'badging' in args:return "package: name='dev.focuspilot.prototype' versionCode='"+str(version)+"' versionName='guide'"
+   return ''
+  with patch('audit_deliverables.command',side_effect=tools):
+   self.assertEqual('verified',inspect_apk(p,declared,self.root,'aapt','signer')['status'])
+   version=10;r=inspect_apk(p,declared,self.root,'aapt','signer');self.assertEqual('incomplete',r['status']);self.assertFalse(r['version_parity'])
 if __name__=='__main__':unittest.main()

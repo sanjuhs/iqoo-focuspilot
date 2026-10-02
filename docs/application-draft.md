@@ -18,6 +18,8 @@ The Android research app packages Qwen3.5-0.8B Q4_0 and runs it through a pinned
 
 ## Current evidence and known limits
 
+- **v0.11 private task guide:** source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds user-authored goal-scoped steps, explicit completion/undo, reviewed replacement/clear and optional local readback. Stale task/record checks prevent applying old progress or speaking replaced text. 143 JVM tests pass, lint zero errors/65 warnings; both signed packages inspected and light installed with APK/model parity, paused/off/100 unchanged. Actual task UI, audio, recovery and deletion remain pending. Authored text is inert, omitted from exports/model input and is not LLM planning or external automation. Qwen/prompt/gate/native are unchanged. [Contract](task-guide.md), [identities](task-guide-artifacts.json).
+
 - **v0.10 conversational gate:** app source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` retains Qwen3.5 Q4_0, original prompt and native CPU runtime. Fresh frozen synthetic supported proposals improve 15→31/50 with 16 gains/zero losses, 50/50 unsupported rejections and zero wrong accepts observed; 19 supported requests still abstain. Raw model correctness is 36/100 with 49 unsupported tool proposals, so explicit validation/review remains essential. 133 JVM tests pass; lint zero errors/62 warnings. Both signed packages inspected and updated light installed with APK/private-model identity parity; paused/off/100 points and permissions unchanged. No current phone command outcome was tested on the asleep display. Longer prompts were rejected, and this is not model fine-tuning or NPU evidence. [Contract/results](conversational-commands.md).
 
 - **Historical v0.9 friendly companion:** original movable Mira plus explicitly reviewed Show,

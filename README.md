@@ -3,7 +3,22 @@
 A phone-first productivity assistant designed for local, fast, explainable decisions.
 Working research prototype for the iQOO Grand Finale, Productivity track.
 
-**Current research build: v0.10**, source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`.
+**Current task-guide build: v0.11**, source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.
+Mira can show the next step of your own private plan, mark it complete, undo and
+optionally read it through the existing local voice path. Task/record revision
+checks block stale progress and readback; authored text executes nothing.
+**143 JVM tests pass**, lint zero errors/65 warnings. Signed light APK inspected
+and installed with matching APK/model hashes; paused/off/100 points unchanged.
+Actual task UI/readback remains untested on the asleep phone. Qwen3.5-0.8B Q4_0,
+prompt, command gate and native CPU library are unchanged.
+[Task guide and physical checks](docs/task-guide.md). Both signed packages inspected;
+release publication pending. [Artifact identities](docs/task-guide-artifacts.json).
+
+The new [simpler-policy comparison](docs/policy-baselines.md) reports 469/480 for
+two seven-parameter logistic models versus 472/480 for the unchanged network.
+These informed synthetic results promote neither model to monitoring.
+
+**Previous command research build: v0.10**, source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`.
 Qwen3.5-0.8B Q4_0, its original prompt and native CPU runtime are unchanged.
 The reviewed command gate now accepts explicitly listed greetings and polite
 wrappers while consuming the complete request and preserving exact tool arguments.
@@ -80,6 +95,8 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
 | [docs/current-pitch.md](docs/current-pitch.md) | Current 4:35 pitch, reproducible narration/animation and evidence |
 | [docs/research-pitch-script.md](docs/research-pitch-script.md) | Historical v0.3 pitch narration |
+| [docs/task-guide.md](docs/task-guide.md) | Private authored steps, completion/undo and readback |
+| [docs/policy-baselines.md](docs/policy-baselines.md) | Logistic comparison and synthetic limitations |
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 | [docs/floating-companion.md](docs/floating-companion.md) | Optional floating controls and actual device proof gates |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |

@@ -1,0 +1,97 @@
+{
+  "kind": "Pre-event task-guide research APKs; byte/build/install evidence, no task UI or eligible submission proof",
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "version_code": 11,
+  "version_name": "0.11-task-guide-research",
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java": "d0eef6ed51c3f05e5e50916750ec057911bfb99726891d44cd7a8824d20deb78",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "696312fb75a480f37e282c076a65709826369fbc06a323d0bfe1ef95723c30a0",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/build.gradle": "2dca9e6983af7b470d79a72254f1c96478c4e6ff2a6397431a6ba992c0df1c17",
+    "prototype/android/app/src/main/AndroidManifest.xml": "4e9e5a38f7b582234edb98aa3a66341d7b3b5202ff651b8f4c70d9b86a9e726f",
+    "prototype/android/app/src/main/res/values/task_guide_resources.xml": "f9654eafdb2b7c72e5f01a7161829d00ef460541a7e358296562c2972b5078f8",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java": "e48b24a9871bf3bacf0cac17871fc6aa1aee7d09431dfbe4a7899548cebc31fa"
+  },
+  "model": {
+    "entry": "assets/qwen35.gguf",
+    "compression": "ZIP_STORED",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "artifacts": [
+    {
+      "name": "focuspilot-research-v011-light.apk",
+      "bytes": 5805688,
+      "sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "bundled_model": false,
+      "version_code": 11,
+      "version_name": "0.11-task-guide-research"
+    },
+    {
+      "name": "focuspilot-research-v011-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "ba135c616c0cb49edd67988b25a746da1adb7c5fe7a86ea0e4b135c5b35fb795",
+      "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+      "bundled_model": true,
+      "version_code": 11,
+      "version_name": "0.11-task-guide-research"
+    }
+  ],
+  "build": {
+    "jvm": {
+      "tests": 143,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint_errors": 0,
+    "lint_warnings": 65,
+    "task_plan_cases": 10,
+    "task_guide_android_ui_verified": false
+  },
+  "packaging": {
+    "recipe": "Gradle-built light; streamed original payload plus pinned stored GGUF; SDK align then standard debug signing",
+    "executed_packager_source_commit": "8ce82be896dd6e6a8511525a03bbc2dd811395dc",
+    "executed_packager_sha256": "31114c061941a8f8afab038f997c267f1a56c393137bb5794c9d7fc720605104",
+    "report_file": "artifacts/bundled-apk-v011.json",
+    "report_sha256": "6e0a678f36fd469e697439377a966827161748304f8f08f5c0956f6e7de42734",
+    "original_payload_entries": 16,
+    "original_payload_parity": true,
+    "only_added_payload": "assets/qwen35.gguf",
+    "alignment_passed": true,
+    "same_public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+    "storage_estimate": {
+      "project_bytes_before": 11922624618,
+      "per_copy_byte_cap": 569103896,
+      "reserved_temporary_bytes": 1138207792,
+      "estimated_peak_project_bytes": 13060832410,
+      "project_limit_bytes": 15000000000,
+      "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+    },
+    "scope": "Payload/certificate/alignment checks, no compilation replay or fresh bundled-model import"
+  },
+  "installation": {
+    "report": "docs/task-guide-install.json",
+    "sha256": "e428e7dbe702ae368f537c93e82c41405d3bd863f7e8e5e16e8380794a7805ad",
+    "scope": "Updated light with retained private model; no UI/wake/actions/grants"
+  },
+  "unchanged": [
+    "Qwen3.5-0.8B Q4_0",
+    "original model prompt",
+    "v0.10 command gate and slot parser",
+    "CPU native library",
+    "monitor/overlay permission contracts",
+    "virtual-only accountability"
+  ],
+  "limits": [
+    "Authored steps are user-entered inert text, not LLM planning or external task execution.",
+    "Task UI, local readback, stale-instance behavior, persistence/recovery, deletion and actual export omission still require physical verification.",
+    "Source-reviewed editor ID supports Android hierarchy restoration; unsaved drafts are not promised durable recovery.",
+    "Updated light installation does not prove clean bundled import or USB-disconnected operation.",
+    "NPU, Office Kit, actual iQOO hardware, event eligibility and accepted submission remain unverified."
+  ]
+}

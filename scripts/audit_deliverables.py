@@ -87,12 +87,18 @@ def inspect_apk(path, declared, root, aapt=None, signer=None):
   if aapt:
    permissions=command([aapt,'dump','permissions',path]);out['permissions']=re.findall(r"uses-permission: name='([^']+)'",permissions)
    out['package_identity']='package: dev.focuspilot.prototype' in permissions;out['internet_absent']=out['package_identity'] and 'android.permission.INTERNET' not in out['permissions'];out['permission_scope']='parsed from packaged APK, not user permission grants'
+   if 'version_code' in declared:
+    badging=command([aapt,'dump','badging',path]);match=re.search(r"package: name='([^']+)' versionCode='([^']+)' versionName='([^']+)'",badging)
+    out['version_parity']=bool(match and match.group(1)=='dev.focuspilot.prototype' and match.group(2)==str(declared['version_code']) and match.group(3)==declared.get('version_name'))
   else:out['permission_proof']='weak_evidence: aapt2 unavailable; manifest JSON flag not trusted'
   if signer:
    command([signer,'verify',path]);out['signature']='verified cryptographic APK signature; no trusted publisher identity inference'
   else:out['signature']='weak_evidence: apksigner unavailable'
  except (BadZipFile,KeyError,subprocess.CalledProcessError) as e:out['inspection_error']=type(e).__name__
  out['status']='verified' if out.get('android_payload_present') and out.get('native_hash_parity') and all(out.get('licenses',{}).values()) and out.get('bundle_presence_parity') and (not declared.get('bundled_model',declared.get('containsModel')) or out.get('model_hash_parity')) and out.get('internet_absent') and out.get('signature','').startswith('verified') else 'incomplete' if out.get('inspection_error') or out.get('android_payload_present') is False or out.get('native_hash_parity') is False or not all(out.get('licenses',{}).values()) or out.get('bundle_presence_parity') is False or out.get('model_hash_parity') is False or out.get('internet_absent') is False else 'weak_evidence'
+ if 'version_code' in declared and out.get('version_parity') is not True:
+  if out.get('version_parity') is False:out['status']='incomplete'
+  elif out['status']=='verified':out['status']='weak_evidence'
  return out
 
 def reports(test_dir, lint_file):
@@ -263,6 +269,14 @@ def command_confirmation_binding(root):
   'raw_model_total':result['model']['rows'],'unknown_nonunknown_proposals':result['model']['unknown_nonunknown_proposals'],
   'paired':result['paired']['generated'],'physical_verified':False}
 
+def task_guide_source_binding(root,manifest):
+ """Bind the guide's authored source; no Android/UI or compiler replay."""
+ declared=manifest.get('source_sha256',{});commit=manifest.get('source_commit')
+ current={name:public_evidence_path(root,root/name) and (root/name).is_file() and sha(root/name)==value for name,value in declared.items()}
+ frozen={name:source_commit_binding(root,name,value,commit) for name,value in declared.items()}
+ required={'prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java','prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java','prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java','prototype/android/app/build.gradle','prototype/android/app/src/main/res/values/task_guide_resources.xml','prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskPlanTest.java'}
+ return {'status':'verified' if required.issubset(declared) and all(current.values()) and all(frozen.values()) else 'incomplete','scope':'current/full-commit source byte binding, not compilation replay or actual task progress','current_source':current,'commit_source':frozen,'physical_verified':False}
+
 class Audit:
  def __init__(self,root):self.root=root;self.result={'generated_at_utc':datetime.now(timezone.utc).isoformat(),'goal_complete':False,'label':'PRE-EVENT RESEARCH; byte/metadata audit cannot certify whole assistant or submission','checks':{},'errors':{}}
  def check(self,key,fn):
@@ -323,6 +337,14 @@ def main():
    audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
   audit.check('v10_confirmation_binding',lambda:command_confirmation_binding(root))
   audit.result['checks']['v10_phone_proof']={'status':'incomplete','reason':'Source-bound synthetic gate confirmation and APK installation do not establish current phone command outcomes, ASR, floating behavior or disconnected execution.'}
+ audit.check('task_guide_manifest',lambda:read_json(root/'docs/task-guide-artifacts.json'))
+ v11=audit.result['checks']['task_guide_manifest']
+ if 'artifacts' in v11:
+  for item in v11['artifacts']:
+   audit.check(item['name'],lambda item=item:inspect_apk(root/'artifacts'/item['name'],item,root,aapt,signer))
+  audit.check('v11_task_source_binding',lambda:task_guide_source_binding(root,v11))
+  audit.check('v11_installation_binding',lambda:phone_record(read_json(root/'docs/task-guide-install.json'),next(x for x in v11['artifacts'] if not x['bundled_model']),v11['source_commit']))
+  audit.result['checks']['v11_task_phone_proof']={'status':'incomplete','reason':'Installation/source/pure-state tests do not establish actual authored-step UI, readback, stale review, recovery, deletion or export outcomes.'}
  audit.check('native_source_bindings',lambda:{'scope':'current source identity against optimized build manifest; not binary compilation replay','status':'verified' if all((root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()) else 'incomplete','source_files':{name:(root/'prototype/native'/name).is_file() and sha(root/'prototype/native'/name)==h for name,h in native['sourceSHA256'].items()},'npu':native['npuInference'],'gpu':native['gpuBackends']})
  audit.check('host_reports',lambda:reports(root/'prototype/android/app/build/test-results/testDebugUnitTest',root/'prototype/android/app/build/reports/lint-results-debug.xml'))
  audit.check('pitch',lambda:video_audit(root,read_json(root/'docs/pitch-evidence.json'),read_json(root/'artifacts/pitch-render-manifest.json')))
@@ -347,14 +369,17 @@ def main():
    if (root/'docs/timed-focus-phone.json').is_file():v07_names.append('timed-focus-phone.json')
    v08_names=['focuspilot-research-v08-light.apk','focuspilot-research-v08-bundled.apk','natural-commands-artifacts.json']
    if (root/'docs/natural-commands-phone.json').is_file():v08_names.append('natural-commands-phone.json')
-   for tag,names in {'research-v0.10':V10_REQUIRED_ASSETS,'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
+   for tag,names in {'research-v0.11':['focuspilot-research-v011-light.apk','focuspilot-research-v011-bundled.apk','task-guide-artifacts.json','task-guide-install.json'],'research-v0.10':V10_REQUIRED_ASSETS,'research-v0.9':['focuspilot-research-v09-light.apk','focuspilot-research-v09-bundled.apk','floating-companion-artifacts.json'],'research-v0.8':v08_names,'research-v0.7':v07_names,'research-v0.6':['focuspilot-research-v06-light.apk','focuspilot-research-v06-bundled.apk','command-readiness-artifacts.json','command-readiness-phone.json'],'research-v0.5':['focuspilot-research-v05-light.apk','focuspilot-research-v05-bundled.apk','observed-learning-artifacts.json','observed-learning-phone.json'],'research-v0.4':[x['name'] for x in latest['artifacts']]+['companion-artifacts.json','companion-integration.json']+bound,'research-v0.3':['focuspilot-research-light.apk','focuspilot-research-bundled.apk','pitch-research.mp4','pitch-research.srt','pitch-evidence.json','research-artifacts.json']}.items():
     release=next((r for r in releases if r['tag_name']==tag),None);assets=release['assets'] if release else []
     required[tag]={name:any(asset.get('name')==name for asset in assets) for name in names}
    main=json.loads(command(['gh','api',f'repos/{repo}/git/ref/heads/main']))['object']['sha'];head=command(['git','-C',root,'rev-parse','HEAD']).strip();tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.4']))['object']
    v10_tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.10']))['object']
    v10_source=v10_tag['sha']
    if v10_tag['type']=='tag':v10_source=json.loads(command(['gh','api',f'repos/{repo}/git/tags/{v10_source}']))['object']['sha']
-   return {'public':not info['private'],'license':info['license']['spdx_id'],'url':info['html_url'],'remote_main':main,'local_head':head,'head_parity':main==head,'v04_tag':tag,'v10_app_source':v10_source,'v10_source_tag_parity':v10_source==v10.get('source_commit'),'assets':findings,'required_asset_presence':required,'scope':'server metadata and committed source refs; uncommitted work is not backed up by head parity'}
+   v11_tag=json.loads(command(['gh','api',f'repos/{repo}/git/ref/tags/research-v0.11']))['object']
+   v11_source=v11_tag['sha']
+   if v11_tag['type']=='tag':v11_source=json.loads(command(['gh','api',f'repos/{repo}/git/tags/{v11_source}']))['object']['sha']
+   return {'public':not info['private'],'license':info['license']['spdx_id'],'url':info['html_url'],'remote_main':main,'local_head':head,'head_parity':main==head,'v04_tag':tag,'v10_app_source':v10_source,'v10_source_tag_parity':v10_source==v10.get('source_commit'),'v11_app_source':v11_source,'v11_source_tag_parity':v11_source==v11.get('source_commit'),'assets':findings,'required_asset_presence':required,'scope':'server metadata and committed source refs; uncommitted work is not backed up by head parity'}
   audit.check('github',github)
  else:audit.result['checks']['github']={'status':'incomplete','reason':'not queried; use --live-github for read-only public metadata'}
  print(json.dumps(audit.result,indent=2))

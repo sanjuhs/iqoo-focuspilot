@@ -4,7 +4,21 @@
 
 This standalone native Java application demonstrates a friendly original animated companion, bounded phone commands, a local focus timer, opt-in visible foreground monitoring and an explainable hand-set focus policy. **The model lab runs Qwen3.5-0.8B Q4_0 in the actual phone app process on CPU**, with checksummed local weights and optional selected-tensor observations. A separate trained 65-parameter policy lab exposes contributions and ablations on synthetic inputs. Accessibility, Snapdragon NPU and Office Kit remain pending. No internet permission or remote API keys are present.
 
-## Current command gate update 0.10
+## Current private task guide 0.11
+
+Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds one private plan associated with the saved
+focus goal. Write one to eight steps, mark/undo completion and optionally read the
+current step through the existing local TTS path. Replacement/clear require review;
+changed goals/revisions block stale actions. Authored text is inert and omitted
+from exports/model input. 143 JVM tests pass, lint zero errors/65 warnings. Signed
+light APK inspected/installed with APK/model parity, paused/off/100 unchanged.
+Actual UI/readback/recovery remains pending; Qwen/prompt/gate/native are unchanged.
+[Contract](../../docs/task-guide.md), [identities](../../docs/task-guide-artifacts.json).
+Both signed packages inspected; release publication pending. The new
+[streaming packaging recipe](../../docs/bundled-packaging.md) preserves light-payload
+bytes and adds the pinned model without extra merged model working copies.
+
+## Previous command gate update 0.10
 
 Source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` ships only the conversational gate revision.
 Qwen3.5-0.8B Q4_0, original prompt and native runtime remain unchanged; longer
