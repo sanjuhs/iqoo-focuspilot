@@ -2,6 +2,31 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Observed learning update 0.5
+
+- Research source adds a fresh current-foreground gate before recurring budget nudges.
+  Cumulative over-budget time alone cannot charge again after leaving the selected app.
+  Clock alignment, consent, permission, focus, scope and cooldown remain required.
+- Separately opted-in private real-summary labels can veto a normal nudge only for a
+  matching Allow. Nudge labels cannot create actions or bypass the original gates.
+  Label review retains a complete foreground sample for at most 15 seconds; current
+  decisions never use that retained history. No real-phone accuracy gain is claimed.
+- Optional Accessibility service implements actual selector ACTION_CLICK and checked/
+  visible postcondition verification for two controls inside the own-app synthetic
+  sandbox. Exact Activity/window/root, manual five-second arm and cancellation are
+  enforced. Android enablement and a physical service proof remain pending.
+- Manual private summary export uses a user-chosen document destination. It excludes
+  task text, raw event trail/screens/tensors and other-app identities. Failed deletion
+  or provider writes report an unconfirmed result. Physical export remains pending.
+- Integrated host build: **89 JVM tests pass**, zero failures/errors/skips; Android lint
+  zero errors. This report describes 0.5 source, not already published 0.4 APKs.
+- Installed 0.4 evidence has now been bound to its exact bundled APK/private-model
+  hashes: typed positive request required review at 1,705 ms; negation was wrongly
+  proposed as start_focus but independently rejected at 1,710 ms. Neither performed
+  an action. [Exact binding](companion-phone-bound-v04.json).
+- At the latest read-only check, microphone/notifications remain ungranted and Usage
+  Access is default. User permission steps are pending; no ADB grants were used.
+
 ## Companion update 0.4
 
 - Source backed up at `3bcf8a8`; [0.4 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.4)

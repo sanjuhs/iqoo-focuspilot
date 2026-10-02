@@ -28,7 +28,7 @@ Do not submit a pre-event prototype as event-created work.
 - Main demo: start focus mode, recognize excessive use of a user-selected distracting app,
   explain a nudge, record a simulated penalty, and return the user to their chosen task.
 - Voice demo: a push-to-talk request creates a proposed alarm through Android's clock intent.
-- Learning demo: user labels a few sandbox states; retrieval uses those examples to guide
+- Learning demo: user labels sandbox states, with separate opt-in real-summary labels; retrieval uses those examples to guide
   subsequent decisions. Show a held-out evaluation, not only training examples.
 - Model demo: load the selected licensed quantized Qwen3.5-0.8B language model on the phone and record its actual
   inference backend. A deterministic parser is an explicit fallback, not an LLM claim.
@@ -58,7 +58,7 @@ if reconnecting fails and you are comfortable reauthorizing existing computers.
 
 During app development, install the debug APK on the selected serial only. Enable
 Usage Access, notifications and microphone only through the app/Android permission
-screens when you choose those features. This build has no Accessibility service.
+screens when you choose those features. The optional Accessibility proof is restricted to two selectors in FocusPilot’s own synthetic sandbox. It requires manual Android enablement and a separate five-second arm; it cannot control other apps.
 Use a sandbox account and synthetic screen content for automation evaluation.
 Nothing-phone tests establish Android compatibility, not Snapdragon/iQOO eligibility.
 
@@ -114,7 +114,7 @@ start recording. See [voice lifecycle](docs/voice-integration.md).
 Keep a small LLM for understanding varied commands; keep repeated decisions in a
 compact classifier. Train offline from consented sandbox data. Fine-tuning is a
 stretch gate after a baseline works, with a frozen held-out set and reported gains.
-Few-shot retrieval, fine-tuning and in-context examples are different methods; name
+See [live preferences](docs/live-preferences.md) for the private real-summary label path and [local export](docs/data-export.md) for user-selected exports. Few-shot retrieval, fine-tuning and in-context examples are different methods; name
 the method actually used. Positive weights make effects monotonic only with a
 defined nonnegative feature encoding. They do not automatically make an entire
 network interpretable. Use feature ablation and counterfactual checks.

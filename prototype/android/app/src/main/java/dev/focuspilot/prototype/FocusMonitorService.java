@@ -52,7 +52,8 @@ public final class FocusMonitorService extends Service {
     private Notification notification() {
         PendingIntent open=PendingIntent.getActivity(this,0,new Intent(this,MainActivity.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent stop=PendingIntent.getService(this,1,new Intent(this,FocusMonitorService.class).setAction(STOP),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
-        String value=repository.usage()>repository.budgetMs ? "Your app is over its budget. Take a gentle break?" : "Quietly keeping your chosen app budget in view.";
+        boolean shouldNudge=repository.usage()>repository.budgetMs && repository.selectedAppEligible() && !repository.livePreferenceDecision().canVetoHandSetNudge();
+        String value=shouldNudge ? "Your app is over its budget. Take a gentle break?" : "Quietly keeping your chosen app budget in view.";
         return new Notification.Builder(this,CHANNEL).setSmallIcon(dev.focuspilot.prototype.R.drawable.ic_notification).setContentTitle("FocusPilot companion · focus active")
             .setContentText(value).setStyle(new Notification.BigTextStyle().bigText(value+String.format(Locale.US," %d virtual points · no money moves. No microphone or screen capture.",repository.ledger.points())))
             .setContentIntent(open).addAction(new Notification.Action.Builder(null,"Stop focus",stop).build()).setOngoing(true).setOnlyAlertOnce(true).setCategory(Notification.CATEGORY_SERVICE).build();

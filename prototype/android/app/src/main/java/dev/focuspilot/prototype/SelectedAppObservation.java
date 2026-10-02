@@ -14,14 +14,17 @@ public final class SelectedAppObservation {
         public final boolean complete;
         public final String missingReason;
         public final long selectedMs, continuousSelectedMs;
+        /** Current queried foreground state; meaningful only when complete is true. */
+        public final boolean selectedForeground;
         /** Foreground reentries after an earlier observed entry, not Android launches. */
         public final int reentries;
-        private Summary(boolean complete,String reason,long selected,long continuous,int reentries) {
+        private Summary(boolean complete,String reason,long selected,long continuous,int reentries,boolean foreground) {
             this.complete=complete;missingReason=reason;selectedMs=selected;continuousSelectedMs=continuous;this.reentries=reentries;
+            selectedForeground=complete && foreground;
         }
     }
     private SelectedAppObservation() {}
-    public static Summary missing(String reason) { return new Summary(false,reason,0,0,0); }
+    public static Summary missing(String reason) { return new Summary(false,reason,0,0,0,false); }
     public static Summary aggregate(List<Event> events,long since,long now) {
         if(events==null || since<=0 || now<since) return missing("Usage query unavailable or invalid interval");
         boolean known=false, selected=false, entered=false, leftSelected=false, leadingGap=false;
@@ -52,6 +55,6 @@ public final class SelectedAppObservation {
         if(!known) return missing("No observed boundary establishes state at scope start");
         if(selected) total+=Math.max(0,now-cursor);
         return new Summary(!leadingGap,leadingGap?"Unobserved leading interval; complete totals/reentries unavailable":null,
-            Math.min(total,now-since),selected?Math.max(0,now-runStart):0,reentries);
+            Math.min(total,now-since),selected?Math.max(0,now-runStart):0,reentries,selected);
     }
 }

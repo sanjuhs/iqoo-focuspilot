@@ -18,6 +18,7 @@ public final class FocusRepository {
     private final DecisionPolicy policy = new DecisionPolicy();
     private final Context context;
     public final SharedPreferences prefs;
+    public final LivePreferenceStore livePreferences;
     public String selectedPackage;
     public long budgetMs, accumulatedUsage, intervalWall;
     /** Explicit user limits; zero means unknown, never an inferred default. */
@@ -26,6 +27,9 @@ public final class FocusRepository {
     private long shadowScopeId, shadowSinceWall, shadowStartedElapsed, focusActiveStartedElapsed;
     private final ScopedNudgeFeedback shadowFeedback=new ScopedNudgeFeedback();
     private ObservationSnapshot latestSnapshot;
+    private ObservationSnapshot retainedForegroundSnapshot;
+    private LivePreferenceScope retainedForegroundScope;
+    private long lastPreferenceSkip=-1;
     public final ArrayList<String> events = new ArrayList<>();
     public static synchronized FocusRepository get(Context context) {
         if(instance == null) instance = new FocusRepository(context.getApplicationContext());
@@ -33,6 +37,7 @@ public final class FocusRepository {
     }
     private FocusRepository(Context context) {
         this.context = context; prefs = context.getSharedPreferences("focuspilot_research", Context.MODE_PRIVATE);
+        livePreferences=new LivePreferenceStore(context);
         selectedPackage = prefs.getString("package", "com.instagram.android"); budgetMs = Math.max(60_000, Math.min(7_200_000, prefs.getLong("budget", 300_000)));
         if(!MonitorConfig.valid(selectedPackage,budgetMs)) selectedPackage="com.instagram.android";
         observe = prefs.getBoolean("observe", false);
@@ -64,11 +69,18 @@ public final class FocusRepository {
         persist();
     }
     public void tick() {
-        long now=SystemClock.elapsedRealtime();
-        DecisionPolicy.Result decision=policy.evaluate(usage(),budgetMs,session.isActive() && observe && usageGranted(context),now,ledger.lastNudge());
-        boolean nudged=ledger.apply(decision,now);
-        if(nudged) log("LOCAL RULE: budget nudge · −5 virtual points; no money moved");
         refreshShadowObservation();
+        long now=SystemClock.elapsedRealtime();
+        boolean permission=usageGranted(context);
+        boolean currentlySelected=ObservedNudgeGate.eligible(latestSnapshot,shadowScopeId,now,observe,permission,session.isActive());
+        DecisionPolicy.Result decision=policy.evaluate(usage(),budgetMs,currentlySelected,now,ledger.lastNudge());
+        LivePreferencePolicy.Decision preference=livePreferenceDecision();
+        boolean allowed=preference.permitsHandSetNudge(decision.nudge);
+        boolean nudged=allowed&&ledger.apply(decision,now);
+        if(nudged) log("LOCAL RULE: budget nudge · −5 virtual points; no money moved");
+        else if(decision.nudge&&preference.canVetoHandSetNudge()&&(lastPreferenceSkip<0 || now-lastPreferenceSkip>=DecisionPolicy.COOLDOWN_MS)) {
+            lastPreferenceSkip=now;log("YOUR LABELS: matched Allow skipped a budget nudge; points unchanged");
+        }
         if(nudged && shadowSinceWall>0) shadowFeedback.recordActualNudge(now);
         persist();
     }
@@ -93,9 +105,12 @@ public final class FocusRepository {
     public void persist() {
         prefs.edit().putLong("elapsedCheckpoint",session.elapsed(SystemClock.elapsedRealtime())).putBoolean("activeCheckpoint",session.isActive()).putLong("usageCheckpoint",usage()).putInt("points",ledger.points()).putLong("lastNudge",ledger.lastNudge()).apply();
     }
-    public void delete() {
+    /** Returns whether deletion of the separately persisted live-label cache was confirmed. */
+    public boolean delete() {
         session.reset(); accumulatedUsage=0; intervalWall=0; observe=false; interrupted=false; ledger.reset(); events.clear(); selectedPackage="com.instagram.android"; budgetMs=300_000;
-        shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;invalidateShadowScope();prefs.edit().clear().apply();
+        shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;invalidateShadowScope();boolean focusDeleted=prefs.edit().clear().commit();
+        boolean labelsDeleted=livePreferences.clear();
+        return focusDeleted && labelsDeleted;
     }
     private static long validShadowLimit(long value) { return value>=0 && value<=86_400_000?value:0; }
     /** Saves declared limits only. No model weights, observed vectors or event stream are saved. */
@@ -108,6 +123,8 @@ public final class FocusRepository {
     }
     private void invalidateShadowScope() {
         shadowScopeId++;shadowSinceWall=0;shadowStartedElapsed=0;latestSnapshot=null;shadowFeedback.reset();
+        retainedForegroundSnapshot=null;retainedForegroundScope=null;
+        lastPreferenceSkip=-1;
     }
     private void beginShadowScope() {
         invalidateShadowScope();
@@ -121,9 +138,32 @@ public final class FocusRepository {
         if(shadowSinceWall<=0) beginShadowScope();
         long nowWall=System.currentTimeMillis(), nowElapsed=SystemClock.elapsedRealtime();
         SelectedAppObservation.Summary summary=UsageReader.observe(context,selectedPackage,shadowSinceWall,nowWall);
+        if(!usageGranted(context)) { invalidateShadowScope();return; }
         latestSnapshot=new ObservationSnapshot(shadowScopeId,selectedPackage,shadowSinceWall,nowWall,nowElapsed,shadowStartedElapsed,
             focusActiveStartedElapsed>0?Math.max(0,nowElapsed-focusActiveStartedElapsed):-1,budgetMs,
             shadowContinuousLimitMs,shadowPlannedFocusMs,shadowFeedback.count(),summary);
+        if(latestSnapshot.complete() && latestSnapshot.summary.selectedForeground) {
+            retainedForegroundSnapshot=latestSnapshot;retainedForegroundScope=livePreferenceScope();
+        }
+    }
+    /**
+     * Last complete selected-foreground vector for an explicit manual-label review.
+     * The dashboard's newer background summary never replaces its feature values.
+     * Returns null after 15 seconds or any prerequisite/context change. Never used
+     * by the current-state nudge gate, neural shadow, or live preference decisions.
+     */
+    public ObservationSnapshot reviewableObservation() {
+        if(!observe || !session.isActive() || !usageGranted(context)) {
+            if(shadowSinceWall>0) invalidateShadowScope();return null;
+        }
+        long now=SystemClock.elapsedRealtime();
+        if(retainedForegroundSnapshot==null) return null;
+        if(retainedForegroundSnapshot.scopeId!=shadowScopeId || retainedForegroundScope==null ||
+            !retainedForegroundScope.equals(livePreferenceScope()) || now<retainedForegroundSnapshot.observedAtElapsed ||
+            now-retainedForegroundSnapshot.observedAtElapsed>ObservationSnapshot.MAX_AGE_MS) {
+            retainedForegroundSnapshot=null;retainedForegroundScope=null;return null;
+        }
+        return retainedForegroundSnapshot;
     }
     /** Fresh in-memory summary only; may contain NaN/missing features. Never triggers an OS query. */
     public ObservationSnapshot latestObservation() {
@@ -145,5 +185,29 @@ public final class FocusRepository {
         if(!shadowFeedback.defer(now,observe && session.isActive() && usageGranted(context) && shadowSinceWall>0)) return false;
         latestSnapshot=null;
         return true;
+    }
+    public LivePreferenceScope livePreferenceScope() {
+        return LivePreferenceScope.fromGoal(selectedPackage,budgetMs,shadowContinuousLimitMs,shadowPlannedFocusMs,prefs.getString("focusGoal",""));
+    }
+    private LivePreferencePolicy.Gates livePreferenceGates() {
+        return new LivePreferencePolicy.Gates(livePreferences.enabled(),observe,usageGranted(context),session.isActive(),shadowScopeId);
+    }
+    public LivePreferencePolicy.Decision livePreferenceDecision() {
+        return livePreferences.evaluate(livePreferenceScope(),latestObservation(),livePreferenceGates(),SystemClock.elapsedRealtime());
+    }
+    /** Manual label-review eligibility only; never use this retained state for recurring actions. */
+    public LivePreferencePolicy.Decision reviewablePreferenceDecision() {
+        return livePreferences.evaluate(livePreferenceScope(),reviewableObservation(),livePreferenceGates(),SystemClock.elapsedRealtime());
+    }
+    public boolean selectedAppEligible() {
+        return ObservedNudgeGate.eligible(latestObservation(),shadowScopeId,SystemClock.elapsedRealtime(),observe,usageGranted(context),session.isActive());
+    }
+    /** Saves exactly the user-reviewed immutable summary, if its displayed context is still current. */
+    public LivePreferencePolicy.Record saveLivePreference(ObservationSnapshot reviewed,LivePreferenceScope displayedScope,LivePreferencePolicy.Label label) {
+        LivePreferenceScope current=livePreferenceScope();
+        if(displayedScope==null || !current.equals(displayedScope)) throw new IllegalArgumentException("Task or settings changed. Review a fresh summary first.");
+        if(reviewed==null || !reviewed.complete() || !reviewed.summary.selectedForeground)
+            throw new IllegalArgumentException("Review a fresh complete selected-foreground summary first.");
+        return livePreferences.save(current,reviewed,label,livePreferenceGates(),SystemClock.elapsedRealtime());
     }
 }

@@ -42,7 +42,7 @@ adds actual Qwen3.5 CPU inference in the model lab. Recurring dashboard nudges s
 use transparent hand-set weights; a separate trained sandbox demonstrates the
 65-parameter network. A shadow panel can evaluate that network on complete real
 summaries without changing actions. Private task/target settings are implemented;
-real-event calibration and live personalization remain pending. Keep each component
+real-event calibration and physical live-personalization testing remain pending. Opt-in private real-summary labels are now integrated in the research source; only a matching Allow may veto an otherwise valid budget nudge. Keep each component
 clearly identified.
 
 ## Companion and persistent-mode slice

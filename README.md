@@ -35,6 +35,10 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 | [docs/voice-integration.md](docs/voice-integration.md) | Local speech drafts and lifecycle gates |
 | [docs/live-policy-evidence.md](docs/live-policy-evidence.md) | Measured-input mapping and shadow explanations |
+| [docs/live-preferences.md](docs/live-preferences.md) | Private labels from complete real summaries |
+| [docs/sandbox-automation.md](docs/sandbox-automation.md) | Five-second own-app selector proof |
+| [docs/data-export.md](docs/data-export.md) | User-selected private summary export |
+| [docs/completion-audit.md](docs/completion-audit.md) | Artifact audit and remaining completion gates |
 | [docs/snapdragon-deployment.md](docs/snapdragon-deployment.md) | Isolated GenieX readiness and required device proof |
 
 ## Design

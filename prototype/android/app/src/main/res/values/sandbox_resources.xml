@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sandbox_service_label">Mira · own-app automation proof</string>
+    <string name="sandbox_service_description">Pre-event synthetic proof only. After you manually arm a five-second run in Mira’s sandbox, this service can click two exact controls inside that sandbox and verify its checkbox. It does not control other apps, collect text, read passwords, use coordinates, change money or monitoring, or confirm model actions. Turning on this service alone does not arm a run. Disable it here whenever you want.</string>
+    <item name="sandbox_proof_root" type="id" />
+    <item name="sandbox_open_task" type="id" />
+    <item name="sandbox_task_checkbox" type="id" />
+    <item name="sandbox_task_panel" type="id" />
+</resources>

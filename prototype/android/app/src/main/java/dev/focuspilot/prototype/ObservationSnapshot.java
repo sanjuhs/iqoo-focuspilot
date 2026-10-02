@@ -10,7 +10,10 @@ public final class ObservationSnapshot {
     public static final long MAX_AGE_MS=15_000;
     public static final int REENTRY_SCALE=5, DEFER_SCALE=3;
     public final long scopeId, observedAtElapsed, sinceWall, observedAtWall;
+    /** Settings actually used for this vector, for strict saved-label scope checks. */
+    public final long budgetMs, continuousLimitMs, plannedFocusMs;
     public final String selectedPackage;
+    public final boolean timestampAlignmentValid;
     public final SelectedAppObservation.Summary summary;
     private final double[] values=new double[6];
     private final List<String> missing;
@@ -18,11 +21,13 @@ public final class ObservationSnapshot {
             long scopeStartedElapsed,long activeFocusElapsed,long budgetMs,long continuousLimitMs,long plannedFocusMs,
             int explicitDeferrals,SelectedAppObservation.Summary summary) {
         this.scopeId=scopeId;this.selectedPackage=selectedPackage;this.sinceWall=sinceWall;
+        this.budgetMs=budgetMs;this.continuousLimitMs=continuousLimitMs;this.plannedFocusMs=plannedFocusMs;
         observedAtWall=nowWall;observedAtElapsed=nowElapsed;this.summary=summary;
         java.util.Arrays.fill(values,Double.NaN);
         List<String> absent=new ArrayList<>();
         long span=nowElapsed-scopeStartedElapsed;
         boolean clockValid=span>=0 && Math.abs((nowWall-sinceWall)-span)<=2_000;
+        timestampAlignmentValid=clockValid;
         boolean complete=summary!=null && summary.complete && clockValid;
         if(!clockValid) absent.add("Wall/monotonic clock changed across observation scope");
         if(summary==null || !summary.complete) absent.add(summary==null?"No selected-app observation":summary.missingReason);
