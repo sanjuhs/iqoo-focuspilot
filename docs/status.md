@@ -4,6 +4,9 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 
 ## Companion update 0.4
 
+- Source backed up at `3bcf8a8`; [0.4 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.4)
+  published with both APKs and evidence JSON. GitHub reports all four assets uploaded;
+  APK digests match the local artifact manifest. Earlier release/video remain preserved.
 - Integrated Android build: **47 JVM tests pass**, lint has zero errors, light APK
   installs and launches on the same Nothing phone. App still has no INTERNET permission.
 - Final 0.4 light/bundled APKs passed packaged model/native hash and permission checks;

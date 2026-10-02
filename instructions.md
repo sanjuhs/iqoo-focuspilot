@@ -57,7 +57,8 @@ check USB debugging under Developer options. Revoke debugging authorizations onl
 if reconnecting fails and you are comfortable reauthorizing existing computers.
 
 During app development, install the debug APK on the selected serial only. Enable
-Usage Access and Accessibility by hand after reading the app's permission screen.
+Usage Access, notifications and microphone only through the app/Android permission
+screens when you choose those features. This build has no Accessibility service.
 Use a sandbox account and synthetic screen content for automation evaluation.
 Nothing-phone tests establish Android compatibility, not Snapdragon/iQOO eligibility.
 
