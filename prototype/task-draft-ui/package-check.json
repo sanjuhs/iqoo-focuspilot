@@ -1,0 +1,43 @@
+{
+  "identity": {
+    "status": "verified",
+    "scope": "local byte identity against declared manifest",
+    "observed": {
+      "bytes": 5513464,
+      "sha256": "03d8aade1db4dab33a3da87080f054e2b13efd77bad1c3660b5edc0af2a61bf8"
+    },
+    "declared": {
+      "bytes": 5513464,
+      "sha256": "03d8aade1db4dab33a3da87080f054e2b13efd77bad1c3660b5edc0af2a61bf8"
+    }
+  },
+  "runtime_verified": false,
+  "android_payload_present": true,
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "native_hash_parity": true,
+  "licenses": {
+    "FocusPilot-MIT.txt": true,
+    "Qwen3.5-Apache-2.0.txt": true,
+    "llama.cpp-MIT.txt": true,
+    "KleidiAI-Apache-2.0.txt": true,
+    "KleidiAI-BSD-3-Clause.txt": true,
+    "KleidiAI-notices.txt": true
+  },
+  "model_files": [],
+  "bundle_presence_parity": true,
+  "permissions": [
+    "android.permission.PACKAGE_USAGE_STATS",
+    "android.permission.RECORD_AUDIO",
+    "com.android.alarm.permission.SET_ALARM",
+    "android.permission.POST_NOTIFICATIONS",
+    "android.permission.FOREGROUND_SERVICE",
+    "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+    "android.permission.SYSTEM_ALERT_WINDOW"
+  ],
+  "package_identity": true,
+  "internet_absent": true,
+  "permission_scope": "parsed from packaged APK, not user permission grants",
+  "version_parity": true,
+  "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+  "status": "verified"
+}

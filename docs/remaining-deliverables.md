@@ -4,6 +4,21 @@ Audited 2 October 2026 (IST) against the original request, [instructions](../ins
 
 **Later v0.10 host-only confirmation:** the fixed gate with unchanged original prompt/Qwen/native improved supported exact proposals **15→31/50**, with 16 gains/zero losses and all 50 unsupported requests rejected; zero wrong accepts were observed, but 19 supported requests falsely abstained. Raw model correctness was 36/100, with 49/50 unsupported tool proposals. This fresh synthetic result completes the host confirmation portion of action 2 below; source/build/package/installation identities are recorded in the v0.10 manifest, while current phone-action and full-scope gates remain pending. [Selection and limitations](conversational-commands.md), [frozen confirmation](../prototype/command-v10-confirm/README.md). No blind requests were inspected by this audit.
 
+**Later task-planning feasibility:** two actual host Qwen3.5 planning candidates
+remain unpromoted: 0/8 benign guidance, then 4/10 fresh benign full-criterion passes,
+with nonsense and negation failures. A compiled reviewed-import UI scaffold is
+preserved unapplied; it was neither installed nor released. Current v0.11 selected
+source/packages are unchanged. [Evidence](task-draft-research.md). This does not
+complete model-generated guidance or the phone workflow in action 3.
+
+**Later v0.11 phone countdown:** an installed-APK/model-verified typed Qwen request
+was reviewed and confirmed, active checkpoint observed, then completed with exactly
+20,000 ms additional elapsed focus. Final state paused/off/100, native inference
+1,932 ms on Nothing CPU. [Source-bound record](current-countdown-phone-v011.json).
+The failed immediate-state attempt is preserved; corrected polling and foreground
+guarding pass seven tests. This closes one short process-live countdown branch of
+action 3. It does not close the full command/task/voice/background workflow.
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.
@@ -18,7 +33,7 @@ Audited 2 October 2026 (IST) against the original request, [instructions](../ins
 
 2. **Verify the selected command revision on phone; keep future repairs independently evaluated.** The gate-only [v0.10 confirmation](conversational-commands.md) improves supported exact proposals 15→31/50 on fresh frozen synthetic wording, with 16 gains/zero losses and no wrong accepts observed on that sample. It retains 19 false abstentions, raw model 36/100 and 49 unsupported tool proposals; validation supplies rejection. Longer prompts were rejected. Source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` passes 133 JVM tests/zero lint errors, both signed packages inspected and updated light installation identity verified. None establishes current live commands, voice or autonomy. Preserve data/source identities and failures; evaluate any later repair on a newly frozen set. [Artifact manifest](conversational-commands-artifacts.json), [evaluator](../prototype/command-v10-confirm/README.md). Use explicit action confirmation throughout.
 
-3. **Bind a current end-to-end phone loop — needs unlocked own-app foreground and user consent.** The new [v0.11 task guide](task-guide.md) has 143 passing JVM tests and inspected/installed light APK identity, with actual authored-step/progress/readback proof pending; include its task-change, stale-record, replacement, recovery and deletion branches. On the final selected APK, record typed Start, reviewed short timer, pause/resume/replacement/completion, process recovery and cancellation/no-action branches. Verify own checkpoint and virtual balance after each; record Clock launch and actual confirmed alarm outcome separately. Test fresh bundled-model import on a clean consented test installation: current v0.11 updated light installation with retained private weights does not prove it. Hash installed APK/model/native and bind every outcome to its source. [Timer contract](timed-focus.md), [command readiness](command-readiness.md).
+3. **Bind a current end-to-end phone loop — needs unlocked own-app foreground and user consent.** The new [v0.11 task guide](task-guide.md) has 143 passing JVM tests and inspected/installed light APK identity, with actual authored-step/progress/readback proof pending; include its task-change, stale-record, replacement, recovery and deletion branches. On the final selected APK, retain the now-recorded typed Start/reviewed 20-second automatic completion; test pause/resume/replacement/completion, process recovery and cancellation/no-action branches. Verify own checkpoint and virtual balance after each; record Clock launch and actual confirmed alarm outcome separately. Test fresh bundled-model import on a clean consented test installation: current v0.11 updated light installation with retained private weights does not prove it. Hash installed APK/model/native and bind every outcome to its source. [Timer contract](timed-focus.md), [command readiness](command-readiness.md).
 
 4. **Exercise the actual distraction/learning loop — needs manually granted Usage Access and notifications.** Select one harmless test app and synthetic goal, declare limits, measure foreground transitions against a manual timer, exceed budget, verify one virtual nudge, cooldown, override/Allow veto, background return and visible notification Stop. Verify revoke/pause/process loss prevents later activity; save/delete scoped real-summary labels and inspect complete/fresh versus missing data. No real debit is implemented. Unit tests, invented sandbox vectors and `REAL_OBSERVATION` flags do not establish actual events or beneficial human personalization. [Observation mapping](live-policy-evidence.md), [live preferences](live-preferences.md), [nudge gates](observed-nudge-evidence.md).
 

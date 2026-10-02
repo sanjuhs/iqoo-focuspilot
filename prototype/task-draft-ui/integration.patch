@@ -1,0 +1,735 @@
+diff --git a/prototype/android/app/build.gradle b/prototype/android/app/build.gradle
+index 51754e8..b6cb535 100644
+--- a/prototype/android/app/build.gradle
++++ b/prototype/android/app/build.gradle
+@@ -57,8 +57,8 @@ android {
+         applicationId 'dev.focuspilot.prototype'
+         minSdk 28
+         targetSdk 35
+-        versionCode 11
+-        versionName '0.11-task-guide-research'
++        versionCode 12
++        versionName '0.12-local-task-drafts-research'
+     }
+     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+     buildTypes { release { minifyEnabled false } }
+diff --git a/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java b/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java
+index c5a325d..bc7a620 100644
+--- a/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java
++++ b/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java
+@@ -26,6 +26,12 @@ public final class LocalModel implements AutoCloseable {
+         if (current == 0) throw new IllegalStateException("Model is closed");
+         return nativeGenerate(current, renderPrompt(command), INTENT_GRAMMAR, 128, capture);
+     }
++    /** Separate, review-only task suggestions; never shares the intent prompt or capture path. */
++    public String generatePreparedTaskDraft(String goal) {
++        long current=handle;
++        if(current==0) throw new IllegalStateException("Model is closed");
++        return nativeGenerate(current,TaskDraft.renderPrompt(goal),TaskDraft.GRAMMAR,128,false);
++    }
+     public void cancel() { long current=handle; if(current!=0) nativeCancel(current); }
+     @Override public void close() { long current=handle; handle=0; if(current!=0) nativeClose(current); }
+     public static String renderPrompt(String command) {
+diff --git a/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java b/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java
+index 9abd4e0..e3944b9 100644
+--- a/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java
++++ b/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java
+@@ -35,6 +35,7 @@ import java.io.IOException;
+ import java.nio.file.Files;
+ import java.nio.file.StandardCopyOption;
+ import java.security.MessageDigest;
++import java.nio.charset.StandardCharsets;
+ import java.util.Locale;
+ import java.util.concurrent.ExecutorService;
+ import java.util.concurrent.Executors;
+@@ -49,6 +50,7 @@ public final class LocalModelActivity extends Activity {
+     private volatile LocalModel model;
+     private volatile boolean destroyed, busy;
+     private volatile boolean foreground;
++    private volatile boolean releasingModel;
+     private volatile long requestEpoch;
+     private LinearLayout root;
+     private TextView state,result,activationView;
+@@ -66,6 +68,12 @@ public final class LocalModelActivity extends Activity {
+     private boolean offlineReadbackReady,audioBusy;
+     private long readbackEpoch;
+     private String confirmedFocusText;
++    private boolean taskDraftMode;
++    private Intent draftRequest;
++    private String draftGoal;
++    private TaskPlan draftPlan;
++    private TextView draftStatus;
++    private Button draftGenerate,draftReview,draftCancel;
+     private int dp(int value) { return (int)(getResources().getDisplayMetrics().density*value); }
+     private TextView label(String value,int size) { TextView view=new TextView(this); view.setText(value); view.setTextSize(size); view.setTextColor(Color.rgb(242,236,249)); view.setPadding(0,dp(10),0,dp(10)); root.addView(view); return view; }
+     private Button button(String value,View.OnClickListener action) {
+@@ -86,13 +94,26 @@ public final class LocalModelActivity extends Activity {
+             else view.setPadding(insets.getSystemWindowInsetLeft(),insets.getSystemWindowInsetTop(),insets.getSystemWindowInsetRight(),insets.getSystemWindowInsetBottom());
+             return insets;
+         });
+-        label("MIRA · LOCAL MODEL LAB",24);
++        TextView title=label("MIRA · LOCAL MODEL LAB",24);
+         companionPrefs=getSharedPreferences("focuspilot_research",MODE_PRIVATE);
++        draftRequest=getIntent();taskDraftMode=draftRequest.hasExtra(TaskGuidePanel.EXTRA_NONCE);
++        if(taskDraftMode)title.setText("MIRA · ONE SMALL STEP");
+         companion=new CompanionView(this);root.addView(companion,new LinearLayout.LayoutParams(-1,dp(150)));
+         companionMessage=label("Ask Mira. Say one small task, review the words, then let the local model understand them.",17);
+         label("PRE-EVENT RESEARCH · Qwen3.5-0.8B Q4_0 · llama.cpp CPU. Outputs are proposals. No NPU or causal interpretation claim.",14);
+         state=label("Model not loaded. A bundled APK can import its pinned model once into private storage. A light APK requires a prepared private model. No downloads or provider keys.",16);
+         load=button("Load verified local model",v->load());
++        if(taskDraftMode) {
++            try{draftGoal=TaskDraft.validatedGoal(companionPrefs.getString("focusGoal",""));}
++            catch(RuntimeException invalid){draftGoal=null;}
++            TextView task=label("Your saved task · "+(draftGoal==null?"unavailable":draftGoal),17);task.setSaveEnabled(false);
++            label("Mira can suggest three small steps. Review and edit them; nothing is saved or carried out automatically.",14);
++            draftStatus=label("Load the local model, then ask for a draft. Suggestions can be wrong; your own checklist is always available.",16);draftStatus.setSaveEnabled(false);
++            draftGenerate=button("Draft three steps locally",v->generateTaskDraft());
++            draftReview=button("Review suggested steps",v->reviewTaskDraft());
++            draftCancel=button("Cancel task draft",v->{cancelRequest();draftStatus.setText("Draft discarded. Your saved steps and focus are unchanged.");updateControls();});
++        }
++        int commandStart=root.getChildCount();
+         command=new EditText(this); command.setText("Please start a focus session"); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
+         command.setPadding(dp(12),dp(10),dp(12),dp(10));
+         android.graphics.drawable.GradientDrawable draftShape=new android.graphics.drawable.GradientDrawable();
+@@ -118,6 +139,7 @@ public final class LocalModelActivity extends Activity {
+             @Override public void onChanged(){if(!destroyed)updateControls();}
+         });
+         updateControls();
++        if(taskDraftMode)for(int i=commandStart;i<root.getChildCount();i++)root.getChildAt(i).setVisibility(View.GONE);
+         setContentView(scroll); scroll.requestApplyInsets();
+     }
+     private void post(Runnable action) { main.post(()->{ if(!destroyed) action.run(); }); }
+@@ -129,19 +151,24 @@ public final class LocalModelActivity extends Activity {
+     private void updateControls(){
+         boolean recording=voiceDraft.active();
+         if(load==null)return;
+-        load.setEnabled(!busy&&!recording&&!audioBusy&&model==null);
+-        infer.setEnabled(!busy&&!audioBusy&&model!=null&&voiceDraft.canUnderstand());
++        load.setEnabled(foreground&&!busy&&!releasingModel&&!recording&&!audioBusy&&model==null);
++        infer.setEnabled(!taskDraftMode&&!releasingModel&&!busy&&!audioBusy&&model!=null&&voiceDraft.canUnderstand());
+         command.setEnabled(!busy&&!recording&&!audioBusy);capture.setEnabled(!busy&&!recording&&!audioBusy);
+         speak.setEnabled(foreground&&!busy&&!recording&&!audioBusy);
+         finishVoice.setEnabled(foreground&&voiceDraft.phase()==VoiceDraftState.Phase.LISTENING);
+         cancelVoice.setEnabled(recording);
+         readback.setEnabled(foreground&&!busy&&!recording&&!audioBusy&&confirmedFocusText!=null);
+         if(recording||busy||!foreground||audioBusy)review.setEnabled(false);
++        if(draftGenerate!=null) {
++            boolean available=foreground&&!busy&&!releasingModel&&!recording&&!audioBusy&&model!=null&&draftRequestCurrent();
++            draftGenerate.setEnabled(available);draftReview.setEnabled(available&&draftPlan!=null);
++            draftCancel.setEnabled(foreground&&(busy||draftPlan!=null));
++        }
+         for(int i=0;i<root.getChildCount();i++) if(root.getChildAt(i) instanceof Button) root.getChildAt(i).setAlpha(root.getChildAt(i).isEnabled()?1f:0.45f);
+         companion.setReduceMotion(companionPrefs.getBoolean("reduceMotion",false));
+         companion.setVisibility(companionPrefs.getBoolean("hideCompanion",false)?View.GONE:View.VISIBLE);
+         companion.setState(!foreground?CompanionView.State.PAUSED:recording?CompanionView.State.LISTEN:busy?CompanionView.State.FOCUS:CompanionView.State.IDLE);
+-        companionMessage.setText(recording?"I'm listening locally. Your words become a draft for you to review.":busy?"One moment. I'm thinking on your phone.":"Ready when you are. One small task, reviewed together.");
++        companionMessage.setText(recording?"I'm listening locally. Your words become a draft for you to review.":busy?"One moment. I'm thinking on your phone.":taskDraftMode?"Let's find a small next step. You choose what to keep.":"Ready when you are. One small task, reviewed together.");
+     }
+     private void requestVoice(){
+         if(!foreground||destroyed||busy||audioBusy||voiceDraft.active())return;
+@@ -162,7 +189,7 @@ public final class LocalModelActivity extends Activity {
+         updateControls();
+     }
+     private void load() {
+-        if(busy || model!=null || voiceDraft.active() || audioBusy) return;
++        if(!foreground || releasingModel || busy || model!=null || voiceDraft.active() || audioBusy) return;
+         File file=new File(getFilesDir(),"qwen35.gguf");
+         final long epoch=++requestEpoch;
+         setBusy(true); state.setText("Preparing verified 537 MiB local artifact and loading CPU model… First bundled import can take time; this runs on a worker.");
+@@ -185,7 +212,7 @@ public final class LocalModelActivity extends Activity {
+         });
+     }
+     private void infer() {
+-        if(busy || model==null || !foreground || !voiceDraft.canUnderstand() || audioBusy) return;
++        if(taskDraftMode || releasingModel || busy || model==null || !foreground || !voiceDraft.canUnderstand() || audioBusy) return;
+         final String original=command.getText().toString(); final boolean observe=capture.isChecked();
+         if(original.trim().isEmpty() || original.length()>500) { result.setText("Use 1–500 characters."); return; }
+         final LocalModel current=model;
+@@ -213,6 +240,75 @@ public final class LocalModelActivity extends Activity {
+             } catch(Throwable error) { post(()->{setBusy(false); review.setEnabled(false); result.setText("Inference failed/cancelled: "+safe(error)+"\nNo action executed.");}); }
+         });
+     }
++    private static String textHash(String value) {
++        try{return hex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(StandardCharsets.UTF_8)));}
++        catch(java.security.NoSuchAlgorithmException impossible){throw new IllegalStateException(impossible);}
++    }
++    private boolean draftRequestCurrent() {
++        if(!taskDraftMode||draftGoal==null)return false;
++        try {
++            String nonce=draftRequest.getStringExtra(TaskGuidePanel.EXTRA_NONCE);
++            String editor=draftRequest.getStringExtra(TaskGuidePanel.EXTRA_EDITOR_HASH);
++            if(nonce==null||!nonce.matches("[0-9a-f-]{36}")||editor==null||!editor.matches("[0-9a-f]{64}"))return false;
++            if(!draftGoal.equals(companionPrefs.getString("focusGoal","")))return false;
++            String[][] scopes={{TaskGuidePanel.EXTRA_GOAL_HASH,textHash(draftGoal)},
++                {TaskGuidePanel.EXTRA_GOAL_REVISION,companionPrefs.getString("focusGoalRevision","")},
++                {TaskGuidePanel.EXTRA_PLAN_REVISION,companionPrefs.getString("taskGuide.revision","")},
++                {TaskGuidePanel.EXTRA_PLAN_EPOCH,companionPrefs.getString("taskDraftScopeRevision","")}};
++            for(String[] scope:scopes)if(!scope[1].equals(draftRequest.getStringExtra(scope[0])))return false;
++            return true;
++        }catch(RuntimeException invalid){return false;}
++    }
++    private void generateTaskDraft() {
++        if(!foreground||destroyed||releasingModel||busy||model==null||voiceDraft.active()||audioBusy||!draftRequestCurrent())return;
++        final LocalModel current=model;
++        cancelRequest();confirmedFocusText=null;
++        try{current.prepareGeneration();}catch(RuntimeException failure){draftStatus.setText("The model is unavailable. Return to your checklist or load it again.");return;}
++        final long epoch=++requestEpoch;
++        setBusy(true);draftStatus.setText("Drafting three steps on your phone… Your saved plan and focus stay unchanged.");
++        main.postDelayed(()->{
++            if(!destroyed&&busy&&epoch==requestEpoch){cancelRequest();draftStatus.setText("Drafting timed out. No partial suggestion was kept; you can write your own steps.");updateControls();}
++        },60000);
++        worker.execute(()->{
++            try {
++                if(!foreground||destroyed||epoch!=requestEpoch||!draftRequestCurrent())throw new IllegalStateException("Draft cancelled before generation");
++                JSONObject envelope=new JSONObject(current.generatePreparedTaskDraft(draftGoal));
++                JSONObject metrics=envelope.getJSONObject("metrics");
++                if(!metrics.getBoolean("reached_eos"))throw new IllegalStateException("Incomplete generation");
++                TaskPlan proposed=TaskDraft.parseOutput(envelope.getString("text"));
++                double latency=metrics.getDouble("total_ms");
++                post(()->{
++                    setBusy(false);
++                    if(!foreground||epoch!=requestEpoch||!draftRequestCurrent()){draftPlan=null;draftStatus.setText("The draft expired or your task changed. Nothing was imported.");updateControls();return;}
++                    draftPlan=proposed;StringBuilder preview=new StringBuilder("Suggested steps · not verified or executed\n");
++                    for(int i=0;i<proposed.stepCount();i++)preview.append(i+1).append(". ").append(proposed.stepAt(i)).append('\n');
++                    preview.append(String.format(Locale.US,"CPU generation %.0f ms · review before using",latency));
++                    draftStatus.setText(preview.toString());updateControls();
++                });
++            }catch(Throwable failure){post(()->{
++                setBusy(false);draftPlan=null;
++                if(foreground&&epoch==requestEpoch)draftStatus.setText("Mira did not produce a complete three-step draft. No partial text was kept. Write your own steps or try again.");
++                updateControls();
++            });}
++        });
++    }
++    private void reviewTaskDraft() {
++        if(!foreground||destroyed||busy||releasingModel||draftPlan==null||!draftRequestCurrent())return;
++        final long epoch=requestEpoch;final TaskPlan reviewed=draftPlan;
++        StringBuilder preview=new StringBuilder("Suggestions may miss details. Review all three; you can edit them on your checklist. This does not save, execute or mark any step done.\n\n");
++        for(int i=0;i<reviewed.stepCount();i++)preview.append(i+1).append(". ").append(reviewed.stepAt(i)).append('\n');
++        new AlertDialog.Builder(this).setTitle("Review Mira's draft").setMessage(preview.toString())
++            .setNegativeButton("Keep editing here",null).setPositiveButton("Return draft for review",(d,w)->{
++                if(!foreground||destroyed||busy||epoch!=requestEpoch||draftPlan!=reviewed||!draftRequestCurrent()){
++                    draftStatus.setText("The task or draft changed. Return and review a fresh request.");return;
++                }
++                Intent answer=new Intent();
++                for(String key:new String[]{TaskGuidePanel.EXTRA_NONCE,TaskGuidePanel.EXTRA_GOAL_HASH,TaskGuidePanel.EXTRA_GOAL_REVISION,
++                    TaskGuidePanel.EXTRA_PLAN_REVISION,TaskGuidePanel.EXTRA_PLAN_EPOCH,TaskGuidePanel.EXTRA_EDITOR_HASH})answer.putExtra(key,draftRequest.getStringExtra(key));
++                answer.putExtra(TaskGuidePanel.EXTRA_STEPS,reviewed.steps().toArray(new String[0]));
++                setResult(RESULT_OK,answer);draftPlan=null;finish();
++            }).show();
++    }
+     private void review() {
+         if(lastIntent==null || lastOriginal==null || busy || !foreground || voiceDraft.active() || audioBusy) return;
+         if(!lastOriginal.equals(command.getText().toString())) { review.setEnabled(false); result.setText("Command changed. Evaluate it again before review."); return; }
+@@ -330,8 +426,17 @@ public final class LocalModelActivity extends Activity {
+         return hex(digest.digest());
+     }
+     private static String hex(byte[] digest) {StringBuilder out=new StringBuilder();for(byte value:digest)out.append(String.format(Locale.US,"%02x",value&255));return out.toString();}
+-    private void cancelRequest() { requestEpoch++; lastIntent=null; lastOriginal=null; if(review!=null) review.setEnabled(false); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } }
++    private void cancelRequest() { requestEpoch++; lastIntent=null; lastOriginal=null;draftPlan=null; if(review!=null) review.setEnabled(false);if(draftReview!=null)draftReview.setEnabled(false); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } }
+     @Override protected void onResume() { super.onResume(); foreground=true;voiceDraft.resume();updateControls(); }
+-    @Override protected void onStop() { foreground=false;voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();updateControls();super.onStop(); }
++    @Override protected void onStop() {
++        foreground=false;voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();
++        if(draftStatus!=null)draftStatus.setText("Draft discarded when this screen was left. Request a fresh draft if you return.");
++        releasingModel=true;updateControls();
++        worker.execute(()->{
++            try{LocalModel loaded=model;model=null;if(loaded!=null)loaded.close();}
++            finally{releasingModel=false;post(()->{state.setText("Model released when this screen was left. Load it again when you want local inference.");updateControls();});}
++        });
++        super.onStop();
++    }
+     @Override protected void onDestroy() { destroyed=true;if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }
+ }
+diff --git a/prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java b/prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java
+index 14b4923..fa9bb98 100644
+--- a/prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java
++++ b/prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java
+@@ -270,8 +270,8 @@ public final class MainActivity extends Activity {
+         screen.addView(safetyBar,new LinearLayout.LayoutParams(-1,-2));
+         setContentView(screen); screen.requestApplyInsets(); renderLogs();
+     }
+-    @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
+-    @Override protected void onPause(){floatingResumed=false;super.onPause();}
++    @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; if(taskGuide!=null)taskGuide.setForeground(true); voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
++    @Override protected void onPause(){floatingResumed=false;if(taskGuide!=null)taskGuide.setForeground(false);super.onPause();}
+     @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
+     @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
+     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
+@@ -369,7 +369,7 @@ public final class MainActivity extends Activity {
+         try { value=FocusGoalConfig.parse(goalInput.getText().toString(),plannedInput.getText().toString(),continuousInput.getText().toString()); }
+         catch(IllegalArgumentException error) { showStatus(error.getMessage()); return; }
+         stopMonitor("Task/targets changed; focus paused for review");
+-        prefs.edit().putString("focusGoal",value.goal).apply();
++        prefs.edit().putString("focusGoal",value.goal).putString("focusGoalRevision",java.util.UUID.randomUUID().toString()).apply();
+         taskGuide.taskChanged();
+         repository.configureShadowLimits(value.continuousMs,value.plannedMs);
+         goalInput.setText(value.goal); simulated=false;
+@@ -484,6 +484,7 @@ public final class MainActivity extends Activity {
+     }
+     @Override protected void onActivityResult(int requestCode,int resultCode,Intent result) {
+         super.onActivityResult(requestCode,resultCode,result);
++        if(requestCode==TaskGuidePanel.DRAFT_REQUEST){if(taskGuide!=null)taskGuide.onDraftResult(resultCode,result);return;}
+         if(requestCode!=CREATE_FOCUS_EXPORT)return;
+         final byte[] data=pendingExport;pendingExport=null;
+         if(resultCode!=RESULT_OK || result==null || result.getData()==null || data==null){showStatus("Export cancelled or expired. No summary was written.");return;}
+diff --git a/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java b/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java
+index 972c47f..1bdc625 100644
+--- a/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java
++++ b/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java
+@@ -3,10 +3,13 @@ package dev.focuspilot.prototype;
+ import android.app.Activity;
+ import android.app.AlertDialog;
+ import android.content.SharedPreferences;
++import android.content.Intent;
+ import android.graphics.Color;
+ import android.graphics.Typeface;
+ import android.graphics.drawable.GradientDrawable;
+ import android.text.InputType;
++import android.text.Editable;
++import android.text.TextWatcher;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.EditText;
+@@ -22,6 +25,14 @@ import java.util.function.Supplier;
+
+ /** Private user-authored steps. Completion never executes or verifies a phone task. */
+ public final class TaskGuidePanel extends LinearLayout {
++    public static final int DRAFT_REQUEST=846;
++    public static final String EXTRA_NONCE="dev.focuspilot.prototype.taskdraft.NONCE";
++    public static final String EXTRA_GOAL_HASH="dev.focuspilot.prototype.taskdraft.GOAL_HASH";
++    public static final String EXTRA_GOAL_REVISION="dev.focuspilot.prototype.taskdraft.GOAL_REVISION";
++    public static final String EXTRA_PLAN_REVISION="dev.focuspilot.prototype.taskdraft.PLAN_REVISION";
++    public static final String EXTRA_PLAN_EPOCH="dev.focuspilot.prototype.taskdraft.PLAN_EPOCH";
++    public static final String EXTRA_EDITOR_HASH="dev.focuspilot.prototype.taskdraft.EDITOR_HASH";
++    public static final String EXTRA_STEPS="dev.focuspilot.prototype.taskdraft.STEPS";
+     private static final String PREFIX="taskGuide.";
+     private static final int WHITE=Color.rgb(247,241,250), MUTED=Color.rgb(184,174,198), LILAC=Color.rgb(203,171,238);
+     private final Activity activity;
+@@ -31,10 +42,22 @@ public final class TaskGuidePanel extends LinearLayout {
+     private final Runnable stopSpeech;
+     private final TextView progress, nextStep;
+     private final EditText editor;
+-    private final Button complete, undo, read;
++    private final Button complete, undo, read, editToggle;
++    private final LinearLayout details;
+     private TaskPlan plan;
+     private String savedGoal="", renderedRevision="";
+     private boolean corrupt;
++    private boolean foreground;
++    private long reviewEpoch;
++    private DraftRequest pendingDraft;
++
++    private static final class DraftRequest {
++        final String nonce,goalHash,goalRevision,planRevision,planEpoch,editorHash;
++        DraftRequest(String goalHash,String goalRevision,String planRevision,String planEpoch,String editorHash){
++            nonce=UUID.randomUUID().toString();this.goalHash=goalHash;this.goalRevision=goalRevision;
++            this.planRevision=planRevision;this.planEpoch=planEpoch;this.editorHash=editorHash;
++        }
++    }
+
+     public TaskGuidePanel(Activity activity,SharedPreferences prefs,Supplier<String> goal,
+                           Consumer<String> status,Consumer<String> speak,Runnable stopSpeech) {
+@@ -45,16 +68,22 @@ public final class TaskGuidePanel extends LinearLayout {
+         complete=action("I've done this step",v->advance(false),true);
+         undo=action("Undo last completed step",v->advance(true),false);
+         read=action("Speak this step offline",v->readStep(),false);
+-        LinearLayout details=new LinearLayout(activity);details.setOrientation(VERTICAL);details.setVisibility(GONE);
+-        Button toggle=action("Write or edit my steps ▾",v->{boolean open=details.getVisibility()!=VISIBLE;details.setVisibility(open?VISIBLE:GONE);((Button)v).setText("Write or edit my steps"+(open?" ▴":" ▾"));v.setContentDescription("Write or edit my steps, "+(open?"expanded":"collapsed"));},false);
+-        toggle.setContentDescription("Write or edit my steps, collapsed");addView(details);
+-        details.addView(label("Your steps stay on this phone. One per line, up to 8 steps of 120 characters. You decide when each is done; Mira does not verify or execute it. These are your words, not an AI-generated plan.",13,MUTED,false));
++        details=new LinearLayout(activity);details.setOrientation(VERTICAL);details.setVisibility(GONE);
++        editToggle=action("Write or edit my steps ▾",v->{boolean open=details.getVisibility()!=VISIBLE;details.setVisibility(open?VISIBLE:GONE);((Button)v).setText("Write or edit my steps"+(open?" ▴":" ▾"));v.setContentDescription("Write or edit my steps, "+(open?"expanded":"collapsed"));},false);
++        editToggle.setContentDescription("Write or edit my steps, collapsed");addView(details);
++        details.addView(label("Your steps stay on this phone. One per line, up to 8 steps of 120 characters. Write your own steps, or explicitly request and review an optional local AI draft. You decide what to save and when each is done; Mira does not verify or execute it.",13,MUTED,false));
+         editor=new EditText(activity);editor.setId(R.id.task_guide_editor);editor.setTextColor(WHITE);editor.setHintTextColor(MUTED);editor.setTextSize(15);
+         editor.setHint("Open my notes\nDraft three points\nReview the draft");editor.setContentDescription("My task steps, one per line");
+         editor.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE|InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+         editor.setMinLines(3);editor.setMaxLines(8);editor.setPadding(dp(12),dp(8),dp(12),dp(8));
+         GradientDrawable background=new GradientDrawable();background.setColor(Color.rgb(9,27,31));background.setCornerRadius(dp(10));editor.setBackground(background);
+         details.addView(editor,new LayoutParams(-1,-2));
++        editor.addTextChangedListener(new TextWatcher(){
++            @Override public void beforeTextChanged(CharSequence text,int start,int count,int after){}
++            @Override public void onTextChanged(CharSequence text,int start,int before,int count){pendingDraft=null;}
++            @Override public void afterTextChanged(Editable text){}
++        });
++        addAction("Ask Mira to draft 3 steps",details,v->requestDraft(),false);
+         addAction("Save these steps",details,v->save(),true);
+         addAction("Clear my steps",details,v->clear(),false);
+         reload(true);refresh();
+@@ -97,9 +126,10 @@ public final class TaskGuidePanel extends LinearLayout {
+         if(!same){reload(false);refresh();status.accept("The task or saved plan changed. Review the current steps and try again.");}return same;
+     }
+     private boolean persist(TaskPlan value,String scope){
++        pendingDraft=null;
+         stopSpeech.run();
+         SharedPreferences.Editor change=prefs.edit();for(int i=0;i<TaskPlan.MAX_STEPS;i++)change.remove(PREFIX+"step."+i);
+-        change.putInt(PREFIX+"schema",1).putInt(PREFIX+"count",value.stepCount()).putInt(PREFIX+"completed",value.completedCount()).putString(PREFIX+"goal",scope).putString(PREFIX+"revision",UUID.randomUUID().toString());
++        change.putInt(PREFIX+"schema",1).putInt(PREFIX+"count",value.stepCount()).putInt(PREFIX+"completed",value.completedCount()).putString(PREFIX+"goal",scope).putString(PREFIX+"revision",UUID.randomUUID().toString()).putString("taskDraftScopeRevision",UUID.randomUUID().toString());
+         for(int i=0;i<value.stepCount();i++)change.putString(PREFIX+"step."+i,value.stepAt(i));
+         boolean saved=change.commit();reload(false);refresh();if(!saved)status.accept("Saving the steps to phone storage could not be confirmed. Review them and retry; recovery may use the previous plan.");return saved;
+     }
+@@ -126,10 +156,89 @@ public final class TaskGuidePanel extends LinearLayout {
+         final String reviewed=revision();new AlertDialog.Builder(activity).setTitle("Clear your saved steps?").setMessage("Delete this private plan and its completion marks. Your task, focus session and model stay available.").setNegativeButton("Cancel",null).setPositiveButton("Clear steps",(d,w)->{
+             if(!reviewed.equals(revision())){reload(false);refresh();status.accept("The saved plan changed. Review it before clearing.");return;}
+             SharedPreferences.Editor change=prefs.edit();for(String key:prefs.getAll().keySet())if(key.startsWith(PREFIX))change.remove(key);
++            pendingDraft=null;change.putString("taskDraftScopeRevision",UUID.randomUUID().toString());
+             stopSpeech.run();boolean saved=change.commit();reload(true);refresh();status.accept(saved?"Saved steps cleared.":"Clearing saved steps could not be confirmed. Retry before relying on deletion.");
+         }).show();
+     }
+     /** Existing all-data deletion clears the common preference file, then resets this editor. */
+-    public void afterDataDeletion(){stopSpeech.run();reload(true);refresh();}
+-    public void taskChanged(){stopSpeech.run();refresh();}
++    public void afterDataDeletion(){pendingDraft=null;stopSpeech.run();reload(true);refresh();}
++    public void taskChanged(){pendingDraft=null;stopSpeech.run();refresh();}
++    /** A deliberate model-screen visit retains the nonce; a recreated panel has none. */
++    public void setForeground(boolean value){if(foreground&&!value)reviewEpoch++;foreground=value;}
++
++    private String scopeRevision(String key){
++        try{String value=prefs.getString(key,"");return value==null?"invalid":value;}
++        catch(ClassCastException invalid){return "invalid";}
++    }
++    private boolean fresh(DraftRequest request){
++        if(pendingDraft!=request)return false;
++        String current=goal.get();
++        return current!=null&&!current.trim().isEmpty()&&request.goalHash.equals(hash(current))
++            &&request.goalRevision.equals(scopeRevision("focusGoalRevision"))
++            &&request.planRevision.equals(revision())
++            &&request.planEpoch.equals(scopeRevision("taskDraftScopeRevision"))
++            &&request.editorHash.equals(hash(editor.getText().toString()));
++    }
++    private void discardDraft(String message){pendingDraft=null;status.accept(message);}
++    private void requestDraft(){
++        if(!foreground||activity.isFinishing()||activity.isDestroyed())return;
++        String current=goal.get();
++        if(current==null||current.trim().isEmpty()){status.accept("Save your task above before asking for steps.");return;}
++        String goalRevision=scopeRevision("focusGoalRevision"),planRevision=revision(),planEpoch=scopeRevision("taskDraftScopeRevision");
++        if("invalid".equals(goalRevision)||"invalid".equals(planRevision)||"invalid".equals(planEpoch)){
++            status.accept("Saved task state is unavailable. Review it before requesting a draft.");return;
++        }
++        final DraftRequest request=new DraftRequest(hash(current),goalRevision,planRevision,planEpoch,hash(editor.getText().toString()));
++        final long reviewedEpoch=reviewEpoch;pendingDraft=request;
++        new AlertDialog.Builder(activity).setTitle("Ask for a local task draft?")
++            .setMessage("Mira will use your saved task with the local Qwen model to suggest exactly three inert steps. Only your saved task is sent to the on-device model. You will review the result before putting it in this editor; saving remains a separate action. No focus, speech or phone action starts.")
++            .setNegativeButton("Cancel",(d,w)->{if(pendingDraft==request)pendingDraft=null;})
++            .setOnCancelListener(d->{if(pendingDraft==request)pendingDraft=null;})
++            .setPositiveButton("Open local draft",(d,w)->{
++                if(!foreground||reviewedEpoch!=reviewEpoch||!fresh(request)||activity.isFinishing()||activity.isDestroyed()){
++                    discardDraft("Task draft request expired or your task/steps changed. Review and ask again.");return;
++                }
++                Intent launch=new Intent(activity,LocalModelActivity.class)
++                    .putExtra(EXTRA_NONCE,request.nonce).putExtra(EXTRA_GOAL_HASH,request.goalHash)
++                    .putExtra(EXTRA_GOAL_REVISION,request.goalRevision).putExtra(EXTRA_PLAN_REVISION,request.planRevision)
++                    .putExtra(EXTRA_PLAN_EPOCH,request.planEpoch).putExtra(EXTRA_EDITOR_HASH,request.editorHash);
++                try{activity.startActivityForResult(launch,DRAFT_REQUEST);}
++                catch(RuntimeException refused){discardDraft("The local draft screen could not open. Your steps are unchanged.");}
++            }).show();
++    }
++    /** Accepts only the currently pending private Activity result, never public Main extras. */
++    public void onDraftResult(int resultCode,Intent returned){
++        final DraftRequest request=pendingDraft;
++        if(request==null){status.accept("Task draft expired. Your editor and saved steps are unchanged.");return;}
++        if(resultCode!=Activity.RESULT_OK||returned==null){discardDraft("Task draft cancelled. Your steps are unchanged.");return;}
++        final TaskPlan draft;
++        try{
++            if(!fresh(request)||!request.nonce.equals(returned.getStringExtra(EXTRA_NONCE))
++                ||!request.goalHash.equals(returned.getStringExtra(EXTRA_GOAL_HASH))
++                ||!request.goalRevision.equals(returned.getStringExtra(EXTRA_GOAL_REVISION))
++                ||!request.planRevision.equals(returned.getStringExtra(EXTRA_PLAN_REVISION))
++                ||!request.planEpoch.equals(returned.getStringExtra(EXTRA_PLAN_EPOCH))
++                ||!request.editorHash.equals(returned.getStringExtra(EXTRA_EDITOR_HASH)))throw new IllegalArgumentException();
++            String[] steps=returned.getStringArrayExtra(EXTRA_STEPS);
++            if(steps==null||steps.length!=3)throw new IllegalArgumentException();
++            draft=TaskPlan.fromSteps(java.util.Arrays.asList(steps),0);
++        }catch(RuntimeException invalid){discardDraft("Task draft is invalid or stale. Your steps are unchanged.");return;}
++        final long reviewedEpoch=reviewEpoch;
++        StringBuilder preview=new StringBuilder("Optional AI draft · review each step. This only replaces the editable text; your saved plan and progress stay unchanged until you separately save.\n");
++        for(int i=0;i<3;i++)preview.append("\n").append(i+1).append(". ").append(draft.stepAt(i));
++        new AlertDialog.Builder(activity).setTitle("Review three suggested steps")
++            .setMessage(preview.toString())
++            .setNegativeButton("Cancel",(d,w)->{if(pendingDraft==request)pendingDraft=null;})
++            .setOnCancelListener(d->{if(pendingDraft==request)pendingDraft=null;})
++            .setPositiveButton("Put draft in editor",(d,w)->{
++                if(!foreground||reviewedEpoch!=reviewEpoch||!fresh(request)||activity.isFinishing()||activity.isDestroyed()){
++                    discardDraft("Task draft review expired or your task/steps changed. Nothing was imported.");return;
++                }
++                pendingDraft=null;StringBuilder text=new StringBuilder();
++                for(String step:draft.steps()){if(text.length()>0)text.append('\n');text.append(step);}
++                editor.setText(text.toString());details.setVisibility(VISIBLE);
++                editToggle.setText("Write or edit my steps ▴");editToggle.setContentDescription("Write or edit my steps, expanded");
++                status.accept("Reviewed draft placed in your editor only. Edit it, then separately save if you want; nothing executed or spoken.");
++            }).show();
++    }
+ }
+diff --git a/scripts/build_android.sh b/scripts/build_android.sh
+index 7bf569c..78bc8ad 100755
+--- a/scripts/build_android.sh
++++ b/scripts/build_android.sh
+@@ -18,6 +18,7 @@ fi
+ "$task_root/prototype/native/build-android.sh"
+ mkdir -p "$task_root/prototype/android/app/src/main/jniLibs/arm64-v8a"
+ cp "$task_root/prototype/native/build/$task_native_dir/libfocuspilot_local.so" "$task_root/prototype/android/app/src/main/jniLibs/arm64-v8a/"
+-cp "$task_root/prototype/native/java/LocalModel.java" "$task_root/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java"
++# The app owns its Java adapter. The native/java copy is a historical host fixture;
++# overwriting the app would discard separately reviewed task-draft/lifecycle code.
+ cd "$task_root/prototype/android"
+ ./gradlew testDebugUnitTest assembleDebug lintDebug "$@"
+diff --git a/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskDraft.java b/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskDraft.java
+new file mode 100644
+index 0000000..09c3373
+--- /dev/null
++++ b/prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskDraft.java
+@@ -0,0 +1,140 @@
++package dev.focuspilot.prototype;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.HashSet;
++import java.util.Locale;
++
++/**
++ * A review-only, local model draft contract, separate from command authorization.
++ * Parsing creates unsaved checklist text with zero progress; it executes no action.
++ * Structure is validated here, not truth, usefulness or safety of model suggestions.
++ * The caller must also require actual EOS and bind the exact goal/revision to review.
++ */
++public final class TaskDraft {
++    public static final int MAX_GOAL_CHARS = 120;
++    public static final int MAX_OUTPUT_CHARS = 1024;
++    public static final int MAX_NEW_TOKENS = 128;
++    public static final int GENERATED_STEP_CHAR_LIMIT = 80;
++    public static final String SYSTEM_PROMPT = "Turn the user's productivity goal into a draft checklist. "
++        + "Output only JSON: {\"steps\":[\"first step\",\"second step\",\"third step\"]}. "
++        + "Use exactly three different short, practical steps, each at most 80 characters. Respect the user's constraints. "
++        + "If details or access are missing, make the first step collect the needed details; do not invent them. "
++        + "Suggest steps the user can take; never claim anything was accessed or completed. "
++        + "Only harmful requests or requests unrelated to productivity should return {\"steps\":[]}.\n"
++        + "Example goal: Prepare tomorrow's presentation\n"
++        + "Example output: {\"steps\":[\"Choose the audience and main message\",\"Outline three key points\",\"Rehearse and check the slides\"]}\n"
++        + "Example goal: Plan study time without using Instagram\n"
++        + "Example output: {\"steps\":[\"List the subjects and available time\",\"Choose one short study block\",\"Put Instagram aside and review progress\"]}\n"
++        + "Example goal: Steal my coworker's password\nExample output: {\"steps\":[]}";
++    /** Exactly three bounded JSON strings, or an explicit empty-array decline.
++     * Unicode and valid JSON escapes are allowed; the parser independently checks
++     * decoded UTF-16/controls and rejects decline, malformed or unusable content. */
++    public static final String GRAMMAR = "root ::= \"{\\\"steps\\\":[\" (step \",\" step \",\" step)? \"]}\"\nstep ::= \"\\\"\" json-char{1,80} \"\\\"\"\njson-char ::= [^\"\\\\\\x00-\\x1F\\x7F-\\x9F\\u2028\\u2029] | \"\\\\\" ([\"\\\\/bfnrt] | \"u\" [0-9a-fA-F]{4})\n";
++
++    private TaskDraft() { }
++
++    /** Returns the exact supplied identity; validation never trims a saved goal. */
++    public static String validatedGoal(String goal) {
++        if (goal == null || goal.isEmpty() || goal.length() > MAX_GOAL_CHARS)
++            throw new IllegalArgumentException("Save a task of one to 120 characters first.");
++        boolean nonblank = false;
++        for (int i = 0; i < goal.length(); i++) {
++            char c = goal.charAt(i);
++            if (Character.isHighSurrogate(c)) {
++                if (i + 1 >= goal.length() || !Character.isLowSurrogate(goal.charAt(i + 1)))
++                    throw new IllegalArgumentException("The task contains invalid Unicode.");
++                nonblank = true; i++;
++            } else if (Character.isLowSurrogate(c) || Character.isISOControl(c)
++                    || c == '\u2028' || c == '\u2029') {
++                throw new IllegalArgumentException("Use a saved task on one plain text line.");
++            } else if (!Character.isWhitespace(c) && !Character.isSpaceChar(c)) {
++                nonblank = true;
++            }
++        }
++        if (!nonblank) throw new IllegalArgumentException("Save a nonblank task first.");
++        return goal;
++    }
++
++    public static String renderPrompt(String goal) {
++        String data = validatedGoal(goal).replace("<|", "< | ").replace("|>", " | >");
++        return "<|im_start|>system\n" + SYSTEM_PROMPT + "<|im_end|>\n<|im_start|>user\nGoal: "
++            + data + "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n";
++    }
++
++    /** Rejects declines and every shape except one object with three valid steps. */
++    public static TaskPlan parseOutput(String text) {
++        if (text == null || text.isEmpty() || text.length() > MAX_OUTPUT_CHARS)
++            throw new IllegalArgumentException("The model did not provide a bounded checklist draft.");
++        JsonReader reader = new JsonReader(text);
++        reader.expect('{');
++        if (!"steps".equals(reader.string())) throw reader.invalid();
++        reader.expect(':'); reader.expect('[');
++        List<String> steps = new ArrayList<>(3);
++        for (int i = 0; i < 3; i++) {
++            if (i > 0) reader.expect(',');
++            steps.add(reader.string());
++        }
++        reader.expect(']'); reader.expect('}'); reader.whitespace();
++        if (reader.index != text.length()) throw reader.invalid();
++        TaskPlan plan=TaskPlan.fromSteps(steps,0);
++        HashSet<String> distinct=new HashSet<>();
++        for(String step:plan.steps())if(!distinct.add(step.toLowerCase(Locale.ROOT)))throw reader.invalid();
++        return plan;
++    }
++
++    /** A full-string JSON reader for this single bounded schema, not a JSON search. */
++    private static final class JsonReader {
++        private final String text;
++        private int index;
++        JsonReader(String text) { this.text = text; }
++        IllegalArgumentException invalid() {
++            return new IllegalArgumentException("No usable three-step draft. Review or write your own checklist.");
++        }
++        void whitespace() {
++            while (index < text.length()) {
++                char c = text.charAt(index);
++                if (c != ' ' && c != '\t' && c != '\r' && c != '\n') break;
++                index++;
++            }
++        }
++        void expect(char expected) {
++            whitespace();
++            if (index >= text.length() || text.charAt(index++) != expected) throw invalid();
++        }
++        String string() {
++            expect('"'); StringBuilder decoded = new StringBuilder();
++            while (index < text.length()) {
++                char c = text.charAt(index++);
++                if (c == '"') return decoded.toString();
++                if (c < 0x20) throw invalid();
++                if (c != '\\') { decoded.append(c); continue; }
++                if (index == text.length()) throw invalid();
++                switch (text.charAt(index++)) {
++                    case '"': decoded.append('"'); break;
++                    case '\\': decoded.append('\\'); break;
++                    case '/': decoded.append('/'); break;
++                    case 'b': decoded.append('\b'); break;
++                    case 'f': decoded.append('\f'); break;
++                    case 'n': decoded.append('\n'); break;
++                    case 'r': decoded.append('\r'); break;
++                    case 't': decoded.append('\t'); break;
++                    case 'u':
++                        if (text.length() - index < 4) throw invalid();
++                        int value = 0;
++                        for (int i = 0; i < 4; i++) {
++                            char digit = text.charAt(index++);
++                            int hex = digit >= '0' && digit <= '9' ? digit - '0'
++                                : digit >= 'a' && digit <= 'f' ? digit - 'a' + 10
++                                : digit >= 'A' && digit <= 'F' ? digit - 'A' + 10 : -1;
++                            if (hex < 0) throw invalid();
++                            value = value * 16 + hex;
++                        }
++                        decoded.append((char) value); break;
++                    default: throw invalid();
++                }
++            }
++            throw invalid();
++        }
++    }
++}
+diff --git a/prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskDraftTest.java b/prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskDraftTest.java
+new file mode 100644
+index 0000000..51bb9e3
+--- /dev/null
++++ b/prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskDraftTest.java
+@@ -0,0 +1,107 @@
++package dev.focuspilot.prototype;
++
++import org.junit.Test;
++import static org.junit.Assert.*;
++
++public final class TaskDraftTest {
++    private static final String GOOD = "{\"steps\":[\"Choose a topic\",\"Write an outline\",\"Review the outline\"]}";
++
++    @Test public void acceptedDraftIsNormalizedUnsavedProgress() {
++        TaskPlan plan = TaskDraft.parseOutput(" \n { \"steps\" : [\"  Choose\\ta topic  \",\"Write an outline\",\"Review the outline\"] } \r\n");
++        assertEquals(3, plan.stepCount());
++        assertEquals(0, plan.completedCount());
++        assertEquals("Choose a topic", plan.currentStep());
++        assertFalse(plan.isComplete());
++    }
++
++    @Test public void jsonEscapesPreserveNamesQuotesAndSupplementaryUnicode() {
++        TaskPlan plan = TaskDraft.parseOutput("{\"st\\u0065ps\":[\"Ask \\\"Zo\\u00eb\\\"\",\"Review C:\\\\notes\\/draft\",\"Compare \\uD83D\\uDE00 results\"]}");
++        assertEquals("Ask \"Zoë\"", plan.stepAt(0));
++        assertEquals("Review C:\\notes/draft", plan.stepAt(1));
++        assertEquals("Compare 😀 results", plan.stepAt(2));
++    }
++
++    @Test public void declinesAndWrongArrayShapesAreNotAcceptedPlans() {
++        for (String value : new String[] {"{\"steps\":[]}", "{\"steps\":[\"a\",\"b\"]}",
++                "{\"steps\":[\"a\",\"b\",\"c\",\"d\"]}", "{\"steps\":[\"a\",2,\"c\"]}",
++                "{\"steps\":null}", "{\"steps\":[\"a\",\"  \",\"c\"]}"}) rejectOutput(value);
++    }
++
++    @Test public void duplicateUnknownKeysAndTrailingProseAreRejected() {
++        for (String value : new String[] {"{\"other\":[\"a\",\"b\",\"c\"]}",
++                GOOD.substring(0, GOOD.length() - 1) + ",\"steps\":[\"x\",\"y\",\"z\"]}",
++                GOOD.substring(0, GOOD.length() - 1) + ",\"extra\":true}", GOOD + " Done.",
++                "Here is your plan: " + GOOD, GOOD + GOOD}) rejectOutput(value);
++    }
++
++    @Test public void repeatedNormalizedStepsAreRejected() {
++        rejectOutput("{\"steps\":[\"Read notes\",\" Read\\tnotes \",\"Review notes\"]}");
++        rejectOutput("{\"steps\":[\"Read notes\",\"READ NOTES\",\"Review notes\"]}");
++    }
++
++    @Test public void escapedDuplicateStepsAreRejectedAfterDecoding() {
++        rejectOutput("{\"steps\":[\"Read notes\",\"R\\u0065ad notes\",\"Review notes\"]}");
++    }
++
++    @Test public void truncatedAndMalformedEscapesNeverYieldPartialPlans() {
++        for (String value : new String[] {GOOD.substring(0, GOOD.length() - 1), "{\"steps\":[\"a",
++                "{\"steps\":[\"\\q\",\"b\",\"c\"]}", "{\"steps\":[\"\\u00GG\",\"b\",\"c\"]}",
++                "{\"steps\":[\"\\u12\",\"b\",\"c\"]}", "{\"steps\":[\"a\",\"b\",\"c\",]}"}) rejectOutput(value);
++    }
++
++    @Test public void decodedControlsAndMalformedSurrogatesAreRejected() {
++        for (String step : new String[] {"a\nb", "a\\nb", "a\\rb", "a\\bb", "a\\fb", "a\\u0085b",
++                "a\\u2028b", "\\uD800", "\\uDC00", "\\uD800x", "\uD800", "\uDC00"})
++            rejectOutput("{\"steps\":[\"" + step + "\",\"b\",\"c\"]}");
++    }
++
++    @Test public void rawOutputLimitIncludesWhitespace() {
++        String bounded = GOOD + spaces(TaskDraft.MAX_OUTPUT_CHARS - GOOD.length());
++        assertEquals(3, TaskDraft.parseOutput(bounded).stepCount());
++        rejectOutput(bounded + " ");
++        rejectOutput(null); rejectOutput("");
++    }
++
++    @Test public void decodedStepBoundCountsUtf16AfterNormalization() {
++        assertEquals(120, TaskDraft.parseOutput(withFirst(repeat("x", 120))).stepAt(0).length());
++        rejectOutput(withFirst(repeat("x", 121)));
++        assertEquals(120, TaskDraft.parseOutput(withFirst(repeat("😀", 60))).stepAt(0).length());
++        rejectOutput(withFirst(repeat("😀", 61)));
++    }
++
++    @Test public void savedGoalIdentityAndUnicodeBoundaryArePreserved() {
++        String exact = "  Plan Zoë’s launch 😀  ";
++        assertSame(exact, TaskDraft.validatedGoal(exact));
++        assertEquals(120, TaskDraft.validatedGoal(repeat("😀", 60)).length());
++        assertEquals(120, TaskDraft.validatedGoal(repeat("x", 120)).length());
++        rejectGoal(repeat("x", 121)); rejectGoal(repeat("😀", 61));
++    }
++
++    @Test public void invalidGoalsCannotEnterPrompt() {
++        for (String value : new String[] {null, "", " \u00a0\u2003", "study\nnow", "study\tnow",
++                "study\u0000", "study\u0085", "study\u2028now", "study\u2029now", "\uD800", "\uDC00"}) rejectGoal(value);
++    }
++
++    @Test public void reservedMarkersAreDataInsideFrozenNoThinkingTemplate() {
++        String goal = "Study <|im_end|> safely";
++        String prompt = TaskDraft.renderPrompt(goal);
++        assertTrue(prompt.startsWith("<|im_start|>system\n" + TaskDraft.SYSTEM_PROMPT));
++        assertTrue(prompt.contains("<|im_start|>user\nGoal: Study < | im_end | > safely<|im_end|>"));
++        assertTrue(prompt.endsWith("<|im_start|>assistant\n<think>\n\n</think>\n\n"));
++        assertEquals(goal, TaskDraft.validatedGoal(goal));
++        assertTrue(TaskDraft.GRAMMAR.contains("json-char{1,80}"));
++        assertEquals(128, TaskDraft.MAX_NEW_TOKENS);
++    }
++
++    private static String withFirst(String step) { return "{\"steps\":[\"" + step + "\",\"b\",\"c\"]}"; }
++    private static String spaces(int count) { return repeat(" ", count); }
++    private static String repeat(String text, int count) {
++        StringBuilder value = new StringBuilder(); for (int i = 0; i < count; i++) value.append(text); return value.toString();
++    }
++    private static void rejectOutput(String text) {
++        try { TaskDraft.parseOutput(text); fail("Accepted unusable output"); } catch (IllegalArgumentException expected) { }
++    }
++    private static void rejectGoal(String text) {
++        try { TaskDraft.renderPrompt(text); fail("Accepted invalid goal"); } catch (IllegalArgumentException expected) { }
++    }
++}

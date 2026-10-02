@@ -2,6 +2,48 @@
 
 Updated 2 October 2026 (IST). This file separates measured results from goals.
 
+## Current v0.11 reviewed countdown — actual phone outcome
+
+The installed light v0.11 APK and retained model hashes matched their pinned
+identities before an actual typed “Start focus for 20 seconds” request on Nothing
+A059/SM7635/API36. Qwen3.5-0.8B Q4_0 proposed `start_focus`; the original-request
+gate required review and preserved 20 seconds. Reported native CPU inference was
+1,932 ms (788 prefill, 1,144 decode); this single observation is not a latency
+benchmark. After explicit review confirmation, persisted active focus was observed,
+then automatic pause without a user Stop. Elapsed checkpoint delta was exactly
+20,000 ms; final focus paused, observation off and virtual points 100.
+
+The first attempt failed an immediate disk-state check after confirmation and
+cleanup Stop were tapped. SharedPreferences persistence is asynchronous; later
+read-only state was paused/off/100. That failed attempt is retained and does not
+prove no action occurred. The corrected harness polls for persisted state, records
+confirmation before validation and checks cleanup. Its foreground guard requires
+actual awake and unlocked metadata plus the exact own-app owner; missing flags
+cannot authorize UI inspection. Seven harness tests pass.
+
+[Successful source/APK/model/native/harness-bound report](current-countdown-phone-v011.json),
+[failed attempt](countdown-first-attempt-v011.json). No new APK, permission grant,
+model, command prompt or native change was made. After these experiments, the
+storage check measured 12,497,522,266 logical project bytes (12.498 decimal GB),
+including ignored files and Git, below the 15 GB cap; external shared SDK caches
+are excluded. This attributed typed process-live
+case does not verify ASR/TTS, task-guide UI, monitoring, floating mode, deep sleep,
+recovery, disconnect, Clock, iQOO/NPU or Office Kit.
+
+## Unpromoted local task-planning research
+
+Two real Qwen3.5-0.8B Q4_0 host planning experiments are preserved: the first
+returns empty declines for all eight benign goals; an example-based repair meets
+only 4/10 fresh benign criteria, with one nonsense draft and one negation violation.
+Both have real EOS/JSON evidence, which does not prove useful guidance. Neither
+is promoted. Six research tests and archived-source/evidence verification pass.
+An unapplied reviewed-import UI scaffold compiled with 156 tests/zero lint errors
+and 76 warnings; its candidate APK was not installed or released. Selected v0.11
+source was restored and rebuilt: 143 tests pass, zero lint errors/65 warnings;
+installed/published packages, command prompt, model and native remain unchanged.
+[Results and reproduction](task-draft-research.md),
+[unselected integration](../prototype/task-draft-ui/README.md).
+
 ## Task guidance checkpoint — v0.11
 
 Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds a private, user-authored plan for the
@@ -10,8 +52,9 @@ and clear, and optional local readback. Goal/revision checks block stale progres
 and speech; step text executes no phone action and enters no model/export.
 **143 JVM tests pass**, lint zero errors/65 warnings. Signed light packaging passed
 native/license/permission inspection and installed with matching APK/model hashes;
-focus paused, observation off and 100 points stayed unchanged. No wake, UI,
-permission or task action occurred. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
+focus paused, observation off and 100 points stayed unchanged during that installation.
+No wake, UI, permission or task action occurred during installation; the separate
+reviewed countdown above was subsequently tested. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
 all four server asset sizes/SHA-256 digests match local files and the tag resolves
 to the exact app source above. Physical step/readback tests remain pending.
 Qwen3.5 Q4_0, prompt, gate and native are unchanged. The publication preflight measured

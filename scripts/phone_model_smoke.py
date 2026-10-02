@@ -15,6 +15,20 @@ from pathlib import Path
 PACKAGE = "dev.focuspilot.prototype"
 
 
+def own_interactive_foreground(window, activity):
+    """Require observed awake/unlocked state; missing flags never imply unlocked."""
+    focus = next((line for line in window.splitlines() if "mCurrentFocus=" in line), "")
+    owner = re.search(r"(?:^|\s)" + re.escape(PACKAGE) + r"/", focus)
+    awake = re.findall(r"\bmAwake\s*=\s*(true|false)", window)
+    legacy = re.findall(r"\bmShowingLockscreen\s*=\s*(true|false)", window)
+    keyguard = re.findall(r"\bmKeyguardShowing\s*=\s*(true|false)", activity)
+    if not owner or not awake or any(value != "true" for value in awake):
+        return False
+    if any(value != "false" for value in legacy + keyguard):
+        return False
+    return bool(legacy or keyguard)
+
+
 class PhoneLab:
     def __init__(self, serial):
         self.base = ["adb", "-s", serial]
@@ -25,8 +39,8 @@ class PhoneLab:
     def guard(self):
         for _ in range(4):
             window = self.adb("shell", "dumpsys", "window")
-            focus = next((line for line in window.splitlines() if "mCurrentFocus=" in line), "")
-            if PACKAGE in focus and "mAwake=false" not in window and "mShowingLockscreen=true" not in window:
+            activity = self.adb("shell", "dumpsys", "activity", "activities")
+            if own_interactive_foreground(window, activity):
                 return
             time.sleep(.3)
         raise RuntimeError("FocusPilot must be unlocked and in front; no other screen is inspected")

@@ -1,0 +1,15 @@
+{
+  "actions_executed": 0,
+  "benign_criterion_met": 0,
+  "benign_goal_relevant": 0,
+  "captured_results_sha256": "3203ac477473d1c7dd07cbe312cf6e0f2521db50cf5dc878aa4c195c57a3bb01",
+  "cases_reviewed": 12,
+  "constraint_violations": 0,
+  "criterion_failures": 9,
+  "invented_access_or_completion": 0,
+  "review_sha256": "6a02db85486655015e43da83f15227ae09dd42a4bbeb3aaecb570dca4446aecd",
+  "reviewed_utc": "2026-10-02T17:18:17.491061+00:00",
+  "reviewer": "Author, informed subjective qualitative review against prewritten fixture criteria; no independent rater",
+  "scope": "Qualitative usefulness on 12 synthetic goals, not validated accuracy or safety/generalization/phone evidence",
+  "tricky_criterion_met": 3
+}

@@ -1,0 +1,38 @@
+{
+  "cases_sha256": "ab9a4f646e12174dcdc6232e3ce50d98d0aa7b6207803aaa5083401116aff203",
+  "frozen_before_any_model_run": true,
+  "frozen_utc": "2026-10-02T17:16:48.906681+00:00",
+  "grammar_sha256": "6d210288072801b5a1833c21bc5ce23e759b56f4a89a4bd5bb33195634c90b59",
+  "input_sha256": "3947d6ce83a9d2b258148ba1fb15d3db1bac086866cfe938767cd787b985b3f3",
+  "java_snapshots_sha256": {
+    "LocalModel.java": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+    "TaskDraft.java": "ef1601dbdb1af8a60151531fc57a2efaabb0f460bd5a87ae4843475fc2a902e6",
+    "TaskPlan.java": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba"
+  },
+  "model_license": "Apache-2.0",
+  "model_revision": "ggml-org/Qwen3.5-0.8B-GGUF@8fea620810c4afa23dd6443f999a48574c1611a3",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_llama_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "prompt_sha256_by_id": {
+    "benign_01": "f033eb9608f3e8def06f2b192daf88e7212e7ca40f97a36cee6edf783ccbec08",
+    "benign_02": "a6f3c77c7aa7cd01d4851dcada33d8788b39ac9964695b9efa4e6209df52c694",
+    "benign_03": "7de06cfc4db3ff8b33049e3b7bd89acd6fc400ac57814cd2e679e0ae45f8a05e",
+    "benign_04": "c8443a81476c3811bea45f6119bc8f75f22258758a1ffce3fb1f831fb1eb6e0b",
+    "benign_05": "0edef48197b153ccea2a8e7248322eef2538c01bf5555698339ce94be88e7030",
+    "benign_06": "d71356d770f6efcfef239133e282f157a6e763ebe7532e8b091dce805b1d8289",
+    "benign_07": "c8895906d45af649084034b2f843c1e8368da0a8dbec75b50a575dd0bf4322fe",
+    "benign_08": "8756cf9ae8cab6d3907d1e025faf6aedd62d2bedb7046e392617900b180eb124",
+    "tricky_01": "c1d94d5a772fba9ddd1c6720f25beeaaf9e3c1427ad4ca7224f6124d3a07f3e5",
+    "tricky_02": "3265c007673e069ac12e154f05778d05d42415ca369ed64f7842365e2f03de9b",
+    "tricky_03": "242a358a21a7a129e1512ba3807ec7cdd0facb7e9f274b4e99685fe12af0a3c5",
+    "tricky_04": "d511549207bc59270cd443f53f6034f8cb8bc6c1919aaba300643b2f4a4b82e1"
+  },
+  "protocol_sha256": "ba224fd66016ae5ec53d78e90f601809fbaac70eb4ad91ea342b6af7d6fc44b2",
+  "sources_sha256": {
+    "TaskDraftEval.java": "e35313865d0d240838877496b7348451aedae8361feeadbd3f90a3e904cee3a2",
+    "generate_data.py": "cd6ed0ed6a4c0489ab2752ce9805a768807b1e2f68aee2ff040752b7d9dcb46f",
+    "run_research.py": "1c913a3e18d5a3471d0270038ca36a1473bc61f2a05c332d22cb4ce470a0f92b",
+    "test_research.py": "ea20627513fddc5a2e3c1010a3d80e343cf7edea98434636325868eaf3eb81dd"
+  }
+}

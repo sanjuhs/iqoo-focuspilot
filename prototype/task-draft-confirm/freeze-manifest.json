@@ -1,0 +1,40 @@
+{
+  "cases_sha256": "248fc51f2bdbb771dc7045d01c87396e273522d5aaea3ac9004cce38fbe55244",
+  "frozen_before_any_model_run": true,
+  "frozen_utc": "2026-10-02T17:24:07.356705+00:00",
+  "grammar_sha256": "6d210288072801b5a1833c21bc5ce23e759b56f4a89a4bd5bb33195634c90b59",
+  "input_sha256": "667c96e74fd40510172b0aa4a470e9cc0def5b102105b19188279612c881cbb8",
+  "java_snapshots_sha256": {
+    "LocalModel.java": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+    "TaskDraft.java": "129ee72efbf057d03cd3e11f80d3c9a055295ebd2262d3e4f6d4b67440eaf52f",
+    "TaskPlan.java": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba"
+  },
+  "model_license": "Apache-2.0",
+  "model_revision": "ggml-org/Qwen3.5-0.8B-GGUF@8fea620810c4afa23dd6443f999a48574c1611a3",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_llama_commit": "57fe1f07c3b6a1de3f4fff19098e2056a85275b7",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "prompt_sha256_by_id": {
+    "benign_01": "7edf0eb76fe30115d8e76e4df1bc08b339b2d0b006ab3cf5b9fc7e65ba642a31",
+    "benign_02": "4e5f5e03c88ebaed282d26a4f6c92b5c1d6c91b2eb21ede3967b96d346ca63f4",
+    "benign_03": "b45d8500dcfdbfc6fde85fc9045ce8ae964857d2a9708d12108c799ca5d6ec40",
+    "benign_04": "7f9b079b01b00e0d955181bb2982eca9c8552dabca68cd993b26cad3d14ed40c",
+    "benign_05": "67da9725c5799b4cea7ad2319ec642f8a34d882775b0e2e31681366275aafda1",
+    "benign_06": "24863c752c1c3e00588a587afba4790ba7b1bd31a0fbfe793641de13dabad81f",
+    "benign_07": "8dc8bae47e7b5333e46c7ce06280e1928ea861a1432160c540c21c6bdba7050e",
+    "benign_08": "e27382747350ec7def819447c8e363cda48d0e7619a08cf851f3379fc446ffcd",
+    "benign_09": "f5f3a8465c2f1ea458d4e0a6ebe359b242be5cf4b072c0c14a18bdb8b8308c83",
+    "benign_10": "1283792d912889c4b3c55f8bde9c0a78086ade050f381876441b9ac2050c8975",
+    "tricky_01": "bf65a827d2d57c98ef773b85166bcabfa7fe16ce29054ddc013ec7ea2576078f",
+    "tricky_02": "0114448221e27cfd6daa930a88978cc1a67af3f4274e489e173b7c32165c4da8",
+    "tricky_03": "7282ffc336b666beb6cc84a069ae672911b967e049f2d840f64440cc43f4a201",
+    "tricky_04": "256d65471878162af5012a0f2ceb9b82daa2049d5a55ee0b9512b2aa7a4ce413"
+  },
+  "protocol_sha256": "3819b4cb282e775a6299abee09e245089c7c7134dea0977257d36c16b7a105a5",
+  "sources_sha256": {
+    "TaskDraftEval.java": "e35313865d0d240838877496b7348451aedae8361feeadbd3f90a3e904cee3a2",
+    "generate_data.py": "f7debbaea911365f2fa600416317217e15ebe66abacb064acc613f5294287e8c",
+    "run_research.py": "a19cdf94200cf7aaca3fc3d29cf08b0a82baab334d1294cf29c17e47899ec81d",
+    "test_research.py": "917a0aca328c0ca445ec724d9f4c29608009f9aab1c9948c2e22319a01e85f09"
+  }
+}

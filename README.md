@@ -9,7 +9,11 @@ optionally read it through the existing local voice path. Task/record revision
 checks block stale progress and readback; authored text executes nothing.
 **143 JVM tests pass**, lint zero errors/65 warnings. Signed light APK inspected
 and installed with matching APK/model hashes; paused/off/100 points unchanged.
-Actual task UI/readback remains untested on the asleep phone. Qwen3.5-0.8B Q4_0,
+Actual task UI/readback remains untested. A later own-app phone countdown
+passed: reviewed 20-second start, automatic pause, exactly 20,000 ms additional
+elapsed focus and unchanged observation-off/100 points. One typed CPU inference
+took 1,932 ms. [Physical evidence](docs/current-countdown-phone-v011.json),
+[preserved failed test](docs/countdown-first-attempt-v011.json). Qwen3.5-0.8B Q4_0,
 prompt, command gate and native CPU library are unchanged.
 [Task guide and physical checks](docs/task-guide.md). Both signed packages inspected;
 [v0.11 is published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11); both APKs and both evidence files match server
@@ -34,8 +38,8 @@ non-unknown proposals. This is host evidence, not ASR, autonomy or phone accurac
 **133 JVM tests pass**; lint zero errors/62 warnings. Both signed APKs passed
 model/native/license/permission inspection. Light installed with matching APK and
 retained private-model identities; paused focus, observation off, 100 virtual points
-and permissions were unchanged. The phone remains asleep, so current command,
-voice, countdown and floating proof is pending. Optional movable Mira retains
+and permissions were unchanged. At that installation the phone was asleep; the later v0.11 countdown above
+supplies one current typed case. Voice and floating proof remain pending. Optional movable Mira retains
 reviewed Show and Open/Pause focus/Hide controls; screen-off/lock/revocation ends
 floating mode. [Companion proof gates](docs/floating-companion.md),
 [full remaining deliverables](docs/remaining-deliverables.md).
@@ -67,7 +71,7 @@ execution remain pending.
 are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
 reflects v0.10 with original animations, measured captions and source-bound figures.
 [Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);
-complete human listening and live-phone proof remain pending.
+complete human listening and a recorded current phone demonstration remain pending.
 The [4:53 baseline pitch and captions](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.3)
 remain preserved in 0.3. The bundled APK includes Qwen; the light APK needs
 model preparation. Both currently use an optimized ARM64 CPU library verified on
@@ -82,6 +86,14 @@ The goal is a private assistant that understands a short command, notices when a
 user's chosen distraction budget is exceeded, explains its nudge and helps complete
 a task. Android native actions provide a reliable starting point; broader screen
 automation follows permission and sandbox testing. The penalty balance is virtual.
+
+## Task-planning experiments — unpromoted
+
+Actual local-model host planning failed useful-task criteria: the first candidate
+served 0/8 benign goals; the example-based repair fully met 4/10 fresh benign
+criteria and included nonsense/negation failures. Both experiments and a compiled
+but unapplied reviewed-import scaffold are preserved. The selected v0.11 app,
+model, prompt and native remain unchanged. [Evidence](docs/task-draft-research.md).
 
 ## Start here
 

@@ -1,0 +1,83 @@
+{
+  "dependencies": [
+    {
+      "bytes": 77904,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-batched-bench-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-batched-bench-impl.dylib",
+      "sha256": "6df90c7c269132ab9d44d80f2f97058a0190471edd8d5f363fc17886b19cbeb2"
+    },
+    {
+      "bytes": 313344,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-bench-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-bench-impl.dylib",
+      "sha256": "3385b98ecb190445629c340340df7e62e8f095eb36747d8f9e558be33c28fa71"
+    },
+    {
+      "bytes": 1417200,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-cli-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-cli-impl.dylib",
+      "sha256": "345618757bbbfbefd2f04c98d1cfce9ac0a33026b637f7c2a87840b07768c8f5"
+    },
+    {
+      "bytes": 4695872,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-common.0.0.9620.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-common.0.0.9620.dylib",
+      "sha256": "c2a8ada858ee78c9cc8db237b60a1c04099d445ac32e04401e3756b5f42a5541"
+    },
+    {
+      "bytes": 128624,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-completion-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-completion-impl.dylib",
+      "sha256": "20226f116919f0797b9dcd020e6567439ac44fa7f70c72f67c20efee78df290c"
+    },
+    {
+      "bytes": 76448,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-fit-params-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-fit-params-impl.dylib",
+      "sha256": "e30931edf276aefa37902f1007e98df94a0c7403d419ddbb86d245f558f17e65"
+    },
+    {
+      "bytes": 149888,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-perplexity-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-perplexity-impl.dylib",
+      "sha256": "1520958bc573348855ae787f05d462e1163098183dadc66a56a4e691403b6bee"
+    },
+    {
+      "bytes": 106176,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-quantize-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-quantize-impl.dylib",
+      "sha256": "523915b90c7e56f6f79721333850394fd16d30d6f6a1492553b978e07ad99e4b"
+    },
+    {
+      "bytes": 12045712,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama-server-impl.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama-server-impl.dylib",
+      "sha256": "320b3e4d6dc26560b0bbce44e6c8439cf3c8e3f549ccdcd4e1a20b8d3cd761b7"
+    },
+    {
+      "bytes": 2339968,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libllama.0.0.9620.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libllama.0.0.9620.dylib",
+      "sha256": "2a094b66943b6f6da3eb39cf7360ebd2cef50a864f184bd58a21508ad4ed8668"
+    },
+    {
+      "bytes": 877648,
+      "link_path": "/opt/homebrew/opt/llama.cpp/lib/libmtmd.0.0.9620.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/llama.cpp/9620/lib/libmtmd.0.0.9620.dylib",
+      "sha256": "8c564cec374c180dd1c428be50351ddfc7ab7c32413ea5395e3d170952b20520"
+    },
+    {
+      "bytes": 503952,
+      "link_path": "/opt/homebrew/opt/ggml/lib/libggml-base.0.16.0.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/ggml/0.16.0/lib/libggml-base.0.16.0.dylib",
+      "sha256": "c0dcbb8438e3f1ccd40f3a49246c1ea341d813c273bb599448c9766fb2392b56"
+    },
+    {
+      "bytes": 77920,
+      "link_path": "/opt/homebrew/opt/ggml/lib/libggml.0.16.0.dylib",
+      "resolved_path": "/opt/homebrew/Cellar/ggml/0.16.0/lib/libggml.0.16.0.dylib",
+      "sha256": "1c131c59813cb27b2bed388fa27db8647416e74b9fbd5384c22db60db32617d3"
+    }
+  ],
+  "scope": "Read-only installed native dependency inventory collected after the single completed capture; not a pre-capture freeze or proof of each backend being used"
+}

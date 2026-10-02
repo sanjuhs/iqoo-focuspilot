@@ -15,13 +15,44 @@ The auditor reads only named project evidence, APK ZIP contents, host XML report
 
 “Verified” is scoped to a specific byte, arithmetic, signature, source binding or metadata check. JSON reports of physical behavior remain attributed observations, not independent repetitions. The machine-readable report always leaves `goal_complete` false.
 
+## Unpromoted task-planning evidence
+
+Two frozen actual host-JNI captures have archived prompts/grammar/source and
+review bindings. The first declines all benign goals; the example-based repair
+meets only 4/10 fresh benign criteria and includes nonsense and a negation violation.
+Six focused research tests and no-model evidence verification pass. Neither
+candidate is promoted. The reviewed-import integration compiled with 156 JVM tests
+and zero lint errors/76 warnings, but remains an unapplied patch; its signed light
+candidate was inspected without installation or release. The selected Android
+source was restored and rebuilt with 143 tests/zero lint errors/65 warnings.
+[Scope and reproduction](task-draft-research.md),
+[unselected source/build record](../prototype/task-draft-ui/README.md).
+This evidence changes the next action to model-quality repair, not automatic
+step guidance. The full physical workflow and submission requirements remain incomplete; the
+separate countdown below establishes one narrow current phone branch.
+
+## Current v0.11 physical countdown
+
+An attributed current Nothing-phone record binds source, matching installed light
+APK, retained model, native library and harness bytes. The typed 20-second request
+produced a reviewed `start_focus` proposal (1,932 ms native CPU inference); explicit
+confirmation was followed by active checkpoint and automatic pause, exactly
+20,000 ms additional persisted time and unchanged observation-off/100 points.
+[Successful record](current-countdown-phone-v011.json),
+[failed first test](countdown-first-attempt-v011.json). Seven harness tests pass;
+missing lock metadata is rejected and asynchronous checkpoint writes are polled.
+The public artifact auditor does not independently replay this physical outcome.
+Task-guide, ASR/TTS, monitoring, floating, sleep/recovery, disconnected execution,
+Clock, iQOO/NPU and Office Kit remain incomplete. App packages are unchanged.
+
 ## Current 0.11 task guide
 
 Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds private authored steps with goal/revision
 checks, explicit progress/undo, reviewed replacement/clear and local readback.
 143 JVM tests pass; lint zero errors/65 warnings. Light signature/native/licenses/
 permissions and installed APK/private-model identities are verified; paused/off/100
-unchanged, no wake/UI/action/permission operation. Actual task/readback/recovery is
+unchanged during installation, with no wake/UI/action/permission operation then.
+A separate later countdown test is recorded above. Actual task/readback/recovery is
 incomplete. [Contract](task-guide.md), [immutable artifacts](task-guide-artifacts.json). Both
 signed version-11 packages pass model/native/license/permission/version checks;
 the [v0.11 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11) contains both APKs and both immutable evidence files

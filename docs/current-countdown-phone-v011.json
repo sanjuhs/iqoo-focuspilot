@@ -1,0 +1,83 @@
+{
+  "research_only": true,
+  "source_commit": "e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a",
+  "apk_sha256": "6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "backend": "CPU/KleidiAI I8MM",
+  "native_identity_scope": "Library from local APK matching installed APK SHA256",
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "typed_synthetic_test": true,
+  "requested_seconds": 20,
+  "permissions_changed": false,
+  "offline_disconnect_verified": false,
+  "npu_verified": false,
+  "results": [
+    {
+      "command": "Start focus for 20 seconds",
+      "capture": false,
+      "intent": "start_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1932.0,
+      "prefill_ms": 788.0,
+      "decode_ms": 1144.0,
+      "action_executed": true,
+      "confirmation_tapped": true,
+      "persisted_active_checkpoint": {
+        "activeCheckpoint": "true",
+        "observe": "false",
+        "points": "100",
+        "elapsedCheckpoint": "37333"
+      },
+      "active_after_confirmation": true
+    }
+  ],
+  "before_checkpoint": {
+    "activeCheckpoint": "false",
+    "observe": "false",
+    "points": "100",
+    "elapsedCheckpoint": "37331"
+  },
+  "synthetic_request": "Start focus for 20 seconds",
+  "speech_recognition_tested": false,
+  "auto_paused_without_user_stop": true,
+  "elapsed_checkpoint_delta_ms": 20000,
+  "virtual_points_unchanged": true,
+  "observation_remained_off": true,
+  "completed": true,
+  "final_focus_paused": true,
+  "final_checkpoint": {
+    "activeCheckpoint": "false",
+    "observe": "false",
+    "points": "100",
+    "elapsedCheckpoint": "57331"
+  },
+  "recorded_date_ist": "2026-10-02",
+  "harness_sha256": {
+    "scripts/phone_timed_focus.py": "5b157c19cb09bab3ce9659c938833231f54e6cdfb6464b04f20b6950bb14aa2a",
+    "scripts/phone_model_smoke.py": "91e709fb8201141a3a09f48a14b874cf902c4082cefcc2f8b70d41a4fd51e27f",
+    "scripts/phone_focus_actions.py": "1b069324d42c87a8cf2c25614707632e9d426b735c7c81d8b8dccaeeda26ee6c"
+  },
+  "raw_report_sha256": "73ed347a655956ff2c20ca8058ce237efc4422d1a6ec01c2a57ccc9e69acc00c",
+  "scope": "One typed synthetic request on installed research v0.11; reviewed own-app focus start and process-live automatic countdown completion. This is an attributed physical observation, not an independent replay.",
+  "not_tested": [
+    "speech recognition",
+    "TTS",
+    "task-guide UI or readback",
+    "distraction observation",
+    "floating companion",
+    "deep sleep",
+    "process recovery",
+    "network disconnect",
+    "Android Clock alarm",
+    "iQOO",
+    "NPU",
+    "Office Kit"
+  ],
+  "prior_failure_record": "docs/countdown-first-attempt-v011.json"
+}

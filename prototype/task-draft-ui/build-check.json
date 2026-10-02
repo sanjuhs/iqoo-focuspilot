@@ -1,0 +1,64 @@
+{
+  "kind": "Unselected task-draft UI integration; compiled source only, not selected release or actual Android behavior",
+  "patch_base_commit": "65f59a001405e2d5c351d03e938ee40ce5b4b174",
+  "patch_sha256": "0524d1d4cdecdfb240f2b76227f0726f217e33a1dc98312463cac860d9c3bb4e",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "e7b19df0f0569de01aec9889e55bb12455a14bbf6f0161c2e85bde6df3b12c2d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "21e733023ce81d03d2d93230c6edf1bd10f010620b273d0e04c6695ac2f70257",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "56ca219f16d10cf6f16e9f47464fc5b2949cfb2acabdd0f7a1c5fc5ddf92103f",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "3299d4fc1e6d9fecd1ed17f6210ff262a0f506ee356eef088049e41e9cacd60b",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java": "6879d76cb6ad4e4ff41262c4e54d8123ded34dfdefdcaee5c81024d874b837b2",
+    "scripts/build_android.sh": "0d1887efb6eeb7ea8a255bed7d43b7b65e7aeab7a356df2d8a62b793fa81c09a",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskDraft.java": "129ee72efbf057d03cd3e11f80d3c9a055295ebd2262d3e4f6d4b67440eaf52f",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/TaskDraftTest.java": "b538210870981907fa724c08f18c6eb027146cf599e8bfcd2e7f4eb922477d74",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskPlan.java": "cb68783dbeb6375c2979cf2571ab39925678850ea710ac6ffc690209ddffbfba"
+  },
+  "command": "./gradlew testDebugUnitTest assembleDebug lintDebug",
+  "terminal_exit_code": 0,
+  "jvm": {
+    "tests": 156,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Warning": 76
+  },
+  "host_report_sha256": {
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.TrainedPolicyTest.xml": "74d53de2998b3aacd9f1d44392af070000ddeffbf75c848221105ac1c685785c",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.ConversationalCommandGateTest.xml": "a6035f21de7f73c6ef6869bfa19a2f86e884a6a45904459d3f2109cdb68b1546",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.BudgetPersonalizationIntegrationTest.xml": "10d4d2ff3ea122b91584afe69b6d9140c1c752a40a67bcfae42f41af36e7c5e8",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.CoreTest.xml": "760c3186a1bbb8e456c42ae7e43da5c18505434e13302fe5b2df129b02c4ac0a",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.MonitorLifecycleTest.xml": "ac0daa2531f012ff392183d52e5c61789ed8acecc07cbf855a1a2611b0304a4a",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.TimedFocusSessionTest.xml": "824d5a57634500ad23719f8f9558385cec46658841d625a92e9a2a4c457e9014",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.CommandNumberWordsTest.xml": "da898ab1e8561fced3802377896f6409cbee689510636fd9cd5c6467876fbf86",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.VoiceDraftStateTest.xml": "2fde8a2526ccae3040d75fae23a7ec7c406f1f1da2ce9fe7fba7416116ad85d6",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.FewShotPolicyTest.xml": "4ab5b0b97a43f55b5e05b37f0b032be87fe5ee9183ffbb78df9ea8ecedfb4e40",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.ModelCommandGateTest.xml": "8e685fd687875e0109ba58149ef341415ddf7d201aaf88b7d723c2468a89aaa3",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.TaskPlanTest.xml": "d7fd29bc65734b4b0b4962553f2e4a447820b2956abd40c5d8bed476331b475f",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.FocusDataExportTest.xml": "ba715bdc5db4563b414e94d679b4080683d08bec4e687334ded6e922c09fac84",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.ObservationSnapshotTest.xml": "fee52ff411d9ee7e80f9cf4b14d5fe8daedbcff7d068e09267a086c1aa31874c",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.TaskDraftTest.xml": "d256bbd9ecde49dfa4c337a90b674745f2a0910c832a2aff7006df27bcd4260e",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.SandboxActionGateTest.xml": "efd9c95e2b86f67df0b47f70c0b1b7f2e0544467975bd497f12766279c707c91",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.RetainedForegroundLabelPolicyTest.xml": "000475454cb897a8750a03daf450e1193710e0e0ff952048ba08f368d41db5ee",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.ObservedNudgeGateTest.xml": "b757559298ae645e798247b461a834079fffc3f006e2fdf0d77adfb140aef050",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.FloatingWindowPositionTest.xml": "70bf1be764631ce57763c4224d07f4debc674ed95841c561076ac101056b39da",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.FocusGoalConfigTest.xml": "5caf67620d07a0718812e391760abea655a65c04e10e4f98f296757213176355",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.NaturalCommandGateTest.xml": "ae236f3d398757f1fafb894621d0cfd13afd42cfd3df7b82a04f1a4b758d7767",
+    "artifacts/unselected-ui-checks/TEST-dev.focuspilot.prototype.LivePreferencePolicyTest.xml": "5df60d488850de12d3669c109894d5961939d14f1f4085f0b30b8b269ed9f468"
+  },
+  "lint_report_sha256": "aa3e310827d74e0b373a7b0b9f4f6bddb114953cef44d3baf857dbb2c76304ee",
+  "unselected_apk": {
+    "file": "artifacts/focuspilot-unselected-task-draft-ui-light.apk",
+    "bytes": 5513464,
+    "sha256": "03d8aade1db4dab33a3da87080f054e2b13efd77bad1c3660b5edc0af2a61bf8",
+    "version_code": 12,
+    "version_name": "0.12-local-task-drafts-research"
+  },
+  "installed": false,
+  "released": false,
+  "phone_ui_tested": false,
+  "selected_app": "research-v0.11, unchanged; first two local planning candidates not useful enough for promotion",
+  "scope": "Recorded build and source byte identity; patch application check and SDK package inspection reported separately. No NPU/Office Kit/voice/UI outcome.",
+  "patch_archive_normalization": "Removed two space-only context markers; git apply reconstructed every archived source hash unchanged."
+}

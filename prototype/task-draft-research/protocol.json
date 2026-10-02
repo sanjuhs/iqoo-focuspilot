@@ -1,0 +1,14 @@
+{
+  "completed_schema": "Requires actual EOS plus strict shared parser for exactly3 nonduplicate steps; exact empty array is explicit decline, not a usable plan",
+  "counts": {
+    "benign": 8,
+    "total": 12,
+    "tricky": 4
+  },
+  "deadlines": "20-second nativeCancel per request; 300-second overall subprocess deadline",
+  "limits": "Synthetic cases, informed author; no real accounts, actions, phone/voice/NPU, safety guarantee, neural necessity or automatic promotion",
+  "origin": "Pre-event local research, not eligible event-created code",
+  "qualitative_criteria": "Each frozen fixture specifies goal-relevant steps and constraints. Author reviews after capture; subjective feasibility evidence, no fabricated automated accuracy.",
+  "sampling": "Greedy, fresh recurrent/KV state, CPU1024 context4 threads, no thinking, max128, capturefalse",
+  "selection": "One agreed fixed shared prompt/grammar, no candidate selection or post-output repair"
+}

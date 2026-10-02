@@ -1,0 +1,37 @@
+{
+  "activations_all_empty": true,
+  "capture_enabled_all_false": true,
+  "case_details_sha256": "66d1ee019a57e2e2ab1e848b339705f2937fc2d159144e170aea1001956e8795",
+  "counts": {
+    "captured": 14,
+    "completed_eos_and_schema": 14,
+    "expected": 14,
+    "explicit_declines": 4,
+    "invalid_or_incomplete": 0,
+    "usable_shape_three_steps": 10
+  },
+  "cpu_only_all_true": true,
+  "freeze_sha256": "8d97801f631d0636f7d87a64c8bc6b1295c6c6004ad461aeef70cd2d690c01bd",
+  "limits": "Single greedy capture, tiny synthetic set, informed subjective review, host CPU only, no safety/generalization/phone proof",
+  "model_load_ms": 394.777083,
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "native_sha256": "ad57cd04bcb439a94b1f82800b91125dc07da23f08867fb854020aa18beccd7e",
+  "origin": "Pre-event host CPU draft feasibility research; no actions",
+  "process": {
+    "exit_code": 0,
+    "output_sha256": "45596fe5f76d7b1686e978c4e4a04b0c393da4b42ceb9bd84f2b77dbcac32191",
+    "stderr_sha256": "b1d3dbee9bb14d0eabdb02e8f2e13382fca8c28b5b70bfc3d13b6e6c3e98c725",
+    "timed_out": false,
+    "wall_seconds": 23.10124599991832
+  },
+  "qualitative": "Pending author review against prewritten fixture criteria; shape/EOS alone do not establish usefulness",
+  "timing": {
+    "first_native_total_ms": 1493.7598,
+    "generated_tokens_max": 103,
+    "generated_tokens_min": 4,
+    "native_total_median_ms": 1686.3458500000002,
+    "prompt_tokens_max": 237,
+    "prompt_tokens_min": 223,
+    "warm_native_total_median_ms": 1772.6359
+  }
+}

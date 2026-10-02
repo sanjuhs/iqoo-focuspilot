@@ -2,6 +2,16 @@
 
 Prepared 2 October 2026. This is a pre-event research implementation. The integrated build passes 105 JVM tests and lint with zero errors and 59 warnings. Both signed debug APKs passed package/native/model/license checks; [artifact identities](timed-focus-artifacts.json) bind them to source `6bd4841b170be0445470eff9977133bc2accc8f6`. [Both APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). Actual v0.7 phone countdown verification is pending: the light APK installed, but the own-app UI guard refused the unlocked-own-app foreground precondition before inference or action.
 
+## Later v0.11 physical branch
+
+The [current phone record](current-countdown-phone-v011.json) verifies one actual
+reviewed typed 20-second countdown on the installed v0.11 light APK: active state,
+automatic pause, exact 20,000 ms additional persisted time and paused/off/100 final
+state. Reported native inference was 1,932 ms. The [first failed harness attempt](countdown-first-attempt-v011.json)
+is preserved; polling now waits for asynchronous disk persistence. Other physical
+branches below, including recovery, deep sleep, replacement and voice, remain
+pending. The original v0.7 installation description above is historical.
+
 ## Choosing and reviewing a duration
 
 The dashboard's **Focus for 25 minutes** button opens a review explaining that a new countdown replaces the current countdown while keeping accumulated focus time. Only the positive confirmation starts it; cancellation leaves the session unchanged. This quick action needs no model inference.
@@ -57,9 +67,9 @@ synthetic commands/metrics; it grants no OS permissions.
 
 ```sh
 python3 scripts/phone_timed_focus.py --serial YOUR_DEVICE_SERIAL \
-  --local-apk artifacts/focuspilot-research-v07-light.apk \
-  --expected-apk-sha256 1190085d5bad582f8e0fea3728d2f6362f079fa5126a862c2e5ff6aa871662c7 \
-  --source-commit 6bd4841b170be0445470eff9977133bc2accc8f6 \
+  --local-apk artifacts/focuspilot-research-v011-light.apk \
+  --expected-apk-sha256 6541ced715c48d8fd226e6dd2c8ff762485cda6901ded06e43bae4f97893adc2 \
+  --source-commit e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a \
   --output artifacts/timed-focus-repeat.json --execute-reviewed-countdown
 ```
 

@@ -4,6 +4,27 @@ FocusPilot is the working name for an opt-in, local Android productivity assista
 It observes permitted phone context, makes fast bounded decisions, explains its
 reasoning, and helps the user act through voice and a small set of reliable tools.
 
+## Current v0.11 phone countdown
+
+An actual typed Qwen3.5-0.8B request on Nothing produced a reviewed 20-second
+focus proposal (1,932 ms reported CPU inference), which was confirmed and completed
+automatically. Persisted elapsed time increased exactly 20,000 ms; focus ended
+paused, observation off and points 100. One synthetic process-live case establishes
+this narrow loop; task-guide UI, voice, sleep/recovery, iQOO/NPU and Office Kit
+remain pending. The failed immediate checkpoint test is preserved separately;
+the harness now polls asynchronous persistence and requires observed awake/unlocked
+own-app foreground state. Seven harness tests pass.
+[Physical record](docs/current-countdown-phone-v011.json),
+[failed first attempt](docs/countdown-first-attempt-v011.json).
+
+## Task-planning experiments — unpromoted
+
+Actual local-model host planning failed useful-task criteria: the first candidate
+served 0/8 benign goals; the example-based repair fully met 4/10 fresh benign
+criteria and included nonsense/negation failures. Both experiments and a compiled
+but unapplied reviewed-import scaffold are preserved. The selected v0.11 app,
+model, prompt and native remain unchanged. [Evidence](docs/task-draft-research.md).
+
 ## Task guidance checkpoint — v0.11
 
 Source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds a private, user-authored plan for the

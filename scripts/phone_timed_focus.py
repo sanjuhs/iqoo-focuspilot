@@ -20,6 +20,16 @@ def checkpoint(lab):
     return state
 
 
+def await_checkpoint(lab,predicate,timeout=3):
+    """SharedPreferences.apply writes to disk asynchronously; wait for observed state."""
+    deadline=time.monotonic()+timeout
+    while True:
+        current=checkpoint(lab)
+        if predicate(current):return current
+        if time.monotonic()>=deadline:raise RuntimeError('Expected persisted focus state did not arrive')
+        time.sleep(.1)
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--serial',required=True)
@@ -46,6 +56,7 @@ def main():
       'model_sha256':model,'backend':'CPU/KleidiAI I8MM','native_identity_scope':'Library from local APK matching installed APK SHA256',
       'device':{name:lab.adb('shell','getprop',prop).strip() for name,prop in [('manufacturer','ro.product.manufacturer'),('model','ro.product.model'),('soc','ro.soc.model'),('api','ro.build.version.sdk')]},
       'typed_synthetic_test':True,'requested_seconds':20,'permissions_changed':False,'offline_disconnect_verified':False,'npu_verified':False,'results':[]}
+    report['before_checkpoint']=before
     def save():
         args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2)+'\n')
     try:
@@ -64,8 +75,9 @@ def main():
         # Inspect only our own synthetic review dialog, and never confirm dropped duration.
         if not any('Start a focus countdown for 20 seconds' in n.get('text','') for n in lab.nodes()):raise RuntimeError('Review did not preserve requested duration; no confirmation')
         began=time.monotonic();lab.tap('Confirm action',scroll=False)
-        active=checkpoint(lab)
-        if active['activeCheckpoint']!='true' or active['observe']!='false' or active['points']!=before['points']:raise RuntimeError('Initial focus postcondition failed')
+        result['confirmation_tapped']=True;save()
+        active=await_checkpoint(lab,lambda state:state['activeCheckpoint']=='true' and state['observe']=='false' and state['points']==before['points'])
+        result['persisted_active_checkpoint']=active
         result['action_executed']=True;result['active_after_confirmation']=True;save()
         while time.monotonic()-began<35:
             current=checkpoint(lab)
@@ -80,6 +92,10 @@ def main():
     finally:
         lab.adb('shell','am','start','-n',PACKAGE+'/.MainActivity','-f','0x04000000');lab.guard()
         if checkpoint(lab)['activeCheckpoint']=='true':lab.tap('Stop focus',scroll=False)
-        report['final_focus_paused']=checkpoint(lab)['activeCheckpoint']=='false';save()
+        try:
+            final=await_checkpoint(lab,lambda state:state['activeCheckpoint']=='false')
+            report['final_focus_paused']=True;report['final_checkpoint']=final
+        except RuntimeError:report['final_focus_paused']=False
+        save()
 
 if __name__=='__main__':main()
