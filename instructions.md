@@ -1,5 +1,14 @@
 # Instructions — FocusPilot
 
+## Current entry flow — v0.15 light research
+
+Keep the user-selected Qwen3.5-0.8B Q4_0. Ask Mira from the bubble/notification opens
+the foreground model screen. Dashboard typed/voice drafts can be handed over
+explicitly for editing; entry starts no recording, inference or action. The light
+APK passes 165 JVM tests and package inspection, and installs with protected state
+preserved. Live entry, rotation, ASR and permissioned floating remain unverified.
+The bundled v0.14 package is historical. [Evidence](docs/companion-entry-v15.md).
+
 ## Current validator — v0.14 research build
 
 Keep Qwen3.5-0.8B Q4_0 and its original prompt. The qualified full-request gate

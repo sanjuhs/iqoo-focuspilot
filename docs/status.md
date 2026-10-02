@@ -2,6 +2,25 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Foreground Ask Mira entry — installed v0.15 light research
+
+Qwen3.5-0.8B Q4_0, original prompt, selected validator and native library remain
+unchanged. Floating/notification Ask Mira now targets the foreground command screen;
+the dashboard has an explicit editable draft handoff. Entry triggers no recording,
+inference or action. Recreation preserves bounded edits without replaying an old
+Intent or restoring an action review. All 165 app JVM tests pass; lint zero errors/
+64 warnings. Signed light packaging passes version/native/license/permission checks.
+
+The light APK installed with exact protected preferences/model/checkpoint/two-grant/
+service preservation; original test APK stays unchanged. Focus remains paused,
+observation off, 100 virtual points and 97,331 ms. No phone UI/model/voice/overlay
+was exercised. Actual entry/rotation/ASR/persistent use, iQOO NPU, Office Kit and
+eligible accepted submission remain pending; the full goal remains active.
+Only light v0.15 is produced within the strict 15 GB budget. The standalone bundled
+v0.14 and prior demo retain their historical behavior attribution.
+[Changes, physical scope and build procedure](companion-entry-v15.md),
+[package and sanitized installation identities](companion-entry-v15-artifacts.json).
+
 ## Original-request validator — installed v0.14 research
 
 The unchanged Qwen3.5-0.8B Q4_0 capture feeds both gates on 100 fresh informed

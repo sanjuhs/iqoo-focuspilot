@@ -1,0 +1,221 @@
+{
+  "kind": "pre-event foreground companion entry research; installation identity is not interaction proof",
+  "app_source_commit": "c2062de0a46e3e16c2bf474a18f5b480d764daf5",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "c6d93cf4fa11b5d65805b60af567ce9f417b4f0d411d8cec16cc0c976b4673cc",
+    "prototype/android/app/src/main/AndroidManifest.xml": "674fa1d7c253fccf55c2d29a77ede84b688b28713e694788df724825d2c25adf",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "fa64784e23533611bd771a9ae6258828efd03ac3a9d84e81b6a60b27b409bdd1",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "5da5b642941fd342005636075cc225cedc766f9510c6e14fc35e84d8255c9fc9",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandDraftHandoff.java": "f5d11a0da9fe123573f283dcf44ca6a70bdea1d522b5860a34e0166fada02067",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingCompanionService.java": "9992d1de0be0b62ffe6403b9481cf1627ab02aa9805e2b4191c9cd7ce0b6826d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionView.java": "6657249dd728e43842d90bb46f9b9079b24ef59a480cba185d9177f41458795b",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/CommandDraftHandoffTest.java": "fc668d2abce54ef3d62b82b4e78c934ebeb03d1cea4ee93b4eea346ce6e73e8e"
+  },
+  "version_code": 15,
+  "version_name": "0.15-companion-entry-research",
+  "packages": [
+    {
+      "artifact": {
+        "name": "focuspilot-research-v015-entry-light.apk",
+        "bytes": 5513492,
+        "sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76",
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "bundled_model": false,
+        "version_code": 15,
+        "version_name": "0.15-companion-entry-research"
+      },
+      "audit": {
+        "identity": {
+          "status": "verified",
+          "scope": "local byte identity against declared manifest",
+          "observed": {
+            "bytes": 5513492,
+            "sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76"
+          },
+          "declared": {
+            "bytes": 5513492,
+            "sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76"
+          }
+        },
+        "runtime_verified": false,
+        "android_payload_present": true,
+        "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+        "native_hash_parity": true,
+        "licenses": {
+          "FocusPilot-MIT.txt": true,
+          "Qwen3.5-Apache-2.0.txt": true,
+          "llama.cpp-MIT.txt": true,
+          "KleidiAI-Apache-2.0.txt": true,
+          "KleidiAI-BSD-3-Clause.txt": true,
+          "KleidiAI-notices.txt": true
+        },
+        "model_files": [],
+        "bundle_presence_parity": true,
+        "permissions": [
+          "android.permission.PACKAGE_USAGE_STATS",
+          "android.permission.RECORD_AUDIO",
+          "com.android.alarm.permission.SET_ALARM",
+          "android.permission.POST_NOTIFICATIONS",
+          "android.permission.FOREGROUND_SERVICE",
+          "android.permission.FOREGROUND_SERVICE_SPECIAL_USE",
+          "android.permission.SYSTEM_ALERT_WINDOW"
+        ],
+        "package_identity": true,
+        "internet_absent": true,
+        "permission_scope": "parsed from packaged APK, not user permission grants",
+        "version_parity": true,
+        "signature": "verified cryptographic APK signature; no trusted publisher identity inference",
+        "status": "verified"
+      },
+      "jvm": {
+        "tests": 165,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Error": 0,
+        "Fatal": 0,
+        "Warning": 64
+      },
+      "project_bytes": 14419536507
+    }
+  ],
+  "selected_model": {
+    "name": "Qwen3.5-0.8B Q4_0",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "changed": false
+  },
+  "prompt_gate_native_changed": false,
+  "jvm_report_sha256": {
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.BudgetPersonalizationIntegrationTest.xml": "a90e5085e2a9578a2ed500be6d711469fd34535a5798c7794bb2bbe6fdb3c476",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CandidateGateTest.xml": "8247ff0d3a13841ff84c893feb8b2725b9992f6de1df6885f7e9db2a6774ca4a",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CommandDraftHandoffTest.xml": "cab84e8f2fd1c166438ede3f7f4b0880c5790b6397eaede665b7e47d897248e8",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CommandNumberWordsTest.xml": "54794991a9538af59749eee899eeee30aeccf281c7e1c9702300521fc64807e5",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ConversationalCommandGateTest.xml": "dede5c75356b168e03d86f2943464f5ad29b49f787b7e55a2042eea06ee50161",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.CoreTest.xml": "db859722020eb44582e3a1c45ee968152b3f951943e6cda769433ff519e15cb1",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FewShotPolicyTest.xml": "4bbc0d19a4d2fac6e81b44984ac8b7c69e4d07dbbbdb2839cfab40a3c9c87dc9",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FloatingWindowPositionTest.xml": "486022111e340b0a974df961078b5135c08cb0dc2b6196d6cd09246e8386f885",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FocusDataExportTest.xml": "1f2b9f038549b71376d9584235e2c268beaf174bb0b5f163ebfc825edb531d16",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.FocusGoalConfigTest.xml": "a97fecdc7b810cb506d3f8b55f2be3645a0a6ac192e60f82e970380e59088557",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.LivePreferencePolicyTest.xml": "3adde8c252c9efdf33dd8d062691dd16ecf7590cc4c3ebd5832724796406d13e",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ModelCommandGateTest.xml": "1f936a6fae062f8c4e734d985a2a7f3be36097f41212039d8512d8e9d1014e9e",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.MonitorLifecycleTest.xml": "7e0e541fbd70477fef8cf8bfb1055c492063667c5006e8f121603917490bf3fb",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.NaturalCommandGateTest.xml": "f065320c86aef85f0c0f125b79c1e887a38846f8123ba9abdeea4b2e2861bb75",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ObservationSnapshotTest.xml": "0304832bb56b52f27337dd10424bb8afd65dff7e73eda185f84b83db5f701042",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ObservedNudgeGateTest.xml": "ecd592b8fae0f8d9b2967fc140ed4ced9e733f5274b582d55f901f1025d065a0",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.ReadbackStateTest.xml": "c27fd61b1c55f62cd39745156d645724c184bf8260b4f026872ff5069aa91cdb",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.RetainedForegroundLabelPolicyTest.xml": "9ebc9a3ae0d8bf46658b9f2923cd52c71cc400fa511d351805c06b2f6d639809",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.SandboxActionGateTest.xml": "89fbd2b054702add72cd60ff70ef8160dc45258c99aeec8446c9beb4d483406d",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TaskPlanTest.xml": "180219d02236e7dc47c750ff885f6d8a7eab2aeeadab02cf149e52f8754b9f18",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TimedFocusSessionTest.xml": "a23605c471c21069ff8928b8f9cd1d1b3d91ef6b814f6a4628e31e0067f54638",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.TrainedPolicyTest.xml": "47145825f8c2271fb88b4951bdae4364e062e3df620f31d55a35d785ce226354",
+    "prototype/android/app/build/test-results/testDebugUnitTest/TEST-dev.focuspilot.prototype.VoiceDraftStateTest.xml": "17bff78c7de9c382990844696b75df4bb74fa80b3301f8f0ae67e70094c295dc"
+  },
+  "lint_report_sha256": "300c027c123fe61018653324df1851e55586d76d0ffd2bbaab38a7550a333524",
+  "build_command": "JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home ./gradlew testDebugUnitTest assembleDebug lintDebug -PbundleLocalModel=false",
+  "build_exit_code": 0,
+  "install_record": {
+    "kind": "v15 light installation and protected state identity only; no interaction or model test",
+    "timestamp_utc": "2026-10-02T22:24:45.897711+00:00",
+    "app_source_commit": "c2062de0a46e3e16c2bf474a18f5b480d764daf5",
+    "artifact_sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76",
+    "certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+    "before": {
+      "preferences": {
+        "focuspilot_research": {
+          "exists": true,
+          "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+        },
+        "focuspilot_live_preferences": {
+          "exists": false
+        },
+        "focuspilot_fewshot_sandbox": {
+          "exists": true,
+          "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "checkpoint": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 97331
+      },
+      "grants": {
+        "android.permission.RECORD_AUDIO": false,
+        "android.permission.POST_NOTIFICATIONS": false
+      },
+      "model": {
+        "exists": true,
+        "bytes": 563036064,
+        "inode": 1136035,
+        "links": 1,
+        "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+      },
+      "services_absent": true,
+      "installed_app_sha256": "c4c1d9a531ddc653e21a811221b7f2c4b688a8e56e1184e76855fdb9536ef593"
+    },
+    "original_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+    "installed": true,
+    "protected_state_preserved": true,
+    "ui_opened": false,
+    "wake_or_grants_or_settings_changes": false,
+    "model_inference": false,
+    "install_exit_code": 0,
+    "install_success_reported": true,
+    "after": {
+      "preferences": {
+        "focuspilot_research": {
+          "exists": true,
+          "semantic_sha256": "0f67a675375693ec8cccdf098245cb0bf7cda5a1c087f05d46d24a496ac5ecae"
+        },
+        "focuspilot_live_preferences": {
+          "exists": false
+        },
+        "focuspilot_fewshot_sandbox": {
+          "exists": true,
+          "semantic_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "checkpoint": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 97331
+      },
+      "grants": {
+        "android.permission.RECORD_AUDIO": false,
+        "android.permission.POST_NOTIFICATIONS": false
+      },
+      "model": {
+        "exists": true,
+        "bytes": 563036064,
+        "inode": 1136035,
+        "links": 1,
+        "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+      },
+      "services_absent": true,
+      "installed_app_sha256": "09ead22560d9aef6bf21031690f173b7d4862662cd8a75eaec841cbbbeb06b76"
+    },
+    "test_sha256_after": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b"
+  },
+  "private_record_sha256": "ad40ecfe179e0da2e8bd71e67b82e9a76dbc20e4d9e47b94e30786ecbe884499",
+  "documentation": {
+    "file": "docs/companion-entry-v15.md",
+    "sha256": "59b0102b6d578a06c3b9721d993b74e3e6feec1433daa0a15cc362f3175202f2"
+  },
+  "physical_interaction_verified": false,
+  "actual_asr_verified": false,
+  "overlay_or_notification_launch_verified": false,
+  "rotation_verified": false,
+  "v15_model_inference_verified": false,
+  "npu_verified": false,
+  "office_kit_verified": false,
+  "eligible_submission": false,
+  "bundled_v15_produced": false,
+  "project_bytes_at_record": 14419590956
+}

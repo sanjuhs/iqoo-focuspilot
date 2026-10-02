@@ -1,5 +1,14 @@
 # FocusPilot delivery plan
 
+## Current companion access — v0.15 light research
+
+Retain Qwen3.5-0.8B Q4_0 as requested. The floating companion/notification now
+opens the foreground Ask Mira screen; dashboard drafts have an explicit inert
+handoff. Build/165 tests/package inspection and protected installation pass. Next
+prove actual unlocked entry/edit/rotation, permitted local speech and reviewed
+actions, then persistent/floating lifecycle. No new model accuracy, NPU or always-on
+claim follows from these access changes. [Evidence](docs/companion-entry-v15.md).
+
 ## Current gate-only milestone — v0.14
 
 The frozen fresh test qualifies the original-request validator: supported complete
