@@ -1,5 +1,25 @@
 # Verified status
 
+## Balanced Qwen3.5 LoRA — measured, not promoted
+
+One fixed local 224-update run produces an audited 55,296-parameter/final-MLP
+adapter, exported as 221,888-byte GGUF. Fresh informed synthetic host native
+supported raw intent matches 41→48/50, seven gains/no losses; complete proposals
+11→12/50, one gain/no losses; Pause 3→4/8; unknown model abstentions 1→7/50.
+Both 100-request arms reach canonical actual EOS; wrong accepts 0 and all 50 unknown
+requests gate-refused. Fixed oracle ceiling 12/50 exposes validator limitations.
+Candidate fails predeclared gain 4 criterion and stays off the phone. MLX diagnostic
+supported 47→48 has 3 gains/2 losses and complete 11→11 has 1 gain/1 loss; preserved.
+
+All 42 research boundary tests pass. Actual order, learned delta, exported tensors
+and paired records receive independent read-only audits. Original phone v0.15,
+model/prompt/gate/native/permissions/services stay unchanged. This establishes
+no real-ASR, new phone performance, NPU, Office Kit or causal interpretation.
+Training data/weights/logs remain ignored; no cloud/API/download/full-model copy.
+[Source/hash/qualification evidence and replay](balanced-qwen-research.md).
+The full assistant and accepted eligible submission remain the active goal.
+
+
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
 ## Foreground Ask Mira entry — installed v0.15 light research

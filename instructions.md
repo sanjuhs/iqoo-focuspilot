@@ -1,5 +1,15 @@
 # Instructions — FocusPilot
 
+## Balanced Qwen3.5 adapter — unpromoted research
+
+Keep the installed original Qwen3.5-0.8B Q4_0. A fixed balanced LoRA improves
+fresh synthetic native supported intent matches 41→48/50, seven gains/no losses,
+but complete proposals 11→12/50 fail the predeclared four-gain requirement. The
+unchanged gate oracle accepts only 12/50. No checkpoint retry or phone promotion;
+actual voice/floating, iQOO/NPU and Office Kit work remain active.
+[Method, evidence and limits](docs/balanced-qwen-research.md).
+
+
 ## Current entry flow — v0.15 light research
 
 Keep the user-selected Qwen3.5-0.8B Q4_0. Ask Mira from the bubble/notification opens

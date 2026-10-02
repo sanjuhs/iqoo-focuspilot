@@ -1,5 +1,9 @@
 # FocusPilot · meet Mira
 
+Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
+but complete proposals 11→12/50 fail the locked promotion criterion. The original
+v0.15 remains installed. [Measured result and limits](docs/balanced-qwen-research.md).
+
 A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.

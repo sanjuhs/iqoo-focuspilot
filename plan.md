@@ -1,5 +1,16 @@
 # FocusPilot delivery plan
 
+## Balanced adapter result and next product work
+
+The fixed Qwen3.5-0.8B experiment learns an audited 55,296-parameter adapter and
+improves native supported intent matches 41→48/50 with no semantic losses. Complete
+proposals 11→12/50 fail the locked four-gain requirement; gate oracle ceiling 12/50
+identifies the next validator bottleneck. Retain original installed v0.15. Next:
+independently evaluated whole-request validation and permissioned live companion/
+voice workflows, followed by actual iQOO/NPU/Office Kit and eligible submission.
+[Full measured result](docs/balanced-qwen-research.md).
+
+
 ## Current companion access — v0.15 light research
 
 Retain Qwen3.5-0.8B Q4_0 as requested. The floating companion/notification now

@@ -1,0 +1,68 @@
+{
+  "schema": "focuspilot.balanced_final_audit.v1",
+  "result_sha256": "dfb45327b880427bb6b89a0e3e22ff5fab755cf036f20209374b0b5ba33bb9c3",
+  "source_commit": "a2ba5df7405156a2f8365e43aad160b1b73166cb",
+  "read_only": true,
+  "model_inference_or_phone_calls": false,
+  "edits": false,
+  "evidence_hashes_verified": 115,
+  "native": {
+    "supported_semantic": [
+      41,
+      48
+    ],
+    "supported_complete": [
+      11,
+      12
+    ],
+    "unknown_model_abstentions": [
+      1,
+      7
+    ],
+    "supported_semantic_gains": 7,
+    "supported_semantic_losses": 0,
+    "proposal_gains": 1,
+    "proposal_losses": 0,
+    "wrong_accepts": [
+      0,
+      0
+    ],
+    "canonical_real_eos": [
+      100,
+      100
+    ],
+    "oracle_supported_complete": 12
+  },
+  "mlx": {
+    "supported_semantic": [
+      47,
+      48
+    ],
+    "supported_complete": [
+      11,
+      11
+    ],
+    "unknown_model_abstentions": [
+      4,
+      18
+    ],
+    "supported_semantic_gains": 3,
+    "supported_semantic_losses": 2,
+    "proposal_gains": 1,
+    "proposal_losses": 1
+  },
+  "checks": {
+    "native_raw_records_and_exact_slots_recomputed": true,
+    "all_generated_and_oracle_java_gate_outputs_byte_reproduced": true,
+    "privacy_revision99_rows_byte_identical_all_other_fields_unchanged": true,
+    "all_embedded_summaries_match": true,
+    "qualification_rejection_matches_locked_threshold": true
+  },
+  "limitations": [
+    "Oracle12/50 prevents +4 gain from baseline11 with fixed gate",
+    "38supported candidate abstentions; restrictive refusal is not strong unknown recognition",
+    "Constrained grammar/trie EOS is not unconstrained format reliability",
+    "EXPLAIN intent does not prove subquestion fulfillment",
+    "Host research, unresolved lineage/quantization, serial timing, informed correlated synthetic author"
+  ]
+}
