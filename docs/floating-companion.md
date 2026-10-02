@@ -73,3 +73,15 @@ Root reported the frozen source revision **`6e483aaf9e42889794ed77c272b8a912539c
 Light APK installation and installed APK/private-model hash identity were verified; the session was already paused, observation off and points 100. No OS permissions changed. The phone is asleep and FocusPilot is not focused; no permission interaction, overlay appearance, drag, notification action or lifecycle transition has been physically tested for this release. Device-specific prerequisite states and exact physical observations remain **pending**. Actual overlay success is **unverified**; voice, continuous live monitoring, NPU and Office Kit remain separate verification gates.
 
 [Machine-readable package and installation identities](floating-companion-artifacts.json).
+
+## Published checkpoint
+
+The [0.9 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.9)
+publishes light/bundled APKs and the immutable artifact manifest. All three server
+sizes/SHA-256 digests match local files; tag resolves to the stated app-source SHA.
+After installation, one display-wake/own-app-launch attempt failed the unlocked
+own-app foreground guard. No UI was inspected, permissions granted or commands
+executed; subsequent metadata still reported asleep/not-own-app-focused. Actual
+overlay and countdown tests remain pending. This later attempt is separate from
+the initial installation snapshot.
+

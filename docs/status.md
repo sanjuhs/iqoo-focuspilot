@@ -20,6 +20,15 @@ are unchanged. Logical project size **12.05 GiB**, within 15 GB.
 [Controls and proof gates](floating-companion.md),
 [platform sources](floating-companion-platform.md).
 
+The [0.9 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.9)
+publishes light/bundled APKs and the immutable artifact manifest. All three server
+sizes/SHA-256 digests match local files; tag resolves to the stated app-source SHA.
+After installation, one display-wake/own-app-launch attempt failed the unlocked
+own-app foreground guard. No UI was inspected, permissions granted or commands
+executed; subsequent metadata still reported asleep/not-own-app-focused. Actual
+overlay and countdown tests remain pending. This later attempt is separate from
+the initial installation snapshot.
+
 ## Natural-command update 0.8
 
 - App source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3` adds full-request

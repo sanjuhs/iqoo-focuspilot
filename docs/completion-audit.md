@@ -30,6 +30,15 @@ original-position drag math, not Android windows or OEM process survival. Worksp
 logical files total **12.05 GiB** including ignored builds, models and releases.
 [Contract](floating-companion.md), [identities](floating-companion-artifacts.json).
 
+The [0.9 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.9)
+publishes light/bundled APKs and the immutable artifact manifest. All three server
+sizes/SHA-256 digests match local files; tag resolves to the stated app-source SHA.
+After installation, one display-wake/own-app-launch attempt failed the unlocked
+own-app foreground guard. No UI was inspected, permissions granted or commands
+executed; subsequent metadata still reported asleep/not-own-app-focused. Actual
+overlay and countdown tests remain pending. This later attempt is separate from
+the initial installation snapshot.
+
 ## Previous 0.8 addition
 
 Both signed APKs are bound to app source `a214bd7fc6ddd3cc3917d7a1f1aa9d854b7f3eb3`.
