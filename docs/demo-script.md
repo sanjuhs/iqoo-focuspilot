@@ -2,9 +2,14 @@
 
 Prepared 2 October 2026, Asia/Kolkata. **This is a storyboard, not a record of completed capabilities.** Read [architecture.md](architecture.md), [hackathon.md](../hackathon.md), and [status.md](status.md) before filming. The official guide calls for a compelling 3–5 minute pitch. Target **4 minutes**. [iQOO event guide](https://iqoo.reskilll.com/guide)
 
+The rendered pre-event research pitch uses [this editable narration](research-pitch-script.md)
+and `scripts/render_pitch_video.py`: original graphics, a sanitized app still,
+measured local narration and captions. It explicitly labels research, simulations
+and remaining work. It is not a continuous live phone demo or an eligible event entry.
+
 ## Two different deliverables
 
-The user's 3 October morning target is an early concept/application handoff unless the signed-in dashboard explicitly requires something else. For that video, show the problem, architecture, research, and actual completed diagnostics. Label storyboard screens “Proposed experience.” An actual pre-event prototype under `prototype/android` may be shown with its real research date and explicit “Pre-event laboratory prototype; not event-created submission” label. Only claim capabilities that it has demonstrated; a rules-based prototype must visibly say it has no LLM. Do not imply a fine-tuned model, NPU run, or Office Kit integration exists.
+The user's 3 October morning target is an early concept/application handoff unless the signed-in dashboard explicitly requires something else. For that video, show the problem, architecture, research, and actual completed diagnostics. Label storyboard screens “Proposed experience.” An actual pre-event prototype under `prototype/android` may be shown with its real research date and explicit “Pre-event laboratory prototype; not event-created submission” label. The current model lab has actual Qwen3.5 CPU inference; dashboard shortcuts and recurring nudges use deterministic logic. Identify the component actually shown. Do not imply a fine-tuned language model, NPU run, or Office Kit integration exists.
 
 The Grand Finale demo is prepared during the official 9–11 October build window, subject to the dashboard/organizer rules recorded in hackathon.md. It can use the live sequence below only after the respective proof gates pass. A required early working-app submission would conflict with the event-window interpretation and needs organizer/dashboard clarification; record that outcome before changing scope.
 

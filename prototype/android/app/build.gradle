@@ -1,15 +1,71 @@
 plugins { id 'com.android.application' }
+
+def bundleLocalModel = providers.gradleProperty('bundleLocalModel').map { value ->
+    if (!(value in ['true', 'false'])) throw new GradleException('bundleLocalModel must be true or false')
+    value == 'true'
+}.getOrElse(false)
+def bundledAssets = layout.buildDirectory.dir('generated/localModelAssets')
+def pinnedModel = rootProject.file('../../models/qwen/Qwen3.5-0.8B-Q4_0.gguf')
+def pinnedBytes = 563036064L
+def pinnedSha = '57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf'
+
+def generateLocalModelAssets = tasks.register('generateLocalModelAssets') {
+    inputs.files(pinnedModel)
+    inputs.property('expectedSha256', pinnedSha)
+    inputs.property('expectedBytes', pinnedBytes)
+    outputs.dir(bundledAssets)
+    doLast {
+        if (!pinnedModel.isFile()) throw new GradleException('Pinned model missing. Run node prototype/qwen/prepare-model.mjs qwen35 from the repository root.')
+        if (pinnedModel.length() != pinnedBytes) throw new GradleException('Pinned model size differs; refusing bundled APK.')
+        def digest = java.security.MessageDigest.getInstance('SHA-256')
+        pinnedModel.withInputStream { stream ->
+            byte[] buffer = new byte[1024 * 1024]
+            int count
+            while ((count = stream.read(buffer)) != -1) digest.update(buffer, 0, count)
+        }
+        if (digest.digest().encodeHex().toString() != pinnedSha) throw new GradleException('Pinned model SHA-256 differs; refusing bundled APK.')
+        def destination = new File(bundledAssets.get().asFile, 'qwen35.gguf')
+        destination.parentFile.mkdirs()
+        def temporary = new File(destination.parentFile, 'qwen35.gguf.tmp')
+        try {
+            def copiedDigest = java.security.MessageDigest.getInstance('SHA-256')
+            long copied = 0
+            pinnedModel.withInputStream { source ->
+                temporary.withOutputStream { target ->
+                    byte[] buffer = new byte[1024 * 1024]
+                    int count
+                    while ((count = source.read(buffer)) != -1) {
+                        copied += count
+                        if (copied > pinnedBytes) throw new GradleException('Model changed while copying.')
+                        copiedDigest.update(buffer, 0, count)
+                        target.write(buffer, 0, count)
+                    }
+                }
+            }
+            if (copied != pinnedBytes || copiedDigest.digest().encodeHex().toString() != pinnedSha)
+                throw new GradleException('Model changed while copying; refusing bundled APK.')
+            java.nio.file.Files.move(temporary.toPath(), destination.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING, java.nio.file.StandardCopyOption.ATOMIC_MOVE)
+        } finally {
+            temporary.delete()
+        }
+    }
+}
 android {
     namespace 'dev.focuspilot.prototype'
     compileSdk 36
     defaultConfig {
         applicationId 'dev.focuspilot.prototype'
-        minSdk 26
+        minSdk 28
         targetSdk 35
         versionCode 3
         versionName '0.3-local-model-research'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }
+    androidResources { noCompress += 'gguf' }
+    sourceSets { debug { if (bundleLocalModel) assets.srcDir(bundledAssets) } }
+}
+if (bundleLocalModel) tasks.configureEach {
+    if (name == 'preDebugBuild') dependsOn(generateLocalModelAssets)
 }
 dependencies { testImplementation 'junit:junit:4.13.2' }

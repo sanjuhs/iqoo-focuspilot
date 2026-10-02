@@ -110,3 +110,15 @@ performed108 fresh-context laptop CPU cases. Selected-channel patching did not
 outperform random controls or flip held-out decisions. No-op/restoration returned
 identical full-vocabulary logits. This verifies intervention machinery but yields
 no positive semantic-circuit claim; it does not establish phone/NPU interventions.
+
+## Standalone bundled model option
+
+`-PbundleLocalModel=true` packages the exact pinned GGUF into generated debug
+assets after verifying its size/SHA. The537MiB asset stays uncompressed; weights
+remain excluded from Git. Bundled APK568,490,197bytes; light APK5,454,021bytes.
+Both include upstream model/runtime notices. First load streams and verifies the
+asset on a worker before atomically publishing a private model file; cancellation
+cleans partial imports, and existing private files remain intact.
+
+Use [bundled-model-evidence.json](bundled-model-evidence.json) for actual phone
+first-import verification rather than treating packaging alone as execution proof.

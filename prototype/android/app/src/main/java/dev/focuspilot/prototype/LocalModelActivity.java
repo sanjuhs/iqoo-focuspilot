@@ -22,6 +22,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
@@ -30,6 +36,7 @@ import java.util.concurrent.Executors;
 /** Actual app-process CPU inference and read-only activation observations. */
 public final class LocalModelActivity extends Activity {
     private static final String SHA256="57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf";
+    private static final long MODEL_BYTES=563036064L;
     private final ExecutorService worker=Executors.newSingleThreadExecutor();
     private final Handler main=new Handler(Looper.getMainLooper());
     private volatile LocalModel model;
@@ -55,7 +62,7 @@ public final class LocalModelActivity extends Activity {
         });
         label("MIRA · LOCAL MODEL LAB",24);
         label("PRE-EVENT RESEARCH · Qwen3.5-0.8B Q4_0 · llama.cpp CPU. Outputs are proposals. No NPU or causal interpretation claim.",14);
-        state=label("Model not loaded. Requires checksummed qwen35.gguf in app-private files. No downloads or provider keys in this app.",16);
+        state=label("Model not loaded. A bundled APK can import its pinned model once into private storage. A light APK requires a prepared private model. No downloads or provider keys.",16);
         load=button("Load verified local model",v->load());
         command=new EditText(this); command.setText("Please start a focus session"); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
         capture=new Switch(this); capture.setText("Capture selected actual activation summaries"); capture.setTextColor(Color.WHITE); root.addView(capture);
@@ -72,17 +79,23 @@ public final class LocalModelActivity extends Activity {
     private void load() {
         if(busy || model!=null) return;
         File file=new File(getFilesDir(),"qwen35.gguf");
-        if(!file.isFile()) { state.setText("Model missing: place the pinned qwen35.gguf in app-private files using the documented debug preparation script."); return; }
-        setBusy(true); state.setText("Verifying 537 MiB artifact and loading CPU model…");
+        final long epoch=++requestEpoch;
+        setBusy(true); state.setText("Preparing verified 537 MiB local artifact and loading CPU model… First bundled import can take time; this runs on a worker.");
         worker.execute(()->{
             long began=System.nanoTime();
             try {
-                if(file.length()!=563036064L) throw new IllegalStateException("Model file size does not match pinned artifact.");
-                String hash=hash(file); if(!SHA256.equals(hash)) throw new IllegalStateException("Model SHA-256 differs; refusing load.");
+                ensureLoadActive(epoch);
+                boolean imported=importBundledIfMissing(file,epoch);
+                long importedAt=System.nanoTime();
+                if(file.length()!=MODEL_BYTES) throw new IllegalStateException("Model file size does not match pinned artifact.");
+                // A streamed import already verified the full artifact before publication.
+                // Existing private files are independently rehashed on every load.
+                if(!imported && !SHA256.equals(hash(file,epoch))) throw new IllegalStateException("Model SHA-256 differs; refusing load.");
+                ensureLoadActive(epoch);
                 long verified=System.nanoTime(); LocalModel loaded=new LocalModel(file.getAbsolutePath());
-                if(destroyed) { loaded.close(); return; }
-                model=loaded; double verifyMs=(verified-began)/1e6, loadMs=(System.nanoTime()-verified)/1e6;
-                post(()->{setBusy(false); state.setText(String.format(Locale.US,"LOCAL MODEL LOADED\nQwen3.5-0.8B · Q4_0 · CPU only · context 1024 · 4 threads\nSHA verified · hash %.0f ms · native load %.0f ms\nNo NPU, cloud or Office Kit backend.",verifyMs,loadMs));});
+                if(destroyed || !foreground || epoch!=requestEpoch) { loaded.close(); throw new IllegalStateException("Model preparation cancelled"); }
+                model=loaded; double verifyMs=(verified-importedAt)/1e6, importMs=(importedAt-began)/1e6, loadMs=(System.nanoTime()-verified)/1e6;
+                post(()->{setBusy(false); state.setText(String.format(Locale.US,"LOCAL MODEL LOADED · PRE-EVENT RESEARCH\nQwen3.5-0.8B · Q4_0 · CPU only · context 1024 · 4 threads\n%s\nPrivate-file hash %.0f ms · native load %.0f ms\nNo NPU, cloud or Office Kit backend.",imported?String.format(Locale.US,"Bundled import + SHA verification %.0f ms; copied once into private storage",importMs):"Using existing private model; SHA verified",verifyMs,loadMs));});
             } catch(Throwable error) { post(()->{setBusy(false); state.setText("Load failed: "+safe(error));}); }
         });
     }
@@ -147,7 +160,45 @@ public final class LocalModelActivity extends Activity {
         } catch(RuntimeException error) { result.setText("Android action unavailable: "+safe(error)); }
     }
     private static String safe(Throwable error) { String message=error.getMessage(); return message==null?error.getClass().getSimpleName():message; }
-    private static String hash(File file) throws Exception { MessageDigest digest=MessageDigest.getInstance("SHA-256"); byte[] bytes=new byte[1048576]; try(FileInputStream stream=new FileInputStream(file)) { int count; while((count=stream.read(bytes))!=-1) digest.update(bytes,0,count); } StringBuilder out=new StringBuilder(); for(byte value:digest.digest()) out.append(String.format(Locale.US,"%02x",value&255)); return out.toString(); }
+    private void ensureLoadActive(long epoch) {
+        if(destroyed || !foreground || epoch!=requestEpoch || Thread.currentThread().isInterrupted())
+            throw new IllegalStateException("Model preparation cancelled");
+    }
+    /** Stream to a unique private temp file; publish only a complete checksummed asset. */
+    private boolean importBundledIfMissing(File destination,long epoch) throws Exception {
+        if(destination.exists()) return false; // Existing private files are never replaced by import.
+        InputStream asset;
+        try { asset=getAssets().open("qwen35.gguf",android.content.res.AssetManager.ACCESS_STREAMING); }
+        catch(FileNotFoundException missing) { throw new IllegalStateException("No bundled model in this light APK. Install the bundled debug APK, or prepare the pinned qwen35.gguf in app-private files with scripts/prepare_phone.py."); }
+        File temporary=null;
+        try(InputStream source=asset) {
+            ensureLoadActive(epoch);
+            temporary=File.createTempFile("qwen35-import-",".tmp",getFilesDir());
+            MessageDigest digest=MessageDigest.getInstance("SHA-256");
+            long copied=0;byte[] buffer=new byte[1048576];
+            try(FileOutputStream target=new FileOutputStream(temporary)) {
+                int count;
+                while((count=source.read(buffer))!=-1) {
+                    ensureLoadActive(epoch);copied+=count;
+                    if(copied>MODEL_BYTES) throw new IOException("Bundled model exceeds the pinned size; import refused.");
+                    digest.update(buffer,0,count);target.write(buffer,0,count);
+                }
+                target.flush();target.getFD().sync();
+            }
+            if(copied!=MODEL_BYTES || !SHA256.equals(hex(digest.digest())))
+                throw new IOException("Bundled model size or SHA-256 differs; import refused.");
+            ensureLoadActive(epoch);
+            if(destination.exists()) return false;
+            Files.move(temporary.toPath(),destination.toPath(),StandardCopyOption.ATOMIC_MOVE);
+            return true;
+        } finally { if(temporary!=null && temporary.exists()) temporary.delete(); }
+    }
+    private String hash(File file,long epoch) throws Exception {
+        MessageDigest digest=MessageDigest.getInstance("SHA-256");byte[] bytes=new byte[1048576];
+        try(FileInputStream stream=new FileInputStream(file)) { int count;while((count=stream.read(bytes))!=-1) {ensureLoadActive(epoch);digest.update(bytes,0,count);} }
+        return hex(digest.digest());
+    }
+    private static String hex(byte[] digest) {StringBuilder out=new StringBuilder();for(byte value:digest)out.append(String.format(Locale.US,"%02x",value&255));return out.toString();}
     private void cancelRequest() { requestEpoch++; lastIntent=null; lastOriginal=null; if(review!=null) review.setEnabled(false); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } }
     @Override protected void onResume() { super.onResume(); foreground=true; }
     @Override protected void onStop() { foreground=false; cancelRequest(); super.onStop(); }

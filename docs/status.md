@@ -39,33 +39,45 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
   or LLM mechanistic understanding. Exported Android Java policy matches all 480
   holdout outputs (maximum score error 1.22e-15); separate sandbox UI built.
 - Research checkouts, downloaded weights and dependencies are ignored. Workspace
-  is about 4.8 GiB including models, checkouts and incremental builds.
+  is about 7.6 GiB including models, checkouts and incremental builds.
 - User selected Qwen3.5-0.8B Q4_0 as main model, expanding the initial size cap.
 - Native pre-entry/in-flight cancellation race fixed and real host JNI checks pass.
   Updated phone build cancellation settled correctly; a fresh captured request
-  then produced start_focus in1,869ms with I8MM confirmed.
+  then produced start_focus in 1,869 ms with I8MM confirmed.
 - Safe phone model preparation now force-stops only the research app, checksums
   a temporary private file and atomically renames it; actual retransfer succeeded.
 - Latest CPU backend log on phone verifies actual KleidiAI I8MM kernel selection.
   Confirming a local-model proposal started the actual focus state; dashboard Stop
-  returned its persisted checkpoint to paused. Latest request1,688ms.
-- First optimized ARM CPU five-case phone smoke completed: cold13,521ms; three
-  unobserved warm cases1,646/1,724/1,663ms; captured warm1,719ms. Model misclassified
+  returned its persisted checkpoint to paused. Latest request 1,688 ms.
+- First optimized ARM CPU five-case phone smoke completed: first request 13,521 ms; three
+  unobserved warm cases 1,646/1,724/1,663 ms; captured warm 1,719 ms. Model misclassified
   negated/compound requests as start_focus; independent gate rejected both. No
   actions executed in that batch. See prototype/native/phone-smoke-optimized.json.
 - Local few-shot sandbox phone screen opens; saving and deleting synthetic labels
   verified against app-private storage. Gates stayed paused/off; no actions ran.
-- Local few-shot sandbox implemented with32-record limit, neighbor explanations,
+- Local few-shot sandbox implemented with 32-record limit, neighbor explanations,
   delete controls and non-overridable simulated gates. Eight targeted JVM tests
-  passed;720 synthetic Java/Python outputs match. Answered-case accuracy improves
-  under shifted toy preferences, but coverage~70% and total correct count is
+  passed; 720 synthetic Java/Python outputs match. Answered-case accuracy improves
+  under shifted toy preferences, but coverage about 70% and total correct count is
   below the trained baseline because of abstentions. No language-model fine-tuning
   or live personalization claim.
-- Actual laptop Qwen activation-write experiment ran108 fresh-context cases.
+- Actual laptop Qwen activation-write experiment ran 108 fresh-context cases.
   Selected channel patch/ablation gave no reliable steering advantage; random
-  controls comparable, held-out baseline6/8. All16 no-op/restoration full-logit
+  controls comparable, held-out baseline 6/8. All 16 no-op/restoration full-logit
   comparisons exactly matched. This is a negative semantic result with verified
   intervention machinery, separate from observational phone capture.
+
+- Research pitch rendered at 1080p/H.264/AAC:293.208 seconds, 42 narration/caption
+  segments. Full FFmpeg decode, audio levels and encoded frame layouts checked;
+  sanitized phone system bars cropped. Evidence in docs/pitch-evidence.json.
+
+- Standalone bundled APK installed on Nothing with the private model initially
+  absent. It imported the pinned asset and verified SHA in 1,089 ms, loaded CPU
+  runtime in 2,299 ms, and proposed start_focus in 1,654 ms. No ADB model transfer
+  was used for this import. Temporary parity-checked backup was cleaned.
+- Both light 5.45 MB and bundled 568.49 MB APKs include six license/notice assets;
+  26 JVM tests/build/lint passed for both. ZIP inspection verifies the bundled
+  uncompressed model size and SHA. See docs/research-artifacts.json.
 
 ## In progress
 
@@ -76,7 +88,8 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 - Controlled command-model experiment completed with a negative steering result;
   phone replication and wider controls remain pending.
 - Updated GitHub backup and staged secret audit.
-- Three-to-five-minute research pitch video review and source backup.
+- Final APK/background/voice/clock verification when the required user permissions
+  and hardware are available.
 
 ## Unverified / remaining
 
@@ -88,7 +101,9 @@ Updated 2 October 2026 (IST). This file separates measured results from goals.
 - Snapdragon NPU execution, acceleration metrics and Office Kit on an iQOO device.
 - Persistent monitoring under actual OEM lifecycle, wake word and general cross-app automation.
 - Real financial deductions: out of scope; accountability balance is simulated.
-- Final demo recording and submission receipt.
+- Eligible final live demo and submission receipt. A 4:53 research concept pitch
+  with local narration/captions is rendered; it uses sanitized stills and original
+  diagrams, not continuous live phone footage.
 
 The broader goal remains active. A plan, APK shell or public repository alone is
 not completion of the entire assistant or a hackathon submission.

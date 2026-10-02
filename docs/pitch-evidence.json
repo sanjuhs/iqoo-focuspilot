@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-02",
+  "kind": "pre-event concept and research pitch, not live demonstration or eligible event entry",
+  "source_commit": "6487c27",
+  "video": {
+    "file": "artifacts/pitch-research.mp4",
+    "bytes": 9134799,
+    "sha256": "a81bba83c607c07557af55552f9a83b86231449f35159b531a9d29bfb0611d8b",
+    "seconds": 293.208333,
+    "resolution": [
+      1920,
+      1080
+    ]
+  },
+  "captions": {
+    "segments": 42,
+    "format": "SRT and burned ASS",
+    "source": "docs/research-pitch-script.md"
+  },
+  "renderer": "scripts/render_pitch_video.py",
+  "checks": {
+    "duration_seconds": 293.208333,
+    "video_bytes": 9134799,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "caption_segments": 42,
+    "final_caption_seconds": 292.921,
+    "caption_timing": "monotonic, positive, non-overlapping, within video",
+    "audio_video_drift_seconds": 0.007333,
+    "ffmpeg_full_decode": "passed, zero reported errors",
+    "frame_review": "All 14 scene end states reviewed via storyboard; final encoded captioned phone, timing, synthetic-toy, eligibility frames inspected; no text overlap/cutoff found after correction",
+    "system_bars": "phone still cropped y126\u20132292, no system notification icons or navigation bar",
+    "narration_review": "Local Samantha speech generated and audio-level checked; full human listening not performed",
+    "claims": "Pre-event label visible throughout; CPU-only phone claims, unproven background device permission/OfficeKit/NPU, toy-only synthetic accuracy, negative causal result, few-shot accuracy/coverage tradeoff stated"
+  },
+  "claims_review": "Matches docs/status.md; phone still sanitized, actual CPU research separated from pending hardware/live-policy tests"
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-02",
+  "device": "Nothing A059/SM7635/API36",
+  "apk_sha256": "e78a7d9610a6bb7436cc22963fefc6f268911f2a21fc9381a75cce9c6a6d1b8f",
+  "bundled_apk_bytes": 568490197,
+  "fresh_private_model_absent_before_load": true,
+  "imported_from_apk_asset_without_adb_model_transfer": true,
+  "private_model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "load_state": "LOCAL MODEL LOADED \u00b7 PRE-EVENT RESEARCH\nQwen3.5-0.8B \u00b7 Q4_0 \u00b7 CPU only \u00b7 context 1024 \u00b7 4 threads\nBundled import + SHA verification 1089 ms; copied once into private storage\nPrivate-file hash 0 ms \u00b7 native load 2299 ms\nNo NPU, cloud or Office Kit backend.",
+  "synthetic_inference": {
+    "command": "Please start a focus session",
+    "capture": false,
+    "intent": "start_focus",
+    "gate": "REVIEW REQUIRED",
+    "total_ms": 1654.0,
+    "prefill_ms": 786.0,
+    "decode_ms": 867.0,
+    "action_executed": false
+  },
+  "internet_permission": false,
+  "physical_airplane_mode_verified": false
+}

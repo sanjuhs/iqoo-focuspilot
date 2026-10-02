@@ -24,6 +24,8 @@ automation follows permission and sandbox testing. The penalty balance is virtua
 | [docs/model-research.md](docs/model-research.md) | Kev, Laya, CUA, licenses and small-model options |
 | [docs/hackathon-research.md](docs/hackathon-research.md) | Sourced event research |
 | [docs/demo-script.md](docs/demo-script.md) | Pitch and demo preparation |
+| [docs/research-pitch-script.md](docs/research-pitch-script.md) | Editable narration for the rendered research pitch |
+| [docs/companion-design.md](docs/companion-design.md) | Mira artwork, motion and persistent-mode design |
 
 ## Design
 
@@ -73,6 +75,13 @@ node prototype/qwen/prepare-model.mjs qwen35
 python3 scripts/prepare_phone.py --serial YOUR_DEVICE_SERIAL
 ```
 
+For a standalone research APK that contains Qwen, use
+`./scripts/build_android.sh -PbundleLocalModel=true` (generic ARM64) or add
+`NATIVE_BUILD_VARIANT=optimized` only on supported DOTPROD/I8MM/FP16 hardware.
+The bundled APK imported and verified its own model on the phone, then generated
+without ADB model preparation. The light/bundled artifacts are documented in
+[research artifact evidence](docs/research-artifacts.json).
+
 Downloaded weights and generated native libraries/APKs remain ignored; the preparation
 script checks the model hash and streams it into debug app-private storage.
 
@@ -101,7 +110,7 @@ pre-push check, not a guarantee that every possible secret format is recognized.
 Research, device authorization and real phone CPU inference are verified. One cold
 request took 19.9 seconds; a subsequent request with tensor capture took 4.1 seconds
 on Nothing A059. These are two smoke observations, not p50/p95 or iQOO measurements.
-The optimized ARM CPU lab later ran warm requests around1.65–1.72 seconds and
+The optimized ARM CPU lab later ran warm requests around 1.65–1.72 seconds and
 verified I8MM kernel selection. Two unsafe requests were rejected by the external
 validator despite model misclassification. A local few-shot label sandbox is
 implemented with honest abstention/coverage reporting. The Android app has no

@@ -6,13 +6,28 @@ This standalone native Java application demonstrates a friendly original animate
 
 ## Build and tests
 
-Java 17, Android SDK platform 36 and Gradle 8.14 are required. Set `ANDROID_HOME` to your SDK, then:
+Java 17, Android SDK platform36, NDK28.2 and Gradle8.14 are required. The APK supports Android9/API28+ and ARM64; the optimized variant additionally needs DOTPROD/I8MM/FP16. Set `ANDROID_HOME` to your SDK, then:
 
 ```sh
 # From the repository root, builds JNI and then the Android app:
 ./scripts/build_android.sh
 python3 scripts/prepare_phone.py --serial YOUR_DEVICE_SERIAL
 ```
+
+Default build makes a light APK that needs separately prepared weights. For a
+standalone debug APK with the pinned model bundled, run from the repository root:
+
+```sh
+NATIVE_BUILD_VARIANT=optimized ./scripts/build_android.sh -PbundleLocalModel=true
+```
+
+Only use the optimized variant on a device with its required CPU features; omit
+that environment option for the generic variant. The bundled debug APK includes
+an uncompressed, hash-verified537MiB GGUF asset. First model load streams it on a
+worker into private storage, checks SHA/size, and publishes atomically; later loads
+reuse it. Cancel/background/destroy removes partial imports. No network download
+or provider key is used. Existing private files are never replaced by import.
+Expect roughly1.1GiB installed model/APK storage plus installation staging space.
 
 APK: `app/build/outputs/apk/debug/app-debug.apk`. Application ID: `dev.focuspilot.prototype`.
 

@@ -61,6 +61,25 @@ Usage Access and Accessibility by hand after reading the app's permission screen
 Use a sandbox account and synthetic screen content for automation evaluation.
 Nothing-phone tests establish Android compatibility, not Snapdragon/iQOO eligibility.
 
+## Installable research packages
+
+The default light APK needs model preparation through the documented debug script.
+The optional bundled APK contains Qwen3.5-0.8B Q4_0, imports/verifies it once into
+private storage, and can start without laptop model transfer. Both are research
+builds; neither establishes eligible event-created code or NPU use.
+
+```sh
+node prototype/qwen/prepare-model.mjs qwen35
+# Generic ARM64 baseline with bundled weights:
+./scripts/build_android.sh -PbundleLocalModel=true
+# Optimized CPU variant only for verified DOTPROD/I8MM/FP16 devices:
+NATIVE_BUILD_VARIANT=optimized ./scripts/build_android.sh -PbundleLocalModel=true
+```
+
+After installing a bundled build, open Ask Mira and load the local model. Consent,
+Usage Access, notifications and microphone are separately user-controlled. Read
+[Android package details](prototype/android/README.md) and [current evidence](docs/status.md).
+
 ## Implementation order
 
 1. Establish a native Java Android app with a visible session switch and local settings.

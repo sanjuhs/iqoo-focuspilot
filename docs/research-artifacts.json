@@ -1,0 +1,45 @@
+{
+  "light": {
+    "path": "artifacts/focuspilot-research-light.apk",
+    "bytes": 5454021,
+    "sha256": "1a3db12580b8701ee3b55fed54594c92b65069d6c7d8d456d480717697cad422",
+    "licenses": [
+      "assets/licenses/FocusPilot-MIT.txt",
+      "assets/licenses/KleidiAI-Apache-2.0.txt",
+      "assets/licenses/KleidiAI-BSD-3-Clause.txt",
+      "assets/licenses/KleidiAI-notices.txt",
+      "assets/licenses/Qwen3.5-Apache-2.0.txt",
+      "assets/licenses/llama.cpp-MIT.txt"
+    ],
+    "containsModel": false
+  },
+  "bundled": {
+    "path": "artifacts/focuspilot-research-bundled.apk",
+    "bytes": 568490197,
+    "sha256": "e78a7d9610a6bb7436cc22963fefc6f268911f2a21fc9381a75cce9c6a6d1b8f",
+    "licenses": [
+      "assets/licenses/FocusPilot-MIT.txt",
+      "assets/licenses/KleidiAI-Apache-2.0.txt",
+      "assets/licenses/KleidiAI-BSD-3-Clause.txt",
+      "assets/licenses/KleidiAI-notices.txt",
+      "assets/licenses/Qwen3.5-Apache-2.0.txt",
+      "assets/licenses/llama.cpp-MIT.txt"
+    ],
+    "containsModel": true,
+    "model": {
+      "bytes": 563036064,
+      "compression": "ZIP_STORED/uncompressed",
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+    }
+  },
+  "verification": {
+    "jvmTests": 26,
+    "failures": 0,
+    "errors": 0,
+    "debugBuildAndLint": "passed for both variants",
+    "phoneImportRuntime": "Passed: missing private model imported from bundled APK with exact SHA, then actual CPU inference; docs/bundled-model-evidence.json",
+    "modelSourceRevision": "8fea620810c4afa23dd6443f999a48574c1611a3",
+    "minSdk": 28
+  },
+  "source_ref": "research-v0.3"
+}
