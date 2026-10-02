@@ -110,7 +110,7 @@ public final class FocusRepository {
         if(nudged && shadowSinceWall>0) shadowFeedback.recordActualNudge(now);
         persist();
     }
-    public void reset() { cancelDeadline();session.reset(); accumulatedUsage=0; intervalWall=0; ledger.reset(); invalidateShadowScope(); log("Session reset"); persist(); }
+    public void reset() { cancelDeadline();session.reset(); interrupted=false; accumulatedUsage=0; intervalWall=0; ledger.reset(); invalidateShadowScope(); log("Session reset"); persist(); }
     public void setObservation(boolean enabled) {
         observe=enabled; accumulatedUsage=0; intervalWall=session.isActive() ? System.currentTimeMillis() : 0;
         usageIntervalStartedElapsed=session.isActive()?SystemClock.elapsedRealtime():0;

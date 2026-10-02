@@ -63,6 +63,8 @@ public final class MainActivity extends Activity {
     private boolean muted, reduceMotion, hideCompanion, updatingMonitor;
     private long celebrateUntil;
     private long labelReviewEpoch;
+    private long resetReviewEpoch;
+    private AlertDialog resetReview;
     private byte[] pendingExport;
     private static final int CREATE_FOCUS_EXPORT=51;
     private Switch monitorSwitch;
@@ -278,7 +280,7 @@ public final class MainActivity extends Activity {
         setContentView(screen); screen.requestApplyInsets(); renderLogs();
     }
     @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; voiceDraft.resume(); readback.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
-    @Override protected void onPause(){floatingResumed=false;super.onPause();}
+    @Override protected void onPause(){floatingResumed=false;resetReviewEpoch++;if(resetReview!=null){resetReview.dismiss();resetReview=null;}super.onPause();}
     @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; stopReadback(); readback.stop(); super.onStop(); }
     @Override protected void onDestroy() { readback.close(); handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
@@ -350,7 +352,22 @@ public final class MainActivity extends Activity {
     private void startFocus() { repository.start(); simulated=false; celebrateUntil=SystemClock.elapsedRealtime()+1600; refresh(); handler.postDelayed(() -> { if(visible) refresh(); },1600); }
     private void pauseFocus() { if(voiceInput!=null) voiceInput.cancel(); listening=false; stopReadback(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }
     private void toggleFocus() { if(session.isActive()) pauseFocus(); else startFocus(); }
-    private void resetSession() { stopMonitor("Session reset; monitor stopped"); repository.reset(); simulated=false; refresh(); }
+    private void resetSession() {
+        if(resetReview!=null)resetReview.dismiss();
+        final long reviewEpoch=++resetReviewEpoch, generation=session.generation();
+        resetReview=new AlertDialog.Builder(this).setTitle("Reset your focus session?")
+            .setMessage("Clears accumulated focus time, the countdown and counted app usage, and restores 100 virtual points. Stops focus and its monitor. Your task, checklist, saved labels and usage-reading choice stay saved.")
+            .setNegativeButton("Keep session",null)
+            .setPositiveButton("Reset session",(d,w)->{
+                if(!visible || reviewEpoch!=resetReviewEpoch || generation!=session.generation()) {
+                    showStatus("Your session changed. Review reset again before clearing it.");return;
+                }
+                stopMonitor("Session reset; monitor stopped");repository.reset();simulated=false;refresh();
+                showStatus("Session reset. Ready for one small step whenever you are.");
+            }).create();
+        resetReview.setOnDismissListener(d->{if(reviewEpoch==resetReviewEpoch)resetReview=null;});
+        resetReview.show();
+    }
     private void setMonitorChecked(boolean checked) { updatingMonitor=true; monitorSwitch.setChecked(checked); updatingMonitor=false; }
     private void enableMonitor() {
         setMonitorChecked(false);

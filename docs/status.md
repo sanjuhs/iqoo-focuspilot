@@ -2,6 +2,17 @@
 
 Updated 3 October 2026 (IST). This file separates measured results from goals.
 
+## Reviewed reset candidate — v0.13
+
+The research source now requires explicit session-reset review, dismisses that
+review when the activity pauses, and refuses confirmation after the session
+generation changes. Reset clears the stale interrupted-session warning. Qwen3.5
+0.8B Q4_0, prompt, gate, native runtime and companion assets remain unchanged.
+The app and separate isolated-preference instrumentation APK build; all 148 JVM
+tests pass, with zero lint errors and 65 warnings. Physical isolated reset and
+production cancellation verification are pending at this source checkpoint.
+The existing v0.12 phone and published demo evidence retain their original scope.
+
 ## Compact intent experiment — rejected
 
 A locked one-digit Qwen candidate was compared with the shipped prompt on 100

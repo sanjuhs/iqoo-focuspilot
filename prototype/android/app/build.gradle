@@ -57,8 +57,9 @@ android {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 12
-        versionName '0.12-guidance-readback-research'
+        versionCode 13
+        versionName '0.13-reviewed-reset-research'
+        testInstrumentationRunner 'dev.focuspilot.prototype.ResetIsolationInstrumentation'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }
