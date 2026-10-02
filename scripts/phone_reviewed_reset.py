@@ -30,6 +30,11 @@ def snapshot(lab):
             'grants':permissions(lab),'model':private_file(lab,'files/qwen35.gguf'),
             'services_absent':services_absent(lab)}
 
+def require_test_application_absent(lab):
+    result=subprocess.run(lab.base+['shell','pm','path',TEST_PACKAGE],text=True,capture_output=True,timeout=20)
+    if result.returncode not in (0,1) or result.stderr.strip():raise RuntimeError('Cannot establish test application absence')
+    if result.stdout.strip():raise RuntimeError('Existing test application respected; no replacement')
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--serial',required=True);p.add_argument('--light',type=Path,required=True)
@@ -49,8 +54,7 @@ def main():
         if any(name.endswith('.gguf') for name in apk.namelist()):raise RuntimeError('Light APK required')
     lab=PhoneLab(a.serial);lab.guard();before=snapshot(lab)
     if before['checkpoint']['active'] or before['checkpoint']['observation'] or not before['services_absent'] or not pinned(before['model']):raise RuntimeError('Paused/off/no services/pinned model required')
-    existing=lab.adb('shell','pm','path',TEST_PACKAGE).strip()
-    if existing:raise RuntimeError('Existing test application respected; no replacement')
+    require_test_application_absent(lab)
     if project_bytes(ROOT)+10_000_000>15_000_000_000:raise RuntimeError('Small test record storage reserve exceeds budget')
     record={'kind':'pre-event reviewed reset; isolated real Android repository and production UI cancellation only',
         'source_commit':source,'harness_sha256':sha(Path(__file__)),
