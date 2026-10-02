@@ -51,6 +51,8 @@ public final class MainActivity extends Activity {
     private boolean updatingLivePreference;
     private CompanionView companion;
     private Button sessionButton, heroFocusButton;
+    private TextView floatingStatus;
+    private boolean floatingResumed;
     private EditText commandInput, packageInput, budgetInput, goalInput, plannedInput, continuousInput;
     private Switch observeSwitch;
     private String monitoredPackage;
@@ -159,7 +161,13 @@ public final class MainActivity extends Activity {
         preferences.addView(text("Make Mira feel right for you. Hiding her artwork keeps your focus controls available.",13,MUTED,false));
         preferenceToggle(preferences,"Reduce motion",reduceMotion,value -> { reduceMotion=value; prefs.edit().putBoolean("reduceMotion",value).apply(); companion.setReduceMotion(value); });
         preferenceToggle(preferences,"Mute companion voice",muted,value -> { muted=value; prefs.edit().putBoolean("mute",value).apply(); if(value && tts!=null) tts.stop(); });
-        preferenceToggle(preferences,"Hide companion artwork",hideCompanion,value -> { hideCompanion=value; prefs.edit().putBoolean("hideCompanion",value).apply(); companion.setVisibility(value ? View.GONE : View.VISIBLE); });
+        preferenceToggle(preferences,"Hide companion artwork",hideCompanion,value -> { hideCompanion=value; prefs.edit().putBoolean("hideCompanion",value).apply(); companion.setVisibility(value ? View.GONE : View.VISIBLE); if(value)stopService(new Intent(this,FloatingCompanionService.class)); refreshFloating(); });
+        LinearLayout floating=disclosure(friend,"Mira while you use your phone");
+        floating.addView(text("A small movable friend with Open, Pause focus and Hide. Show is separate from permission. She stops on screen-off or lock; Android may hide or stop her. No microphone or screen reading.",13,MUTED,false));
+        floatingStatus=text("Floating Mira is off",13,MUTED,false);floating.addView(floatingStatus);
+        button("Review floating permission",floating,v->reviewFloatingPermission(),false);
+        button("Show floating Mira",floating,v->reviewFloatingShow(),true);
+        button("Hide floating Mira",floating,v->{stopService(new Intent(this,FloatingCompanionService.class));FloatingCompanionService.lastStatus="Mira hidden · focus and usage settings unchanged";refreshFloating();},false);
         LinearLayout focus = card("YOUR FOCUS SESSION");
         sessionLabel = text("Ready when you are",20,WHITE,true); focus.addView(sessionLabel);
         timer = text("00:00",52,WHITE,true); focus.addView(timer);
@@ -258,7 +266,8 @@ public final class MainActivity extends Activity {
         screen.addView(safetyBar,new LinearLayout.LayoutParams(-1,-2));
         setContentView(screen); screen.requestApplyInsets(); renderLogs();
     }
-    @Override protected void onResume() { super.onResume(); visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
+    @Override protected void onResume() { super.onResume(); floatingResumed=true; visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
+    @Override protected void onPause(){floatingResumed=false;super.onPause();}
     @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
     @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
@@ -283,6 +292,7 @@ public final class MainActivity extends Activity {
         renderLivePreferences();
         speechState.setText(LocalVoiceInput.available(this) ? "On-device speech service available · language model may be missing" : "Offline voice unavailable here · type a command");
         setMonitorChecked(FocusMonitorService.running);
+        refreshFloating();
         monitorStatus.setText(FocusMonitorService.running ? "Visible monitor running · notification has Stop" : "Monitor stopped · dashboard-only checking");
         boolean liveNudge=usage>budgetMs&&repository.selectedAppEligible()&&!repository.livePreferenceDecision().canVetoHandSetNudge();
         CompanionView.State mood=listening ? CompanionView.State.LISTEN : simulated ? CompanionView.State.NUDGE : !session.isActive() ? CompanionView.State.PAUSED : now<celebrateUntil ? CompanionView.State.CELEBRATE : liveNudge ? CompanionView.State.NUDGE : CompanionView.State.FOCUS;
@@ -291,6 +301,32 @@ public final class MainActivity extends Activity {
         renderLogs();
     }
     /** Visible clock update only; permissioned usage/policy reads keep their existing cadence. */
+    private void refreshFloating(){
+        if(floatingStatus==null)return;
+        String blocked=FloatingCompanionService.blockedReason(this);
+        floatingStatus.setText((FloatingCompanionService.running?"Floating Mira running":"Floating Mira stopped")+" · "+(blocked==null?"Ready; tap Show explicitly":blocked)+"\n"+FloatingCompanionService.lastStatus);
+    }
+    private void reviewFloatingPermission(){
+        new AlertDialog.Builder(this).setTitle("Let Mira float?")
+            .setMessage("Android's Display over other apps permission lets Mira draw a small touchable companion. Choose FocusPilot in the settings list if needed. Returning here never starts her. Notifications must also be visible; review them in Set up Mira.")
+            .setNegativeButton("Cancel",null).setPositiveButton("Open Android settings",(d,w)->{
+                try{startActivity(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,android.net.Uri.parse("package:"+getPackageName())));}
+                catch(ActivityNotFoundException|SecurityException error){showStatus("Overlay settings unavailable. Review Display over other apps in Android settings manually.");}
+            }).show();
+    }
+    private void reviewFloatingShow(){
+        String blocked=FloatingCompanionService.blockedReason(this);
+        if(blocked!=null){showStatus(blocked+". Nothing started.");refreshFloating();return;}
+        if(FloatingCompanionService.running){showStatus("Mira is already floating. Drag her portrait or use Hide.");refreshFloating();return;}
+        new AlertDialog.Builder(this).setTitle("Keep Mira beside you?")
+            .setMessage("Show the visual companion and its control notification now. Drag her portrait to move; Open returns here, Pause stops focus and its monitor, and Hide leaves focus unchanged. She stops when the screen turns off or locks. No model, microphone or usage reading is started.")
+            .setNegativeButton("Cancel",null).setPositiveButton("Show Mira",(d,w)->{
+                if(!floatingResumed || FloatingCompanionService.blockedReason(this)!=null){showStatus("Show expired or a prerequisite changed. Review and tap Show again.");refreshFloating();return;}
+                try{startForegroundService(new Intent(this,FloatingCompanionService.class).setAction(FloatingCompanionService.SHOW));showStatus("Android is starting floating Mira. Hide is available here and in her notification.");}
+                catch(RuntimeException error){FloatingCompanionService.lastStatus="Android refused floating Mira · "+error.getClass().getSimpleName();showStatus(FloatingCompanionService.lastStatus);}
+                refreshFloating();
+            }).show();
+    }
     private void renderClock() {
         if(timer==null) return;
         long now=SystemClock.elapsedRealtime(), duration=session.elapsed(now);

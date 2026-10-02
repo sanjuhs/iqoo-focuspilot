@@ -21,10 +21,11 @@ public final class CompanionView extends View {
     public CompanionView(Context context) { super(context); setContentDescription("Friendly illustrated focus companion"); }
     public void setState(State state) { this.state=state; if(!canAnimate()) removeCallbacks(nextFrame); invalidate(); }
     public void setReduceMotion(boolean reduced) { reduceMotion=reduced; if(reduced) removeCallbacks(nextFrame); invalidate(); }
-    private boolean canAnimate() { return !reduceMotion && state!=State.PAUSED && isShown() && getWindowVisibility()==VISIBLE; }
+    private boolean canAnimate() { return !reduceMotion && android.animation.ValueAnimator.areAnimatorsEnabled() && state!=State.PAUSED && isShown() && getWindowVisibility()==VISIBLE; }
     private void color(int value) { paint.setColor(value); paint.setStyle(Paint.Style.FILL); }
     private void oval(Canvas canvas,float l,float t,float r,float b,int value) { color(value); canvas.drawOval(l,t,r,b,paint); }
     private void line(Canvas canvas,float x,float y,float xx,float yy,int value,float width) { color(value); paint.setStrokeWidth(width); paint.setStrokeCap(Paint.Cap.ROUND); canvas.drawLine(x,y,xx,yy,paint); }
+    @Override public boolean performClick() { super.performClick(); return true; }
     @Override protected void onDraw(Canvas canvas) {
         super.onDraw(canvas); float scale=Math.min(getWidth()/400f,getHeight()/280f);
         canvas.save(); canvas.translate((getWidth()-400*scale)/2,(getHeight()-280*scale)/2); canvas.scale(scale,scale);

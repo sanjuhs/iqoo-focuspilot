@@ -25,7 +25,7 @@ import java.io.File;
 public final class SetupActivity extends Activity {
     private static final int BG=Color.rgb(22,20,31), CARD=Color.rgb(36,32,49),
         INK=Color.rgb(247,241,250), MUTED=Color.rgb(184,174,198), LILAC=Color.rgb(203,171,238);
-    private TextView usageStatus,notificationStatus,voiceStatus,modelStatus,sessionStatus,notice;
+    private TextView usageStatus,notificationStatus,voiceStatus,modelStatus,sessionStatus,notice,floatingStatus;
     private CompanionView companion;
     private int dp(int value){return (int)(value*getResources().getDisplayMetrics().density);}
     private TextView text(String value,int size,boolean bold){
@@ -70,6 +70,12 @@ public final class SetupActivity extends Activity {
         notificationStatus=text("",14,false);notifications.addView(notificationStatus);
         notifications.addView(text("A background focus session needs a visible notification with Stop. Allow notifications if you want it, then start the session explicitly on the dashboard.",14,false));
         button(notifications,"Review notification settings",v->open(new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE,getPackageName())));
+        LinearLayout floating=card(root,"Optional · Mira beside your apps");
+        floatingStatus=text("",14,false);floating.addView(floatingStatus);
+        floating.addView(text("A separate floating companion shows only your focus status. Review Android's Display over other apps permission, then explicitly tap Show on the dashboard. Lock or screen-off stops her; Hide leaves focus unchanged. No observation or microphone starts.",14,false));
+        button(floating,"Review floating permission",v->new AlertDialog.Builder(this).setTitle("Optional floating Mira")
+            .setMessage("Android may show a general Display over other apps list. Choose FocusPilot if you want the permission. Returning here starts nothing; visible floating notifications and a separate dashboard Show are also required.")
+            .setNegativeButton("Cancel",null).setPositiveButton("Open Android settings",(d,w)->open(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,Uri.parse("package:"+getPackageName())))).show());
         LinearLayout voice=card(root,"4 · Talk when you choose");
         voiceStatus=text("",14,false);voice.addView(voiceStatus);
         voice.addView(text("Ask Mira requests microphone access only when you tap Speak. You then tap again to start a draft. An installed offline English speech model is also needed. No always-listening microphone.",14,false));
@@ -93,6 +99,7 @@ public final class SetupActivity extends Activity {
         FocusRepository repository=FocusRepository.get(this);
         usageStatus.setText((FocusRepository.usageGranted(this)?"Usage Access allowed":"Usage Access off")+" · local usage reading "+(repository.observe?"enabled":"off"));
         notificationStatus.setText(FocusMonitorService.notificationsAllowed(this)?"Notifications available · starting a monitor is still your choice.":"Notifications blocked · background monitoring cannot start.");
+        floatingStatus.setText((Settings.canDrawOverlays(this)?"Overlay permission allowed":"Overlay permission off")+" · "+(FloatingCompanionService.notificationsAllowed(this)?"floating notifications available":"floating notifications blocked")+" · "+(FloatingCompanionService.running?"Mira floating":"floating companion stopped"));
         boolean microphone=checkSelfPermission(Manifest.permission.RECORD_AUDIO)==PackageManager.PERMISSION_GRANTED;
         voiceStatus.setText("Microphone "+(microphone?"allowed":"off")+" · "+(LocalVoiceInput.available(this)?"on-device speech service available; installed English still needs checking.":"on-device speech service unavailable; typing works."));
         File model=new File(getFilesDir(),"qwen35.gguf");
