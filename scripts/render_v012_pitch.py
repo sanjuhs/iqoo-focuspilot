@@ -248,7 +248,7 @@ def prepare(bound, voice, rate):
     audio.mkdir(exist_ok=False)
     gap = audio / 'gap.aiff'
     run(['ffmpeg', '-v', 'error', '-n', '-f', 'lavfi', '-i', 'anullsrc=r=22050:cl=mono',
-         '-t', '.30', '-c:a', 'pcm_s16be', gap])
+         '-t', '0.30', '-c:a', 'pcm_s16be', gap])
     gap_seconds = seconds(gap)
     scenes, captions, audio_files, clock = parse_source(), [], [], 0.
     for scene in scenes:

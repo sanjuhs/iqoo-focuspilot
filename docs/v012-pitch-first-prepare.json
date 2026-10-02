@@ -1,0 +1,12 @@
+{
+  "kind": "Failed v0.12 narration preparation, before speech or video output",
+  "renderer_source_commit": "a849a39d3211e8296e47be963a9769f0d4001ff4",
+  "renderer_sha256": "34cd6cbd690a55a91945dec5077bf37c61c522f4d5cf691f6bb1d4073ffa0c52",
+  "completed": false,
+  "failure": "FFmpeg rejected duration .30; corrected to 0.30",
+  "ffmpeg_exit_code": 234,
+  "speech_files_generated": 0,
+  "video_files_generated": 0,
+  "phone_actions_executed": 0,
+  "partial_inputs_preserved_ignored": "artifacts/v012-pitch-first-prepare/inputs.json"
+}
