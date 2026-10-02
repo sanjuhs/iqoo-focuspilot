@@ -48,6 +48,13 @@ def require_research_defaults(lab):
 
 class Picker:
     def __init__(self,lab): self.lab=lab
+    def wait(self,timeout=5):
+        deadline=time.monotonic()+timeout
+        while True:
+            try:self.guard();return
+            except RuntimeError:
+                if time.monotonic()>=deadline:raise
+                time.sleep(.25)
     def guard(self):
         window=self.lab.adb('shell','dumpsys','window')
         activity=self.lab.adb('shell','dumpsys','activity','activities')
@@ -59,7 +66,7 @@ class Picker:
         temporary='/data/local/tmp/focuspilot-export-picker.xml'
         try:
             self.lab.adb('shell','uiautomator','dump',temporary)
-            xml=ET.fromstring(self.lab.adb('shell','cat',temporary));self.guard()
+            xml=ET.fromstring(self.lab.adb('shell','cat',temporary));self.guard();self.tree_root=xml
             return [n for n in xml.iter('node') if n.get('package')==PROVIDER]
         finally:self.lab.adb('shell','rm','-f',temporary)
     def tap_node(self,n):
@@ -74,16 +81,20 @@ class Picker:
                                    'description':n.get('content-desc') if n.get('content-desc') in ('Show roots','Navigate up') else ''}
                                   for n in nodes if n.get('text') in ('Save','SAVE','Downloads') or n.get('content-desc') in ('Show roots','Navigate up')],
                 'default_filename_editor_observed':any(n.get('class')=='android.widget.EditText' and n.get('text')=='focuspilot-private-summary.json' for n in nodes)}
-    def save_local(self):
+    def save_local(self,record_metadata):
         # Navigate only fixed system controls. Unrelated file rows are never chosen.
         nodes=self.nodes()
-        menu=next((n for n in nodes if n.get('content-desc') in ('Show roots','Navigate up')),None)
+        menu=next((n for n in nodes if n.get('content-desc')=='Show roots' and n.get('class')=='android.widget.ImageButton'),None)
         if menu is None: raise RuntimeError('Local-storage navigation control not identified')
         self.tap_node(menu)
         nodes=self.nodes()
-        downloads=next((n for n in nodes if n.get('text')=='Downloads' and n.get('resource-id','').endswith('/title')),None)
-        if downloads is None: raise RuntimeError('Local Downloads root not identified; no destination chosen')
-        self.tap_node(downloads)
+        record_metadata('drawer_control_metadata',self.metadata())
+        roots=next((n for n in self.tree_root.iter('node') if n.get('resource-id')==PROVIDER+':id/roots_list'),None)
+        if roots is None: raise RuntimeError('System roots drawer not identified; no destination chosen')
+        candidates=[n for n in roots.iter('node') if n.get('resource-id')==PROVIDER+':id/item_root'
+                    and any(child.get('text')=='Downloads' for child in n.iter('node'))]
+        if len(candidates)!=1: raise RuntimeError('Unique local Downloads root not identified; no destination chosen')
+        self.tap_node(candidates[0])
         nodes=self.nodes()
         filename=next((n for n in nodes if n.get('class')=='android.widget.EditText' and n.get('text')=='focuspilot-private-summary.json'),None)
         if filename is None: raise RuntimeError('Expected synthetic filename editor not identified')
@@ -94,8 +105,12 @@ class Picker:
         nodes=self.nodes()
         if not any(n.get('class')=='android.widget.EditText' and n.get('text')==FILENAME for n in nodes):
             raise RuntimeError('Test filename readback mismatch; no save')
-        save=next((n for n in nodes if n.get('text','').casefold()=='save' and n.get('enabled')=='true'),None)
+        save=next((n for n in nodes if n.get('resource-id')=='android:id/button1'
+                   and n.get('class')=='android.widget.Button' and n.get('clickable')=='true'
+                   and n.get('text','').casefold()=='save' and n.get('enabled')=='true'),None)
         if save is None: raise RuntimeError('Enabled Save control not identified')
+        if subprocess.run(self.lab.base+['shell','test','-e',REMOTE],capture_output=True).returncode!=1:
+            raise RuntimeError('Test destination collision or uncertain absence; no Save')
         self.tap_node(save)
 
 
@@ -136,6 +151,7 @@ def main():
             'phases':[],'completed':False}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     def record(): args.output.write_text(json.dumps(report,indent=2)+'\n')
+    def record_metadata(key,value): report[key]=value;record()
     def phase(name,**details):
         lab.guard()
         if checkpoint(preferences(lab))!=before: raise RuntimeError('Focus checkpoint changed')
@@ -150,14 +166,14 @@ def main():
         if any(n.get('text')=='Export your private summary?' for n in lab.nodes()):
             raise RuntimeError('Cancelled export review still open')
         phase('export_review_cancel',review_closed=True)
-        review();lab.tap('Choose destination',scroll=False);picker.guard()
+        review();lab.tap('Choose destination',scroll=False);picker.wait()
         report['picker_control_metadata']=picker.metadata();record()
         # Back cancels the exact picker we launched; no directory content inspected/exported.
         picker.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK');lab.guard()
         lab.top();lab.find('Export cancelled or expired. No summary was written.')
         phase('document_picker_cancel',returned_to_own_app=True)
         if args.save_local:
-            review();lab.tap('Choose destination',scroll=False);picker.save_local();lab.guard()
+            review();lab.tap('Choose destination',scroll=False);picker.wait();picker.save_local(record_metadata);lab.guard()
             lab.top();lab.find('Private summary exported to your chosen destination. It is outside app-data deletion.')
             data=lab.adb('shell','cat',REMOTE).encode('utf-8')
             if len(data)>80000: raise RuntimeError('Actual test export oversized')
@@ -176,6 +192,10 @@ def main():
             subprocess.run(['python3',str(ROOT/'prototype/bridge/review_export.py'),'--input',str(private),
                             '--expected-sha256',source_hash,'--output',str(aggregate)],cwd=ROOT,check=True,capture_output=True)
             replay=json.loads(aggregate.read_text())
+            if replay['record_count']!=0 or replay['context_count']!=0 or replay['groups']!=[]:
+                raise RuntimeError('Bridge unexpectedly replayed records')
+            if replay['phone_actions_executed'] or replay['officekit_transport_verified'] or replay['npu_verified']:
+                raise RuntimeError('Bridge scope flags inconsistent')
             report['private_payload_public']=False
             phase('local_document_saved_and_received',bytes=len(data),source_sha256=source_hash,
                   received_sha256=digest(private),transport='ADB read of exact new local test file; not Office Kit',
@@ -191,9 +211,14 @@ def main():
     finally:
         try:
             # If still in our exact picker, cancel it before returning to own app.
-            try:picker.guard()
+            try:picker.wait()
             except RuntimeError:pass
-            else:lab.adb('shell','input','keyevent','KEYCODE_BACK')
+            else:
+                # Back may first close the drawer or keyboard. Cancel only our picker.
+                for _ in range(3):
+                    picker.guard();lab.adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.3)
+                    try:lab.guard();break
+                    except RuntimeError:picker.wait()
             lab.guard();require_research_defaults(lab)
             final=checkpoint(preferences(lab));report['final']=final
             report['runtime_grants_after']=permissions(lab)
