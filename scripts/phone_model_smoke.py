@@ -100,7 +100,7 @@ class PhoneLab:
         if actual != value:
             raise RuntimeError("Synthetic command field did not match requested input; no inference performed")
 
-    def run(self, value, capture=False):
+    def run(self, value, capture=False, *, wake_display=True):
         self.command(value)
         node=self.find("Capture selected actual activation summaries")
         if (node.get("checked")=="true")!=capture:
@@ -111,7 +111,8 @@ class PhoneLab:
         began = time.monotonic()
         while time.monotonic()-began < 60:
             # Wake display only; this does not bypass a keyguard.
-            self.adb("shell", "input", "keyevent", "KEYCODE_WAKEUP")
+            if wake_display:
+                self.adb("shell", "input", "keyevent", "KEYCODE_WAKEUP")
             for node in self.nodes():
                 value_text = node.get("text", "")
                 if value_text.startswith("Model proposal:"):
