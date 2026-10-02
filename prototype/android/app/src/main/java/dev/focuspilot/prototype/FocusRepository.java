@@ -3,6 +3,9 @@ package dev.focuspilot.prototype;
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Process;
 import android.os.SystemClock;
 import org.json.JSONArray;
@@ -30,6 +33,9 @@ public final class FocusRepository {
     private ObservationSnapshot retainedForegroundSnapshot;
     private LivePreferenceScope retainedForegroundScope;
     private long lastPreferenceSkip=-1;
+    private long usageIntervalStartedElapsed, deadlineEpoch;
+    private final Handler deadlineHandler=new Handler(Looper.getMainLooper());
+    private Runnable deadlineTask;
     public final ArrayList<String> events = new ArrayList<>();
     public static synchronized FocusRepository get(Context context) {
         if(instance == null) instance = new FocusRepository(context.getApplicationContext());
@@ -43,7 +49,8 @@ public final class FocusRepository {
         observe = prefs.getBoolean("observe", false);
         shadowContinuousLimitMs=validShadowLimit(prefs.getLong("shadowContinuousLimit",0));
         shadowPlannedFocusMs=validShadowLimit(prefs.getLong("shadowPlannedFocus",0));
-        session.restorePaused(prefs.getLong("elapsedCheckpoint", 0));
+        session.restorePaused(prefs.getLong("elapsedCheckpoint",0),prefs.getBoolean("timedCheckpoint",false),
+            prefs.getLong("remainingCheckpoint",0),prefs.getBoolean("completedCheckpoint",false));
         accumulatedUsage = prefs.getLong("usageCheckpoint", 0);
         ledger.restore(prefs.getInt("points", 100), prefs.getLong("lastNudge", -1), SystemClock.elapsedRealtime());
         interrupted = prefs.getBoolean("activeCheckpoint", false);
@@ -57,25 +64,44 @@ public final class FocusRepository {
     }
     public long usage() {
         if(!observe || !session.isActive() || intervalWall<=0 || !usageGranted(context)) return accumulatedUsage;
-        try { return accumulatedUsage + UsageReader.read(context, selectedPackage, intervalWall, System.currentTimeMillis()); }
+        long nowWall=System.currentTimeMillis();
+        if(session.isTimed() && usageIntervalStartedElapsed>0) {
+            long endElapsed=Math.min(SystemClock.elapsedRealtime(),session.deadlineElapsedMs());
+            nowWall=Math.min(nowWall,intervalWall+Math.max(0,endElapsed-usageIntervalStartedElapsed));
+        }
+        try { return accumulatedUsage + UsageReader.read(context, selectedPackage, intervalWall, nowWall); }
         catch(SecurityException error) { return accumulatedUsage; }
     }
     public void start() {
-        if(!session.isActive()) { intervalWall=System.currentTimeMillis(); focusActiveStartedElapsed=SystemClock.elapsedRealtime(); session.start(focusActiveStartedElapsed); interrupted=false; beginShadowScope(); log("Focus session started / resumed"); }
+        completeTimedIfDue();
+        if(!session.isActive()) { intervalWall=System.currentTimeMillis(); focusActiveStartedElapsed=SystemClock.elapsedRealtime();usageIntervalStartedElapsed=focusActiveStartedElapsed; session.start(focusActiveStartedElapsed); interrupted=false; beginShadowScope(); log("Focus session started / resumed");scheduleDeadline(); }
         persist();
     }
+    public void startTimed(long durationMs) {
+        if(durationMs<FocusSession.MIN_TIMED_MS || durationMs>FocusSession.MAX_TIMED_MS)throw new IllegalArgumentException("Focus duration must be 1 second to 120 minutes");
+        completeTimedIfDue();
+        if(session.isActive()) { accumulatedUsage=usage();session.pause(SystemClock.elapsedRealtime()); }
+        cancelDeadline();intervalWall=System.currentTimeMillis();focusActiveStartedElapsed=SystemClock.elapsedRealtime();usageIntervalStartedElapsed=focusActiveStartedElapsed;
+        session.startTimed(focusActiveStartedElapsed,durationMs);interrupted=false;beginShadowScope();
+        log("Timed focus started · "+durationMs/1000+" seconds; deadline ends this run");scheduleDeadline();persist();
+    }
     public void pause(String reason) {
+        if(completeTimedIfDue())return;
+        cancelDeadline();
         if(session.isActive()) { accumulatedUsage=usage(); session.pause(SystemClock.elapsedRealtime()); intervalWall=0; invalidateShadowScope(); log(reason); }
         persist();
     }
     public void tick() {
+        if(completeTimedIfDue())return;
         refreshShadowObservation();
+        if(completeTimedIfDue())return;
         long now=SystemClock.elapsedRealtime();
         boolean permission=usageGranted(context);
         boolean currentlySelected=ObservedNudgeGate.eligible(latestSnapshot,shadowScopeId,now,observe,permission,session.isActive());
         DecisionPolicy.Result decision=policy.evaluate(usage(),budgetMs,currentlySelected,now,ledger.lastNudge());
         LivePreferencePolicy.Decision preference=livePreferenceDecision();
         boolean allowed=preference.permitsHandSetNudge(decision.nudge);
+        if(completeTimedIfDue())return;
         boolean nudged=allowed&&ledger.apply(decision,now);
         if(nudged) log("LOCAL RULE: budget nudge · −5 virtual points; no money moved");
         else if(decision.nudge&&preference.canVetoHandSetNudge()&&(lastPreferenceSkip<0 || now-lastPreferenceSkip>=DecisionPolicy.COOLDOWN_MS)) {
@@ -84,15 +110,17 @@ public final class FocusRepository {
         if(nudged && shadowSinceWall>0) shadowFeedback.recordActualNudge(now);
         persist();
     }
-    public void reset() { session.reset(); accumulatedUsage=0; intervalWall=0; ledger.reset(); invalidateShadowScope(); log("Session reset"); persist(); }
+    public void reset() { cancelDeadline();session.reset(); accumulatedUsage=0; intervalWall=0; ledger.reset(); invalidateShadowScope(); log("Session reset"); persist(); }
     public void setObservation(boolean enabled) {
         observe=enabled; accumulatedUsage=0; intervalWall=session.isActive() ? System.currentTimeMillis() : 0;
+        usageIntervalStartedElapsed=session.isActive()?SystemClock.elapsedRealtime():0;
         beginShadowScope();
         prefs.edit().putBoolean("observe",enabled).apply(); log(enabled ? "Usage reading enabled locally" : "Usage reading disabled"); persist();
     }
     public void configure(String packageName,long budget) {
         if(!MonitorConfig.valid(packageName,budget)) throw new IllegalArgumentException("Invalid monitor configuration");
         selectedPackage=packageName; budgetMs=budget; accumulatedUsage=0; intervalWall=session.isActive() ? System.currentTimeMillis() : 0;
+        usageIntervalStartedElapsed=session.isActive()?SystemClock.elapsedRealtime():0;
         shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;
         prefs.edit().remove("shadowContinuousLimit").remove("shadowPlannedFocus").apply();beginShadowScope();
         prefs.edit().putString("package",packageName).putLong("budget",budget).apply(); log("Budget/settings saved; usage interval restarted"); persist();
@@ -103,14 +131,40 @@ public final class FocusRepository {
         JSONArray saved=new JSONArray(); for(String event:events) saved.put(event); prefs.edit().putString("events",saved.toString()).apply();
     }
     public void persist() {
-        prefs.edit().putLong("elapsedCheckpoint",session.elapsed(SystemClock.elapsedRealtime())).putBoolean("activeCheckpoint",session.isActive()).putLong("usageCheckpoint",usage()).putInt("points",ledger.points()).putLong("lastNudge",ledger.lastNudge()).apply();
+        long now=SystemClock.elapsedRealtime();
+        prefs.edit().putLong("elapsedCheckpoint",session.elapsed(now)).putBoolean("activeCheckpoint",session.isActive()).putLong("usageCheckpoint",usage()).putInt("points",ledger.points()).putLong("lastNudge",ledger.lastNudge())
+            .putBoolean("timedCheckpoint",session.isTimed()).putLong("remainingCheckpoint",Math.max(0,session.remainingMs(now))).putBoolean("completedCheckpoint",session.isCompleted()).apply();
     }
     /** Returns whether deletion of the separately persisted live-label cache was confirmed. */
     public boolean delete() {
+        cancelDeadline();
         session.reset(); accumulatedUsage=0; intervalWall=0; observe=false; interrupted=false; ledger.reset(); events.clear(); selectedPackage="com.instagram.android"; budgetMs=300_000;
         shadowContinuousLimitMs=0;shadowPlannedFocusMs=0;invalidateShadowScope();boolean focusDeleted=prefs.edit().clear().commit();
         boolean labelsDeleted=livePreferences.clear();
         return focusDeleted && labelsDeleted;
+    }
+    private void cancelDeadline() {
+        deadlineEpoch++;if(deadlineTask!=null)deadlineHandler.removeCallbacks(deadlineTask);deadlineTask=null;
+    }
+    private void scheduleDeadline() {
+        cancelDeadline();
+        if(!session.isActive() || !session.isTimed())return;
+        final long epoch=deadlineEpoch,generation=session.generation();
+        deadlineTask=()->{
+            if(epoch!=deadlineEpoch || generation!=session.generation())return;
+            if(!completeTimedIfDue())scheduleDeadline();
+        };
+        // Handler uses uptime; deep sleep can delay delivery. elapsedRealtime decides
+        // completion and clamps elapsed/usage on this callback or any later tick.
+        deadlineHandler.postDelayed(deadlineTask,session.remainingMs(SystemClock.elapsedRealtime()));
+    }
+    /** Finalizes a due timer before decisions; does not require usage or monitoring permission. */
+    public boolean completeTimedIfDue() {
+        long now=SystemClock.elapsedRealtime();if(!session.isDue(now))return false;
+        accumulatedUsage=usage();session.completeIfDue(now);intervalWall=0;usageIntervalStartedElapsed=0;
+        cancelDeadline();invalidateShadowScope();log("Timed focus complete; session paused at its deadline");persist();
+        context.stopService(new Intent(context,FocusMonitorService.class));
+        return true;
     }
     private static long validShadowLimit(long value) { return value>=0 && value<=86_400_000?value:0; }
     /** Saves declared limits only. No model weights, observed vectors or event stream are saved. */

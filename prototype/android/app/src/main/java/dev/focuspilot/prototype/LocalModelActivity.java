@@ -230,7 +230,10 @@ public final class LocalModelActivity extends Activity {
         try {
             FocusRepository repository=FocusRepository.get(this);
             switch(proposal.kind) {
-                case START_FOCUS: repository.start(); result.setText("Focus state is now active. No background monitor was enabled by this action."); confirmedFocusText="You confirmed a focus session. One gentle step at a time.";break;
+                case START_FOCUS:
+                    if(proposal.seconds>0) repository.startTimed(proposal.seconds*1000L); else repository.start();
+                    result.setText(proposal.seconds>0?"Timed focus is active for "+proposal.seconds+" seconds. It pauses at the countdown deadline while the app process can run. No background monitor was enabled.":repository.session.isTimed()?"Your paused focus countdown has resumed. No background monitor was enabled.":"Focus state is now active. No background monitor was enabled by this action.");
+                    confirmedFocusText=proposal.seconds>0?"You confirmed timed focus for "+proposal.seconds+" seconds. One gentle step at a time.":"You confirmed a focus session. One gentle step at a time.";break;
                 case PAUSE_FOCUS: stopService(new Intent(this,FocusMonitorService.class)); repository.pause("User confirmed pause from local model proposal"); result.setText("Focus paused; foreground monitor stop requested.");confirmedFocusText="You confirmed a pause. Take a gentle breath.";break;
                 case ALARM: startActivity(new Intent(AlarmClock.ACTION_SET_ALARM).putExtra(AlarmClock.EXTRA_HOUR,proposal.hour).putExtra(AlarmClock.EXTRA_MINUTES,proposal.minute).putExtra(AlarmClock.EXTRA_SKIP_UI,false).putExtra(AlarmClock.EXTRA_MESSAGE,"FocusPilot research test")); result.setText("Clock request launched; actual alarm creation remains unverified."); break;
                 case TIMER: startActivity(new Intent(AlarmClock.ACTION_SET_TIMER).putExtra(AlarmClock.EXTRA_LENGTH,proposal.seconds).putExtra(AlarmClock.EXTRA_SKIP_UI,false)); result.setText("Timer request launched; verify the result in Clock."); break;

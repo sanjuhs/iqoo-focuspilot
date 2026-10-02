@@ -45,7 +45,7 @@ public final class MainActivity extends Activity {
     private final CommandParser parser = new CommandParser();
     private SharedPreferences prefs;
     private LinearLayout root;
-    private TextView timer, sessionLabel, usageLabel, pointsLabel, trace, status, logView, speechState, monitorStatus, companionMessage, goalLabel, shadowTrace, livePreferenceTrace;
+    private TextView timer, timerDetail, sessionLabel, usageLabel, pointsLabel, trace, status, logView, speechState, monitorStatus, companionMessage, goalLabel, shadowTrace, livePreferenceTrace;
     private LinearLayout liveSavedRows;
     private Switch livePreferenceSwitch;
     private boolean updatingLivePreference;
@@ -68,6 +68,10 @@ public final class MainActivity extends Activity {
     private final ArrayList<String> events = new ArrayList<>();
     private final Runnable refreshTask = new Runnable() {
         @Override public void run() { if (visible) { refresh(); handler.postDelayed(this, 5000); } }
+    };
+
+    private final Runnable clockTask=new Runnable() {
+        @Override public void run() { if(visible) { renderClock(); handler.postDelayed(this,1000); } }
     };
 
     @Override public void onCreate(Bundle state) {
@@ -159,9 +163,11 @@ public final class MainActivity extends Activity {
         LinearLayout focus = card("YOUR FOCUS SESSION");
         sessionLabel = text("Ready when you are",20,WHITE,true); focus.addView(sessionLabel);
         timer = text("00:00",52,WHITE,true); focus.addView(timer);
+        timerDetail=text("Elapsed focus time",13,MUTED,false); focus.addView(timerDetail);
+        button("Focus for 25 minutes",focus,v -> new AlertDialog.Builder(this).setTitle("A little time for your task?").setMessage("Start a 25-minute focus countdown. This replaces any current countdown and keeps your accumulated focus time. Focus pauses at the deadline while the app process can run; Android sleep or process shutdown can delay the update. No monitor or microphone will be enabled.").setNegativeButton("Cancel",null).setPositiveButton("Start 25 minutes",(d,w) -> { repository.startTimed(25*60_000L); simulated=false; celebrateUntil=SystemClock.elapsedRealtime()+1600; refresh(); }).show(),true);
         goalLabel=text("One task at a time.",16,WHITE,true); focus.addView(goalLabel);
         LinearLayout goals=disclosure(focus,"Choose your task & targets");
-        goals.addView(text("Your task stays private on this phone. Optional targets help explain usage; the session runs until you pause it. Leave a target blank when you haven't chosen one.",13,MUTED,false));
+        goals.addView(text("Your task stays private on this phone. Optional targets help explain usage. Choose the separate 25-minute countdown or ask Mira for a timed session; a target alone does not start a timer. Leave a target blank when you haven't chosen one.",13,MUTED,false));
         goals.addView(text("What would you like to work on?",13,WHITE,false));
         goalInput=input("One small task",prefs.getString("focusGoal",""),goals);
         goalInput.setContentDescription("Focus task");
@@ -245,26 +251,26 @@ public final class MainActivity extends Activity {
         logView=text("No events yet",13,MUTED,false); history.addView(logView);
         button("Export my focus summary",history,v -> new AlertDialog.Builder(this).setTitle("Export your private summary?").setMessage("Includes your selected app, limits, task hash, virtual points and labels for that app. Excludes task text, screen content and event history. Choose phone storage for an offline file; a cloud provider may sync it. Exported files remain after deleting app data.").setNegativeButton("Cancel",null).setPositiveButton("Choose destination",(d,w) -> exportFocusData()).show(),false);
         button("Delete focus data & saved examples",history,v -> new AlertDialog.Builder(this).setTitle("Delete FocusPilot data?").setMessage("Clears saved settings, event history and few-shot labels, stops the session and disables observation. The downloaded model stays installed. Android permissions can be revoked separately in system settings.").setNegativeButton("Cancel",null).setPositiveButton("Delete",(d,w) -> deleteData()).show(),false);
-        root.addView(text("RESEARCH BUILD · 0.6\nNo real money moves. You choose when to pause.",12,MUTED,false));
+        root.addView(text("RESEARCH BUILD · 0.7\nNo real money moves. You choose when to pause.",12,MUTED,false));
         screen.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         LinearLayout safetyBar=new LinearLayout(this); safetyBar.setOrientation(LinearLayout.VERTICAL); safetyBar.setPadding(dp(20),0,dp(20),dp(8)); safetyBar.setBackgroundColor(BG);
         button("Stop focus",safetyBar,v -> pauseFocus(),false);
         screen.addView(safetyBar,new LinearLayout.LayoutParams(-1,-2));
         setContentView(screen); screen.requestApplyInsets(); renderLogs();
     }
-    @Override protected void onResume() { super.onResume(); visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); }
-    @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
+    @Override protected void onResume() { super.onResume(); visible=true; voiceDraft.resume(); handler.removeCallbacks(refreshTask); handler.post(refreshTask); handler.removeCallbacks(clockTask); handler.post(clockTask); }
+    @Override protected void onStop() { visible=false;labelReviewEpoch++; handler.removeCallbacks(refreshTask); handler.removeCallbacks(clockTask); voiceDraft.stop(); if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); super.onStop(); }
     @Override protected void onDestroy() { handler.removeCallbacksAndMessages(null); if(voiceInput!=null) voiceInput.close(); if(tts!=null) tts.shutdown(); super.onDestroy(); }
     private boolean usageGranted() { return FocusRepository.usageGranted(this); }
     private long realUsage() { return repository.usage(); }
     private void refresh() {
         if(timer==null) return;
         repository.tick();
-        long now=SystemClock.elapsedRealtime(), duration=session.elapsed(now), usage=realUsage();
-        timer.setText(String.format(Locale.US,"%02d:%02d",duration/60_000,(duration/1000)%60));
+        long now=SystemClock.elapsedRealtime(), usage=realUsage();
+        renderClock();
         String goal=prefs.getString("focusGoal","");
         goalLabel.setText(goal.isEmpty() ? "One task at a time." : "Your task · "+goal);
-        sessionLabel.setText(session.isActive() ? "In your focus zone" : "Paused · you're in control"); sessionButton.setText(session.isActive() ? "Pause focus" : "Start / resume focus");
+        sessionLabel.setText(session.isCompleted()?"Complete · a moment to breathe":session.isActive() ? "In your focus zone" : "Paused · you're in control"); sessionButton.setText(session.isActive() ? "Pause focus" : "Start / resume focus");
         heroFocusButton.setText(session.isActive() ? "Pause focus" : "Start focus");
         usageLabel.setText(!observe ? "Usage reading is off" : !usageGranted() ? "Usage Access needed" : String.format(Locale.US,"%.1f / %d min · %s",usage/60_000.0,budgetMs/60_000,monitoredPackage));
         VirtualLedger current=simulated ? demoLedger : ledger;
@@ -281,8 +287,17 @@ public final class MainActivity extends Activity {
         boolean liveNudge=usage>budgetMs&&repository.selectedAppEligible()&&!repository.livePreferenceDecision().canVetoHandSetNudge();
         CompanionView.State mood=listening ? CompanionView.State.LISTEN : simulated ? CompanionView.State.NUDGE : !session.isActive() ? CompanionView.State.PAUSED : now<celebrateUntil ? CompanionView.State.CELEBRATE : liveNudge ? CompanionView.State.NUDGE : CompanionView.State.FOCUS;
         companion.setState(mood);
-        companionMessage.setText(repository.interrupted ? "That session was interrupted. I've kept the last checkpoint paused; restart whenever you're ready." : listening ? "I'm listening. No rush — one small request." : simulated ? "Practice mode: let's take a tiny break together. These are virtual points." : !session.isActive() ? "Rest is part of focus, too. I'll be here when you're ready." : liveNudge ? "You've reached your own app limit. Want to return to what matters?" : "You've got this. Let's make space for one good thing.");
+        companionMessage.setText(repository.interrupted ? "That session was interrupted. I've kept the last checkpoint paused; restart whenever you're ready." : listening ? "I'm listening. No rush — one small request." : simulated ? "Practice mode: let's take a tiny break together. These are virtual points." : session.isCompleted() ? "You made time for your task. Take a breath — your countdown is complete." : !session.isActive() ? "Rest is part of focus, too. I'll be here when you're ready." : liveNudge ? "You've reached your own app limit. Want to return to what matters?" : "You've got this. Let's make space for one good thing.");
         renderLogs();
+    }
+    /** Visible clock update only; permissioned usage/policy reads keep their existing cadence. */
+    private void renderClock() {
+        if(timer==null) return;
+        long now=SystemClock.elapsedRealtime(), duration=session.elapsed(now);
+        long displayed=session.isTimed()?session.remainingMs(now):duration;
+        long seconds=session.isTimed()?(displayed+999)/1000:displayed/1000;
+        timer.setText(String.format(Locale.US,"%02d:%02d",seconds/60,seconds%60));
+        timerDetail.setText(session.isTimed()?String.format(Locale.US,"%s · %.1f minutes focused in total",session.isCompleted()?"Countdown complete":session.isActive()?"Time remaining":"Countdown paused",duration/60_000.0):"Elapsed focus time");
     }
     private void startFocus() { repository.start(); simulated=false; celebrateUntil=SystemClock.elapsedRealtime()+1600; refresh(); handler.postDelayed(() -> { if(visible) refresh(); },1600); }
     private void pauseFocus() { if(voiceInput!=null) voiceInput.cancel(); listening=false; if(tts!=null) tts.stop(); stopMonitor("Focus paused · monitor and decision actions stopped"); simulated=false; refresh(); }

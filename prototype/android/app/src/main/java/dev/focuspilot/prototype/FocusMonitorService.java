@@ -23,11 +23,16 @@ public final class FocusMonitorService extends Service {
     private static final int ID=41;
     private final Handler handler=new Handler(Looper.getMainLooper());
     private FocusRepository repository;
+    private long watchedGeneration=-1;
     private final Runnable tick=new Runnable() {
         public void run() {
             if(!running) return;
+            if(repository.completeTimedIfDue()) { stopSession("Timed focus complete; monitor stopped");return; }
             if(!repository.observe || !repository.session.isActive() || !FocusRepository.usageGranted(FocusMonitorService.this) || !notificationsAllowed(FocusMonitorService.this)) { stopSession("Monitor stopped: a permission or session prerequisite changed"); return; }
-            repository.tick(); ((NotificationManager)getSystemService(NOTIFICATION_SERVICE)).notify(ID,notification()); handler.postDelayed(this,10_000);
+            repository.tick();
+            if(!repository.session.isActive()) { stopSession("Focus completed or paused; monitor stopped");return; }
+            watchedGeneration=repository.session.generation();
+            ((NotificationManager)getSystemService(NOTIFICATION_SERVICE)).notify(ID,notification()); handler.postDelayed(this,10_000);
         }
     };
     public static boolean notificationsAllowed(Context context) {
@@ -41,7 +46,9 @@ public final class FocusMonitorService extends Service {
     @Override public int onStartCommand(Intent intent,int flags,int startId) {
         if(intent==null || STOP.equals(intent.getAction())) { stopSession("Focus monitor stopped by user"); return START_NOT_STICKY; }
         if(!repository.observe || !FocusRepository.usageGranted(this) || !notificationsAllowed(this)) { stopSession("Monitor could not start: permission missing"); return START_NOT_STICKY; }
+        if(repository.completeTimedIfDue()) { stopSession("Timed focus complete; monitor stopped");return START_NOT_STICKY; }
         repository.start();
+        watchedGeneration=repository.session.generation();
         try {
             if(Build.VERSION.SDK_INT>=34) startForeground(ID,notification(),ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
             else startForeground(ID,notification());
@@ -59,6 +66,12 @@ public final class FocusMonitorService extends Service {
             .setContentIntent(open).addAction(new Notification.Action.Builder(null,"Stop focus",stop).build()).setOngoing(true).setOnlyAlertOnce(true).setCategory(Notification.CATEGORY_SERVICE).build();
     }
     private void stopSession(String reason) { running=false; handler.removeCallbacksAndMessages(null); repository.pause(reason); stopForeground(STOP_FOREGROUND_REMOVE); stopSelf(); }
-    @Override public void onDestroy() { running=false; handler.removeCallbacksAndMessages(null); repository.pause("Foreground service ended; session paused"); super.onDestroy(); }
+    @Override public void onDestroy() {
+        running=false;handler.removeCallbacksAndMessages(null);
+        // A completion stop may finish asynchronously after the user starts a new
+        // run. Only the generation this service last watched can be paused here.
+        if(repository.session.generation()==watchedGeneration)repository.pause("Foreground service ended; session paused");
+        super.onDestroy();
+    }
     @Override public IBinder onBind(Intent intent) { return null; }
 }
