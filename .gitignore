@@ -1,0 +1,32 @@
+# Secrets stay on the development laptop.
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+local.properties
+
+# Dependencies, downloaded sources, model weights and private phone captures.
+research/
+models/
+datasets/private/
+artifacts/*
+!artifacts/.gitkeep
+.venv/
+node_modules/
+.gradle/
+build/
+**/build/
+__pycache__/
+*.pyc
+*.gguf
+*.safetensors
+*.onnx
+*.tflite
+*.pte
+*.dlc
+*.bin
+*.apk
+*.aab
+*.mp4
+.DS_Store
