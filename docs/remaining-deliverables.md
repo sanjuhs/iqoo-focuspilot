@@ -69,6 +69,15 @@ All 24 narration beats, full decode, timing, sampled visuals and source-frame
 comparisons passed. Complete human listening/playback, permissioned live workflows
 and accepted eligible submission remain pending. [Selected demo](v012-pitch.md).
 
+**Later v0.12 countdown recovery:** ten selected-APK physical phases passed
+review Cancel, retained-remainder Pause/resume, paused-time exclusion, automatic
+completion, exact paused recovery after real own-app process loss, explicit resume
+and unsupported alarm-cancellation refusal. Two countdowns added exactly 40,000 ms;
+final paused/off/100/97,331 ms, empty goal/no guide and unchanged grants/monitor.
+This closes those specific current timer branches in action 3; it does not close
+replacement, deep sleep, bundled clean import or the full command/task/voice/
+background workflow. [Actual scope and repeat](focus-recovery-phone.md).
+
 ## Evidence actually inspected
 
 - Frozen v0.9 source `6e483aaf9e42889794ed77c272b8a912539cfc7c`: manifest and floating-service source. The latter is nonsticky, requires explicit Show/readiness, stops on screen-off and does not initiate model/voice/observation. Deadline/Pause may flush existing consented usage accounting.

@@ -5,6 +5,19 @@ morning; the authenticated dashboard cutoff is still unknown. Public Grand Final
 9–11 October. The broader goal is a working local Android assistant and a recorded
 demo, with an honest, measurable System 1 decision path.
 
+## Current v0.12 countdown and recovery
+
+Ten actual own-app phone phases passed on the selected APK: reviewed Cancel,
+timed Start, early Pause, exclusion of paused time, reviewed resume, automatic
+completion, process force-stop/restart with exact paused checkpoint recovery,
+explicit resume and refused alarm cancellation. Two countdowns added exactly
+40,000 ms; final elapsed 97,331 ms, paused/off/100 points, empty goal/no guide,
+unchanged grants and no monitor. Three supported Qwen proposals took 1.824–1.928 s
+native CPU. Qwen misclassified cancellation, and validation correctly abstained.
+This establishes last-checkpoint recovery, with ASR, deep sleep, monitoring,
+iQOO/NPU, Office Kit and accepted eligible submission still pending.
+[Physical proof and repeat procedure](docs/focus-recovery-phone.md).
+
 ## Current recorded v0.12 research demo
 
 A new 4:41 video includes original Mira artwork and two actual own-app phone clips

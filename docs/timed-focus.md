@@ -2,6 +2,14 @@
 
 Prepared 2 October 2026. This is a pre-event research implementation. The integrated build passes 105 JVM tests and lint with zero errors and 59 warnings. Both signed debug APKs passed package/native/model/license checks; [artifact identities](timed-focus-artifacts.json) bind them to source `6bd4841b170be0445470eff9977133bc2accc8f6`. [Both APKs are published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.7). Actual v0.7 phone countdown verification is pending: the light APK installed, but the own-app UI guard refused the unlocked-own-app foreground precondition before inference or action.
 
+## Later selected v0.12 physical branches
+
+[Actual phone proof](focus-recovery-phone.md) now covers reviewed cancellation,
+early Pause and retained-remainder resume, exclusion of paused time, two automatic
+completions and exact last-checkpoint paused recovery after force-stop/restart.
+Final total increased by exactly 40,000 ms. Replacement, deep sleep, permissioned
+monitoring and voice remain separate; the v0.11 paragraph below is historical.
+
 ## Later v0.11 physical branch
 
 The [current phone record](current-countdown-phone-v011.json) verifies one actual

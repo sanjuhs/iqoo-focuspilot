@@ -1,0 +1,229 @@
+{
+  "research_only": true,
+  "app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "harness_commit": "8fa6d48338e0f8c47ff047fda9ad634b6f111628",
+  "harness_sha256": "92adaeccb91b9baaa4f3455038d5f39e1a323d196e4c00d4086a0b3b1494ea06",
+  "apk_sha256": "4ebd8097c9f3ff4a4cf5f12ecc5b80c1a8974b561c8e4ac733db1d77662583a0",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "backend": "CPU/KleidiAI I8MM",
+  "typed_synthetic_only": true,
+  "before": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 57331,
+    "timed": true,
+    "remaining_ms": 0,
+    "completed": true
+  },
+  "runtime_grants_before": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "phases": [
+    {
+      "name": "review_cancel_no_action",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 57331,
+        "timed": true,
+        "remaining_ms": 0,
+        "completed": true
+      },
+      "model_result": {
+        "command": "Start focus for 20 seconds",
+        "capture": false,
+        "intent": "start_focus",
+        "gate": "REVIEW REQUIRED",
+        "total_ms": 1919.0,
+        "prefill_ms": 889.0,
+        "decode_ms": 1030.0,
+        "action_executed": false
+      }
+    },
+    {
+      "name": "pause_retains_remainder",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 61048,
+        "timed": true,
+        "remaining_ms": 16283,
+        "completed": false
+      }
+    },
+    {
+      "name": "paused_time_excluded",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 61048,
+        "timed": true,
+        "remaining_ms": 16283,
+        "completed": false
+      },
+      "observation_seconds": 2
+    },
+    {
+      "name": "reviewed_resume",
+      "state": {
+        "active": true,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 61051,
+        "timed": true,
+        "remaining_ms": 16280,
+        "completed": false
+      },
+      "model_result": {
+        "command": "Please start a focus session",
+        "capture": false,
+        "intent": "start_focus",
+        "gate": "REVIEW REQUIRED",
+        "total_ms": 1824.0,
+        "prefill_ms": 773.0,
+        "decode_ms": 1051.0,
+        "action_executed": true,
+        "confirmation_tapped": true
+      }
+    },
+    {
+      "name": "first_auto_complete",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 77331,
+        "timed": true,
+        "remaining_ms": 0,
+        "completed": true
+      },
+      "elapsed_delta_ms": 20000
+    },
+    {
+      "name": "second_reviewed_countdown_active",
+      "state": {
+        "active": true,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 77333,
+        "timed": true,
+        "remaining_ms": 19998,
+        "completed": false
+      },
+      "model_result": {
+        "command": "Start focus for 20 seconds",
+        "capture": false,
+        "intent": "start_focus",
+        "gate": "REVIEW REQUIRED",
+        "total_ms": 1928.0,
+        "prefill_ms": 785.0,
+        "decode_ms": 1143.0,
+        "action_executed": true,
+        "confirmation_tapped": true
+      }
+    },
+    {
+      "name": "process_death_recovers_paused",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 77333,
+        "timed": true,
+        "remaining_ms": 19998,
+        "completed": false
+      },
+      "saved_checkpoint": {
+        "active": true,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 77333,
+        "timed": true,
+        "remaining_ms": 19998,
+        "completed": false
+      }
+    },
+    {
+      "name": "explicit_dashboard_resume",
+      "state": {
+        "active": true,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 77335,
+        "timed": true,
+        "remaining_ms": 19996,
+        "completed": false
+      }
+    },
+    {
+      "name": "recovered_auto_complete",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 97331,
+        "timed": true,
+        "remaining_ms": 0,
+        "completed": true
+      },
+      "elapsed_delta_ms": 20000
+    },
+    {
+      "name": "unsupported_cancellation_no_action",
+      "state": {
+        "active": false,
+        "observation": false,
+        "points": 100,
+        "elapsed_ms": 97331,
+        "timed": true,
+        "remaining_ms": 0,
+        "completed": true
+      },
+      "model_result": {
+        "command": "Cancel my alarm at 7:30",
+        "capture": false,
+        "intent": "alarm",
+        "gate": "ABSTAIN",
+        "total_ms": 1772.0,
+        "prefill_ms": 952.0,
+        "decode_ms": 820.0,
+        "action_executed": false
+      }
+    }
+  ],
+  "completed": true,
+  "permissions_or_settings_changed": false,
+  "speech_recognition_tested": false,
+  "offline_disconnect_verified": false,
+  "npu_verified": false,
+  "device": {
+    "manufacturer": "Nothing",
+    "model": "A059",
+    "soc": "SM7635",
+    "api": "36"
+  },
+  "first_confirmation_tapped": true,
+  "resume_confirmation_tapped": true,
+  "second_confirmation_tapped": true,
+  "final": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331,
+    "timed": true,
+    "remaining_ms": 0,
+    "completed": true
+  },
+  "runtime_grants_after": {
+    "android.permission.RECORD_AUDIO": false,
+    "android.permission.POST_NOTIFICATIONS": false
+  },
+  "own_monitor_absent_final": true,
+  "cleanup_verified": true
+}

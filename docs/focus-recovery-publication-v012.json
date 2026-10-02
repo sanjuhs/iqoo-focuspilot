@@ -1,0 +1,17 @@
+{
+  "research_only": true,
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+  "tag_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+  "original_12_assets_unchanged": true,
+  "total_asset_count": 13,
+  "new_asset": {
+    "name": "focus-recovery-phone-v012.json",
+    "size": 5867,
+    "digest": "sha256:f67eb55a3297ab1653c4e8c0d2855a5ff78ac8949f589ffa6ce98e1a559ec9a9",
+    "state": "uploaded",
+    "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focus-recovery-phone-v012.json"
+  },
+  "completed_and_cleanup_verified": true,
+  "logical_project_bytes": 13821604781,
+  "limit_bytes": 15000000000
+}
