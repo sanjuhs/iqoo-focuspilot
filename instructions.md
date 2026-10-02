@@ -13,8 +13,12 @@ and speech; step text executes no phone action and enters no model/export.
 **143 JVM tests pass**, lint zero errors/65 warnings. Signed light packaging passed
 native/license/permission inspection and installed with matching APK/model hashes;
 focus paused, observation off and 100 points stayed unchanged. No wake, UI,
-permission or task action occurred. Both signed packages are inspected; publication and physical
-step/readback tests remain pending. Qwen3.5 Q4_0, prompt, gate and native are unchanged.
+permission or task action occurred. Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11);
+all four server asset sizes/SHA-256 digests match local files and the tag resolves
+to the exact app source above. Physical step/readback tests remain pending.
+Qwen3.5 Q4_0, prompt, gate and native are unchanged. The publication preflight measured
+12,491,320,741 logical project bytes (about 12.491 GB), below the strict 15 GB cap;
+ignored files and Git are included, pre-existing shared SDK caches excluded.
 [Task guide](docs/task-guide.md),
 [immutable identities](docs/task-guide-artifacts.json).
 
@@ -29,8 +33,9 @@ ready: `artifacts/pitch-current.mp4`, 1920×1080 H.264/24fps with AAC and **30 m
 caption segments**. It uses original procedural illustrations, with no phone
 capture or new phone actions. The historical v0.3 `pitch-research.mp4` is preserved.
 
-Renderer source is `6ca1d02284ecffd643b9d50ea6b1b18d610f88d1`; the app remains
-`bcc24733655e4eced67d68ff5c47f7ab97d60b36`. Video SHA-256 is
+Renderer source is `6ca1d02284ecffd643b9d50ea6b1b18d610f88d1`; the video references
+v0.10 app source `bcc24733655e4eced67d68ff5c47f7ab97d60b36`. The new v0.11 task guide
+is not depicted in that video. Video SHA-256 is
 `1bb3fd1d96330b5320b8d8281e8f824212ada852a84835c3b1cbcb0895e82a25`.
 Full decode, caption timing, encoded-frame/transition review and audio-level checks
 passed. **Complete human listening/playback review remains pending.** The video's

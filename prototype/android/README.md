@@ -14,7 +14,8 @@ from exports/model input. 143 JVM tests pass, lint zero errors/65 warnings. Sign
 light APK inspected/installed with APK/model parity, paused/off/100 unchanged.
 Actual UI/readback/recovery remains pending; Qwen/prompt/gate/native are unchanged.
 [Contract](../../docs/task-guide.md), [identities](../../docs/task-guide-artifacts.json).
-Both signed packages inspected; release publication pending. The new
+Both signed packages are inspected and [published with v0.11](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11); both APKs
+and both evidence files match server sizes/digests and the exact app-source tag. The new
 [streaming packaging recipe](../../docs/bundled-packaging.md) preserves light-payload
 bytes and adds the pinned model without extra merged model working copies.
 

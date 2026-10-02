@@ -1,6 +1,6 @@
 # One small step — private authored task guide
 
-Prepared 2 October 2026. **Pre-event research; v0.11 source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.** The final source passes 143 JVM tests and lint zero errors/65 warnings. Signed light packaging is inspected and installed with APK/private-model hash parity; paused focus, observation off and 100 points are unchanged. No wake, UI, task action or permission change was performed. [Immutable packaging identity](task-guide-artifacts.json) records both inspected signed packages. Actual task/voice outcomes remain unverified.
+Prepared 2 October 2026. **Pre-event research; v0.11 source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a`.** The final source passes 143 JVM tests and lint zero errors/65 warnings. Signed light packaging is inspected and installed with APK/private-model hash parity; paused focus, observation off and 100 points are unchanged. No wake, UI, task action or permission grant was requested. [Immutable packaging identity](task-guide-artifacts.json) records both inspected signed packages. Actual task/voice outcomes remain unverified.
 
 ## What the user controls
 
@@ -45,4 +45,6 @@ Use synthetic, harmless authored text on the exact final installed APK; record s
 7. Try explicit readback with mute on/off, unavailable local voice, active voice draft and Activity stop. Verify no hot microphone/automatic inference, and verify progress/replacement/clear/deletion/task edits stop actual playback as requested, without claiming unobserved audio cancellation.
 8. Produce a harmless bounded summary export through the existing reviewed flow and check it omits authored step text. No export/backup claim is upgraded to physical proof until the actual output/recovery is inspected.
 
-Release publication and all actual task-guide Android outcomes are **pending**. An authored checklist is a useful guidance layer; it does not complete broad phone automation, actual iQOO/NPU/Office Kit use or eligible submission. [Remaining deliverables](remaining-deliverables.md).
+The [v0.11 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11) is published with both APKs and both immutable evidence files;
+all four server sizes/SHA-256 digests match local files and the tag resolves to the full app-source commit above.
+All actual task-guide Android outcomes remain **pending**. An authored checklist is a useful guidance layer; it does not complete broad phone automation, actual iQOO/NPU/Office Kit use or eligible submission. [Remaining deliverables](remaining-deliverables.md).

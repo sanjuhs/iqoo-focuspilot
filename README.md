@@ -12,7 +12,9 @@ and installed with matching APK/model hashes; paused/off/100 points unchanged.
 Actual task UI/readback remains untested on the asleep phone. Qwen3.5-0.8B Q4_0,
 prompt, command gate and native CPU library are unchanged.
 [Task guide and physical checks](docs/task-guide.md). Both signed packages inspected;
-release publication pending. [Artifact identities](docs/task-guide-artifacts.json).
+[v0.11 is published](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11); both APKs and both evidence files match server
+sizes/SHA-256 digests, and its tag resolves to the exact app source.
+[Artifact identities](docs/task-guide-artifacts.json).
 
 The new [simpler-policy comparison](docs/policy-baselines.md) reports 469/480 for
 two seven-parameter logistic models versus 472/480 for the unchanged network.
@@ -61,7 +63,7 @@ shadow replay; Java-export/Python-consumer interoperability is verified with
 synthetic data, without an Office Kit transfer. Physical ASR, Office Kit and NPU
 execution remain pending.
 
-[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10)
+[Current research APKs](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11)
 are published; previous builds remain preserved. A new [4:35 current Mira research pitch](docs/current-pitch.md)
 reflects v0.10 with original animations, measured captions and source-bound figures.
 [Video, captions and manifests are backed up with v0.10](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.10);

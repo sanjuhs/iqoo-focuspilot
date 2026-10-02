@@ -24,8 +24,11 @@ permissions and installed APK/private-model identities are verified; paused/off/
 unchanged, no wake/UI/action/permission operation. Actual task/readback/recovery is
 incomplete. [Contract](task-guide.md), [immutable artifacts](task-guide-artifacts.json). Both
 signed version-11 packages pass model/native/license/permission/version checks;
-publication remains pending. Sixteen audit tests pass, including changed task
-source and a signed package reporting the wrong release version.
+the [v0.11 prerelease](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.11) contains both APKs and both immutable evidence files
+with matching server sizes/digests and exact app-source tag. Sixteen audit tests pass,
+including changed task source and a signed package reporting the wrong release version.
+The publication preflight measured 12,491,320,741 logical project bytes (about 12.491 GB),
+including ignored files and Git, below 15,000,000,000 bytes. Shared pre-existing SDK caches are excluded.
 
 The [seven-parameter policy comparison](policy-baselines.md) closes the planned
 logistic baseline gap: 469/480 versus the unchanged network's 472/480, with six
@@ -46,7 +49,7 @@ informed author, not a replay, independent human sampling or actual phone action
 The source-binding check detects changed app sources or result bytes and never
 self-certifies physical success. Both longer prompt candidates remain rejected.
 
-Current XML reports 133 JVM tests, zero failures/errors/skips and lint zero
+At the v0.10 checkpoint, XML reported 133 JVM tests, zero failures/errors/skips and lint zero
 errors/62 warnings; 11 artifact-audit tests and six fresh-evaluator tests pass.
 The updated light APK installed with APK and retained private-model hash parity,
 focus paused, observation off and 100 virtual points unchanged. Microphone,
@@ -76,7 +79,7 @@ passes 14 fixtures, including missing/changed pitch sources and measured stream
 or caption mismatches; it attributes prior decode QA without replaying it. The old video is preserved.
 All four current-video release assets have matching server sizes/SHA-256 digests;
 the previous three package/manifest assets and app-source tag are unchanged.
-Logical project files now total approximately 13.604 decimal GB, below 15 GB.
+At that pitch checkpoint, logical project files totaled approximately 13.604 decimal GB, below 15 GB.
 
 ## Previous 0.9 addition
 
