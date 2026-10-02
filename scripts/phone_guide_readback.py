@@ -26,6 +26,19 @@ MUTED="Mira's voice is muted. Your text is still here."
 GOAL='Prepare a short focus demo'
 
 
+class GuideLab(PhoneLab):
+    def find(self,label,scroll=True):
+        for _ in range(6):
+            node=super().find(label,scroll)
+            bounds=list(map(int,re.findall(r'\d+',node.get('bounds',''))))
+            center=(bounds[1]+bounds[3])//2
+            if 350<=center<=1900:return node
+            self.guard()
+            if center>1900:self.adb('shell','input','swipe','540','1750','540','1150','250')
+            else:self.adb('shell','input','swipe','540','650','540','1250','250')
+        raise RuntimeError('Own control could not be positioned clear of fixed overlays')
+
+
 def assert_test_plan(values):
     record=guide_record(values)
     expected={PREFIX+'schema':1,PREFIX+'count':3,PREFIX+'completed':0,
@@ -93,7 +106,7 @@ def main():
     args=parser.parse_args()
     if not args.execute_synthetic_guide_readback:parser.error('Explicit --execute-synthetic-guide-readback required')
     manifest_path=Path('docs/guidance-readback-artifacts.json');manifest=json.loads(manifest_path.read_text())
-    lab=PhoneLab(args.serial);lab.guard()
+    lab=GuideLab(args.serial);lab.guard()
     installed=lab.adb('shell','pm','path',PACKAGE).strip().split('package:',1)[1]
     sha=lab.adb('shell','sha256sum',installed).split()[0]
     artifact=next((a for a in manifest['artifacts'] if a['sha256']==sha),None)
