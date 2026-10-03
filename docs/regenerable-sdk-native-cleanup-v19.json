@@ -1,0 +1,21 @@
+{
+  "schema": "focuspilot.regenerable_sdk_native_cleanup.v1",
+  "items": [
+    {
+      "directory": "prototype/qualcomm-android/app/build/intermediates/merged_native_libs",
+      "logical_bytes": 217483576,
+      "recoverable_from": "Pinned cached AAR and original committed SDK build source; verified private APK retained."
+    },
+    {
+      "directory": "prototype/qualcomm-android/app/build/intermediates/stripped_native_libs",
+      "logical_bytes": 217483576,
+      "recoverable_from": "Pinned cached AAR and original committed SDK build source; verified private APK retained."
+    }
+  ],
+  "project_bytes_before": 9898858798,
+  "retained_private_apk_sha256": "b256491c26d78fb72dce3d81d5a698d4ed77bf1491f44a342d3a93bac3535d60",
+  "retained_aar_sha256": "a29e88e31e12fd636a9dfa6760c61d04001ab91a932dbd5efe7b0a4335b9f883",
+  "positive_new_global_cache_bytes_retained": 218929328,
+  "project_bytes_after": 9463892530,
+  "effective_bytes_including_new_global_cache": 9682821858
+}

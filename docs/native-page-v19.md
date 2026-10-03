@@ -31,7 +31,8 @@ test package and exact protected preferences/checkpoint/model/grant/service snap
 No UI, wake, inference or permission grant occurs during the update.
 [Installation evidence](native-page-phone-install-v19.json).
 
-Physical JNI regression and actual 16 KB runtime checks are separate. Nothing
+The physical JNI regression below verifies the rebuilt library on 4 KB pages.
+Actual 16 KB runtime checks remain separate. Nothing
 uses 4,096-byte pages; a successful test there cannot establish 16 KB execution,
 iQOO NPU use or Office Kit integration. Historical inference results keep their
 original APK attribution. This remains pre-event research.
@@ -54,3 +55,42 @@ packaging. Public weights are intentionally included in the APK and remain outsi
 Git. [Packaging evidence](native-page-bundle-artifact-v19.json).
 
 Published [research v0.19](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.19); all five server asset sizes/digests and exact source tag are checked in the [publication record](native-page-publication-v19.json).
+
+## Actual Nothing CPU regression
+
+Frozen protocol/runner/harness source:
+`4ee8f59dad7dcedc65712fddcb967ef5357e40c6`. Nineteen pure harness boundary
+tests pass. One test-only APK build leaves both frozen and build-output target APK
+hashes unchanged; manifest/signature/DEX inspection verifies the dedicated runner
+with no target class shadow, native/model payload or permissions. An initial inode
+preflight used the wrong working directory and failed while Gradle completed; the
+corrected check verified unchanged target bytes before any phone execution. No
+rebuild or runtime retry followed. The failure is preserved in the private build
+record and flagged in the public result.
+
+One network-denied native run completes all six already-seen requests and **313
+runtime checks**. All raw intent/argument slots match the frozen examples; each
+checked-model, fast-local and product route accepts the five supported proposals
+and refuses the negated request, with zero wrong accepts. These are a narrow runtime
+regression, not fresh command accuracy. Forced Qwen inference occurs even when
+the fast local route accepts; no proposal is executed.
+
+Model load is 2,361.472 ms. First uncaptured native request is 3,854.957 ms; later
+uncaptured requests are 3,318.174–4,625.598 ms. Captured Pause is 3,480.150 ms. Four
+finite 1,024-wide tensor observations remain descriptive activation capture, not
+a causal finding. A direct IPv4 TCP socket-creation denial precedes model access;
+no whole-device disconnection claim is made.
+
+The original test restores once through non-streamed install in 988.563 ms, without
+client timeout or retry. Target APK, three named preference stores/checkpoint,
+canonical model identity, microphone/notification grants and own service absence
+match the pre-run snapshot. Model closure and actual 4,096-byte pages are verified.
+No UI, voice, phone action or permission change occurs.
+[Source-bound result and limitations](native-page-phone-result-v19.json).
+
+After verified public recovery cleanup and deletion of regenerable SDK native
+intermediate copies, logical project size is 9,463,892,530 bytes; including the
+218,929,328 bytes of new global-cache growth gives 9,682,821,858. Current APKs,
+private SDK package/logs, all light/test/native proof artifacts and selected model
+remain retained. [Published bundle recovery](recoverable-bundle-cleanup-v19.json) ·
+[SDK intermediate recovery](regenerable-sdk-native-cleanup-v19.json).

@@ -1,0 +1,165 @@
+{
+  "schema": "focuspilot.native_page_phone_result.v1",
+  "research_only": true,
+  "protocol_path": "prototype/native-page-phone/protocol.json",
+  "protocol_sha256": "6cd711e8f93be07e6ded2a29c84ee7a31ee94d7ce67e3ba722848e30262b8258",
+  "execution_source_commit": "4ee8f59dad7dcedc65712fddcb967ef5357e40c6",
+  "app_source_commit": "caaf5246116ad02144f8bf0a4d92ce8053bf8275",
+  "apk_sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+  "native_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "diagnostic_test_sha256": "b0eef7129a760d40aaaa61290c3996aa1d699f2cc29ff83a0cbced79d7624101",
+  "original_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "private_record_sha256": "38c8841c2c268de9cf39c654a139da370bdd31946d888cabbe36b18d87c3b6da",
+  "passed": true,
+  "runtime_checks": 313,
+  "completed_native_requests": 6,
+  "requests_already_seen": true,
+  "generation_attempts_per_request": 1,
+  "generation_retries": 0,
+  "page_size_bytes": 4096,
+  "runtime_16k_verified": false,
+  "model_load_ms": 2361.472343,
+  "raw_full_slot_matches": 6,
+  "supported_request_count": 5,
+  "unsupported_request_count": 1,
+  "routes": {
+    "checked_model": {
+      "complete_supported_proposals": 5,
+      "unsupported_refusals": 1,
+      "wrong_accepts": 0
+    },
+    "fast_local": {
+      "complete_supported_proposals": 5,
+      "unsupported_refusals": 1,
+      "wrong_accepts": 0
+    },
+    "product_pipeline": {
+      "complete_supported_proposals": 5,
+      "unsupported_refusals": 1,
+      "wrong_accepts": 0
+    }
+  },
+  "timings_ms": [
+    {
+      "id": "native-unit-1",
+      "capture": false,
+      "native_total_ms": 3854.9565,
+      "java_request_ms": 3859.736145,
+      "prompt_tokens": 364,
+      "generated_tokens": 15
+    },
+    {
+      "id": "native-unit-2",
+      "capture": true,
+      "native_total_ms": 3480.1498,
+      "java_request_ms": 3507.169321,
+      "prompt_tokens": 359,
+      "generated_tokens": 6
+    },
+    {
+      "id": "native-unit-3",
+      "capture": false,
+      "native_total_ms": 4625.5977,
+      "java_request_ms": 4652.915623,
+      "prompt_tokens": 367,
+      "generated_tokens": 14
+    },
+    {
+      "id": "native-unit-4",
+      "capture": false,
+      "native_total_ms": 3845.8361,
+      "java_request_ms": 3850.240103,
+      "prompt_tokens": 362,
+      "generated_tokens": 13
+    },
+    {
+      "id": "native-unit-5",
+      "capture": false,
+      "native_total_ms": 4012.3307,
+      "java_request_ms": 4016.861144,
+      "prompt_tokens": 359,
+      "generated_tokens": 10
+    },
+    {
+      "id": "native-unit-6",
+      "capture": false,
+      "native_total_ms": 3318.1736,
+      "java_request_ms": 3322.611405,
+      "prompt_tokens": 361,
+      "generated_tokens": 5
+    }
+  ],
+  "activation_observations": [
+    {
+      "tensor": "ffn_out-0",
+      "width": 1024,
+      "finite_summary_verified": true
+    },
+    {
+      "tensor": "ffn_out-11",
+      "width": 1024,
+      "finite_summary_verified": true
+    },
+    {
+      "tensor": "ffn_out-23",
+      "width": 1024,
+      "finite_summary_verified": true
+    },
+    {
+      "tensor": "result_norm",
+      "width": 1024,
+      "finite_summary_verified": true
+    }
+  ],
+  "activation_capture_is_causal_result": false,
+  "socket_creation_denied_before_model_access": true,
+  "socket_errno": 1,
+  "actions_executed": 0,
+  "ui_used": false,
+  "voice_used": false,
+  "permission_grants_changed": false,
+  "model_closed": true,
+  "original_test_restored": true,
+  "protected_state_unchanged": true,
+  "target_unchanged": true,
+  "page_size_unchanged": true,
+  "install_attempts": [
+    {
+      "returncode": 0,
+      "timed_out": false,
+      "client_ms": 1956.9629998877645,
+      "observed_sha256": "b0eef7129a760d40aaaa61290c3996aa1d699f2cc29ff83a0cbced79d7624101",
+      "owned_install_verified": true
+    }
+  ],
+  "restore_attempts": [
+    {
+      "returncode": 0,
+      "timed_out": false,
+      "client_ms": 988.5628329357132,
+      "observed_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+      "owned_install_verified": true
+    }
+  ],
+  "restore_non_streamed": true,
+  "restore_client_deadline_seconds": 180,
+  "restore_retries": 0,
+  "npu_verified": false,
+  "office_kit_verified": false,
+  "limitations": [
+    "Six openly seen synthetic requests are a narrow runtime regression, not fresh command accuracy.",
+    "Observed4KB Nothing CPU execution does not establish16KB or iQOO/NPU runtime.",
+    "No unlocked UI, voice, phone actions, bundled import or persistent observation tested.",
+    "Activation summaries alone establish no causal meaning.",
+    "A single IPv4TCP socket-creation denial is not whole-device network-disconnection proof."
+  ],
+  "test_build_record_sha256": "6a28d2dce29aa5fb66a692f0a5ba1740ffd6d07cccb7791ef1f428c906434b38",
+  "test_build_preflight_workdir_error_corrected": true,
+  "target_apk_remained_byte_identical": true,
+  "independent_readonly_review": {
+    "source_and_helper_bindings_verified": 29,
+    "public_counts_and_hashes_match_actual_record": true,
+    "phone_or_inference_repeated": false
+  }
+}

@@ -1,29 +1,32 @@
 # Verified status
 
+## Current app — v0.19 with Qwen3.5
+
+Keep Qwen3.5-0.8B Q4_0. The native page-layout repair passes ELF load/RELRO
+and APK ZIP checks. All 208 JVM tests pass; lint has zero errors/fatal findings
+and 79 warnings. The exact light APK is installed on Nothing, and the standalone
+bundle is packaged/published with unchanged app payload plus the pinned model.
+
+One frozen phone CPU regression completes six openly seen requests with 313
+runtime checks, exact raw slots, five supported proposals and one negation refusal
+across all three routes, with zero wrong accepts. Load is 2.361 seconds; finite
+activation summaries are observed without a causal interpretation claim. The
+original test restores in one non-streamed attempt and protected state remains
+exact. This is actual 4 KB execution; 16 KB runtime, current bundled import,
+unlocked friendly UI/voice/persistent workflows, iQOO/NPU and Office Kit remain
+pending. [Artifact, runtime and limits](native-page-v19.md). This remains pre-event research;
+eligible event code and accepted submission are still required.
+
 ## Private Qualcomm diagnostic — source and APK ready
 
-A separate permission-free pre-event GenieX probe builds offline and retains every
-vendor native payload unchanged. Its entry/worker require supported SoC, ARM64,
-API 31+ and actual 4 KB pages before SDK initialization. Twelve host fixture groups,
-two storage tests and actual-AAR Java compilation pass; package checks pass.
-No SDK phone run, model inference or NPU verification occurs. The private APK is
-excluded from Git/public releases while all-vendor redistribution terms remain
-unresolved. [Artifact and scope](geniex-private-probe.md). Actual iQOO/Office Kit and eligible accepted
-submission remain pending.
-
-## Current native page-layout repair — v0.19
-
-Qwen3.5-0.8B Q4_0 remains selected. The v19 research library now passes the
-separate GNU_RELRO end check as well as ELF load and APK ZIP alignment. All 208
-JVM tests pass, lint has zero errors/fatal findings and 79 warnings. One guarded
-light update installs on Nothing with the original test package and protected
-preferences/model/grants/services unchanged. No UI, wake, inference or grants
-occur during that update. Nothing uses 4 KB pages; actual 16 KB runtime and the new
-JNI regression remain pending. Prior v18 alignment checks were narrower and
-prior inference timings remain attributed to their original artifacts.
-[Current evidence and limitation](native-page-v19.md). The v19 standalone bundle is packaged/published; its import remains pending;
-actual iQOO/NPU, Office Kit, permitted voice/monitoring and eligible accepted
-submission remain required.
+A separate permission-free GenieX probe builds offline and retains every vendor
+native payload unchanged. Entry and worker require supported SoC, ARM64, API 31+
+and actual 4 KB pages before SDK initialization. Twelve host fixture groups, two
+storage tests, actual-AAR Java compilation and package checks pass. No SDK phone
+run, model inference or NPU verification occurs. Its APK stays private while
+all-vendor redistribution terms are unresolved. [Artifact and scope](geniex-private-probe.md).
+Recoverable older bundles and regenerated SDK intermediate copies were reclaimed;
+final project plus new global-cache growth is below 10 GB.
 
 ## Historical standalone Mira bundle — v0.18
 
