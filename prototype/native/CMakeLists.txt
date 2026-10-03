@@ -24,7 +24,9 @@ target_link_libraries(focuspilot_core PUBLIC llama)
 if(ANDROID)
   add_library(focuspilot_local SHARED jni.cpp)
   target_link_libraries(focuspilot_local PRIVATE focuspilot_core log)
-  target_link_options(focuspilot_local PRIVATE "-Wl,-z,max-page-size=16384")
+  target_link_options(focuspilot_local PRIVATE
+    "-Wl,-z,max-page-size=16384"
+    "-Wl,-z,common-page-size=16384")
 else()
   add_executable(focuspilot_probe probe.cpp)
   target_link_libraries(focuspilot_probe PRIVATE focuspilot_core)
