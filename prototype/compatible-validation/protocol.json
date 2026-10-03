@@ -1,0 +1,33 @@
+{
+  "schema": "focuspilot.compatible_validation_protocol.v1",
+  "phase": "seen_development_validator_repair",
+  "model_calls": 0,
+  "phone_calls": 0,
+  "known_rows": 226,
+  "known_routes": 1582,
+  "oracle_supported_routes": 158,
+  "unknown_routes": 476,
+  "supported_wrong_routes": 948,
+  "actual_unit_development_rows": 24,
+  "actual_unit_development_supported": 18,
+  "criteria": {
+    "prior_80_preserved": 80,
+    "unknown_false_accepts": 0,
+    "supported_wrong_route_false_accepts": 0,
+    "supported_oracle_wrong_accepts": 0,
+    "prior_development_accepted_preserved": 12,
+    "development_unknown_refusals": 6,
+    "development_wrong_accepts": 0
+  },
+  "attempt_policy": "Prepare exact historical inputs before candidate calls. Commit checker, readiness, candidate and dependencies together before evaluation. One exclusive evaluation claim; retain failed attempts, no retry or output alias.",
+  "preservation": "Kind/hour/minute/seconds/approved app equality; reason and preview wording are not preserved.",
+  "scope": "Development validator repair on known fixed mock replies and already captured unit-model outputs, plus a separate24 product-pipeline replay. Passing is eligibility for separate fresh qualification, never phone integration approval.",
+  "pipeline": "Call recognize(original); only if refused, validate(original, existing captured reply). Record FAST_LOCAL_REQUEST/CHECKED_MODEL/UNKNOWN. Pipeline success is separate from raw model prediction accuracy and checked-model success.",
+  "limitations": [
+    "Known correlated synthetic requests; no fresh, blind or population accuracy claim",
+    "The 1582 routes use fixed authored replies; validator acceptance is not a model prediction",
+    "The 24 model replies were captured once earlier; this replay performs no inference",
+    "Finite routes do not exhaust arbitrary output values or language",
+    "No phone, Android action, NPU, Office Kit or promotion evidence"
+  ]
+}
