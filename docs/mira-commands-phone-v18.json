@@ -1,0 +1,36 @@
+{
+  "schema": "focuspilot.mira_commands_install_public.v1",
+  "research_only": true,
+  "source_commit": "959f27a0721deca58dc45852e79759bc5a255539",
+  "apk_sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d",
+  "previous_v17_sha256": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+  "private_record_sha256": "64fe388a4aa71d5e988f0458ce4c5a47dca9d66bea981a8093d2b151962e0f2f",
+  "passed": true,
+  "install_client": {
+    "returncode": 0,
+    "timed_out": false,
+    "client_ms": 989.6526250522584
+  },
+  "target_installed": true,
+  "original_test_unchanged": true,
+  "protected_state_unchanged": true,
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "permission_changes": 0,
+  "ui_used": false,
+  "phone_woken": false,
+  "model_inference": false,
+  "protected_scope": "Three named preference-store identities/checkpoint, model full SHA/inode/links/size, microphone/notification grants, own monitor/floating service absence. Not every setting/AppOp.",
+  "device": "Nothing A059 development phone",
+  "physical_ui_verified": false,
+  "screen_state_after": "Locked/off; no wake, unlock, UI, ASR or tool action attempted.",
+  "limitations": [
+    "Installation and preserved state do not establish physical screen/touch/voice/background behavior.",
+    "Qwen/backend/parser/gate unchanged; prior v17 inference evidence retains its original APK attribution.",
+    "No iQOO/NPU/Office Kit/eligible accepted submission result."
+  ]
+}

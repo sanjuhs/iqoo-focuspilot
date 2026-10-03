@@ -1,0 +1,38 @@
+{
+  "schema": "focuspilot.mira_commands_artifact.v1",
+  "research_only": true,
+  "source_commit": "959f27a0721deca58dc45852e79759bc5a255539",
+  "apk_path": "artifacts/focuspilot-research-v018-mira-commands-light.apk",
+  "apk_bytes": 5942764,
+  "apk_sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d",
+  "manifest_identity": "package: name='dev.focuspilot.prototype' versionCode='18' versionName='0.18-mira-commands-research' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "native_unchanged_from_v17": true,
+  "license_asset_count": 6,
+  "license_payload_unchanged_from_v17": true,
+  "internet_permission": false,
+  "bundled_model": false,
+  "test_suites": 28,
+  "tests": {
+    "tests": 208,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 79,
+    "Fatal": 0
+  },
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "5abd080b5856dd6b92f3dea2c7b0eda648ad7234724f504d1b4d4b371b71f92e",
+    "prototype/android/app/build.gradle": "dfa5798a488700791a35e8cd1210728fc9b71226398fd0942bbdba00e8880927"
+  },
+  "build_log_sha256": "b362d2b341d866947fb55395be862aebb11842d4896875958ffd05ae8ed07ae9",
+  "project_logical_bytes": 14469293911,
+  "physical_ui_verified": false,
+  "phone_installation_verified": true,
+  "scope": "Draft-first UI changes only. New permission/model/backend/training/interpretability results are not claimed.",
+  "phone_record": "docs/mira-commands-phone-v18.json"
+}

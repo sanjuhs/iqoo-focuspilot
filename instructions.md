@@ -1,5 +1,25 @@
 # Instructions — FocusPilot
 
+## Current app — v0.18 friendly Mira commands
+
+Qwen3.5-0.8B Q4_0 stays selected. Ask Mira now opens an empty editable request
+with draft-only examples and quick checks first. Qwen loading stays explicit;
+actual load/backend status is visible and tensor/model details are collapsed.
+Valid proposals still require Review then Confirm. Active readback has Stop;
+load failure is visible. Underlying parser/model/executor/permissions are unchanged.
+
+Final offline build passes 208 JVM tests; lint zero errors/fatal issues, 79 warnings.
+Signed 5,942,764-byte light APK installs on Nothing with exact protected snapshot
+and original test package preserved. Source 959f27a; phone remains locked/off, so
+physical layout/touch/voice are not verified. No wake, grant, inference or phone
+action occurred during this update. [Artifact, installation and scope](docs/mira-commands-v18.md).
+
+Use v18 records for current package identity. All earlier v17/v12 measurements
+retain their own APK/source attribution. Next verify unlocked example/edit/review/
+cancel, explicit fallback and permitted voice/persistent workflows. Actual iQOO/
+NPU, Office Kit, organizer-approved eligibility and accepted submission remain
+active full-project requirements. Current implementation remains pre-event research.
+
 ## Qwen3.5-0.8B Q4_0 — v0.17 actual unit JNI diagnostic
 
 Keep the selected Qwen3.5. One frozen Nothing CPU run completes six already-seen

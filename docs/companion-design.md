@@ -88,3 +88,14 @@ The native UI agent owns `prototype/android` and can implement the drawing in Ca
 The reusable old PNGs can be displayed statically after alpha/edge review and with their MIT notice, but they cannot produce eye blinks without new eye artwork. Prefer the original layered asset for actual animation. Future raster generation should preserve the new silhouette/wardrobe, request separate clean expression frames with consistent dimensions/anchor and transparency, and retain generator/model/prompt provenance. No large model or asset-generation download is needed for the vector prototype.
 
 Verify on phone: idle/breathe/blink; actual listen start/stop; successful action celebration; nudge with dismiss/cooldown; paused no monitoring/motion; reduced motion no looping; mute stops TTS; hide preserves access to independent pause; permission revocation updates state; no animation work when invisible. Measure APK size and idle battery/CPU before claiming efficiency. The vector/motion files themselves do not prove any of these native behaviors.
+
+
+## Command entry update — v0.18
+
+Ask Mira now uses an empty request and draft-only focus/timer/pause examples below
+the compact original portrait. Quick checks precede optional Qwen loading; model
+state remains visible while detailed output and activation controls are collapsed.
+Voice controls appear in their active context and readback has an explicit Stop.
+Source/build/package checks and preserved-state installation pass; physical
+layout/touch/voice checks wait for an unlocked phone. See
+[the current screen contract and evidence](mira-commands-v18.md).
