@@ -1,0 +1,65 @@
+{
+  "schema": "focuspilot.mira_bundle_publication.v1",
+  "verified_utc": "2026-10-03T01:24:45.290714+00:00",
+  "research_only": true,
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18",
+  "app_source_commit": "959f27a0721deca58dc45852e79759bc5a255539",
+  "server_tag_exact_source_verified": true,
+  "server_assets": [
+    {
+      "name": "focuspilot-research-v018-mira-commands-light.apk",
+      "bytes": 5942764,
+      "sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d",
+      "server_digest_verified": true,
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-light.apk"
+    },
+    {
+      "name": "mira-commands-artifact-v18.json",
+      "bytes": 1774,
+      "sha256": "e2651cf1a09d543942cea3a7c92a4c9fadde67b213f5db8a65ff2d4b0f4ae6b6",
+      "server_digest_verified": true,
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/mira-commands-artifact-v18.json"
+    },
+    {
+      "name": "mira-commands-phone-v18.json",
+      "bytes": 1537,
+      "sha256": "248a1cddcaa933b6c17bb6d5aafa7e6a02b97545e3d7d24ebe404bac11006857",
+      "server_digest_verified": true,
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/mira-commands-phone-v18.json"
+    },
+    {
+      "name": "focuspilot-research-v018-mira-commands-bundled.apk",
+      "bytes": 568608247,
+      "sha256": "7ff98674b8e0213fc93f3adb3a736246ea283f8051e307d31758a92177cdc85b",
+      "server_digest_verified": true,
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-bundled.apk"
+    },
+    {
+      "name": "mira-commands-bundled-artifact-v18.json",
+      "bytes": 5585,
+      "sha256": "e59795c5e3f4d4bbe5eaeebcd634df25865b01e5ebe6bc973b34b8244c85bcb6",
+      "server_digest_verified": true,
+      "download_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/mira-commands-bundled-artifact-v18.json"
+    }
+  ],
+  "packaging_tool_identities": {
+    "zipalign": {
+      "bytes": 503264,
+      "sha256": "0427144f4a3fd242c5a159e7088637082539ae556bc1d2bbc2032bb775d47cea"
+    },
+    "apksigner": {
+      "bytes": 2959,
+      "sha256": "b47549e373b895ce6ca620d0c7887e674d9615ffa837a86ac601dcfd04adb0f0"
+    },
+    "apksigner.jar": {
+      "bytes": 1100545,
+      "sha256": "3716d9311e55d2b0918a2fd9d54ba9e406c5f6abeea700b287f11259bc163dec"
+    }
+  },
+  "original_light_assets_replaced": false,
+  "weights_committed_to_git": false,
+  "public_pretrained_weights_in_bundled_release_asset": true,
+  "credentials_training_data_and_private_phone_records_uploaded": false,
+  "bundle_phone_runtime_verified": false,
+  "scope": "Adds exact frozen-app model bundle plus public metadata. Original three light assets unchanged. Signing/alignment/payload proof does not establish installation or runtime."
+}

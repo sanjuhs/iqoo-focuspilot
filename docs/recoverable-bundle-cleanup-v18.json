@@ -1,0 +1,24 @@
+{
+  "schema": "focuspilot.recoverable_bundle_cleanup.v1",
+  "reason": "Reserve two temporary copies for current v18 Qwen model bundle under 15 GB logical project limit",
+  "before_bytes": 14470740896,
+  "removed_generated_files": [
+    {
+      "path": "artifacts/focuspilot-research-v04-bundled.apk",
+      "bytes": 568579989,
+      "sha256": "966a5390527d35b4901a86048074c62a2f198b96d302e4c7bb9bff1d4e2812c2",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.4/focuspilot-research-v04-bundled.apk",
+      "server_size_and_sha256_verified": true
+    },
+    {
+      "path": "artifacts/focuspilot-research-v05-bundled.apk",
+      "bytes": 568692364,
+      "sha256": "ce90bfc217ebca61b01c1716e5279393dbd439032ce1d5beb1c8cbfce3d9971a",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.5/focuspilot-research-v05-bundled.apk",
+      "server_size_and_sha256_verified": true
+    }
+  ],
+  "inputs_model_light_apk_and_private_evidence_untouched": true,
+  "after_bytes": 13333468543,
+  "freed_bytes": 1137272353
+}

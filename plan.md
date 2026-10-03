@@ -1,5 +1,15 @@
 # FocusPilot delivery plan
 
+## Current standalone Mira bundle — v0.18
+
+Completed: package the selected Qwen3.5-0.8B Q4_0 inside the current v18 APK with
+exact unchanged app payload, signing, alignment and retained license checks.
+Recoverably reclaimed older published bundles; packaging stays below 15 GB.
+Next: unlocked own-app example/edit/review/cancel and explicit model fallback,
+current bundled import, permitted voice/persistent workflows, actual iQOO/NPU and
+Office Kit. Dashboard self-report answers, eligible event code and accepted
+submission remain required. [Packaging scope](docs/mira-bundle-v18.md).
+
 ## Phase 1 dashboard and concept document — 3 October
 
 Authenticated Finale dashboard is accessible: Productivity selected, one-member

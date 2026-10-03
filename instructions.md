@@ -1,5 +1,14 @@
 # Instructions — FocusPilot
 
+## Current standalone Mira bundle — v0.18
+
+Use the current [v18 research bundle](docs/mira-bundle-v18.md) for an APK containing
+Qwen3.5-0.8B Q4_0. Its app payload exactly matches v18 light; only the pinned model
+asset is added. Model loading stays explicit and actions require Review/Confirm.
+Signing/alignment/model/payload checks pass; current bundle import and unlocked
+UI/voice checks remain pending. The phone still has v18 light installed.
+Keep weights outside Git and use the packager's two-copy 15 GB storage guard.
+
 ## Phase 1 dashboard and concept document — 3 October
 
 Authenticated Finale dashboard is accessible: Productivity selected, one-member

@@ -1,0 +1,106 @@
+{
+  "kind": "pre-event debug research APK packaging; byte/signature proof, no phone run",
+  "app_source_commit": "959f27a0721deca58dc45852e79759bc5a255539",
+  "app_source_attribution": "caller-supplied frozen build commit, not compilation replay",
+  "packager_sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+  "light": {
+    "file": "artifacts/focuspilot-research-v018-mira-commands-light.apk",
+    "bytes": 5942764,
+    "sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d"
+  },
+  "model": {
+    "entry": "assets/qwen35.gguf",
+    "compression": "ZIP_STORED",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "bundle": {
+    "file": "artifacts/focuspilot-research-v018-mira-commands-bundled.apk",
+    "bytes": 568608247,
+    "sha256": "7ff98674b8e0213fc93f3adb3a736246ea283f8051e307d31758a92177cdc85b"
+  },
+  "storage": {
+    "project_bytes_before": 13333469640,
+    "per_copy_byte_cap": 569240972,
+    "reserved_temporary_bytes": 1138481944,
+    "estimated_peak_project_bytes": 14471951584,
+    "project_limit_bytes": 15000000000,
+    "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+  },
+  "alignment": "SDK zipalign -P 16 4 before signing; -c -P 16 4 passed after signing",
+  "signature": "SDK apksigner verify passed for light and final; same public certificate",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "original_payload_count": 16,
+  "original_non_signature_payload_sha256": {
+    "META-INF/com/android/build/gradle/app-metadata.properties": "131a387a3883512eb3cde2d98e57816e31b714e7c4334c5fdf53b02932a3e722",
+    "classes.dex": "0c90cbc895c4df83880988e032406e63ac453a50edf4df0c93d468da738fbe91",
+    "lib/arm64-v8a/libfocuspilot_local.so": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "AndroidManifest.xml": "8c94ea7cdc2e93ca943cb17028d99f74974db7f0c54389b62e7a61e33f757651",
+    "res/drawable/ic_focuspilot.xml": "1d57f1292eea5b3265ed307ea8a5ad04f64cf38a00f6d52ae7c77bbc1a035693",
+    "res/drawable/ic_notification.xml": "d16ff5dcbf91d9a93fd4e2ccec0de07d982375fbd4a0ad7cf201e107d161fa2b",
+    "res/xml/data_extraction_rules.xml": "dadc91cae789afbc63eef851442a6918acac7d0f3aa0c5a4204c474767f3fb9c",
+    "res/xml/sandbox_accessibility_service.xml": "53ddf9f92c8e57062be75a37c4df7d62636a5d1dd2457ffaab0c08583fa73484",
+    "resources.arsc": "b3fea02945076a52aee294dcf4ff8d40377d4c4eeff3ed2d09c564e4e4da3640",
+    "classes2.dex": "813fd6a70976fcd90c48b76552a243947336f4c1b608ae14de8356edd269eac6"
+  },
+  "only_added_non_signature_entry": "assets/qwen35.gguf",
+  "removed_v1_signature_entries": [],
+  "recipe": [
+    "stream clone all non-signature ZIP entries; add pinned GGUF stored",
+    "zipalign -P 16 4 unaligned aligned",
+    "delete unaligned",
+    "apksigner sign in place using existing standard debug key, v4 disabled",
+    "verify signature/certificate, alignment, all payload/model hashes",
+    "atomic no-overwrite finalization without copying"
+  ],
+  "temporary_large_copy_limit": 2,
+  "downloads": 0,
+  "phone_actions_executed": 0,
+  "runtime_verified": false,
+  "schema": "focuspilot.mira_commands_bundled_artifact.v1",
+  "research_only": true,
+  "license_assets": [
+    {
+      "entry": "assets/licenses/FocusPilot-MIT.txt",
+      "bytes": 1080,
+      "sha256": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b"
+    },
+    {
+      "entry": "assets/licenses/KleidiAI-Apache-2.0.txt",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "entry": "assets/licenses/KleidiAI-BSD-3-Clause.txt",
+      "bytes": 1459,
+      "sha256": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4"
+    },
+    {
+      "entry": "assets/licenses/KleidiAI-notices.txt",
+      "bytes": 1619,
+      "sha256": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d"
+    },
+    {
+      "entry": "assets/licenses/Qwen3.5-Apache-2.0.txt",
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "entry": "assets/licenses/llama.cpp-MIT.txt",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    }
+  ],
+  "license_payload_matches_light": true,
+  "model_weights_committed_to_git": false,
+  "model_weights_in_release_apk": true,
+  "installed_variant_remains": "v0.18 light; bundle not installed or exercised in this packaging run",
+  "project_logical_bytes_after_packaging": 13902082489,
+  "scope": "Exact frozen v18 light app payload plus pinned Qwen GGUF. No app/native source change or phone/runtime check. Historical v12 import and v17 CPU measurements retain separate artifact attribution."
+}

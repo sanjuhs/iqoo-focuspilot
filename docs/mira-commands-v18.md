@@ -49,6 +49,8 @@ This is pre-event research. Actual iQOO NPU, Office Kit, event-code eligibility 
 accepted submission remain unfinished requirements of the full project.
 
 Published as [research v0.18](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18).
-The exact source tag and all three server asset sizes/digests are verified in the
+The exact source tag and original three server asset sizes/digests are verified in the
 [publication record](mira-commands-publication-v18.json). No weights or private
-phone records are release assets.
+phone records were uploaded in that original light publication. The release now
+also offers a [standalone v18 bundle](mira-bundle-v18.md), intentionally containing
+the pinned public Qwen weights; no private phone records are release assets.

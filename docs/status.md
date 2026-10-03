@@ -1,5 +1,20 @@
 # Verified status
 
+## Current standalone Mira bundle — v0.18
+
+Qwen3.5-0.8B Q4_0 is now packaged inside a 568,608,247-byte v18 APK. Signing,
+16 KiB alignment, the pinned model hash and all 16 original app-payload hashes
+pass; only the stored GGUF is added and six license assets are retained. The
+installed phone still uses v18 light. No bundle install/import, phone inference,
+UI or permission check occurred in this packaging run.
+
+Two older generated bundles were reclaimed after exact size/SHA verification
+against their public recovery URLs. Maximum reserved packaging project size
+14,471,951,584 bytes; final measured 13,902,082,489 bytes before small docs updates.
+Weights are intentionally included in the release APK and remain outside Git.
+The original light publication record remains historical and unchanged.
+[Bundle, proof and repeat procedure](mira-bundle-v18.md).
+
 ## Phase 1 dashboard and concept document — 3 October
 
 Authenticated Finale dashboard is accessible: Productivity selected, one-member
