@@ -61,3 +61,17 @@ permitted voice/usage workflows, companion lock/unlock/OEM persistence, current
 bundle import, actual iQOO/NPU and Office Kit still need separate evidence.
 This is pre-event research; eligible event code and accepted submission remain
 separate requirements.
+
+## Publication and storage
+
+[Research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.21)
+is published. All five server assets match local sizes/SHA256, release notes
+match and the tag resolves to the frozen app source.
+[Publication record](mira-setup-publication-v21.json).
+The [storage record](mira-setup-storage-v21.json) counts logical project files
+including ignored data and Git, plus the recorded new global-cache growth:
+9,773,421,314 bytes, below the 10 GB aim and 15 GB cap. Existing SDK/JDK/Gradle
+baseline is excluded. Only a checksum-verified, recoverable v19 bundle was
+reclaimed; private phone data, canonical weights and current v20 bundle remain.
+The dashboard draft retains its verified v20 description and dated v20 pitch;
+no application edit or submission occurred in this update.

@@ -1,0 +1,55 @@
+{
+  "schema": "focuspilot.mira_setup_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.21",
+  "release_id": 402295122,
+  "tag_commit": "6027fa5c49f7ef4f383e0eeabb0694463c0eb77a",
+  "prerelease": true,
+  "asset_count": 5,
+  "assets": [
+    {
+      "file": "artifacts/focuspilot-research-v021-mira-setup-light.apk",
+      "bytes": 5562744,
+      "sha256": "b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+      "server_digest": "sha256:b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/focuspilot-research-v021-mira-setup-light.apk"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v021-mira-setup-bundled.apk",
+      "bytes": 568604151,
+      "sha256": "c7ddddc899ffeb11c9b0503319cae56c334d9b840b153bbae783c4dea75edb3e",
+      "server_digest": "sha256:c7ddddc899ffeb11c9b0503319cae56c334d9b840b153bbae783c4dea75edb3e",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/focuspilot-research-v021-mira-setup-bundled.apk"
+    },
+    {
+      "file": "docs/mira-setup-artifact-v21.json",
+      "bytes": 2965,
+      "sha256": "1d3992133433cd1fb3d3eb51ce610d162eadbb846e3512a0aa6c1689056ff708",
+      "server_digest": "sha256:1d3992133433cd1fb3d3eb51ce610d162eadbb846e3512a0aa6c1689056ff708",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/mira-setup-artifact-v21.json"
+    },
+    {
+      "file": "docs/mira-setup-bundle-artifact-v21.json",
+      "bytes": 4877,
+      "sha256": "816a090241aa801694eec007ce8f05d05211424fe2676c41fdfb01a6455e58b0",
+      "server_digest": "sha256:816a090241aa801694eec007ce8f05d05211424fe2676c41fdfb01a6455e58b0",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/mira-setup-bundle-artifact-v21.json"
+    },
+    {
+      "file": "docs/mira-setup-phone-install-v21.json",
+      "bytes": 1562,
+      "sha256": "703e758f4955012c28463d4fee307470d184ea701afacbb9b52d21fa4c4cb251",
+      "server_digest": "sha256:703e758f4955012c28463d4fee307470d184ea701afacbb9b52d21fa4c4cb251",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/mira-setup-phone-install-v21.json"
+    }
+  ],
+  "notes_sha256": "b5acea977aab35dd1557b2611882d612df4ce3dfb5a8d413a10071a3edb514f5",
+  "notes_exact_verified": true,
+  "notes_terminal_newline_ignored": false,
+  "creation_sequence": "Initial API request rejected unpushed source commit with HTTP422; no release existed. Source pushed, then one release upload completed.",
+  "research_only": true,
+  "physical_setup_verified": false,
+  "physical_lock_unlock_verified": false,
+  "current_bundle_import_verified": false,
+  "npu_verified": false,
+  "office_kit_verified": false
+}

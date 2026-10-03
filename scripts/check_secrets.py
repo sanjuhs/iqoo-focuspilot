@@ -4,10 +4,13 @@ import re
 import subprocess
 import sys
 
+# Prefixes must begin a token, including after quotes, assignment or URL separators.
+# Otherwise a path word such as task-draft-v21-compatible contains a false sk- match.
+TOKEN_START = rb"(?<![A-Za-z0-9_-])"
 PATTERNS = [
-    re.compile(rb"sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{20,}"),
-    re.compile(rb"gh[pousr]_[A-Za-z0-9]{30,}"),
-    re.compile(rb"github_pat_[A-Za-z0-9_]{30,}"),
+    re.compile(TOKEN_START + rb"sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{20,}"),
+    re.compile(TOKEN_START + rb"gh[pousr]_[A-Za-z0-9]{30,}"),
+    re.compile(TOKEN_START + rb"github_pat_[A-Za-z0-9_]{30,}"),
     re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
 ]
 BLOCKED_EXTENSIONS = (".gguf", ".safetensors", ".onnx", ".apk", ".aab", ".mp4", ".jks", ".keystore")

@@ -16,6 +16,13 @@ iQOO/NPU and Office Kit remain pending. No new inference ran during this update;
 v19 CPU results retain their original attribution. This is pre-event research.
 [Changes, verification and limits](docs/mira-setup-v21.md).
 
+Published [research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.21):
+all five uploaded assets match local sizes/SHA256 and the tag matches the frozen
+app source. Project files plus recorded new global-cache growth total
+9,773,421,314 bytes, below the 10 GB aim. [Publication](docs/mira-setup-publication-v21.json)
+· [Storage scope](docs/mira-setup-storage-v21.json). The live Phase 1 draft still
+has its verified v20 copy and dated v20 pitch; this release did not edit or submit it.
+
 ## Task-guidance candidate — measured rejection
 
 A separate Qwen3.5 planning candidate was evaluated without changing v20. Its

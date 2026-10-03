@@ -16,6 +16,22 @@ iQOO/NPU and Office Kit remain pending. No new inference ran during this update;
 v19 CPU results retain their original attribution. This is pre-event research.
 [Changes, verification and limits](mira-setup-v21.md).
 
+Published [research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.21):
+all five uploaded assets match local sizes/SHA256 and the tag matches the frozen
+app source. Project files plus recorded new global-cache growth total
+9,773,421,314 bytes, below the 10 GB aim. [Publication](mira-setup-publication-v21.json)
+· [Storage scope](mira-setup-storage-v21.json). The live Phase 1 draft still
+has its verified v20 copy and dated v20 pitch; this release did not edit or submit it.
+
+## Credential-check correction
+
+The full index scan initially flagged 19 substrings inside known
+`task-draft-v21-compatible` paths across four historical documents. A token-start
+boundary removes that false positive; no historical evidence is edited. Nine
+synthetic tests cover standalone/assignment/URL credentials, binary delimiters,
+private-key markers and existing prohibited-file rules. The full staged index
+passes after correction; this is a pattern check, not a comprehensive security audit.
+
 ## Task-guidance candidate — measured rejection
 
 A separate Qwen3.5 planning candidate was evaluated without changing v20. Its

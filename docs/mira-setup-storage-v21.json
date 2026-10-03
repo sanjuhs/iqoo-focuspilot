@@ -1,0 +1,14 @@
+{
+  "schema": "focuspilot.mira_setup_storage.v1",
+  "scope": "Logical project files including ignored, .git, models and dependencies; symlinks not followed; carry-forward known new global-cache growth. Existing SDK/JDK/Gradle baseline excluded.",
+  "project_bytes": 9554491986,
+  "files": 35169,
+  "known_new_global_cache_bytes": 218929328,
+  "combined_bytes": 9773421314,
+  "aim_bytes": 10000000000,
+  "limit_bytes": 15000000000,
+  "below_aim": true,
+  "below_limit": true,
+  "cleanup_record": "docs/recoverable-bundle-cleanup-v21.json",
+  "new_model_downloads": 0
+}
