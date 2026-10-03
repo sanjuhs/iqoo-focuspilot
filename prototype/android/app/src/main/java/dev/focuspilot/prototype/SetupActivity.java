@@ -72,7 +72,8 @@ public final class SetupActivity extends Activity {
         button(notifications,"Review notification settings",v->open(new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE,getPackageName())));
         LinearLayout floating=card(root,"Optional · Mira beside your apps");
         floatingStatus=text("",14,false);floating.addView(floatingStatus);
-        floating.addView(text("A separate floating companion shows only your focus status. Review Android's Display over other apps permission, then explicitly tap Show on the dashboard. Lock or screen-off stops her; Hide leaves focus unchanged. No observation or microphone starts.",14,false));
+        floating.addView(text("Mira can float beside your apps and show your focus status. Review Android's Display over other apps permission, then review Show on the dashboard when you want her nearby.",14,false));
+        floating.addView(text("Keep Mira nearby after I unlock is off by default. Choose it before Show if you want her portrait to return after unlock within that session. She stays hidden while locked. With the choice off, lock or screen-off ends the session. Android may stop either session. Hide ends availability and leaves focus unchanged; voice, model understanding and usage reading stay separate choices.",14,false));
         button(floating,"Review floating permission",v->new AlertDialog.Builder(this).setTitle("Optional floating Mira")
             .setMessage("Android may show a general Display over other apps list. Choose FocusPilot if you want the permission. Returning here starts nothing; visible floating notifications and a separate dashboard Show are also required.")
             .setNegativeButton("Cancel",null).setPositiveButton("Open Android settings",(d,w)->open(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,Uri.parse("package:"+getPackageName())))).show());
@@ -99,7 +100,11 @@ public final class SetupActivity extends Activity {
         FocusRepository repository=FocusRepository.get(this);
         usageStatus.setText((FocusRepository.usageGranted(this)?"Usage Access allowed":"Usage Access off")+" · local usage reading "+(repository.observe?"enabled":"off"));
         notificationStatus.setText(FocusMonitorService.notificationsAllowed(this)?"Notifications available · starting a monitor is still your choice.":"Notifications blocked · background monitoring cannot start.");
-        floatingStatus.setText((Settings.canDrawOverlays(this)?"Overlay permission allowed":"Overlay permission off")+" · "+(FloatingCompanionService.notificationsAllowed(this)?"floating notifications available":"floating notifications blocked")+" · "+(FloatingCompanionService.running?"Mira floating":"floating companion stopped"));
+        String miraState=!FloatingCompanionService.running?"Mira stopped · Show is your choice":
+            FloatingCompanionService.waitingForUnlock?"Mira resting until unlock · Hide ends this session":
+            FloatingCompanionService.returnAfterUnlockActive?"Mira nearby · returns after unlock within this session":
+            "Mira nearby · lock or screen-off ends this session";
+        floatingStatus.setText((Settings.canDrawOverlays(this)?"Overlay permission allowed":"Overlay permission off")+" · "+(FloatingCompanionService.notificationsAllowed(this)?"floating notifications available":"floating notifications blocked")+"\n"+miraState);
         boolean microphone=checkSelfPermission(Manifest.permission.RECORD_AUDIO)==PackageManager.PERMISSION_GRANTED;
         voiceStatus.setText("Microphone "+(microphone?"allowed":"off")+" · "+(LocalVoiceInput.available(this)?"on-device speech service available; installed English still needs checking.":"on-device speech service unavailable; typing works."));
         File model=new File(getFilesDir(),"qwen35.gguf");
