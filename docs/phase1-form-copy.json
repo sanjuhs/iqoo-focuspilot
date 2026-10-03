@@ -1,0 +1,166 @@
+{
+  "schema": "focuspilot.phase1_form_copy.v1",
+  "prepared_date": "2026-10-03",
+  "status": "Reviewable draft only; dashboard fields empty and no submission performed at the observed read",
+  "dashboard_observation": {
+    "provenance": "Root agent authenticated dashboard read reported 3 October 2026; this writer did not operate the dashboard",
+    "event": "Grand Finale",
+    "finale_dates": [
+      "2026-10-09",
+      "2026-10-11"
+    ],
+    "selected_track": "Productivity",
+    "registered_member_count": 1,
+    "phase1_deadline_date": "2026-10-05",
+    "deadline_exact_time": null,
+    "deadline_timezone": null,
+    "cutoff_limit": "Only the displayed date is verified; no midnight or timezone assumption",
+    "fields_empty": true,
+    "admission_confirmed": false,
+    "submission_receipt_observed": false
+  },
+  "fields": {
+    "idea_title": {
+      "dashboard_label": "Idea title",
+      "required": true,
+      "min_characters": 5,
+      "draft": "Mira: A Private Productivity Companion",
+      "max_characters": 200
+    },
+    "description": {
+      "dashboard_label": "Description",
+      "required": true,
+      "min_characters": 50,
+      "draft": "Mira is a local-first Android productivity companion that helps people return to the task they intended to do. A friendly animated companion accepts editable typed or optional voice drafts for focus sessions, timers, alarms and a small approved app list. Quick local checks handle familiar requests without loading a language model; unfamiliar wording can use explicitly loaded Qwen3.5-0.8B Q4_0 on the phone’s CPU. An independent validator checks complete arguments, and proposed actions still require Review and Confirm. Focus goals, user-authored checklists and opt-in app limits support a calmer workflow; accountability uses simulated points, never automatic money withdrawal.\n\nOur current v0.18 pre-event research prototype is published and installed on a Nothing phone. A separate v0.17 diagnostic completed six already-seen local Qwen requests; a frozen host evaluation improved complete supported proposals from 4/50 to 19/50 with no paired losses, while refusing all 50 unsupported examples. These are scoped tests, not general accuracy or a complete voice demo. Unlocked v0.18 interaction, permissioned monitoring/voice, actual iQOO Snapdragon NPU and Office Kit remain to verify. We disclose the pre-existing repository and open-source dependencies; eligible competition code must be created in the allowed event window unless organizers approve reuse.",
+      "max_characters": 2000
+    },
+    "video_walkthrough_url": {
+      "dashboard_label": "Video walkthrough URL",
+      "required": false,
+      "draft": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4",
+      "release_page": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.12",
+      "attribution": "Historical v0.12 edited research demo, 4:41; not current v0.18 interface or full-feature proof",
+      "human_complete_playback_listening_verified": false
+    },
+    "prototype_url": {
+      "dashboard_label": "Prototype URL",
+      "required": false,
+      "draft": "https://github.com/sanjuhs/iqoo-focuspilot",
+      "current_release": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18",
+      "limit": "Pre-event research. Current release is a light APK without weights; fallback needs the pinned model prepared separately."
+    },
+    "deck_or_document": {
+      "dashboard_label": "Deck/document",
+      "required": true,
+      "accepted_formats_as_displayed": [
+        "PDF",
+        "PPT"
+      ],
+      "maximum_size_as_displayed": "25 MB",
+      "link_alternative_available": true,
+      "draft_link": null,
+      "prepared_upload": "output/pdf/focuspilot-phase1-concept.pdf",
+      "status": "Four-page concept PDF prepared and visually checked. No dashboard upload or form fill occurred.",
+      "bytes": 25456,
+      "sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35"
+    },
+    "android_proficiency": {
+      "dashboard_label": "Android proficiency",
+      "choices": [
+        "No Android experience",
+        "Basic",
+        "Intermediate",
+        "Expert / shipped apps"
+      ],
+      "draft": null,
+      "status": "Human self-report required; do not infer personal proficiency from agent-assisted project tests"
+    },
+    "llm_experience": {
+      "dashboard_label": "LLM proficiency",
+      "choices": [
+        "No LLM experience",
+        "Cloud APIs only",
+        "Experimented with local LLMs",
+        "Deployed local LLMs on-device"
+      ],
+      "draft": null,
+      "status": "Human self-report required; documented project deployment is evidence, not an automatic personal selection"
+    },
+    "prior_builds": {
+      "dashboard_label": "Prior builds & hackathons",
+      "draft": null,
+      "status": "Human history/links required; no achievements or wins assumed"
+    },
+    "team_standout": {
+      "dashboard_label": "What makes you and your team stand out?",
+      "draft": "Our approach combines a friendly companion with explicit user control and reproducible evidence. We distinguish quick deterministic recognition from actual Qwen inference, validate full arguments and invalidate stale or edited proposals before confirmation. We publish tests, exact artifact identities, paired evaluation losses and unfinished proof gates instead of presenting every prototype feature as verified. The next step is a small, reliable productivity workflow on actual iQOO hardware, with organizer-approved code eligibility and Office Kit verification.",
+      "limit": "Project approach only; no invented personal credentials or awards"
+    },
+    "original_work_preexisting_disclosure": {
+      "dashboard_label": "I confirm this idea is our team’s original work and any pre-existing components are disclosed.",
+      "exact_checkbox_wording_recorded": true,
+      "checked": false,
+      "draft_disclosure": "This application includes pre-event research already present in the public FocusPilot repository. Our Android integration, Mira interface, bounded validation/review flow and research utilities build on third-party open-source dependencies and AI-assisted development. The selected runtime uses Qwen3.5-0.8B Q4_0 and llama.cpp, with licenses/notices retained. Kev, Laya and Cua informed research; they are not deployed phone runtimes or an implemented Cua phone-control port. The current light APK does not bundle model weights; Qwen fallback requires separately prepared pinned private weights. We do not assert that pre-event implementation is eligible event-written code. Competition code will be separately created in the permitted window unless organizers explicitly approve reuse.",
+      "status": "Review exact dashboard wording and disclose pre-existing work before any human attestation"
+    }
+  },
+  "novelty_copy": "A friendly local companion combines no-load complete-request recognition with optional checked Qwen output, explicit provenance and single-use review. Separate small-policy explanations are research diagnostics, not claims to understand Qwen or measure human productivity.",
+  "evidence": {
+    "current_app": {
+      "version": "0.18-mira-commands-research",
+      "source_commit": "959f27a0721deca58dc45852e79759bc5a255539",
+      "light_apk_bytes": 5942764,
+      "light_apk_sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d",
+      "jvm_tests_passed": 208,
+      "lint_errors": 0,
+      "lint_warnings": 79,
+      "record": "docs/mira-commands-v18.md",
+      "verified_scope": "Build, signed package and retained-data installation; v18 UI/voice/model outcomes not physically exercised"
+    },
+    "phone_native_diagnostic": {
+      "version": "v0.17",
+      "seen_requests": 6,
+      "runtime_checks": 313,
+      "model": "Qwen3.5-0.8B Q4_0",
+      "backend": "CPU",
+      "record": "docs/unit-native-phone-v17.md",
+      "limit": "Already-seen diagnostic with no actions/UI/voice. Initial restore harness failed; later read-only checks verify restoration, with original records retained."
+    },
+    "fresh_host_proposals": {
+      "supported_baseline": 4,
+      "supported_pipeline": 19,
+      "supported_total": 50,
+      "paired_gains": 15,
+      "paired_losses": 0,
+      "unsupported_refused": 50,
+      "unsupported_total": 50,
+      "wrong_accepted_proposals": 0,
+      "explain_supported_successes": 0,
+      "explain_supported_total": 8,
+      "record": "docs/compatible-command-research.md",
+      "limit": "Frozen informed synthetic host evaluation; 31 supported refusals remain, model-only arm has an alarm loss; not phone population/voice accuracy"
+    },
+    "historical_video": {
+      "record": "docs/v012-pitch.md",
+      "version": "v0.12",
+      "seconds": 280.638,
+      "human_complete_playback_listening_verified": false
+    }
+  },
+  "submission_boundary": {
+    "submit_control": "Submit idea",
+    "submission_authorized_or_performed_by_this_draft": false,
+    "remaining_human_inputs": [
+      "Android proficiency",
+      "LLM experience",
+      "Prior builds",
+      "Exact originality/pre-existing-work attestation"
+    ],
+    "remaining_artifact_or_review": [
+      "Required deck/document or link",
+      "Complete human video playback/listening if including video",
+      "Confirm any additional dashboard validation",
+      "Organizer clarification of pre-event reuse"
+    ]
+  }
+}

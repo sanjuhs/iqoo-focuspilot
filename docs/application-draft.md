@@ -1,45 +1,106 @@
-# Mira / FocusPilot — reviewable application draft
+# Mira / FocusPilot — Phase 1 application copy
 
-Prepared 2 October 2026. **Pre-event research; not submitted.** The following copy is ready to adapt once the authenticated dashboard and organizer requirements are known. No team details, required field names, word limits, admission, deadline or permission to reuse pre-event code are assumed. Proposed primary track: **Productivity**.
+Prepared **3 October 2026**. Reviewable draft only: the authenticated dashboard
+fields were empty and the agent performed no submission. Productivity is
+already selected for the Grand Finale, 9–11 October, with one registered member.
+The displayed Phase 1 deadline is **5 October 2026**; its exact cutoff time and
+timezone are not shown. No private team/profile information is included here.
 
-## Copyable project summary
+The dashboard requires an idea title (5–200 characters), description (50–2,000),
+and a PDF/PPT deck/document up to 25 MB or a link. Video walkthrough and
+prototype URLs are optional. It also asks Android proficiency, LLM experience,
+prior builds, what makes the team stand out, and an originality/pre-existing-work
+attestation before **Submit idea**. Its observed wording is: “I confirm this idea
+is our team’s original work and any pre-existing components are disclosed.”
+[Structured copy and unresolved fields](phase1-form-copy.json).
 
-Mira is a quiet local productivity companion for Android. It helps people return to the task they intended to do: choose a focus goal, review a short command, start or pause a session, and inspect a nudge based on their own app-use limits. An original animated companion makes the experience friendly, while a quantized open-source Qwen model proposes bounded actions on the phone. Observation and voice are optional, actions require review, and accountability uses virtual points. A private summary export lets a laptop review policy scores without copying raw goals or screen content. Our pre-event prototype establishes the CPU model and reviewed focus workflow; permissioned monitoring, voice and actual iQOO/Office Kit deployment remain verification work.
+## Idea title
 
-## Problem and intended end-user utility
+**Mira: A Private Productivity Companion**
 
-People open a phone for a task, drift into a feed and forget why they opened it. The same app can be productive or distracting depending on the person's goal. Mira is designed to use the user's selected app, declared limits and manual feedback instead of treating every minute of social media as wasted time.
+## Description — ready to copy
 
-The intended everyday flow is a reviewed focus countdown, a visible opt-in session, an understandable nudge and an easy pause/override. Push-to-talk is intended to create an editable command draft followed by local understanding and confirmation. The laptop bridge is intended for a deliberate summary handoff and deeper review. These are product goals; the verified subset is listed below.
+Mira is a local-first Android productivity companion that helps people return to
+the task they intended to do. A friendly animated companion accepts editable typed
+or optional voice drafts for focus sessions, timers, alarms and a small approved
+app list. Quick local checks handle familiar requests without loading a language
+model; unfamiliar wording can use explicitly loaded Qwen3.5-0.8B Q4_0 on the
+phone’s CPU. An independent validator checks complete arguments, and proposed
+actions still require Review and Confirm. Focus goals, user-authored checklists and
+opt-in app limits support a calmer workflow; accountability uses simulated points,
+never automatic money withdrawal.
 
-## Copyable technical brief
+Our current v0.18 pre-event research prototype is published and installed on a
+Nothing phone. A separate v0.17 diagnostic completed six already-seen local Qwen
+requests; a frozen host evaluation improved complete supported proposals from
+4/50 to 19/50 with no paired losses, while refusing all 50 unsupported examples.
+These are scoped tests, not general accuracy or a complete voice demo. Unlocked
+v0.18 interaction, permissioned monitoring/voice, actual iQOO Snapdragon NPU and
+Office Kit remain to verify. We disclose the pre-existing repository and
+open-source dependencies; eligible competition code must be created in the allowed
+event window unless organizers approve reuse.
 
-The Android research app packages Qwen3.5-0.8B Q4_0 and runs it through a pinned llama.cpp ARM64 CPU bridge. The v0.10 original-request validator consumes a whole supported command, with explicit English-number/duration/clock slots, before user confirmation. Qwen weights, prompt and native backend are unchanged. A deterministic shortcut parser remains available. Recurring budget nudges use explicit rules and separate permission/focus/cooldown gates; an inspectable 65-parameter positive-weight head supplies shadow explanations. Private few-shot labels are scoped to the original goal and settings. The laptop consumer strictly validates a bounded export, groups exact original contexts and replays the pinned policy on Python CPU, emitting only private aggregates and provenance hashes. All accountability points are simulated. Snapdragon NPU execution and actual Office Kit transport are not established.
+## What makes the team stand out — project-based draft
 
-## Current evidence and known limits
+Our approach combines a friendly companion with explicit user control and
+reproducible evidence. We distinguish quick deterministic recognition from actual
+Qwen inference, validate full arguments and invalidate stale or edited proposals
+before confirmation. We publish tests, exact artifact identities, paired evaluation
+losses and unfinished proof gates instead of presenting every prototype feature
+as verified. The next step is a small, reliable productivity workflow on actual
+iQOO hardware, with organizer-approved code eligibility and Office Kit verification.
 
-- **v0.11 private task guide:** source `e8691e0a17f53d7d1ed0eebc2bd7bebb4a10bd4a` adds user-authored goal-scoped steps, explicit completion/undo, reviewed replacement/clear and optional local readback. Stale task/record checks prevent applying old progress or speaking replaced text. 143 JVM tests pass, lint zero errors/65 warnings; both signed packages inspected and light installed with APK/model parity, paused/off/100 unchanged. Actual task UI, audio, recovery and deletion remain pending. Authored text is inert, omitted from exports/model input and is not LLM planning or external automation. Qwen/prompt/gate/native are unchanged. [Contract](task-guide.md), [identities](task-guide-artifacts.json).
+This describes the project approach, not personal credentials or awards. Android
+proficiency, LLM experience and prior builds remain **unanswered human self-reports**.
+No experience level or achievement is inferred from agent-assisted implementation.
 
-- **v0.10 conversational gate:** app source `bcc24733655e4eced67d68ff5c47f7ab97d60b36` retains Qwen3.5 Q4_0, original prompt and native CPU runtime. Fresh frozen synthetic supported proposals improve 15→31/50 with 16 gains/zero losses, 50/50 unsupported rejections and zero wrong accepts observed; 19 supported requests still abstain. Raw model correctness is 36/100 with 49 unsupported tool proposals, so explicit validation/review remains essential. 133 JVM tests pass; lint zero errors/62 warnings. Both signed packages inspected and updated light installed with APK/private-model identity parity; paused/off/100 points and permissions unchanged. No current phone command outcome was tested on the asleep display. Longer prompts were rejected, and this is not model fine-tuning or NPU evidence. [Contract/results](conversational-commands.md).
+## Optional links and required document
 
-- **Historical v0.9 friendly companion:** original movable Mira plus explicitly reviewed Show,
-  Open/Pause focus/Hide controls. Overlay permission and usable notifications are
-  separately user-controlled; grant return starts nothing. Source `6e483aaf9e42889794ed77c272b8a912539cfc7c`
-  passes 127 JVM tests and lint zero errors/62 warnings; signed APKs inspected and
-  light installed with identity parity. Actual overlay grant/UI/touch/lifecycle is
-  pending, with no claim of uninterrupted always-on behavior. Model/gate unchanged.
-  [Floating contract](floating-companion.md).
+- Prototype: [public repository](https://github.com/sanjuhs/iqoo-focuspilot), with
+  [current v0.18 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18).
+  The current light APK excludes weights; Qwen fallback needs separately prepared
+  pinned private weights. Quick recognition needs no model load.
+- Optional video: [historical v0.12 walkthrough](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4),
+  **4:41**, with [source and limitations](v012-pitch.md). It includes historical
+  v0.12 phone footage and edited narration, not current v0.18 interface or complete
+  voice/monitoring proof. Complete human playback/listening remains pending.
+- Required deck/document: the [four-page concept PDF](../output/pdf/focuspilot-phase1-concept.pdf)
+  is prepared and visually checked, 25,456 bytes. No dashboard file upload or
+  document-link selection has occurred. [Source and QA](phase1-document-evidence.json).
 
-- **v0.8 command source:** friendly forms such as “Get back to work,” “Take a study break” and “Focus for twenty-five minutes” are supported by the model-facing gate when Qwen proposes the matching intent. English-number slots and explicit spoken AM/PM preserve bounded durations/clock times; extra prose requires clarification. **119 JVM tests pass**, lint has zero errors/59 warnings; both APKs passed packaging inspection and the light APK installed with matching APK/private-model hashes; physical v0.8 outcomes remain pending. The frozen 100-request/50-family host test improved generated-plus-gate strict correctness 64→72/100 with no wrong accepted proposals, but only 12/40 supported requests succeeded and 28/40 abstained; nine gains accompany six regressions. Qwen raw intent correctness remained 29/100, including zero unsupported model abstentions. These are host results, not autonomous reliability. [Contract](natural-commands.md).
-- **Historical v0.7 research build:** timed focus implementation accepts one duration written in digits from 1 second to 120 minutes, retains remaining time across pause/resume and recovers paused after process loss. Integrated build: **105 JVM tests**, zero lint errors and **59 warnings**. Actual v0.7 countdown verification is pending phone unlock/own-app foreground readiness. [Timer contract and artifact identity](timed-focus.md).
-- **Historical v0.6 phone proof:** exact source/APK/model/native identities bind typed Start and Pause to 17,323 ms and 1,814 ms. Both were reviewed and confirmed; session state changed active then paused. Alarm cancellation took 1,655 ms, was misclassified by Qwen and independently rejected. Usage stayed off, permissions were unchanged and the final virtual balance was 100. These are three observations, not p50/p95 or v0.7 timing evidence. [Phone report](command-readiness-phone.json).
-- **Historical command reliability:** frozen 58-case host raw intent correctness is 25/58; gated correctness including abstentions is 49/58; supported-command correctness is 16/23. Two accepted mismatches are retained. v0.7 repairs are known-case regressions, not an independent accuracy gain. The raw model is unsuitable for autonomous phone actions. [Evaluation](command-reliability.md).
-- **Laptop compute:** 15 bridge tests and actual Java-rendered synthetic export → Python consumer interoperability pass. This establishes file/schema/compute compatibility, not real app-use export or Office Kit transfer. [Workflow](officekit-export-workflow.md), [interop evidence](bridge-java-interop.json).
-- **Explanation research:** the small head was trained on invented labels, not human productivity. Laptop Qwen activation interventions found no reliable steering advantage; observations and negative results are retained. No general mechanistic-understanding claim is made.
-- **Pending physical proof:** on-device ASR/TTS, Clock outcome, user-enabled monitoring/OEM lifecycle, disconnected offline operation, iQOO hardware/NPU and Office Kit pairing/transfer. Broad cross-app control and IoT are not demonstrated. A separate [4:35 current research pitch](current-pitch.md) now illustrates v0.10 with measured captions and source-bound metrics; complete human listening remains pending. It uses no phone capture and supplies no live-feature proof. The existing 4:53 v0.3 video remains historical. [Status](status.md), [demo script](demo-script.md).
+## Originality and pre-existing-work disclosure
 
-In a separate 90-request experiment, a 7,175-parameter classifier trained on **frozen Qwen representations** scored 76/90 raw intents versus 46/90 for generation on the same synthetic held-out set. Validation-selected abstention reduced unsupported false accepts in that set, but relies on numerical saturation; the frozen v0.7 action gate gives only 15/65 correct supported actions versus 17/65 for generation. It remains unpromoted and does not fine-tune internal Qwen weights. [Measured research](intent-head.md).
+This application includes pre-event research already present in the public
+FocusPilot repository. Our Android integration, Mira interface, bounded
+validation/review flow and research utilities build on third-party open-source
+dependencies and AI-assisted development. The selected runtime uses
+**Qwen3.5-0.8B Q4_0 and llama.cpp**, with licenses/notices retained. **Kev, Laya and
+Cua informed research**; they are not deployed phone runtimes or an implemented
+Cua phone-control port. The current light APK does not bundle model weights;
+Qwen fallback requires separately prepared pinned private weights.
 
-## Eligibility and submission boundary
+We do not assert that pre-event implementation is eligible event-written code.
+Competition code will be separately created in the permitted window unless
+organizers explicitly approve reuse. Review the actual attestation wording before
+checking it; this file neither attests nor submits.
 
-The public Finale dates are 9–11 October 2026, and the guide/Terms require competition work within the allowed event window. The current implementation is dated preparation research. Eligible competition code must be created in that window unless the organizers explicitly authorize reuse. An APK, public repository or application draft does not establish eligibility or acceptance. Confirm the authenticated dashboard's actual requirements and cutoff before adapting or submitting this copy. [Rules and rubric](../hackathon.md).
+## Evidence that can support the deck
+
+- [v0.18](mira-commands-v18.md): 208 JVM tests pass; lint zero errors and 79 warnings;
+  signed light package and protected retained-data installation verified. The
+  phone was locked/off, so the revised layout, examples, touch, voice and fallback
+  were not physically exercised in that update.
+- [v0.17 local JNI diagnostic](unit-native-phone-v17.md): six already-seen requests
+  complete with actual EOS, correct model slots and no executed actions. It proves
+  its own Nothing CPU runtime scope, not iQOO/NPU or fresh phone accuracy. The
+  initial restore harness remains failed; final read-only records verify recovery.
+- [Frozen host qualification](compatible-command-research.md): complete supported
+  proposals 4→19/50 with 15 gains/no losses; all 50 unsupported requests refused,
+  zero wrong accepts observed. Coverage remains limited: 31 supported refusals,
+  0/8 Explain and a model-only alarm loss. This is informed synthetic evaluation.
+
+The separate 65-parameter policy is a synthetic, shadow-only explanation lab;
+activation observations do not establish causal Qwen understanding. Actual
+permissioned workflows, iQOO/NPU, Office Kit, event-code eligibility and accepted
+submission remain unfinished. The application should present this scope clearly,
+without treating a release, test result or video as admission or submission proof.

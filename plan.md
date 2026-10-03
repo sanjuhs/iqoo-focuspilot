@@ -1,5 +1,27 @@
 # FocusPilot delivery plan
 
+## Phase 1 dashboard and concept document — 3 October
+
+Authenticated Finale dashboard is accessible: Productivity selected, one-member
+team observed, Phase 1 idea deadline **5 October 2026**. Exact cutoff time/timezone
+is unverified. Video/prototype links are optional; PDF/PPT (max 25 MB) or document
+link is required. Title 5–200 characters; description 50–2,000. No personal profile
+values or private team/contact identifiers are recorded in Git.
+
+Four-page concept PDF is prepared and visually checked; editable form copy fits
+limits and discloses pre-existing code/Qwen/llama.cpp. Historical v12 video is
+optional and retains its own attribution/human-listening limit. Human Android/LLM
+proficiency and prior-build answers remain pending. No form fill, upload, checkbox
+attestation, Terms acceptance or Submit action occurred. Existing entry does not
+prove admission or accepted submission.
+[Observed requirements](docs/phase1-dashboard-observation.json) ·
+[Application copy](docs/application-draft.md) ·
+[PDF/source/QA](docs/phase1-document-evidence.json).
+
+Continue the full assistant: unlocked v18 workflows, permitted voice/monitoring,
+actual iQOO/NPU and Office Kit, eligible event code and final accepted submission.
+Phone remains authorized but locked/off; no process is being waited on.
+
 ## Current app — v0.18 friendly Mira commands
 
 Qwen3.5-0.8B Q4_0 stays selected. Ask Mira now opens an empty editable request

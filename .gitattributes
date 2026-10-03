@@ -1,3 +1,5 @@
 * text=auto
 *.bat text eol=crlf
 *.jar binary
+# PDF document assets retain their exact binary bytes.
+*.pdf binary

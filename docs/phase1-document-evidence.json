@@ -1,0 +1,28 @@
+{
+  "pdf": "output/pdf/focuspilot-phase1-concept.pdf",
+  "bytes": 25456,
+  "sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35",
+  "pages": 4,
+  "sources": {
+    "docs/mira-commands-artifact-v18.json": "e2651cf1a09d543942cea3a7c92a4c9fadde67b213f5db8a65ff2d4b0f4ae6b6",
+    "docs/mira-commands-phone-v18.json": "248a1cddcaa933b6c17bb6d5aafa7e6a02b97545e3d7d24ebe404bac11006857",
+    "docs/unit-native-phone-v17.json": "634c35b852ce4c7a3eec2c873d52c6575c0a5fb7198d1e19b8e76f33c9049177",
+    "docs/compatible-command-research.md": "7d3afaf2f799f6ea5cffa096195e88c3ce2d730438c011d4b6fbcb364fdbc8ed",
+    "docs/phase1-dashboard-observation.json": "a4fae390e81ff2b16d4c826efb7788e214887fa916c5301268ebdb5e382b0d61",
+    "prototype/phase1-document/build_pdf.py": "84249a46f156813cd8ae2b2ed7b939df03fe320eb115073a7defcd4bd0918d57",
+    "scripts/render_current_pitch.py": "155fb318b971f26ec347b8b20f76676a93d12731fd7ed2a251c320b6d788c123"
+  },
+  "phone_capture_used": false,
+  "private_profile_data_used": false,
+  "network_used": false,
+  "scope": "Phase 1 concept document, not a submission receipt or final eligibility claim",
+  "schema": "focuspilot.phase1_document_evidence.v1",
+  "visual_review_all_four_pages": true,
+  "final_render_pixels_match_inspected_pages": true,
+  "pdf_reader_page_and_text_checks_pass": true,
+  "size_below_dashboard_limit": true,
+  "forms_filled": false,
+  "files_uploaded_to_dashboard": false,
+  "submission_performed": false,
+  "experience_answers_pending": true
+}

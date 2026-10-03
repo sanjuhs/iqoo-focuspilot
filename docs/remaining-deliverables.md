@@ -1,5 +1,18 @@
 # Remaining deliverables — full-scope audit
 
+**Current account/application proof, 3 October:** signed-in Finale dashboard is
+accessible, Productivity selected and one-member team observed. Phase 1 idea
+deadline is 5 October, with exact cutoff time/timezone unknown. Required PDF/document
+is prepared; human proficiency/history and submission attestation remain pending.
+No profile/form/upload/submission action occurred. [Actual requirements](phase1-dashboard-observation.json),
+[current application](application-draft.md), [document QA](phase1-document-evidence.json).
+
+**Current app:** v18 friendly command entry is built/installed/published with208
+passing JVM tests and protected state preserved. Current physical UI/voice waits
+for phone unlock. v17 seen JNI CPU evidence remains bound to its own APK. Actual
+iQOO/NPU, Office Kit, eligible event code and accepted submission remain unfinished.
+[Current app proof](mira-commands-v18.md). Historical updates below retain their attribution.
+
 **Latest v0.16 update:** reviewed focus snapshots/recorded countdown targets are
 built and installed; 182 JVM and 12 installed-app pure checks pass with protected
 state preserved. Actual foreground summary, new-key persistence/migration, voice
@@ -79,7 +92,7 @@ monitor with observation off was refused with switch reset/no service record.
 Paused/off/100/57,331 ms remained unchanged. [Coverage](readback-phone.md). This
 closes only the measured callback/early-guard branches, not full actions 4–6.
 
-**Current account check:** the signed-in provided registration route redirects to
+**Historical account check, 2 October:** the signed-in provided registration route redirects to
 profile onboarding with personal fields and Terms/Privacy choices. No fields,
 agreements or application were changed; actual cutoff/admission/video constraints
 remain inaccessible until the user completes that step. [Observed fields](hackathon-research.md).

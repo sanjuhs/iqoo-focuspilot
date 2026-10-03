@@ -12,7 +12,8 @@ See [verified research](docs/hackathon-research.md) for detailed findings and un
 
 - Grand Finale: Bengaluru, **9–11 October 2026**, advertised as a 48-hour event.
 - Our target: prepare the concept/prototype/application by **3 October morning**.
-  This is a user target; the signed-in application deadline is not yet verified.
+  This is a user target. The signed-in Finale dashboard now shows a Phase 1 idea
+  deadline of **5 October 2026**; exact cutoff time/timezone is not displayed.
 - Team size: 1–3; student/professional categories cannot be mixed.
 - Final entries run and are demonstrated on iQOO hardware.
 - Pre-event idea preparation is permitted. Competition code must be created in the
@@ -20,7 +21,9 @@ See [verified research](docs/hackathon-research.md) for detailed findings and un
 - Third-party/open-source dependencies need attribution and compliant licenses.
 - Loaner devices must not be modified/unlocked. We use normal Android APIs.
 - Final Sunday submission cutoff and application video requirements need dashboard
-  confirmation. The published pitch duration is 3–5 minutes.
+  confirmation. The published pitch duration is 3–5 minutes. Phase 1 currently
+  makes video/prototype links optional and requires a PDF/PPT (maximum 25 MB) or
+  document link; final live-demo requirements remain separate.
 
 This repository documents research and labels pre-event code under `prototype/`.
 It does not prove eligibility of that code for the Finale.
@@ -39,7 +42,9 @@ It does not prove eligibility of that code for the Finale.
 | Community App | Finale | Not selected |
 | Open Innovation | Everywhere | Fallback for general local assistant positioning |
 
-Choose Productivity unless dashboard/organizer classification requires otherwise.
+The authenticated Finale dashboard already shows Productivity selected and a
+one-member team. This does not establish shortlist admission or a submitted idea.
+Keep Productivity unless dashboard/organizer classification requires otherwise.
 Fewer strong workflows should lead the pitch; a broad list of unrelated functions
 would weaken product quality and impact.
 
@@ -90,9 +95,11 @@ and say "set an alarm for 7:30" to open the phone's clock confirmation flow.
 
 ## Submission assets checklist
 
-- [ ] Complete direct-entry dashboard and confirm actual cutoff.
+- [x] Read signed-in Finale dashboard: entry/team count/track and Phase 1 date.
+- [ ] Confirm exact Phase 1 cutoff time/timezone and any remaining profile needs.
 - [ ] Confirm permitted treatment of pre-event research code.
 - [ ] Team/category/track details and concept write-up.
+- [x] Prepare a four-page concept PDF and form text within displayed limits.
 - [ ] Source repository with license, attribution and build instructions.
 - [ ] APK or required runnable artifact, tested on iQOO.
 - [ ] Model revision/license, local/NPU evidence, evaluation and limitations.
@@ -101,5 +108,9 @@ and say "set an alarm for 7:30" to open the phone's clock confirmation flow.
 - [ ] Backup video/screenshots containing only consented synthetic content.
 - [ ] Submission receipt before official cutoff; repository alone is not submission.
 
-The user signs in and supplies missing dashboard details. No registration,
-acceptance of Terms, external message or submission has been performed by the agent.
+The agent observed the existing signed-in entry without recording personal profile
+values, team code or contacts. No profile values, Terms, team membership, problem
+statement, form fields, upload or submission were changed. Human proficiency and
+prior-build answers remain pending. [Actual requirements](docs/phase1-dashboard-observation.json),
+[reviewable application](docs/application-draft.md),
+[concept PDF](output/pdf/focuspilot-phase1-concept.pdf).

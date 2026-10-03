@@ -1,0 +1,36 @@
+{
+  "schema": "focuspilot.phase1_dashboard_observation.v1",
+  "observed_utc": "2026-10-03T01:16:12.690351+00:00",
+  "source": "Authenticated rendered browser UI at https://iqoo.reskilll.com/dashboard/iqoo-finale",
+  "read_only": true,
+  "signed_in_dashboard_accessible": true,
+  "event": "Grand Finale",
+  "event_dates": "Fri 9 - Sun 11 October 2026",
+  "phase1_deadline_displayed": "5 Oct 2026",
+  "cutoff_time_and_timezone": null,
+  "selected_track": "Productivity",
+  "observed_team_member_count": 1,
+  "fields_blank_at_inspection": true,
+  "required_document": "Upload PDF/PPT maximum25MB or paste document link",
+  "video_and_prototype_urls_optional": true,
+  "title_characters": {
+    "minimum": 5,
+    "maxlength": 200
+  },
+  "description_characters": {
+    "minimum": 50,
+    "maxlength": 2000
+  },
+  "original_work_and_existing_component_disclosure_checkbox_present": true,
+  "checkbox_checked_by_agent": false,
+  "form_filled_by_agent": false,
+  "files_uploaded_by_agent": false,
+  "submit_clicked_by_agent": false,
+  "submission_receipt_observed": false,
+  "admission_proven": false,
+  "personal_profile_fields_recorded": false,
+  "private_team_name_code_email_recorded": false,
+  "incomplete_profile_tab_also_observed": true,
+  "profile_values_changed_or_terms_accepted": false,
+  "scope": "Rendered form requirements/team-count/track only. Existing entry is not proof of shortlist admission or completed Phase1 submission."
+}
