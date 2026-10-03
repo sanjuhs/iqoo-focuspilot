@@ -1,0 +1,9 @@
+{
+  "schema": "focuspilot.native_page_release_notes_update.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.19",
+  "notes_sha256_utf8": "3e0e5360e8ee452015d6c5bd6501a94bc252861b4534a14dbf21132b8bbbb354",
+  "cpu_regression_record_source_commit": "29caad81738b84b2fbe98bb306211955cc81dcc8",
+  "five_original_server_assets_retained": true,
+  "sdk_binary_publication": false,
+  "scope": "Update notes after actual narrow six-request CPU regression; runtime16KiB/iQOO/NPU/OfficeKit and UI remain unverified."
+}
