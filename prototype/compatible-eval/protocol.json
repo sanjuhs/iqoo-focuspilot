@@ -1,0 +1,61 @@
+{
+  "schema": "focuspilot.compatible_unit_protocol.v1",
+  "research_only": true,
+  "candidate_source_freeze_before_authoring": true,
+  "scope": "Prospective fresh confirmation of a deterministic System 1 request recognizer plus checked Qwen3.5-0.8B Q4_0 unit-output fallback. Separate model-only reporting is mandatory. No Android action is executed.",
+  "fresh_cohort": {
+    "rows": 100, "families": 50, "rows_per_family": 2, "supported": 50, "unknown": 50,
+    "counts": {"start_focus":9,"pause_focus":9,"alarm":8,"timer":8,"open_app":8,"explain":8,"unknown":50},
+    "approved_apps": {"settings":3,"calculator":3,"clock":2},
+    "hard_minimums": {"unit_minutes":8,"unit_seconds":4,"unit_hours":2,"spoken_number":8,"untimed_start":2,"am_pm":4,"clock_24h":2},
+    "unknown_boundaries": {"negation":5,"compound":5,"conditional":4,"quoted":4,"foreign_topic":5,"privacy_capture":4,"destructive":4,"messaging":3,"payments":3,"malformed_argument":5,"unsupported_target":4,"third_party":4},
+    "author": "Informed synthetic author after final source freeze; no candidate source/test/prompt/output reads, model/gate filtering or oracle-derived labels.",
+    "review": "Manual semantic and exact source/canonical slot review of all100 before any candidate or baseline outputs. Preserve every author attempt and ambiguity resolution. No post-output repair or relabelling.",
+    "novelty": "Opaque exact/normalized prior requests, prompt examples, source fixtures and family/template hashes. Novel wording is not semantic or population independence."
+  },
+  "arms": {
+    "baseline": "Original production LocalModel prompt/intent GBNF and selected ModelCommandGate",
+    "checked_model": "Exact immutable Unit prompt/GBNF with CompatibleUnitCommand.validate",
+    "product_pipeline": "CompatibleUnitCommand.recognize; only if refused, validate the same captured unit response. Every result records FAST_LOCAL_REQUEST/CHECKED_MODEL/UNKNOWN.",
+    "capture_all_requests": "Both model arms capture all100 for research, even if the production pipeline would skip inference. Fast local success is never counted as Qwen prediction accuracy."
+  },
+  "capture": {
+    "model_sha256":"57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "backend":"Pinned existing host C API CPU, no GPU/adapter/callback",
+    "context":1024,"threads":4,"batch":1024,"microbatch":256,"maximum_generated_tokens":128,
+    "memory":"Fresh allocated context per request; shared weights",
+    "sampling":"GBNF followed by greedy, actual canonical JSON and EOG required",
+    "actual_prompt_token_limit":896,"deadline_seconds_per_arm":240,"attempts_per_arm":1,
+    "order":"Baseline then checked-model, serial; record first and subsequent latency separately",
+    "failure_policy":"Preserve failure/partial outputs; no retry, row omission or partial successful score"
+  },
+  "qualification": {
+    "all_required":true,
+    "historical_80_preserved":80,
+    "historical_unknown_and_wrong_route_accepts":0,
+    "pipeline_supported_net_gain_minimum":6,
+    "pipeline_supported_losses_maximum":0,
+    "pipeline_per_supported_class_decline_allowed":false,
+    "pipeline_start_complete_minimum":4,
+    "checked_model_wrong_accepts_maximum":0,
+    "pipeline_wrong_accepts_maximum":0,
+    "checked_model_unknown_refusals_required":50,
+    "pipeline_unknown_refusals_required":50,
+    "candidate_oracle_at_least_baseline":true,
+    "canonical_json_actual_eos_per_arm":100,
+    "runtime_failures":0,
+    "report_model_only_losses":true,
+    "promotion":"Passing can qualify the combined pipeline, not a claim that the model-only arm improved without regressions. Exact app integration, tests/package inspection, isolated actual Android replay and real permissioned workflows remain separate requirements."
+  },
+  "storage":{"project_cap_bytes":15000000000,"incremental_reserve_bytes":10000000,"downloads":false,"raw_corpus_and_captures":"Ignored build/ only"},
+  "limitations":[
+    "Informed correlated synthetic pairs, not blinded, user, population or voice accuracy",
+    "Fast local recognition is deterministic code and provides no model activation explanation",
+    "Finite scope/vocabulary heuristics can overreject and do not establish arbitrary-language safety",
+    "Model-only regressions must remain visible even if the combined pipeline qualifies",
+    "Host C API inference is not phone latency, production JNI, NPU or Office Kit evidence",
+    "Explain proposal correctness is not answer fulfillment or causal productivity interpretation",
+    "No training or mechanistic interpretation result from this experiment",
+    "Pre-event research code is not eligible event-written competition code"
+  ]
+}

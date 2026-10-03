@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "9550dad7ab4d1a84d3b6410629cfa013a38bf2c1da498dbfb49874a1ad49cf26",
+  "readme_sha256": "eb051320fc700f29ad9053115a8f1daacaaff3901e3bacc2b5140b2f2070a42c",
+  "fresh_data_authored": false,
+  "model_or_gate_outputs_seen": false,
+  "historical_development_outputs_seen": true,
+  "historical_source_commit": "16482876f02ce3ccce4abac6677f19a13bf92ce3"
+}
