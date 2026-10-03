@@ -1,0 +1,13 @@
+{
+  "schema": "focuspilot.recoverable_bundle_cleanup.v1",
+  "scope": "Only published older v18 generated bundle; source, light APK, v19/v20 artifacts, models and private evidence retained",
+  "file": "artifacts/focuspilot-research-v018-mira-commands-bundled.apk",
+  "bytes": 568608247,
+  "sha256": "7ff98674b8e0213fc93f3adb3a736246ea283f8051e307d31758a92177cdc85b",
+  "server_digest": "sha256:7ff98674b8e0213fc93f3adb3a736246ea283f8051e307d31758a92177cdc85b",
+  "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-bundled.apk",
+  "server_release_id": 402254152,
+  "project_bytes_before": 9469878637,
+  "project_bytes_after": 8901270390,
+  "removed": true
+}

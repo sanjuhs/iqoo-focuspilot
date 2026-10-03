@@ -1,6 +1,23 @@
 # Verified status
 
-## Current app — v0.19 with Qwen3.5
+## Current app — v0.20 Mira availability, Qwen3.5 retained
+
+Qwen3.5-0.8B Q4_0 stays selected. An explicit, default-off choice lets a reviewed
+Mira session retain its existing foreground service through lock, hide its portrait
+and refresh work, then recheck permissions and restore after unlock. Hide ends the
+session. No new microphone, model, monitor, boot or sticky restart behavior.
+
+All 216 JVM tests pass; lint has zero errors/fatal findings and 79 warnings. The
+signed light update is installed on Nothing with the checked paused data, model,
+grants and original test preserved. The standalone model bundle passes payload,
+signing and alignment checks. Physical lock/unlock, permitted voice/usage workflows,
+current bundle import, actual iQOO/NPU and Office Kit remain pending. v19 CPU
+measurements retain their own attribution; no new model run occurred. See
+[behavior and evidence](mira-availability-v20.md). This remains pre-event
+research; eligible event code and accepted submission are still required.
+
+
+## Historical v0.19 app and CPU evidence
 
 Keep Qwen3.5-0.8B Q4_0. The native page-layout repair passes ELF load/RELRO
 and APK ZIP checks. All 208 JVM tests pass; lint has zero errors/fatal findings

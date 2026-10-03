@@ -1,6 +1,23 @@
 # Remaining deliverables — full-scope audit
 
-**Current v19 update:** Qwen3.5-0.8B Q4_0 stays selected. Native ELF load/RELRO and
+## Current app — v0.20 Mira availability, Qwen3.5 retained
+
+Qwen3.5-0.8B Q4_0 stays selected. An explicit, default-off choice lets a reviewed
+Mira session retain its existing foreground service through lock, hide its portrait
+and refresh work, then recheck permissions and restore after unlock. Hide ends the
+session. No new microphone, model, monitor, boot or sticky restart behavior.
+
+All 216 JVM tests pass; lint has zero errors/fatal findings and 79 warnings. The
+signed light update is installed on Nothing with the checked paused data, model,
+grants and original test preserved. The standalone model bundle passes payload,
+signing and alignment checks. Physical lock/unlock, permitted voice/usage workflows,
+current bundle import, actual iQOO/NPU and Office Kit remain pending. v19 CPU
+measurements retain their own attribution; no new model run occurred. See
+[behavior and evidence](mira-availability-v20.md). This remains pre-event
+research; eligible event code and accepted submission are still required.
+
+
+**Historical v19 update:** Qwen3.5-0.8B Q4_0 stays selected. Native ELF load/RELRO and
 APK ZIP checks pass, all 208 JVM tests pass and one protected light update installs
 on the 4 KB Nothing phone. Six seen JNI requests and 313 checks now pass; actual 16 KB runtime remains pending.
 A permission-free Qualcomm diagnostic APK is built privately; supported-device
@@ -18,7 +35,7 @@ remain unverified. [Prepared live draft](phase1-prepared-dashboard-draft.json),
 [Actual requirements](phase1-dashboard-observation.json),
 [current application](application-draft.md), [document QA](phase1-document-evidence.json).
 
-**Current app:** v18 friendly command entry is built/installed/published with208
+**Historical app:** v18 friendly command entry is built/installed/published with208
 passing JVM tests and protected state preserved. Current physical UI/voice waits
 for phone unlock. v17 seen JNI CPU evidence remains bound to its own APK. Actual
 iQOO/NPU, Office Kit, eligible event code and accepted submission remain unfinished.

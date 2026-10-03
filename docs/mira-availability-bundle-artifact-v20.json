@@ -1,0 +1,44 @@
+{
+  "kind": "pre-event debug research APK packaging; byte/signature proof, no phone run",
+  "app_source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+  "app_source_attribution": "caller-supplied frozen build commit, not compilation replay",
+  "packager_sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+  "light": {
+    "file": "artifacts/focuspilot-research-v020-mira-availability-light.apk",
+    "bytes": 5562748,
+    "sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239"
+  },
+  "model": {
+    "entry": "assets/qwen35.gguf",
+    "compression": "ZIP_STORED",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "bundle": {
+    "file": "artifacts/focuspilot-research-v020-mira-availability-bundled.apk",
+    "bytes": 568604151,
+    "sha256": "a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c"
+  },
+  "storage": {
+    "project_bytes_before": 8901271127,
+    "per_copy_byte_cap": 568860956,
+    "reserved_temporary_bytes": 1137721912,
+    "estimated_peak_project_bytes": 10038993039,
+    "project_limit_bytes": 15000000000,
+    "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+  },
+  "alignment": "SDK zipalign -P 16 4 before signing; -c -P 16 4 passed after signing",
+  "signature": "SDK apksigner verify passed for light and final; same public certificate",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "original_payload_count": 16,
+  "only_added_non_signature_entry": "assets/qwen35.gguf",
+  "temporary_large_copy_limit": 2,
+  "downloads": 0,
+  "phone_actions_executed": 0,
+  "runtime_verified": false,
+  "schema": "focuspilot.mira_availability_bundle.v1",
+  "original_payload_parity_verified": true,
+  "private_packaging_record": "artifacts/mira-availability-v20-bundled-packaging.json",
+  "npu_verified": false,
+  "current_bundle_import_verified": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "focuspilot.mira_availability_install.v1",
+  "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+  "harness_sha256": "d6977ed58a49aa3758d228327aafbe59b84ca573f726b1b8a50af234f6149a31",
+  "old_apk_sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+  "apk_sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+  "attempts": 1,
+  "ui_used": false,
+  "phone_woken": false,
+  "permission_changes": 0,
+  "model_inference": false,
+  "passed": true,
+  "install_client": {
+    "elapsed_ms": 930,
+    "exit_code": 0
+  },
+  "installed_target_sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+  "original_test_unchanged": true,
+  "protected_state_unchanged": true,
+  "target_installed": true,
+  "private_record_sha256": "f31d49a723435f4b2db47b8913f3cc3f8d95928554a5360cdedd7ef75efecb5d",
+  "protected_scope": "Three named preference-store semantic hashes/checkpoint; canonical model full SHA/bytes/inode/links; microphone/notification grants; own monitor/floating service absence; exact original test APK.",
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "physical_lock_unlock_verified": false,
+  "npu_verified": false
+}

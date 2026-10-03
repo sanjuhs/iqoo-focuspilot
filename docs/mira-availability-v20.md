@@ -3,8 +3,10 @@
 Source frozen at `81287b2b08ccedc050635b0b8a27154bed3b5d87`. This change lets an
 explicitly chosen floating-companion session stay available through screen-off and
 return its portrait after unlock. It does not promise uninterrupted availability
-or display on the lock screen. Build, installation, publication and physical
-behavior evidence for v20 are **pending**; root will add their final records.
+or display on the lock screen. The offline build passes 216 JVM tests across 29 suites, including eight new
+availability fixtures. Lint reports zero errors/fatal issues and 79 warnings.
+One guarded light update installs on Nothing with exact protected state and
+original test APK preserved. Physical lock/unlock behavior remains unverified.
 
 Qwen3.5-0.8B Q4_0 remains selected. Model bytes, prompts, command validation and
 the v19 native library are unchanged. Native SHA256 remains
@@ -81,7 +83,12 @@ Eight new isolated JVM fixtures pass for default-off behavior, explicit admissio
 real-state unlock guards, permission loss/regrant, Hide and stale leases, duplicate
 signals, frozen session mode and no implicit startup. They test the pure state
 helper; they do not run WindowManager, a foreground service or a real unlock.
-The complete v20 build/test counts and artifact identities are not yet recorded.
+[Build/signature/native/license evidence](mira-availability-artifact-v20.json),
+[protected installation](mira-availability-phone-install-v20.json), and
+[standalone bundled-model packaging](mira-availability-bundle-artifact-v20.json)
+record their separate scope. The bundle preserves all light app payloads and adds
+only the pinned stored model; current bundled import remains unverified. No new
+model inference or phone UI run occurred in this update.
 
 Physical portrait restoration, touch controls, notification behavior, lock/unlock
 timing, process loss and OEM persistence remain unverified. Android can change an
@@ -89,3 +96,13 @@ overlay's visibility/placement; protected surfaces need not display it. Foregrou
 availability supplies no wake lock, battery exemption or 24/7 guarantee.
 [Official overlay behavior](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#TYPE_APPLICATION_OVERLAY)
 and [Doze guidance](https://developer.android.com/training/monitoring-device-state/doze-standby).
+
+## Next physical check
+
+With the phone unlocked, grant overlay and notification access manually. Start
+Mira with the choice off and confirm lock stops her. Then enable the choice, review
+Show, lock and unlock, and check one returning portrait with the same position.
+While locked, Hide must end the session; another unlock must not restore it.
+Repeat after revoking permissions and after Android stops the process. These are
+pending manual checks, not results. Voice and usage observation remain separate
+opt-ins. No wake-word or continual listening is implemented.

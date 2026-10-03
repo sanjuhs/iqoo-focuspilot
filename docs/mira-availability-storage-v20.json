@@ -1,0 +1,13 @@
+{
+  "schema": "focuspilot.mira_availability_storage.v1",
+  "project_logical_bytes": 9469891747,
+  "conservative_new_global_cache_growth_bytes": 218929328,
+  "effective_bytes": 9688821075,
+  "strict_limit_bytes": 15000000000,
+  "aim_bytes": 10000000000,
+  "below_aim": true,
+  "scope": "All project files incl ignored/.git logical bytes, no symlink follow, existing SDK/Gradle excluded; previously recorded new global-cache growth counted",
+  "models_retained": true,
+  "private_evidence_retained": true,
+  "cleanup_record": "docs/recoverable-bundle-cleanup-v20.json"
+}
