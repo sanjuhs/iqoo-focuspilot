@@ -62,8 +62,8 @@ android {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 22
-        versionName '0.22-voice-session-research'
+        versionCode 23
+        versionName '0.23-readback-init-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
             : diagnosticRunner == 'unitNative'

@@ -73,6 +73,7 @@ public final class LocalModelActivity extends Activity {
     private TextToSpeech tts;
     private boolean offlineReadbackReady;
     private final ReadbackState readbackState=new ReadbackState();
+    private final ReadbackInitialization readbackInitialization=new ReadbackInitialization();
     private String confirmedFocusText;
     private int dp(int value) { return (int)(getResources().getDisplayMetrics().density*value); }
     private TextView label(String value,int size) { TextView view=new TextView(this); view.setText(value); view.setTextSize(size); view.setTextColor(Color.rgb(242,236,249)); view.setPadding(0,dp(10),0,dp(10)); root.addView(view); return view; }
@@ -381,27 +382,50 @@ public final class LocalModelActivity extends Activity {
                 finishReadback(token,"Offline readback timed out. Nothing else is blocked; your status remains on screen.");
             }
         },20000);
+        ReadbackInitialization.Admission admission=readbackInitialization.request(token);
+        if(admission==ReadbackInitialization.Admission.SPEAK){speakConfirmed(token);return;}
+        if(admission==ReadbackInitialization.Admission.REJECT){finishReadback(token,"Offline readback could not start. Your status remains on screen.");return;}
+        voiceStatus.setText("Checking an installed offline companion voice…");
+        if(admission==ReadbackInitialization.Admission.WAIT)return;
+        final long engineEpoch=readbackInitialization.engineEpoch();
+        // Initialization belongs to the engine, so a cancelled A can be replaced
+        // by an explicit B. This separate bound also retires an engine that never responds.
+        main.postDelayed(()->finishReadbackInitialization(engineEpoch,false,
+            "Offline voice initialization timed out. Tap Read again for a new attempt."),20_000);
         try{
-        if(tts==null){
-            voiceStatus.setText("Checking an installed offline companion voice…");
-            tts=new TextToSpeech(this,code->post(()->{
-                try{
-                    if(code==TextToSpeech.SUCCESS&&tts!=null&&tts.getVoices()!=null){
-                        for(Voice candidate:tts.getVoices())if(!candidate.isNetworkConnectionRequired()&&candidate.getLocale().getLanguage().equals("en")){
-                            offlineReadbackReady=tts.setVoice(candidate)==TextToSpeech.SUCCESS;if(offlineReadbackReady)break;
-                        }
-                    }
-                    if(readbackState.owns(token))speakConfirmed(token);
-                }catch(RuntimeException error){finishReadback(token,"Offline readback is unavailable here. The confirmed status stays on screen.");}
-            }));
-        }else speakConfirmed(token);
-        }catch(RuntimeException error){finishReadback(token,"Offline readback could not start. Your status remains on screen.");}
+            tts=new TextToSpeech(this,code->post(()->finishReadbackInitialization(engineEpoch,
+                code==TextToSpeech.SUCCESS,"No installed offline English TTS voice is ready. Nothing was spoken.")));
+        }catch(RuntimeException error){finishReadbackInitialization(engineEpoch,false,
+            "Offline readback could not start. Tap Read again for a new attempt.");}
+    }
+    private void finishReadbackInitialization(long engineEpoch,boolean initialized,String failureMessage){
+        if(destroyed || !readbackInitialization.ownsInitialization(engineEpoch))return;
+        boolean ready=false;
+        if(initialized && tts!=null){
+            try{
+                if(tts.getVoices()!=null)for(Voice candidate:tts.getVoices()){
+                    if(!candidate.isNetworkConnectionRequired()&&candidate.getLocale().getLanguage().equals("en")
+                            &&tts.setVoice(candidate)==TextToSpeech.SUCCESS){ready=true;break;}
+                }
+            }catch(RuntimeException ignored){/* A failed engine can be retried only on a new explicit request. */}
+        }
+        offlineReadbackReady=ready;
+        long waiting=readbackInitialization.complete(engineEpoch,ready);
+        if(!ready){
+            TextToSpeech failed=tts;tts=null;
+            if(failed!=null){try{failed.shutdown();}catch(RuntimeException ignored){}}
+        }
+        if(waiting>0){
+            if(ready)speakConfirmed(waiting);
+            else finishReadback(waiting,failureMessage);
+        }
     }
     private void speakConfirmed(long token){
         if(!readbackState.owns(token)||companionPrefs.getBoolean("mute",false)){
             finishReadback(token,"Readback stopped. Your status remains on screen.");return;
         }
         if(!offlineReadbackReady||tts==null){finishReadback(token,"No installed offline English TTS voice is ready. Nothing was spoken.");return;}
+        try{
         if(tts.setOnUtteranceProgressListener(new UtteranceProgressListener(){
             @Override public void onStart(String id){}
             @Override public void onDone(String id){post(()->finishReadbackUtterance(token,id,"Confirmed focus status read with an installed offline voice."));}
@@ -413,10 +437,11 @@ public final class LocalModelActivity extends Activity {
         if(tts.speak(confirmedFocusText,TextToSpeech.QUEUE_FLUSH,null,readbackState.utteranceId(token))==TextToSpeech.ERROR)
             finishReadback(token,"Offline readback could not start. The status remains on screen.");
         else voiceStatus.setText("Reading only the confirmed focus status. No microphone is active.");
+        }catch(RuntimeException unavailable){finishReadback(token,"Offline readback is unavailable here. Your status remains on screen.");}
     }
     private void finishReadbackUtterance(long token,String id,String message){if(!readbackState.finishUtterance(token,id))return;voiceStatus.setText(message);updateControls();}
-    private void finishReadback(long token,String message){if(!readbackState.finish(token))return;voiceStatus.setText(message);updateControls();}
-    private void stopReadback(){readbackState.cancel();if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}if(!destroyed)updateControls();}
+    private void finishReadback(long token,String message){if(!readbackState.finish(token))return;readbackInitialization.cancelRequest(token);voiceStatus.setText(message);updateControls();}
+    private void stopReadback(){readbackState.cancel();readbackInitialization.cancelRequests();if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}if(!destroyed)updateControls();}
     private void ensureLoadActive(long epoch) {
         if(destroyed || !foreground || epoch!=requestEpoch || Thread.currentThread().isInterrupted())
             throw new IllegalStateException("Model preparation cancelled");
@@ -475,5 +500,5 @@ public final class LocalModelActivity extends Activity {
     }
     @Override protected void onResume() { super.onResume(); foreground=true;voiceDraft.resume();readbackState.resume();updateControls(); }
     @Override protected void onStop() { foreground=false;readbackState.stop();voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();updateControls();super.onStop(); }
-    @Override protected void onDestroy() { destroyed=true;readbackState.close();cancelRequest();if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }
+    @Override protected void onDestroy() { destroyed=true;readbackState.close();readbackInitialization.close();cancelRequest();if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }
 }
