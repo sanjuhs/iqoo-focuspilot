@@ -1,0 +1,58 @@
+{
+  "schema": "focuspilot.mira_availability_artifact.v1",
+  "research_only": true,
+  "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "a92f6a86f4f0eebcdc84b61d16d7d0bb6477e9451517968d635ee7cfb0351758",
+    "prototype/android/app/src/main/AndroidManifest.xml": "d6860fc970bd6e22ac0fb3d3601bcc0ebd5cdf0544d935db57a837e2902283b2",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "f0b42991f6d8ada7c3bce8f7ba606a300634c85100ee9757db2a6657b27b65f2",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingCompanionService.java": "5f236291a7171e08b6dd4522a122da2c37cd8c0801919ce6ef058e0632472ae4",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionAvailability.java": "6930c3c6d19cd35c269fcff3f42e2fb4fd16c2a5e3347c0f37cbaf48b4164a0b",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompanionAvailabilityTest.java": "30381d28e9fcc67b609f8737d844d0f98ad9606c5ca8f88c9f0c4b3b5d4f55e5"
+  },
+  "apk_path": "artifacts/focuspilot-research-v020-mira-availability-light.apk",
+  "apk_bytes": 5562748,
+  "apk_sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+  "manifest_identity": "package: name='dev.focuspilot.prototype' versionCode='20' versionName='0.20-mira-availability-research' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "native_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+  "native_unchanged_from_v19": true,
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "zip_alignment_16k_verified": true,
+  "permissions": [
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE'",
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'",
+    "uses-permission: name='android.permission.PACKAGE_USAGE_STATS'",
+    "uses-permission: name='android.permission.POST_NOTIFICATIONS'",
+    "uses-permission: name='android.permission.RECORD_AUDIO'",
+    "uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'",
+    "uses-permission: name='com.android.alarm.permission.SET_ALARM'"
+  ],
+  "permissions_unchanged_from_v19": true,
+  "internet_permission": false,
+  "license_assets": {
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  "bundled_model": false,
+  "tests": {
+    "tests": 216,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_suites": 29,
+  "lint": {
+    "Warning": 79
+  },
+  "gradle_log_sha256": "46e86d22f52a617c45c3237b622953dea0d79c8b1f09261d6253e557dacccace",
+  "downloads": 0,
+  "phone_installed": false,
+  "physical_lock_unlock_verified": false,
+  "model_inference": false,
+  "npu_verified": false,
+  "runtime_16k_verified": false
+}
