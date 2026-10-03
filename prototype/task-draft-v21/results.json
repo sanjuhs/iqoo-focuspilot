@@ -1,0 +1,26 @@
+{
+  "complete_capture": false,
+  "expected": 32,
+  "captured": 0,
+  "completed_eos_and_schema": 0,
+  "explicit_declines": 0,
+  "valid_plan_shapes": 0,
+  "model_load_ms": null,
+  "native_median_ms": null,
+  "cpu_only_all_true": false,
+  "capture_disabled_all": false,
+  "activations_empty_all": true,
+  "process": {
+    "exit_code": 1,
+    "timed_out": false,
+    "wrapper_failure_type": null,
+    "wall_seconds": 0.04648908297531307,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "4b228886ea43399ab0a60db88507c13979bc1843f0ca1432b4630a773d511744"
+  },
+  "details_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+  "freeze_sha256": "2e7c8e40d078e888d214c138d0d78a222549a5e3c96101901591f9e0e125a5b7",
+  "qualitative_review": "Pending; EOS/schema are not evidence of useful guidance",
+  "actions_executed": 0,
+  "scope": "One informed synthetic host CPU feasibility experiment; selected phone app unchanged"
+}

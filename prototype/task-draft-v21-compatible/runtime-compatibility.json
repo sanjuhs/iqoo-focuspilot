@@ -1,0 +1,30 @@
+{
+  "predecessor": "prototype/task-draft-v21",
+  "initial_result_sha256": "25bf4e79c524935f9dff34db251f8a0dcc40b9e3baa567c4bc1ac25cb28d88e8",
+  "initial_exit_code": 1,
+  "initial_model_load_observed": false,
+  "initial_case_outputs": 0,
+  "initial_stderr_message": "Context must be 512-1024 and threads 1-8",
+  "initial_stderr_sha256": "4b228886ea43399ab0a60db88507c13979bc1843f0ca1432b4630a773d511744",
+  "native_core_archive_sha256": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+  "native_bounds_observed_from_archived_source": {
+    "context": [
+      512,
+      1024
+    ],
+    "maximum_new_tokens": [
+      1,
+      128
+    ]
+  },
+  "repair": {
+    "context_tokens": 1024,
+    "maximum_new_tokens": 128
+  },
+  "same_cases_sha256": "71d5c4640cd2f773bf281c13125b1257a10ac43634b933a47664422820971f3b",
+  "same_prompt_grammar_parser_except_runtime_constants_verified": true,
+  "model_native_unchanged": true,
+  "case_criteria_changed": false,
+  "outputs_consulted_for_repair": 0,
+  "selected_app_changed": false
+}
