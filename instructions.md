@@ -1,9 +1,8 @@
 # Instructions — FocusPilot
 
-## Compatible System 1 and Qwen candidate — historical checks pass
+## Compatible System 1 and Qwen pipeline — fresh qualification passes
 
-Keep Qwen3.5-0.8B Q4_0 and installed v0.16 selected. A separately frozen compatibility repair preserves80/80 prior proposals and refuses all476 unsupported plus948 wrong-intent mock routes. Existing captured model proposals remain12/18; a distinct deterministic-fast-plus-model replay reaches14/18 with two gains/no losses, all6 unknowns refused and no wrong accepts. Independent actual-record replay passes. Fresh qualification is prospectively frozen before authoring; no app promotion yet. Fast parser decisions must be labelled separately from Qwen predictions/activations. [Evidence and fixed next gates](docs/compatible-command-research.md).
-
+Keep Qwen3.5-0.8B Q4_0. The separately frozen combined pipeline improves complete proposals4→19/50 on fresh informed synthetic wording,15gains/no losses; all50 unsupported requests refused and no wrong accepts. Model-only18/50 retains one alarm loss and raw predictions retain two semantic losses. All13 prospective criteria and independent actual-record replay pass. Coverage remains limited, including0/8 Explain. Stage exact reviewed app integration and Android replay; installed v0.16 remains unchanged until checks pass. [Evidence and limits](docs/compatible-command-research.md).
 
 ## Qwen source-unit candidate — development gain, integration rejected
 

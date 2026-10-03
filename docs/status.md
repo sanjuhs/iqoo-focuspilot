@@ -1,13 +1,11 @@
 # Verified status
 
-## Compatible command repair — audited historical pass, fresh qualification pending
+## Compatible pipeline — audited fresh qualification, Android integration pending
 
-- Qwen3.5-0.8B Q4_0 remains chosen; installed v0.16 app/prompt/native unchanged.
-- One frozen historical pure evaluation preserves80/80 accepted proposals, refuses476 unsupported and948 wrong-intent routes, and accepts134/158 supported oracle proposals with zero wrong accepts. No new inference or phone calls.
-- All12 prior captured complete proposals remain12/18. A separate recognizer-plus-model replay reaches14/18, two gains/no losses; six unknowns refused and zero wrong accepts. Origins5fast/9model/10unknown, independent actual replay verified.
-- Prospectively fixed fresh100 paired cohort source/author protocol committed before authoring; complete slots/raw model predictions and separate pipeline outcomes must be reported. No post-output repairs/retries or integration until fixed criteria pass.
-- Source-freeze storage14,443,262,909 logical bytes below15GB. USB authorization previously verified; phone locked, no wake/grants/model/UI changes. Broader voice/floating/iQOO NPU/Office Kit/eligible submission remain pending. [Actual evidence and next gates](compatible-command-research.md).
-
+- One frozen native CPU attempt/arm completes100 JSON/EOS requests. Combined pipeline4→19/50 supported,15gains/no losses, all50 unsupported refused and zero wrong accepts. All13 fixed criteria pass; independent605-binding/six-replay audit confirms.
+- Model-only18/50 has15gains/one alarm loss; raw supported intent34→44/50 has12gains/two losses. Pipeline4fast/15checked/81unknown;31supported refusals and0/8 Explain remain explicit. Host subsequent medians452.403→925.427ms describe model work, not phone/pipeline speed.
+- All100 manual slots independently reviewed before outputs. One pre-output app-quota correction and one resume wording clarification are preserved; final clarification changes no gold. No output-driven source/label changes or retries.
+- Exact reviewed app integration/Android replay now prepared. Installed v0.16, selected weights/native and protected phone state remain unchanged. Full voice/floating, actual iQOO/NPU, Office Kit and eligible accepted submission remain pending. [Evidence](compatible-command-research.md).
 
 ## Qwen source-unit candidate — development gain, integration rejected
 

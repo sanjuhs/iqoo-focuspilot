@@ -2,8 +2,9 @@
 
 Qwen3.5-0.8B Q4_0 remains the chosen model. This separate pre-event candidate
 repairs the previous unit-output validator's regressions and adds a deterministic
-complete-request recognizer. The installed v0.16 app, prompt and native runtime
-remain unchanged while fresh qualification is pending.
+complete-request recognizer. The combined pipeline passes fresh synthetic
+qualification and independent actual-record replay. Installed v0.16 remains
+unchanged while exact app integration and Android verification are prepared.
 
 The recognizer returns a reviewed proposal only for an unambiguous complete
 bounded request. Unfamiliar wording can use the Qwen unit-output contract. Duration
@@ -71,9 +72,65 @@ model-only predictions, paired semantic losses and complete proposal losses
 remain visible even if the combined pipeline qualifies. No retry, post-output
 source repair, omission or relabelling is allowed.
 
-Fresh execution and results are pending. Qualification alone permits exact app
-integration checks; it proves no Android action, voice/lifecycle, phone latency,
-iQOO/NPU, Office Kit, training, causal interpretation or eligible submission.
-Raw corpus, gold and captures stay ignored. Total logical workspace bytes after
-the source freeze were 14,443,262,909, within the strict15GB cap. No new weights,
-dependencies or phone permission changes were made.
+## Actual fresh result
+
+All100 labels were reviewed independently before outputs. One initial app-quota
+mistake was corrected before opaque checks; one ambiguous resume wording was
+clarified before inference. All attempts, initial frozen corpus/provenance and
+the pre-output clarification are preserved. The clarification changes one request
+and no gold; the other99 rows are byte-identical. Neither revision uses model or
+validator feedback. [Root review](../prototype/compatible-data/manual-review.json)
+and [independent final review](../prototype/compatible-unit/fresh-label-review.json)
+bind the final corpus.
+
+Execution was frozen at `5fa9909415af50a599116a60943002830ad7c3c2`. Each arm ran
+once, serially, and produced all100 canonical JSON/actual EOS records. No adapter,
+training, GPU, phone or action was involved.
+
+| Measure on 50 supported / 50 unsupported requests | Existing prompt/gate | Checked Qwen unit output | Combined fast + Qwen |
+|---|---:|---:|---:|
+| Complete supported proposals | 4/50 | 18/50 | 19/50 |
+| Paired complete gains/losses against existing | — | 15/1 | 15/0 |
+| Start | 1/9 | 4/9 | 4/9 |
+| Pause | 0/9 | 5/9 | 5/9 |
+| Alarm | 2/8 | 4/8 | 5/8 |
+| Timer | 0/8 | 4/8 | 4/8 |
+| Open app | 1/8 | 1/8 | 1/8 |
+| Explain | 0/8 | 0/8 | 0/8 |
+| Unsupported requests refused | 50/50 | 50/50 | 50/50 |
+| Wrong accepted proposals | 0 | 0 | 0 |
+
+The combined pipeline meets all13 fixed qualification checks. Its origins are
+four fast local,15 checked model and81 unknown. The fast path preserves the one
+alarm proposal lost by the model-only arm. Coverage is still limited:31/50
+supported requests are refused, all8 natural Explain cases fail, and the candidate
+oracle serves only24/50 versus4/50 for the original gate. Qualification does not
+mean the assistant understands arbitrary instructions or fulfills these tasks.
+
+Raw supported intent matches increase34→44/50, with12 semantic gains and two losses
+(Start and Explain). Exact raw unit-schema objects match37/50 supported gold;
+normalization to canonical slots matches40/50. These counts include nonduration
+commands. Raw unknown predictions are0→11/50; the remaining unknown requests are
+refused by source validation. This is distinct from model abstention.
+
+Host subsequent99-request native medians are452.403→925.427ms, with first requests
+496.349→1,013.773ms. Prompt tokens are161–178 versus365–382. Both research arms
+capture all requests, so these timings measure model work, not the combined
+pipeline's future parser savings, production JNI or phone latency. The arms are
+serial, without randomized timing controls.
+
+[Public results](../prototype/compatible-eval/results.json) are byte-identical to
+the actual private aggregate (`152f31f08ca77a5440c37f2b5a07c20a40ccad67c6d08ee78147e4e90059dbe2`).
+The [independent actual-result audit](../prototype/compatible-unit/fresh-result-audit.json)
+verifies605 file/source/runtime bindings, both owned serial processes, all200
+token/output records,11 independently compiled dependency classes, six
+byte-identical Java replay outputs,500 scored detail rows, raw slots, origins,
+pairings and criteria. A setup mismatch involving an audit wrapper auxiliary
+class was corrected locally before successful replay; its initial directory is
+preserved. Actual experiment sources, labels and captures remain unchanged.
+
+Qualification permits exact app integration checks. It proves no Android action,
+voice/lifecycle, phone latency, iQOO/NPU, Office Kit, training, causal interpretation
+or eligible submission. Raw corpus, gold and captures stay ignored. Logical
+workspace bytes after the source freeze were14,443,262,909, within the strict15GB
+cap. No new weights, dependencies or phone permission changes were made.
