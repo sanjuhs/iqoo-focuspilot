@@ -1,0 +1,45 @@
+{
+  "schema": "focuspilot.voice_session_install.v1",
+  "source_commit": "08af30893d6ca7ecec70cf66b5026a88be463ca5",
+  "harness_sha256": "0df5906d4187e1ec1bac1d54a6ef6bc8f994129ccb428f95f949e3818dfb53e7",
+  "baseline_record_sha256": "075f9adb665f5c192ce08551b9b0e98c69e56df19598cc9a5ed75918760f182a",
+  "baseline_public_sha256": "703e758f4955012c28463d4fee307470d184ea701afacbb9b52d21fa4c4cb251",
+  "artifact_record_sha256": "b7b4b333fe0e07d1eeaa33dff5fb27a682e886fda8e4d5cddfd1619e1aab1a24",
+  "utility_commit": "562483ec41fc019e80d810ef18a33f7854c60b88",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "51f6a9727ed37a1e5eb4d361835ce1a4acd56de93b0bdddbbc33e40d676947a5",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "787fdf446dc548732c5bdea5ecb3bedf339b01946d7973dc6e2011275c7cdd03",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "5204dae6ad7b4fbbb3ecb1713b80f385211adc645af867d0b602c24f5be99b5f",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java": "9b39d062d2b91924f94a2902ea773e49032600ab7e79e3cf007aa4bd5bba14a0",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java": "c63eda6e8fe166e313136d4585645fe1b4447984f1057b441eaa1c6fae049881"
+  },
+  "old_apk_sha256": "b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+  "apk_sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+  "attempts": 1,
+  "ui_used": false,
+  "phone_woken": false,
+  "permission_changes": 0,
+  "model_inference": false,
+  "passed": true,
+  "install_client": {
+    "elapsed_ms": 1520,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  "installed_target_sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+  "original_test_unchanged": true,
+  "protected_state_unchanged": true,
+  "target_installed": true,
+  "private_record_sha256": "887226ac7cc6200d0753948d462293c9adf042708f1e3ee8636538de85f1f5eb",
+  "protected_scope": "Three named preference-store semantic hashes/checkpoint; canonical model full SHA/bytes/inode/links; microphone/notification grants; own monitor/floating service absence; exact original test APK.",
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "physical_voice_verified": false,
+  "physical_readback_verified": false,
+  "physical_lock_unlock_verified": false,
+  "npu_verified": false
+}
