@@ -1,5 +1,21 @@
 # Instructions — FocusPilot
 
+## Current app — v0.21 Mira Setup clarity
+
+**Qwen3.5-0.8B Q4_0 remains the primary model, as requested.** Setup now explains
+both default stop-on-lock and opt-in return-after-unlock, and distinguishes a
+resting portrait from a visible one. This changes Setup copy/status only; the
+v20 availability behavior, command contract, model and native runtime are retained.
+
+All 216 JVM tests pass; lint has zero errors/fatal findings and 79 warnings.
+The exact signed light update installed in one attempt (1,756 ms), preserving the
+three checked preference stores/checkpoint, pinned model identity, measured grants,
+service absence and original test APK. Bundle payload/signing/alignment checks pass.
+Physical Setup, lock/unlock, current bundle import, permitted voice/monitoring,
+iQOO/NPU and Office Kit remain pending. No new inference ran during this update;
+v19 CPU results retain their original attribution. This is pre-event research.
+[Changes, verification and limits](docs/mira-setup-v21.md).
+
 ## Task-guidance candidate — measured rejection
 
 A separate Qwen3.5 planning candidate was evaluated without changing v20. Its
@@ -31,7 +47,7 @@ preserved; the video is unchanged. Complete human playback and the current live
 phone/iQOO/Office Kit workflows remain pending. [Video and evidence](docs/v020-pitch.md).
 
 
-## Current app — v0.20 Mira availability, Qwen3.5 retained
+## Historical v0.20 Mira availability
 
 Qwen3.5-0.8B Q4_0 stays selected. An explicit, default-off choice lets a reviewed
 Mira session retain its existing foreground service through lock, hide its portrait

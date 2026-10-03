@@ -4,19 +4,18 @@ A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.
 
-**Qwen3.5-0.8B Q4_0 remains the local command model.** Research v0.20
-adds an opt-in choice to keep Mira available after unlock: her portrait hides
-while locked, the existing service rechecks readiness before restoring it, and
-Hide ends the session. The editable command screen keeps Review/Confirm separate;
-quick commands need no model load. [Current app and verification](docs/mira-availability-v20.md).
+**Qwen3.5-0.8B Q4_0 remains the primary local command model.** Research v0.21
+clarifies Mira Setup: default stop-on-lock, optional return after unlock, and
+separate resting/visible status. A reviewed session hides the portrait while
+locked and rechecks readiness before returning. Hide ends the session.
+[Current app and verification](docs/mira-setup-v21.md).
 
-All **216 JVM tests** pass. The signed light APK is installed on Nothing with
-checked data preserved; a standalone bundle contains the pinned model and passes
-payload, signing and alignment checks. v19 CPU evidence covers six seen requests,
-313 runtime checks and observational activation summaries on a 4 KB Nothing phone.
-Those measurements retain their own APK attribution. Physical v20 UI/lock/unlock,
-current bundle import, permitted voice/monitoring, iQOO NPU and Office Kit remain
-unverified. [Measured CPU scope](docs/native-page-v19.md).
+All **216 JVM tests** pass, with zero lint errors and 79 warnings. The signed light
+APK is installed on Nothing with the checked protected state preserved. The bundle
+contains the same pinned model and passes payload/signing/alignment checks.
+Physical Setup/lock/unlock, current bundle import, permitted voice/monitoring,
+iQOO NPU and Office Kit remain unverified. No new inference ran for this update;
+v19 CPU evidence retains its own attribution. [Measured CPU scope](docs/native-page-v19.md).
 
 Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
 but complete proposals 11→12/50 fail the locked promotion criterion. The selected original model remains installed; no adapter is promoted. [Measured result and limits](docs/balanced-qwen-research.md).
@@ -27,9 +26,9 @@ Production state and the original test APK were restored. This is a bounded nati
 path diagnostic; the complete disconnected voice workflow remains pending.
 [Proof and limits](docs/network-isolation-phone.md).
 
-[Download research v0.20](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20)
+[Download research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.21)
 · [Watch the 4:04 research pitch](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/pitch-v020.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.20)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.21)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -39,21 +38,21 @@ path diagnostic; the complete disconnected voice workflow remains pending.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. Published v0.20 packages use an
+The app supports Android 9/API 28+ on ARM64. Published v0.21 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.
 
 | Download | Size | Model setup |
 | --- | ---: | --- |
-| [Bundled v0.20 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-bundled.apk) | 568.60 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
-| [Light v0.20 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-light.apk) | 5.56 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
+| [Bundled v0.21 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/focuspilot-research-v021-mira-setup-bundled.apk) | 568.60 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
+| [Light v0.21 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/focuspilot-research-v021-mira-setup-light.apk) | 5.56 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
 
-Verify downloaded bytes against the [v0.20 light manifest](docs/mira-availability-artifact-v20.json)
-or [v0.20 bundle manifest](docs/mira-availability-bundle-artifact-v20.json).
-Both use app source `81287b2b08ccedc050635b0b8a27154bed3b5d87`.
+Verify downloaded bytes against the [v0.21 light manifest](docs/mira-setup-artifact-v21.json)
+or [v0.21 bundle manifest](docs/mira-setup-bundle-artifact-v21.json).
+Both use app source `6027fa5c49f7ef4f383e0eeabb0694463c0eb77a`.
 Only the bundled GGUF is added; all original app/native/license payloads match.
-[Packaging and availability scope](docs/mira-availability-v20.md).
+[Packaging and Setup scope](docs/mira-setup-v21.md).
 The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK

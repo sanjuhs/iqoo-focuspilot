@@ -1,0 +1,35 @@
+{
+  "schema": "focuspilot.mira_setup_install.v1",
+  "source_commit": "6027fa5c49f7ef4f383e0eeabb0694463c0eb77a",
+  "harness_sha256": "1010d87c23e3d35425dcbf9e2e4b4f1922246d124d0878d63d71a38735354806",
+  "baseline_record_sha256": "f31d49a723435f4b2db47b8913f3cc3f8d95928554a5360cdedd7ef75efecb5d",
+  "artifact_record_sha256": "1d3992133433cd1fb3d3eb51ce610d162eadbb846e3512a0aa6c1689056ff708",
+  "utility_commit": "291227d46053e49a6f62e44aa0e21730f9934ffd",
+  "old_apk_sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+  "apk_sha256": "b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+  "attempts": 1,
+  "ui_used": false,
+  "phone_woken": false,
+  "permission_changes": 0,
+  "model_inference": false,
+  "passed": true,
+  "install_client": {
+    "elapsed_ms": 1756,
+    "exit_code": 0
+  },
+  "installed_target_sha256": "b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+  "original_test_unchanged": true,
+  "protected_state_unchanged": true,
+  "target_installed": true,
+  "private_record_sha256": "075f9adb665f5c192ce08551b9b0e98c69e56df19598cc9a5ed75918760f182a",
+  "protected_scope": "Three named preference-store semantic hashes/checkpoint; canonical model full SHA/bytes/inode/links; microphone/notification grants; own monitor/floating service absence; exact original test APK.",
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "physical_setup_verified": false,
+  "physical_lock_unlock_verified": false,
+  "npu_verified": false
+}
