@@ -1,5 +1,15 @@
 # Remaining deliverables — full-scope audit
 
+## Current delivery readiness — v21
+
+A fresh read-only check finds USB authorized and v21 installed, with the phone
+locked/screen-off and microphone/notification grants off. No wake, UI, permission
+or inference operation occurred. [Observed readiness](delivery-readiness-v21.json).
+Physical Setup/voice/monitoring/lock-unlock and current bundle import remain open;
+actual iQOO/NPU, Office Kit, eligible event code and accepted submission are still
+required. The application draft is now updated, with human proficiency answers and
+attestation remaining. The full goal stays active; a prepared draft is not a receipt.
+
 ## Task-guidance candidate — measured rejection
 
 A separate Qwen3.5 planning candidate was evaluated without changing v20. Its
@@ -10,16 +20,16 @@ The predeclared gate fails, so model guidance remains unpromoted. 27 parser/goal
 checks and source/evidence verification pass; they do not prove useful planning.
 [Actual study and limitations](task-draft-v21.md).
 
-## Current Phase 1 draft — v20
+## Current Phase 1 draft — v21
 
-The live public description now matches the current v20 copy (1,577/2,000
-characters), and the 4:04 research video link is populated. Five public field
-hashes match the prepared copy; the existing PDF link remains attached.
-Personal experience selectors remain untouched defaults, prior builds blank and
-attestation unchecked. No Submit, file upload or Terms acceptance occurred.
-Server persistence, document validation and accepted submission remain unverified.
-[Current copy](phase1-form-copy-v20.json) ·
-[Observed draft](phase1-prepared-dashboard-draft-v20.json).
+The live description now matches v21 (1,642/2,000 characters), with the dated
+4:04 v20 pitch and user-provided prior-project reference included. Six public
+field hashes match the prepared copy; the existing PDF link remains attached.
+Android/LLM experience selectors remain untouched defaults and attestation is
+unchecked. No Submit, file upload or Terms acceptance occurred. Server draft
+persistence, document validation, admission and accepted submission are unverified.
+[Current copy](phase1-form-copy-v21.json) ·
+[Observed draft](phase1-prepared-dashboard-draft-v21.json).
 
 ## Current research pitch — 4:04
 
@@ -31,7 +41,16 @@ preserved; the video is unchanged. Complete human playback and the current live
 phone/iQOO/Office Kit workflows remain pending. [Video and evidence](v020-pitch.md).
 
 
-## Current app — v0.20 Mira availability, Qwen3.5 retained
+## Current app — v21 Setup clarity
+
+Qwen3.5-0.8B Q4_0 remains selected. Setup describes the existing optional
+return-after-unlock accurately and distinguishes resting from displayed status.
+All 216 JVM tests pass, lint zero errors/79 warnings, exact protected light update
+and five uploaded release asset identities verified. Physical workflows remain
+pending and earlier CPU measurements keep their own attribution.
+[Artifact, installation and scope](mira-setup-v21.md).
+
+## Historical v0.20 Mira availability
 
 Qwen3.5-0.8B Q4_0 stays selected. An explicit, default-off choice lets a reviewed
 Mira session retain its existing foreground service through lock, hide its portrait

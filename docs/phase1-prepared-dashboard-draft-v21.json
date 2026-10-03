@@ -1,0 +1,59 @@
+{
+  "schema": "focuspilot.phase1_prepared_dashboard_draft.v21",
+  "observed_at_utc": "2026-10-03T03:08:06.051Z",
+  "dashboard_url": "https://iqoo.reskilll.com/dashboard/iqoo-finale",
+  "changed_fields": [
+    "description",
+    "prior_builds"
+  ],
+  "public_field_bindings": {
+    "idea_title": {
+      "utf16_length": 38,
+      "sha256_utf8": "42d9bfe74fcef00f75efd72047534fa30fdfc48b8fb701582278834b8f2b7cbb",
+      "matches_prepared_copy": true
+    },
+    "description": {
+      "utf16_length": 1642,
+      "sha256_utf8": "874b95489929c77b0bc443b8072ea24ab37d64d5f3a2eee185eaa07aeca93d8a",
+      "matches_prepared_copy": true
+    },
+    "video_walkthrough_url": {
+      "utf16_length": 90,
+      "sha256_utf8": "5d9260e12b274a1de0260b814c85435c0428ba52edb1c13fdf482e648beb3138",
+      "matches_prepared_copy": true
+    },
+    "prototype_url": {
+      "utf16_length": 42,
+      "sha256_utf8": "95ac051d70ebf946fb82360efed1fd649a04126b285b1bba9bab08961638fe44",
+      "matches_prepared_copy": true
+    },
+    "prior_builds": {
+      "utf16_length": 177,
+      "sha256_utf8": "08288dc0475c569af2d1b3770beaae2c36c99c94c2aa553cdbd269c27ebe6dac",
+      "matches_prepared_copy": true
+    },
+    "team_standout": {
+      "utf16_length": 565,
+      "sha256_utf8": "a91e5beb460f87c6d32a763be351f83a645db9cb1eecb1894bdad9f8d5309ba8",
+      "matches_prepared_copy": true
+    }
+  },
+  "required_document_link_ui_present": true,
+  "personal_experience_selectors": "Untouched pre-existing defaults; not human self-reports",
+  "prior_builds_blank": false,
+  "prior_builds_provenance": "User explicitly identified the public productivity-browser-openai-hackathon repository as an earlier project. Public README title and OpenAI integration reviewed; no wins, shipped-product or proficiency claims added.",
+  "attestation_checked": false,
+  "submit_clicked": false,
+  "file_upload_performed": false,
+  "terms_acceptance_performed": false,
+  "server_persistence_verified": false,
+  "server_document_content_validation_verified": false,
+  "admission_or_accepted_submission_verified": false,
+  "proof_screenshot_private": "artifacts/phase1-dashboard-v21/public-draft-clean.png",
+  "proof_screenshot_sha256": "56fd28786d8156e7d86a462368c45801db824ffbd060ec838c68de8fb32da048",
+  "proof_capture_note": "First capture included the sticky account header; retained privately. Clean public-section capture after repositioning is the proof used here.",
+  "historical_records_retained": [
+    "docs/phase1-prepared-dashboard-draft.json",
+    "docs/phase1-prepared-dashboard-draft-v20.json"
+  ]
+}

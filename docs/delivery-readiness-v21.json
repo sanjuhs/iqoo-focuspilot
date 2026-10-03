@@ -1,0 +1,17 @@
+{
+  "schema": "focuspilot.delivery_readiness.v21",
+  "observed_at_utc": "2026-10-03T03:08:40.180737+00:00",
+  "scope": "Read-only USB state, current keyguard/screen state and own package version/grants; no wake, UI, permission or inference operation.",
+  "usb_authorized": true,
+  "version_code": 21,
+  "keyguard_showing": true,
+  "screen_off": true,
+  "keyguard_unlocked": false,
+  "microphone_granted": false,
+  "notifications_granted": false,
+  "private_record": "artifacts/delivery-readiness-v21-private.json",
+  "private_record_sha256": "82c5dbc6bc5095621445561bb321dc256db42b52d0a76d35629cd4163653ab36",
+  "physical_workflows_verified_by_check": false,
+  "npu_verified": false,
+  "office_kit_verified": false
+}

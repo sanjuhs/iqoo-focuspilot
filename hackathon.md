@@ -1,15 +1,15 @@
 # iQOO Grand Finale — expectations and our project
 
-## Current Phase 1 draft — v20
+## Current Phase 1 draft — v21
 
-The live public description now matches the current v20 copy (1,577/2,000
-characters), and the 4:04 research video link is populated. Five public field
-hashes match the prepared copy; the existing PDF link remains attached.
-Personal experience selectors remain untouched defaults, prior builds blank and
-attestation unchecked. No Submit, file upload or Terms acceptance occurred.
-Server persistence, document validation and accepted submission remain unverified.
-[Current copy](docs/phase1-form-copy-v20.json) ·
-[Observed draft](docs/phase1-prepared-dashboard-draft-v20.json).
+The live description now matches v21 (1,642/2,000 characters), with the dated
+4:04 v20 pitch and user-provided prior-project reference included. Six public
+field hashes match the prepared copy; the existing PDF link remains attached.
+Android/LLM experience selectors remain untouched defaults and attestation is
+unchecked. No Submit, file upload or Terms acceptance occurred. Server draft
+persistence, document validation, admission and accepted submission are unverified.
+[Current copy](docs/phase1-form-copy-v21.json) ·
+[Observed draft](docs/phase1-prepared-dashboard-draft-v21.json).
 
 Research date: 2 October 2026, IST. Primary sources:
 [official guide](https://iqoo.reskilll.com/guide),
