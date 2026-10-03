@@ -1,0 +1,44 @@
+{
+  "schema": "focuspilot.readback_init_install.v1",
+  "source_commit": "1fc31da5787a49c7680e5bf13b827b6114a0fbe6",
+  "harness_sha256": "d7d4a90b6cabae536a595d8aea31f91229976ff355ec33eb94eb8f865270d6df",
+  "baseline_record_sha256": "887226ac7cc6200d0753948d462293c9adf042708f1e3ee8636538de85f1f5eb",
+  "baseline_public_sha256": "dcbdd205bdca63a7992e4e7cb323aee2e69ae1c34c5d8c0343dfc2a2029b6024",
+  "artifact_record_sha256": "683d4f7e7edbedcfdd49296e0bbd258e962b334eaac30e4e3a199a7092445ad7",
+  "utility_commit": "e3278d85a22b9380930772cb9a431a74b903eba0",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "ddf419e942216b3df6366da1a00fe730f5ce2ab4f26e15c516d1ff65b2733839",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "2a71cdc00e07259aca43e2e531a3e27b6ae7e5d56762a6c2ff66fad2e79e6623",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackInitialization.java": "9a5a29eacd50d7296516a8fb4b264617f4645f6e3a882d678c8056696a89c786",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackInitializationTest.java": "6c543a45aea71290651c7433d2def27960aecd68557af395ee6c4dd78daa2508"
+  },
+  "old_apk_sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+  "apk_sha256": "48c382e92595728b96866a3b445d7c21d9e842c712c3adc77b2fbc4c2d0bbca7",
+  "attempts": 1,
+  "ui_used": false,
+  "phone_woken": false,
+  "permission_changes": 0,
+  "model_inference": false,
+  "passed": true,
+  "install_client": {
+    "elapsed_ms": 1397,
+    "exit_code": 0,
+    "timed_out": false
+  },
+  "installed_target_sha256": "48c382e92595728b96866a3b445d7c21d9e842c712c3adc77b2fbc4c2d0bbca7",
+  "original_test_unchanged": true,
+  "protected_state_unchanged": true,
+  "target_installed": true,
+  "private_record_sha256": "7b8ba4e1cb81374f1cf5b15741d42e60ebcb7132862b4fb0c6d95ff5ea32ff5c",
+  "protected_scope": "Three named preference-store semantic hashes/checkpoint; canonical model full SHA/bytes/inode/links; microphone/notification grants; own monitor/floating service absence; exact original test APK.",
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "physical_voice_verified": false,
+  "physical_readback_verified": false,
+  "physical_lock_unlock_verified": false,
+  "npu_verified": false
+}
