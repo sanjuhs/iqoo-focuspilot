@@ -93,7 +93,10 @@ public final class MainActivity extends Activity {
         try { JSONArray saved = new JSONArray(prefs.getString("events", "[]")); for (int i=0; i<saved.length(); i++) events.add(saved.getString(i)); } catch (Exception ignored) {}
         buildUi();
         voiceInput=new LocalVoiceInput(this,voiceDraft,new LocalVoiceInput.Listener() {
-            public void onStatus(String value) { showStatus(value.startsWith("Voice draft ready.") ? "Voice draft ready. Review it, then tap Run command. Nothing executed." : value); }
+            public void onStatus(String value) {
+                showStatus(value.startsWith("Voice draft ready.") ? "Voice draft ready. Review it, then tap Run command. Nothing executed."
+                    : value.replace("Tap Finish voice when done.","Tap Push to talk / stop when done."));
+            }
             public void onDraft(String value) { commandInput.setText(value); }
             public void onChanged() { listening=voiceDraft.active(); if(visible) refresh(); }
         });
@@ -298,6 +301,7 @@ public final class MainActivity extends Activity {
     private long realUsage() { return repository.usage(); }
     private void refresh() {
         if(timer==null) return;
+        commandInput.setEnabled(!voiceDraft.active());
         repository.tick();
         long now=SystemClock.elapsedRealtime(), usage=realUsage();
         renderClock();

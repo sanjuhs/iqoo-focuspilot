@@ -71,8 +71,8 @@ public final class LocalModelActivity extends Activity {
     private TextView companionMessage,voiceStatus;
     private Button speak,finishVoice,cancelVoice,readback,stopSpeaking;
     private TextToSpeech tts;
-    private boolean offlineReadbackReady,audioBusy;
-    private long readbackEpoch;
+    private boolean offlineReadbackReady;
+    private final ReadbackState readbackState=new ReadbackState();
     private String confirmedFocusText;
     private int dp(int value) { return (int)(getResources().getDisplayMetrics().density*value); }
     private TextView label(String value,int size) { TextView view=new TextView(this); view.setText(value); view.setTextSize(size); view.setTextColor(Color.rgb(242,236,249)); view.setPadding(0,dp(10),0,dp(10)); root.addView(view); return view; }
@@ -94,7 +94,7 @@ public final class LocalModelActivity extends Activity {
         LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(-2,dp(48));params.rightMargin=dp(8);
         row.addView(view,params);examples.add(view);
         view.setOnClickListener(v->{
-            if(!foreground||destroyed||busy||audioBusy||voiceDraft.active())return;
+            if(!foreground||destroyed||busy||readbackState.active()||voiceDraft.active())return;
             command.setText(draft);command.setSelection(command.length());
         });
     }
@@ -193,26 +193,26 @@ public final class LocalModelActivity extends Activity {
         busyEpoch=0;setBusy(false);
         return !destroyed&&foreground&&epoch==requestEpoch;
     }
-    private boolean reviewIdle(){return !destroyed&&!busy&&!audioBusy&&voiceDraft.canUnderstand();}
+    private boolean reviewIdle(){return !destroyed&&!busy&&!readbackState.active()&&voiceDraft.canUnderstand();}
     private void updateControls(){
         boolean recording=voiceDraft.active();
         if(load==null)return;
-        load.setEnabled(foreground&&!destroyed&&!busy&&!recording&&!audioBusy&&model==null);
-        infer.setEnabled(foreground&&!destroyed&&!busy&&!audioBusy&&voiceDraft.canUnderstand());
-        command.setEnabled(!busy&&!recording&&!audioBusy);capture.setEnabled(!busy&&!recording&&!audioBusy);
-        speak.setEnabled(foreground&&!busy&&!recording&&!audioBusy);
+        load.setEnabled(foreground&&!destroyed&&!busy&&!recording&&!readbackState.active()&&model==null);
+        infer.setEnabled(foreground&&!destroyed&&!busy&&!readbackState.active()&&voiceDraft.canUnderstand());
+        command.setEnabled(!busy&&!recording&&!readbackState.active());capture.setEnabled(!busy&&!recording&&!readbackState.active());
+        speak.setEnabled(foreground&&!busy&&!recording&&!readbackState.active());
         finishVoice.setEnabled(foreground&&voiceDraft.phase()==VoiceDraftState.Phase.LISTENING);
         cancelVoice.setEnabled(recording);
         finishVoice.setVisibility(recording?View.VISIBLE:View.GONE);
         cancelVoice.setVisibility(recording?View.VISIBLE:View.GONE);
         cancelInference.setVisibility(busy?View.VISIBLE:View.GONE);
-        for(Button example:examples)example.setEnabled(foreground&&!destroyed&&!busy&&!recording&&!audioBusy);
-        readback.setEnabled(foreground&&!busy&&!recording&&!audioBusy&&confirmedFocusText!=null);
+        for(Button example:examples)example.setEnabled(foreground&&!destroyed&&!busy&&!recording&&!readbackState.active());
+        readback.setEnabled(foreground&&!busy&&!recording&&!readbackState.active()&&confirmedFocusText!=null);
         review.setEnabled(pendingReview.owns(pendingReview.snapshot(),requestEpoch,command.getText().toString(),foreground,reviewIdle()));
         review.setVisibility(review.isEnabled()?View.VISIBLE:View.GONE);
         readback.setVisibility(confirmedFocusText!=null?View.VISIBLE:View.GONE);
-        stopSpeaking.setEnabled(foreground&&!destroyed&&audioBusy);
-        stopSpeaking.setVisibility(audioBusy?View.VISIBLE:View.GONE);
+        stopSpeaking.setEnabled(foreground&&!destroyed&&readbackState.active());
+        stopSpeaking.setVisibility(readbackState.active()?View.VISIBLE:View.GONE);
         modelStatus.setText(model!=null?"Qwen3.5-0.8B Q4_0 loaded · CPU on this phone":busy?"Preparing Qwen on this phone…":"Quick commands are ready · Qwen is not loaded");
         for(int i=0;i<root.getChildCount();i++) if(root.getChildAt(i) instanceof Button) root.getChildAt(i).setAlpha(root.getChildAt(i).isEnabled()?1f:0.45f);
         companion.setReduceMotion(companionPrefs.getBoolean("reduceMotion",false));
@@ -221,7 +221,7 @@ public final class LocalModelActivity extends Activity {
         companionMessage.setText(recording?"I'm listening locally. Your words become a draft for you to review.":busy?"One moment. I'm thinking on your phone.":"Ready when you are. One small task, reviewed together.");
     }
     private void requestVoice(){
-        if(!foreground||destroyed||busy||audioBusy||voiceDraft.active())return;
+        if(!foreground||destroyed||busy||readbackState.active()||voiceDraft.active())return;
         cancelRequest();
         if(!LocalVoiceInput.available(this)){voiceStatus.setText("On-device speech is unavailable here. Type your command; no cloud fallback is used.");return;}
         if(checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){
@@ -239,7 +239,7 @@ public final class LocalModelActivity extends Activity {
         updateControls();
     }
     private void load() {
-        if(!foreground || destroyed || busy || model!=null || voiceDraft.active() || audioBusy) return;
+        if(!foreground || destroyed || busy || model!=null || voiceDraft.active() || readbackState.active()) return;
         File file=new File(getFilesDir(),"qwen35.gguf");
         cancelRequest();
         final long epoch=requestEpoch;
@@ -263,7 +263,7 @@ public final class LocalModelActivity extends Activity {
         });
     }
     private void infer() {
-        if(busy || destroyed || !foreground || !voiceDraft.canUnderstand() || audioBusy) return;
+        if(busy || destroyed || !foreground || !voiceDraft.canUnderstand() || readbackState.active()) return;
         final String original=command.getText().toString(); final boolean observe=capture.isChecked();
         clearProposal();
         final long epoch=++requestEpoch;
@@ -370,11 +370,13 @@ public final class LocalModelActivity extends Activity {
     }
     private static String safe(Throwable error) { String message=error.getMessage(); return message==null?error.getClass().getSimpleName():message; }
     private void readConfirmedFocus(){
-        if(!foreground||destroyed||busy||voiceDraft.active()||audioBusy||confirmedFocusText==null)return;
+        if(!foreground||destroyed||busy||voiceDraft.active()||readbackState.active()||confirmedFocusText==null)return;
         if(companionPrefs.getBoolean("mute",false)){voiceStatus.setText("Companion voice is muted. Your confirmed status remains on screen.");return;}
-        final long token=++readbackEpoch;audioBusy=true;updateControls();
+        final long token=readbackState.beginWithUtterance("mira-confirmed-");
+        if(token==0)return;
+        updateControls();
         main.postDelayed(()->{
-            if(!destroyed&&token==readbackEpoch&&audioBusy){
+            if(readbackState.owns(token)){
                 if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}
                 finishReadback(token,"Offline readback timed out. Nothing else is blocked; your status remains on screen.");
             }
@@ -389,28 +391,32 @@ public final class LocalModelActivity extends Activity {
                             offlineReadbackReady=tts.setVoice(candidate)==TextToSpeech.SUCCESS;if(offlineReadbackReady)break;
                         }
                     }
-                    if(token==readbackEpoch&&foreground)speakConfirmed(token);
+                    if(readbackState.owns(token))speakConfirmed(token);
                 }catch(RuntimeException error){finishReadback(token,"Offline readback is unavailable here. The confirmed status stays on screen.");}
             }));
         }else speakConfirmed(token);
         }catch(RuntimeException error){finishReadback(token,"Offline readback could not start. Your status remains on screen.");}
     }
     private void speakConfirmed(long token){
-        if(token!=readbackEpoch||!foreground||destroyed||companionPrefs.getBoolean("mute",false)){
+        if(!readbackState.owns(token)||companionPrefs.getBoolean("mute",false)){
             finishReadback(token,"Readback stopped. Your status remains on screen.");return;
         }
         if(!offlineReadbackReady||tts==null){finishReadback(token,"No installed offline English TTS voice is ready. Nothing was spoken.");return;}
-        tts.setOnUtteranceProgressListener(new UtteranceProgressListener(){
+        if(tts.setOnUtteranceProgressListener(new UtteranceProgressListener(){
             @Override public void onStart(String id){}
-            @Override public void onDone(String id){post(()->finishReadback(token,"Confirmed focus status read with an installed offline voice."));}
-            @Override public void onError(String id){post(()->finishReadback(token,"Offline readback failed. The status remains on screen."));}
-        });
-        if(tts.speak(confirmedFocusText,TextToSpeech.QUEUE_FLUSH,null,"mira-confirmed-"+token)==TextToSpeech.ERROR)
+            @Override public void onDone(String id){post(()->finishReadbackUtterance(token,id,"Confirmed focus status read with an installed offline voice."));}
+            @Override public void onError(String id){post(()->finishReadbackUtterance(token,id,"Offline readback failed. The status remains on screen."));}
+            @Override public void onStop(String id,boolean interrupted){post(()->finishReadbackUtterance(token,id,"Offline readback stopped. The status remains on screen."));}
+        })==TextToSpeech.ERROR){
+            finishReadback(token,"Offline readback could not register its listener. Your status remains on screen.");return;
+        }
+        if(tts.speak(confirmedFocusText,TextToSpeech.QUEUE_FLUSH,null,readbackState.utteranceId(token))==TextToSpeech.ERROR)
             finishReadback(token,"Offline readback could not start. The status remains on screen.");
         else voiceStatus.setText("Reading only the confirmed focus status. No microphone is active.");
     }
-    private void finishReadback(long token,String message){if(token!=readbackEpoch)return;readbackEpoch++;audioBusy=false;voiceStatus.setText(message);updateControls();}
-    private void stopReadback(){readbackEpoch++;audioBusy=false;if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}if(!destroyed)updateControls();}
+    private void finishReadbackUtterance(long token,String id,String message){if(!readbackState.finishUtterance(token,id))return;voiceStatus.setText(message);updateControls();}
+    private void finishReadback(long token,String message){if(!readbackState.finish(token))return;voiceStatus.setText(message);updateControls();}
+    private void stopReadback(){readbackState.cancel();if(tts!=null){try{tts.stop();}catch(RuntimeException ignored){}}if(!destroyed)updateControls();}
     private void ensureLoadActive(long epoch) {
         if(destroyed || !foreground || epoch!=requestEpoch || Thread.currentThread().isInterrupted())
             throw new IllegalStateException("Model preparation cancelled");
@@ -467,7 +473,7 @@ public final class LocalModelActivity extends Activity {
         out.putString(SAVED_COMMAND_DRAFT,valid?edited:"");out.putBoolean(SAVED_DRAFT_DISCARDED,!valid);
         super.onSaveInstanceState(out);
     }
-    @Override protected void onResume() { super.onResume(); foreground=true;voiceDraft.resume();updateControls(); }
-    @Override protected void onStop() { foreground=false;voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();updateControls();super.onStop(); }
-    @Override protected void onDestroy() { destroyed=true;cancelRequest();if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }
+    @Override protected void onResume() { super.onResume(); foreground=true;voiceDraft.resume();readbackState.resume();updateControls(); }
+    @Override protected void onStop() { foreground=false;readbackState.stop();voiceDraft.stop();if(voice!=null)voice.cancel();stopReadback();cancelRequest();updateControls();super.onStop(); }
+    @Override protected void onDestroy() { destroyed=true;readbackState.close();cancelRequest();if(voice!=null)voice.close();stopReadback();if(tts!=null)tts.shutdown();main.removeCallbacksAndMessages(null); LocalModel current=model; if(current!=null) { try { current.cancel(); } catch(RuntimeException ignored) {} } worker.execute(()->{LocalModel loaded=model; model=null; if(loaded!=null) loaded.close();}); worker.shutdown(); super.onDestroy(); }
 }

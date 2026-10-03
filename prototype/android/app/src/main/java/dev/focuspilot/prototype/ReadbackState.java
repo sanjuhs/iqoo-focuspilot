@@ -4,6 +4,7 @@ package dev.focuspilot.prototype;
 public final class ReadbackState {
     private boolean foreground, closed, active;
     private long epoch;
+    private String utteranceId;
 
     public synchronized void resume() { if(!closed) foreground=true; }
 
@@ -11,11 +12,33 @@ public final class ReadbackState {
     public synchronized long begin() {
         if(!foreground || closed) return 0;
         active=false;
+        utteranceId=null;
         // Never wrap to zero/negative or reuse a token after exhausting the positive range.
         if(epoch==Long.MAX_VALUE) return 0;
         epoch++;
         active=true;
         return epoch;
+    }
+
+    /** Bind engine events to this utterance as well as the listener's request token. */
+    public synchronized long beginWithUtterance(String prefix) {
+        if(prefix==null || prefix.isEmpty()) return 0;
+        long token=begin();
+        if(token>0) utteranceId=prefix+token;
+        return token;
+    }
+
+    public synchronized String utteranceId(long token) {
+        return owns(token)?utteranceId:null;
+    }
+
+    public synchronized boolean ownsUtterance(long token,String id) {
+        return owns(token) && utteranceId!=null && utteranceId.equals(id);
+    }
+
+    /** A replaced engine listener must not relabel an older utterance's event. */
+    public synchronized boolean finishUtterance(long token,String id) {
+        return ownsUtterance(token,id) && finish(token);
     }
 
     public synchronized boolean owns(long token) {
