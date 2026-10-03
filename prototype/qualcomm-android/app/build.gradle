@@ -1,0 +1,41 @@
+plugins { id 'com.android.application' }
+
+// File dependencies only: the published AAR POM omits runtime dependencies.
+// Refuse missing/changed cached bytes rather than resolving or downloading them.
+def pins = new groovy.json.JsonSlurper().parse(rootProject.file('dependencies.json'))
+def projectRoot = rootProject.projectDir.toPath().resolve('../..').normalize().toFile()
+def gradleModules = new File(gradle.gradleUserHomeDir, 'caches/modules-2/files-2.1')
+def pinnedFiles = pins.artifacts.collect { pin ->
+    def base = pin.location == 'project' ? projectRoot : gradleModules
+    def artifact = new File(base, pin.relative_path)
+    if (!artifact.isFile() || artifact.length() != pin.bytes)
+        throw new GradleException("Missing/wrong-size cached dependency: ${pin.name}")
+    def digest = java.security.MessageDigest.getInstance('SHA-256')
+    artifact.withInputStream { stream ->
+        byte[] bytes = new byte[65536]; int count
+        while ((count = stream.read(bytes)) != -1) digest.update(bytes, 0, count)
+    }
+    if (digest.digest().encodeHex().toString() != pin.sha256)
+        throw new GradleException("Cached dependency SHA mismatch: ${pin.name}")
+    artifact
+}
+
+android {
+    namespace 'dev.focuspilot.qualcomm.research'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'dev.focuspilot.qualcomm.research'
+        minSdk 31
+        targetSdk 35
+        versionCode 1
+        versionName '0.1-geniex-private-research'
+        ndk { abiFilters 'arm64-v8a' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    packaging { jniLibs { useLegacyPackaging = true; keepDebugSymbols += '**/*.so' } }
+    buildTypes { release { minifyEnabled false } }
+}
+dependencies { implementation files(pinnedFiles) }

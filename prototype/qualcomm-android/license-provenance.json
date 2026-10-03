@@ -1,0 +1,15 @@
+{
+  "official_texts": {
+    "GenieX-LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/qualcomm/GenieX/v0.7.0/LICENSE",
+      "bytes": 1565,
+      "sha256": "3a1d5f5b391581a14dd06df9859a327ca26f07452a0aa2cfd2008f173d3acbba"
+    },
+    "GenieX-NOTICE.txt": {
+      "url": "https://raw.githubusercontent.com/qualcomm/GenieX/v0.7.0/NOTICE",
+      "bytes": 8436,
+      "sha256": "9461561a735065da88239a46ba1cafbe2a4d5b7d3b3e37825d2ebe9b0e88f9d9"
+    }
+  },
+  "binary_redistribution": "UNRESOLVED; PRIVATE APK ONLY"
+}

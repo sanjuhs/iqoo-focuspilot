@@ -8,6 +8,11 @@ local.properties
 
 # Dependencies, downloaded sources, model weights and private phone captures.
 research/
+# Publish only the separate diagnostic's original Java source, never research binaries.
+!prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/
+!prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/*.java
+!prototype/qualcomm-android/app/src/test/java/dev/focuspilot/qualcomm/research/
+!prototype/qualcomm-android/app/src/test/java/dev/focuspilot/qualcomm/research/*.java
 models/
 datasets/private/
 artifacts/*

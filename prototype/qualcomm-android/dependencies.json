@@ -1,0 +1,45 @@
+{
+  "schema": "focuspilot.geniex_dependencies.v1",
+  "artifacts": [
+    {
+      "name": "geniex-android",
+      "version": "0.7.0",
+      "location": "project",
+      "relative_path": "prototype/qualcomm/.cache/geniex-android-0.7.0.aar",
+      "bytes": 82287634,
+      "sha256": "a29e88e31e12fd636a9dfa6760c61d04001ab91a932dbd5efe7b0a4335b9f883"
+    },
+    {
+      "name": "kotlin-stdlib",
+      "version": "2.0.21",
+      "location": "gradle",
+      "relative_path": "org.jetbrains.kotlin/kotlin-stdlib/2.0.21/618b539767b4899b4660a83006e052b63f1db551/kotlin-stdlib-2.0.21.jar",
+      "bytes": 1747660,
+      "sha256": "f31cc53f105a7e48c093683bbd5437561d1233920513774b470805641bedbc09"
+    },
+    {
+      "name": "kotlinx-coroutines-core-jvm",
+      "version": "1.8.1",
+      "location": "gradle",
+      "relative_path": "org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.1/bb0e192bd7c2b6b8217440d36e9758e377e450/kotlinx-coroutines-core-jvm-1.8.1.jar",
+      "bytes": 1546991,
+      "sha256": "f3d4f5de1c391bbcc20f3b3435ccbac013521e76b6902d7d59635ec15c1f797e"
+    },
+    {
+      "name": "kotlinx-coroutines-android",
+      "version": "1.8.1",
+      "location": "gradle",
+      "relative_path": "org.jetbrains.kotlinx/kotlinx-coroutines-android/1.8.1/73e2acdd18df99dd4849d99f188dff529fc0afe0/kotlinx-coroutines-android-1.8.1.jar",
+      "bytes": 20466,
+      "sha256": "a134dacf4e6578b29b32e97aa50548d09cb45e3cb3551ce77ac27e55e265d8f5"
+    },
+    {
+      "name": "annotations",
+      "version": "13.0",
+      "location": "gradle",
+      "relative_path": "org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar",
+      "bytes": 17536,
+      "sha256": "ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478"
+    }
+  ]
+}
