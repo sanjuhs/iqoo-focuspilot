@@ -1,0 +1,43 @@
+{
+  "schema": "focuspilot.v020_pitch_evidence.v1",
+  "research_only": true,
+  "renderer_source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+  "qa_source_commit": "04e94ea233e0a4ab20cf1f122b8e07ba5865aa3d",
+  "app_source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+  "video": {
+    "file": "artifacts/v020-pitch/pitch-v020.mp4",
+    "bytes": 8976569,
+    "sha256": "5b20c2c0350301cb9dd3304cd49d2c4837ea2649ad4eec7c9177b46ba1d68d71",
+    "seconds": 244.083333,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24
+  },
+  "captions": {
+    "file": "artifacts/v020-pitch/pitch-v020.srt",
+    "sha256": "1333796667ee69759a13d8fa62962b85c878dc550b075b37a2aa8373685a18d6",
+    "segments": 24
+  },
+  "render_manifest_sha256": "3a8fab7c8c9a73fd39b74604b03c34ddcca9d5a8a80a28ec44d45906e3f85fc1",
+  "qa_sha256": "824441f9dcb847a0faab117b3077e68af33c8203c815d112603aaf9ac64c8fc2",
+  "historical_footage_versions": [
+    "v0.12"
+  ],
+  "current_v20_phone_capture": false,
+  "phone_actions_executed": 0,
+  "new_model_runs": 0,
+  "npu_verified": false,
+  "office_kit_verified": false,
+  "human_complete_listening": false,
+  "submission_accepted": false,
+  "eligible_event_code_verified": false,
+  "storage": {
+    "project_logical_bytes": 9547626220,
+    "new_global_cache_growth_bytes": 218929328,
+    "effective_bytes": 9766555548,
+    "strict_limit_bytes": 15000000000,
+    "aim_bytes": 10000000000
+  }
+}

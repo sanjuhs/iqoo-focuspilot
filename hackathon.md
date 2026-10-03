@@ -100,11 +100,11 @@ and say "set an alarm for 7:30" to open the phone's clock confirmation flow.
 - [ ] Confirm permitted treatment of pre-event research code.
 - [ ] Team/category/track details and concept write-up.
 - [x] Prepare a four-page concept PDF and form text within displayed limits.
-- [ ] Source repository with license, attribution and build instructions.
+- [x] Research source repository with license, attribution and build instructions; eligible event code remains required.
 - [ ] APK or required runnable artifact, tested on iQOO.
 - [ ] Model revision/license, local/NPU evidence, evaluation and limitations.
 - [ ] Office Kit demonstration and HackTracker activity during official event.
-- [ ] 3–5 minute pitch script; recording format/length adapted to dashboard.
+- [x] 3–5 minute research pitch: current 4:04 video/script. Live demo and complete human review remain pending.
 - [ ] Backup video/screenshots containing only consented synthetic content.
 - [ ] Submission receipt before official cutoff; repository alone is not submission.
 

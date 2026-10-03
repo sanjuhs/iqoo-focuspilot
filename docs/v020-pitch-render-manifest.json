@@ -1,0 +1,929 @@
+{
+  "kind": "v20 pre-event research pitch; historical v12 own-app clips plus current source-bound illustrations",
+  "completed": true,
+  "submission_accepted": false,
+  "eligible_event_code_verified": false,
+  "bindings": {
+    "execution_source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+    "current_app_source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+    "historical_app_source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+    "evidence_bindings": {
+      "docs/mira-availability-artifact-v20.json": {
+        "sha256": "b65dac244846251c1ea973b0b70b8fb35d7db3fb7efa0cf74689ca4e9be9cbd0",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/mira-availability-phone-install-v20.json": {
+        "sha256": "10a747a2e238d81a9edbae524a82061787e714faadf0dc586611ce2d4b8b703e",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/mira-availability-bundle-artifact-v20.json": {
+        "sha256": "da0c5e7be6e818936b246d878e6d8133102443100bf191cf49a04de371b8cb15",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/mira-availability-publication-v20.json": {
+        "sha256": "5a869480c84abe081bd283ade0b35e9a2b744fd362820c0cfdbc3be3bf88df05",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/native-page-phone-result-v19.json": {
+        "sha256": "9045c7e90dd39219c494538fb7eeb88cfbcf7398450493c8da7e827a9eaa4ba5",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/demo-capture-phone-v012.json": {
+        "sha256": "b7e860ca57c1d7d2ea4f0459c197c85e58544bccb3018e44b6d6d570172e933e",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/guidance-readback-artifacts.json": {
+        "sha256": "ccce877b10f36330a734ba80f6ce9475e4738695b22781e16e30fdd2fff2521a",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/guide-readback-phone-v012.json": {
+        "sha256": "fd8dacf040ea4b1f84b71ff7a622fa92537b15d6a13d9dae75eb8996072e756f",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "prototype/policy/synthetic-model.json": {
+        "sha256": "6924de782bd52944d5bf87352f9a7dd0bc1e4e0518bcd5ba04f9ea6fcffb67b8",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "prototype/policy/synthetic-model-results.json": {
+        "sha256": "c53df744e75e5ab0ebe0f2f37da0b743c57bb42e1e44e56e210fe71f61123123",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "prototype/policy/policy.py": {
+        "sha256": "52810b9e0d982d3d04cd611bb9b908ce0d69c8fde77069055d594d8ad5ce178c",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "scripts/render_current_pitch.py": {
+        "sha256": "155fb318b971f26ec347b8b20f76676a93d12731fd7ed2a251c320b6d788c123",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "scripts/render_v012_pitch.py": {
+        "sha256": "3317c1ac6f7e0e3f528009db64a176c58593f8f394d07ffa9f3ebc10c7f6bc55",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "scripts/package_bundled_apk.py": {
+        "sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "prototype/v020-pitch/render.py": {
+        "sha256": "065e65097b0bf6f9e314e6fd3e64190f792c1377ae7979f710e7a50e1039d5df",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "prototype/v020-pitch/README.md": {
+        "sha256": "993cda3cb8f00fa1c06bbe59715d5403fb2ef8dffd8cf3d3c57450f794357835",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "docs/v020-research-pitch-script.md": {
+        "sha256": "c9c239063b7714812ff08aacda190953dd637f800d3896ebc20e5e2ba9ba419d",
+        "source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/build.gradle": {
+        "sha256": "a92f6a86f4f0eebcdc84b61d16d7d0bb6477e9451517968d635ee7cfb0351758",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/src/main/AndroidManifest.xml": {
+        "sha256": "d6860fc970bd6e22ac0fb3d3601bcc0ebd5cdf0544d935db57a837e2902283b2",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": {
+        "sha256": "f0b42991f6d8ada7c3bce8f7ba606a300634c85100ee9757db2a6657b27b65f2",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/src/main/java/dev/focuspilot/prototype/FloatingCompanionService.java": {
+        "sha256": "5f236291a7171e08b6dd4522a122da2c37cd8c0801919ce6ef058e0632472ae4",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/src/main/java/dev/focuspilot/prototype/CompanionAvailability.java": {
+        "sha256": "6930c3c6d19cd35c269fcff3f42e2fb4fd16c2a5e3347c0f37cbaf48b4164a0b",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "current:prototype/android/app/src/test/java/dev/focuspilot/prototype/CompanionAvailabilityTest.java": {
+        "sha256": "30381d28e9fcc67b609f8737d844d0f98ad9606c5ca8f88c9f0c4b3b5d4f55e5",
+        "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+        "current_bytes_required": true
+      },
+      "historical:prototype/android/app/build.gradle": {
+        "sha256": "a737742d6b9f98ca013b52b2e4312aca0aa1e81ffd62d9003236934325e6463e",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": {
+        "sha256": "20e5872a8c7af0afba75d9bb8ad94998d3ec51421fca68ca167fd8dd27fdb414",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java": {
+        "sha256": "76d835f22dc4da683b5c6733228abd6b33b2c5488d191c91847ea8bd843bcb47",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java": {
+        "sha256": "1281696bbcd23681ed8b46e6d1e4b131f38c3580b2a28f64fbb82e89d9501587",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/TaskGuidePanel.java": {
+        "sha256": "198ecf33399ddca773384aaadf837a5a28140746fe764eb65f593c5e422d14b5",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": {
+        "sha256": "d4c5d952778fd4f99e59a056faa1cdec30228a99239d46be9f2dd99d15d774da",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": {
+        "sha256": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": {
+        "sha256": "cc1eacd83a411817582a4902c0db03b2b3933b3466ba55af5e1acc4ac90a7ba4",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:prototype/native/core.cpp": {
+        "sha256": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+        "source_commit": "24f10b62a4a62c22ad6db90ac6339f29e2426dbd",
+        "current_bytes_required": false
+      },
+      "historical:scripts/phone_demo_capture.py": {
+        "sha256": "2a90f08c65f1fe56bbec94ffd0c72d8a18c188851821f6d03a99048bcf14dbb7",
+        "source_commit": "ac8935618a15060a4c6107b3f841f416e7551cfb",
+        "current_bytes_required": false
+      }
+    },
+    "artifact_bindings": {
+      "artifacts/focuspilot-research-v020-mira-availability-light.apk": {
+        "bytes": 5562748,
+        "sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239"
+      },
+      "artifacts/focuspilot-research-v020-mira-availability-bundled.apk": {
+        "bytes": 568604151,
+        "sha256": "a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c"
+      }
+    },
+    "clips": {
+      "guide": {
+        "name": "guide",
+        "file": "artifacts/v012-phone-demo/guide.mp4",
+        "sha256": "e834e5dfe905a36ca3178d93acc651de86793ff993183d831186f3a9f1c513fc",
+        "bytes": 271373,
+        "seconds": 10.369829,
+        "measured_seconds": 10.369829,
+        "resolution": [
+          720,
+          1400
+        ]
+      },
+      "model": {
+        "name": "model",
+        "file": "artifacts/v012-phone-demo/model.mp4",
+        "sha256": "6acfce24436d29b787d807d1dea22b75dfc81a6d8672172a26f2bbddc3cfa40f",
+        "bytes": 571058,
+        "seconds": 9.339,
+        "measured_seconds": 9.339,
+        "resolution": [
+          720,
+          1400
+        ]
+      }
+    },
+    "authored_steps": [
+      "Open my notes",
+      "Draft three points",
+      "Review the draft"
+    ],
+    "historical_model_request": {
+      "command": "Stop focus",
+      "capture": true,
+      "intent": "pause_focus",
+      "gate": "REVIEW REQUIRED",
+      "total_ms": 1849.0,
+      "prefill_ms": 899.0,
+      "decode_ms": 950.0,
+      "action_executed": false
+    },
+    "historical_activations": [
+      {
+        "tensor": "ffn_out-0",
+        "width": 1024,
+        "positions_in_chunk": 155,
+        "mean": 0.00036,
+        "rms": 0.01544,
+        "min": -0.0505,
+        "max": 0.22183,
+        "first_values": [
+          0.22183347,
+          -0.00072032248,
+          0.0065699513,
+          0.0022087621,
+          -0.00016121729,
+          -0.0029685292,
+          0.017375367,
+          0.0016866969
+        ]
+      },
+      {
+        "tensor": "ffn_out-11",
+        "width": 1024,
+        "positions_in_chunk": 155,
+        "mean": -0.00028,
+        "rms": 0.03094,
+        "min": -0.11547,
+        "max": 0.10341,
+        "first_values": [
+          -0.021840721,
+          -0.0019751545,
+          0.0020368637,
+          -0.0013815633,
+          0.035677161,
+          -0.047037855,
+          -0.021915525,
+          0.042965271
+        ]
+      },
+      {
+        "tensor": "ffn_out-23",
+        "width": 1024,
+        "positions_in_chunk": 155,
+        "mean": 0.00987,
+        "rms": 0.20706,
+        "min": -1.0558,
+        "max": 2.94813,
+        "first_values": [
+          2.9481306,
+          0.15220349,
+          0.22413556,
+          0.065544836,
+          0.18794766,
+          0.013547033,
+          -0.12512405,
+          -0.15931693
+        ]
+      },
+      {
+        "tensor": "result_norm",
+        "width": 1024,
+        "positions_in_chunk": 1,
+        "mean": 0.16724,
+        "rms": 4.36566,
+        "min": -23.07918,
+        "max": 14.98569,
+        "first_values": [
+          0.26920566,
+          4.0578966,
+          0.71723992,
+          10.443491,
+          7.4677224,
+          1.7269794,
+          1.2207621,
+          3.2154086
+        ]
+      }
+    ],
+    "current_jvm_tests": 216,
+    "current_lint_warnings": 79,
+    "v19_cpu_load_ms": 2361.472343,
+    "v19_cpu_source_commit": "caaf5246116ad02144f8bf0a4d92ce8053bf8275",
+    "v19_cpu_counts": {
+      "checked_model": {
+        "complete_supported_proposals": 5,
+        "unsupported_refusals": 1,
+        "wrong_accepts": 0
+      },
+      "fast_local": {
+        "complete_supported_proposals": 5,
+        "unsupported_refusals": 1,
+        "wrong_accepts": 0
+      },
+      "product_pipeline": {
+        "complete_supported_proposals": 5,
+        "unsupported_refusals": 1,
+        "wrong_accepts": 0
+      }
+    },
+    "current_light_sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+    "bundle_sha256": "a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c",
+    "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "native_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+    "publication_remote_verification": "Attributed to frozen root publication record; renderer verifies local byte parity only"
+  },
+  "prepared_audio_sha256": "bb53ec9b95f2e938e0be422d48f023c561127dbae37ffc08389f2cc726d73e0a",
+  "video": "artifacts/v020-pitch/pitch-v020.mp4",
+  "video_sha256": "5b20c2c0350301cb9dd3304cd49d2c4837ea2649ad4eec7c9177b46ba1d68d71",
+  "bytes": 8976569,
+  "seconds": 244.083333,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "caption_segments": 24,
+  "captions_sha256": "1333796667ee69759a13d8fa62962b85c878dc550b075b37a2aa8373685a18d6",
+  "ass_sha256": "2e0486830af376ed13d53a3419e1c9d563470d1e3b290d103e87b88679f7f0bc",
+  "narration_sha256": "1a15afbb1d56cc2aa501a5aa6350feee776f86879923cef05f774cdb3acfdf1c",
+  "voice": "Samantha",
+  "words_per_minute": 170,
+  "timeline": {
+    "scenes": [
+      {
+        "index": 0,
+        "title": "A gentle return to your task",
+        "utterances": [
+          "Most lost time begins with a detour. You unlock your phone for one thing, follow another, and forget what you wanted to do.",
+          "Mira is our local productivity companion: a friendly goth character who offers a gentle return to your task, with your choices at the center.",
+          "The idea is practical companionship. A task guide, focus session and bounded phone assistant belong together, without shaming you or withdrawing real money for distractions."
+        ],
+        "visual_intent": "Original procedural Mira beside an illustrated drifting task card; lilac, charcoal and teal. Label this product illustration, not a live overlay recording.",
+        "start": 0.0,
+        "beats": [
+          {
+            "start": 0.0,
+            "end": 7.062993,
+            "text": "Most lost time begins with a detour. You unlock your phone for one thing, follow another, and forget what you wanted to do.",
+            "scene": 1
+          },
+          {
+            "start": 7.3629929999999995,
+            "end": 15.424444,
+            "text": "Mira is our local productivity companion: a friendly goth character who offers a gentle return to your task, with your choices at the center.",
+            "scene": 1
+          },
+          {
+            "start": 15.724444,
+            "end": 25.626348999999998,
+            "text": "The idea is practical companionship. A task guide, focus session and bounded phone assistant belong together, without shaming you or withdrawing real money for distractions.",
+            "scene": 1
+          }
+        ],
+        "end": 25.926349000000002,
+        "duration": 25.926349000000002
+      },
+      {
+        "index": 1,
+        "title": "Your own next step",
+        "utterances": [
+          "This is historical version twelve footage from our Nothing phone. The guide contains user authored steps, rather than pretending that a model completed your work.",
+          "You choose the next step and whether to speak it. The clip shows a completed text to speech status, which alone does not prove audible playback.",
+          "Keeping the guide editable matters. You can change the plan, mark progress or undo a mistake. The assistant supports your intentions; you remain the author."
+        ],
+        "visual_intent": "Historical v12 authored-guide clip, 10.369829 seconds, shown once at 1\u00d7. Label its version and silent phone audio; hold its final frame visibly after playback. Do not portray Mark/Undo as filmed.",
+        "start": 25.926349000000002,
+        "beats": [
+          {
+            "start": 25.926349000000002,
+            "end": 34.45805,
+            "text": "This is historical version twelve footage from our Nothing phone. The guide contains user authored steps, rather than pretending that a model completed your work.",
+            "scene": 2
+          },
+          {
+            "start": 34.758050000000004,
+            "end": 42.575692000000004,
+            "text": "You choose the next step and whether to speak it. The clip shows a completed text to speech status, which alone does not prove audible playback.",
+            "scene": 2
+          },
+          {
+            "start": 42.875692,
+            "end": 51.848254,
+            "text": "Keeping the guide editable matters. You can change the plan, mark progress or undo a mistake. The assistant supports your intentions; you remain the author.",
+            "scene": 2
+          }
+        ],
+        "end": 52.148254,
+        "duration": 26.221905
+      },
+      {
+        "index": 2,
+        "title": "A local proposal, not an execution",
+        "utterances": [
+          "In this second historical clip, an already typed Stop focus request becomes a local Qwen Pause proposal. It says Review Required; no action was confirmed.",
+          "Current research retains Qwen three point five, zero point eight billion parameters, with Q four zero quantization. Familiar commands can also use a fast local route.",
+          "A separate version nineteen CPU check completed six already seen requests; model loading took two point three six one seconds. That is narrow runtime evidence."
+        ],
+        "visual_intent": "Historical v12 typed Stop-focus clip, 9.339 seconds, once at 1\u00d7, then labelled final-frame hold. Keep \u201cHistorical v12 \u00b7 no confirmed action\u201d visible; attribute v19 statistics separately.",
+        "start": 52.148254,
+        "beats": [
+          {
+            "start": 52.148254,
+            "end": 61.700272,
+            "text": "In this second historical clip, an already typed Stop focus request becomes a local Qwen Pause proposal. It says Review Required; no action was confirmed.",
+            "scene": 3
+          },
+          {
+            "start": 62.000272,
+            "end": 72.215102,
+            "text": "Current research retains Qwen three point five, zero point eight billion parameters, with Q four zero quantization. Familiar commands can also use a fast local route.",
+            "scene": 3
+          },
+          {
+            "start": 72.515102,
+            "end": 82.10163299999999,
+            "text": "A separate version nineteen CPU check completed six already seen requests; model loading took two point three six one seconds. That is narrow runtime evidence.",
+            "scene": 3
+          }
+        ],
+        "end": 82.401633,
+        "duration": 30.253379000000002
+      },
+      {
+        "index": 3,
+        "title": "Ask, check, review, choose",
+        "utterances": [
+          "The current command flow begins with an editable draft. Familiar requests can be checked locally without loading Qwen; unfamiliar wording can use an explicit model fallback.",
+          "Both routes produce bounded proposals. The code checks the original request, arguments and allowed tools before offering a review. Unsupported or conflicting requests should be refused.",
+          "Review and Confirm are separate choices. Editing, cancelling or leaving the screen invalidates the pending review. A generated sentence never becomes permission to act by itself."
+        ],
+        "visual_intent": "Illustrated draft \u2192 fast local or explicit Qwen \u2192 validation \u2192 Review \u2192 Confirm diagram. A cancel branch ends before execution; label the diagram as source behavior.",
+        "start": 82.401633,
+        "beats": [
+          {
+            "start": 82.401633,
+            "end": 92.166077,
+            "text": "The current command flow begins with an editable draft. Familiar requests can be checked locally without loading Qwen; unfamiliar wording can use an explicit model fallback.",
+            "scene": 4
+          },
+          {
+            "start": 92.466077,
+            "end": 103.151519,
+            "text": "Both routes produce bounded proposals. The code checks the original request, arguments and allowed tools before offering a review. Unsupported or conflicting requests should be refused.",
+            "scene": 4
+          },
+          {
+            "start": 103.451519,
+            "end": 113.47823100000001,
+            "text": "Review and Confirm are separate choices. Editing, cancelling or leaving the screen invalidates the pending review. A generated sentence never becomes permission to act by itself.",
+            "scene": 4
+          }
+        ],
+        "end": 113.778231,
+        "duration": 31.376598
+      },
+      {
+        "index": 4,
+        "title": "Nearby when you choose",
+        "utterances": [
+          "Version twenty adds a default off choice: keep Mira nearby after unlock. Turning it on starts nothing; the next reviewed Show chooses that session\u2019s behavior.",
+          "When locked, the portrait hides and its refresh stops. The same existing service can restore it after unlock, once actual permission and phone state checks pass.",
+          "Hide ends that availability. Voice and model use remain explicit, while separately chosen focus or monitoring work stays independent. Physical restoration and reliable OEM persistence remain unverified."
+        ],
+        "visual_intent": "Current v20 availability illustration: reviewed Show \u2192 portrait \u2192 locked idle notification \u2192 guarded unlock return, with Hide ending the session. Label \u201cPhysical lock/unlock test pending\u201d; show no invented phone footage.",
+        "start": 113.778231,
+        "beats": [
+          {
+            "start": 113.778231,
+            "end": 123.151655,
+            "text": "Version twenty adds a default off choice: keep Mira nearby after unlock. Turning it on starts nothing; the next reviewed Show chooses that session\u2019s behavior.",
+            "scene": 5
+          },
+          {
+            "start": 123.451655,
+            "end": 132.834376,
+            "text": "When locked, the portrait hides and its refresh stops. The same existing service can restore it after unlock, once actual permission and phone state checks pass.",
+            "scene": 5
+          },
+          {
+            "start": 133.134376,
+            "end": 145.239773,
+            "text": "Hide ends that availability. Voice and model use remain explicit, while separately chosen focus or monitoring work stays independent. Physical restoration and reliable OEM persistence remain unverified.",
+            "scene": 5
+          }
+        ],
+        "end": 145.539773,
+        "duration": 31.76154199999999
+      },
+      {
+        "index": 5,
+        "title": "Inspection with honest limits",
+        "utterances": [
+          "We want decisions that people can inspect. Phone activation summaries show finite internal measurements, but a colorful vector does not establish what a model understands.",
+          "A separate tiny trained shadow policy exposes exact hidden contributions and feature ablations. Its training is synthetic, and its score does not control the phone.",
+          "These are useful research tools, not a causal interpretation result or proof of real productivity learning. The product must keep those distinctions visible before making stronger claims."
+        ],
+        "visual_intent": "Separate labelled panels for observed Qwen activation summaries and the synthetic 65-parameter shadow policy; no semantic labels on tensor channels. Any toy contribution illustration must identify its synthetic inputs and provenance.",
+        "start": 145.539773,
+        "beats": [
+          {
+            "start": 145.539773,
+            "end": 155.306122,
+            "text": "We want decisions that people can inspect. Phone activation summaries show finite internal measurements, but a colorful vector does not establish what a model understands.",
+            "scene": 6
+          },
+          {
+            "start": 155.606122,
+            "end": 165.146213,
+            "text": "A separate tiny trained shadow policy exposes exact hidden contributions and feature ablations. Its training is synthetic, and its score does not control the phone.",
+            "scene": 6
+          },
+          {
+            "start": 165.446213,
+            "end": 175.881678,
+            "text": "These are useful research tools, not a causal interpretation result or proof of real productivity learning. The product must keep those distinctions visible before making stronger claims.",
+            "scene": 6
+          }
+        ],
+        "end": 176.181678,
+        "duration": 30.64190500000001
+      },
+      {
+        "index": 6,
+        "title": "A reviewable research build",
+        "utterances": [
+          "The version builds with two hundred sixteen passing JVM tests. Its signed light update is installed on Nothing, preserving protected state and existing permission choices.",
+          "Source, release packages and public evidence are backed up on GitHub. Packaging checks bind the model bundle to the same app payload; current bundled import remains unverified.",
+          "Private captures, credentials and training data stay outside Git. Build checks are valuable, but they do not replace watching the interface, hearing speech or testing real consented workflows."
+        ],
+        "visual_intent": "Current v20 source, build, protected installation and verified publication cards; distinguish light installation from bundle packaging. Use public evidence labels, not private phone snapshots.",
+        "start": 176.181678,
+        "beats": [
+          {
+            "start": 176.181678,
+            "end": 186.050612,
+            "text": "The version builds with two hundred sixteen passing JVM tests. Its signed light update is installed on Nothing, preserving protected state and existing permission choices.",
+            "scene": 7
+          },
+          {
+            "start": 186.350612,
+            "end": 196.395283,
+            "text": "Source, release packages and public evidence are backed up on GitHub. Packaging checks bind the model bundle to the same app payload; current bundled import remains unverified.",
+            "scene": 7
+          },
+          {
+            "start": 196.69528300000002,
+            "end": 208.00145100000003,
+            "text": "Private captures, credentials and training data stay outside Git. Build checks are valuable, but they do not replace watching the interface, hearing speech or testing real consented workflows.",
+            "scene": 7
+          }
+        ],
+        "end": 208.30145100000001,
+        "duration": 32.11977300000001
+      },
+      {
+        "index": 7,
+        "title": "From preparation to the real demo",
+        "utterances": [
+          "The next milestone is the complete live experience: permitted voice, persistent companion behavior and productive tasks on actual iQOO hardware, with clear user control throughout.",
+          "Snapdragon NPU execution and Office Kit integration still need direct evidence. Broad computer use, general phone automation and connected device workflows remain future work, not demonstrated capabilities.",
+          "This repository is pre event preparation. Eligible competition code must follow the event rules, and admission and accepted submission remain pending. Mira\u2019s promise is help you can inspect and choose."
+        ],
+        "visual_intent": "A clearly labelled roadmap to live workflow proof, iQOO/NPU, Office Kit and separately eligible event code. End on original Mira with \u201cResearch prototype \u00b7 next proof pending.\u201d",
+        "start": 208.30145100000001,
+        "beats": [
+          {
+            "start": 208.30145100000001,
+            "end": 218.832154,
+            "text": "The next milestone is the complete live experience: permitted voice, persistent companion behavior and productive tasks on actual iQOO hardware, with clear user control throughout.",
+            "scene": 8
+          },
+          {
+            "start": 219.132154,
+            "end": 231.76585,
+            "text": "Snapdragon NPU execution and Office Kit integration still need direct evidence. Broad computer use, general phone automation and connected device workflows remain future work, not demonstrated capabilities.",
+            "scene": 8
+          },
+          {
+            "start": 232.06585,
+            "end": 243.778684,
+            "text": "This repository is pre event preparation. Eligible competition code must follow the event rules, and admission and accepted submission remain pending. Mira\u2019s promise is help you can inspect and choose.",
+            "scene": 8
+          }
+        ],
+        "end": 244.078684,
+        "duration": 35.777232999999995
+      }
+    ],
+    "captions": [
+      {
+        "start": 0.0,
+        "end": 7.062993,
+        "text": "Most lost time begins with a detour. You unlock your phone for one thing, follow another, and forget what you wanted to do.",
+        "scene": 1
+      },
+      {
+        "start": 7.3629929999999995,
+        "end": 15.424444,
+        "text": "Mira is our local productivity companion: a friendly goth character who offers a gentle return to your task, with your choices at the center.",
+        "scene": 1
+      },
+      {
+        "start": 15.724444,
+        "end": 25.626348999999998,
+        "text": "The idea is practical companionship. A task guide, focus session and bounded phone assistant belong together, without shaming you or withdrawing real money for distractions.",
+        "scene": 1
+      },
+      {
+        "start": 25.926349000000002,
+        "end": 34.45805,
+        "text": "This is historical version twelve footage from our Nothing phone. The guide contains user authored steps, rather than pretending that a model completed your work.",
+        "scene": 2
+      },
+      {
+        "start": 34.758050000000004,
+        "end": 42.575692000000004,
+        "text": "You choose the next step and whether to speak it. The clip shows a completed text to speech status, which alone does not prove audible playback.",
+        "scene": 2
+      },
+      {
+        "start": 42.875692,
+        "end": 51.848254,
+        "text": "Keeping the guide editable matters. You can change the plan, mark progress or undo a mistake. The assistant supports your intentions; you remain the author.",
+        "scene": 2
+      },
+      {
+        "start": 52.148254,
+        "end": 61.700272,
+        "text": "In this second historical clip, an already typed Stop focus request becomes a local Qwen Pause proposal. It says Review Required; no action was confirmed.",
+        "scene": 3
+      },
+      {
+        "start": 62.000272,
+        "end": 72.215102,
+        "text": "Current research retains Qwen three point five, zero point eight billion parameters, with Q four zero quantization. Familiar commands can also use a fast local route.",
+        "scene": 3
+      },
+      {
+        "start": 72.515102,
+        "end": 82.10163299999999,
+        "text": "A separate version nineteen CPU check completed six already seen requests; model loading took two point three six one seconds. That is narrow runtime evidence.",
+        "scene": 3
+      },
+      {
+        "start": 82.401633,
+        "end": 92.166077,
+        "text": "The current command flow begins with an editable draft. Familiar requests can be checked locally without loading Qwen; unfamiliar wording can use an explicit model fallback.",
+        "scene": 4
+      },
+      {
+        "start": 92.466077,
+        "end": 103.151519,
+        "text": "Both routes produce bounded proposals. The code checks the original request, arguments and allowed tools before offering a review. Unsupported or conflicting requests should be refused.",
+        "scene": 4
+      },
+      {
+        "start": 103.451519,
+        "end": 113.47823100000001,
+        "text": "Review and Confirm are separate choices. Editing, cancelling or leaving the screen invalidates the pending review. A generated sentence never becomes permission to act by itself.",
+        "scene": 4
+      },
+      {
+        "start": 113.778231,
+        "end": 123.151655,
+        "text": "Version twenty adds a default off choice: keep Mira nearby after unlock. Turning it on starts nothing; the next reviewed Show chooses that session\u2019s behavior.",
+        "scene": 5
+      },
+      {
+        "start": 123.451655,
+        "end": 132.834376,
+        "text": "When locked, the portrait hides and its refresh stops. The same existing service can restore it after unlock, once actual permission and phone state checks pass.",
+        "scene": 5
+      },
+      {
+        "start": 133.134376,
+        "end": 145.239773,
+        "text": "Hide ends that availability. Voice and model use remain explicit, while separately chosen focus or monitoring work stays independent. Physical restoration and reliable OEM persistence remain unverified.",
+        "scene": 5
+      },
+      {
+        "start": 145.539773,
+        "end": 155.306122,
+        "text": "We want decisions that people can inspect. Phone activation summaries show finite internal measurements, but a colorful vector does not establish what a model understands.",
+        "scene": 6
+      },
+      {
+        "start": 155.606122,
+        "end": 165.146213,
+        "text": "A separate tiny trained shadow policy exposes exact hidden contributions and feature ablations. Its training is synthetic, and its score does not control the phone.",
+        "scene": 6
+      },
+      {
+        "start": 165.446213,
+        "end": 175.881678,
+        "text": "These are useful research tools, not a causal interpretation result or proof of real productivity learning. The product must keep those distinctions visible before making stronger claims.",
+        "scene": 6
+      },
+      {
+        "start": 176.181678,
+        "end": 186.050612,
+        "text": "The version builds with two hundred sixteen passing JVM tests. Its signed light update is installed on Nothing, preserving protected state and existing permission choices.",
+        "scene": 7
+      },
+      {
+        "start": 186.350612,
+        "end": 196.395283,
+        "text": "Source, release packages and public evidence are backed up on GitHub. Packaging checks bind the model bundle to the same app payload; current bundled import remains unverified.",
+        "scene": 7
+      },
+      {
+        "start": 196.69528300000002,
+        "end": 208.00145100000003,
+        "text": "Private captures, credentials and training data stay outside Git. Build checks are valuable, but they do not replace watching the interface, hearing speech or testing real consented workflows.",
+        "scene": 7
+      },
+      {
+        "start": 208.30145100000001,
+        "end": 218.832154,
+        "text": "The next milestone is the complete live experience: permitted voice, persistent companion behavior and productive tasks on actual iQOO hardware, with clear user control throughout.",
+        "scene": 8
+      },
+      {
+        "start": 219.132154,
+        "end": 231.76585,
+        "text": "Snapdragon NPU execution and Office Kit integration still need direct evidence. Broad computer use, general phone automation and connected device workflows remain future work, not demonstrated capabilities.",
+        "scene": 8
+      },
+      {
+        "start": 232.06585,
+        "end": 243.778684,
+        "text": "This repository is pre event preparation. Eligible competition code must follow the event rules, and admission and accepted submission remain pending. Mira\u2019s promise is help you can inspect and choose.",
+        "scene": 8
+      }
+    ],
+    "seconds": 244.078684,
+    "clip_segments": [
+      {
+        "clip": "guide",
+        "scene": 2,
+        "pitch_start": 25.926349000000002,
+        "pitch_end": 52.148254,
+        "source_start_seconds": 0,
+        "source_end_seconds": 10.369829,
+        "playback_speed": 1,
+        "final_frame_hold_seconds": 15.852076,
+        "attribution": "HISTORICAL v0.12",
+        "audio": "omitted; generated local narration only"
+      },
+      {
+        "clip": "model",
+        "scene": 3,
+        "pitch_start": 52.148254,
+        "pitch_end": 82.401633,
+        "source_start_seconds": 0,
+        "source_end_seconds": 9.339,
+        "playback_speed": 1,
+        "final_frame_hold_seconds": 20.914379000000004,
+        "attribution": "HISTORICAL v0.12",
+        "audio": "omitted; generated local narration only"
+      }
+    ]
+  },
+  "deterministic_seek_checks": [
+    {
+      "scene": 1,
+      "times": [
+        1.0,
+        8.362993,
+        16.724444
+      ],
+      "rgb_sha256": [
+        "1160c341a1dc25d23ca51a8310726ae518e26d5b6915fe949d0655465f715953",
+        "6da265fea1a50b352d129b7a820528ab78a91bd4266a5f4138621e578f375db9",
+        "b7713e93189fbafd073efa4caf7d0a0df0af8f5f726e00cd715bac8af100d634"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 2,
+      "times": [
+        26.926349000000002,
+        35.758050000000004,
+        43.875692
+      ],
+      "rgb_sha256": [
+        "887c9b2fff55c201d0d21ac7626ed8d51d17baf307ba37358a773ad71825b009",
+        "03b5aaa785aec3d873384f4cd0b11b425c78fcf1523f9ad479836fb82115235c",
+        "4246fdf2e6349e0346ad1d96a8bfcccaf4e64de01d63ea59abfd67881c6acacc"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 3,
+      "times": [
+        53.148254,
+        63.000272,
+        73.515102
+      ],
+      "rgb_sha256": [
+        "ce005c9ef2634b1f40edb78ac6b4e9e1fb8abe4587951096786ddc6628dc862b",
+        "2c8cd2f4a9d3847b778a5851367054259f3581bf848607041e0f484b47368f4a",
+        "9db6b0b4c3ef6414ebea667a8c8ebd8d3dd7de3fda4750a14330dfd504de67b5"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 4,
+      "times": [
+        83.401633,
+        93.466077,
+        104.451519
+      ],
+      "rgb_sha256": [
+        "f6d61707802d28003426729351a9c6bdc1843744b952ea5bb10ddeba484dd410",
+        "5374669a85b3b340e6cf3cd1a7e73f917317c0aa6b265818720529bef4a2b522",
+        "ccd6ade8e562e6580056d0e7c5f397de511e60dc4940b17c58b5adeac95459df"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 5,
+      "times": [
+        114.778231,
+        124.451655,
+        134.134376
+      ],
+      "rgb_sha256": [
+        "bf9a37e7fc76967a54e118c649fff32bb835cf233f31ec312728ee8723b8b257",
+        "16499acd2f189dd536c6b9e4f2bfce42e2aaf07b93b02079cb4817dcee5f8c2b",
+        "cff2ab8f39108d47e94be252af0120241954fe0146885ecfbea8043589c9dfc8"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 6,
+      "times": [
+        146.539773,
+        156.606122,
+        166.446213
+      ],
+      "rgb_sha256": [
+        "9de9590e4d1c4d1bc6014d3d3e143219fd333a7187435506af9438d0893c5f23",
+        "f2640f2020bcbf940e2721de37cc321555d998eaf71cc7844cb68036b276c08c",
+        "d3059c3c64326c50fe0635d843a910dd6b52731e93b01dea1c32f9ca07c0228f"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 7,
+      "times": [
+        177.181678,
+        187.350612,
+        197.69528300000002
+      ],
+      "rgb_sha256": [
+        "85ed855a081da7c6e4545e24fcb2c2e4f0b3cc9b6bc889cd52520154ccc8d72a",
+        "8d3dcc4afa94a95b13f3535da6e7dc83c1463c66d4fa70005c071965e499314b",
+        "3f630be6c42b70716be6f2f1c4d3b85c57179d9e59db9798b5e90d07d9e50b82"
+      ],
+      "backward_seek_matches": true
+    },
+    {
+      "scene": 8,
+      "times": [
+        209.30145100000001,
+        220.132154,
+        233.06585
+      ],
+      "rgb_sha256": [
+        "6e3d5332813b781596530c314bcf32a3f6e3069c50df1e98e16c9729f5e7246a",
+        "54e6234c51e9e63c9aa5352d3c57c25c8df104314defd82be55f8136f4ad18a3",
+        "ec2e5094d45b0e7573a5841fdbbbb7c2ec8608129cc6bcb4e525327bd58bba4f"
+      ],
+      "backward_seek_matches": true
+    }
+  ],
+  "full_decode_passed": true,
+  "phone_capture_used": true,
+  "phone_capture_attribution": "HISTORICAL v0.12; no v20 screen capture",
+  "phone_clip_speed": 1,
+  "clip_audio_used": false,
+  "renderer_phone_actions_executed": 0,
+  "human_complete_audio_review": false,
+  "human_speaker_audibility_verified": false,
+  "physical_v20_overlay_lock_unlock_verified": false,
+  "current_bundle_import_verified": false,
+  "npu_verified": false,
+  "officekit_verified": false,
+  "runtime_16k_verified": false,
+  "activation_summaries_establish_causal_meaning": false,
+  "new_model_calls": 0,
+  "offline_disconnect_verified": false,
+  "encoded_visual_review_complete": false,
+  "storage": {
+    "project_bytes": 9541910871,
+    "new_global_cache_bytes": 218929328,
+    "effective_bytes": 9760840199,
+    "output_bytes": 69921838,
+    "output_reservation_bytes": 600000000,
+    "project_limit_bytes": 15000000000
+  }
+}

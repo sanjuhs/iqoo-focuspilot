@@ -1,5 +1,15 @@
 # FocusPilot delivery plan
 
+## Current research pitch — 4:04
+
+The v20 edited research video is rendered with 24 measured captions, original
+Mira animation, clearly labelled historical v12 phone clips and current source
+illustrations. Full decode, caption/audio checks and four sampled clip-parity
+comparisons pass. The first QA crop error and corrected separate check are
+preserved; the video is unchanged. Complete human playback and the current live
+phone/iQOO/Office Kit workflows remain pending. [Video and evidence](docs/v020-pitch.md).
+
+
 ## Current app — v0.20 Mira availability, Qwen3.5 retained
 
 Qwen3.5-0.8B Q4_0 stays selected. An explicit, default-off choice lets a reviewed

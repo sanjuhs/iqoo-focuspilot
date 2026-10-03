@@ -1,0 +1,204 @@
+{
+  "schema": "focuspilot.v020_pitch_qa.v1",
+  "video_sha256": "5b20c2c0350301cb9dd3304cd49d2c4837ea2649ad4eec7c9177b46ba1d68d71",
+  "renderer_full_decode_recorded": true,
+  "seconds": 244.083333,
+  "caption_segments": 24,
+  "caption_order_and_bounds_pass": true,
+  "audio_mean_db": -18.9,
+  "audio_peak_db": -4.3,
+  "av_duration_gap_seconds": 0.004333000000002585,
+  "sampled_encoded_frames": [
+    {
+      "beat": 1,
+      "seconds": 1.0,
+      "encoded_rgb_sha256": "64188f3a8883caab1c85345ac67e747878cc64a656bb1c5bb7f76504aa5e7847"
+    },
+    {
+      "beat": 2,
+      "seconds": 8.362993,
+      "encoded_rgb_sha256": "6fce70423c1f1046e8d2dde8fb7b3c282f46d5411166cfd0c19215587c5fd53b"
+    },
+    {
+      "beat": 3,
+      "seconds": 16.724444,
+      "encoded_rgb_sha256": "a6c872ad4bb2d495651b5f1f105f71d5973fcedcf44543ed7d1e0bd036e5dfbd"
+    },
+    {
+      "beat": 4,
+      "seconds": 26.926349000000002,
+      "encoded_rgb_sha256": "000b3fd3c62d10e91ba4cf80790f9f43a3ec50a511ae88bafa2b58cc7e968e23"
+    },
+    {
+      "beat": 5,
+      "seconds": 35.758050000000004,
+      "encoded_rgb_sha256": "e290d8b13d046f402f94a6d0b6034b4c909de9b39043997858a711008e3b1393"
+    },
+    {
+      "beat": 6,
+      "seconds": 43.875692,
+      "encoded_rgb_sha256": "1e87017fe6697c0dd68b6cd39ce84aed2232c8a278ea5e6a23ec470373bde0ce"
+    },
+    {
+      "beat": 7,
+      "seconds": 53.148254,
+      "encoded_rgb_sha256": "fd1001d9050ccdce912c6e76944fa8a4b062eb4f8de6d315cf21fc48f30526cf"
+    },
+    {
+      "beat": 8,
+      "seconds": 63.000272,
+      "encoded_rgb_sha256": "ce217226060a64ac1e1ee42d0ee1b30f9ac131deb20c73377b16ecdf2f7378a3"
+    },
+    {
+      "beat": 9,
+      "seconds": 73.515102,
+      "encoded_rgb_sha256": "56def9d880a5c84323c43e393fcc9403e174c19f69fefcd04c0698b8aeb41947"
+    },
+    {
+      "beat": 10,
+      "seconds": 83.401633,
+      "encoded_rgb_sha256": "8c39a94ddede4a9b3bb111776ea7fdf82a218b3707551cb4c2a587c939ef71ed"
+    },
+    {
+      "beat": 11,
+      "seconds": 93.466077,
+      "encoded_rgb_sha256": "fd62f6f0ee9d082b7414e0415504d3d99e634ebdced9d55daaec7c5b4c056589"
+    },
+    {
+      "beat": 12,
+      "seconds": 104.451519,
+      "encoded_rgb_sha256": "e5eeda5e420616139845e2ca9fe137608b683ef789214ff93dfe016f0cc1dc33"
+    },
+    {
+      "beat": 13,
+      "seconds": 114.778231,
+      "encoded_rgb_sha256": "5957ab142fbbb86952a0597cf4e41ec79b4abb041e8b06f6c0ea4556327a0d40"
+    },
+    {
+      "beat": 14,
+      "seconds": 124.451655,
+      "encoded_rgb_sha256": "4efeb6a4d37bc1b6401e3e11b7ff46e8cc24e5776902c0673d45d8af41c4ba4d"
+    },
+    {
+      "beat": 15,
+      "seconds": 134.134376,
+      "encoded_rgb_sha256": "3d9a7a8bfab7982412d170ab4c02c65d4f1edb6dbead37fae19a5604cf3bdee8"
+    },
+    {
+      "beat": 16,
+      "seconds": 146.539773,
+      "encoded_rgb_sha256": "6564da79d3acde0163829e384a6198a3d223b19f81d363f7ffa23f9f2599c195"
+    },
+    {
+      "beat": 17,
+      "seconds": 156.606122,
+      "encoded_rgb_sha256": "9652ad807fa864417f7e22e8a1653e9011765e2f5279ac86af80e8e997db2838"
+    },
+    {
+      "beat": 18,
+      "seconds": 166.446213,
+      "encoded_rgb_sha256": "f18209265e3201bd39495f236ea9865890015819f62c22ad4690483602959195"
+    },
+    {
+      "beat": 19,
+      "seconds": 177.181678,
+      "encoded_rgb_sha256": "e979e24e69c2e95b11c309bef452292cb018f879a174c4d2b5037d44402087c0"
+    },
+    {
+      "beat": 20,
+      "seconds": 187.350612,
+      "encoded_rgb_sha256": "24fbf6d3bc11d7c26f508d86db37bb71f4f354ea0c40055f4415c27041e9decf"
+    },
+    {
+      "beat": 21,
+      "seconds": 197.69528300000002,
+      "encoded_rgb_sha256": "f2ae663be040d320c43b832280ac7a165c3038162617d69e5e053422364c3721"
+    },
+    {
+      "beat": 22,
+      "seconds": 209.30145100000001,
+      "encoded_rgb_sha256": "293dca60bc54cd311b4522558915689b88c3bf531a3f5af89f6ca01c54358b75"
+    },
+    {
+      "beat": 23,
+      "seconds": 220.132154,
+      "encoded_rgb_sha256": "8dff1980eae64bb99d86fd7b773a7404b1fce6217700d84fecf473ed9068fc90"
+    },
+    {
+      "beat": 24,
+      "seconds": 233.06585,
+      "encoded_rgb_sha256": "333f163a8533b2fd01c95992f0caa43f644d41b4b617c9a1f5bd6ad035cdb483"
+    }
+  ],
+  "historical_clip_comparisons": [
+    {
+      "clip": "guide",
+      "source_seconds": 1.0,
+      "pitch_seconds": 26.926349000000002,
+      "psnr_db": 37.59607756276735,
+      "encoded_crop": [
+        1344,
+        220,
+        430,
+        640
+      ],
+      "reference_pixel_format": "yuv420p",
+      "scope": "Four sampled original-speed comparisons, not every encoded frame"
+    },
+    {
+      "clip": "guide",
+      "source_seconds": 7.0,
+      "pitch_seconds": 32.926349,
+      "psnr_db": 40.52619979008423,
+      "encoded_crop": [
+        1344,
+        220,
+        430,
+        640
+      ],
+      "reference_pixel_format": "yuv420p",
+      "scope": "Four sampled original-speed comparisons, not every encoded frame"
+    },
+    {
+      "clip": "model",
+      "source_seconds": 1.0,
+      "pitch_seconds": 53.148254,
+      "psnr_db": 39.30551962122977,
+      "encoded_crop": [
+        1344,
+        220,
+        430,
+        640
+      ],
+      "reference_pixel_format": "yuv420p",
+      "scope": "Four sampled original-speed comparisons, not every encoded frame"
+    },
+    {
+      "clip": "model",
+      "source_seconds": 7.0,
+      "pitch_seconds": 59.148254,
+      "psnr_db": 38.78255523609205,
+      "encoded_crop": [
+        1344,
+        220,
+        430,
+        640
+      ],
+      "reference_pixel_format": "yuv420p",
+      "scope": "Four sampled original-speed comparisons, not every encoded frame"
+    }
+  ],
+  "encoded_visual_review_complete": false,
+  "human_complete_audio_review": false,
+  "phone_speaker_audibility_verified": false,
+  "phone_actions_executed": 0,
+  "qa_source_sha256": "aef5389df737d185c76d41969ef17adb76d8ca990930d551470a7b5801b855f8",
+  "qa_source_commit": "04e94ea233e0a4ab20cf1f122b8e07ba5865aa3d",
+  "private_qa_record_sha256": "e7b712a58150d165371036344b5451965090e3c388c60e4d2b5ef151e7eb0f74",
+  "sampled_encoded_visual_review_passed": true,
+  "assistant_review_scope": "24 beat sample contact sheet plus full-size unlock-return/late Hide/final-frame; captions readable, no observed overlap/private content. Sampled review, not every encoded frame or full human listening.",
+  "late_hide_sample_seconds": 143.78712536,
+  "final_frame_reviewed": true,
+  "first_failed_attempt_record": "docs/v020-pitch-first-qa.json",
+  "video_rerendered": false
+}

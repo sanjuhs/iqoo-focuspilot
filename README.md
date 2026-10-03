@@ -4,19 +4,19 @@ A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.
 
-**Qwen3.5-0.8B Q4_0 remains the local command model.** Current research v0.18
-puts an editable request and draft-only examples beside Mira, shows actual model
-status and keeps Review/Confirm separate. Quick commands need no model load.
-The light APK is installed on Nothing; a standalone bundle includes the pinned
-model. The unchanged app payload passes 208 JVM tests, signing and alignment
-checks. [Current app and verification](docs/mira-commands-v18.md).
+**Qwen3.5-0.8B Q4_0 remains the local command model.** Research v0.20
+adds an opt-in choice to keep Mira available after unlock: her portrait hides
+while locked, the existing service rechecks readiness before restoring it, and
+Hide ends the session. The editable command screen keeps Review/Confirm separate;
+quick commands need no model load. [Current app and verification](docs/mira-availability-v20.md).
 
-Earlier v0.12 phone tests establish CPU inference, typed commands, countdowns,
-paused recovery and task readback. The v0.17 JNI diagnostic exercises six seen
-Qwen requests with zero wrong accepted proposals and observational activation
-summaries. These results retain their original APK attribution. Current v0.18
-physical UI, bundle import, voice, permissioned monitoring, iQOO NPU and Office Kit
-still need physical verification. [Measured scope](docs/unit-native-phone-v17.md).
+All **216 JVM tests** pass. The signed light APK is installed on Nothing with
+checked data preserved; a standalone bundle contains the pinned model and passes
+payload, signing and alignment checks. v19 CPU evidence covers six seen requests,
+313 runtime checks and observational activation summaries on a 4 KB Nothing phone.
+Those measurements retain their own APK attribution. Physical v20 UI/lock/unlock,
+current bundle import, permitted voice/monitoring, iQOO NPU and Office Kit remain
+unverified. [Measured CPU scope](docs/native-page-v19.md).
 
 Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
 but complete proposals 11→12/50 fail the locked promotion criterion. The selected original model remains installed; no adapter is promoted. [Measured result and limits](docs/balanced-qwen-research.md).
@@ -27,9 +27,9 @@ Production state and the original test APK were restored. This is a bounded nati
 path diagnostic; the complete disconnected voice workflow remains pending.
 [Proof and limits](docs/network-isolation-phone.md).
 
-[Download research v0.18](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18)
-· [Watch the 4:41 research demo](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.18)
+[Download research v0.20](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20)
+· [Watch the 4:04 research pitch](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/pitch-v020.mp4)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.20)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -39,21 +39,21 @@ path diagnostic; the complete disconnected voice workflow remains pending.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. Published v0.18 packages use an
+The app supports Android 9/API 28+ on ARM64. Published v0.20 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.
 
 | Download | Size | Model setup |
 | --- | ---: | --- |
-| [Bundled v0.18 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-bundled.apk) | 568.61 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
-| [Light v0.18 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-light.apk) | 5.94 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
+| [Bundled v0.20 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-bundled.apk) | 568.60 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
+| [Light v0.20 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-light.apk) | 5.56 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
 
-Verify downloaded bytes against the [v0.18 light manifest](docs/mira-commands-artifact-v18.json)
-or [v0.18 bundle manifest](docs/mira-commands-bundled-artifact-v18.json).
-Both use app source `959f27a0721deca58dc45852e79759bc5a255539`.
+Verify downloaded bytes against the [v0.20 light manifest](docs/mira-availability-artifact-v20.json)
+or [v0.20 bundle manifest](docs/mira-availability-bundle-artifact-v20.json).
+Both use app source `81287b2b08ccedc050635b0b8a27154bed3b5d87`.
 Only the bundled GGUF is added; all original app/native/license payloads match.
-[Packaging and repeat procedure](docs/mira-bundle-v18.md).
+[Packaging and availability scope](docs/mira-availability-v20.md).
 The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK
@@ -80,10 +80,11 @@ is not a tested voice workflow. [Feature setup](docs/command-readiness.md).
 
 Persistent mode is an opt-in, visible focus-monitor service with Stop controls.
 Optional floating Mira has separate overlay permission and an explicit Show
-review. Neither is a silent microphone or a guarantee of 24/7 survival through
+review. Enable **Keep Mira nearby after I unlock** for the next Show to retain
+that session while locked; Hide ends it. Neither is a silent microphone or a guarantee of 24/7 survival through
 Android/OEM process management. Actual monitoring, notification and floating
 lifecycle checks remain pending. [Background contract](prototype/android/README.md)
-· [Floating controls](docs/floating-companion.md).
+· [Current floating controls](docs/mira-availability-v20.md).
 
 ## What is measured
 
@@ -99,15 +100,15 @@ sets are not general automation accuracy or population latency benchmarks.
 | Command reliability | v0.14 gate-only repair improves complete proposals **13→32/50** on 100 fresh informed synthetic host requests: 19 gains, zero losses/observed wrong accepts, all 50 unknown requests refused. Raw model correctness stays 32/100; 18 supported misses remain. **334 actual pure Android gate checks pass**. No universal safety or voice accuracy claim. [Selected evidence](docs/command-validation-v14.md) · [Rejected JSON prompt](docs/json-command-research.md). |
 | Activation viewer | Four finite width-1,024 tensor summaries are observed on phone, including v0.12 capture. Historical v0.11 paired timings establish no fixed capture overhead. Laptop interventions produced no positive semantic steering finding. [Capture comparison](docs/capture-benchmark-phone.md) · [Causal experiment](docs/interpretability-experiment.md). |
 | Fast decision research | A separate **65-parameter positive-weight policy** scored 472/480 synthetic held-out cases versus 469/480 for a logistic baseline. It remains sandbox/shadow-only. Few-shot retrieval has abstentions; rejected LoRA and intent-head candidates are not deployed. [Policy](docs/policy-baselines.md) · [Learning limits](docs/live-preferences.md). |
-| Build and packaging | v0.18: **208 JVM tests**, zero lint errors/79 warnings. Light installs with protected state preserved; bundled model SHA, complete app-payload parity, signing and alignment pass. No `INTERNET` permission. Current bundle import/UI, disconnected ASR, thermals and peak memory remain pending. [Bundle manifest](docs/mira-commands-bundled-artifact-v18.json). |
+| Build and packaging | v0.20: **216 JVM tests**, zero lint errors/79 warnings. Light installs with protected state preserved; bundled model SHA, complete app-payload parity, signing and alignment pass. No `INTERNET` permission. Current bundle import/UI, disconnected ASR, thermals and peak memory remain pending. [Bundle manifest](docs/mira-availability-bundle-artifact-v20.json). |
 | Phone export | v0.12 review/picker Cancel and actual local Save passed. A 496-byte empty summary matched phone/laptop checksums and passed zero-record schema validation. No policy inference or Office Kit transfer occurred. [Actual export](docs/phone-export.md). |
 | Hardware, bridge and submission | Actual iQOO/NPU execution, Office Kit pairing/transfer, live permissioned monitoring, IoT hardware, accepted application and eligible event submission remain unfinished. Local laptop export validation is separate from Office Kit. [Remaining deliverables](docs/remaining-deliverables.md). |
 
-The [4:41 video](docs/v012-pitch.md) combines original Mira animation with two
-actual own-app clips at 1× speed: authored-step readback and unconfirmed typed
-Qwen inference (1,849 ms native CPU). Other scenes are labelled illustrations.
-Caption timing, full decode and sampled encoded visuals passed; complete human
-listening remains pending. Later recovery and the v0.14 validator are not depicted in that recording.
+The [4:04 current research pitch](docs/v020-pitch.md) combines original Mira
+animation, current source diagrams and two explicitly historical v12 own-app clips
+at 1× speed. Full decode, captions/audio checks and sampled encoded visuals/clip
+parity pass. Complete human listening and current live workflows remain pending.
+
 Historical release results and videos remain in [status](docs/status.md) and
 [previous releases](https://github.com/sanjuhs/iqoo-focuspilot/releases).
 
