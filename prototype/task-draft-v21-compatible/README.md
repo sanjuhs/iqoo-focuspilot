@@ -1,3 +1,14 @@
+# Actual outcome — rejected for app promotion
+
+One actual compatible host capture completes 32/32 EOS/schema, but two informed
+reviews agree on full criteria 0/20 benign, 2/8 constraints, 2/4 tricky. 22 outputs
+copy the reading example. The frozen quality gate fails; selected app remains v20
+with user-authored guidance. [Study and proof](../../docs/task-draft-v21.md),
+[qualification](qualification.json).27 parser/goal checks passed before capture.
+Run `python3 prototype/task-draft-v21-compatible/verify_evidence.py` for a no-model
+source/evidence audit. Original failed initialization and both freezes are retained.
+No inference retry, training, phone/NPU proof or app promotion occurred.
+
 # Existing-runtime compatibility repair
 
 The original `../task-draft-v21/` attempt is preserved: JNI initialization refused
@@ -13,7 +24,7 @@ Pre-event source preparation, not eligible event-created competition code. The
 selected Android app is unchanged. Previous task-draft candidates remain archived
 and rejected; their universal refusal, nonsensical reading draft, omitted task
 completion and no-reminders constraint failure motivate this separate candidate.
-No model call, benchmark or successful guidance result is established here.
+The source preparation below predates the measured capture; its instructions are hypotheses, not successful guidance evidence.
 
 The shared prompt requests one to five concise user instructions rather than
 exactly three. It explicitly asks for preparation, the actual work and completion

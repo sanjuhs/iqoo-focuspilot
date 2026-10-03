@@ -1,10 +1,18 @@
+# Preserved initialization failure
+
+The initial capture exits1 before model loading: the existing JNI accepts only
+context 512–1024 and max128 new tokens, while this candidate requested 2048/256.
+Zero request outputs were produced. [Failed aggregate](results.json) and the
+source freeze remain unchanged. A separately frozen compatibility attempt is
+recorded in [the study](../../docs/task-draft-v21.md). This directory is not retried.
+
 # Isolated Qwen3.5 task-draft candidate
 
 Pre-event source preparation, not eligible event-created competition code. The
 selected Android app is unchanged. Previous task-draft candidates remain archived
 and rejected; their universal refusal, nonsensical reading draft, omitted task
 completion and no-reminders constraint failure motivate this separate candidate.
-No model call, benchmark or successful guidance result is established here.
+No successful model load or guidance result is established here.
 
 The shared prompt requests one to five concise user instructions rather than
 exactly three. It explicitly asks for preparation, the actual work and completion

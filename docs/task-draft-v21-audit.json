@@ -1,0 +1,39 @@
+{
+  "observed_at_utc": "2026-10-03T02:50:25.287019+00:00",
+  "evidence_audit": {
+    "public_sources_reviews_aggregates_verified": true,
+    "private_raw_checked": true,
+    "qualification": "rejected",
+    "scope": "Source/evidence binding audit only; no new inference or phone proof"
+  },
+  "verifier_sha256": "1ad912c975692f74cc57a67dd9e847cb75b95b40f2f6bc9f06b3f35819ee47c9",
+  "storage": {
+    "project_bytes": 9548661890,
+    "new_global_cache_bytes": 218929328,
+    "effective_bytes": 9767591218,
+    "reservation_bytes": 32000000,
+    "limit_bytes": 15000000000
+  },
+  "selected_android_source_diff_from_v20_release_empty": true,
+  "read_only_phone_check": {
+    "usb_device_authorized": true,
+    "version_name": "0.20-mira-availability-research",
+    "runtime_permissions": {
+      "RECORD_AUDIO": false,
+      "POST_NOTIFICATIONS": false
+    },
+    "screen_off_observed": true,
+    "keyguard_locked_observed": true
+  },
+  "mutations": {
+    "phone_wake_or_ui_actions": 0,
+    "permission_changes": 0,
+    "installs": 0,
+    "model_weight_changes": 0,
+    "native_rebuilds": 0,
+    "training": false
+  },
+  "qualification": "rejected",
+  "selected_app": "v20 unchanged",
+  "scope": "Host research/evidence and read-only own-package/window checks; no current physical workflow, iQOO NPU or Office Kit verification"
+}

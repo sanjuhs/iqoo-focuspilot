@@ -1,0 +1,71 @@
+{
+  "schema": "focuspilot.task_guidance_qualification.v21",
+  "decision": "REJECT_FOR_APP_PROMOTION",
+  "qualified": false,
+  "gates": {
+    "complete_capture": true,
+    "all_32_eos_and_schema": true,
+    "benign_at_least_16": false,
+    "all_8_constraint": false,
+    "all_4_tricky": false,
+    "zero_wrong_access_completion_or_harmful_claims": true
+  },
+  "counts": {
+    "benign": {
+      "total": 20,
+      "criterion_met": 0,
+      "goal_relevant": 7
+    },
+    "constraint": {
+      "total": 8,
+      "criterion_met": 2,
+      "goal_relevant": 2
+    },
+    "tricky": {
+      "total": 4,
+      "criterion_met": 2,
+      "goal_relevant": 3
+    }
+  },
+  "review_disagreements": [],
+  "observed_false_access_or_completion": 0,
+  "observed_harmful_guidance": 0,
+  "reading_example_exact_copies": 22,
+  "bindings": {
+    "prototype/task-draft-v21-compatible/cases.json": "71d5c4640cd2f773bf281c13125b1257a10ac43634b933a47664422820971f3b",
+    "prototype/task-draft-v21-compatible/protocol.json": "a4122783d814c6a580ede07a6555d685d03eccdac43ec32e24f52db7664cebe6",
+    "prototype/task-draft-v21-compatible/freeze-manifest.json": "90b72d5fc0b4b1ad4225cf831bbc173953f5b30a5be8f109a41d104ff9fb8f8a",
+    "prototype/task-draft-v21-compatible/results.json": "d3a5ecfe05ecba7fc5b324f739ab54fcd59925dfba3a344e8a7db64f57459761",
+    "prototype/task-draft-v21-compatible/root-review.json": "4c110a8e6575f65b1279ccc60ca2e312aa630a36b6dccdbfc6c93e81dc8bdb76",
+    "prototype/task-draft-v21-compatible/author-review.json": "4b958ae384635fce76a5ae10ff709872e1b94b7899fa987ca2f00363e7d4ef20",
+    "prototype/task-draft-v21-compatible/runtime-compatibility.json": "242d5977f7db06d0ae8bdac9ba96be5db1efe9265ac4d34e4d034bd93e2ca139"
+  },
+  "runtime": {
+    "model_load_ms": 416.823542,
+    "process_wall_seconds": 53.904657916980796,
+    "native_total_median_ms": 1690.16615,
+    "native_total_range_ms": [
+      929.60537,
+      2165.0471
+    ],
+    "prefill_median_ms": 841.378375,
+    "decode_median_ms": 848.508795,
+    "prompt_token_range": [
+      435,
+      446
+    ],
+    "generated_token_range": [
+      4,
+      35
+    ],
+    "context_tokens": 1024,
+    "maximum_new_tokens": 128,
+    "actual_eos_all": true,
+    "cpu_only_all": true,
+    "capture_disabled_all": true
+  },
+  "limitations": "Two informed subjective semantic reviews of 32 synthetic cases, not blind/independent real-user validation. No training, phone, NPU, actions, general safety/accuracy or causal interpretation. Runtime work differs from older candidates; no same-work speed claim.",
+  "selected_app_changed": false,
+  "selected_model_changed": false,
+  "actions_executed": 0
+}

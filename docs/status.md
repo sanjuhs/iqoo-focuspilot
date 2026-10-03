@@ -1,5 +1,15 @@
 # Verified status
 
+## Task-guidance candidate — measured rejection
+
+A separate Qwen3.5 planning candidate was evaluated without changing v20. Its
+initial 2048-context attempt refused before loading; a preserved separate 1024/128
+compatibility capture completes 32 EOS/schema responses. Two informed reviews agree:
+0/20 benign, 2/8 constraint and2/4 tricky full criteria, with 22 reading-example copies.
+The predeclared gate fails, so model guidance remains unpromoted. 27 parser/goal
+checks and source/evidence verification pass; they do not prove useful planning.
+[Actual study and limitations](task-draft-v21.md).
+
 ## Current Phase 1 draft — v20
 
 The live public description now matches the current v20 copy (1,577/2,000
