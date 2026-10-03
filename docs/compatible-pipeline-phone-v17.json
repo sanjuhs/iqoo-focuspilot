@@ -1,0 +1,101 @@
+{
+  "schema": "focuspilot.compatible_pipeline_phone_delivery.v1",
+  "source_commit": "a4f7a15c66cc44361e0b811aa578497a6b1cc8f9",
+  "verified": true,
+  "raw_attempt_sha256": "0e928b611f020804983a060e6562245247c49666884f9323a3a48bc327959e6b",
+  "cleanup_inspection_sha256": "ea9338e7606d0c5180cea45eee6320813a6bfb02bd43ede21bff951c720713d1",
+  "initial_harness_passed": false,
+  "initial_cleanup_failure_type": "TimeoutExpired",
+  "initial_cleanup_failure": "Original-test install client timed out after90seconds; subsequent read-only inspection verifies exact original package already restored. No installation or instrumentation retry.",
+  "cleanup_completed_by_read_only_inspection": true,
+  "instrumentation_runs": 1,
+  "report": {
+    "target_package": "dev.focuspilot.prototype",
+    "test_package": "dev.focuspilot.prototype.test",
+    "target_uid": 10425,
+    "process_uid": 10425,
+    "process_pid": 10740,
+    "target_process": "dev.focuspilot.prototype",
+    "actual_process": "dev.focuspilot.prototype",
+    "target_class_names": [
+      "dev.focuspilot.prototype.ModelCommandGate",
+      "dev.focuspilot.prototype.CompatibleUnitCommand",
+      "dev.focuspilot.prototype.UnitCommand",
+      "dev.focuspilot.prototype.StructuredCommand",
+      "dev.focuspilot.prototype.CommandNumberWords",
+      "dev.focuspilot.prototype.CompatibleActionRouter",
+      "dev.focuspilot.prototype.CompatibleReviewState"
+    ],
+    "schema": "focuspilot.compatible_android_replay.v1",
+    "passed": true,
+    "fixtures": 100,
+    "replay_checks": 300,
+    "expected_replay_checks": 300,
+    "review_checks": 8,
+    "expected_review_checks": 8,
+    "checks": 308,
+    "expected_checks": 308,
+    "failed_fixture_ids": [],
+    "failure_type": null,
+    "asset_sha256": "e482515b40ac547a6ab60302273302641b99c51418f037f3af599efe15de2370",
+    "origins": {
+      "baseline": {
+        "UNKNOWN": 96,
+        "CHECKED_MODEL": 4
+      },
+      "checked_model": {
+        "UNKNOWN": 82,
+        "CHECKED_MODEL": 18
+      },
+      "product_pipeline": {
+        "UNKNOWN": 81,
+        "CHECKED_MODEL": 15,
+        "FAST_LOCAL_REQUEST": 4
+      }
+    },
+    "host_source_commit": "5fa9909415af50a599116a60943002830ad7c3c2",
+    "fixture_source_sha256": {
+      "CommandNumberWords": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+      "CompatibleActionRouter": "57c2ca47193ab857092e3b7c762fa44facadbaa0c66d721fde10f53e22166f2d",
+      "CompatibleReviewState": "e57eab7e92ed0011e5326e537140fa2db1043b5ba4e249f9cad82d56f9f3effe",
+      "CompatibleUnitCommand": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+      "ModelCommandGate": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+      "StructuredCommand": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+      "UnitCommand": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed"
+    },
+    "model_accessed": false,
+    "native_model_loaded": false,
+    "production_preferences_accessed": false,
+    "production_singleton_used": false,
+    "services_started": false,
+    "voice_used": false,
+    "ui_started": false,
+    "actions_executed": 0,
+    "scope": "Already-seen host outputs, target pure Java parity and inert review ownership; no fresh phone model accuracy or UI/action proof"
+  },
+  "light_apk_sha256": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+  "previous_app_sha256": "1f25c95c7d58d354e55675778fc975768049495be20a05bf7cd709423b73218b",
+  "private_test_apk_sha256": "43749f6a1844f34ced257308dd5d1369fd7b55bd551f94d936d5487d71cd13d4",
+  "restored_test_apk_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "installed_app_sha256": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+  "protected_snapshot_sha256": "be9c7c07afa0faab3257728d8f7d0ab72a7b6b77da8776a16177cde41d3057a1",
+  "protected_snapshot_unchanged": true,
+  "protected_snapshot_scope": "Three named preference-store identities/checkpoint, pinned private model bytes/hash/inode/link count, microphone and notification grant snapshots, own monitor/floating service absence. Not every AppOp or permission setting.",
+  "harness_sha256": "6cda29565cdccbe9473740a24a37ff782abc16ad4a95cbecbad5856cb9ed25ab",
+  "helpers_sha256": {
+    "phone_model_smoke.py": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+    "phone_reviewed_reset.py": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+    "phone_bundled_import.py": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+    "phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+    "phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+    "package_bundled_apk.py": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36"
+  },
+  "generator_sha256": "d71aefbf0be04857ed62b0376f35862ded8133c885c3ca58cf3b91b303b81a7c",
+  "fixture_manifest_sha256": "7e35f7ebc5b2da86d7eb5bcbdf6cdfed0b7cfd3c1ba2ccd47a108657935cca98",
+  "permission_grants": 0,
+  "phone_woken": false,
+  "ui_started": false,
+  "model_inference": false,
+  "actions_executed": 0,
+  "scope": "Already-seen synthetic host outputs replayed through installed target pure Java plus separate inert ownership checks. No new phone command accuracy, native model timing, UI/voice/action or NPU result."
+}

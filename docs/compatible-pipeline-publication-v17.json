@@ -1,0 +1,38 @@
+{
+  "schema": "focuspilot.compatible_pipeline_publication.v1",
+  "source_commit": "a4f7a15c66cc44361e0b811aa578497a6b1cc8f9",
+  "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.17",
+  "prerelease": true,
+  "published_at": "2026-10-03T00:45:06Z",
+  "assets": [
+    {
+      "name": "focuspilot-research-v017-system-one-light.apk",
+      "bytes": 5562632,
+      "sha256": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+      "server_digest": "sha256:05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.17/focuspilot-research-v017-system-one-light.apk",
+      "verified": true
+    },
+    {
+      "name": "compatible-pipeline-artifacts-v17.json",
+      "bytes": 24648,
+      "sha256": "0cc9cf8de85878b88eba3fc4284e6218243eb6b4e188084752d4716f36329586",
+      "server_digest": "sha256:0cc9cf8de85878b88eba3fc4284e6218243eb6b4e188084752d4716f36329586",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.17/compatible-pipeline-artifacts-v17.json",
+      "verified": true
+    },
+    {
+      "name": "compatible-pipeline-phone-v17.json",
+      "bytes": 5409,
+      "sha256": "fea4c41ecc4e2ff9b6855e646c5f82f6c6bfe2cb02f5fe571ef6da963c246400",
+      "server_digest": "sha256:fea4c41ecc4e2ff9b6855e646c5f82f6c6bfe2cb02f5fe571ef6da963c246400",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.17/compatible-pipeline-phone-v17.json",
+      "verified": true
+    }
+  ],
+  "private_test_uploaded": false,
+  "model_weights_uploaded": false,
+  "raw_corpora_or_phone_captures_uploaded": false,
+  "verified": true,
+  "scope": "Server metadata size/digest parity and exact source tag; no remote binary re-download or new device execution"
+}

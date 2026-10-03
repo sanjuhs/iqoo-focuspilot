@@ -1,14 +1,24 @@
 # FocusPilot delivery plan
 
-## v0.17 source integration — physical replay pending
+## v0.17 installed System 1 plus Qwen research
 
-Keep Qwen3.5-0.8B Q4_0. The exact qualified combined parser, source-unit prompt,
-fast provenance and single-use review ownership are integrated. All208 JVM tests
-pass; lint zero errors/72 warnings; signed light package inspection passes. Run the
-isolated300 target replay comparisons plus eight inert review checks with full
-protected-state preservation and original test-APK restoration. New native unit
-generation/UI/voice and actual iQOO/NPU/Office Kit remain separate requirements.
-[Current source/artifact scope](docs/compatible-pipeline-v17.md).
+Keep Qwen3.5-0.8B Q4_0. The exact qualified parser/source-unit prompt, fast
+provenance and single-use review flow are integrated. All208 JVM tests pass; lint
+zero errors/72 warnings and signed light package inspection pass. On Nothing, one
+run passes300 installed-target replay comparisons plus eight separate inert review
+checks. The original-test install client times out, but subsequent read-only
+inspection verifies exact restoration and the checked protected snapshot unchanged;
+no installation or replay retry. New unit-prompt JNI generation, visible actions,
+voice/floating and actual iQOO/NPU/Office Kit remain separate requirements.
+[Current artifact, physical scope and limitations](docs/compatible-pipeline-v17.md).
+
+Published [research v0.17](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.17),
+with three verified server assets and exact source tag.
+
+Next, freeze a small explicitly seen JNI diagnostic using the exact new unit
+prompt/grammar on the installed phone; record completion, slots, CPU timing and
+actual captures without actions. Then verify unlocked no-load fast proposals,
+manual-load fallback, edits/cancellation/confirmation and permitted voice.
 
 
 ## Current next step — integrate qualified System 1 plus Qwen pipeline
