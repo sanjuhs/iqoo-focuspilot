@@ -1,5 +1,14 @@
 # Verified status
 
+## Compatible command repair — audited historical pass, fresh qualification pending
+
+- Qwen3.5-0.8B Q4_0 remains chosen; installed v0.16 app/prompt/native unchanged.
+- One frozen historical pure evaluation preserves80/80 accepted proposals, refuses476 unsupported and948 wrong-intent routes, and accepts134/158 supported oracle proposals with zero wrong accepts. No new inference or phone calls.
+- All12 prior captured complete proposals remain12/18. A separate recognizer-plus-model replay reaches14/18, two gains/no losses; six unknowns refused and zero wrong accepts. Origins5fast/9model/10unknown, independent actual replay verified.
+- Prospectively fixed fresh100 paired cohort source/author protocol committed before authoring; complete slots/raw model predictions and separate pipeline outcomes must be reported. No post-output repairs/retries or integration until fixed criteria pass.
+- Source-freeze storage14,443,262,909 logical bytes below15GB. USB authorization previously verified; phone locked, no wake/grants/model/UI changes. Broader voice/floating/iQOO NPU/Office Kit/eligible submission remain pending. [Actual evidence and next gates](compatible-command-research.md).
+
+
 ## Qwen source-unit candidate — development gain, integration rejected
 
 Keep **Qwen3.5-0.8B Q4_0** and installed v0.16 unchanged. A source-unit contract

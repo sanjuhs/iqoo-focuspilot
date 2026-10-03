@@ -1,5 +1,10 @@
 # FocusPilot delivery plan
 
+## Current next step — qualify compatible System 1 plus Qwen pipeline
+
+The historical validator repair passes80/80 preservation,476+948 unsupported/wrong-route refusals and all12 prior captured-model proposals. The separate fast-plus-model development replay reaches14/18 supported with no losses. Run the prospectively frozen fresh100-row paired qualification after manual gold review, report model-only and pipeline outcomes separately, and integrate only if every fixed criterion passes. Qwen3.5-0.8B Q4_0, current app and protected phone state remain selected. Actual permissioned phone/Mira, iQOO/NPU, Office Kit and eligible accepted submission remain required. [Method](docs/compatible-command-research.md).
+
+
 ## Qwen source-unit candidate — development gain, integration rejected
 
 Keep **Qwen3.5-0.8B Q4_0** and installed v0.16 unchanged. A source-unit contract
