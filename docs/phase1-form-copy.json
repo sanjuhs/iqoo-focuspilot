@@ -58,11 +58,12 @@
       ],
       "maximum_size_as_displayed": "25 MB",
       "link_alternative_available": true,
-      "draft_link": null,
+      "draft_link": "https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf",
       "prepared_upload": "output/pdf/focuspilot-phase1-concept.pdf",
-      "status": "Four-page concept PDF prepared and visually checked. No dashboard upload or form fill occurred.",
+      "status": "PDF and immutable public GitHub link prepared; server file blob verified. No dashboard upload or link submission occurred.",
       "bytes": 25456,
-      "sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35"
+      "sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35",
+      "link_acceptance_by_dashboard_verified": false
     },
     "android_proficiency": {
       "dashboard_label": "Android proficiency",

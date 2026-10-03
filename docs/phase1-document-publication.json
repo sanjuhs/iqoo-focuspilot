@@ -1,0 +1,11 @@
+{
+  "schema": "focuspilot.phase1_document_publication.v1",
+  "verified_utc": "2026-10-03T01:18:50.222360+00:00",
+  "source_commit": "3f04ac3ca31deafc73ba288239177bcdb1f9c3d3",
+  "immutable_document_url": "https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf",
+  "bytes": 25456,
+  "local_sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35",
+  "server_git_blob_sha": "ac467928090772e604efd791770845a716e975bf",
+  "server_blob_matches_local_pdf": true,
+  "publication_scope": "Public repository document backup; no dashboard upload, form fill, attestation or submission."
+}

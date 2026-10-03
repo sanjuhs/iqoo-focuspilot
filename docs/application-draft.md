@@ -67,6 +67,10 @@ No experience level or achievement is inferred from agent-assisted implementatio
 - Required deck/document: the [four-page concept PDF](../output/pdf/focuspilot-phase1-concept.pdf)
   is prepared and visually checked, 25,456 bytes. No dashboard file upload or
   document-link selection has occurred. [Source and QA](phase1-document-evidence.json).
+  An [immutable public PDF link](https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf)
+  is ready; its server file identity matches the local PDF.
+  [Publication proof](phase1-document-publication.json). Dashboard acceptance of
+  that link has not been tested; the prepared PDF is also available for upload.
 
 ## Originality and pre-existing-work disclosure
 
