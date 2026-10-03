@@ -1,8 +1,8 @@
 plugins { id 'com.android.application' }
 
 def diagnosticRunner = providers.gradleProperty('diagnosticRunner').getOrElse('reset')
-if (!(diagnosticRunner in ['reset', 'nativeIsolation', 'commandGate', 'focusSummary']))
-    throw new GradleException('diagnosticRunner must be reset, nativeIsolation, commandGate or focusSummary')
+if (!(diagnosticRunner in ['reset', 'nativeIsolation', 'commandGate', 'focusSummary', 'compatibleCommand']))
+    throw new GradleException('diagnosticRunner must be reset, nativeIsolation, commandGate, focusSummary or compatibleCommand')
 
 def bundleLocalModel = providers.gradleProperty('bundleLocalModel').map { value ->
     if (!(value in ['true', 'false'])) throw new GradleException('bundleLocalModel must be true or false')
@@ -62,10 +62,12 @@ android {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 16
-        versionName '0.16-focus-summary-research'
+        versionCode 17
+        versionName '0.17-system-one-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
+            : diagnosticRunner == 'compatibleCommand'
+                ? 'dev.focuspilot.prototype.CompatibleReplayInstrumentation'
             : diagnosticRunner == 'focusSummary'
                 ? 'dev.focuspilot.prototype.FocusSummaryIsolationInstrumentation'
             : diagnosticRunner == 'commandGate'
@@ -75,7 +77,13 @@ android {
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }
     androidResources { noCompress += 'gguf' }
-    sourceSets { debug { if (bundleLocalModel) assets.srcDir(bundledAssets) } }
+    sourceSets {
+        debug { if (bundleLocalModel) assets.srcDir(bundledAssets) }
+        androidTest {
+            if (diagnosticRunner == 'compatibleCommand')
+                assets.srcDir(layout.buildDirectory.dir('generated/compatibleReplayFixtures'))
+        }
+    }
 }
 if (bundleLocalModel) tasks.configureEach {
     if (name == 'preDebugBuild') dependsOn(generateLocalModelAssets)

@@ -1,0 +1,87 @@
+{
+  "actual_app_files_edited_by_staging_author": false,
+  "android_source_compile": {
+    "apk_build_or_lint_or_instrumentation_claim_by_staging_author": false,
+    "cached_generated_resources_required": true,
+    "cached_sdk_api": 35,
+    "exit_code": 0,
+    "initial_log_sha256": "a5d43f956ce13916c6ff121d24cc706492103b7d9b261d4363756243100bab8f",
+    "initial_missing_resources_exit_code": 1,
+    "passed_log_sha256": "dece862a32d4e989fd23df958ea691a7e58fa3157857498e3049c7e8b6c37239",
+    "release": 17,
+    "source_count": 47
+  },
+  "baseline_and_candidate_authorization_commit": "68b74c5c38c2f5d9334b76989e073bd5da586bd8",
+  "baseline_app_sources_verified_unchanged_before_parent_promotion": true,
+  "files_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/compatible-app/CompatibleActionRouter.java": "57c2ca47193ab857092e3b7c762fa44facadbaa0c66d721fde10f53e22166f2d",
+    "prototype/compatible-app/CompatibleActionRouterTest.java": "941b214da852ad26f566efe41448f623e6a707b607a74b40ae74d800f529aae3",
+    "prototype/compatible-app/CompatibleReviewState.java": "e57eab7e92ed0011e5326e537140fa2db1043b5ba4e249f9cad82d56f9f3effe",
+    "prototype/compatible-app/CompatibleReviewStateTest.java": "55949fcfc926265f263fa83ca469fa8b79f18680ab9b337177beb77b26691607",
+    "prototype/compatible-app/README.md": "54ade5b685c4a1ef9c14593188a209880287cdba31e4c75e4c50042eed33a1b0",
+    "prototype/compatible-app/build/staged/LocalModel.java": "040ffeeb488d7c75eb8c990ff7b301ad3746c9d50df9a3e851594ecf40907831",
+    "prototype/compatible-app/build/staged/LocalModelActivity.java": "b2e4c5837aa312297606872feee7fdf6ec08e747ed3476829baf18a101601dae",
+    "prototype/compatible-app/integration.patch": "eea4cec4168e923dd8ecfa285d5f0125e2cfef52e852d67c0852c01aba5a6ec4",
+    "prototype/compatible-unit/CompatibleUnitCommand.java": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+    "prototype/structured-command/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/unit-command/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed"
+  },
+  "frozen_candidate_and_gate_dependency_bytes_unchanged": true,
+  "historical_baseline_git_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "2f6784c524ca9304fd714b86c04f5b1c3c5deb7e5ff562fbc34ae32c39e51e5d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "6926342f9976a0a9afdbab79378046fcca26007f2c3babecf51a1d53858f02cb",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/compatible-unit/CompatibleUnitCommand.java": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+    "prototype/structured-command/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/unit-command/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed"
+  },
+  "inference_calls_by_staging_author": 0,
+  "limitations": [
+    "No APK or phone deployment by staging author; source staging is distinct from actual newly packaged app behavior.",
+    "Pure ownership tests do not establish actual Android lifecycle, voice, TTS, rotation, cancellation or execution outcomes.",
+    "Qwen fallback trace/latency needs actual newly packaged app measurement; fast results must not be attributed to Qwen.",
+    "Explain executes the existing local status snapshot, not arbitrary generated answers or causal nudge explanations.",
+    "Parent owns version, complete app validation, signed packaging and physical phone checks."
+  ],
+  "manifest_head": "2e70d7027c59b772016ab998fd5bfbe21a81bd3c",
+  "model_native_artifacts_changed_by_staging_author": false,
+  "new_model_downloads_or_training_by_staging_author": false,
+  "parent_integrated_copies_match_staged_hashes": true,
+  "parent_integrated_reviewed_copies": true,
+  "parent_reported_post_copy_checks": {
+    "attribution": "Root agent message after independent review and source integration; not executed by staging author",
+    "integrated_jvm_tests_passed": 208,
+    "lint_errors": 0,
+    "lint_warnings": 72
+  },
+  "phone_or_permission_calls_by_staging_author": 0,
+  "promotion_copy_map": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleActionRouter.java": "prototype/compatible-app/CompatibleActionRouter.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleReviewState.java": "prototype/compatible-app/CompatibleReviewState.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleUnitCommand.java": "prototype/compatible-unit/CompatibleUnitCommand.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "prototype/compatible-app/build/staged/LocalModel.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "prototype/compatible-app/build/staged/LocalModelActivity.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/StructuredCommand.java": "prototype/structured-command/StructuredCommand.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/UnitCommand.java": "prototype/unit-command/UnitCommand.java",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompatibleActionRouterTest.java": "prototype/compatible-app/CompatibleActionRouterTest.java",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompatibleReviewStateTest.java": "prototype/compatible-app/CompatibleReviewStateTest.java"
+  },
+  "review_note": "Independent reviewer identified model-attributed pause reason; final staged source records source-neutral reviewed command provenance.",
+  "schema": "focuspilot.compatible_app_stage.v1",
+  "scope": "ISOLATED_APP_STAGING_THEN_PARENT_SOURCE_INTEGRATION_NOT_PHONE_VERIFICATION",
+  "tests": {
+    "adapter_tests": 6,
+    "classes": [
+      "dev.focuspilot.prototype.CompatibleActionRouterTest",
+      "dev.focuspilot.prototype.CompatibleReviewStateTest"
+    ],
+    "failed": 0,
+    "ownership_lifecycle_tests": 6,
+    "passed": 12,
+    "runner": "cached JUnit4.13.2/OpenJDK17; pure Java, no Android/native runtime",
+    "total": 12
+  }
+}

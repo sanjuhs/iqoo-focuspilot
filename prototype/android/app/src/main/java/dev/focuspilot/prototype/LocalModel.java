@@ -26,6 +26,13 @@ public final class LocalModel implements AutoCloseable {
         if (current == 0) throw new IllegalStateException("Model is closed");
         return nativeGenerate(current, renderPrompt(command), INTENT_GRAMMAR, 128, capture);
     }
+    /** Exact frozen unit schema; preparation/cancellation ownership is unchanged. */
+    public String generatePreparedUnitCommand(String command, boolean capture) {
+        long current=handle;
+        if(current==0) throw new IllegalStateException("Model is closed");
+        return nativeGenerate(current, CompatibleUnitCommand.renderPrompt(command),
+            CompatibleUnitCommand.GRAMMAR, 128, capture);
+    }
     public void cancel() { long current=handle; if(current!=0) nativeCancel(current); }
     @Override public void close() { long current=handle; handle=0; if(current!=0) nativeClose(current); }
     public static String renderPrompt(String command) {

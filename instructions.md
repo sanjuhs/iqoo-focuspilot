@@ -1,8 +1,19 @@
 # Instructions — FocusPilot
 
+## v0.17 source integration — physical replay pending
+
+Keep Qwen3.5-0.8B Q4_0. The exact qualified combined parser, source-unit prompt,
+fast provenance and single-use review ownership are integrated. All208 JVM tests
+pass; lint zero errors/72 warnings; signed light package inspection passes. Run the
+isolated300 target replay comparisons plus eight inert review checks with full
+protected-state preservation and original test-APK restoration. New native unit
+generation/UI/voice and actual iQOO/NPU/Office Kit remain separate requirements.
+[Current source/artifact scope](docs/compatible-pipeline-v17.md).
+
+
 ## Compatible System 1 and Qwen pipeline — fresh qualification passes
 
-Keep Qwen3.5-0.8B Q4_0. The separately frozen combined pipeline improves complete proposals4→19/50 on fresh informed synthetic wording,15gains/no losses; all50 unsupported requests refused and no wrong accepts. Model-only18/50 retains one alarm loss and raw predictions retain two semantic losses. All13 prospective criteria and independent actual-record replay pass. Coverage remains limited, including0/8 Explain. Stage exact reviewed app integration and Android replay; installed v0.16 remains unchanged until checks pass. [Evidence and limits](docs/compatible-command-research.md).
+Keep Qwen3.5-0.8B Q4_0. The separately frozen combined pipeline improves complete proposals4 → 19/50 on fresh informed synthetic wording,15 gains/no losses; all50 unsupported requests refused and no wrong accepts. Model-only18/50 retains one alarm loss and raw predictions retain two semantic losses. All13 prospective criteria and independent actual-record replay pass. Coverage remains limited, including0/8 Explain. Stage exact reviewed app integration and Android replay; installed v0.16 remains unchanged until checks pass. [Evidence and limits](docs/compatible-command-research.md).
 
 ## Qwen source-unit candidate — development gain, integration rejected
 

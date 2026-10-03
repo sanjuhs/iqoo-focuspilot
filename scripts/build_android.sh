@@ -18,6 +18,6 @@ fi
 "$task_root/prototype/native/build-android.sh"
 mkdir -p "$task_root/prototype/android/app/src/main/jniLibs/arm64-v8a"
 cp "$task_root/prototype/native/build/$task_native_dir/libfocuspilot_local.so" "$task_root/prototype/android/app/src/main/jniLibs/arm64-v8a/"
-cp "$task_root/prototype/native/java/LocalModel.java" "$task_root/prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java"
+# The app tracks its selected Java command wrapper; do not overwrite it with the historical host adapter.
 cd "$task_root/prototype/android"
 ./gradlew testDebugUnitTest assembleDebug lintDebug "$@"

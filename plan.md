@@ -1,8 +1,19 @@
 # FocusPilot delivery plan
 
+## v0.17 source integration — physical replay pending
+
+Keep Qwen3.5-0.8B Q4_0. The exact qualified combined parser, source-unit prompt,
+fast provenance and single-use review ownership are integrated. All208 JVM tests
+pass; lint zero errors/72 warnings; signed light package inspection passes. Run the
+isolated300 target replay comparisons plus eight inert review checks with full
+protected-state preservation and original test-APK restoration. New native unit
+generation/UI/voice and actual iQOO/NPU/Office Kit remain separate requirements.
+[Current source/artifact scope](docs/compatible-pipeline-v17.md).
+
+
 ## Current next step — integrate qualified System 1 plus Qwen pipeline
 
-Fresh combined pipeline4→19/50,15gains/no losses, all50 unsupported requests refused and no wrong accepts passes fixed criteria/independent actual audit. Model-only has one alarm loss; overall coverage and Explain remain limited. Stage exact frozen parser/unit prompt, explicit origin labels, no-load fast recognition, edit/cancel/foreground review ownership and existing explicit action confirmation. Build/check light APK and perform isolated actualAndroid replay with protected phone state preserved; nativeUnitphone/UI/voice remain separate checks. Qwen3.5-0.8B Q4_0 stays chosen. Actual iQOO/NPU, Office Kit and eligible accepted submission remain required. [Method](docs/compatible-command-research.md).
+Fresh combined pipeline4 → 19/50,15 gains/no losses, all50 unsupported requests refused and no wrong accepts passes fixed criteria/independent actual audit. Model-only has one alarm loss; overall coverage and Explain remain limited. Stage exact frozen parser/unit prompt, explicit origin labels, no-load fast recognition, edit/cancel/foreground review ownership and existing explicit action confirmation. Build/check light APK and perform isolated actualAndroid replay with protected phone state preserved; nativeUnitphone/UI/voice remain separate checks. Qwen3.5-0.8B Q4_0 stays chosen. Actual iQOO/NPU, Office Kit and eligible accepted submission remain required. [Method](docs/compatible-command-research.md).
 
 ## Qwen source-unit candidate — development gain, integration rejected
 

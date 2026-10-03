@@ -1,0 +1,132 @@
+{
+  "schema": "focuspilot.compatible_integrated_source_audit.v1",
+  "verified": true,
+  "review_head": "2e70d7027c59b772016ab998fd5bfbe21a81bd3c",
+  "scope": "Read-only integrated source review before package and protected phone verification; no test/build/model/phone operations by reviewer.",
+  "copies": [
+    {
+      "source": "prototype/compatible-app/build/staged/LocalModel.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java",
+      "sha256": "040ffeeb488d7c75eb8c990ff7b301ad3746c9d50df9a3e851594ecf40907831",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-app/build/staged/LocalModelActivity.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java",
+      "sha256": "b2e4c5837aa312297606872feee7fdf6ec08e747ed3476829baf18a101601dae",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-app/CompatibleActionRouter.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleActionRouter.java",
+      "sha256": "57c2ca47193ab857092e3b7c762fa44facadbaa0c66d721fde10f53e22166f2d",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-app/CompatibleReviewState.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleReviewState.java",
+      "sha256": "e57eab7e92ed0011e5326e537140fa2db1043b5ba4e249f9cad82d56f9f3effe",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-unit/CompatibleUnitCommand.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleUnitCommand.java",
+      "sha256": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/unit-command/UnitCommand.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/UnitCommand.java",
+      "sha256": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/structured-command/StructuredCommand.java",
+      "target": "prototype/android/app/src/main/java/dev/focuspilot/prototype/StructuredCommand.java",
+      "sha256": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-app/CompatibleActionRouterTest.java",
+      "target": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompatibleActionRouterTest.java",
+      "sha256": "941b214da852ad26f566efe41448f623e6a707b607a74b40ae74d800f529aae3",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-app/CompatibleReviewStateTest.java",
+      "target": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompatibleReviewStateTest.java",
+      "sha256": "55949fcfc926265f263fa83ca469fa8b79f18680ab9b337177beb77b26691607",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-unit/CompatibleUnitCommandTest.java",
+      "target": "prototype/android/app/src/test/java/dev/focuspilot/prototype/CompatibleUnitCommandTest.java",
+      "sha256": "f7ab91becf08657f745923311c5a866efdeb727989f7e455353efa29a3e1da5b",
+      "byte_identical": true
+    },
+    {
+      "source": "prototype/compatible-phone/CompatibleReplayInstrumentation.java",
+      "target": "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/CompatibleReplayInstrumentation.java",
+      "sha256": "5b9bc0abce1475ba51e41b7ccb38716d744ef3c1d25f4c50c458397400b61ee1",
+      "byte_identical": true
+    }
+  ],
+  "unchanged_protected_files_sha256": {
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "prototype/native/core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "prototype/native/jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "prototype/android/app/src/main/AndroidManifest.xml": "674fa1d7c253fccf55c2d29a77ede84b688b28713e694788df724825d2c25adf",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d"
+  },
+  "reviewed_build_and_replay_files_sha256": {
+    "scripts/build_android.sh": "cf722d30b705c9d5996e7b1d023c4f28b619aef68fe2c378f957c8c61292acc5",
+    "prototype/android/app/build.gradle": "6b93eba7fc70a32bf6f5befa7d8110ea9a53aeb4f77e88351cb7e31d1226e744",
+    "prototype/compatible-phone/phone_replay.py": "0223307538d3aeb9946615359baee184ac2e75072f3f03833a269e7fd3bcd088",
+    "prototype/compatible-phone/CompatibleReplayInstrumentation.java": "5b9bc0abce1475ba51e41b7ccb38716d744ef3c1d25f4c50c458397400b61ee1",
+    "prototype/compatible-phone/generate_fixtures.py": "d71aefbf0be04857ed62b0376f35862ded8133c885c3ca58cf3b91b303b81a7c",
+    "prototype/compatible-eval/source-freeze.json": "0c31caf962efca84d0150d599b987b192020a0624bb06380521fb84ee649716e"
+  },
+  "findings": {
+    "original_prompt_and_grammar_retained": true,
+    "unit_fallback_exact_frozen_prompt_and_grammar": true,
+    "submit_thread_preparation_before_queueing": true,
+    "prepared_generation_does_not_reset_cancel": true,
+    "fast_route_returns_before_model_prepare_or_generation": true,
+    "fast_origin_and_null_response": true,
+    "proposal_and_trace_cleared_on_new_request_edit_cancel_voice_load_stop": true,
+    "foreground_epoch_exact_text_and_idle_rechecked_at_review_and_confirm": true,
+    "consume_before_execute_single_use": true,
+    "neutral_pause_provenance_fixed": true,
+    "build_script_preserves_tracked_wrapper": true,
+    "version_code": 17,
+    "version_name": "0.17-system-one-research",
+    "compatible_runner_assets_test_only": true
+  },
+  "concrete_unresolved_source_blockers": [],
+  "delivery_audit_pending": {
+    "source": "Bind committed source, integrated copies, selected parser/native/prompt dependencies, build flags and actual runner sources.",
+    "build": "Count actual JUnit XML tests/failures/errors/skips; inspect lint report and bound build logs without claiming source-only checks as APK proof.",
+    "packages": "Bind actual light/bundled/test/restore APK SHA and certificate, v17 identity, native SHA, model payload SHA or absence, selected instrumentation, exact fixture asset, no target parser/helper shadows or native/model payload in test APK.",
+    "protected_replay": "Bind actual private report/instrumentation and generated fixture manifest. Verify100 already-seen fixtures times3 routes=300 exact full-slot/acceptance/origin parity checks and8 inert ownership checks; exact target process/UID, before/after checkpoint/preferences/grants/model/services unchanged; previous test restored and v17 target left installed.",
+    "release": "Bind privacy-safe public summaries and actual private artifact hashes; keep fresh host accuracy separate from Android deterministic replay. No new phone inference/latency, UI, voice, action, NPU, Office Kit or event eligibility claim follows."
+  },
+  "counts_are_expected_not_actual_delivery": {
+    "fixtures": 100,
+    "route_parity": 300,
+    "review_ownership": 8,
+    "total": 308
+  },
+  "private_test_package_readonly_check": {
+    "path": "artifacts/focuspilot-research-v017-compatible-private-test.apk",
+    "sha256": "43749f6a1844f34ced257308dd5d1369fd7b55bd551f94d936d5487d71cd13d4",
+    "bytes": 82133,
+    "dex_class_definitions": 38,
+    "app_main_class_shadows": [],
+    "selected_runner_defined": true,
+    "native_or_model_payload": false,
+    "fixture_asset_bytes": 58167,
+    "fixture_asset_sha256": "e482515b40ac547a6ab60302273302641b99c51418f037f3af599efe15de2370",
+    "method": "Read ZIP payloads and DEX string/type/class-definition tables directly in memory; no extraction, runner execution or phone call."
+  }
+}

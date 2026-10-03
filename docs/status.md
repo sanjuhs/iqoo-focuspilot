@@ -1,9 +1,20 @@
 # Verified status
 
+## v0.17 source integration — physical replay pending
+
+Keep Qwen3.5-0.8B Q4_0. The exact qualified combined parser, source-unit prompt,
+fast provenance and single-use review ownership are integrated. All208 JVM tests
+pass; lint zero errors/72 warnings; signed light package inspection passes. Run the
+isolated300 target replay comparisons plus eight inert review checks with full
+protected-state preservation and original test-APK restoration. New native unit
+generation/UI/voice and actual iQOO/NPU/Office Kit remain separate requirements.
+[Current source/artifact scope](compatible-pipeline-v17.md).
+
+
 ## Compatible pipeline — audited fresh qualification, Android integration pending
 
-- One frozen native CPU attempt/arm completes100 JSON/EOS requests. Combined pipeline4→19/50 supported,15gains/no losses, all50 unsupported refused and zero wrong accepts. All13 fixed criteria pass; independent605-binding/six-replay audit confirms.
-- Model-only18/50 has15gains/one alarm loss; raw supported intent34→44/50 has12gains/two losses. Pipeline4fast/15checked/81unknown;31supported refusals and0/8 Explain remain explicit. Host subsequent medians452.403→925.427ms describe model work, not phone/pipeline speed.
+- One frozen native CPU attempt/arm completes100 JSON/EOS requests. Combined pipeline4 → 19/50 supported,15 gains/no losses, all50 unsupported refused and zero wrong accepts. All13 fixed criteria pass; independent605-binding/six-replay audit confirms.
+- Model-only18/50 has15 gains/one alarm loss; raw supported intent34→44/50 has12gains/two losses. Pipeline4fast/15checked/81unknown;31 supported refusals and0/8 Explain remain explicit. Host subsequent medians452.403→925.427ms describe model work, not phone/pipeline speed.
 - All100 manual slots independently reviewed before outputs. One pre-output app-quota correction and one resume wording clarification are preserved; final clarification changes no gold. No output-driven source/label changes or retries.
 - Exact reviewed app integration/Android replay now prepared. Installed v0.16, selected weights/native and protected phone state remain unchanged. Full voice/floating, actual iQOO/NPU, Office Kit and eligible accepted submission remain pending. [Evidence](compatible-command-research.md).
 
