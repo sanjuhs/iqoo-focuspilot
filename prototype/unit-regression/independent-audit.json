@@ -1,0 +1,247 @@
+{
+  "schema": "focuspilot.unit_known_regression_independent_audit.v1",
+  "status": "verified_results_failed_preservation_and_false_accept_gate",
+  "source_commit": "7a40125f6f87f8355ee4eaacfb2fd3ed863da5db",
+  "scope": "Bounded read-only actual-record audit and one stdout Java replay of all1582 fixed mock routes. No model call, phone operation, corpus or source edit; this measures validator behavior under forced replies, not model predictions.",
+  "verification": {
+    "committed_source_identities": 8,
+    "historical_hashes": 6,
+    "known_rows": 226,
+    "route_inventory": 1582,
+    "java_replay_byte_identical": true,
+    "all_manual_gold_kind_slots_app_mapping_checked": true,
+    "all_details_and_split_counts_recomputed": true,
+    "all18_prior_regressions_are_safe_refusals": true,
+    "model_calls": 0,
+    "phone_calls": 0,
+    "fresh_confirmation": false,
+    "promoted": false
+  },
+  "counts": {
+    "prior_accepted": 80,
+    "prior_preserved": 62,
+    "prior_regressions": 18,
+    "supported_oracle_routes": 158,
+    "supported_oracle_complete": 125,
+    "supported_oracle_wrong_accepts": 0,
+    "unknown_routes": 476,
+    "unknown_false_accepts": 1,
+    "supported_wrong_routes": 948,
+    "supported_wrong_route_false_accepts": 0
+  },
+  "by_known_split": {
+    "train": {
+      "supported_oracle": 96,
+      "complete": 75
+    },
+    "development": {
+      "supported_oracle": 12,
+      "complete": 8
+    },
+    "confirmation-v2": {
+      "supported_oracle": 50,
+      "complete": 42
+    }
+  },
+  "safe_refusal_regressions": [
+    {
+      "route_id": "d012_start_focus",
+      "row_id": "train_prefix_focus_span_1",
+      "candidate_accepted": false,
+      "reason": "No matching focus-start request evidence",
+      "original_accepted_kind": "START_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d013_start_focus",
+      "row_id": "train_prefix_focus_span_2",
+      "candidate_accepted": false,
+      "reason": "No matching focus-start request evidence",
+      "original_accepted_kind": "START_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d016_pause_focus",
+      "row_id": "train_suspend_current_concentration_1",
+      "candidate_accepted": false,
+      "reason": "No matching pause request evidence",
+      "original_accepted_kind": "PAUSE_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d017_pause_focus",
+      "row_id": "train_suspend_current_concentration_2",
+      "candidate_accepted": false,
+      "reason": "No matching pause request evidence",
+      "original_accepted_kind": "PAUSE_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d022_pause_focus",
+      "row_id": "train_abort_deep_work_1",
+      "candidate_accepted": false,
+      "reason": "No matching pause request evidence",
+      "original_accepted_kind": "PAUSE_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d023_pause_focus",
+      "row_id": "train_abort_deep_work_2",
+      "candidate_accepted": false,
+      "reason": "No matching pause request evidence",
+      "original_accepted_kind": "PAUSE_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d064_open_app",
+      "row_id": "train_bring_up_application_1",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_SETTINGS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d065_open_app",
+      "row_id": "train_bring_up_application_2",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_SETTINGS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d067_open_app",
+      "row_id": "train_display_calculation_app_2",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CALCULATOR",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d068_open_app",
+      "row_id": "train_take_to_clock_1",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CLOCK",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d074_open_app",
+      "row_id": "train_go_to_clock_application_1",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CLOCK",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d075_open_app",
+      "row_id": "train_go_to_clock_application_2",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CLOCK",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d076_open_app",
+      "row_id": "train_launch_settings_app_1",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_SETTINGS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d077_open_app",
+      "row_id": "train_launch_settings_app_2",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_SETTINGS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d078_open_app",
+      "row_id": "train_open_calculator_now_1",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CALCULATOR",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d079_open_app",
+      "row_id": "train_open_calculator_now_2",
+      "candidate_accepted": false,
+      "reason": "No matching approved-app launch evidence",
+      "original_accepted_kind": "OPEN_CALCULATOR",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d132_start_focus",
+      "row_id": "confirm_back_to_focusing_supported",
+      "candidate_accepted": false,
+      "reason": "No matching focus-start request evidence",
+      "original_accepted_kind": "START_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    },
+    {
+      "route_id": "d152_pause_focus",
+      "row_id": "confirm_suspend_focused_work_mode_supported",
+      "candidate_accepted": false,
+      "reason": "No matching pause request evidence",
+      "original_accepted_kind": "PAUSE_FOCUS",
+      "candidate_kind": "UNKNOWN"
+    }
+  ],
+  "unsupported_forced_reply_accept": [
+    {
+      "route_id": "d219_explain",
+      "row_id": "confirm_focus_session_time_remaining_unknown",
+      "forced_mock_reply": {
+        "intent": "explain"
+      },
+      "candidate_canonical": {
+        "intent": "explain"
+      },
+      "reason": "Review required; no action executed",
+      "request_sha256": "ebbf0993dd9aeb0b7d2f614a1a3d7f3c24a963553172862e7b224fc84c559e06"
+    }
+  ],
+  "preservation_and_false_accept_checks_pass": false,
+  "limitations": [
+    "Known previously exposed correlated synthetic wording; development only",
+    "Oracle/mock replies are not model predictions or accuracy evidence",
+    "Finite all-intent routes do not cover arbitrary output values",
+    "No Android execution, phone, NPU, fresh/general safety or promotion claim",
+    "One deterministic mock response per route using first source quantity/time/allowed app where present, valid fallback when absent. Multiple-quantity adversaries use first quantity; this is not exhaustive output safety."
+  ],
+  "files_sha256": {
+    "prototype/unit-regression/readiness.json": "a9cd71d7fa41a75117d3cda4a8fbc4844235b8268f406a8fbeec134dd0ab4165",
+    "prototype/unit-regression/results.json": "d45b07b213c382555129c2b4f0eccb0b86467b2b277b269c11072aef1abcd7ac",
+    "prototype/unit-regression/build/evaluation/results.json": "d45b07b213c382555129c2b4f0eccb0b86467b2b277b269c11072aef1abcd7ac",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/structured-command/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/unit-command/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+    "prototype/unit-regression/README.md": "42767c56aab2772d69c53c4344453bbcf866b393035b16b3da3b5fdb28c05df7",
+    "prototype/unit-regression/UnitRegression.java": "003d709a21fedd33c12b4741d8a0cc3ddf1b68b8a5ae4f6079f9ca965bb16307",
+    "prototype/unit-regression/regression.py": "3e72f99ae62f88b4bb172994a6632faf2e88493c65ad6226d14b1dd1a860fb91",
+    "prototype/unit-regression/test_regression.py": "81587c0f3ca8f2c83950763566adf01da3a1ec39c34d79703a1f232f6840dc96",
+    "prototype/qwen-balanced-data/build/confirmation-v2.jsonl": "1ec1fbd3633d399f1dcb4c462a18d395741cda582244c818c0763273ca8f6883",
+    "prototype/qwen-balanced-data/build/development.jsonl": "aaa8064ddfe5a2746c1df195050b7df9315af18883a2de1f5d93f5eae9034e6d",
+    "prototype/qwen-balanced-data/build/train.jsonl": "be020b76800398126d0fdabf48c277269a56da1d5980ab78e5a11bd1380191d1",
+    "prototype/qwen-natural-validation/build/final-development/baseline-known-output.tsv": "6b0e9a0d2af32c75f816fc346d6e2bc373fc22ed366b4519e79992ff5893db97",
+    "prototype/qwen-natural-validation/build/final-development/known-all-routes.tsv": "e86abbf7e77b36fcd2c78270ffc36774f2baf489c67fa2f0dfc8f46b0cc552ad",
+    "prototype/qwen-natural-validation/development-results.json": "248316995a8cde846afd10f7736224f024ee43638936386f35e3ea4e679bc070",
+    "prototype/unit-regression/build/prepared/unit-input.tsv": "c6cbcb62e0605abdf1b1c9ecda0c82056f2cae35bfb873a5247462ec286f4b94",
+    "prototype/unit-regression/build/prepared/route-gold.json": "81fc546cedc75bb642958c9b174804d85c6d2dfbc13a345fe71419c82051dcc6",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/CommandNumberWords.class": "55929e2d233157fb543306b5eb5be757fd262e453686d9e0677dd68172f5b042",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/UnitCommand.class": "074966251f6efb5c6a2c21108ace4d6ae4d40db1eac5bec5c1c91a2ab9931fc5",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/StructuredCommand.class": "a8f6839c259c0b36afb0989857fd943288b2e7dffb1ffb0b79c7ab71888560be",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/StructuredCommand$Json.class": "206506d6045d0adff81e897be859b5c547e4df3c22d99ccd41cc7ce9af40ef7d",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/UnitCommand$Proposal.class": "6d593ad9313b0b4fdf5eeec5e37568e36baa02f257472c19e0269fd6ccd36c32",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/StructuredCommand$Proposal.class": "8cb80b11a47e3c6cc27aa9c599c25d0d9c9f4aee520709b112163a60fbd7ebcf",
+    "prototype/unit-regression/build/evaluation/classes/dev/focuspilot/prototype/UnitRegression.class": "ec6e061942b2533c8eb25865d33a19fdcbe02fc332a1b71c631d1048b2277985",
+    "prototype/unit-regression/build/evaluation/unit-decisions.tsv": "5e588ff8b1e7e8be4139f3ce4445f40c754d33c35668add61ac3a9d41fc5b7be",
+    "prototype/unit-regression/build/evaluation/details.json": "6b59bfe43843a4982205952d955e2484ec70ac05d1f5680a5fa61a1b19723354"
+  },
+  "publication_redaction": {
+    "original_private_audit_sha256": "136d0156d6bcd757adf478cc7b76aaec619ab571a752fa3b9d80f1c8abeaf770",
+    "removed": "Raw request text and original gold numeric slots omitted from public metadata; original audit preserved unchanged in ignored build. Counts, kind/reason findings, replay results and evidence hashes retained."
+  }
+}

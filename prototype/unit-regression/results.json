@@ -1,0 +1,57 @@
+{
+  "by_known_split": {
+    "confirmation-v2": {
+      "complete": 42,
+      "supported_oracle": 50
+    },
+    "development": {
+      "complete": 8,
+      "supported_oracle": 12
+    },
+    "train": {
+      "complete": 75,
+      "supported_oracle": 96
+    }
+  },
+  "counts": {
+    "prior_accepted": 80,
+    "prior_preserved": 62,
+    "prior_regressions": 18,
+    "supported_oracle_complete": 125,
+    "supported_oracle_routes": 158,
+    "supported_oracle_wrong_accepts": 0,
+    "supported_wrong_route_false_accepts": 0,
+    "supported_wrong_routes": 948,
+    "unknown_false_accepts": 1,
+    "unknown_routes": 476
+  },
+  "decision_output_sha256": "5e588ff8b1e7e8be4139f3ce4445f40c754d33c35668add61ac3a9d41fc5b7be",
+  "details_sha256": "6b59bfe43843a4982205952d955e2484ec70ac05d1f5680a5fa61a1b19723354",
+  "development_only": true,
+  "fresh_confirmation": false,
+  "limitations": [
+    "Known previously exposed correlated synthetic wording; development only",
+    "Oracle/mock replies are not model predictions or accuracy evidence",
+    "Finite all-intent routes do not cover arbitrary output values",
+    "No Android execution, phone, NPU, fresh/general safety or promotion claim",
+    "One deterministic mock response per route using first source quantity/time/allowed app where present, valid fallback when absent. Multiple-quantity adversaries use first quantity; this is not exhaustive output safety."
+  ],
+  "model_calls": 0,
+  "phone_calls": 0,
+  "preservation_and_false_accept_checks_pass": false,
+  "preview_preservation_required": false,
+  "promoted": false,
+  "readiness_sha256": "a9cd71d7fa41a75117d3cda4a8fbc4844235b8268f406a8fbeec134dd0ab4165",
+  "schema": "focuspilot.unit_known_regression.v1",
+  "source_authorization_commit": "7a40125f6f87f8355ee4eaacfb2fd3ed863da5db",
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/structured-command/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/unit-command/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+    "prototype/unit-regression/README.md": "42767c56aab2772d69c53c4344453bbcf866b393035b16b3da3b5fdb28c05df7",
+    "prototype/unit-regression/UnitRegression.java": "003d709a21fedd33c12b4741d8a0cc3ddf1b68b8a5ae4f6079f9ca965bb16307",
+    "prototype/unit-regression/readiness.json": "a9cd71d7fa41a75117d3cda4a8fbc4844235b8268f406a8fbeec134dd0ab4165",
+    "prototype/unit-regression/regression.py": "3e72f99ae62f88b4bb172994a6632faf2e88493c65ad6226d14b1dd1a860fb91",
+    "prototype/unit-regression/test_regression.py": "81587c0f3ca8f2c83950763566adf01da3a1ec39c34d79703a1f232f6840dc96"
+  }
+}

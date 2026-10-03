@@ -1,5 +1,23 @@
 # Instructions — FocusPilot
 
+## Qwen source-unit candidate — development gain, integration rejected
+
+Keep **Qwen3.5-0.8B Q4_0** and installed v0.16 unchanged. A source-unit contract
+improves seen-development complete commands 9→12/18, three gains/no complete losses,
+with all six unsupported requests refused. Raw intent 13→13/18 hides one semantic
+gain and one loss; both are recorded. Actual 24-row CPU capture and independent
+four-route replay audit pass; no training or fresh/phone accuracy claim.
+
+The broader pure-gate check preserves only 62/80 prior accepted proposals and
+accepts one unsupported weather-query mock route among 476 unknown routes. No Qwen
+inference is involved in that check. This candidate fails integration conditions.
+No post-output source/label fitting or retry; model/prompt/gate/native stay selected.
+Next source revision must retain accepted behavior and constrain off-domain questions
+before fresh qualification. Phone is verified locked (deviceLocked=1/showing=true);
+no permission/wake/UI/action changes occurred. Actual voice/floating, iQOO/NPU,
+Office Kit and eligible accepted submission remain required. [Full evidence](docs/unit-command-research.md).
+
+
 ## Structured Qwen commands — development diagnostic
 
 Keep user-selected **Qwen3.5-0.8B Q4_0** as the main model. A separately frozen
