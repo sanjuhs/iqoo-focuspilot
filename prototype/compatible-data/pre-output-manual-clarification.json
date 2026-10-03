@@ -1,0 +1,37 @@
+{
+  "all100_gold_objects_unchanged": true,
+  "archives_sha256": {
+    "authoring-audit-before-review.json": "522ba503fe1d8696e4d6d9a7677f9feaf88f1a7bc37b2149461580b7ff9e7002",
+    "build/author-confirmation-before-review-attempt02.jsonl": "ed5e6237a5af594670b41d0fd112f055287f7b2a312fbc36682bff6042a8bc80",
+    "build/confirmation-before-review-attempt02.jsonl": "ed5e6237a5af594670b41d0fd112f055287f7b2a312fbc36682bff6042a8bc80",
+    "build/confirmation-requests-before-review-attempt02.tsv": "8b1eddbd0eecb256fb2e2d8fd6cfe834769734448c39c4c68a71ecb1b56cfcd3",
+    "corpus-manifest-before-review.json": "37a77523e10e147ea99da46644ade9c20974db62979e657e6e8a28efff1f016d"
+  },
+  "attempt03_jsonl_sha256": "17cd6c10d14ed193aa8e4bce8739d70ffdb14fd7354738f07d5f975713a228fa",
+  "attempt03_script_sha256": "3adda2cddac5582ca508614ccf5e29b64ecff27b30d66fdfa5b1d157321acac6",
+  "before_model_or_gate_outputs": true,
+  "candidate_source_tests_prompt_outputs_read": false,
+  "changed_fields": [
+    "utterance"
+  ],
+  "changed_id_sha256": "214446b0c05a05f6d73c072bd9daf69dad87faf0b4f718b621a2d2ee23260183",
+  "changed_utterances": 1,
+  "contract_and_opaque_exclusions": "PASS",
+  "current_jsonl_sha256": "17cd6c10d14ed193aa8e4bce8739d70ffdb14fd7354738f07d5f975713a228fa",
+  "current_manifest_sha256": "aae4e86520ec8e889ed63e8dc0b06db17688d4f86625ff5516afc6c0bcd02e40",
+  "current_requests_sha256": "fb633ebee1945c49ed6938e6be66e76ca68cc3995fb1c2a5575ae88f9ec10f1f",
+  "filtered_using_outputs": false,
+  "gold_objects_sha256": "6c1c179421c9c0c7c9abc85c38da0523d2191dd6cfb388a8faccd94a564766d6",
+  "model_gate_or_oracle_calls": 0,
+  "new_row_sha256": "ae45a2abbcb6328787110955fcfd66b5ed69ec282ac98df4a51629816acf786e",
+  "new_utterance_sha256": "6d96aa2037eb65b9373ef2908a1c34a900127c2ed6a1c926a3e1cbcdb9797ea5",
+  "old_row_sha256": "6e537ef2147c3d9104ecff24babd9500890af993a410228d110fea09d4c73dae",
+  "old_utterance_sha256": "4a32243fc6635425e10ee5d854ee536f16fc008bf93db9398b43ff2e234f90b7",
+  "opaque_overlap_rejections": 0,
+  "reason": "Independent pre-output semantic review found that the original resume/no-countdown wording could imply removing an existing paused countdown. The clarified wording explicitly resumes own focus without starting a new countdown. Duration0/source0-none gold is unchanged.",
+  "root_and_independent_final_review_pending": true,
+  "schema": "focuspilot.compatible_unit_manual_clarification.v1",
+  "selected_author_sha256": "17cd6c10d14ed193aa8e4bce8739d70ffdb14fd7354738f07d5f975713a228fa",
+  "source_authorization_commit": "68b74c5c38c2f5d9334b76989e073bd5da586bd8",
+  "unchanged_byte_equivalent_rows": 99
+}

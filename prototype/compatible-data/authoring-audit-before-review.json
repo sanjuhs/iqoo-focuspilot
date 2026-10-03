@@ -1,0 +1,145 @@
+{
+  "after_model_output_label_changes": 0,
+  "all_rows_manual_review_required_before_any_model_or_gate_outputs": true,
+  "attempts": [
+    {
+      "app_counts": {
+        "calculator": 2,
+        "clock": 3,
+        "settings": 3
+      },
+      "attempt": 1,
+      "author_jsonl_sha256": "b182ce2ab332585f29ccae11449478d8e75fa26d80f479f2099649ff775628b4",
+      "contract_validation": "REJECTED_LOCKED_APP_QUOTA_MISMATCH",
+      "opaque_overlap_check": "NOT_REACHED_AFTER_CONTRACT_REJECTION",
+      "preserved": true,
+      "rows": 100,
+      "script_sha256": "90808b7f83a4258f67ac2c5cbc1f072b4f12e38821824d036471fc8c801362c9"
+    },
+    {
+      "app_counts": {
+        "calculator": 3,
+        "clock": 2,
+        "settings": 3
+      },
+      "attempt": 2,
+      "author_jsonl_sha256": "ed5e6237a5af594670b41d0fd112f055287f7b2a312fbc36682bff6042a8bc80",
+      "contract_validation": "PASS",
+      "opaque_overlap_check": "PASS",
+      "overlap_collisions": 0,
+      "preserved": true,
+      "rows": 100,
+      "script_sha256": "afbd3f55c12ae7ed330931c052707a960b53cd0e90ff5e578f0d4466fa7e7a0f"
+    }
+  ],
+  "by_intent": {
+    "alarm": 8,
+    "explain": 8,
+    "open_app": 8,
+    "pause_focus": 9,
+    "start_focus": 9,
+    "timer": 8,
+    "unknown": 50
+  },
+  "candidate_validator_tests_prompt_outputs_read": false,
+  "corpus_manifest_sha256": "37a77523e10e147ea99da46644ade9c20974db62979e657e6e8a28efff1f016d",
+  "families": 50,
+  "frozen_jsonl_sha256": "ed5e6237a5af594670b41d0fd112f055287f7b2a312fbc36682bff6042a8bc80",
+  "limitations": [
+    "Author is informed, not blind; no population claim.",
+    "Opaque novelty excludes exact/normalized wording and known family/template hashes; it does not establish semantic independence.",
+    "Generic contract/arithmetic validation cannot establish source-wording semantics; parent and independent reviewer must inspect every row."
+  ],
+  "manual_review_considerations": [
+    "Untimed starts include resume with no countdown; legitimate privacy/no-audio preferences remain supported.",
+    "Manual minute/hour quantities and canonical seconds must be checked against exact wording; there are one-, two-hour and multiword hundred-second cases.",
+    "Four AM/PM alarms, two numeric24-hour alarms, spoken eleven-oh-five, midday and midnight require exact manual clock slots.",
+    "Malformed clock arguments are intentionally invalid signed/out-of-range quantities, not slots to silently repair.",
+    "Five foreign-topic requests contain focus/reminder words yet ask weather/gold-price/astronomy/volcano/cricket questions.",
+    "Third-party requests explicitly concern another handset or another person's session on their phone.",
+    "Privacy-capture, destructive, messaging and payment neighbors add actual unsupported capabilities; ordinary purpose clauses and privacy preferences alone do not."
+  ],
+  "model_gate_or_oracle_calls": 0,
+  "model_or_gate_filtering": false,
+  "pre_output_revision": {
+    "ambiguity_driven_revisions": 0,
+    "changed_rows": 2,
+    "changes": [
+      {
+        "changed_fields": [
+          "counterpart_id",
+          "expected",
+          "expected_raw",
+          "family",
+          "id",
+          "template_id",
+          "utterance"
+        ],
+        "new_id_sha256": "5a4d5abdd2f8e63811dea6b6aebcfa9a47f58b2b1f7354b1bb4ccb051ba517fc",
+        "new_row_sha256": "3a0b10ca55da9ba8af97c966eed9c4b7a78046a0d1ec68cdaf33a1d4a391d31e",
+        "old_id_sha256": "1eb25746168ce88a97bab344c632eff1b3f8896f1457debc57bca99d526876e9",
+        "old_row_sha256": "453d14f1f4298b55a43b64752e52eff280fa85203756903d716f50740cc176b8",
+        "row_index": 82
+      },
+      {
+        "changed_fields": [
+          "counterpart_id",
+          "family",
+          "id",
+          "template_id",
+          "utterance"
+        ],
+        "new_id_sha256": "a4e1ae0ab9c967c8eb29f4e8ab16d172c6623630d44b13ede21622abb8a36b18",
+        "new_row_sha256": "69146e361583c70880dbb55949aed5519819eaae1068ddf876932e58594e3a35",
+        "old_id_sha256": "762d28835c23a670d15cd15cdbf3be8c94879cd0c87b73d2c02f69658aeed369",
+        "old_row_sha256": "52158aa39f8cf5c0d625f6e3764f83e4ee2cdc5cc3bf112997abb50a30b19ae9",
+        "row_index": 83
+      }
+    ],
+    "inference_available": false,
+    "reason": "One complete app/third-party pair changed from Clock to Calculator solely to satisfy already locked Settings3/Calculator3/Clock2 quota. Canonical supported app gold and source raw app gold changed together; unknown gold remained unknown.",
+    "unchanged_byte_equivalent_rows": 98
+  },
+  "requests_tsv_sha256": "8b1eddbd0eecb256fb2e2d8fd6cfe834769734448c39c4c68a71ecb1b56cfcd3",
+  "rows": 100,
+  "schema": "focuspilot.compatible_unit_authoring_audit.v1",
+  "scope": "INFORMED_SYNTHETIC_FRESH_CONFIRMATION_AUTHORING_PRE_OUTPUT",
+  "selected_author_sha256": "ed5e6237a5af594670b41d0fd112f055287f7b2a312fbc36682bff6042a8bc80",
+  "semantic_review_pending": true,
+  "source_authorization_commit": "68b74c5c38c2f5d9334b76989e073bd5da586bd8",
+  "source_unit_counts": {
+    "hours": 3,
+    "minutes": 8,
+    "none": 2,
+    "seconds": 4
+  },
+  "supported_hard_tag_counts": {
+    "am_pm": 4,
+    "clock_24h": 2,
+    "current_or_spoken_focus_pause": 4,
+    "duration_boundary": 1,
+    "midnight_noon": 2,
+    "nudge_cause": 4,
+    "pause_preservation": 9,
+    "resume_vs_start": 1,
+    "spoken_number": 15,
+    "unit_hours": 3,
+    "unit_minutes": 8,
+    "unit_seconds": 4,
+    "untimed_start": 2
+  },
+  "unknown_boundary_counts": {
+    "compound": 5,
+    "conditional": 4,
+    "destructive": 4,
+    "foreign_topic": 5,
+    "malformed_argument": 5,
+    "messaging": 3,
+    "negation": 5,
+    "payments": 3,
+    "privacy_capture": 4,
+    "quoted": 4,
+    "third_party": 4,
+    "unsupported_target": 4
+  }
+}
