@@ -1,0 +1,14 @@
+{
+  "schema": "focuspilot.v020_pitch_first_qa.v1",
+  "passed": false,
+  "qa_source_commit": "4ec1d17b74560df615fa394d29b860a4ebf20595",
+  "failure": "Guide sample at1s compared using requested overlay x=1345, not actual YUV420 encoded x=1344; one-pixel crop mismatch.",
+  "first_sample_psnr_db": 23.428365698505182,
+  "diagnostic_yuv_reference_psnr_db_at_1345": 23.439168851575303,
+  "diagnostic_yuv_reference_psnr_db_at_1344": 37.59607756276735,
+  "private_log_sha256": "2b3e487908766f8e47014daf1804218d5cb628b800d59969e3a7f34f89a65d08",
+  "video_rerendered": false,
+  "video_unchanged": true,
+  "correction": "Match actual encoded even chroma-grid position and YUV420 reference; keep28dB threshold, all failed artifacts and separate named recovery output.",
+  "quality_claim": "First attempt failed; a corrected separate QA is required."
+}

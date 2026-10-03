@@ -22,9 +22,11 @@ def psnr(a,b):
     data=zip(a.tobytes(),b.tobytes());mse=sum((x-y)**2 for x,y in data)/(a.width*a.height*3)
     return 99.0 if mse==0 else 10*math.log10(255**2/mse)
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--execute-media-qa',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--execute-media-qa',action='store_true');p.add_argument('--review-id',default='initial');a=p.parse_args()
     if not a.execute_media_qa:p.error('Explicit QA flag required')
-    report=OUT/'qa.json'
+    if not re.fullmatch('[a-z][a-z0-9-]{0,31}',a.review_id):raise RuntimeError('Simple bounded review ID required')
+    suffix='' if a.review_id=='initial' else '-'+a.review_id
+    report=OUT/f'qa{suffix}.json'
     if report.exists():raise RuntimeError('Existing QA record; no overwrite')
     manifest=json.loads((OUT/'render-manifest.json').read_text());video=OUT/'pitch-v020.mp4'
     assert sha(video)==manifest['video_sha256']
@@ -41,7 +43,7 @@ def main():
     mean=float(re.search(r'mean_volume: (-?[\d.]+) dB',levels)[1]);peak=float(re.search(r'max_volume: (-?[\d.]+) dB',levels)[1])
     assert -60<mean<-3 and peak<=0
     av_gap=abs(float(vs[0]['duration'])-float(aud[0]['duration']));assert av_gap<.15
-    review=OUT/'encoded-review';review.mkdir(exist_ok=False)
+    review=OUT/f'encoded-review{suffix}';review.mkdir(exist_ok=False)
     contact=Image.new('RGB',(1920,6*290),'#17151f');d=ImageDraw.Draw(contact);samples=[]
     for i,c in enumerate(captions):
         t=min(c['end']-.05,c['start']+1);frame=rgb(video,t);small=frame.resize((480,270));x=(i%4)*480;y=(i//4)*290
@@ -53,11 +55,13 @@ def main():
     for mapping in timeline['clip_segments']:
         for local in (1.0,7.0):
             t=mapping['pitch_start']+local
-            actual=rgb(video,t).crop((1345,220,1775,860))
+            # YUV420 overlay placement rounds requested odd x=1345 to x=1344.
+            # Match the actual encoded chroma grid, not a one-pixel shifted crop.
+            actual=rgb(video,t).crop((1344,220,1774,860))
             source=ROOT/f'artifacts/v012-phone-demo/{mapping["clip"]}.mp4'
-            expected=rgb(source,local,'fps=24,scale=430:640:force_original_aspect_ratio=decrease,pad=430:640:(ow-iw)/2:(oh-ih)/2:color=0x17151f,setsar=1')
+            expected=rgb(source,local,'fps=24,scale=430:640:force_original_aspect_ratio=decrease,pad=430:640:(ow-iw)/2:(oh-ih)/2:color=0x17151f,setsar=1,format=yuv420p')
             value=psnr(actual,expected);assert value>28,('Historical clip parity',mapping['clip'],local,value)
-            comparisons.append({'clip':mapping['clip'],'source_seconds':local,'pitch_seconds':t,'psnr_db':value,'scope':'Four sampled original-speed comparisons, not every encoded frame'})
+            comparisons.append({'clip':mapping['clip'],'source_seconds':local,'pitch_seconds':t,'psnr_db':value,'encoded_crop':[1344,220,430,640],'reference_pixel_format':'yuv420p','scope':'Four sampled original-speed comparisons, not every encoded frame'})
     r={'schema':'focuspilot.v020_pitch_qa.v1','video_sha256':sha(video),'renderer_full_decode_recorded':manifest.get('full_decode_passed') is True,'seconds':length,'caption_segments':24,'caption_order_and_bounds_pass':True,'audio_mean_db':mean,'audio_peak_db':peak,'av_duration_gap_seconds':av_gap,'sampled_encoded_frames':samples,'historical_clip_comparisons':comparisons,'encoded_visual_review_complete':False,'human_complete_audio_review':False,'phone_speaker_audibility_verified':False,'phone_actions_executed':0,'qa_source_sha256':sha(Path(__file__))}
     with report.open('x') as f:json.dump(r,f,indent=2);f.write('\n')
     print(json.dumps({'report':str(report),'seconds':length,'audio_mean_db':mean,'audio_peak_db':peak,'clip_parity_samples':len(comparisons)}))
