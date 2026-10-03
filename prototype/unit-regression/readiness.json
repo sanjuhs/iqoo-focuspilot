@@ -1,0 +1,46 @@
+{
+  "actual_prior_accepted": 80,
+  "candidate_calls": 0,
+  "candidate_contents_read": false,
+  "canonical_preservation": "Compare accepted kind/hour/minute/seconds and approved app mapping; human preview wording may change",
+  "development_only": true,
+  "fresh_confirmation": false,
+  "generic_sources_sha256": {
+    "README.md": "42767c56aab2772d69c53c4344453bbcf866b393035b16b3da3b5fdb28c05df7",
+    "UnitRegression.java": "003d709a21fedd33c12b4741d8a0cc3ddf1b68b8a5ae4f6079f9ca965bb16307",
+    "regression.py": "3e72f99ae62f88b4bb172994a6632faf2e88493c65ad6226d14b1dd1a860fb91",
+    "test_regression.py": "81587c0f3ca8f2c83950763566adf01da3a1ec39c34d79703a1f232f6840dc96"
+  },
+  "gold": "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/unit-regression/build/prepared/route-gold.json",
+  "gold_sha256": "81fc546cedc75bb642958c9b174804d85c6d2dfbc13a345fe71419c82051dcc6",
+  "input": "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/unit-regression/build/prepared/unit-input.tsv",
+  "input_sha256": "c6cbcb62e0605abdf1b1c9ecda0c82056f2cae35bfb873a5247462ec286f4b94",
+  "known_rows": 226,
+  "limitations": [
+    "Known previously exposed correlated synthetic wording; development only",
+    "Oracle/mock replies are not model predictions or accuracy evidence",
+    "Finite all-intent routes do not cover arbitrary output values",
+    "No Android execution, phone, NPU, fresh/general safety or promotion claim"
+  ],
+  "model_calls": 0,
+  "phone_calls": 0,
+  "prior_pinned_sha256": {
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-balanced-data/build/confirmation-v2.jsonl": "1ec1fbd3633d399f1dcb4c462a18d395741cda582244c818c0763273ca8f6883",
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-balanced-data/build/development.jsonl": "aaa8064ddfe5a2746c1df195050b7df9315af18883a2de1f5d93f5eae9034e6d",
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-balanced-data/build/train.jsonl": "be020b76800398126d0fdabf48c277269a56da1d5980ab78e5a11bd1380191d1",
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-natural-validation/build/final-development/baseline-known-output.tsv": "6b0e9a0d2af32c75f816fc346d6e2bc373fc22ed366b4519e79992ff5893db97",
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-natural-validation/build/final-development/known-all-routes.tsv": "e86abbf7e77b36fcd2c78270ffc36774f2baf489c67fa2f0dfc8f46b0cc552ad",
+    "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/qwen-natural-validation/development-results.json": "248316995a8cde846afd10f7736224f024ee43638936386f35e3ea4e679bc070"
+  },
+  "routes": 1582,
+  "schema": "focuspilot.unit_regression_preparation.v1",
+  "source_unit_policy": "Parse numeric quantities and units independently from source text; supported correct slots must agree with old manual gold; never divide gold seconds to infer an amount/unit",
+  "supported_correct_routes": 158,
+  "supported_wrong_routes": 948,
+  "timed_supported_unit_counts": {
+    "minutes": 45,
+    "seconds": 11
+  },
+  "unknown_routes": 476,
+  "wrong_route_policy": "One deterministic mock response per route using first source quantity/time/allowed app where present, valid fallback when absent. Multiple-quantity adversaries use first quantity; this is not exhaustive output safety."
+}
