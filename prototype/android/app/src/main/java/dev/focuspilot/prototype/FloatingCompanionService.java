@@ -41,7 +41,9 @@ import java.util.Locale;
 public final class FloatingCompanionService extends Service {
     public static final String CHANNEL="floating_mira", SHOW="dev.focuspilot.prototype.SHOW_MIRA",
         HIDE="dev.focuspilot.prototype.HIDE_MIRA", PAUSE="dev.focuspilot.prototype.PAUSE_FROM_MIRA";
+    public static final String EXTRA_RETURN_AFTER_UNLOCK="returnAfterUnlock";
     public static volatile boolean running;
+    public static volatile boolean waitingForUnlock,returnAfterUnlockActive;
     public static volatile String lastStatus="Hidden · Show is always your choice";
     private static final int ID=42;
     private final Handler handler=new Handler(Looper.getMainLooper());
@@ -57,9 +59,13 @@ public final class FloatingCompanionService extends Service {
     private int availableWidth, availableHeight;
     private float touchX,touchY;
     private int downX,downY;
+    private final CompanionAvailability availability=new CompanionAvailability();
+    private long showLease;
     private final BroadcastReceiver screenOff=new BroadcastReceiver(){
         @Override public void onReceive(Context context,Intent intent){
-            if(Intent.ACTION_SCREEN_OFF.equals(intent.getAction()))end("Hidden when the screen turned off · tap Show again");
+            if(ending || !running)return;
+            if(Intent.ACTION_SCREEN_OFF.equals(intent.getAction()))suspendPortrait();
+            else if(Intent.ACTION_USER_PRESENT.equals(intent.getAction()))restorePortrait();
         }
     };
     private final AppOpsManager.OnOpChangedListener permissionChange=(op,pkg)->handler.post(()->{
@@ -68,13 +74,15 @@ public final class FloatingCompanionService extends Service {
     private final Runnable tick=new Runnable(){
         @Override public void run(){
             if(!running || ending)return;
-            String blocked=blockedReason(FloatingCompanionService.this);
+            String blocked=permanentBlockedReason(FloatingCompanionService.this);
             if(blocked!=null){end(blocked);return;}
+            if(displayBlockedReason(FloatingCompanionService.this)!=null){suspendPortrait();return;}
+            if(availability.isDormant() || !attached)return;
             repository.completeTimedIfDue(); // Own deadline only. Existing-consent accounting can flush usage at completion; no observation is enabled.
             int oldX=layout.x,oldY=layout.y,oldWidth=availableWidth,oldHeight=availableHeight;
             if(!refreshBounds())return;
             if(oldX!=layout.x || oldY!=layout.y || oldWidth!=availableWidth || oldHeight!=availableHeight)updateWindow();
-            if(ending)return;
+            if(ending || availability.isDormant() || !attached)return;
             updateOwnStatus();
             handler.postDelayed(this,1000);
         }
@@ -87,14 +95,21 @@ public final class FloatingCompanionService extends Service {
         return channel==null || channel.getImportance()!=NotificationManager.IMPORTANCE_NONE;
     }
     /** No grant is inferred from Settings returning, and no prerequisite check starts a service. */
-    public static String blockedReason(Context context){
+    public static String permanentBlockedReason(Context context){
         if(!Settings.canDrawOverlays(context))return "Overlay permission off · review Android settings first";
         if(!notificationsAllowed(context))return "Floating notifications blocked · allow them in Android settings first";
         if(context.getSharedPreferences("focuspilot_research",MODE_PRIVATE).getBoolean("hideCompanion",false))return "Artwork hidden · unhide Mira before Show";
+        return null;
+    }
+    private static String displayBlockedReason(Context context){
         PowerManager power=context.getSystemService(PowerManager.class);
         KeyguardManager keyguard=context.getSystemService(KeyguardManager.class);
         if(power==null || keyguard==null || !power.isInteractive() || keyguard.isKeyguardLocked())return "Phone asleep or locked · unlock it, then tap Show";
         return null;
+    }
+    public static String blockedReason(Context context){
+        String permanent=permanentBlockedReason(context);
+        return permanent!=null?permanent:displayBlockedReason(context);
     }
     @Override public void onCreate(){
         super.onCreate();repository=FocusRepository.get(this);windows=getSystemService(WindowManager.class);
@@ -106,19 +121,31 @@ public final class FloatingCompanionService extends Service {
         if(intent==null || HIDE.equals(intent.getAction())){end("Mira hidden · focus and usage settings unchanged");return START_NOT_STICKY;}
         if(PAUSE.equals(intent.getAction())){
             if(running && !ending && blockedReason(this)==null)pauseFocus();
-            else end("Floating Mira stopped; no focus action taken");
+            else if(running && !ending && permanentBlockedReason(this)==null && availability.returnAfterUnlockActive()){
+                suspendPortrait();lastStatus="Mira waiting for unlock · no focus action taken while locked";
+                getSystemService(NotificationManager.class).notify(ID,notification());
+            }else end("Floating Mira stopped; no focus action taken");
             return START_NOT_STICKY;
         }
         if(!SHOW.equals(intent.getAction()) || ending){end("Floating Mira stopped");return START_NOT_STICKY;}
-        String blocked=blockedReason(this);
+        String blocked=permanentBlockedReason(this);
         if(blocked!=null){end(blocked);return START_NOT_STICKY;}
-        if(running){lastStatus="Mira is already floating · drag her portrait to move";return START_NOT_STICKY;}
+        if(running){
+            // Explicit manual recovery only; current reviewed session mode remains frozen.
+            if(displayBlockedReason(this)!=null)suspendPortrait();
+            else if(availability.isDormant())restorePortrait();
+            else lastStatus="Mira is already floating · drag her portrait to move";
+            return START_NOT_STICKY;
+        }
+        blocked=displayBlockedReason(this);
+        if(blocked!=null){end(blocked);return START_NOT_STICKY;}
         try{
             if(Build.VERSION.SDK_INT>=34)startForeground(ID,notification(),ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
             else startForeground(ID,notification());
             foreground=true;
-            if(Build.VERSION.SDK_INT>=33)registerReceiver(screenOff,new IntentFilter(Intent.ACTION_SCREEN_OFF),Context.RECEIVER_NOT_EXPORTED);
-            else registerReceiver(screenOff,new IntentFilter(Intent.ACTION_SCREEN_OFF));
+            IntentFilter filter=new IntentFilter(Intent.ACTION_SCREEN_OFF);filter.addAction(Intent.ACTION_USER_PRESENT);
+            if(Build.VERSION.SDK_INT>=33)registerReceiver(screenOff,filter,Context.RECEIVER_NOT_EXPORTED);
+            else registerReceiver(screenOff,filter);
             receiverRegistered=true;
             ops=getSystemService(AppOpsManager.class);
             ops.startWatchingMode(AppOpsManager.OPSTR_SYSTEM_ALERT_WINDOW,getPackageName(),permissionChange);watchingOps=true;
@@ -126,11 +153,47 @@ public final class FloatingCompanionService extends Service {
             if(!refreshBounds())return START_NOT_STICKY;
             blocked=blockedReason(this);
             if(blocked!=null){end(blocked);return START_NOT_STICKY;}
+            if(availability.begin(intent.getBooleanExtra(EXTRA_RETURN_AFTER_UNLOCK,false),true,true)!=CompanionAvailability.Effect.ATTACH){end("Mira could not start a new visual session");return START_NOT_STICKY;}
+            showLease=availability.lease();returnAfterUnlockActive=availability.returnAfterUnlockActive();waitingForUnlock=false;
             windows.addView(bubble,layout);attached=true;running=true;
+            getSystemService(NotificationManager.class).notify(ID,notification());
             lastStatus="Mira floating · drag her portrait · Hide leaves focus unchanged";
             handler.post(tick);
         }catch(RuntimeException error){end("Android could not show Mira · "+error.getClass().getSimpleName()+" · use the in-app companion");}
         return START_NOT_STICKY;
+    }
+    private void suspendPortrait(){
+        if(ending || !running)return;
+        String permanent=permanentBlockedReason(this);
+        CompanionAvailability.Effect effect=availability.suspend(permanent==null);
+        if(effect==CompanionAvailability.Effect.STOP){end(permanent!=null?permanent:"Hidden when the screen turned off or locked · tap Show again");return;}
+        handler.removeCallbacks(tick);
+        if(mira!=null)mira.setState(CompanionView.State.PAUSED);
+        if(attached){attached=false;try{windows.removeViewImmediate(bubble);}catch(RuntimeException ignored){/* Android may already have removed it. */}}
+        waitingForUnlock=availability.isDormant();returnAfterUnlockActive=availability.returnAfterUnlockActive();
+        lastStatus="Mira available · portrait hidden until unlock · Hide stops this session";
+        getSystemService(NotificationManager.class).notify(ID,notification());
+    }
+    private void restorePortrait(){
+        if(ending || !running)return;
+        // Permanent prerequisites are checked even if the phone is still locked.
+        String permanent=permanentBlockedReason(this);
+        if(permanent!=null){end(permanent);return;}
+        CompanionAvailability.Effect effect=availability.resume(showLease,true,displayBlockedReason(this)==null);
+        if(effect!=CompanionAvailability.Effect.ATTACH)return;
+        try{
+            // Reuse the original view/layout so position survives; never duplicate windows.
+            if(bubble==null || layout==null){end("Mira’s saved window is unavailable · tap Show again");return;}
+            if(!refreshBounds())return;
+            String blocked=blockedReason(this);if(blocked!=null){
+                if(permanentBlockedReason(this)!=null)end(blocked);else suspendPortrait();return;
+            }
+            if(!attached){windows.addView(bubble,layout);attached=true;}
+            waitingForUnlock=false;returnAfterUnlockActive=availability.returnAfterUnlockActive();
+            updateOwnStatus();lastStatus="Mira returned after unlock · no voice, model or action started";
+            getSystemService(NotificationManager.class).notify(ID,notification());
+            handler.removeCallbacks(tick);handler.post(tick);
+        }catch(RuntimeException error){end("Android could not restore Mira · tap Show again if you want her");}
     }
     private int dp(int value){return Math.round(value*getResources().getDisplayMetrics().density);}
     @android.annotation.SuppressLint("RtlHardcoded") // Window coordinates are absolute physical TOP/LEFT, independent of text direction.
@@ -142,7 +205,7 @@ public final class FloatingCompanionService extends Service {
         mira=new CompanionView(this);mira.setContentDescription("Mira portrait. Drag to move the floating companion.");bubble.addView(mira,new LinearLayout.LayoutParams(-1,dp(80)));
         mira.setOnTouchListener((view,event)->{
             if(!running || !attached || ending)return true;
-            String blocked=blockedReason(this);if(blocked!=null){end(blocked);return true;}
+            String blocked=blockedReason(this);if(blocked!=null){if(permanentBlockedReason(this)!=null)end(blocked);else suspendPortrait();return true;}
             if(event.getActionMasked()==MotionEvent.ACTION_DOWN){touchX=event.getRawX();touchY=event.getRawY();downX=layout.x;downY=layout.y;return true;}
             if(event.getActionMasked()==MotionEvent.ACTION_MOVE){
                 FloatingWindowPosition.Position position=FloatingWindowPosition.drag(downX,downY,Math.round(event.getRawX()-touchX),Math.round(event.getRawY()-touchY),layout.width,layout.height,availableWidth,availableHeight);
@@ -183,7 +246,7 @@ public final class FloatingCompanionService extends Service {
     }
     private boolean eligibleTap(){
         if(!running || !attached || ending)return false;
-        String blocked=blockedReason(this);if(blocked!=null){end(blocked);return false;}return true;
+        String blocked=blockedReason(this);if(blocked!=null){if(permanentBlockedReason(this)!=null)end(blocked);else suspendPortrait();return false;}return true;
     }
     private void pauseFocus(){
         repository.pause("Focus paused from floating Mira");stopService(new Intent(this,FocusMonitorService.class));updateOwnStatus();
@@ -203,10 +266,11 @@ public final class FloatingCompanionService extends Service {
         PendingIntent open=PendingIntent.getActivity(this,42,assistantIntent(),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent hide=PendingIntent.getService(this,43,new Intent(this,FloatingCompanionService.class).setAction(HIDE),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pause=PendingIntent.getService(this,44,new Intent(this,FloatingCompanionService.class).setAction(PAUSE),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
-        return new Notification.Builder(this,CHANNEL).setSmallIcon(R.drawable.ic_notification).setContentTitle("Mira is floating")
-            .setContentText("Tap to Ask Mira. Speak and model understanding start only in the app when you choose.")
-            .setContentIntent(open).addAction(new Notification.Action.Builder(null,"Pause focus",pause).build()).addAction(new Notification.Action.Builder(null,"Hide Mira",hide).build())
-            .setOngoing(true).setOnlyAlertOnce(true).setCategory(Notification.CATEGORY_SERVICE).build();
+        Notification.Builder builder=new Notification.Builder(this,CHANNEL).setSmallIcon(R.drawable.ic_notification).setContentTitle(waitingForUnlock?"Mira is available · hidden while locked":"Mira is floating")
+            .setContentText(waitingForUnlock?"Portrait returns after unlock. Hide ends this session. Mira’s microphone and model stay idle.":"Tap to Ask Mira. Speak and model understanding start only in the app when you choose.")
+            .setContentIntent(open).setOngoing(true).setOnlyAlertOnce(true).setCategory(Notification.CATEGORY_SERVICE);
+        if(!waitingForUnlock)builder.addAction(new Notification.Action.Builder(null,"Pause focus",pause).build());
+        return builder.addAction(new Notification.Action.Builder(null,"Hide Mira",hide).build()).build();
     }
     private boolean refreshBounds(){
         if(windows==null || layout==null)return false;
@@ -223,12 +287,12 @@ public final class FloatingCompanionService extends Service {
     }
     private void updateWindow(){
         if(!attached || ending)return;
-        String blocked=blockedReason(this);if(blocked!=null){end(blocked);return;}
+        String blocked=blockedReason(this);if(blocked!=null){if(permanentBlockedReason(this)!=null)end(blocked);else suspendPortrait();return;}
         try{windows.updateViewLayout(bubble,layout);}catch(RuntimeException error){end("Android removed Mira · tap Show again if you want her");}
     }
     @Override public void onConfigurationChanged(Configuration config){super.onConfigurationChanged(config);if(attached && !ending && refreshBounds())updateWindow();}
     private void end(String reason){
-        lastStatus=reason;ending=true;running=false;cleanup();stopSelf();
+        lastStatus=reason;ending=true;running=false;waitingForUnlock=false;returnAfterUnlockActive=false;availability.stop();cleanup();stopSelf();
     }
     private void cleanup(){
         handler.removeCallbacksAndMessages(null);
@@ -239,6 +303,6 @@ public final class FloatingCompanionService extends Service {
         if(watchingOps){watchingOps=false;ops.stopWatchingMode(permissionChange);}
         if(foreground){foreground=false;stopForeground(STOP_FOREGROUND_REMOVE);}
     }
-    @Override public void onDestroy(){if(!ending)lastStatus="Android stopped floating Mira · tap Show to start again";running=false;ending=true;cleanup();super.onDestroy();}
+    @Override public void onDestroy(){if(!ending)lastStatus="Android stopped floating Mira · tap Show to start again";running=false;waitingForUnlock=false;returnAfterUnlockActive=false;availability.stop();ending=true;cleanup();super.onDestroy();}
     @Override public IBinder onBind(Intent intent){return null;}
 }

@@ -20,7 +20,7 @@
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-started, notification-visible focus session that locally checks one user-selected app budget and provides optional distraction nudges until stopped; no microphone, location or screen capture." />
         </service>
         <service android:name=".FloatingCompanionService" android:exported="false" android:foregroundServiceType="specialUse">
-            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Explicitly user-started, notification-visible floating visual companion with Ask Mira, Pause focus and Hide controls on the unlocked interactive phone. Ask Mira opens the foreground command screen; no service microphone, screen reading, capture, model inference, boot or sticky restart." />
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Explicitly user-started, notification-visible floating visual companion with Ask Mira, Pause focus and Hide controls. Optional reviewed availability retains the same idle service while locked with no overlay or timer refresh, then restores the portrait on protected user-present while unlocked. Ask Mira opens the foreground command screen; no service microphone, screen reading, capture, model inference, boot or sticky restart." />
         </service>
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
