@@ -62,8 +62,8 @@ android {
         applicationId 'dev.focuspilot.prototype'
         minSdk 28
         targetSdk 35
-        versionCode 17
-        versionName '0.17-system-one-research'
+        versionCode 18
+        versionName '0.18-mira-commands-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
             : diagnosticRunner == 'unitNative'

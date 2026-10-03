@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Switch;
@@ -54,10 +55,12 @@ public final class LocalModelActivity extends Activity {
     private volatile boolean foreground;
     private volatile long requestEpoch;
     private LinearLayout root;
-    private TextView state,result,activationView;
+    private TextView state,result,activationView,modelStatus,responseDetails;
+    private LinearLayout diagnostics;
+    private final java.util.List<Button> examples=new java.util.ArrayList<>();
     private EditText command;
     private Switch capture;
-    private Button load,infer,review;
+    private Button load,infer,review,cancelInference;
     private final CompatibleReviewState pendingReview=new CompatibleReviewState();
     private AlertDialog reviewDialog;
     private long busyEpoch;
@@ -66,7 +69,7 @@ public final class LocalModelActivity extends Activity {
     private SharedPreferences companionPrefs;
     private CompanionView companion;
     private TextView companionMessage,voiceStatus;
-    private Button speak,finishVoice,cancelVoice,readback;
+    private Button speak,finishVoice,cancelVoice,readback,stopSpeaking;
     private TextToSpeech tts;
     private boolean offlineReadbackReady,audioBusy;
     private long readbackEpoch;
@@ -82,6 +85,18 @@ public final class LocalModelActivity extends Activity {
         shape.setColor(primary?Color.rgb(203,171,238):Color.rgb(29,58,62));shape.setCornerRadius(dp(14));view.setBackground(shape);
         LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(-1,dp(52));params.topMargin=dp(8);root.addView(view,params);
         view.setOnClickListener(action);return view;
+    }
+    /** Examples only replace the editable draft; the existing watcher invalidates old reviews. */
+    private void example(LinearLayout row,String title,String draft) {
+        Button view=new Button(this);view.setText(title);view.setAllCaps(false);
+        view.setTextColor(Color.rgb(203,171,238));view.setTextSize(13);
+        view.setContentDescription("Edit request to "+draft+". No command runs.");
+        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(-2,dp(48));params.rightMargin=dp(8);
+        row.addView(view,params);examples.add(view);
+        view.setOnClickListener(v->{
+            if(!foreground||destroyed||busy||audioBusy||voiceDraft.active())return;
+            command.setText(draft);command.setSelection(command.length());
+        });
     }
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
@@ -101,32 +116,51 @@ public final class LocalModelActivity extends Activity {
             else view.setPadding(insets.getSystemWindowInsetLeft(),insets.getSystemWindowInsetTop(),insets.getSystemWindowInsetRight(),insets.getSystemWindowInsetBottom());
             return insets;
         });
-        label("MIRA · LOCAL MODEL LAB",24);
+        label("Ask Mira",24);
+        label("PRE-EVENT RESEARCH",12);
         companionPrefs=getSharedPreferences("focuspilot_research",MODE_PRIVATE);
-        companion=new CompanionView(this);root.addView(companion,new LinearLayout.LayoutParams(-1,dp(150)));
-        companionMessage=label("Ask Mira. Say one small task, review the words, then tap Understand. Each action needs your confirmation.",17);
-        label("PRE-EVENT RESEARCH · Fast local request checks + optional Qwen3.5-0.8B Q4_0 CPU. Outputs are proposals. No NPU or causal interpretation claim.",14);
-        state=label("Fast local checks are ready without a model. For requests they cannot verify, manually load the pinned Qwen model and tap Understand again. No automatic load, inference or downloads.",16);
-        load=button("Load verified local model",v->load());
-        command=new EditText(this); command.setText(initialDraft==null?"Please start a focus session":initialDraft); command.setSaveEnabled(false); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
+        companion=new CompanionView(this);root.addView(companion,new LinearLayout.LayoutParams(-1,dp(120)));
+        companionMessage=label("Ready when you are. One small task, reviewed together.",17);
+        command=new EditText(this); command.setText(initialDraft==null?"":initialDraft); command.setSaveEnabled(false); command.setTextColor(Color.WHITE); command.setHintTextColor(Color.LTGRAY); command.setSingleLine(false); command.setMaxLines(3); root.addView(command);
         command.setPadding(dp(12),dp(10),dp(12),dp(10));
         android.graphics.drawable.GradientDrawable draftShape=new android.graphics.drawable.GradientDrawable();
         draftShape.setColor(Color.rgb(36,32,49));draftShape.setCornerRadius(dp(12));command.setBackground(draftShape);
         command.setContentDescription("Editable command draft. Review voice transcription here before pressing Understand.");
-        command.setHint("Focus for twenty-five minutes");
-        label("Try: focus for twenty-five minutes · set a five-minute timer · wake me at seven thirty PM. Each action still needs review.",13);
-        voiceStatus=label("Push-to-talk uses only an installed on-device speech service. Voice drafts never run a command automatically.",14);
+        command.setHint("Start focus, set a timer, or open an app");
+        HorizontalScrollView suggestions=new HorizontalScrollView(this);suggestions.setHorizontalScrollBarEnabled(false);
+        LinearLayout row=new LinearLayout(this);row.setOrientation(LinearLayout.HORIZONTAL);suggestions.addView(row);root.addView(suggestions);
+        example(row,"Focus 25 min","Start focus for 25 minutes");
+        example(row,"Timer 5 min","Set a five-minute timer");
+        example(row,"Pause focus","Stop focus");
+        label("Examples fill your draft. Understand creates a proposal; Review lets you confirm it.",13);
+        voiceStatus=label("Type a request or speak using an installed on-device speech service.",14);
         speak=button("Speak to Mira · on-device",v->requestVoice());
         finishVoice=button("Finish voice draft",v->{if(voice!=null)voice.finishListening();});
         cancelVoice=button("Cancel voice",v->{if(voice!=null)voice.cancel();voiceStatus.setText("Voice cancelled. Your existing draft stays editable.");});
-        capture=new Switch(this); capture.setText("Capture actual Qwen activation summaries only"); capture.setTextColor(Color.WHITE); root.addView(capture);
         infer=button("Understand command locally",v->infer()); infer.setEnabled(false);
-        button("Cancel inference",v->{cancelRequest();if(voice!=null)voice.cancel();stopReadback();result.setText("Request cancelled. Nothing executed.");updateControls();});
-        result=label("No command has been evaluated.",16);
+        cancelInference=button("Cancel inference",v->{cancelRequest();if(voice!=null)voice.cancel();stopReadback();result.setText("Request cancelled. Nothing executed.");updateControls();});
+        result=label("Your next small step starts here.",16);
         if(draftNotice!=null)result.setText(draftNotice);
         review=button("Review proposed phone action",v->review()); review.setEnabled(false);
         readback=button("Read confirmed focus status",v->readConfirmedFocus());readback.setEnabled(false);
-        activationView=label("Activation capture is opt-in and observational. No tensors have been captured. It can add latency.",13);
+        stopSpeaking=button("Stop readback",v->{stopReadback();voiceStatus.setText("Readback stopped. Your confirmed status remains on screen.");});
+        modelStatus=label("Quick commands are ready · Qwen is not loaded",14);
+        load=button("Load verified local model",v->load());
+        label("For a request quick checks cannot understand, load Qwen on this phone and tap Understand again. Loading does not run your draft.",13);
+        button("Model & activation details",v->{
+            boolean open=diagnostics.getVisibility()!=View.VISIBLE;
+            diagnostics.setVisibility(open?View.VISIBLE:View.GONE);
+            ((Button)v).setText(open?"Hide model & activation details":"Model & activation details");
+        });
+        diagnostics=new LinearLayout(this);diagnostics.setOrientation(LinearLayout.VERTICAL);root.addView(diagnostics);
+        state=new TextView(this);state.setTextSize(14);state.setTextColor(Color.rgb(242,236,249));
+        state.setText("Fast local checks are ready without a model. Optional Qwen3.5-0.8B Q4_0 uses CPU. No NPU or causal interpretation result is established.");diagnostics.addView(state);
+        responseDetails=new TextView(this);responseDetails.setTextSize(13);responseDetails.setTextColor(Color.rgb(242,236,249));
+        responseDetails.setText("No Qwen response recorded for this draft.");diagnostics.addView(responseDetails);
+        capture=new Switch(this);capture.setText("Capture actual Qwen activation summaries");capture.setTextColor(Color.WHITE);diagnostics.addView(capture);
+        activationView=new TextView(this);activationView.setTextSize(13);activationView.setTextColor(Color.rgb(242,236,249));
+        activationView.setText("Activation capture is opt-in and observational. No tensors have been captured. It can add latency.");diagnostics.addView(activationView);
+        diagnostics.setVisibility(View.GONE);
         button("Close model and return",v->finish());
         voice=new LocalVoiceInput(this,voiceDraft,new LocalVoiceInput.Listener(){
             @Override public void onStatus(String message){if(!destroyed)voiceStatus.setText(message);}
@@ -169,8 +203,17 @@ public final class LocalModelActivity extends Activity {
         speak.setEnabled(foreground&&!busy&&!recording&&!audioBusy);
         finishVoice.setEnabled(foreground&&voiceDraft.phase()==VoiceDraftState.Phase.LISTENING);
         cancelVoice.setEnabled(recording);
+        finishVoice.setVisibility(recording?View.VISIBLE:View.GONE);
+        cancelVoice.setVisibility(recording?View.VISIBLE:View.GONE);
+        cancelInference.setVisibility(busy?View.VISIBLE:View.GONE);
+        for(Button example:examples)example.setEnabled(foreground&&!destroyed&&!busy&&!recording&&!audioBusy);
         readback.setEnabled(foreground&&!busy&&!recording&&!audioBusy&&confirmedFocusText!=null);
         review.setEnabled(pendingReview.owns(pendingReview.snapshot(),requestEpoch,command.getText().toString(),foreground,reviewIdle()));
+        review.setVisibility(review.isEnabled()?View.VISIBLE:View.GONE);
+        readback.setVisibility(confirmedFocusText!=null?View.VISIBLE:View.GONE);
+        stopSpeaking.setEnabled(foreground&&!destroyed&&audioBusy);
+        stopSpeaking.setVisibility(audioBusy?View.VISIBLE:View.GONE);
+        modelStatus.setText(model!=null?"Qwen3.5-0.8B Q4_0 loaded · CPU on this phone":busy?"Preparing Qwen on this phone…":"Quick commands are ready · Qwen is not loaded");
         for(int i=0;i<root.getChildCount();i++) if(root.getChildAt(i) instanceof Button) root.getChildAt(i).setAlpha(root.getChildAt(i).isEnabled()?1f:0.45f);
         companion.setReduceMotion(companionPrefs.getBoolean("reduceMotion",false));
         companion.setVisibility(companionPrefs.getBoolean("hideCompanion",false)?View.GONE:View.VISIBLE);
@@ -216,7 +259,7 @@ public final class LocalModelActivity extends Activity {
                 if(destroyed || !foreground || epoch!=requestEpoch) { loaded.close(); throw new IllegalStateException("Model preparation cancelled"); }
                 model=loaded; double verifyMs=(verified-importedAt)/1e6, importMs=(importedAt-began)/1e6, loadMs=(System.nanoTime()-verified)/1e6;
                 post(()->{if(!finishWork(epoch))return; state.setText(String.format(Locale.US,"LOCAL MODEL LOADED · PRE-EVENT RESEARCH\nQwen3.5-0.8B · Q4_0 · CPU only · context 1024 · 4 threads\n%s\nPrivate-file hash %.0f ms · native load %.0f ms\nNo NPU, cloud or Office Kit backend.",imported?String.format(Locale.US,"Bundled import + SHA verification %.0f ms; copied once into private storage",importMs):"Using existing private model; SHA verified",verifyMs,loadMs));});
-            } catch(Throwable error) { post(()->{if(!finishWork(epoch))return; state.setText("Load failed: "+safe(error));}); }
+            } catch(Throwable error) { post(()->{if(!finishWork(epoch))return; state.setText("Load failed: "+safe(error));result.setText("Qwen could not load. Quick commands still work. Open model details for the reason.");}); }
         });
     }
     private void infer() {
@@ -259,10 +302,11 @@ public final class LocalModelActivity extends Activity {
                 post(()->{
                     if(!finishWork(epoch))return;
                     if(!original.equals(command.getText().toString())){clearProposal();updateControls();return;}
-                    result.setText(display);
+                    result.setText((checked.proposal.executable()?"Qwen + safety check · review your next step":"Safety check needs a clearer request")+"\n"+checked.proposal.preview+"\nNothing executed yet.");
+                    responseDetails.setText(display);
                     if(checked.proposal.executable()&&pendingReview.offer(epoch,original,response,checked.origin))
                         activationView.setText(trace.toString());
-                    else {pendingReview.clear();activationView.setText("Qwen refused this request. No retained activation display or executable proposal.");}
+                    else {pendingReview.clear();activationView.setText("The safety check refused this proposal. No retained activation display or executable proposal.");}
                     updateControls();
                 });
             } catch(Throwable error) { post(()->{
@@ -410,6 +454,7 @@ public final class LocalModelActivity extends Activity {
         pendingReview.clear();confirmedFocusText=null;
         if(reviewDialog!=null){reviewDialog.dismiss();reviewDialog=null;}
         if(review!=null)review.setEnabled(false);
+        if(responseDetails!=null)responseDetails.setText("No Qwen response retained for this draft.");
         if(activationView!=null)activationView.setText("No retained activation observations. Only actual Qwen inference can capture tensors.");
     }
     private void cancelRequest() {
