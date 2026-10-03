@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-10-03T02:55:03.361769+00:00",
+  "removed_file": "artifacts/focuspilot-research-v019-page-layout-bundled.apk",
+  "bytes": 568604151,
+  "sha256": "4a0e7f5c2b45daa9f8c39f0cebb8f6a6456e7c42a0ecfa0b7853fc87e9385d73",
+  "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/focuspilot-research-v019-page-layout-bundled.apk",
+  "server_digest": "sha256:4a0e7f5c2b45daa9f8c39f0cebb8f6a6456e7c42a0ecfa0b7853fc87e9385d73",
+  "server_uploaded_state_verified": true,
+  "source_metadata_record": "artifacts/mira-setup-v21-v19-recovery-metadata.json",
+  "purpose": "Reclaim exact recoverable generated v19 bundle before v21 packaging to keep final effective project near/below10 GB. Model weights, current v20 bundle, private captures and unpublished bundles are retained.",
+  "project_bytes_before": 9554345714,
+  "deleted": true,
+  "project_bytes_after": 8985741563
+}

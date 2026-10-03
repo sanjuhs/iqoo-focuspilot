@@ -1,0 +1,57 @@
+{
+  "schema": "focuspilot.mira_setup_artifact.v1",
+  "research_only": true,
+  "source_commit": "6027fa5c49f7ef4f383e0eeabb0694463c0eb77a",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "42a0f6657447c04af4e8b52d0890ae08faa9744dd4f3f394858b55ff3637ed65",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java": "a86d8b6fabf9cbe3da7fc756bc0c55b055d5b888d8e548c89858a094a3f60096"
+  },
+  "changes_from_v20": [
+    "prototype/android/app/build.gradle",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/SetupActivity.java"
+  ],
+  "apk_path": "artifacts/focuspilot-research-v021-mira-setup-light.apk",
+  "apk_bytes": 5562744,
+  "apk_sha256": "b6f623aebd148fe4cda0675ab171607689be51d5844ad8d3aabfcc1530a4c5e7",
+  "manifest_identity": "package: name='dev.focuspilot.prototype' versionCode='21' versionName='0.21-mira-setup-research' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "zip_alignment_16k_verified": true,
+  "native_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+  "native_unchanged_from_v20": true,
+  "permissions": [
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE'",
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'",
+    "uses-permission: name='android.permission.PACKAGE_USAGE_STATS'",
+    "uses-permission: name='android.permission.POST_NOTIFICATIONS'",
+    "uses-permission: name='android.permission.RECORD_AUDIO'",
+    "uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'",
+    "uses-permission: name='com.android.alarm.permission.SET_ALARM'"
+  ],
+  "permissions_unchanged_from_v20": true,
+  "license_assets": {
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  "bundled_model": false,
+  "tests": {
+    "tests": 216,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_suites": 29,
+  "lint": {
+    "Warning": 79
+  },
+  "gradle_log_sha256": "ad887bfb9bbea0346c9001e5c63e3890f4d9aca5d7d464609396e321507475b9",
+  "downloads": 0,
+  "phone_installed": false,
+  "physical_setup_verified": false,
+  "physical_lock_unlock_verified": false,
+  "model_inference": false,
+  "npu_verified": false
+}
