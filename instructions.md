@@ -1,29 +1,32 @@
 # Instructions — FocusPilot
 
-## Current app — v0.22 voice-session fixes
+## Current app — v0.23 readback initialization retry
 
-Keep **Qwen3.5-0.8B Q4_0** selected. The dashboard protects its draft during
-recognition and names the actual stop control. Ask Mira requires the matching
-request token and utterance ID before a readback callback releases controls;
-listener-registration failure prevents speech. Native runtime, permissions,
-action review and companion availability remain unchanged.
+Keep **Qwen3.5-0.8B Q4_0** selected. When readback A is cancelled during engine
+initialization, an explicit B now waits for that same initializer within its own
+20-second deadline. Cancel, background and destroy prevent speech; failed or
+silent initialization permits a later explicit retry. The v22 token-plus-utterance
+terminal gate, dashboard draft protection, native runtime, permissions, action
+review and companion availability are retained.
 
-All 221 JVM tests pass with zero failures/errors/skips; lint has zero errors and
-79 warnings. The exact light APK installed in one attempt (1,520 ms), preserving
-the checked preferences/checkpoint, model, grants, absent services and original
-test APK. The bundle passes packaging checks; all five release assets and the
-frozen source tag are verified. [Source and limits](docs/voice-session-v22.md) ·
-[Artifact](docs/voice-session-artifact-v22.json) ·
-[Protected installation](docs/voice-session-phone-install-v22.json).
+All 227 JVM tests across 30 suites pass (zero failures/errors/skips), including
+six new coordinator/request-state fixtures; lint has zero errors and 79 warnings.
+The exact light APK installed once in 1,397 ms, preserving the checked preferences,
+checkpoint, model, grants, absent services and original test. Bundle packaging
+passes; all five published assets and the frozen source tag are verified. [Behavior](docs/readback-init-v23.md) ·
+[Artifact](docs/readback-init-artifact-v23.json) ·
+[Installation](docs/readback-init-phone-install-v23.json).
 
-No new inference, microphone, grant or UI operation accompanied this update.
-Physical ASR/readback, lock/unlock, current bundle import, permissioned monitoring,
-iQOO/NPU and Office Kit remain pending. The verified Phase 1 draft remains v21,
-with human experience answers, attestation and submission still outstanding.
+No new inference, microphone, grant, UI or wake operation accompanied this update.
+Physical ASR/readback, lock/unlock, current bundle import, permitted monitoring,
+iQOO/NPU and Office Kit remain pending. The dated [v22 readiness check](docs/delivery-readiness-v22.json)
+observed the locked/screen-off phone and microphone/notification grants off;
+installation is separate evidence. The live Phase 1 draft remains v21, and the
+4:04 v20 pitch stays unchanged. This remains pre-event research.
 
-Published [research v0.22](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.22).
-[Publication proof](docs/voice-session-publication-v22.json) ·
-[Storage scope](docs/voice-session-storage-v22.json): 9,779,793,207 bytes including
+Published [research v0.23](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.23).
+[Publication proof](docs/readback-init-publication-v23.json) ·
+[Storage scope](docs/readback-init-storage-v23.json): 9,786,981,042 bytes including
 recorded cache growth, below the 10 GB aim. This remains pre-event research.
 
 ## Historical v0.21 Mira Setup clarity

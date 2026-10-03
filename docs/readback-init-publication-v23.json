@@ -1,0 +1,55 @@
+{
+  "schema": "focuspilot.readback_init_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.23",
+  "release_id": 402305608,
+  "tag_commit": "1fc31da5787a49c7680e5bf13b827b6114a0fbe6",
+  "prerelease": true,
+  "asset_count": 5,
+  "assets": [
+    {
+      "file": "artifacts/focuspilot-research-v023-readback-init-light.apk",
+      "bytes": 5579136,
+      "sha256": "48c382e92595728b96866a3b445d7c21d9e842c712c3adc77b2fbc4c2d0bbca7",
+      "server_digest": "sha256:48c382e92595728b96866a3b445d7c21d9e842c712c3adc77b2fbc4c2d0bbca7",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/focuspilot-research-v023-readback-init-light.apk"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v023-readback-init-bundled.apk",
+      "bytes": 568620535,
+      "sha256": "99ae65c137babc1111b2f8b54d5fd6bbadbd07f82a31a333d231783c6963a126",
+      "server_digest": "sha256:99ae65c137babc1111b2f8b54d5fd6bbadbd07f82a31a333d231783c6963a126",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/focuspilot-research-v023-readback-init-bundled.apk"
+    },
+    {
+      "file": "docs/readback-init-artifact-v23.json",
+      "bytes": 3541,
+      "sha256": "683d4f7e7edbedcfdd49296e0bbd258e962b334eaac30e4e3a199a7092445ad7",
+      "server_digest": "sha256:683d4f7e7edbedcfdd49296e0bbd258e962b334eaac30e4e3a199a7092445ad7",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/readback-init-artifact-v23.json"
+    },
+    {
+      "file": "docs/readback-init-bundle-artifact-v23.json",
+      "bytes": 4885,
+      "sha256": "fea3667e58fb7621589a4d53104dfd761c41c509c7febd8b01747d1d6a66cf91",
+      "server_digest": "sha256:fea3667e58fb7621589a4d53104dfd761c41c509c7febd8b01747d1d6a66cf91",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/readback-init-bundle-artifact-v23.json"
+    },
+    {
+      "file": "docs/readback-init-phone-install-v23.json",
+      "bytes": 2351,
+      "sha256": "19592c6560373537c889d825675519262c07cfda385188a7c407d550975b9a89",
+      "server_digest": "sha256:19592c6560373537c889d825675519262c07cfda385188a7c407d550975b9a89",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/readback-init-phone-install-v23.json"
+    }
+  ],
+  "notes_sha256": "c4fa7628d4ac6407de043e3a4c4c1dfd664a34549e98c5c5cea3d65c32369205",
+  "notes_exact_verified": true,
+  "notes_terminal_newline_ignored": false,
+  "creation_sequence": "Frozen source and installation evidence pushed before one release create/upload operation.",
+  "research_only": true,
+  "physical_voice_verified": false,
+  "physical_lock_unlock_verified": false,
+  "current_bundle_import_verified": false,
+  "npu_verified": false,
+  "office_kit_verified": false
+}

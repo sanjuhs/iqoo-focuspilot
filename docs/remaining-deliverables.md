@@ -1,27 +1,31 @@
 # Remaining deliverables — full-scope audit
 
-## Current delivery readiness — v22
+## Current delivery readiness — v23
 
-The signed light update installed once in 1,520 ms with the checked paused
-preferences/checkpoint, model, grants, absent services and original test unchanged.
-No wake, UI, permission grant or inference occurred. [Installation](voice-session-phone-install-v22.json).
-Physical ASR/readback, companion lock/unlock, current bundle import and permitted
-monitoring remain required. Actual iQOO/NPU, Office Kit, eligible event code and
-accepted submission are unfinished. The live Phase 1 draft remains verified v21;
-human proficiency answers and attestation are outstanding. The full goal stays
-active; a prepared draft is not a receipt.
+The exact light update installed once in 1,397 ms with checked paused preferences,
+checkpoint, model, grants, absent services and original test unchanged. No wake,
+UI, permission grant or inference occurred. [Installation](readback-init-phone-install-v23.json).
+The dated [v22 readiness observation](delivery-readiness-v22.json) found the phone
+locked/screen-off with microphone/notification grants off. Physical ASR/readback,
+companion lock/unlock, current bundle import and permitted monitoring remain open.
+Actual iQOO/NPU, Office Kit, eligible event code and accepted submission are
+unfinished. The live Phase 1 draft remains verified v21, with human proficiency
+answers and attestation outstanding. The full goal stays active.
 
-## Current app — v22 voice-session fixes
+## Current app — v23 readback initialization retry
 
-Dashboard draft protection and Ask Mira's token-plus-utterance callback gate are
-built and installed. All 221 JVM tests pass with zero failures/errors/skips;
-lint has zero errors and 79 warnings. Qwen3.5-0.8B Q4_0, native runtime, permissions,
-action review and companion availability are retained. The bundle passes packaging
-checks; all five release assets and the source tag are verified.
-[Publication](voice-session-publication-v22.json). This adds no physical
-voice or new inference proof. [Current scope](voice-session-v22.md) ·
-[Artifact](voice-session-artifact-v22.json) ·
-[Bundle identity](voice-session-bundle-artifact-v22.json).
+After readback A is cancelled during engine initialization, explicit request B
+waits for that initializer within its own deadline. Cancellation/background stop
+pending speech; failed initialization can be retried explicitly. The v22 token
+and utterance matching gate and dashboard draft protection are retained.
+
+All 227 JVM tests across 30 suites pass (zero failures/errors/skips), including
+six initialization-state fixtures; lint has zero errors and 79 warnings.
+Qwen3.5-0.8B Q4_0, native runtime, permissions, action review and companion
+availability remain selected. Bundle packaging, all five published assets and
+the frozen source tag are verified. [Publication](readback-init-publication-v23.json). This adds no physical speech or new inference proof.
+[Current scope](readback-init-v23.md) · [Artifact](readback-init-artifact-v23.json) ·
+[Bundle identity](readback-init-bundle-artifact-v23.json).
 
 ## Task-guidance candidate — measured rejection
 

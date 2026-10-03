@@ -4,25 +4,28 @@ A private Android productivity companion: choose a task, keep a focus session,
 and ask Mira for a short, reviewed phone action. Mira is an original animated goth
 character with gentle reactions and mute, hide and reduce-motion controls.
 
-**Qwen3.5-0.8B Q4_0 remains the primary local command model.** Research v0.22
-protects the dashboard draft while voice recognition is pending and names its
-actual **Push to talk / stop** control. Ask Mira matches both the request token
-and utterance ID before a speech callback releases readback controls, so an old
-utterance cannot finish a newer request. Failed listener registration prevents
-speech from being queued. [Current fixes and scope](docs/voice-session-v22.md).
+**Qwen3.5-0.8B Q4_0 remains the primary local command model.** Research v0.23
+fixes readback retry during speech-engine initialization: after cancelling request
+A, an explicit request B waits for the same initializer and retains its own
+20-second deadline. Cancel, background and destroy prevent automatic speech;
+failed or timed-out initialization can be retried explicitly. The v22 dashboard
+draft protection and request-token-plus-utterance callback gate remain.
+[Current fix and limits](docs/readback-init-v23.md).
 
-All **221 JVM tests** pass, with zero failures/errors/skips and zero lint errors
-with 79 warnings. The exact light APK installed once in **1,520 ms**, preserving
-the checked preferences/checkpoint, model, grants, absent services and original
-test APK. The bundle passes payload/signing/alignment checks. All five published
-assets match local sizes/SHA256 and the tag matches frozen app source.
-[Publication](docs/voice-session-publication-v22.json) ·
-[Protected installation](docs/voice-session-phone-install-v22.json).
-Model, native runtime, permissions and
-the default-off return-after-unlock choice are retained. Physical ASR, speaker
-audibility, lock/unlock, current bundle import, permitted monitoring, iQOO NPU and
-Office Kit remain unverified. No new inference ran for this update;
+All **227 JVM tests** across 30 suites pass, with zero failures/errors/skips;
+lint has zero errors and 79 warnings. Six new state fixtures cover the initializer
+race and cancellation. The exact light APK installed once in **1,397 ms**,
+preserving checked preferences/checkpoint, model, grants, absent services and the
+original test APK. The bundle passes payload/signing/alignment checks. All five
+published assets and the frozen source tag are verified.
+[Publication](docs/readback-init-publication-v23.json). [Installation](docs/readback-init-phone-install-v23.json).
+Model, native runtime, permissions and companion availability are retained.
+Physical ASR, speaker audibility, lock/unlock, current bundle import, permitted
+monitoring, iQOO NPU and Office Kit remain unverified. No new inference ran;
 v19 CPU evidence retains its own attribution. [Measured CPU scope](docs/native-page-v19.md).
+The dated [v22 readiness check](docs/delivery-readiness-v22.json) found the phone
+locked/screen-off with microphone and notification grants off; the v23 install
+used no UI, wake, grant or inference operation.
 
 Balanced Qwen3.5 research improves supported native intent matches 41→48/50,
 but complete proposals 11→12/50 fail the locked promotion criterion. The selected original model remains installed; no adapter is promoted. [Measured result and limits](docs/balanced-qwen-research.md).
@@ -33,9 +36,9 @@ Production state and the original test APK were restored. This is a bounded nati
 path diagnostic; the complete disconnected voice workflow remains pending.
 [Proof and limits](docs/network-isolation-phone.md).
 
-[Download research v0.22](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.22)
+[Download research v0.23](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.23)
 · [Watch the dated 4:04 v20 research pitch](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/pitch-v020.mp4)
-· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.22)
+· [Build source](https://github.com/sanjuhs/iqoo-focuspilot/tree/research-v0.23)
 · [Verified status](docs/status.md)
 
 > **Pre-event research, not an eligible Finale submission.** The public iQOO
@@ -45,21 +48,21 @@ path diagnostic; the complete disconnected voice workflow remains pending.
 
 ## Try the research app
 
-The app supports Android 9/API 28+ on ARM64. The v0.22 packages use an
+The app supports Android 9/API 28+ on ARM64. The v0.23 packages use an
 optimized CPU library requiring **DOTPROD/I8MM/FP16**; it has been tested on
 Nothing A059 / SM7635 / Android 16. For other hardware, build the generic variant
 below. These are signed debug research packages, not a Play Store release.
 
 | Download | Size | Model setup |
 | --- | ---: | --- |
-| [Bundled v0.22 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/focuspilot-research-v022-voice-session-bundled.apk) | 568.60 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
-| [Light v0.22 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/focuspilot-research-v022-voice-session-light.apk) | 5.56 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
+| [Bundled v0.23 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/focuspilot-research-v023-readback-init-bundled.apk) | 568.62 MB | Includes the pinned 563.04 MB GGUF; explicit model load imports/verifies it into private storage when missing. Allow roughly 1.1 GiB plus installation staging space. Current bundle import remains untested. |
+| [Light v0.23 APK](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.23/focuspilot-research-v023-readback-init-light.apk) | 5.58 MB | Same command screen; needs model preparation below or the already prepared private model for Qwen fallback. Quick commands need no model. |
 
-Verify downloaded bytes against the [v0.22 light manifest](docs/voice-session-artifact-v22.json)
-or [v0.22 bundle manifest](docs/voice-session-bundle-artifact-v22.json).
-Both use app source `08af30893d6ca7ecec70cf66b5026a88be463ca5`.
+Verify downloaded bytes against the [v0.23 light manifest](docs/readback-init-artifact-v23.json)
+or [v0.23 bundle manifest](docs/readback-init-bundle-artifact-v23.json).
+Both use app source `1fc31da5787a49c7680e5bf13b827b6114a0fbe6`.
 Only the bundled GGUF is added; all original app/native/license payloads match.
-[Voice-session scope](docs/voice-session-v22.md).
+[Readback initialization scope](docs/readback-init-v23.md).
 The historical v0.12 bundled APK passed actual missing-model import and second-load reuse
 on Nothing, with app data retained: **1,077 ms** import/SHA and **2,320 ms** CPU load.
 Its first unconfirmed typed request took **9,534 ms**. The original model, light APK
@@ -106,7 +109,7 @@ sets are not general automation accuracy or population latency benchmarks.
 | Command reliability | v0.14 gate-only repair improves complete proposals **13→32/50** on 100 fresh informed synthetic host requests: 19 gains, zero losses/observed wrong accepts, all 50 unknown requests refused. Raw model correctness stays 32/100; 18 supported misses remain. **334 actual pure Android gate checks pass**. No universal safety or voice accuracy claim. [Selected evidence](docs/command-validation-v14.md) · [Rejected JSON prompt](docs/json-command-research.md). |
 | Activation viewer | Four finite width-1,024 tensor summaries are observed on phone, including v0.12 capture. Historical v0.11 paired timings establish no fixed capture overhead. Laptop interventions produced no positive semantic steering finding. [Capture comparison](docs/capture-benchmark-phone.md) · [Causal experiment](docs/interpretability-experiment.md). |
 | Fast decision research | A separate **65-parameter positive-weight policy** scored 472/480 synthetic held-out cases versus 469/480 for a logistic baseline. It remains sandbox/shadow-only. Few-shot retrieval has abstentions; rejected LoRA and intent-head candidates are not deployed. [Policy](docs/policy-baselines.md) · [Learning limits](docs/live-preferences.md). |
-| Build and packaging | v0.22: **221 JVM tests**, zero failures/errors/skips and zero lint errors/79 warnings. Exact light installed with protected state preserved; bundled model SHA, complete app-payload parity, signing and alignment pass. Publication verification is pending. No `INTERNET` permission. Physical voice/readback/lock-unlock, current bundle import/UI, thermals and peak memory remain pending. [Light manifest](docs/voice-session-artifact-v22.json) · [Bundle manifest](docs/voice-session-bundle-artifact-v22.json). |
+| Build and packaging | v0.23: **227 JVM tests**, zero failures/errors/skips and zero lint errors/79 warnings. Exact light installed with protected state preserved; bundled model SHA, complete app-payload parity, signing and alignment pass. Publication verification is pending. No `INTERNET` permission. Physical voice/readback/lock-unlock, current bundle import/UI, thermals and peak memory remain pending. [Light manifest](docs/readback-init-artifact-v23.json) · [Bundle manifest](docs/readback-init-bundle-artifact-v23.json). |
 | Phone export | v0.12 review/picker Cancel and actual local Save passed. A 496-byte empty summary matched phone/laptop checksums and passed zero-record schema validation. No policy inference or Office Kit transfer occurred. [Actual export](docs/phone-export.md). |
 | Hardware, bridge and submission | Actual iQOO/NPU execution, Office Kit pairing/transfer, live permissioned monitoring, IoT hardware, accepted application and eligible event submission remain unfinished. Local laptop export validation is separate from Office Kit. [Remaining deliverables](docs/remaining-deliverables.md). |
 
@@ -156,7 +159,7 @@ lint. [Detailed Android setup](prototype/android/README.md)
 ```sh
 git clone https://github.com/sanjuhs/iqoo-focuspilot.git
 cd iqoo-focuspilot
-git checkout research-v0.22
+git checkout research-v0.23
 
 # Download and verify the selected model into ignored local storage.
 node prototype/qwen/prepare-model.mjs qwen35
@@ -189,7 +192,7 @@ captures stay outside Git; only explicitly sanitized research media is published
 | [hackathon.md](hackathon.md) · [event research](docs/hackathon-research.md) | Productivity track, 100% rubric, event-written code and application requirements |
 | [Verified status](docs/status.md) · [remaining deliverables](docs/remaining-deliverables.md) | Current proof, historical attribution and full unfinished scope |
 | [Architecture](docs/architecture.md) · [model research](docs/model-research.md) | Android design, Kev/Laya/CUA research, licenses and model comparisons |
-| [Companion design](docs/companion-design.md) · [voice](docs/voice-integration.md) · [v22 voice-session fixes](docs/voice-session-v22.md) | Original Mira artwork, accessibility controls and speech lifecycle |
+| [Companion design](docs/companion-design.md) · [voice](docs/voice-integration.md) · [readback initialization](docs/readback-init-v23.md) | Original Mira artwork, accessibility controls and speech lifecycle |
 | [Task guide](docs/task-guide.md) · [timed focus](docs/timed-focus.md) | Authored steps, review/cancellation, countdown and recovery contracts |
 | [Data export](docs/data-export.md) · [phone proof](docs/phone-export.md) · [laptop review](docs/officekit-export-workflow.md) | Private export schema and bounded local replay; Office Kit proof gates |
 | [Tiny policy](docs/policy-baselines.md) · [fine-tuning](docs/qwen-finetuning.md) · [intent head](docs/intent-head.md) | Measured research, rejected candidates and synthetic limitations |

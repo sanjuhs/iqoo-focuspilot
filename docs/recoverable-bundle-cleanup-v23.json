@@ -1,0 +1,13 @@
+{
+  "schema": "focuspilot.recoverable_bundle_cleanup.v23",
+  "scope": "Only exact generated v21 bundle; verified published server bytes before local removal. Current v22 and v23 bundles, canonical model, private data and historical records retained.",
+  "removed_file": "artifacts/focuspilot-research-v021-mira-setup-bundled.apk",
+  "bytes": 568604151,
+  "sha256": "c7ddddc899ffeb11c9b0503319cae56c334d9b840b153bbae783c4dea75edb3e",
+  "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.21/focuspilot-research-v021-mira-setup-bundled.apk",
+  "server_digest": "sha256:c7ddddc899ffeb11c9b0503319cae56c334d9b840b153bbae783c4dea75edb3e",
+  "server_size": 568604151,
+  "server_uploaded": true,
+  "release_public": true,
+  "new_model_downloads": 0
+}

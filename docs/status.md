@@ -1,36 +1,41 @@
 # Verified status
 
-## Current delivery readiness — v22
+## Current delivery readiness — v23
 
-The exact v22 light APK installed in one guarded attempt (1,520 ms). Three checked
-preference stores/checkpoint, pinned model identity, microphone/notification
-grants, service absence and the original test APK remain unchanged. Focus is
-paused, observation off, balance 100 and saved elapsed 97,331 ms. No wake, UI,
-grant or inference operation occurred. [Protected installation](voice-session-phone-install-v22.json).
+The exact v23 light APK installed once in 1,397 ms. Three checked preference
+stores/checkpoint, pinned model identity, microphone/notification grants, service
+absence and the original test APK remain unchanged. Focus is paused, observation
+off, balance 100 and saved elapsed 97,331 ms. No wake, UI, grant or inference
+operation occurred. [Installation](readback-init-phone-install-v23.json).
 
-Physical ASR/readback, lock/unlock, current bundle import and permitted monitoring
-remain open, alongside actual iQOO/NPU, Office Kit and eligible submission. The
-live Phase 1 draft remains verified v21 with human proficiency answers and
-attestation outstanding. No submission occurred; the full goal stays active.
-The prior screen-off readiness observation remains [historical v21 evidence](delivery-readiness-v21.json).
+The dated [v22 readiness check](delivery-readiness-v22.json) observed the phone
+locked/screen-off with microphone/notification grants off. Installation does not
+prove physical ASR/readback, lock/unlock, current bundle import or monitoring.
+Actual iQOO/NPU, Office Kit and eligible submission remain open. The verified
+live Phase 1 draft stays v21 with human experience answers and attestation
+outstanding; no submission occurred. The full goal stays active.
 
-## Current app — v0.22 voice-session fixes
+## Current app — v0.23 readback initialization retry
 
-The dashboard protects its draft while recognition is pending and names the
-actual stop control. Ask Mira matches the callback utterance ID and request token
-before releasing readback controls; failed listener registration prevents speech.
-All 221 JVM tests pass with zero failures/errors/skips; lint has zero errors and
-79 warnings. Qwen3.5-0.8B Q4_0, native runtime, permissions, action review and
-companion availability are unchanged. [Behavior](voice-session-v22.md) ·
-[Light artifact](voice-session-artifact-v22.json) ·
-[Bundle packaging](voice-session-bundle-artifact-v22.json).
+An explicit readback B can now wait for the same speech-engine initializer after
+A is cancelled, keeping its own 20-second bound. Cancel/background/destroy prevent
+auto-speech, and failed initialization can be retried explicitly. The v22 request
+and utterance matching gate and dashboard draft protection remain.
 
-All five published assets match local sizes/SHA256; the release tag matches the
-frozen app source. [Publication](voice-session-publication-v22.json).
-Project files plus recorded new global-cache growth total **9,779,793,207 bytes**,
-below the 10 GB aim. [Storage scope](voice-session-storage-v22.json).
-The dated 4:04 v20 pitch and v19
-CPU inference evidence retain their own attribution; this update ran no model.
+All 227 JVM tests across 30 suites pass with zero failures/errors/skips. Six new
+coordinator/request-state fixtures cover the race; they do not simulate an Android
+speech engine. Lint has zero errors and 79 warnings. Qwen3.5-0.8B Q4_0, native
+runtime, permissions, action review and companion availability are unchanged.
+[Behavior](readback-init-v23.md) · [Artifact](readback-init-artifact-v23.json) ·
+[Bundle packaging](readback-init-bundle-artifact-v23.json).
+
+All five published asset sizes/SHA256 and the frozen source tag are verified.
+[Publication](readback-init-publication-v23.json). The dated 4:04 v20 pitch and v19 CPU results
+retain their attribution; this update ran no model. Physical ASR, audibility,
+lifecycle, current bundle import, iQOO/NPU and Office Kit remain unverified.
+
+Project files plus recorded new global-cache growth total **9,786,981,042 bytes**,
+below the 10 GB aim. [Storage scope](readback-init-storage-v23.json).
 
 ## Historical v0.21 Mira Setup clarity
 
