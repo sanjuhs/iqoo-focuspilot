@@ -47,3 +47,8 @@ storage remains below 15 GB; no new dependencies, downloads or weight copies.
 
 This is pre-event research. Actual iQOO NPU, Office Kit, event-code eligibility and
 accepted submission remain unfinished requirements of the full project.
+
+Published as [research v0.18](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18).
+The exact source tag and all three server asset sizes/digests are verified in the
+[publication record](mira-commands-publication-v18.json). No weights or private
+phone records are release assets.
