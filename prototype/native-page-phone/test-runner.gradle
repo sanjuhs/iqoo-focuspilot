@@ -1,0 +1,16 @@
+// Frozen test-only override. Never changes main sources, native payload or version.
+gradle.beforeProject { project ->
+    if (project.path == ':app') {
+        project.plugins.withId('com.android.application') {
+            project.extensions.getByName('androidComponents').finalizeDsl { android ->
+                def owned = new File(project.rootProject.projectDir.parentFile, 'native-page-phone')
+                def runnerSources = new File(owned, 'runner')
+                if (!new File(runnerSources, 'dev/focuspilot/prototype/PageNativeIsolationInstrumentation.java').isFile())
+                    throw new GradleException('Owned page-native runner source is missing')
+                android.defaultConfig.testInstrumentationRunner = 'dev.focuspilot.prototype.PageNativeIsolationInstrumentation'
+                def sources = android.sourceSets.getByName('androidTest').java
+                sources.setSrcDirs([runnerSources])
+            }
+        }
+    }
+}

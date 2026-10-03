@@ -1,0 +1,306 @@
+{
+  "schema": "focuspilot.geniex_private_package.v1",
+  "status": "private_apk_verified",
+  "source_git_commit": "304c102ff44ba30265a2dff76e3cbeefc5d2e85e",
+  "source_sha256": {
+    "prototype/qualcomm-android/.gitignore": "9431c49d87ab127aeea4f84ea6ad37c78f10db4d25be9ee9f232ec488a3c58df",
+    "prototype/qualcomm-android/README.md": "eee1b06765139e782334433b067979a28a9cb4c9f7ef2000187f426b8fb7893a",
+    "prototype/qualcomm-android/app/build.gradle": "714d940fd8393467105f7bc7aa2416f984dbb3b1f63f14f945e9ec4105cbc47e",
+    "prototype/qualcomm-android/app/src/main/AndroidManifest.xml": "bcd562d91d56acbecdec8ef5904662ca7c28ad47f0a5fa85fbebea8eaad6eb81",
+    "prototype/qualcomm-android/app/src/main/assets/licenses/Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "prototype/qualcomm-android/app/src/main/assets/licenses/Attribution.txt": "52368470b4356c808862ce0d95880774f9707ffb713fb8b664eb0b7ceb46efa6",
+    "prototype/qualcomm-android/app/src/main/assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "prototype/qualcomm-android/app/src/main/assets/licenses/GenieX-LICENSE.txt": "3a1d5f5b391581a14dd06df9859a327ca26f07452a0aa2cfd2008f173d3acbba",
+    "prototype/qualcomm-android/app/src/main/assets/licenses/GenieX-NOTICE.txt": "9461561a735065da88239a46ba1cafbe2a4d5b7d3b3e37825d2ebe9b0e88f9d9",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/HardwareGate.java": "9f480b7dedb33af5a7c4f9c7f50249793661a0eb414c2d44ced50b3ae7ffa1a7",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/NativeProbe.java": "4ecb5bf440a4f981fc6974a6d78ea02d76d409566159b99d737e153ee113fc2b",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/ProbeActivity.java": "209e446ea2575b6850c41728ec5d1b3bcab233e00148608b10de5d6f844ed799",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/ProbeLifecycle.java": "3437081bdf70488b850fadf94fde7522ab0e214f22880286fe969170007b0fef",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/ProcessProbeOwner.java": "1113cc751d59476a792a7e1b50240cfbcb96d22c496eae122db8377130761f58",
+    "prototype/qualcomm-android/app/src/main/java/dev/focuspilot/qualcomm/research/SyntheticCases.java": "e7754799d918afea2d3f6536a1156591f1eca5e94a94e7f3bed9263d6173b2eb",
+    "prototype/qualcomm-android/app/src/test/java/dev/focuspilot/qualcomm/research/HardwareAndLifecycleTest.java": "40ef6e66b51a0d2f96737100ccbd515895bd14e31f997b12c7ea4b4b2e5fd77c",
+    "prototype/qualcomm-android/build.gradle": "49af00f4e39fcb3b3839f89e6db9ba7b4d51cb53e0d210621e74e292cee45dc6",
+    "prototype/qualcomm-android/build_private.py": "4a1cb5565ddb19ae5431ff78b1dbb28a131ab724e2bba3dccc04e01b754f256b",
+    "prototype/qualcomm-android/dependencies.json": "4e93cb9ca987d1625e68cfd2d93df3b5ef11b217729eaa21b4078cd1b623451f",
+    "prototype/qualcomm-android/gradle.properties": "65c8508e4db1e61f18f29d3ded79431d70397238316774859a627f2d29e02bb4",
+    "prototype/qualcomm-android/license-provenance.json": "185f6670cac8d9cb9162b6eb957f71ee0623c0907e8a9a17d193a9cb33eb94c0",
+    "prototype/qualcomm-android/settings.gradle": "43b0f8f18b4fded10ef2c0c4fa083a1023ada9d0e3f6636ce729dbdc7ddace47",
+    "prototype/qualcomm-android/test_build_private.py": "9c1abedb45c2c964b8fcb0a170c56fd5f2606edfe3228d0216cfb6e2aa8a1218"
+  },
+  "artifact_path": "prototype/qualcomm-android/build/private-geniex-research.apk",
+  "artifact_bytes": 93017281,
+  "artifact_sha256": "b256491c26d78fb72dce3d81d5a698d4ed77bf1491f44a342d3a93bac3535d60",
+  "package": "dev.focuspilot.qualcomm.research",
+  "version_code": 1,
+  "min_sdk": 31,
+  "target_sdk": 35,
+  "permissions": [],
+  "bundled_model": false,
+  "native_payloads": {
+    "lib/arm64-v8a/libCalculator_skel.so": {
+      "sha256": "364f834b5940f8eca19d6145be0b6dc83957ae0b1e72b19691cc506de042c024",
+      "bytes": 5656
+    },
+    "lib/arm64-v8a/libPlatformValidatorShared.so": {
+      "sha256": "c8d39905fca9b56edf3c5a1606c5f310daa5f423ddee10b506a8cd9f0774524d",
+      "bytes": 15211024
+    },
+    "lib/arm64-v8a/libQnnChrometraceProfilingReader.so": {
+      "sha256": "db797082f1ede6b41039b3aecf2303ca8ace1f00c8cef7f0283f8f83a3309b7d",
+      "bytes": 633560
+    },
+    "lib/arm64-v8a/libQnnHta.so": {
+      "sha256": "f23c4f864b98842ad601378691c1f3559e20a80b36434749baf39b9f164b4b60",
+      "bytes": 1019312
+    },
+    "lib/arm64-v8a/libQnnHtaNetRunExtensions.so": {
+      "sha256": "4e3588f7f6185a9c083e4c886573dfe43849859f3f7123768556d43306fe0e9c",
+      "bytes": 414728
+    },
+    "lib/arm64-v8a/libQnnHtp.so": {
+      "sha256": "b5b36b2d5e0cc352b5e5f468f6f668b1585d515854fc1c5890b1365047a36be1",
+      "bytes": 2952008
+    },
+    "lib/arm64-v8a/libQnnHtpNetRunExtensions.so": {
+      "sha256": "0d29d3dac7d82d8eb5bdc47a0649a7d6a5f5b4a2fbc52b2f975b6ae2c16b6213",
+      "bytes": 957864
+    },
+    "lib/arm64-v8a/libQnnHtpOptraceProfilingReader.so": {
+      "sha256": "154657f3b58fa3418bd1d62aaf712eb66f1daa34ca01b6dffc6ba2d234a92ab3",
+      "bytes": 3909608
+    },
+    "lib/arm64-v8a/libQnnHtpPrepare.so": {
+      "sha256": "d0001d629c6d7ded14f2c850e93983b87589cd5748724bb9aaf56f7adb2b338a",
+      "bytes": 87739504
+    },
+    "lib/arm64-v8a/libQnnHtpProfilingReader.so": {
+      "sha256": "84afddf100ab5799037d38d1f1456b21ab3e90284acdfece955527a01b13ba13",
+      "bytes": 624312
+    },
+    "lib/arm64-v8a/libQnnHtpV79.so": {
+      "sha256": "4cda6566a20775a1062c4adc44b7a07e88e786ac086c48c261279ffb2e96fc21",
+      "bytes": 11212084
+    },
+    "lib/arm64-v8a/libQnnHtpV79CalculatorStub.so": {
+      "sha256": "a1b922bdec311f208bed2ee6179359db0113e0bd1235fc3250727c3a8338ee1d",
+      "bytes": 250712
+    },
+    "lib/arm64-v8a/libQnnHtpV79Skel.so": {
+      "sha256": "82275aaae3f022387e2c86d5b45eecb390b1b873e6a223a31036bdf5c985ceb1",
+      "bytes": 10936696
+    },
+    "lib/arm64-v8a/libQnnHtpV79Stub.so": {
+      "sha256": "16ed6f58965bcabc5cbe4e6c322a4953aefe2c74d6d1c662e70e6234eae0c662",
+      "bytes": 726960
+    },
+    "lib/arm64-v8a/libQnnHtpV81.so": {
+      "sha256": "a9caf550a71d827cb324f4d4f9bbe9b393a58ac781e26343c5f437e85c5b9ffc",
+      "bytes": 12108736
+    },
+    "lib/arm64-v8a/libQnnHtpV81CalculatorStub.so": {
+      "sha256": "53c464f8833cabc65baf16d0292aa0fe293909bf9333327092283261f713e603",
+      "bytes": 250712
+    },
+    "lib/arm64-v8a/libQnnHtpV81Skel.so": {
+      "sha256": "4b19d3c6ec8b3017f80710ffa1726c3a6578047933aee4cf451b9eb526403ff9",
+      "bytes": 11788496
+    },
+    "lib/arm64-v8a/libQnnHtpV81Stub.so": {
+      "sha256": "e97898d6772288e202e9cf988b80b39b8336f3dca8b99ee3075d234093582e3c",
+      "bytes": 803416
+    },
+    "lib/arm64-v8a/libQnnIr.so": {
+      "sha256": "693ff3328eeb300de627518038c8a96adde2573fe36d7f97191b687a506223a1",
+      "bytes": 1890848
+    },
+    "lib/arm64-v8a/libQnnJsonProfilingReader.so": {
+      "sha256": "3dc1d660723b69b97ee23ea13a4c1ff24be28a5a68d1972be22ce18602cf34c4",
+      "bytes": 670744
+    },
+    "lib/arm64-v8a/libQnnModelDlc.so": {
+      "sha256": "7df64d2f79f34a701d2cd4d4b3b2ef2ded4ec1f24375b77ff0aa31fd4ea70932",
+      "bytes": 3122808
+    },
+    "lib/arm64-v8a/libQnnNetRunDirectV79Skel.so": {
+      "sha256": "3701773947b54236d098f0a5f968e77104fb27e066909a978528792ded3c78d4",
+      "bytes": 2063044
+    },
+    "lib/arm64-v8a/libQnnNetRunDirectV79Stub.so": {
+      "sha256": "48bb7c424d566d2cc0a09fd7433eabf6234afe3aff473e54b7d366cf0946a692",
+      "bytes": 959648
+    },
+    "lib/arm64-v8a/libQnnNetRunDirectV81Skel.so": {
+      "sha256": "9839672ce9db0519dc43b638d04fad6bfc4844ec68897db79e440825ee2163f2",
+      "bytes": 2683988
+    },
+    "lib/arm64-v8a/libQnnNetRunDirectV81Stub.so": {
+      "sha256": "f523c658575e93f3e7c44e921db5e5c72b6695374a9379923d6d0e5eaccd9056",
+      "bytes": 1017912
+    },
+    "lib/arm64-v8a/libQnnSaver.so": {
+      "sha256": "61376cb2d732dc680466740366d1c719b058370f4adfa43dae1ff4514a781f1b",
+      "bytes": 788056
+    },
+    "lib/arm64-v8a/libQnnSystem.so": {
+      "sha256": "f08e9ddc18a40719839cce8bbfb3afd3aef06f5ad486b21934a1c4568c9a6a48",
+      "bytes": 3635400
+    },
+    "lib/arm64-v8a/libcalculator.so": {
+      "sha256": "a3a2a7df973cae84671a6241e437b95c74687b6ad7191e686675277977db7118",
+      "bytes": 250144
+    },
+    "lib/arm64-v8a/libgeniex-proc-vision.so": {
+      "sha256": "996da37ad72bd345f14cea82ffcb01781eabcfd579509caf0351f0b4355a8b78",
+      "bytes": 374032
+    },
+    "lib/arm64-v8a/libgeniex-proc.so": {
+      "sha256": "0099cef68baf8d632d85453043a85bd371cc26a6df3e5fef25fd0716847f4611",
+      "bytes": 7092040
+    },
+    "lib/arm64-v8a/libgeniex.so": {
+      "sha256": "9a722f40e59fab5d2315e856e2fbaf18bbe7c56336ac680d67ffb95854ce2575",
+      "bytes": 5267280
+    },
+    "lib/arm64-v8a/libgeniex_core.so": {
+      "sha256": "958ee71c6e88b2e32a9b357e61023002ab42ea8ecc461e9e95470d91fef39042",
+      "bytes": 1132008
+    },
+    "lib/arm64-v8a/libgeniex_plugin_llama_cpp.so": {
+      "sha256": "9ca40a67d5e634fde1ac9b87f1c15e503907b0081a3d6428ad8a8052c7c87c60",
+      "bytes": 227624
+    },
+    "lib/arm64-v8a/libgeniex_plugin_qairt.so": {
+      "sha256": "e89c9428c0ca874d4da399e205fd31d0cc3b70dc7b60d205dff2ce45cc450c1f",
+      "bytes": 277840
+    },
+    "lib/arm64-v8a/libgeniex_vlm.so": {
+      "sha256": "500c9f9974417158f13e0bdbf6b509cc6cea28bc7501da4ea3372c69db6f89fd",
+      "bytes": 355424
+    },
+    "lib/arm64-v8a/libggml-base.so": {
+      "sha256": "c4ce393d26da5bb643ac64e4b53a9c37547f0f22eb888319453effa4d6ececf7",
+      "bytes": 996568
+    },
+    "lib/arm64-v8a/libggml-cpu.so": {
+      "sha256": "8a149c25b0ea712d7bf1515b51d04749c0c32c1efcc7e2ac6e6a72ee6d0e6191",
+      "bytes": 842104
+    },
+    "lib/arm64-v8a/libggml-hexagon.so": {
+      "sha256": "ebc0b35512beb3d3894bb64b60a73c4e9e313abfbcd2a8c4c2949096ad365a65",
+      "bytes": 851768
+    },
+    "lib/arm64-v8a/libggml-htp-v73.so": {
+      "sha256": "d13fa3418000ae287bbfc94f902f49274c4adee03da484b1b8bc285581dcac33",
+      "bytes": 790452
+    },
+    "lib/arm64-v8a/libggml-htp-v75.so": {
+      "sha256": "3b79c81d7f75dbc9bb743c9613858a1b583cda9b2c8d966b2ca1f794cd0647f0",
+      "bytes": 847796
+    },
+    "lib/arm64-v8a/libggml-htp-v79.so": {
+      "sha256": "e4098a27106ba9a679fbb9c452868b82e4e12d25b77a258935a32a57e99f1d26",
+      "bytes": 868348
+    },
+    "lib/arm64-v8a/libggml-htp-v81.so": {
+      "sha256": "64e206af4dec76712432ab42b76cf9f6d4fb70428c9c6cf6e0524cf90006406d",
+      "bytes": 868352
+    },
+    "lib/arm64-v8a/libggml-opencl.so": {
+      "sha256": "7cb6f9ff11e9d6c07b85c29e267f95f5040ccfe1d147a939de310740ec0f4cfe",
+      "bytes": 3453712
+    },
+    "lib/arm64-v8a/libggml.so": {
+      "sha256": "d88d0d5bcb3f75a3d47d0357fd966e301a13f4ef2a5c293b61a619e80b8ffe14",
+      "bytes": 31336
+    },
+    "lib/arm64-v8a/libhta_hexagon_runtime_qnn.so": {
+      "sha256": "b669169c639fd66b32fe75d48c1ac8cdaaf67d278c9bf7932d237e4636c0c296",
+      "bytes": 2400192
+    },
+    "lib/arm64-v8a/libhta_hexagon_runtime_snpe.so": {
+      "sha256": "b669169c639fd66b32fe75d48c1ac8cdaaf67d278c9bf7932d237e4636c0c296",
+      "bytes": 2400192
+    },
+    "lib/arm64-v8a/libllama-common.so": {
+      "sha256": "4de06f4d9dc1c4de30d272b4583c9cedb20fba9f922c10e97edbd03bd4aae34a",
+      "bytes": 3710952
+    },
+    "lib/arm64-v8a/libllama.so": {
+      "sha256": "7c58b14a429b2f2b3959e33c812179a5e9dcd25dea6d20a8983418b1c34e104b",
+      "bytes": 3388744
+    },
+    "lib/arm64-v8a/libmtmd.so": {
+      "sha256": "113d7ae4c5f68a209d2e43519c3b8d4ef20ca2aea6ab927053df63e9a36c0813",
+      "bytes": 1239272
+    },
+    "lib/arm64-v8a/libnpu_jni.so": {
+      "sha256": "a4d3a2c3c1d2cd2baa9785fe6aaa9f78fddd9ef8dd0265824d18a71fe42cd6d9",
+      "bytes": 465616
+    },
+    "lib/arm64-v8a/libomp.so": {
+      "sha256": "cb47b6557429b3c10861cdf2c9819d8ac89a5388e71ed929afca7c533ba312aa",
+      "bytes": 973944
+    }
+  },
+  "license_assets": {
+    "assets/licenses/Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    "assets/licenses/Attribution.txt": {
+      "bytes": 1213,
+      "sha256": "52368470b4356c808862ce0d95880774f9707ffb713fb8b664eb0b7ceb46efa6"
+    },
+    "assets/licenses/FocusPilot-MIT.txt": {
+      "bytes": 1080,
+      "sha256": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b"
+    },
+    "assets/licenses/GenieX-LICENSE.txt": {
+      "bytes": 1565,
+      "sha256": "3a1d5f5b391581a14dd06df9859a327ca26f07452a0aa2cfd2008f173d3acbba"
+    },
+    "assets/licenses/GenieX-NOTICE.txt": {
+      "bytes": 8436,
+      "sha256": "9461561a735065da88239a46ba1cafbe2a4d5b7d3b3e37825d2ebe9b0e88f9d9"
+    }
+  },
+  "native_vendor_payload_parity": true,
+  "zip_alignment": "16KiB ZIP check passed; runtime restricted to 4KiB by vendor GNU_RELRO guard",
+  "signature_verified": true,
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "downloads_allowed": false,
+  "phone_accessed": false,
+  "binary_publication_allowed": false,
+  "redistribution_terms": "UNRESOLVED; private build only",
+  "project_bytes_before": 12207417941,
+  "existing_external_dependency_bytes": 3332653,
+  "reserve_bytes": 1250000000,
+  "reserved_peak_bytes": 13460750594,
+  "project_bytes_after": 12741338388,
+  "additional_global_cache_bytes": 218929152,
+  "peak_additional_global_cache_bytes": 218929328,
+  "peak_polled_effective_bytes": 12963600193,
+  "elapsed_seconds": 17.94327629194595,
+  "storage_measurement_scope": "Logical project bytes plus pinned external JARs and positive global Gradle-cache growth; poll sampling is not a continuous peak proof",
+  "research_only": true,
+  "sdk_runtime_tested": false,
+  "npu_verified": false,
+  "phone_installed": false,
+  "hardware_guard": {
+    "api_min": 31,
+    "abi": "arm64-v8a",
+    "soc_allowlist": [
+      "SM8750",
+      "SM8850"
+    ],
+    "page_size_required": 4096,
+    "guard_before_sdk_initialization": true
+  },
+  "host_checks": {
+    "java_fixture_groups": 12,
+    "python_tests": 2,
+    "actual_aar_android_javac_compiled": true,
+    "runtime_accessed": false
+  },
+  "private_record_sha256": "8378f7ab06ae463bd355de3d078cbdf3186b1fc8948eae3cbd8decbbd41aa280"
+}

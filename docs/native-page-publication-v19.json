@@ -1,0 +1,40 @@
+{
+  "schema": "focuspilot.native_page_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.19",
+  "tag": "research-v0.19",
+  "source_commit": "caaf5246116ad02144f8bf0a4d92ce8053bf8275",
+  "all_server_sizes_and_digests_verified": true,
+  "assets": [
+    {
+      "name": "focuspilot-research-v019-page-layout-light.apk",
+      "bytes": 5562644,
+      "sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/focuspilot-research-v019-page-layout-light.apk"
+    },
+    {
+      "name": "focuspilot-research-v019-page-layout-bundled.apk",
+      "bytes": 568604151,
+      "sha256": "4a0e7f5c2b45daa9f8c39f0cebb8f6a6456e7c42a0ecfa0b7853fc87e9385d73",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/focuspilot-research-v019-page-layout-bundled.apk"
+    },
+    {
+      "name": "native-page-artifact-v19.json",
+      "bytes": 5357,
+      "sha256": "5259d31afb284417a4ab1e9012075332e340a625609d576a3f088e0299517539",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/native-page-artifact-v19.json"
+    },
+    {
+      "name": "native-page-bundle-artifact-v19.json",
+      "bytes": 4700,
+      "sha256": "75d7ee5ccf16745a50fd797816f8473ec8255640613c091569655cf1da314853",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/native-page-bundle-artifact-v19.json"
+    },
+    {
+      "name": "native-page-phone-install-v19.json",
+      "bytes": 1192,
+      "sha256": "aa229e78c712ef59ebcbf566eb62b256174635c002a54c0a91ed3ea42a6cd288",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.19/native-page-phone-install-v19.json"
+    }
+  ],
+  "scope": "Public pre-eventCPU research APKs and scoped artifact/update records; no private Qualcomm SDK binary or private phone captures."
+}

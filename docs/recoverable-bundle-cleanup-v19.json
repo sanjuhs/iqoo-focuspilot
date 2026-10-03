@@ -1,0 +1,56 @@
+{
+  "schema": "focuspilot.recoverable_older_bundle_cleanup.v1",
+  "items": [
+    {
+      "file": "artifacts/focuspilot-research-v010-bundled.apk",
+      "bytes": 568516824,
+      "sha256": "1cb5678781ca3a4aa63f462d445b05516d93f1d363e78f6e2a05f7f46a777bf0",
+      "release_tag": "research-v0.10",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.10/focuspilot-research-v010-bundled.apk",
+      "server_size_and_digest_verified": true
+    },
+    {
+      "file": "artifacts/focuspilot-research-v011-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "ba135c616c0cb49edd67988b25a746da1adb7c5fe7a86ea0e4b135c5b35fb795",
+      "release_tag": "research-v0.11",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.11/focuspilot-research-v011-bundled.apk",
+      "server_size_and_digest_verified": true
+    },
+    {
+      "file": "artifacts/focuspilot-research-v012-feedback-bundled.apk",
+      "bytes": 568542711,
+      "sha256": "8fb78f14311ddec0c92357f95d13603a19b009a5add399a05e6284894c0ba088",
+      "release_tag": "research-v0.12",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/focuspilot-research-v012-feedback-bundled.apk",
+      "server_size_and_digest_verified": true
+    },
+    {
+      "file": "artifacts/focuspilot-research-v013-reset-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "6af9c572dbe50934d09c7d17e0460d4710f501a792786675da87bcbc99577ae0",
+      "release_tag": "research-v0.13",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.13/focuspilot-research-v013-reset-bundled.apk",
+      "server_size_and_digest_verified": true
+    },
+    {
+      "file": "artifacts/focuspilot-research-v014-gate-bundled.apk",
+      "bytes": 568538615,
+      "sha256": "c929ad2ae164542bcfca1adbc182ce1954cb5b43a1418f34e3613f05481c3947",
+      "release_tag": "research-v0.14",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.14/focuspilot-research-v014-gate-bundled.apk",
+      "server_size_and_digest_verified": true
+    }
+  ],
+  "retained": [
+    {
+      "file": "artifacts/focuspilot-research-v012-bundled.apk",
+      "reason": "No unique public recovery asset; retained untouched."
+    }
+  ],
+  "first_preflight_refused_without_deletion": "One candidate had no public recovery asset. A separate plan selects only the five fully verified published candidates.",
+  "project_bytes_before": 12741328512,
+  "bytes_reclaimed": 2842675380,
+  "scope": "Ignored generated older published bundled APKs only; currentv18/v19, all light/test/native artifacts, model files and private phone records retained.",
+  "project_bytes_after": 9898655875
+}

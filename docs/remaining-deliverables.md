@@ -1,5 +1,12 @@
 # Remaining deliverables — full-scope audit
 
+**Current v19 update:** Qwen3.5-0.8B Q4_0 stays selected. Native ELF load/RELRO and
+APK ZIP checks pass, all 208 JVM tests pass and one protected light update installs
+on the 4 KB Nothing phone. New JNI regression and 16 KB runtime remain separate.
+A permission-free Qualcomm diagnostic APK is built privately; supported-device
+execution, NPU traces, voice/monitoring, Office Kit and accepted eligible submission
+remain pending. [Native update](native-page-v19.md), [SDK probe](geniex-private-probe.md).
+
 **Current account/application proof, 3 October:** signed-in Finale dashboard is
 accessible, Productivity selected and one-member team observed. Phase 1 idea
 deadline is 5 October, with exact cutoff time/timezone unknown. Required PDF/document

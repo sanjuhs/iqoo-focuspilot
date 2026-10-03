@@ -52,3 +52,5 @@ license assets pass. Reserved two-copy peak was 12,776,135,271 logical project
 bytes, below 15 GB. No bundle installation/import or inference occurs during
 packaging. Public weights are intentionally included in the APK and remain outside
 Git. [Packaging evidence](native-page-bundle-artifact-v19.json).
+
+Published [research v0.19](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.19); all five server asset sizes/digests and exact source tag are checked in the [publication record](native-page-publication-v19.json).

@@ -1,5 +1,16 @@
 # Verified status
 
+## Private Qualcomm diagnostic — source and APK ready
+
+A separate permission-free pre-event GenieX probe builds offline and retains every
+vendor native payload unchanged. Its entry/worker require supported SoC, ARM64,
+API 31+ and actual 4 KB pages before SDK initialization. Twelve host fixture groups,
+two storage tests and actual-AAR Java compilation pass; package checks pass.
+No SDK phone run, model inference or NPU verification occurs. The private APK is
+excluded from Git/public releases while all-vendor redistribution terms remain
+unresolved. [Artifact and scope](geniex-private-probe.md). Actual iQOO/Office Kit and eligible accepted
+submission remain pending.
+
 ## Current native page-layout repair — v0.19
 
 Qwen3.5-0.8B Q4_0 remains selected. The v19 research library now passes the
@@ -10,11 +21,11 @@ preferences/model/grants/services unchanged. No UI, wake, inference or grants
 occur during that update. Nothing uses 4 KB pages; actual 16 KB runtime and the new
 JNI regression remain pending. Prior v18 alignment checks were narrower and
 prior inference timings remain attributed to their original artifacts.
-[Current evidence and limitation](native-page-v19.md). Standalone v18 bundle remains historical;
+[Current evidence and limitation](native-page-v19.md). The v19 standalone bundle is packaged/published; its import remains pending;
 actual iQOO/NPU, Office Kit, permitted voice/monitoring and eligible accepted
 submission remain required.
 
-## Current standalone Mira bundle — v0.18
+## Historical standalone Mira bundle — v0.18
 
 Qwen3.5-0.8B Q4_0 is now packaged inside a 568,608,247-byte v18 APK. Signing,
 16 KiB alignment, the pinned model hash and all 16 original app-payload hashes
@@ -54,7 +65,7 @@ Continue the full assistant: unlocked v18 workflows, permitted voice/monitoring,
 actual iQOO/NPU and Office Kit, eligible event code and final accepted submission.
 Phone remains authorized but locked/off; no process is being waited on.
 
-## Current app — v0.18 friendly Mira commands
+## Historical app — v0.18 friendly Mira commands
 
 Qwen3.5-0.8B Q4_0 stays selected. Ask Mira now opens an empty editable request
 with draft-only examples and quick checks first. Qwen loading stays explicit;
