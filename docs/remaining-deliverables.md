@@ -1,14 +1,27 @@
 # Remaining deliverables — full-scope audit
 
-## Current delivery readiness — v21
+## Current delivery readiness — v22
 
-A fresh read-only check finds USB authorized and v21 installed, with the phone
-locked/screen-off and microphone/notification grants off. No wake, UI, permission
-or inference operation occurred. [Observed readiness](delivery-readiness-v21.json).
-Physical Setup/voice/monitoring/lock-unlock and current bundle import remain open;
-actual iQOO/NPU, Office Kit, eligible event code and accepted submission are still
-required. The application draft is now updated, with human proficiency answers and
-attestation remaining. The full goal stays active; a prepared draft is not a receipt.
+The signed light update installed once in 1,520 ms with the checked paused
+preferences/checkpoint, model, grants, absent services and original test unchanged.
+No wake, UI, permission grant or inference occurred. [Installation](voice-session-phone-install-v22.json).
+Physical ASR/readback, companion lock/unlock, current bundle import and permitted
+monitoring remain required. Actual iQOO/NPU, Office Kit, eligible event code and
+accepted submission are unfinished. The live Phase 1 draft remains verified v21;
+human proficiency answers and attestation are outstanding. The full goal stays
+active; a prepared draft is not a receipt.
+
+## Current app — v22 voice-session fixes
+
+Dashboard draft protection and Ask Mira's token-plus-utterance callback gate are
+built and installed. All 221 JVM tests pass with zero failures/errors/skips;
+lint has zero errors and 79 warnings. Qwen3.5-0.8B Q4_0, native runtime, permissions,
+action review and companion availability are retained. The bundle passes packaging
+checks; all five release assets and the source tag are verified.
+[Publication](voice-session-publication-v22.json). This adds no physical
+voice or new inference proof. [Current scope](voice-session-v22.md) ·
+[Artifact](voice-session-artifact-v22.json) ·
+[Bundle identity](voice-session-bundle-artifact-v22.json).
 
 ## Task-guidance candidate — measured rejection
 
@@ -34,14 +47,14 @@ persistence, document validation, admission and accepted submission are unverifi
 ## Current research pitch — 4:04
 
 The v20 edited research video is rendered with 24 measured captions, original
-Mira animation, clearly labelled historical v12 phone clips and current source
+Mira animation, clearly labelled historical v12 phone clips and v20 source
 illustrations. Full decode, caption/audio checks and four sampled clip-parity
 comparisons pass. The first QA crop error and corrected separate check are
 preserved; the video is unchanged. Complete human playback and the current live
 phone/iQOO/Office Kit workflows remain pending. [Video and evidence](v020-pitch.md).
 
 
-## Current app — v21 Setup clarity
+## Historical v21 Setup clarity
 
 Qwen3.5-0.8B Q4_0 remains selected. Setup describes the existing optional
 return-after-unlock accurately and distinguishes resting from displayed status.
@@ -77,11 +90,12 @@ remain pending. [Native update](native-page-v19.md), [SDK probe](geniex-private-
 **Current account/application proof, 3 October:** signed-in Finale dashboard is
 accessible, Productivity selected and one-member team observed. Phase 1 idea
 deadline is 5 October, with exact cutoff time/timezone unknown. Required PDF/document
-is prepared; human proficiency/history and submission attestation remain pending.
-Public fields are now populated in the live draft and the PDF link attached; human
-proficiency/history remain unanswered, checkbox unchecked and no submission/file
+is prepared; human proficiency answers and submission attestation remain pending.
+Public fields include the user-provided prior-project reference in the verified
+v21 live draft, with the PDF link attached; human proficiency answers remain
+unanswered, checkbox unchecked and no submission/file
 upload/profile/Terms change occurred. Draft persistence and final document validation
-remain unverified. [Prepared live draft](phase1-prepared-dashboard-draft.json),
+remain unverified. [Prepared live draft](phase1-prepared-dashboard-draft-v21.json),
 [Actual requirements](phase1-dashboard-observation.json),
 [current application](application-draft.md), [document QA](phase1-document-evidence.json).
 

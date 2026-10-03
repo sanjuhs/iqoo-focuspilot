@@ -1,0 +1,55 @@
+{
+  "schema": "focuspilot.voice_session_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.22",
+  "release_id": 402301428,
+  "tag_commit": "08af30893d6ca7ecec70cf66b5026a88be463ca5",
+  "prerelease": true,
+  "asset_count": 5,
+  "assets": [
+    {
+      "file": "artifacts/focuspilot-research-v022-voice-session-light.apk",
+      "bytes": 5562748,
+      "sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+      "server_digest": "sha256:70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/focuspilot-research-v022-voice-session-light.apk"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v022-voice-session-bundled.apk",
+      "bytes": 568604151,
+      "sha256": "70162f372e05ce6bc785a9b29a95438f7d3d12ea2bc68c2572ee760af24e960f",
+      "server_digest": "sha256:70162f372e05ce6bc785a9b29a95438f7d3d12ea2bc68c2572ee760af24e960f",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/focuspilot-research-v022-voice-session-bundled.apk"
+    },
+    {
+      "file": "docs/voice-session-artifact-v22.json",
+      "bytes": 4130,
+      "sha256": "b7b4b333fe0e07d1eeaa33dff5fb27a682e886fda8e4d5cddfd1619e1aab1a24",
+      "server_digest": "sha256:b7b4b333fe0e07d1eeaa33dff5fb27a682e886fda8e4d5cddfd1619e1aab1a24",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/voice-session-artifact-v22.json"
+    },
+    {
+      "file": "docs/voice-session-bundle-artifact-v22.json",
+      "bytes": 4885,
+      "sha256": "54a2bb88a5b5d80475e6de5799a81ff8a77d680fc0c435d8ea3486835f7ee0e1",
+      "server_digest": "sha256:54a2bb88a5b5d80475e6de5799a81ff8a77d680fc0c435d8ea3486835f7ee0e1",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/voice-session-bundle-artifact-v22.json"
+    },
+    {
+      "file": "docs/voice-session-phone-install-v22.json",
+      "bytes": 2487,
+      "sha256": "dcbdd205bdca63a7992e4e7cb323aee2e69ae1c34c5d8c0343dfc2a2029b6024",
+      "server_digest": "sha256:dcbdd205bdca63a7992e4e7cb323aee2e69ae1c34c5d8c0343dfc2a2029b6024",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.22/voice-session-phone-install-v22.json"
+    }
+  ],
+  "notes_sha256": "5355639f26498a95423999407fd9fe073bd3cc2c029f23e4d23d0bf46096bb90",
+  "notes_exact_verified": true,
+  "notes_terminal_newline_ignored": false,
+  "creation_sequence": "Frozen source and installation evidence pushed before one release create/upload operation.",
+  "research_only": true,
+  "physical_voice_verified": false,
+  "physical_lock_unlock_verified": false,
+  "current_bundle_import_verified": false,
+  "npu_verified": false,
+  "office_kit_verified": false
+}

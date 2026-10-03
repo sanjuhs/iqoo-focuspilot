@@ -1,16 +1,38 @@
 # Verified status
 
-## Current delivery readiness — v21
+## Current delivery readiness — v22
 
-A fresh read-only check finds USB authorized and v21 installed, with the phone
-locked/screen-off and microphone/notification grants off. No wake, UI, permission
-or inference operation occurred. [Observed readiness](delivery-readiness-v21.json).
-Physical Setup/voice/monitoring/lock-unlock and current bundle import remain open;
-actual iQOO/NPU, Office Kit, eligible event code and accepted submission are still
-required. The application draft is now updated, with human proficiency answers and
-attestation remaining. The full goal stays active; a prepared draft is not a receipt.
+The exact v22 light APK installed in one guarded attempt (1,520 ms). Three checked
+preference stores/checkpoint, pinned model identity, microphone/notification
+grants, service absence and the original test APK remain unchanged. Focus is
+paused, observation off, balance 100 and saved elapsed 97,331 ms. No wake, UI,
+grant or inference operation occurred. [Protected installation](voice-session-phone-install-v22.json).
 
-## Current app — v0.21 Mira Setup clarity
+Physical ASR/readback, lock/unlock, current bundle import and permitted monitoring
+remain open, alongside actual iQOO/NPU, Office Kit and eligible submission. The
+live Phase 1 draft remains verified v21 with human proficiency answers and
+attestation outstanding. No submission occurred; the full goal stays active.
+The prior screen-off readiness observation remains [historical v21 evidence](delivery-readiness-v21.json).
+
+## Current app — v0.22 voice-session fixes
+
+The dashboard protects its draft while recognition is pending and names the
+actual stop control. Ask Mira matches the callback utterance ID and request token
+before releasing readback controls; failed listener registration prevents speech.
+All 221 JVM tests pass with zero failures/errors/skips; lint has zero errors and
+79 warnings. Qwen3.5-0.8B Q4_0, native runtime, permissions, action review and
+companion availability are unchanged. [Behavior](voice-session-v22.md) ·
+[Light artifact](voice-session-artifact-v22.json) ·
+[Bundle packaging](voice-session-bundle-artifact-v22.json).
+
+All five published assets match local sizes/SHA256; the release tag matches the
+frozen app source. [Publication](voice-session-publication-v22.json).
+Project files plus recorded new global-cache growth total **9,779,793,207 bytes**,
+below the 10 GB aim. [Storage scope](voice-session-storage-v22.json).
+The dated 4:04 v20 pitch and v19
+CPU inference evidence retain their own attribution; this update ran no model.
+
+## Historical v0.21 Mira Setup clarity
 
 **Qwen3.5-0.8B Q4_0 remains the primary model, as requested.** Setup now explains
 both default stop-on-lock and opt-in return-after-unlock, and distinguishes a
@@ -30,8 +52,8 @@ Published [research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/t
 all five uploaded assets match local sizes/SHA256 and the tag matches the frozen
 app source. Project files plus recorded new global-cache growth total
 9,773,421,314 bytes, below the 10 GB aim. [Publication](mira-setup-publication-v21.json)
-· [Storage scope](mira-setup-storage-v21.json). The live Phase 1 draft still
-has its verified v20 copy and dated v20 pitch; this release did not edit or submit it.
+· [Storage scope](mira-setup-storage-v21.json). The Phase 1 draft was subsequently verified with v21 copy
+and the dated v20 pitch; the v22 update did not edit or submit it.
 
 ## Credential-check correction
 
@@ -66,7 +88,7 @@ persistence, document validation, admission and accepted submission are unverifi
 ## Current research pitch — 4:04
 
 The v20 edited research video is rendered with 24 measured captions, original
-Mira animation, clearly labelled historical v12 phone clips and current source
+Mira animation, clearly labelled historical v12 phone clips and v20 source
 illustrations. Full decode, caption/audio checks and four sampled clip-parity
 comparisons pass. The first QA crop error and corrected separate check are
 preserved; the video is unchanged. Complete human playback and the current live

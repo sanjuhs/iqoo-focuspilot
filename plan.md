@@ -1,6 +1,31 @@
 # FocusPilot delivery plan
 
-## Current app — v0.21 Mira Setup clarity
+## Current app — v0.22 voice-session fixes
+
+The dashboard voice draft and Ask Mira readback ownership fixes are built and
+installed. All 221 JVM tests pass (zero failures/errors/skips); lint has zero
+errors and 79 warnings. One guarded light update took 1,520 ms and preserved the
+checked preferences/checkpoint, model, grants, service absence and original test
+APK. Bundle packaging, all five published assets and the frozen source tag pass
+verification.
+[Current source scope](docs/voice-session-v22.md) ·
+[Installation](docs/voice-session-phone-install-v22.json) ·
+[Bundle identity](docs/voice-session-bundle-artifact-v22.json).
+
+Keep **Qwen3.5-0.8B Q4_0**, the existing native runtime/action review and companion
+availability. Next verify permitted foreground ASR and audible readback on an
+unlocked phone, then companion lock/unlock and current bundle import. No new
+inference or physical voice proof comes from this update. Actual iQOO/NPU,
+Office Kit and eligible event code remain separate requirements. The live Phase
+1 draft remains v21; collect human experience answers and attestation before
+submission. The dated 4:04 v20 pitch stays unchanged.
+
+Published [research v0.22](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.22).
+[Publication proof](docs/voice-session-publication-v22.json) ·
+[Storage scope](docs/voice-session-storage-v22.json): 9,779,793,207 bytes including
+recorded cache growth, below the 10 GB aim. This remains pre-event research.
+
+## Historical v0.21 Mira Setup clarity
 
 **Qwen3.5-0.8B Q4_0 remains the primary model, as requested.** Setup now explains
 both default stop-on-lock and opt-in return-after-unlock, and distinguishes a
@@ -20,8 +45,8 @@ Published [research v0.21](https://github.com/sanjuhs/iqoo-focuspilot/releases/t
 all five uploaded assets match local sizes/SHA256 and the tag matches the frozen
 app source. Project files plus recorded new global-cache growth total
 9,773,421,314 bytes, below the 10 GB aim. [Publication](docs/mira-setup-publication-v21.json)
-· [Storage scope](docs/mira-setup-storage-v21.json). The live Phase 1 draft still
-has its verified v20 copy and dated v20 pitch; this release did not edit or submit it.
+· [Storage scope](docs/mira-setup-storage-v21.json). The Phase 1 draft was subsequently verified with v21 copy
+and the dated v20 pitch; the v22 update did not edit or submit it.
 
 ## Task-guidance candidate — measured rejection
 
@@ -47,7 +72,7 @@ persistence, document validation, admission and accepted submission are unverifi
 ## Current research pitch — 4:04
 
 The v20 edited research video is rendered with 24 measured captions, original
-Mira animation, clearly labelled historical v12 phone clips and current source
+Mira animation, clearly labelled historical v12 phone clips and v20 source
 illustrations. Full decode, caption/audio checks and four sampled clip-parity
 comparisons pass. The first QA crop error and corrected separate check are
 preserved; the video is unchanged. Complete human playback and the current live
