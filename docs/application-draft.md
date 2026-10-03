@@ -1,7 +1,9 @@
 # Mira / FocusPilot — Phase 1 application copy
 
-Prepared **3 October 2026**. Reviewable draft only: the authenticated dashboard
-fields were empty and the agent performed no submission. Productivity is
+Prepared **3 October 2026**. Public title, description, repository link and team
+summary are now populated in the live dashboard draft, with the PDF link attached.
+No personal experience selection, attestation or submission was performed.
+Draft server persistence and final document validation remain unverified. Productivity is
 already selected for the Grand Finale, 9–11 October, with one registered member.
 The displayed Phase 1 deadline is **5 October 2026**; its exact cutoff time and
 timezone are not shown. No private team/profile information is included here.
@@ -13,6 +15,7 @@ prior builds, what makes the team stand out, and an originality/pre-existing-wor
 attestation before **Submit idea**. Its observed wording is: “I confirm this idea
 is our team’s original work and any pre-existing components are disclosed.”
 [Structured copy and unresolved fields](phase1-form-copy.json).
+[Actual draft preparation](phase1-prepared-dashboard-draft.json).
 
 ## Idea title
 
@@ -21,24 +24,26 @@ is our team’s original work and any pre-existing components are disclosed.”
 ## Description — ready to copy
 
 Mira is a local-first Android productivity companion that helps people return to
-the task they intended to do. A friendly animated companion accepts editable typed
-or optional voice drafts for focus sessions, timers, alarms and a small approved
-app list. Quick local checks handle familiar requests without loading a language
-model; unfamiliar wording can use explicitly loaded Qwen3.5-0.8B Q4_0 on the
-phone’s CPU. An independent validator checks complete arguments, and proposed
-actions still require Review and Confirm. Focus goals, user-authored checklists and
-opt-in app limits support a calmer workflow; accountability uses simulated points,
-never automatic money withdrawal.
+the task they intended to do. A friendly animated companion accepts editable
+typed or optional voice drafts for focus sessions, timers, alarms and a small
+approved app list. Quick local checks handle familiar requests without loading a
+language model; unfamiliar wording can use explicitly loaded Qwen3.5-0.8B Q4_0
+on the phone’s CPU. An independent validator checks complete arguments, and
+proposed actions still require Review and Confirm. Focus goals, user-authored
+checklists and opt-in app limits support a calmer workflow; accountability uses
+simulated points, never automatic money withdrawal.
 
-Our current v0.18 pre-event research prototype is published and installed on a
-Nothing phone. A separate v0.17 diagnostic completed six already-seen local Qwen
-requests; a frozen host evaluation improved complete supported proposals from
-4/50 to 19/50 with no paired losses, while refusing all 50 unsupported examples.
-These are scoped tests, not general accuracy or a complete voice demo. Unlocked
-v0.18 interaction, permissioned monitoring/voice, actual iQOO Snapdragon NPU and
-Office Kit remain to verify. We disclose the pre-existing repository and
-open-source dependencies; eligible competition code must be created in the allowed
-event window unless organizers approve reuse.
+Our current v0.18 light pre-event research prototype is published and installed
+on a Nothing phone. A separate published bundled APK includes the pinned Qwen
+weights. Its packaging is verified; current bundled installation, missing-model
+import and model load remain unverified. A separate v0.17 diagnostic completed
+six already-seen local Qwen requests; a frozen host evaluation improved complete
+supported proposals from 4/50 to 19/50 with no paired losses, while refusing all
+50 unsupported examples. These are scoped tests, not general accuracy or a
+complete voice demo. Unlocked v0.18 interaction, permissioned monitoring/voice,
+actual iQOO Snapdragon NPU and Office Kit remain to verify. We disclose the
+pre-existing repository and open-source dependencies; eligible competition code
+must be created in the allowed event window unless organizers approve reuse.
 
 ## What makes the team stand out — project-based draft
 
@@ -58,19 +63,22 @@ No experience level or achievement is inferred from agent-assisted implementatio
 
 - Prototype: [public repository](https://github.com/sanjuhs/iqoo-focuspilot), with
   [current v0.18 research release](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.18).
-  The current light APK excludes weights; Qwen fallback needs separately prepared
-  pinned private weights. Quick recognition needs no model load.
+  The release offers a [bundled APK with pinned Qwen weights](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.18/focuspilot-research-v018-mira-commands-bundled.apk)
+  and a light APK requiring separately prepared private weights. Bundle packaging
+  is verified; current bundled installation, missing-model import and model load
+  remain unverified. Quick recognition needs no model load. [Bundle scope](mira-bundle-v18.md).
 - Optional video: [historical v0.12 walkthrough](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.12/pitch-v012.mp4),
   **4:41**, with [source and limitations](v012-pitch.md). It includes historical
   v0.12 phone footage and edited narration, not current v0.18 interface or complete
   voice/monitoring proof. Complete human playback/listening remains pending.
 - Required deck/document: the [four-page concept PDF](../output/pdf/focuspilot-phase1-concept.pdf)
-  is prepared and visually checked, 25,456 bytes. No dashboard file upload or
-  document-link selection has occurred. [Source and QA](phase1-document-evidence.json).
+  is prepared and visually checked, 25,456 bytes. Its immutable link is now attached
+  in the live draft, with the document link and Remove document control visible.
+  No file upload or final submission occurred. [Source and QA](phase1-document-evidence.json).
   An [immutable public PDF link](https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf)
   is ready; its server file identity matches the local PDF.
-  [Publication proof](phase1-document-publication.json). Dashboard acceptance of
-  that link has not been tested; the prepared PDF is also available for upload.
+  [Publication proof](phase1-document-publication.json). Final server validation of
+  that link and draft persistence remain unverified; the PDF is also available for upload.
 
 ## Originality and pre-existing-work disclosure
 
@@ -80,8 +88,10 @@ validation/review flow and research utilities build on third-party open-source
 dependencies and AI-assisted development. The selected runtime uses
 **Qwen3.5-0.8B Q4_0 and llama.cpp**, with licenses/notices retained. **Kev, Laya and
 Cua informed research**; they are not deployed phone runtimes or an implemented
-Cua phone-control port. The current light APK does not bundle model weights;
-Qwen fallback requires separately prepared pinned private weights.
+Cua phone-control port. The published v0.18 bundled APK includes the pinned Qwen
+weights; the light option requires separately prepared private weights. Bundle
+packaging is verified, but current bundled installation, missing-model import and
+model load remain unverified.
 
 We do not assert that pre-event implementation is eligible event-written code.
 Competition code will be separately created in the permitted window unless
@@ -94,6 +104,11 @@ checking it; this file neither attests nor submits.
   signed light package and protected retained-data installation verified. The
   phone was locked/off, so the revised layout, examples, touch, voice and fallback
   were not physically exercised in that update.
+- [v0.18 bundle](mira-bundle-v18.md): the 568,608,247-byte signed APK includes
+  the pinned 563,036,064-byte Qwen model. All 16 original non-signature payloads
+  match the light APK; signature/certificate, licenses and alignment pass. This is
+  packaging evidence only: the light variant remains installed, and current bundle
+  installation/import/load/UI have not been exercised.
 - [v0.17 local JNI diagnostic](unit-native-phone-v17.md): six already-seen requests
   complete with actual EOS, correct model slots and no executed actions. It proves
   its own Nothing CPU runtime scope, not iQOO/NPU or fresh phone accuracy. The

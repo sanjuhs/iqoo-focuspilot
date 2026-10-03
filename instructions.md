@@ -17,12 +17,14 @@ is unverified. Video/prototype links are optional; PDF/PPT (max 25 MB) or docume
 link is required. Title 5–200 characters; description 50–2,000. No personal profile
 values or private team/contact identifiers are recorded in Git.
 
-Four-page concept PDF is prepared and visually checked; editable form copy fits
-limits and discloses pre-existing code/Qwen/llama.cpp. Historical v12 video is
-optional and retains its own attribution/human-listening limit. Human Android/LLM
-proficiency and prior-build answers remain pending. No form fill, upload, checkbox
-attestation, Terms acceptance or Submit action occurred. Existing entry does not
-prove admission or accepted submission.
+The live draft now contains the public title, description (1,549/2,000 characters),
+repository link, team summary and attached immutable PDF link. It discloses existing
+code and the new packaging-only bundle. Verify the draft before proceeding; server
+persistence/final PDF validation are unproven. Experience selectors remain at their
+untouched defaults, prior builds and optional video blank, attestation unchecked.
+No file upload, Terms acceptance or Submit occurred. Complete human self-reports
+and review the actual attestation; existing entry is not accepted-submission proof.
+[Draft UI evidence](docs/phase1-prepared-dashboard-draft.json).
 [Observed requirements](docs/phase1-dashboard-observation.json) ·
 [Application copy](docs/application-draft.md) ·
 [PDF/source/QA](docs/phase1-document-evidence.json).

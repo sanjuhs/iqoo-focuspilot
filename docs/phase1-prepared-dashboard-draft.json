@@ -1,0 +1,65 @@
+{
+  "schema": "focuspilot.phase1_prepared_dashboard_draft.v1",
+  "observed_utc": "2026-10-03T01:30:01.117Z",
+  "source": "Authenticated rendered UI at https://iqoo.reskilll.com/dashboard/iqoo-finale",
+  "research_only": true,
+  "public_project_fields_filled_by_agent": [
+    "idea_title",
+    "description",
+    "prototype_url",
+    "team_standout"
+  ],
+  "field_bindings": {
+    "title": {
+      "utf16_characters": 38,
+      "sha256": "42d9bfe74fcef00f75efd72047534fa30fdfc48b8fb701582278834b8f2b7cbb"
+    },
+    "description": {
+      "utf16_characters": 1549,
+      "sha256": "99d92e2ae79be2d77933bb3c2e18eba3dba8a11946d66084f2522b415ca462b4"
+    },
+    "prototype": {
+      "utf16_characters": 42,
+      "sha256": "95ac051d70ebf946fb82360efed1fd649a04126b285b1bba9bab08961638fe44"
+    },
+    "standout": {
+      "utf16_characters": 565,
+      "sha256": "a91e5beb460f87c6d32a763be351f83a645db9cb1eecb1894bdad9f8d5309ba8"
+    },
+    "video": {
+      "utf16_characters": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "priorBuilds": {
+      "utf16_characters": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "document_link": "https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf",
+  "document_link_added_to_draft": true,
+  "document_link_and_remove_button_visible": true,
+  "file_uploaded": false,
+  "document_server_content_validation_verified": false,
+  "draft_server_persistence_verified": false,
+  "reload_to_test_persistence_performed": false,
+  "human_experience_selectors_changed": false,
+  "human_experience_values": "Initial No Android experience / No LLM experience defaults; not human-confirmed answers",
+  "prior_builds_filled": false,
+  "video_url_filled": false,
+  "originality_attestation_checked": false,
+  "submit_clicked": false,
+  "submission_receipt_observed": false,
+  "admission_proven": false,
+  "profile_terms_track_team_or_permissions_changed": false,
+  "phone_actions_executed": 0,
+  "phone_current_precondition": "ADB authorized; secure keyguard showing; screen off/asleep. No wake/unlock/grant attempted.",
+  "screenshot": {
+    "path": "artifacts/phase1-prepared-draft-review.jpg",
+    "bytes": 138338,
+    "sha256": "3d0338a1c566116092d10955bf9120121fb377ada266dadaa35af9e95c02a6c3",
+    "ignored_private_artifact": true,
+    "visually_reviewed": true,
+    "crop_scope": "Application card only; final image excludes account header/team/contact details"
+  },
+  "scope": "Live reviewable draft preparation only. Attachment UI is not final server submission/acceptance, PDF fetch validation, admission or eligible event code."
+}

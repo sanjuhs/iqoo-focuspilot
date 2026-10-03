@@ -4,7 +4,11 @@
 accessible, Productivity selected and one-member team observed. Phase 1 idea
 deadline is 5 October, with exact cutoff time/timezone unknown. Required PDF/document
 is prepared; human proficiency/history and submission attestation remain pending.
-No profile/form/upload/submission action occurred. [Actual requirements](phase1-dashboard-observation.json),
+Public fields are now populated in the live draft and the PDF link attached; human
+proficiency/history remain unanswered, checkbox unchecked and no submission/file
+upload/profile/Terms change occurred. Draft persistence and final document validation
+remain unverified. [Prepared live draft](phase1-prepared-dashboard-draft.json),
+[Actual requirements](phase1-dashboard-observation.json),
 [current application](application-draft.md), [document QA](phase1-document-evidence.json).
 
 **Current app:** v18 friendly command entry is built/installed/published with208
