@@ -58,3 +58,8 @@ requirements. [Full remaining delivery](remaining-deliverables.md).
 
 Older movies and their exact source attribution remain available; this recording
 does not relabel historical footage as v20 phone execution.
+
+[Watch/download the selected 4:04 pitch](https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/pitch-v020.mp4).
+Five new media/evidence assets and all five original app assets match server
+SHA-256 digests and sizes; the original app tag is unchanged.
+[Publication and storage proof](v020-pitch-publication.json).
