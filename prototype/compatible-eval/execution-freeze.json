@@ -1,0 +1,62 @@
+{
+  "schema": "focuspilot.compatible_execution_freeze.v1",
+  "research_only": true,
+  "before_fresh_generation_and_gate_outputs": true,
+  "preparation_source_commit": "403fe2e2e8d2251275ef85618a41165677aed6f3",
+  "comparison_lock_sha256": "4cc57e3b555b15964459dbe5f02296d6d77e9755a325e3d3b907192ee403aa35",
+  "gold_sha256": "17cd6c10d14ed193aa8e4bce8739d70ffdb14fd7354738f07d5f975713a228fa",
+  "native_locks_sha256": {
+    "baseline": "613bc003c219869f018ea9dd36443957b18d53b1907686d7ab962230661b157a",
+    "candidate": "62b9064a9299fbc3c50a0652ea702be40a3d577ea8daf3eaa946d83650e43677"
+  },
+  "protocol_sha256": "9550dad7ab4d1a84d3b6410629cfa013a38bf2c1da498dbfb49874a1ad49cf26",
+  "manual_review_sha256": "1dbad84579b9e9d1fa850cf2f62ee19249077b59cb3ebaa1cc8cb3dbb1cf6949",
+  "independent_final_label_review_sha256": "b60ae6ceb1d4242ff5ee9811841134b14d0fd7452d6b69803634e988525516c3",
+  "candidate_sha256": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "token_preflight": {
+    "baseline": {
+      "rows": 100,
+      "minimum": 161,
+      "maximum": 178,
+      "exit_code": 0,
+      "generation_called": false,
+      "command": [
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/structured-eval/build/dev-token-preflight/token_count",
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/models/qwen/Qwen3.5-0.8B-Q4_0.gguf",
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/compatible-eval/build/prepared/baseline-token-prompts"
+      ],
+      "counts_sha256": "18e2badddb52897c622fc9825d22f56713c9d4b7ac9bd2356a72c155db4e8239",
+      "counts_path": "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/compatible-eval/build/prepared/baseline-tokens.jsonl"
+    },
+    "candidate": {
+      "rows": 100,
+      "minimum": 365,
+      "maximum": 382,
+      "exit_code": 0,
+      "generation_called": false,
+      "command": [
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/structured-eval/build/dev-token-preflight/token_count",
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/models/qwen/Qwen3.5-0.8B-Q4_0.gguf",
+        "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/compatible-eval/build/prepared/candidate-token-prompts"
+      ],
+      "counts_sha256": "2caf66e8292fddfbca11a80f0f8471f714ff69f3dc8fe199a85238277c3c325c",
+      "counts_path": "/Users/sanju/Desktop/coding/hackathons/iqoo-hackathon/prototype/compatible-eval/build/prepared/candidate-tokens.jsonl"
+    }
+  },
+  "native_subtree_allowance": {
+    "existing_bytes": 251120,
+    "two_arm_reserved_bytes": 1255650,
+    "cap_bytes": 2000000
+  },
+  "capture_order": [
+    "baseline",
+    "candidate"
+  ],
+  "attempts_per_arm": 1,
+  "candidate_gate_calls_on_fresh": 0,
+  "generation_calls_on_fresh": 0,
+  "rows_per_arm": 100,
+  "promotion": false,
+  "scope": "One serial CPU native attempt per arm with actual JSON/EOS and runtime/source lock verification. Fast path scored separately after both captures. No phone/model/backend/adapter changes."
+}
