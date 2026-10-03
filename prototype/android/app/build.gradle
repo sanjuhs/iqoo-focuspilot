@@ -1,8 +1,8 @@
 plugins { id 'com.android.application' }
 
 def diagnosticRunner = providers.gradleProperty('diagnosticRunner').getOrElse('reset')
-if (!(diagnosticRunner in ['reset', 'nativeIsolation', 'commandGate', 'focusSummary', 'compatibleCommand']))
-    throw new GradleException('diagnosticRunner must be reset, nativeIsolation, commandGate, focusSummary or compatibleCommand')
+if (!(diagnosticRunner in ['reset', 'nativeIsolation', 'commandGate', 'focusSummary', 'compatibleCommand', 'unitNative']))
+    throw new GradleException('diagnosticRunner must be reset, nativeIsolation, commandGate, focusSummary, compatibleCommand or unitNative')
 
 def bundleLocalModel = providers.gradleProperty('bundleLocalModel').map { value ->
     if (!(value in ['true', 'false'])) throw new GradleException('bundleLocalModel must be true or false')
@@ -66,6 +66,8 @@ android {
         versionName '0.17-system-one-research'
         testInstrumentationRunner diagnosticRunner == 'nativeIsolation'
             ? 'dev.focuspilot.prototype.LocalModelIsolationInstrumentation'
+            : diagnosticRunner == 'unitNative'
+                ? 'dev.focuspilot.prototype.UnitNativeIsolationInstrumentation'
             : diagnosticRunner == 'compatibleCommand'
                 ? 'dev.focuspilot.prototype.CompatibleReplayInstrumentation'
             : diagnosticRunner == 'focusSummary'
