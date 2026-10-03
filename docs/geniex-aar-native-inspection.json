@@ -1,0 +1,922 @@
+{
+  "schema": "focuspilot.geniex_aar_native_inspection.v1",
+  "sdk_aar_bytes": 82287634,
+  "sdk_aar_sha256": "a29e88e31e12fd636a9dfa6760c61d04001ab91a932dbd5efe7b0a4335b9f883",
+  "sdk_version": "0.7.0",
+  "shared_object_files": 51,
+  "aarch64_libraries": 40,
+  "hexagon_elf32_payloads": 11,
+  "aarch64_pt_load_check_passed": 40,
+  "aarch64_relro_end_check_failed": 30,
+  "embedded_license_or_notice_files": 0,
+  "official_alignment_guide": "https://developer.android.com/guide/practices/page-sizes",
+  "elf_entries": [
+    {
+      "entry": "jni/arm64-v8a/libCalculator_skel.so",
+      "bytes": 5656,
+      "sha256": "364f834b5940f8eca19d6145be0b6dc83957ae0b1e72b19691cc506de042c024",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libPlatformValidatorShared.so",
+      "bytes": 15211024,
+      "sha256": "c8d39905fca9b56edf3c5a1606c5f310daa5f423ddee10b506a8cd9f0774524d",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 15013744,
+          "memory_bytes": 215184,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnChrometraceProfilingReader.so",
+      "bytes": 633560,
+      "sha256": "db797082f1ede6b41039b3aecf2303ca8ace1f00c8cef7f0283f8f83a3309b7d",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 642896,
+          "memory_bytes": 24752,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHta.so",
+      "bytes": 1019312,
+      "sha256": "f23c4f864b98842ad601378691c1f3559e20a80b36434749baf39b9f164b4b60",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1023360,
+          "memory_bytes": 29312,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtaNetRunExtensions.so",
+      "bytes": 414728,
+      "sha256": "4e3588f7f6185a9c083e4c886573dfe43849859f3f7123768556d43306fe0e9c",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 429984,
+          "memory_bytes": 16480,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtp.so",
+      "bytes": 2952008,
+      "sha256": "b5b36b2d5e0cc352b5e5f468f6f668b1585d515854fc1c5890b1365047a36be1",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 2941776,
+          "memory_bytes": 44208,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpNetRunExtensions.so",
+      "bytes": 957864,
+      "sha256": "0d29d3dac7d82d8eb5bdc47a0649a7d6a5f5b4a2fbc52b2f975b6ae2c16b6213",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 972640,
+          "memory_bytes": 18592,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpOptraceProfilingReader.so",
+      "bytes": 3909608,
+      "sha256": "154657f3b58fa3418bd1d62aaf712eb66f1daa34ca01b6dffc6ba2d234a92ab3",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3869168,
+          "memory_bytes": 71184,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpPrepare.so",
+      "bytes": 87739504,
+      "sha256": "d0001d629c6d7ded14f2c850e93983b87589cd5748724bb9aaf56f7adb2b338a",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 84593520,
+          "memory_bytes": 3155088,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpProfilingReader.so",
+      "bytes": 624312,
+      "sha256": "84afddf100ab5799037d38d1f1456b21ab3e90284acdfece955527a01b13ba13",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 633712,
+          "memory_bytes": 21648,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV79.so",
+      "bytes": 11212084,
+      "sha256": "4cda6566a20775a1062c4adc44b7a07e88e786ac086c48c261279ffb2e96fc21",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV79CalculatorStub.so",
+      "bytes": 250712,
+      "sha256": "a1b922bdec311f208bed2ee6179359db0113e0bd1235fc3250727c3a8338ee1d",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 266704,
+          "memory_bytes": 15920,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV79Skel.so",
+      "bytes": 10936696,
+      "sha256": "82275aaae3f022387e2c86d5b45eecb390b1b873e6a223a31036bdf5c985ceb1",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV79Stub.so",
+      "bytes": 726960,
+      "sha256": "16ed6f58965bcabc5cbe4e6c322a4953aefe2c74d6d1c662e70e6234eae0c662",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 736912,
+          "memory_bytes": 20848,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV81.so",
+      "bytes": 12108736,
+      "sha256": "a9caf550a71d827cb324f4d4f9bbe9b393a58ac781e26343c5f437e85c5b9ffc",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV81CalculatorStub.so",
+      "bytes": 250712,
+      "sha256": "53c464f8833cabc65baf16d0292aa0fe293909bf9333327092283261f713e603",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 266704,
+          "memory_bytes": 15920,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV81Skel.so",
+      "bytes": 11788496,
+      "sha256": "4b19d3c6ec8b3017f80710ffa1726c3a6578047933aee4cf451b9eb526403ff9",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnHtpV81Stub.so",
+      "bytes": 803416,
+      "sha256": "e97898d6772288e202e9cf988b80b39b8336f3dca8b99ee3075d234093582e3c",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 811280,
+          "memory_bytes": 24304,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnIr.so",
+      "bytes": 1890848,
+      "sha256": "693ff3328eeb300de627518038c8a96adde2573fe36d7f97191b687a506223a1",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1889840,
+          "memory_bytes": 35280,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnJsonProfilingReader.so",
+      "bytes": 670744,
+      "sha256": "3dc1d660723b69b97ee23ea13a4c1ff24be28a5a68d1972be22ce18602cf34c4",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 678784,
+          "memory_bytes": 25728,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnModelDlc.so",
+      "bytes": 3122808,
+      "sha256": "7df64d2f79f34a701d2cd4d4b3b2ef2ded4ec1f24375b77ff0aa31fd4ea70932",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3089264,
+          "memory_bytes": 64656,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnNetRunDirectV79Skel.so",
+      "bytes": 2063044,
+      "sha256": "3701773947b54236d098f0a5f968e77104fb27e066909a978528792ded3c78d4",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnNetRunDirectV79Stub.so",
+      "bytes": 959648,
+      "sha256": "48bb7c424d566d2cc0a09fd7433eabf6234afe3aff473e54b7d366cf0946a692",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 965776,
+          "memory_bytes": 25456,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnNetRunDirectV81Skel.so",
+      "bytes": 2683988,
+      "sha256": "9839672ce9db0519dc43b638d04fad6bfc4844ec68897db79e440825ee2163f2",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnNetRunDirectV81Stub.so",
+      "bytes": 1017912,
+      "sha256": "f523c658575e93f3e7c44e921db5e5c72b6695374a9379923d6d0e5eaccd9056",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1021984,
+          "memory_bytes": 30688,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnSaver.so",
+      "bytes": 788056,
+      "sha256": "61376cb2d732dc680466740366d1c719b058370f4adfa43dae1ff4514a781f1b",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 797792,
+          "memory_bytes": 21408,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libQnnSystem.so",
+      "bytes": 3635400,
+      "sha256": "f08e9ddc18a40719839cce8bbfb3afd3aef06f5ad486b21934a1c4568c9a6a48",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3598032,
+          "memory_bytes": 67888,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libcalculator.so",
+      "bytes": 250144,
+      "sha256": "a3a2a7df973cae84671a6241e437b95c74687b6ad7191e686675277977db7118",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 266160,
+          "memory_bytes": 16464,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex-proc-vision.so",
+      "bytes": 374032,
+      "sha256": "996da37ad72bd345f14cea82ffcb01781eabcfd579509caf0351f0b4355a8b78",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 399680,
+          "memory_bytes": 5824,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex-proc.so",
+      "bytes": 7092040,
+      "sha256": "0099cef68baf8d632d85453043a85bd371cc26a6df3e5fef25fd0716847f4611",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 6599568,
+          "memory_bytes": 498800,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex.so",
+      "bytes": 5267280,
+      "sha256": "9a722f40e59fab5d2315e856e2fbaf18bbe7c56336ac680d67ffb95854ce2575",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 5105776,
+          "memory_bytes": 182160,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex_core.so",
+      "bytes": 1132008,
+      "sha256": "958ee71c6e88b2e32a9b357e61023002ab42ea8ecc461e9e95470d91fef39042",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1148960,
+          "memory_bytes": 14304,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex_plugin_llama_cpp.so",
+      "bytes": 227624,
+      "sha256": "9ca40a67d5e634fde1ac9b87f1c15e503907b0081a3d6428ad8a8052c7c87c60",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 254960,
+          "memory_bytes": 3088,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex_plugin_qairt.so",
+      "bytes": 277840,
+      "sha256": "e89c9428c0ca874d4da399e205fd31d0cc3b70dc7b60d205dff2ce45cc450c1f",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 304896,
+          "memory_bytes": 6400,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libgeniex_vlm.so",
+      "bytes": 355424,
+      "sha256": "500c9f9974417158f13e0bdbf6b509cc6cea28bc7501da4ea3372c69db6f89fd",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 379248,
+          "memory_bytes": 9872,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-base.so",
+      "bytes": 996568,
+      "sha256": "c4ce393d26da5bb643ac64e4b53a9c37547f0f22eb888319453effa4d6ececf7",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1000576,
+          "memory_bytes": 27520,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-cpu.so",
+      "bytes": 842104,
+      "sha256": "8a149c25b0ea712d7bf1515b51d04749c0c32c1efcc7e2ac6e6a72ee6d0e6191",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 866912,
+          "memory_bytes": 5536,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-hexagon.so",
+      "bytes": 851768,
+      "sha256": "ebc0b35512beb3d3894bb64b60a73c4e9e313abfbcd2a8c4c2949096ad365a65",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 857632,
+          "memory_bytes": 27104,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-htp-v73.so",
+      "bytes": 790452,
+      "sha256": "d13fa3418000ae287bbfc94f902f49274c4adee03da484b1b8bc285581dcac33",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-htp-v75.so",
+      "bytes": 847796,
+      "sha256": "3b79c81d7f75dbc9bb743c9613858a1b583cda9b2c8d966b2ca1f794cd0647f0",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-htp-v79.so",
+      "bytes": 868348,
+      "sha256": "e4098a27106ba9a679fbb9c452868b82e4e12d25b77a258935a32a57e99f1d26",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-htp-v81.so",
+      "bytes": 868352,
+      "sha256": "64e206af4dec76712432ab42b76cf9f6d4fb70428c9c6cf6e0524cf90006406d",
+      "elf_bits": 32,
+      "machine": 164,
+      "load_alignments": [
+        4096
+      ],
+      "arm64_load_segments_pass_16k_check": null,
+      "gnu_relro": [],
+      "arm64_relro_end_passes_16k_check": null
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml-opencl.so",
+      "bytes": 3453712,
+      "sha256": "7cb6f9ff11e9d6c07b85c29e267f95f5040ccfe1d147a939de310740ec0f4cfe",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3460528,
+          "memory_bytes": 25168,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libggml.so",
+      "bytes": 31336,
+      "sha256": "d88d0d5bcb3f75a3d47d0357fd966e301a13f4ef2a5c293b61a619e80b8ffe14",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 60656,
+          "memory_bytes": 4880,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libhta_hexagon_runtime_qnn.so",
+      "bytes": 2400192,
+      "sha256": "b669169c639fd66b32fe75d48c1ac8cdaaf67d278c9bf7932d237e4636c0c296",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 2076976,
+          "memory_bytes": 52944,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libhta_hexagon_runtime_snpe.so",
+      "bytes": 2400192,
+      "sha256": "b669169c639fd66b32fe75d48c1ac8cdaaf67d278c9bf7932d237e4636c0c296",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 2076976,
+          "memory_bytes": 52944,
+          "end_remainder_mod16384": 0
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": true
+    },
+    {
+      "entry": "jni/arm64-v8a/libllama-common.so",
+      "bytes": 3710952,
+      "sha256": "4de06f4d9dc1c4de30d272b4583c9cedb20fba9f922c10e97edbd03bd4aae34a",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3665456,
+          "memory_bytes": 78288,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libllama.so",
+      "bytes": 3388744,
+      "sha256": "7c58b14a429b2f2b3959e33c812179a5e9dcd25dea6d20a8983418b1c34e104b",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 3350512,
+          "memory_bytes": 69648,
+          "end_remainder_mod16384": 12288
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libmtmd.so",
+      "bytes": 1239272,
+      "sha256": "113d7ae4c5f68a209d2e43519c3b8d4ef20ca2aea6ab927053df63e9a36c0813",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 1255488,
+          "memory_bytes": 14272,
+          "end_remainder_mod16384": 8192
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libnpu_jni.so",
+      "bytes": 465616,
+      "sha256": "a4d3a2c3c1d2cd2baa9785fe6aaa9f78fddd9ef8dd0265824d18a71fe42cd6d9",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 458640,
+          "memory_bytes": 20592,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    },
+    {
+      "entry": "jni/arm64-v8a/libomp.so",
+      "bytes": 973944,
+      "sha256": "cb47b6557429b3c10861cdf2c9819d8ac89a5388e71ed929afca7c533ba312aa",
+      "elf_bits": 64,
+      "machine": 183,
+      "load_alignments": [
+        16384
+      ],
+      "arm64_load_segments_pass_16k_check": true,
+      "gnu_relro": [
+        {
+          "virtual_address": 960544,
+          "memory_bytes": 10208,
+          "end_remainder_mod16384": 4096
+        }
+      ],
+      "arm64_relro_end_passes_16k_check": false
+    }
+  ],
+  "runtime_tested": false,
+  "npu_verified": false,
+  "sdk_binary_redistribution_verified": false,
+  "scope": "Exact AAR file/ELF inspection, not app installation or runtime. Thirty AArch64 RELRO ends fail the separate official16KB check; raw load/ZIP alignment alone is insufficient. DSP ELF32 are distinct from Android AArch64 libraries. Do not patch vendor binaries or claim16KB readiness."
+}

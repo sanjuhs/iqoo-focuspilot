@@ -1,0 +1,128 @@
+{
+  "source_commit": "caaf5246116ad02144f8bf0a4d92ce8053bf8275",
+  "source_sha256": {
+    "prototype/native/CMakeLists.txt": "ec477f672d4b52d26cbea2dbabea62ae9fffd3b98e34880f7cd87ea3a7a2972d",
+    "prototype/native/build-android.sh": "cef79f8c2662d18cdfbc7747b9ce761e0ad85049c8d2fb4cf447654f1d84abef",
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "prototype/native/core.h": "679422af96cfc9a8bf5c546821ceae13dd9a30e593ade56a83d95051db6eef59",
+    "prototype/native/jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962",
+    "prototype/android/app/build.gradle": "2dac27239cd4540572a3e63904665f0fd07aabd3ad60bd243c8511fc5d206cb4"
+  },
+  "historical_native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "commands": [
+    "cmake -S prototype/native -B prototype/native/build/android-arm64-optimized -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DFETCHCONTENT_UPDATES_DISCONNECTED=ON",
+    "NATIVE_BUILD_VARIANT=optimized sh prototype/native/build-android.sh"
+  ],
+  "native": {
+    "file": "prototype/native/build/android-arm64-optimized/libfocuspilot_local.so",
+    "bytes": 5146144,
+    "sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+    "abi": "arm64-v8a",
+    "segments": [
+      {
+        "type": "LOAD",
+        "offset": 0,
+        "vaddr": 0,
+        "filesz": 5029584,
+        "memsz": 5029584,
+        "flags": 5,
+        "alignment": 16384,
+        "end": 5029584,
+        "end_mod_16384": 16080
+      },
+      {
+        "type": "LOAD",
+        "offset": 5029584,
+        "vaddr": 5045968,
+        "filesz": 109696,
+        "memsz": 114992,
+        "flags": 6,
+        "alignment": 16384,
+        "end": 5160960,
+        "end_mod_16384": 0
+      },
+      {
+        "type": "LOAD",
+        "offset": 5139280,
+        "vaddr": 5172048,
+        "filesz": 4392,
+        "memsz": 539680,
+        "flags": 6,
+        "alignment": 16384,
+        "end": 5711728,
+        "end_mod_16384": 10096
+      },
+      {
+        "type": "GNU_RELRO",
+        "offset": 5029584,
+        "vaddr": 5045968,
+        "filesz": 109696,
+        "memsz": 114992,
+        "flags": 4,
+        "alignment": 1,
+        "end": 5160960,
+        "end_mod_16384": 0
+      }
+    ],
+    "relro_16k_aligned": true,
+    "load_16k_aligned": true,
+    "bind_now": true,
+    "exports": [
+      "Java_dev_focuspilot_prototype_LocalModel_nativeCancel",
+      "Java_dev_focuspilot_prototype_LocalModel_nativeClose",
+      "Java_dev_focuspilot_prototype_LocalModel_nativeGenerate",
+      "Java_dev_focuspilot_prototype_LocalModel_nativeInit",
+      "Java_dev_focuspilot_prototype_LocalModel_nativePrepare"
+    ],
+    "dependencies": [
+      "liblog.so",
+      "libm.so",
+      "libdl.so",
+      "libc.so"
+    ]
+  },
+  "app_native_copy_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+  "log_sha256": {
+    "prototype/native/build/relro-v19-configure.log": "aacd721c2be5de79f2e52275d7ffeeeab9c6c22e94ea20146834302d8e4ac80e",
+    "prototype/native/build/relro-v19-build.log": "1555e2aac7e44be03663fc368e487ded8c46c549d508903aa78ee5148838f6e8",
+    "prototype/native/build/relro-v19-readelf.txt": "455743cd61162da1f79b1a083561a62410c28737a679cfde833b381be1b96163"
+  },
+  "downloads": 0,
+  "model_runs": 0,
+  "phone_calls": 0,
+  "project_logical_bytes_after": 11633280775,
+  "scope": "Rebuilt native ELF structure and signed v19 light APK with208 JVM tests/lint; phone installation has a separate record, JNI and16KiB runtime pending.",
+  "schema": "focuspilot.native_page_artifact.v1",
+  "research_only": true,
+  "apk_path": "artifacts/focuspilot-research-v019-page-layout-light.apk",
+  "apk_bytes": 5562644,
+  "apk_sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+  "manifest_identity": "package: name='dev.focuspilot.prototype' versionCode='19' versionName='0.19-page-layout-research' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "zip_alignment_16k_verified": true,
+  "license_assets": {
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  "bundled_model": false,
+  "internet_permission": false,
+  "tests": {
+    "tests": 208,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_suites": 28,
+  "lint": {
+    "Warning": 79
+  },
+  "gradle_log_sha256": "d40e814cf524e2c75810080306e215c89b5477fb1d932f9ccb3c3d54f73c9ee1",
+  "phone_installed": false,
+  "phone_jni_verified": false,
+  "runtime_16k_verified": false,
+  "phone_installation_record": "docs/native-page-phone-install-v19.json"
+}

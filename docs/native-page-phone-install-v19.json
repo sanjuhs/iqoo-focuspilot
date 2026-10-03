@@ -1,0 +1,32 @@
+{
+  "schema": "focuspilot.native_page_install.v1",
+  "source_commit": "caaf5246116ad02144f8bf0a4d92ce8053bf8275",
+  "apk_sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+  "old_apk_sha256": "dc40863819dd7fd12e93500cf279c343121a9c4af5a71986d5d4a29a7699f44d",
+  "attempts": 1,
+  "permission_changes": 0,
+  "ui_used": false,
+  "phone_woken": false,
+  "model_inference": false,
+  "page_size_bytes": 4096,
+  "install_client": {
+    "elapsed_ms": 1526,
+    "failure_type": null
+  },
+  "installed_target_sha256": "cb6cdb68af46d5cd476b5fca00a9375223ce69ad7bde5b641cd3ec0c8daef13f",
+  "original_test_unchanged": true,
+  "target_installed": true,
+  "protected_state_unchanged": true,
+  "passed": true,
+  "protected_scope": "Three named preference stores/checkpoint; own canonical model identity; microphone/notification grants; own monitor/floating service absence.",
+  "checkpoint": {
+    "active": false,
+    "observation": false,
+    "points": 100,
+    "elapsed_ms": 97331
+  },
+  "private_record_sha256": "3d5ce87ddb98e13bd6aa2a5e0f6a01eaf4912ba81b830634670fdca37665f21e",
+  "physical_ui_verified": false,
+  "phone_jni_verified": false,
+  "runtime_16k_verified": false
+}

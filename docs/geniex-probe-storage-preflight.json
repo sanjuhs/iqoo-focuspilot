@@ -1,0 +1,17 @@
+{
+  "schema": "focuspilot.geniex_probe_recoverable_storage.v1",
+  "reason": "Reserve bounded private standalone GenieX APK build using already cached SDK, no model bundle or download",
+  "before_bytes": 13902434106,
+  "removed_generated_file": {
+    "path": "artifacts/focuspilot-research-v06-bundled.apk",
+    "bytes": 568723232,
+    "sha256": "422a6d9fcc3c9a96a92ed28703b4611da7e6305a4b9bb480d00c084196461d2c",
+    "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.6/focuspilot-research-v06-bundled.apk",
+    "server_size_and_sha256_verified": true
+  },
+  "current_mira_light_bundle_model_private_evidence_untouched": true,
+  "new_build_reserved_bytes": 1250000000,
+  "project_limit_bytes": 15000000000,
+  "after_bytes": 13333710874,
+  "estimated_peak_with_reservation": 14583710874
+}

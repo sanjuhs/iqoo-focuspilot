@@ -1,5 +1,19 @@
 # Verified status
 
+## Current native page-layout repair — v0.19
+
+Qwen3.5-0.8B Q4_0 remains selected. The v19 research library now passes the
+separate GNU_RELRO end check as well as ELF load and APK ZIP alignment. All 208
+JVM tests pass, lint has zero errors/fatal findings and 79 warnings. One guarded
+light update installs on Nothing with the original test package and protected
+preferences/model/grants/services unchanged. No UI, wake, inference or grants
+occur during that update. Nothing uses 4 KB pages; actual 16 KB runtime and the new
+JNI regression remain pending. Prior v18 alignment checks were narrower and
+prior inference timings remain attributed to their original artifacts.
+[Current evidence and limitation](native-page-v19.md). Standalone v18 bundle remains historical;
+actual iQOO/NPU, Office Kit, permitted voice/monitoring and eligible accepted
+submission remain required.
+
 ## Current standalone Mira bundle — v0.18
 
 Qwen3.5-0.8B Q4_0 is now packaged inside a 568,608,247-byte v18 APK. Signing,

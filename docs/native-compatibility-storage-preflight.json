@@ -1,0 +1,32 @@
+{
+  "schema": "focuspilot.native_compatibility_recoverable_storage.v1",
+  "reason": "Native CPU RELRO compatibility repair and isolated private GenieX diagnostic preparation; retain pinned model/current APKs/private evidence",
+  "before_bytes": 13333781634,
+  "after_bytes": 11628004498,
+  "removed_generated_files": [
+    {
+      "path": "artifacts/focuspilot-research-v07-bundled.apk",
+      "bytes": 568483820,
+      "sha256": "f87b3d3055ed7fba0947dd092c33981bbebaf02f9243b96a62dfeb90a3908910",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.7/focuspilot-research-v07-bundled.apk",
+      "server_size_and_sha256_verified": true
+    },
+    {
+      "path": "artifacts/focuspilot-research-v08-bundled.apk",
+      "bytes": 568483828,
+      "sha256": "79c592f13f09120f3804fc7adb980f8e084b8df75f63f9ac905324f5f8260a26",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.8/focuspilot-research-v08-bundled.apk",
+      "server_size_and_sha256_verified": true
+    },
+    {
+      "path": "artifacts/focuspilot-research-v09-bundled.apk",
+      "bytes": 568809488,
+      "sha256": "fa5fad50862b4d9eef9bcbbc07d6ab0425699b6bf7e37ceef3150b63fc61c693",
+      "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.9/focuspilot-research-v09-bundled.apk",
+      "server_size_and_sha256_verified": true
+    }
+  ],
+  "freed_bytes": 1705777136,
+  "original_public_assets_retained": true,
+  "project_limit_bytes": 15000000000
+}
