@@ -35,9 +35,11 @@ and [artifact/report identities](compatible-pipeline-artifacts-v17.json) bind th
 actual run, initial cleanup timeout and subsequent completed inspection. No model, UI, voice, services or actions
 are exercised by that runner.
 
-Actual new Qwen unit-prompt JNI generation, visible fast/fallback/cancel/confirm,
-voice/floating, iQOO NPU, Office Kit and accepted eligible submission remain
-separate requirements. The historical v12 video retains its own package
+The later [actual unit-prompt JNI diagnostic](unit-native-phone-v17.md) verifies
+six seen CPU generations and observational captures, with an initial restoration
+timeout and separate final read-only restoration proof. Visible fast/fallback/
+cancel/confirm, voice/floating, iQOO NPU, Office Kit and accepted eligible submission
+remain separate requirements. The historical v12 video retains its own package
 attribution. This is pre-event research, not eligible event-written competition
 code. No new bundled package is created within the current storage headroom.
 

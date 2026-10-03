@@ -1,0 +1,210 @@
+{
+  "schema": "focuspilot.unit_native_phone_independent_audit.v1",
+  "research_only": true,
+  "audit_passed": true,
+  "source_commit": "d4452e8d06f8decb19336bb849f40aed33cd45b2",
+  "installed_app_source_commit": "a4f7a15c66cc44361e0b811aa578497a6b1cc8f9",
+  "review_scope": "Read-only actual six seen-request JNI diagnostic: frozen source/protocol/APK/DEX/evidence/full-slot/metrics/isolation/protected-state checks. Reviewer ran no phone commands, inference, installation, build or tests.",
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "040ffeeb488d7c75eb8c990ff7b301ad3746c9d50df9a3e851594ecf40907831",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleUnitCommand.java": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleActionRouter.java": "57c2ca47193ab857092e3b7c762fa44facadbaa0c66d721fde10f53e22166f2d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleReviewState.java": "e57eab7e92ed0011e5326e537140fa2db1043b5ba4e249f9cad82d56f9f3effe",
+    "prototype/compatible-native-phone/UnitNativeIsolationInstrumentation.java": "d28e3e2de08b5008f3b1b0684a01eee57a1cdb8f9bccef8dc8094bd50a86b639",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/UnitNativeIsolationInstrumentation.java": "d28e3e2de08b5008f3b1b0684a01eee57a1cdb8f9bccef8dc8094bd50a86b639",
+    "prototype/compatible-native-phone/README.md": "646c1efde45874864733bc3de3ee8f8ee42237fc5ddd34fb6026e6adce9530bd",
+    "prototype/compatible-native-phone/protocol.json": "590424d98d976811e2383e0d12651269e96e6015ba6f9821095a3f3d986c009e",
+    "prototype/android/app/build.gradle": "317e88da44fbadda426012393cda485300cf47cc4ee55beaf2baaa8e4b2ccbc8",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+    "prototype/compatible-native-phone/phone_probe.py": "4de8096968965135a1a37849d71425210b83647a07b5884dcbd207a5384840bd",
+    "prototype/compatible-native-phone/test_phone_probe.py": "c8c943de10c447e8fa3bb1a76d1754f84da277a921a4653fa26e2262355563c9",
+    "prototype/compatible-phone/phone_replay.py": "6cda29565cdccbe9473740a24a37ff782abc16ad4a95cbecbad5856cb9ed25ab",
+    "prototype/compatible-phone/generate_fixtures.py": "d71aefbf0be04857ed62b0376f35862ded8133c885c3ca58cf3b91b303b81a7c",
+    "scripts/phone_model_smoke.py": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+    "scripts/phone_reviewed_reset.py": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+    "scripts/phone_bundled_import.py": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+    "scripts/phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+    "scripts/phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+    "scripts/package_bundled_apk.py": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+    "prototype/native/core.cpp": "4a58c02e7592393e4b167b50e75e6aedbe4bd7abd9697b6adf3ad45f5f72c3d0",
+    "prototype/native/jni.cpp": "90da943dee541c0b3a7fb28e608d9034bda6f772441bac979607821c1ac2c962"
+  },
+  "committed_source_bindings_verified": 26,
+  "evidence_sha256": {
+    "artifacts/unit-native-phone-v17.json": "c1f1f4abe86048d935e9523f3c78ee8448f4397081574b13545a3fafe91b5914",
+    "artifacts/unit-native-execution-freeze.json": "c625cc481b2eab993200ea26df77f84e69fff570ffafef039e04a3c7b9a123ec",
+    "artifacts/unit-native-apk-preflight.json": "a38e673c29f61e49a172f2534913813e16c006ed12b0989abbe3ac23cea2bf86",
+    "artifacts/unit-native-cleanup-inspection-v17.json": "6e515cd09baa28969a0dc38dd7615003873dfd31efba393df94f9e513f4aa6b2",
+    "artifacts/unit-native-cleanup-inspection-v17-final.json": "74ea5942f853294a67fbe5adbc324aca425572dc4ad5483c486490b35f66693c",
+    "artifacts/focuspilot-research-v017-system-one-light.apk": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+    "artifacts/focuspilot-v017-unit-native-private-test.apk": "dad575e2c804658488022629fc144adc9af3daefc06068c7ee6875bfc6ec1214",
+    "artifacts/focuspilot-research-v013-reset-test.apk": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b"
+  },
+  "public_metadata_comparison": {
+    "json_path": "docs/unit-native-phone-v17.json",
+    "markdown_path": "docs/unit-native-phone-v17.md",
+    "actual_numbers_rows_source_hashes_and_cleanup_claims_agree": true,
+    "no_concrete_issue_found": true,
+    "root_owned_document_hashes_not_pinned_to_allow_final_audit_link_addition": true
+  },
+  "actual_counts": {
+    "generation_attempts": 6,
+    "completed_native_generations": 6,
+    "seen_supported": 5,
+    "seen_unknown": 1,
+    "raw_full_unit_slot_matches": 6,
+    "canonical_full_slot_matches": 6,
+    "accepted_supported": {
+      "checked_model": 5,
+      "fast_local": 5,
+      "product_pipeline": 5
+    },
+    "unknown_refusals": {
+      "checked_model": 1,
+      "fast_local": 1,
+      "product_pipeline": 1
+    },
+    "wrong_accepted_full_slots": {
+      "checked_model": 0,
+      "fast_local": 0,
+      "product_pipeline": 0
+    },
+    "origins": {
+      "checked_model": {
+        "CHECKED_MODEL": 5,
+        "UNKNOWN": 1
+      },
+      "fast_local": {
+        "FAST_LOCAL_REQUEST": 5,
+        "UNKNOWN": 1
+      },
+      "product_pipeline": {
+        "FAST_LOCAL_REQUEST": 5,
+        "UNKNOWN": 1
+      }
+    },
+    "runner_internal_checks_reported": 313,
+    "internal_check_count_scope": "Count emitted by frozen runner; independent audit recomputed outputs, not exactly 313 independent assertions."
+  },
+  "runtime": {
+    "runtime_passed": true,
+    "actual_eos_all_six": true,
+    "cpu_only_all_six": true,
+    "prompt_tokens": [
+      364,
+      359,
+      367,
+      362,
+      359,
+      361
+    ],
+    "generated_non_eog_tokens": [
+      15,
+      6,
+      14,
+      13,
+      10,
+      5
+    ],
+    "prompt_896_and_generated_127_bounds_passed": true,
+    "java_model_load_ms": 2236.591926,
+    "java_instrumentation_ms": 27779.791864,
+    "java_request_ms": [
+      5741.484164,
+      2420.551561,
+      3802.442967,
+      4407.440415,
+      3934.680571,
+      3309.563748
+    ],
+    "native_total_ms": [
+      5736.7622,
+      2393.0614,
+      3774.8935,
+      4402.7757,
+      3930.3066,
+      3305.1232
+    ],
+    "global_120000_ms_bound_passed": true,
+    "host_150_seconds_completed": true,
+    "watchdog_triggered": false,
+    "model_unsafe": false,
+    "model_closed": true,
+    "capture": {
+      "request_index_one_based": 2,
+      "summary_count": 4,
+      "tensors": [
+        "ffn_out-0",
+        "ffn_out-11",
+        "ffn_out-23",
+        "result_norm"
+      ],
+      "all_width_1024": true,
+      "statistics_and_eight_values_finite": true,
+      "other_rows_summary_count": 0,
+      "observational_only": true
+    },
+    "maximum_sampled_instrumented_process_pss_kib": 1237999,
+    "memory_scope": "Maximum of six recorded whole instrumented-process samples; includes test/framework/shared-page attribution, not peak memory."
+  },
+  "identity_and_isolation": {
+    "source_freeze_and_worktree_match": true,
+    "eight_main_java_sources_equal_installed_app_commit": true,
+    "main_apk_and_packed_native_sha_independently_verified": true,
+    "all_three_apk_sha_independently_verified": true,
+    "dex_target_class_count": 273,
+    "dex_test_class_count": 42,
+    "any_test_target_class_overlap_count": 0,
+    "all_eight_selected_target_classes_defined_once": true,
+    "selected_runner_defined_once_in_test": true,
+    "test_native_or_gguf_payload": false,
+    "manifest_and_signature_scope": "Recorded root APK preflight and runtime permission evidence matched. Reviewer did not rerun signature or manifest commands; actual DEX definitions and packed native bytes were independently inspected.",
+    "target_uid_matches_process_uid": true,
+    "main_process_identity_matches_target": true,
+    "manifest_internet_absent_and_runtime_permission_denied": true,
+    "socket_creation_denial_errno": 1,
+    "socket_errno_name": "EPERM",
+    "socket_probe_precedes_model_read_load_in_frozen_runner": true,
+    "dns_connect_payload": false,
+    "actions_executed": 0,
+    "ui_voice_services_preferences_mutated_by_runner": false
+  },
+  "cleanup": {
+    "initial_harness_passed": false,
+    "initial_runtime_passed": true,
+    "install_attempt_count": 1,
+    "restore_attempt_count": 1,
+    "initial_restore_returncode": -9,
+    "initial_restore_timed_out": true,
+    "initial_restore_client_ms": 45032.64645906165,
+    "first_read_only_inspection_original_test_restored": false,
+    "final_read_only_inspection_original_test_restored": true,
+    "final_target_unchanged": true,
+    "final_named_protected_state_unchanged": true,
+    "additional_installs": 0,
+    "additional_instrumentation": 0,
+    "recovery_preflight_refused_before_install": true,
+    "initial_failed_record_preserved": true,
+    "interpretation": "One restore client timed out; first read-only inspection still found the diagnostic test APK. Final read-only inspection later found the exact original test restored. Separate recovery preflight refused before mutation. Later observed cleanup does not change the initial failed harness result.",
+    "protected_snapshot_scope": "Three preference-store semantic hashes/checkpoint; model full SHA/bytes/inode/links; RECORD_AUDIO and POST_NOTIFICATIONS runtime grants; two own service absence. Not all AppOps/settings."
+  },
+  "storage": {
+    "recorded_project_logical_bytes": 14456773419,
+    "cap_bytes": 15000000000,
+    "recorded_below_cap": true
+  },
+  "limitations": [
+    "Six already-seen synthetic requests, not fresh accuracy, broad task coverage or training improvement.",
+    "Forced Qwen calls verify installed unit API; pure fast/pipeline proposals were separately attributed and no actions executed.",
+    "No visible fast/no-load flow, fallback UI, voice, cancellation dialogue or action success tested.",
+    "Activation summaries are observational, not causal mechanistic interpretability.",
+    "Nothing-phone CPU JNI/socket denial is not Snapdragon NPU, iQOO, Office Kit or whole-device disconnected proof.",
+    "Source hashes attribute frozen build inputs, not original source recovered from DEX.",
+    "Initial cleanup failure and later exact observed restoration remain separate immutable evidence.",
+    "Pre-event research is not eligible event-window code without organizer authorization."
+  ]
+}

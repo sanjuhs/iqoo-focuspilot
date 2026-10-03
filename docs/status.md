@@ -1,5 +1,26 @@
 # Verified status
 
+## Qwen3.5-0.8B Q4_0 — v0.17 actual unit JNI diagnostic
+
+Keep the selected Qwen3.5. One frozen Nothing CPU run completes six already-seen
+requests with exact model intent/argument slots, 313 runtime checks and four finite
+1024-wide activation observations. Load 2.237 s; uncaptured requests 3.305–5.737 s;
+captured Pause 2.393 s. Five supported proposals accepted, negation refused, zero
+wrong accepts; no UI/action/voice. These are seen runtime examples, not fresh accuracy
+or causal interpretation. Sixteen harness boundary tests pass.
+
+Initial harness remains failed because its 45-second restore client times out.
+First read-only inspection still finds the diagnostic test. A separately planned
+recovery refuses before installation when identity changes; final read-only checks
+verify the original test restored and target/protected snapshot unchanged. Zero
+additional installs, inference or instrumentation; original records preserved.
+[Measured proof, restoration sequence and remaining work](unit-native-phone-v17.md).
+
+Next verify unlocked visible fast/fallback/review workflows and permitted local
+voice/persistent use. Actual iQOO/NPU, Office Kit and eligible accepted submission
+remain active requirements. Source/protocol frozen at d4452e8; app source/APK stay
+v17/a4f7a15 unchanged. This remains pre-event research.
+
 ## v0.17 installed System 1 plus Qwen research
 
 Keep Qwen3.5-0.8B Q4_0. The exact qualified parser/source-unit prompt, fast
@@ -8,8 +29,8 @@ zero errors/72 warnings and signed light package inspection pass. On Nothing, on
 run passes300 installed-target replay comparisons plus eight separate inert review
 checks. The original-test install client times out, but subsequent read-only
 inspection verifies exact restoration and the checked protected snapshot unchanged;
-no installation or replay retry. New unit-prompt JNI generation, visible actions,
-voice/floating and actual iQOO/NPU/Office Kit remain separate requirements.
+no installation or replay retry. Visible actions, voice/floating and actual iQOO/NPU/Office Kit remain separate
+requirements; the later unit-JNI diagnostic above verifies its own narrow scope.
 [Current artifact, physical scope and limitations](compatible-pipeline-v17.md).
 
 Published [research v0.17](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.17),

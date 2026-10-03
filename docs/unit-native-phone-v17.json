@@ -1,0 +1,361 @@
+{
+  "schema": "focuspilot.unit_native_phone_public.v1",
+  "research_only": true,
+  "source_commit": "d4452e8d06f8decb19336bb849f40aed33cd45b2",
+  "installed_app_source_commit": "a4f7a15c66cc44361e0b811aa578497a6b1cc8f9",
+  "app_sha256": "05a3fae677d464195186acbf330bd9ceb53ba49d42d97463d2c1d29cc521953e",
+  "test_sha256": "dad575e2c804658488022629fc144adc9af3daefc06068c7ee6875bfc6ec1214",
+  "original_test_sha256": "b79a81444b0956639a54607153e99fe9367e555dde40b9c61267c1ad4cafd61b",
+  "native_sha256": "822695ae5ca3467392f48ff04d9eda824f52a5f470ba48264fd457f51881259e",
+  "model_sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "source_sha256": {
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModel.java": "040ffeeb488d7c75eb8c990ff7b301ad3746c9d50df9a3e851594ecf40907831",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleUnitCommand.java": "8b2abc08859e91e93ac1ba4ebc5a42a6092e507e2bc1edc3d912ed1389d3d4e4",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/UnitCommand.java": "ab4dda259e6c914c416e38abc8a00af00075d5fe0f6e0eb89ddff193956cb8ed",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/StructuredCommand.java": "e178e05d2c64473e5bbed2072c69b163faaeb7cafa07077263824b615e92575a",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ModelCommandGate.java": "b4b04604b42920ed41186a5b0d20cba40302e4a41f6091055cdf92cc7dbe3c15",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CommandNumberWords.java": "e5fa4770924e18c12eae89196646bf1ca9e7287ef8e460e9504166b4b5ff716d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleActionRouter.java": "57c2ca47193ab857092e3b7c762fa44facadbaa0c66d721fde10f53e22166f2d",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/CompatibleReviewState.java": "e57eab7e92ed0011e5326e537140fa2db1043b5ba4e249f9cad82d56f9f3effe",
+    "prototype/compatible-native-phone/UnitNativeIsolationInstrumentation.java": "d28e3e2de08b5008f3b1b0684a01eee57a1cdb8f9bccef8dc8094bd50a86b639",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/UnitNativeIsolationInstrumentation.java": "d28e3e2de08b5008f3b1b0684a01eee57a1cdb8f9bccef8dc8094bd50a86b639"
+  },
+  "helper_sha256": {
+    "prototype/compatible-native-phone/README.md": "646c1efde45874864733bc3de3ee8f8ee42237fc5ddd34fb6026e6adce9530bd",
+    "prototype/compatible-native-phone/protocol.json": "590424d98d976811e2383e0d12651269e96e6015ba6f9821095a3f3d986c009e",
+    "prototype/android/app/build.gradle": "317e88da44fbadda426012393cda485300cf47cc4ee55beaf2baaa8e4b2ccbc8",
+    "prototype/android/app/src/androidTest/java/dev/focuspilot/prototype/LocalModelIsolationInstrumentation.java": "e3cb779b019c91780d42d9c4cf1cc3fd0f7bc79f23bfc90e805deeac56704745",
+    "prototype/compatible-native-phone/phone_probe.py": "4de8096968965135a1a37849d71425210b83647a07b5884dcbd207a5384840bd",
+    "prototype/compatible-native-phone/test_phone_probe.py": "c8c943de10c447e8fa3bb1a76d1754f84da277a921a4653fa26e2262355563c9",
+    "prototype/compatible-phone/phone_replay.py": "6cda29565cdccbe9473740a24a37ff782abc16ad4a95cbecbad5856cb9ed25ab",
+    "prototype/compatible-phone/generate_fixtures.py": "d71aefbf0be04857ed62b0376f35862ded8133c885c3ca58cf3b91b303b81a7c",
+    "scripts/phone_model_smoke.py": "1fb7fa42fb7ce7f68f032acaab1f7b6ac307fd95ac353f67b42623718e63cd28",
+    "scripts/phone_reviewed_reset.py": "38a73327e7cd0d9a02f9af86a2d59bccfd928e8b61b56869e9dc6b3bd3175501",
+    "scripts/phone_bundled_import.py": "a818f35f559a79c46733db339d8d103e5078a59e714846432f0af2735264e27e",
+    "scripts/phone_task_guide.py": "c3f49b8a4b6a3eeb92c26e06744dc212132300c596e752f805e9c7c9ad89b8a1",
+    "scripts/phone_readback.py": "8ab059d068f4c4e20c350e555ee354584cbd5683c0ea127efd17dc9a5c8f9e57",
+    "scripts/package_bundled_apk.py": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36"
+  },
+  "private_evidence_sha256": {
+    "artifacts/unit-native-execution-freeze.json": "c625cc481b2eab993200ea26df77f84e69fff570ffafef039e04a3c7b9a123ec",
+    "artifacts/unit-native-phone-v17.json": "c1f1f4abe86048d935e9523f3c78ee8448f4397081574b13545a3fafe91b5914",
+    "artifacts/unit-native-cleanup-inspection-v17.json": "6e515cd09baa28969a0dc38dd7615003873dfd31efba393df94f9e513f4aa6b2",
+    "artifacts/unit-native-cleanup-inspection-v17-final.json": "74ea5942f853294a67fbe5adbc324aca425572dc4ad5483c486490b35f66693c",
+    "artifacts/focuspilot-v017-unit-native-private-test.apk": "dad575e2c804658488022629fc144adc9af3daefc06068c7ee6875bfc6ec1214"
+  },
+  "model": "Qwen3.5-0.8B Q4_0",
+  "backend": "CPU JNI on Nothing A059/SM7635/API36",
+  "requested_model_inference": true,
+  "verified_completed_native_generations": 6,
+  "runtime_passed": true,
+  "runner_checks": 313,
+  "java_instrumentation_ms": 27779.791864,
+  "java_model_load_ms": 2236.591926,
+  "model_closed": true,
+  "watchdog_triggered": false,
+  "raw_exact_seen_cases": 6,
+  "supported_seen_cases": 5,
+  "unsupported_seen_cases": 1,
+  "accepted_supported_by_route": {
+    "checked_model": 5,
+    "fast_local": 5,
+    "product_pipeline": 5
+  },
+  "wrong_accepts_by_route": {
+    "checked_model": 0,
+    "fast_local": 0,
+    "product_pipeline": 0
+  },
+  "rows": [
+    {
+      "id": "native-unit-1",
+      "capture": false,
+      "prompt_sha256": "9e09c5ed1888a291cd248e17170961ba5117086a74c843de0c6964c77d092111",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 364,
+        "generated_tokens": 15,
+        "prefill_ms": 3377.992,
+        "decode_ms": 2358.7695,
+        "total_ms": 5736.7622,
+        "reached_eos": true,
+        "context_setup_ms": 0.000365,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "java_request_ms": 5741.484164,
+      "capture_summary_count": 0,
+      "capture_widths": [],
+      "routes": {
+        "checked_model": {
+          "accepted": true,
+          "origin": "CHECKED_MODEL",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1234223
+    },
+    {
+      "id": "native-unit-2",
+      "capture": true,
+      "prompt_sha256": "05c858396323e43aa1bfb42edaa2906f93f465cb46f7e862d0c80df0609a57a2",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 359,
+        "generated_tokens": 6,
+        "prefill_ms": 1665.6899,
+        "decode_ms": 727.36937,
+        "total_ms": 2393.0614,
+        "reached_eos": true,
+        "context_setup_ms": 22.892291,
+        "cpu_only": true,
+        "capture_enabled": true
+      },
+      "java_request_ms": 2420.551561,
+      "capture_summary_count": 4,
+      "capture_widths": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "routes": {
+        "checked_model": {
+          "accepted": true,
+          "origin": "CHECKED_MODEL",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1235510
+    },
+    {
+      "id": "native-unit-3",
+      "capture": false,
+      "prompt_sha256": "af2a2101fc8c2665e573210b245f6a0eb3ee182b050ecdf9ed494869cba8b39f",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 367,
+        "generated_tokens": 14,
+        "prefill_ms": 1971.6435,
+        "decode_ms": 1803.2491,
+        "total_ms": 3774.8935,
+        "reached_eos": true,
+        "context_setup_ms": 23.017917,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "java_request_ms": 3802.442967,
+      "capture_summary_count": 0,
+      "capture_widths": [],
+      "routes": {
+        "checked_model": {
+          "accepted": true,
+          "origin": "CHECKED_MODEL",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1236410
+    },
+    {
+      "id": "native-unit-4",
+      "capture": false,
+      "prompt_sha256": "3f102037488d8dfa4cfbfdc0c0e7f4226f0660c0dcd4822d437397224ab03026",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 362,
+        "generated_tokens": 13,
+        "prefill_ms": 2579.2052,
+        "decode_ms": 1823.5697,
+        "total_ms": 4402.7757,
+        "reached_eos": true,
+        "context_setup_ms": 0.000156,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "java_request_ms": 4407.440415,
+      "capture_summary_count": 0,
+      "capture_widths": [],
+      "routes": {
+        "checked_model": {
+          "accepted": true,
+          "origin": "CHECKED_MODEL",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1237104
+    },
+    {
+      "id": "native-unit-5",
+      "capture": false,
+      "prompt_sha256": "804b5f80139a7318968dc64ca9802f7c22eceabe5651d012a963828c52f5d5f7",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 359,
+        "generated_tokens": 10,
+        "prefill_ms": 2574.811,
+        "decode_ms": 1355.4948,
+        "total_ms": 3930.3066,
+        "reached_eos": true,
+        "context_setup_ms": 0.00026,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "java_request_ms": 3934.680571,
+      "capture_summary_count": 0,
+      "capture_widths": [],
+      "routes": {
+        "checked_model": {
+          "accepted": true,
+          "origin": "CHECKED_MODEL",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": true,
+          "origin": "FAST_LOCAL_REQUEST",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1237895
+    },
+    {
+      "id": "native-unit-6",
+      "capture": false,
+      "prompt_sha256": "476c7a760f556b145fbdd023731182ca2277972bf5aa635c32ef5ffacb927232",
+      "grammar_sha256": "8d95e8a163c7821f086cb8384cf72b23683294f3e3cdcb7770852a5e7f829acd",
+      "raw_intent_matches_fixed_seen_gold": true,
+      "raw_full_slots_match_fixed_seen_gold": true,
+      "canonical_slots_match_fixed_seen_gold": true,
+      "metrics": {
+        "prompt_tokens": 361,
+        "generated_tokens": 5,
+        "prefill_ms": 2602.2826,
+        "decode_ms": 702.83979,
+        "total_ms": 3305.1232,
+        "reached_eos": true,
+        "context_setup_ms": 0.000156,
+        "cpu_only": true,
+        "capture_enabled": false
+      },
+      "java_request_ms": 3309.563748,
+      "capture_summary_count": 0,
+      "capture_widths": [],
+      "routes": {
+        "checked_model": {
+          "accepted": false,
+          "origin": "UNKNOWN",
+          "matches_illustration": true
+        },
+        "fast_local": {
+          "accepted": false,
+          "origin": "UNKNOWN",
+          "matches_illustration": true
+        },
+        "product_pipeline": {
+          "accepted": false,
+          "origin": "UNKNOWN",
+          "matches_illustration": true
+        }
+      },
+      "instrumented_process_pss_kib": 1237999
+    }
+  ],
+  "socket_creation_denial": {
+    "errno_name": "EPERM",
+    "errno": 1,
+    "before_model_access": true,
+    "dns": false,
+    "connect": false,
+    "payload": false
+  },
+  "initial_harness_passed": false,
+  "initial_restore_client": {
+    "returncode": -9,
+    "timed_out": true,
+    "client_ms": 45032.64645906165,
+    "observed_sha256": "dad575e2c804658488022629fc144adc9af3daefc06068c7ee6875bfc6ec1214",
+    "owned_install_verified": false
+  },
+  "first_read_only_cleanup_original_restored": false,
+  "final_read_only_cleanup": {
+    "original_test_restored": true,
+    "target_unchanged": true,
+    "protected_state_unchanged": true,
+    "recovery_preflight_refused_before_install": true,
+    "additional_installs": 0,
+    "additional_instrumentation": 0
+  },
+  "restoration_interpretation": "One streamed restore timed out and original package completed later. Initial failed record preserved. Separate recovery preflight refused before another install. Final read-only inspection verifies original test and protected snapshot.",
+  "phone_actions_executed": 0,
+  "permission_changes": 0,
+  "project_logical_bytes": 14456773419,
+  "storage_cap_bytes": 15000000000,
+  "limitations": [
+    "Six openly seen synthetic cases, not fresh general accuracy or training improvement.",
+    "Every request forced Qwen; normal app fast recognition skips model work. No UI/action success or fast-pipeline latency established.",
+    "Activation summaries are observational, not causal mechanistic interpretation.",
+    "PSS samples include instrumentation overhead; not peak RAM.",
+    "CPU and socket-creation denial do not establish Snapdragon NPU/iQOO/Office Kit/airplane-mode/whole-device disconnection.",
+    "Initial harness failed restoration at its deadline; later read-only proof is separate.",
+    "Pre-event prototype is not eligible event-created code without organizer approval."
+  ]
+}
