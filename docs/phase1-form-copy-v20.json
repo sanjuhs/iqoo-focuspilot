@@ -1,0 +1,194 @@
+{
+  "schema": "focuspilot.phase1_form_copy.v20",
+  "prepared_date": "2026-10-03",
+  "status": "Prepared current v20 public project copy; live field verification recorded separately. Personal answers, attestation and submission pending.",
+  "dashboard_observation": {
+    "provenance": "Root agent authenticated dashboard read reported 3 October 2026; this writer did not operate the dashboard",
+    "event": "Grand Finale",
+    "finale_dates": [
+      "2026-10-09",
+      "2026-10-11"
+    ],
+    "selected_track": "Productivity",
+    "registered_member_count": 1,
+    "phase1_deadline_date": "2026-10-05",
+    "deadline_exact_time": null,
+    "deadline_timezone": null,
+    "cutoff_limit": "Only the displayed date is verified; no midnight or timezone assumption",
+    "fields_empty": false,
+    "admission_confirmed": false,
+    "submission_receipt_observed": false
+  },
+  "fields": {
+    "idea_title": {
+      "dashboard_label": "Idea title",
+      "required": true,
+      "min_characters": 5,
+      "draft": "Mira: A Private Productivity Companion",
+      "max_characters": 200
+    },
+    "description": {
+      "dashboard_label": "Description",
+      "required": true,
+      "min_characters": 50,
+      "draft": "Mira is a local-first Android productivity companion that helps people return to the task they intended to do. A friendly animated companion accepts editable typed or optional voice drafts for focus sessions, timers, alarms and a small approved app list. Quick local checks handle familiar requests without loading a language model; unfamiliar wording can use explicitly loaded Qwen3.5-0.8B Q4_0 on the phone's CPU. An independent validator checks complete arguments, and proposed actions require Review and Confirm. User-authored checklists and opt-in app limits support a calmer workflow; accountability uses simulated points.\n\nOur v0.20 light pre-event research prototype is published and installed on a Nothing phone, with 216 JVM tests passing. A default-off availability option is designed to hide Mira while locked and restore the reviewed session after unlock; physical verification is pending. The published bundled APK includes pinned Qwen weights; packaging is verified, current bundle import/load is not. A separate v0.19 CPU diagnostic completed six already-seen Qwen requests with 313 runtime checks and no actions. This is scoped runtime evidence, not general accuracy or NPU proof. The 4:04 edited research video labels historical v12 phone clips and current source illustrations. Complete human playback, current voice/monitoring/lock-unlock, actual iQOO Snapdragon NPU and Office Kit remain to verify. We disclose pre-existing research, Qwen and llama.cpp; eligible competition code must be created in the allowed event window unless organizers approve reuse.",
+      "max_characters": 2000
+    },
+    "video_walkthrough_url": {
+      "dashboard_label": "Video walkthrough URL",
+      "required": false,
+      "draft": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/pitch-v020.mp4",
+      "release_page": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20",
+      "attribution": "4:04 v20 edited research pitch with historical v12 phone clips and current source illustrations; no current lock/unlock/voice/NPU/Office Kit proof",
+      "human_complete_playback_listening_verified": false
+    },
+    "prototype_url": {
+      "dashboard_label": "Prototype URL",
+      "required": false,
+      "draft": "https://github.com/sanjuhs/iqoo-focuspilot",
+      "current_release": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20",
+      "limit": "Pre-event research. v20 light installed; bundle packaging verified, current bundle import/load unverified. Actual v19 CPU measurements keep v19 attribution.",
+      "bundled_download": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-bundled.apk"
+    },
+    "deck_or_document": {
+      "dashboard_label": "Deck/document",
+      "required": true,
+      "accepted_formats_as_displayed": [
+        "PDF",
+        "PPT"
+      ],
+      "maximum_size_as_displayed": "25 MB",
+      "link_alternative_available": true,
+      "draft_link": "https://github.com/sanjuhs/iqoo-focuspilot/blob/3f04ac3ca31deafc73ba288239177bcdb1f9c3d3/output/pdf/focuspilot-phase1-concept.pdf",
+      "prepared_upload": "output/pdf/focuspilot-phase1-concept.pdf",
+      "status": "PDF immutable link added to live draft; document link and Remove document control visibly present. No file upload or final submission. Server PDF validation and draft persistence are unverified.",
+      "bytes": 25456,
+      "sha256": "a11cb1534806424a9c017593e4e9aea4f64824a36076e74577e16b4c20260e35",
+      "link_acceptance_by_dashboard_verified": false,
+      "link_attachment_ui_verified": true,
+      "server_document_content_validation_verified": false
+    },
+    "android_proficiency": {
+      "dashboard_label": "Android proficiency",
+      "choices": [
+        "No Android experience",
+        "Basic",
+        "Intermediate",
+        "Expert / shipped apps"
+      ],
+      "draft": null,
+      "status": "Human self-report required; do not infer personal proficiency from agent-assisted project tests"
+    },
+    "llm_experience": {
+      "dashboard_label": "LLM proficiency",
+      "choices": [
+        "No LLM experience",
+        "Cloud APIs only",
+        "Experimented with local LLMs",
+        "Deployed local LLMs on-device"
+      ],
+      "draft": null,
+      "status": "Human self-report required; documented project deployment is evidence, not an automatic personal selection"
+    },
+    "prior_builds": {
+      "dashboard_label": "Prior builds & hackathons",
+      "draft": null,
+      "status": "Human history/links required; no achievements or wins assumed"
+    },
+    "team_standout": {
+      "dashboard_label": "What makes you and your team stand out?",
+      "draft": "Our approach combines a friendly companion with explicit user control and reproducible evidence. We distinguish quick deterministic recognition from actual Qwen inference, validate full arguments and invalidate stale or edited proposals before confirmation. We publish tests, exact artifact identities, paired evaluation losses and unfinished proof gates instead of presenting every prototype feature as verified. The next step is a small, reliable productivity workflow on actual iQOO hardware, with organizer-approved code eligibility and Office Kit verification.",
+      "limit": "Project approach only; no invented personal credentials or awards"
+    },
+    "original_work_preexisting_disclosure": {
+      "dashboard_label": "I confirm this idea is our team’s original work and any pre-existing components are disclosed.",
+      "exact_checkbox_wording_recorded": true,
+      "checked": false,
+      "draft_disclosure": "This application includes pre-event research already present in the public FocusPilot repository. Our Android integration, Mira interface, bounded validation/review flow and research utilities build on third-party open-source dependencies and AI-assisted development. The selected runtime uses Qwen3.5-0.8B Q4_0 and llama.cpp, with licenses/notices retained. Kev, Laya and Cua informed research; they are not deployed phone runtimes or an implemented Cua phone-control port. The published v0.20 bundled APK includes the pinned Qwen weights; the light option requires separately prepared private weights. Bundle packaging is verified, but current bundled installation, missing-model import and model load remain unverified. We do not assert that pre-event implementation is eligible event-written code. Competition code will be separately created in the permitted window unless organizers explicitly approve reuse.",
+      "status": "Review exact dashboard wording and disclose pre-existing work before any human attestation"
+    }
+  },
+  "novelty_copy": "A friendly local companion combines no-load complete-request recognition with optional checked Qwen output, explicit provenance and single-use review. Separate small-policy explanations are research diagnostics, not claims to understand Qwen or measure human productivity.",
+  "evidence": {
+    "current_app": {
+      "version": "0.20-mira-availability-research",
+      "source_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+      "installed_variant": "light",
+      "jvm_tests_passed": 216,
+      "lint_errors": 0,
+      "lint_warnings": 79,
+      "record": "docs/mira-availability-v20.md",
+      "scope": "Build, packaging, protected installation; physical current workflows unverified"
+    },
+    "phone_native_diagnostic": {
+      "version": "v0.19",
+      "seen_requests": 6,
+      "runtime_checks": 313,
+      "record": "docs/native-page-phone-result-v19.json",
+      "scope": "CPU diagnostic only; no executed actions, not fresh accuracy or NPU proof"
+    },
+    "video": {
+      "record": "docs/v020-pitch-evidence.json",
+      "duration_seconds": 244.083333,
+      "human_complete_playback_listening_verified": false
+    },
+    "remaining": [
+      "Current permissioned phone workflows and physical lock/unlock",
+      "Current bundled import/load",
+      "Actual iQOO/NPU and Office Kit",
+      "Human self-report answers and attestation",
+      "Eligible event code and accepted submission receipt"
+    ]
+  },
+  "submission_boundary": {
+    "submit_control": "Submit idea",
+    "submission_authorized_or_performed_by_this_draft": false,
+    "remaining_human_inputs": [
+      "Android proficiency",
+      "LLM experience",
+      "Prior builds",
+      "Exact originality/pre-existing-work attestation"
+    ],
+    "remaining_artifact_or_review": [
+      "Document link is attached in draft UI; final server validation and submission remain unverified",
+      "Complete human video playback/listening if including video",
+      "Confirm any additional dashboard validation",
+      "Organizer clarification of pre-event reuse"
+    ]
+  },
+  "live_dashboard_draft": {
+    "record": "docs/phase1-prepared-dashboard-draft.json",
+    "observed_utc": "2026-10-03T01:30:01.117Z",
+    "fields_populated": [
+      "idea_title",
+      "description",
+      "prototype_url",
+      "team_standout"
+    ],
+    "server_persistence_verified": false,
+    "submit_clicked": false
+  },
+  "supersedes_public_copy": "docs/phase1-form-copy.json; historical record retained unchanged",
+  "public_field_bindings": {
+    "idea_title": {
+      "utf16_length": 38,
+      "sha256_utf8": "42d9bfe74fcef00f75efd72047534fa30fdfc48b8fb701582278834b8f2b7cbb"
+    },
+    "description": {
+      "utf16_length": 1577,
+      "sha256_utf8": "b836d36ee528a19b47c3e97be812cc94cffbf7ecd49ec860fa90c3fc5d4bfdc8"
+    },
+    "video_walkthrough_url": {
+      "utf16_length": 90,
+      "sha256_utf8": "5d9260e12b274a1de0260b814c85435c0428ba52edb1c13fdf482e648beb3138"
+    },
+    "prototype_url": {
+      "utf16_length": 42,
+      "sha256_utf8": "95ac051d70ebf946fb82360efed1fd649a04126b285b1bba9bab08961638fe44"
+    },
+    "team_standout": {
+      "utf16_length": 565,
+      "sha256_utf8": "a91e5beb460f87c6d32a763be351f83a645db9cb1eecb1894bdad9f8d5309ba8"
+    }
+  }
+}

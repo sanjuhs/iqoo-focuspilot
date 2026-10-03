@@ -1,0 +1,49 @@
+{
+  "schema": "focuspilot.phase1_prepared_dashboard_draft.v20",
+  "observed_at_utc": "2026-10-03T02:36:47.267Z",
+  "dashboard_url": "https://iqoo.reskilll.com/dashboard/iqoo-finale",
+  "changed_fields": [
+    "description",
+    "video_walkthrough_url"
+  ],
+  "public_field_bindings": {
+    "idea_title": {
+      "utf16_length": 38,
+      "sha256_utf8": "42d9bfe74fcef00f75efd72047534fa30fdfc48b8fb701582278834b8f2b7cbb",
+      "matches_prepared_copy": true
+    },
+    "description": {
+      "utf16_length": 1577,
+      "sha256_utf8": "b836d36ee528a19b47c3e97be812cc94cffbf7ecd49ec860fa90c3fc5d4bfdc8",
+      "matches_prepared_copy": true
+    },
+    "video_walkthrough_url": {
+      "utf16_length": 90,
+      "sha256_utf8": "5d9260e12b274a1de0260b814c85435c0428ba52edb1c13fdf482e648beb3138",
+      "matches_prepared_copy": true
+    },
+    "prototype_url": {
+      "utf16_length": 42,
+      "sha256_utf8": "95ac051d70ebf946fb82360efed1fd649a04126b285b1bba9bab08961638fe44",
+      "matches_prepared_copy": true
+    },
+    "team_standout": {
+      "utf16_length": 565,
+      "sha256_utf8": "a91e5beb460f87c6d32a763be351f83a645db9cb1eecb1894bdad9f8d5309ba8",
+      "matches_prepared_copy": true
+    }
+  },
+  "required_document_link_ui_present": true,
+  "personal_experience_selectors": "Untouched pre-existing defaults; not human self-reports",
+  "prior_builds_blank": true,
+  "attestation_checked": false,
+  "submit_clicked": false,
+  "file_upload_performed": false,
+  "terms_acceptance_performed": false,
+  "server_persistence_verified": false,
+  "server_document_content_validation_verified": false,
+  "admission_or_accepted_submission_verified": false,
+  "proof_screenshot_private": "artifacts/phase1-dashboard-v20/public-draft.png",
+  "proof_screenshot_sha256": "a3bded3099c8cba73882c050db5a68d6754060139db2a318a5fe7d81398056bd",
+  "historical_record_retained": "docs/phase1-prepared-dashboard-draft.json"
+}

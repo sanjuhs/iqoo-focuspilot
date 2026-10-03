@@ -1,5 +1,16 @@
 # Remaining deliverables — full-scope audit
 
+## Current Phase 1 draft — v20
+
+The live public description now matches the current v20 copy (1,577/2,000
+characters), and the 4:04 research video link is populated. Five public field
+hashes match the prepared copy; the existing PDF link remains attached.
+Personal experience selectors remain untouched defaults, prior builds blank and
+attestation unchecked. No Submit, file upload or Terms acceptance occurred.
+Server persistence, document validation and accepted submission remain unverified.
+[Current copy](phase1-form-copy-v20.json) ·
+[Observed draft](phase1-prepared-dashboard-draft-v20.json).
+
 ## Current research pitch — 4:04
 
 The v20 edited research video is rendered with 24 measured captions, original
