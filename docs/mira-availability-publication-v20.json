@@ -1,0 +1,52 @@
+{
+  "schema": "focuspilot.mira_availability_publication.v1",
+  "release_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20",
+  "release_id": 402278239,
+  "tag_commit": "81287b2b08ccedc050635b0b8a27154bed3b5d87",
+  "prerelease": true,
+  "asset_count": 5,
+  "assets": [
+    {
+      "file": "artifacts/focuspilot-research-v020-mira-availability-light.apk",
+      "bytes": 5562748,
+      "sha256": "e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+      "server_digest": "sha256:e128bd1986bad10ff00f385a22f0a1b70ac696ab7c42a547e65717a1d8789239",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-light.apk"
+    },
+    {
+      "file": "artifacts/focuspilot-research-v020-mira-availability-bundled.apk",
+      "bytes": 568604151,
+      "sha256": "a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c",
+      "server_digest": "sha256:a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-bundled.apk"
+    },
+    {
+      "file": "docs/mira-availability-artifact-v20.json",
+      "bytes": 3479,
+      "sha256": "b65dac244846251c1ea973b0b70b8fb35d7db3fb7efa0cf74689ca4e9be9cbd0",
+      "server_digest": "sha256:b65dac244846251c1ea973b0b70b8fb35d7db3fb7efa0cf74689ca4e9be9cbd0",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/mira-availability-artifact-v20.json"
+    },
+    {
+      "file": "docs/mira-availability-bundle-artifact-v20.json",
+      "bytes": 2030,
+      "sha256": "da0c5e7be6e818936b246d878e6d8133102443100bf191cf49a04de371b8cb15",
+      "server_digest": "sha256:da0c5e7be6e818936b246d878e6d8133102443100bf191cf49a04de371b8cb15",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/mira-availability-bundle-artifact-v20.json"
+    },
+    {
+      "file": "docs/mira-availability-phone-install-v20.json",
+      "bytes": 1276,
+      "sha256": "10a747a2e238d81a9edbae524a82061787e714faadf0dc586611ce2d4b8b703e",
+      "server_digest": "sha256:10a747a2e238d81a9edbae524a82061787e714faadf0dc586611ce2d4b8b703e",
+      "url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/mira-availability-phone-install-v20.json"
+    }
+  ],
+  "notes_sha256": "b98e2f2b8a8ed649caa58975e0ca406efed05e85e86be6ced5ee236f30921e92",
+  "notes_exact_verified": true,
+  "physical_lock_unlock_verified": false,
+  "current_bundled_import_verified": false,
+  "npu_verified": false,
+  "office_kit_verified": false,
+  "research_only": true
+}

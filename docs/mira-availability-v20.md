@@ -106,3 +106,7 @@ While locked, Hide must end the session; another unlock must not restore it.
 Repeat after revoking permissions and after Android stops the process. These are
 pending manual checks, not results. Voice and usage observation remain separate
 opt-ins. No wake-word or continual listening is implemented.
+
+[Published research v0.20](https://github.com/sanjuhs/iqoo-focuspilot/releases/tag/research-v0.20)
+has five exact server-digest/size-verified assets and a tag at the frozen app source.
+[Publication record](mira-availability-publication-v20.json).
