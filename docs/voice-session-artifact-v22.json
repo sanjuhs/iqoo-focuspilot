@@ -1,0 +1,66 @@
+{
+  "schema": "focuspilot.voice_session_artifact.v1",
+  "research_only": true,
+  "source_commit": "08af30893d6ca7ecec70cf66b5026a88be463ca5",
+  "source_sha256": {
+    "prototype/android/app/build.gradle": "51f6a9727ed37a1e5eb4d361835ce1a4acd56de93b0bdddbbc33e40d676947a5",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java": "787fdf446dc548732c5bdea5ecb3bedf339b01946d7973dc6e2011275c7cdd03",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java": "5204dae6ad7b4fbbb3ecb1713b80f385211adc645af867d0b602c24f5be99b5f",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java": "9b39d062d2b91924f94a2902ea773e49032600ab7e79e3cf007aa4bd5bba14a0",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java": "c63eda6e8fe166e313136d4585645fe1b4447984f1057b441eaa1c6fae049881"
+  },
+  "changes_from_v21": [
+    "prototype/android/app/build.gradle",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/MainActivity.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/LocalModelActivity.java",
+    "prototype/android/app/src/main/java/dev/focuspilot/prototype/ReadbackState.java",
+    "prototype/android/app/src/test/java/dev/focuspilot/prototype/ReadbackStateTest.java"
+  ],
+  "apk_path": "artifacts/focuspilot-research-v022-voice-session-light.apk",
+  "apk_bytes": 5562748,
+  "apk_sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350",
+  "manifest_identity": "package: name='dev.focuspilot.prototype' versionCode='22' versionName='0.22-voice-session-research' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "zip_alignment_16k_verified": true,
+  "native_sha256": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+  "native_unchanged_from_v21": true,
+  "permissions": [
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE'",
+    "uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'",
+    "uses-permission: name='android.permission.PACKAGE_USAGE_STATS'",
+    "uses-permission: name='android.permission.POST_NOTIFICATIONS'",
+    "uses-permission: name='android.permission.RECORD_AUDIO'",
+    "uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'",
+    "uses-permission: name='com.android.alarm.permission.SET_ALARM'"
+  ],
+  "permissions_unchanged_from_v21": true,
+  "internet_permission": false,
+  "license_assets": {
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  "bundled_model": false,
+  "tests": {
+    "tests": 221,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_suites": 29,
+  "lint": {
+    "Warning": 79
+  },
+  "gradle_log_sha256": "a8b2ad568333e1aaf732c95d3b306ff8edd707e885e0be782f7449b0a0522b40",
+  "downloads": 0,
+  "inspection_note": "Initial inspection compared permission order and stopped; unchanged seven-permission set verified after canonical ordering. Existing APK parity checked before resuming inspection.",
+  "build_launch_note": "Initial shell redirection used a wrong log directory and refused before Gradle started; corrected absolute log path then one successful Gradle invocation.",
+  "phone_installed": false,
+  "physical_voice_verified": false,
+  "physical_readback_verified": false,
+  "model_inference": false,
+  "npu_verified": false
+}

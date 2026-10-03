@@ -1,0 +1,13 @@
+{
+  "schema": "focuspilot.recoverable_bundle_cleanup.v22",
+  "scope": "Only the exact generated v20 bundle; verified recoverable server bytes before local removal. Current v21 bundle, pinned model, private data and historical manifests retained.",
+  "removed_file": "artifacts/focuspilot-research-v020-mira-availability-bundled.apk",
+  "bytes": 568604151,
+  "sha256": "a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c",
+  "recovery_url": "https://github.com/sanjuhs/iqoo-focuspilot/releases/download/research-v0.20/focuspilot-research-v020-mira-availability-bundled.apk",
+  "server_digest": "sha256:a6d5cc92a931e062404761759f93ac58c07782efe0fb7d4bace15faad896f22c",
+  "server_size": 568604151,
+  "server_uploaded": true,
+  "release_public": true,
+  "new_model_downloads": 0
+}

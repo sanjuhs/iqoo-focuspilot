@@ -1,0 +1,89 @@
+{
+  "kind": "pre-event debug research APK packaging; byte/signature proof, no phone run",
+  "app_source_commit": "08af30893d6ca7ecec70cf66b5026a88be463ca5",
+  "app_source_attribution": "caller-supplied frozen build commit, not compilation replay",
+  "packager_sha256": "66adb21ca1db7b7308bd840502a3d4850571c74da3fd4eebed192010f0dc9b36",
+  "light": {
+    "file": "artifacts/focuspilot-research-v022-voice-session-light.apk",
+    "bytes": 5562748,
+    "sha256": "70a0a280a33da06f3a1a56bfc3b2ba448a45bd9bb00b77e4dbb19330ae6b3350"
+  },
+  "model": {
+    "entry": "assets/qwen35.gguf",
+    "compression": "ZIP_STORED",
+    "bytes": 563036064,
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf"
+  },
+  "bundle": {
+    "file": "artifacts/focuspilot-research-v022-voice-session-bundled.apk",
+    "bytes": 568604151,
+    "sha256": "70162f372e05ce6bc785a9b29a95438f7d3d12ea2bc68c2572ee760af24e960f"
+  },
+  "storage": {
+    "project_bytes_before": 8992202608,
+    "per_copy_byte_cap": 568860956,
+    "reserved_temporary_bytes": 1137721912,
+    "estimated_peak_project_bytes": 10129924520,
+    "project_limit_bytes": 15000000000,
+    "estimate": "logical bytes; directories not counted, symlinks not followed; full two-copy allowance includes 256KiB overhead each"
+  },
+  "alignment": "SDK zipalign -P 16 4 before signing; -c -P 16 4 passed after signing",
+  "signature": "SDK apksigner verify passed for light and final; same public certificate",
+  "public_certificate_sha256": "aac08c20596709fd3e8ffd2d05d74b7d6f6fee066ce0f319f4ed29f082041bbf",
+  "original_payload_count": 16,
+  "original_non_signature_payload_sha256": {
+    "META-INF/com/android/build/gradle/app-metadata.properties": "131a387a3883512eb3cde2d98e57816e31b714e7c4334c5fdf53b02932a3e722",
+    "classes.dex": "0c90cbc895c4df83880988e032406e63ac453a50edf4df0c93d468da738fbe91",
+    "classes2.dex": "98b9e5792c8c0284ad5328f6574ada432c0f8696fd826b87929111d3bd5ca265",
+    "lib/arm64-v8a/libfocuspilot_local.so": "675f2142a2c35b9c0260dc43944db09c3bb570a63c9f49a27e47625f7b98152e",
+    "assets/licenses/FocusPilot-MIT.txt": "3df7b8136f2de1293485d67f7b53ec945a7c75cfe5b8d73d2a23688243cf2e6b",
+    "assets/licenses/KleidiAI-Apache-2.0.txt": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "assets/licenses/KleidiAI-BSD-3-Clause.txt": "3cf06aba3588c41c514f6946bb2d757b413ff6491647d474800f55edca75dcb4",
+    "assets/licenses/KleidiAI-notices.txt": "f7ce7909303395d0b5ad9f64c315f66930e0dba69f71d9aa6f70b1cbd592815d",
+    "assets/licenses/Qwen3.5-Apache-2.0.txt": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "assets/licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "AndroidManifest.xml": "be752dfbad426511af7f58a5a1f193f239c8999be45ab22fb5a4d76d78dd3b70",
+    "res/drawable/ic_focuspilot.xml": "1d57f1292eea5b3265ed307ea8a5ad04f64cf38a00f6d52ae7c77bbc1a035693",
+    "res/drawable/ic_notification.xml": "d16ff5dcbf91d9a93fd4e2ccec0de07d982375fbd4a0ad7cf201e107d161fa2b",
+    "res/xml/data_extraction_rules.xml": "dadc91cae789afbc63eef851442a6918acac7d0f3aa0c5a4204c474767f3fb9c",
+    "res/xml/sandbox_accessibility_service.xml": "53ddf9f92c8e57062be75a37c4df7d62636a5d1dd2457ffaab0c08583fa73484",
+    "resources.arsc": "b3fea02945076a52aee294dcf4ff8d40377d4c4eeff3ed2d09c564e4e4da3640"
+  },
+  "only_added_non_signature_entry": "assets/qwen35.gguf",
+  "removed_v1_signature_entries": [],
+  "tools": {
+    "zipalign": {
+      "file": "Android SDK build-tools/36.0.0/zipalign",
+      "bytes": 503264,
+      "sha256": "0427144f4a3fd242c5a159e7088637082539ae556bc1d2bbc2032bb775d47cea"
+    },
+    "apksigner": {
+      "file": "Android SDK build-tools/36.0.0/apksigner",
+      "bytes": 2959,
+      "sha256": "b47549e373b895ce6ca620d0c7887e674d9615ffa837a86ac601dcfd04adb0f0"
+    },
+    "apksigner.jar": {
+      "file": "Android SDK build-tools/36.0.0/apksigner.jar",
+      "bytes": 1100545,
+      "sha256": "3716d9311e55d2b0918a2fd9d54ba9e406c5f6abeea700b287f11259bc163dec"
+    }
+  },
+  "recipe": [
+    "stream clone all non-signature ZIP entries; add pinned GGUF stored",
+    "zipalign -P 16 4 unaligned aligned",
+    "delete unaligned",
+    "apksigner sign in place using existing standard debug key, v4 disabled",
+    "verify signature/certificate, alignment, all payload/model hashes",
+    "atomic no-overwrite finalization without copying"
+  ],
+  "temporary_large_copy_limit": 2,
+  "downloads": 0,
+  "phone_actions_executed": 0,
+  "runtime_verified": false,
+  "schema": "focuspilot.voice_session_bundle.v1",
+  "original_payload_parity_verified": true,
+  "private_packaging_record": "artifacts/voice-session-v22-bundled-packaging.json",
+  "private_packaging_record_sha256": "ad8e2fcaba6d7cddb34565eaefe8ef857566643424c6ee6f892c78bc10114a2e",
+  "npu_verified": false,
+  "current_bundle_import_verified": false
+}
